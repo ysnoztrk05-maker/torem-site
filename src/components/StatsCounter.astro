@@ -1,0 +1,80 @@
+---
+export interface Stat {
+  value: number;
+  suffix?: string;
+  label: string;
+}
+
+export interface Props {
+  stats?: Stat[];
+}
+
+const defaultStats: Stat[] = [
+  { value: 20,  suffix: '+', label: 'Yıl Deneyim' },
+  { value: 500, suffix: '+', label: 'Tamamlanan Proje' },
+  { value: 50,  suffix: '+', label: 'Makine Parkı' },
+  { value: 200, suffix: '+', label: 'Mutlu Müşteri' },
+];
+
+const { stats = defaultStats } = Astro.props;
+---
+
+<section class="stats section">
+  <div class="container">
+    <ul class="stats__grid">
+      {stats.map(({ value, suffix = '', label }) => (
+        <li class="stats__item">
+          <span class="stats__value" data-target={value}>0</span>
+          <span class="stats__suffix">{suffix}</span>
+          <span class="stats__label">{label}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+.stats { background: var(--color-primary); padding-block: var(--s-16); }
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-8);
+  text-align: center;
+}
+.stats__item { display: flex; flex-direction: column; align-items: center; gap: var(--s-2); }
+.stats__value {
+  font-size: var(--text-5xl);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1;
+}
+.stats__suffix { font-size: var(--text-3xl); font-weight: 700; color: var(--color-highlight); margin-left: 2px; line-height: 1; }
+.stats__label  { font-size: var(--text-sm); color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.06em; }
+
+@media (max-width: 768px) { .stats__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .stats__grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-5); } }
+</style>
+
+<script>
+  const counters = document.querySelectorAll<HTMLElement>('.stats__value');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target as HTMLElement;
+      const target = parseInt(el.dataset.target ?? '0', 10);
+      const duration = 1800;
+      const start = performance.now();
+      const tick = (now: number) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target).toString();
+        if (progress < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      observer.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach((el) => observer.observe(el));
+</script>

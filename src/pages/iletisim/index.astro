@@ -1,0 +1,276 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const canonical = 'https://www.toremzemin.com/iletisim/';
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Torem Zemin Mühendislik',
+  url: 'https://www.toremzemin.com',
+  telephone: ['+90-531-659-46-36', '+90-216-379-33-10'],
+  email: 'info@toremzemin.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Pendik',
+    addressRegion: 'İstanbul',
+    addressCountry: 'TR',
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: 40.878, longitude: 29.233 },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'],
+    opens: '08:30',
+    closes: '18:00',
+  },
+};
+---
+
+<BaseLayout
+  title="İletişim | Torem Zemin Mühendislik"
+  description="Torem Zemin ile iletişime geçin. Ücretsiz keşif raporu ve proje danışmanlığı için +90 531 659 46 36 veya info@toremzemin.com"
+  canonical={canonical}
+  schema={localBusinessSchema}
+>
+  <!-- Hero -->
+  <section class="iletisim-hero">
+    <div class="container iletisim-hero__inner">
+      <p class="eyebrow">İletişim</p>
+      <h1>Projenizi Birlikte<br><span>Değerlendirelim</span></h1>
+      <p>Ücretsiz keşif raporu ve teknik danışmanlık için ekibimizle iletişime geçin.</p>
+    </div>
+  </section>
+
+  <Breadcrumb items={[{ label: 'İletişim' }]} />
+
+  <section class="section">
+    <div class="container iletisim-grid">
+
+      <!-- İletişim Bilgileri -->
+      <div class="contact-info">
+        <h2>Bize Ulaşın</h2>
+        <p class="contact-info__sub">İnşaat projenizin zemin gereksinimleri için uzman kadromuz 7/24 destek vermektedir.</p>
+
+        <div class="cinfo-cards">
+          <a href="tel:+905316594636" class="cinfo-card">
+            <div class="cinfo-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div class="cinfo-card__body">
+              <span class="cinfo-card__label">Telefon 1</span>
+              <strong>+90 531 659 46 36</strong>
+            </div>
+          </a>
+
+          <a href="tel:+902163793310" class="cinfo-card">
+            <div class="cinfo-card__icon cinfo-card__icon--alt">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.93 6.93l1.52-1.52a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div class="cinfo-card__body">
+              <span class="cinfo-card__label">Telefon 2 (Santral)</span>
+              <strong>+90 216 379 33 10</strong>
+            </div>
+          </a>
+
+          <a href="mailto:info@toremzemin.com" class="cinfo-card">
+            <div class="cinfo-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M2 7l10 7 10-7"/>
+              </svg>
+            </div>
+            <div class="cinfo-card__body">
+              <span class="cinfo-card__label">E-posta</span>
+              <strong>info@toremzemin.com</strong>
+            </div>
+          </a>
+
+          <div class="cinfo-card cinfo-card--static">
+            <div class="cinfo-card__icon cinfo-card__icon--alt">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+              </svg>
+            </div>
+            <div class="cinfo-card__body">
+              <span class="cinfo-card__label">Adres</span>
+              <strong>Pendik / İstanbul</strong>
+            </div>
+          </div>
+
+          <div class="cinfo-card cinfo-card--static">
+            <div class="cinfo-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12,6 12,12 16,14"/>
+              </svg>
+            </div>
+            <div class="cinfo-card__body">
+              <span class="cinfo-card__label">Çalışma Saatleri</span>
+              <strong>Hafta içi 08:30–18:00</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="cinfo-note">
+          <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+          <p>Acil durumlarda +90 531 659 46 36 numarasını arayabilirsiniz. İlk 24 saat içinde yanıt garantisi veriyoruz.</p>
+        </div>
+      </div>
+
+      <!-- İletişim Formu -->
+      <div class="contact-form-wrap">
+        <h2>Ücretsiz Keşif Talebi</h2>
+        <p class="form-sub">Projeniz için ücretsiz keşif raporu ve maliyet tahmini alın.</p>
+
+        <form class="contact-form" action="https://formspree.io/f/mbdpjwzo" method="POST" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Ad Soyad *</label>
+              <input type="text" id="name" name="name" placeholder="Ahmet Yılmaz" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="company">Firma (İsteğe Bağlı)</label>
+              <input type="text" id="company" name="company" placeholder="Şirket Adı" autocomplete="organization" />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Telefon *</label>
+              <input type="tel" id="phone" name="phone" placeholder="+90 5XX XXX XX XX" required autocomplete="tel" />
+            </div>
+            <div class="form-group">
+              <label for="email">E-posta</label>
+              <input type="email" id="email" name="email" placeholder="ornek@email.com" autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">İlgilendiğiniz Hizmet</label>
+            <select id="service" name="service">
+              <option value="">Hizmet seçiniz...</option>
+              <option value="fore-kazik">Fore Kazık</option>
+              <option value="jet-grout">Jet Grout</option>
+              <option value="ankraj">Öngermeli Ankraj</option>
+              <option value="mini-kazik">Mini Kazık</option>
+              <option value="zemin-civisi">Zemin Çivisi</option>
+              <option value="iksa">İksa Sistemleri</option>
+              <option value="diger">Diğer / Birden fazla</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Proje Lokasyonu</label>
+            <input type="text" id="location" name="location" placeholder="İl / İlçe" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Proje Açıklaması *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Zemin türü, bina yüksekliği, tahmini alan vb. kısa bilgi..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--lg">
+            Ücretsiz Keşif Talep Et
+            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" width="18" height="18"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+
+          <p class="form-privacy">Bilgileriniz yalnızca proje değerlendirmesi için kullanılır, üçüncü şahıslarla paylaşılmaz.</p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Harita -->
+  <section class="map-section" aria-label="Konum haritası">
+    <iframe
+      src="https://maps.google.com/maps?q=40.878,29.233&z=15&output=embed"
+      width="100%"
+      height="340"
+      style="border:0; display:block;"
+      allowfullscreen
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Torem Zemin Mühendislik Konum — Pendik, İstanbul"
+    ></iframe>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size:var(--text-sm); font-weight:700; color:#E8A85A; text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+
+/* Hero */
+.iletisim-hero {
+  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding-block:var(--s-20) var(--s-14); color:var(--color-white); text-align:center;
+}
+.iletisim-hero__inner { max-width:560px; margin-inline:auto; }
+.iletisim-hero h1 { color:var(--color-white); font-size:var(--text-5xl); margin-bottom:var(--s-4); }
+.iletisim-hero h1 span { color:#E8A85A; }
+.iletisim-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); }
+
+/* Grid */
+.iletisim-grid { display:grid; grid-template-columns:1fr 1.4fr; gap:var(--s-12); align-items:start; }
+
+/* Contact info */
+.contact-info h2 { font-size:var(--text-3xl); margin-bottom:var(--s-2); }
+.contact-info__sub { color:var(--color-text-muted); margin-bottom:var(--s-7); line-height:1.75; }
+.cinfo-cards { display:flex; flex-direction:column; gap:var(--s-3); margin-bottom:var(--s-6); }
+.cinfo-card {
+  display:flex; align-items:center; gap:var(--s-4);
+  background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-lg);
+  padding:var(--s-4) var(--s-5); text-decoration:none;
+  transition:box-shadow var(--t-base), border-color var(--t-fast);
+}
+.cinfo-card:not(.cinfo-card--static):hover { box-shadow:var(--shadow-md); border-color:var(--color-highlight); }
+.cinfo-card--static { cursor:default; }
+.cinfo-card__icon { width:44px; height:44px; border-radius:var(--r-md); background:rgba(200,135,58,.12); color:var(--color-highlight); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.cinfo-card__icon--alt { background:rgba(74,127,165,.12); color:var(--color-accent); }
+.cinfo-card__icon svg { width:20px; height:20px; }
+.cinfo-card__label { display:block; font-size:var(--text-xs); color:var(--color-text-muted); text-transform:uppercase; letter-spacing:.05em; margin-bottom:2px; }
+.cinfo-card strong { display:block; font-size:var(--text-base); font-weight:600; color:var(--color-primary); }
+.cinfo-note { display:flex; gap:var(--s-3); background:rgba(200,135,58,.08); border:1px solid rgba(200,135,58,.2); border-radius:var(--r-lg); padding:var(--s-4); }
+.cinfo-note svg { width:20px; height:20px; color:var(--color-highlight); flex-shrink:0; margin-top:2px; }
+.cinfo-note p { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.65; }
+
+/* Form */
+.contact-form-wrap { background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-xl); padding:var(--s-8); }
+.contact-form-wrap h2 { font-size:var(--text-3xl); margin-bottom:var(--s-2); }
+.form-sub { color:var(--color-text-muted); margin-bottom:var(--s-6); }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:var(--s-4); }
+.form-group { display:flex; flex-direction:column; gap:var(--s-2); margin-bottom:var(--s-4); }
+.form-group label { font-size:var(--text-sm); font-weight:600; color:var(--color-primary); }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  border:1.5px solid var(--color-border); border-radius:var(--r-md);
+  padding:var(--s-3) var(--s-4); font-size:var(--text-base); font-family:inherit;
+  color:var(--color-text); background:var(--color-bg);
+  transition:border-color var(--t-fast), box-shadow var(--t-fast);
+  outline:none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color:var(--color-highlight);
+  box-shadow:0 0 0 3px rgba(200,135,58,.15);
+}
+.form-group textarea { resize:vertical; min-height:120px; }
+.form-group select { cursor:pointer; }
+.contact-form .btn { width:100%; justify-content:center; gap:var(--s-3); margin-top:var(--s-2); }
+.form-privacy { font-size:var(--text-xs); color:var(--color-text-muted); text-align:center; margin-top:var(--s-3); line-height:1.5; }
+
+/* Map */
+.map-section { line-height:0; }
+
+@media (max-width:900px) {
+  .iletisim-grid { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+}
+</style>

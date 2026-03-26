@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABox from '../../components/CTABox.astro';
+import { hizmetler } from '../../data/content';
+---
+
+<BaseLayout
+  title="Geoteknik Mühendislik Hizmetleri | Torem Zemin"
+  description="Fore kazık, jet grout, öngermeli ankraj, mini kazık, zemin çivisi ve iksa sistemleri. İstanbul merkezli profesyonel geoteknik mühendislik hizmetleri."
+>
+  <!-- Hero -->
+  <section class="hizmetler-hero">
+    <div class="hizmetler-hero__bg" aria-hidden="true"></div>
+    <div class="container hizmetler-hero__inner">
+      <p class="eyebrow">Hizmetlerimiz</p>
+      <h1>Kapsamlı Geoteknik<br><span>Mühendislik Çözümleri</span></h1>
+      <p>Zemin araştırmasından uygulamaya, kalite kontrolünden raporlamaya kadar anahtar teslim hizmetler.</p>
+    </div>
+  </section>
+
+  <Breadcrumb items={[{ label: 'Hizmetlerimiz' }]} />
+
+  <section class="section">
+    <div class="container">
+      <div class="hizmetler-grid">
+        {hizmetler.map((h) => (
+          <article class="hcard">
+            <a href={`/hizmetlerimiz/${h.slug}/`} class="hcard__img-wrap">
+              <img src={h.image} alt={h.title} loading="lazy" width="480" height="320" />
+              <span class="hcard__cat">{h.category}</span>
+            </a>
+            <div class="hcard__body">
+              <h2 class="hcard__title">
+                <a href={`/hizmetlerimiz/${h.slug}/`}>{h.shortTitle}</a>
+              </h2>
+              <p class="hcard__excerpt">{h.excerpt}</p>
+              <a href={`/hizmetlerimiz/${h.slug}/`} class="hcard__link">
+                Detaylı Bilgi
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <CTABox title="Projenize Özel Geoteknik Çözüm İster misiniz?" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size:var(--text-sm); font-weight:700; color:#E8A85A; text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+.hizmetler-hero {
+  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding-block:var(--s-20) var(--s-16);
+  color:var(--color-white);
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+}
+.hizmetler-hero__bg {
+  position:absolute; inset:0;
+  background:radial-gradient(ellipse at 70% 50%, rgba(74,127,165,.25) 0%, transparent 60%);
+  pointer-events:none;
+}
+.hizmetler-hero__inner { position:relative; z-index:1; }
+.hizmetler-hero h1 { color:var(--color-white); font-size:var(--text-5xl); margin-bottom:var(--s-4); }
+.hizmetler-hero h1 span { color:#E8A85A; }
+.hizmetler-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); max-width:540px; margin-inline:auto; }
+
+.hizmetler-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-7); margin-bottom:var(--s-16); }
+.hcard { background:var(--color-white); border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--color-border); transition:transform var(--t-base), box-shadow var(--t-base); }
+.hcard:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+.hcard__img-wrap { display:block; aspect-ratio:3/2; overflow:hidden; position:relative; }
+.hcard__img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
+.hcard:hover .hcard__img-wrap img { transform:scale(1.05); }
+.hcard__cat {
+  position:absolute; bottom:var(--s-3); left:var(--s-3);
+  background:rgba(27,43,58,.85); color:white; backdrop-filter:blur(4px);
+  font-size:var(--text-xs); padding:.25rem .7rem; border-radius:999px; font-weight:600;
+}
+.hcard__body { padding:var(--s-5) var(--s-6) var(--s-6); }
+.hcard__title { font-size:var(--text-xl); margin-bottom:var(--s-3); }
+.hcard__title a { color:var(--color-primary); transition:color var(--t-fast); }
+.hcard__title a:hover { color:var(--color-highlight); }
+.hcard__excerpt { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.7; margin-bottom:var(--s-4); }
+.hcard__link { display:inline-flex; align-items:center; gap:var(--s-2); font-size:var(--text-sm); font-weight:600; color:var(--color-highlight); transition:gap var(--t-fast); }
+.hcard__link:hover { gap:var(--s-3); }
+@media (max-width:900px) { .hizmetler-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px) { .hizmetler-grid { grid-template-columns:1fr; } }
+</style>

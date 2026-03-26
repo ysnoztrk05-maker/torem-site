@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AuthorBox from '../../components/AuthorBox.astro';
+import CTABox from '../../components/CTABox.astro';
+import { blogPosts, getBlogPost } from '../../data/content';
+
+export function getStaticPaths() {
+  return blogPosts.map((p) => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const post = getBlogPost(slug);
+if (!post) return Astro.redirect('/blog/');
+
+const canonical = `https://www.toremzemin.com/blog/${slug}/`;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.excerpt,
+  image: post.heroImage,
+  datePublished: post.date,
+  author: { '@type': 'Organization', name: 'Torem Zemin Mühendislik', url: 'https://www.toremzemin.com' },
+  publisher: { '@type': 'Organization', name: 'Torem Zemin Mühendislik' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+};
+
+const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
+---
+
+<BaseLayout
+  title={`${post.title} | Torem Zemin Blog`}
+  description={post.excerpt}
+  canonical={canonical}
+  ogImage={post.heroImage}
+  schema={articleSchema}
+>
+  <!-- Hero -->
+  <div class="blog-single-hero">
+    <img src={post.heroImage} alt={post.title} width="1200" height="480" fetchpriority="high" />
+    <div class="blog-single-hero__overlay">
+      <div class="container">
+        <span class="blog-single-hero__cat">{post.category}</span>
+        <h1 class="blog-single-hero__title">{post.title}</h1>
+        <p class="blog-single-hero__meta">{post.date} · {post.readTime}</p>
+      </div>
+    </div>
+  </div>
+
+  <Breadcrumb items={[
+    { label: 'Blog', href: '/blog/' },
+    { label: post.title.slice(0, 40) + '…' },
+  ]} />
+
+  <div class="section">
+    <div class="container blog-single-layout">
+      <article class="blog-single-main">
+        <AuthorBox date={post.date} />
+        <div class="prose" set:html={post.content} />
+        <CTABox />
+
+        <!-- İlgili Yazılar -->
+        {relatedPosts.length > 0 && (
+          <div class="related">
+            <h3>İlgili Yazılar</h3>
+            <div class="related__grid">
+              {relatedPosts.map((r) => (
+                <a href={`/blog/${r.slug}/`} class="related-card">
+                  <img src={r.image} alt={r.title} loading="lazy" width="280" height="160" />
+                  <div class="related-card__body">
+                    <p class="related-card__cat">{r.category}</p>
+                    <p class="related-card__title">{r.title}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+      </article>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+.blog-single-hero { position:relative; height:480px; overflow:hidden; }
+.blog-single-hero img { width:100%; height:100%; object-fit:cover; }
+.blog-single-hero__overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(27,43,58,.9) 0%, rgba(27,43,58,.3) 60%, transparent 100%);
+  display:flex; align-items:flex-end; padding-bottom:var(--s-12);
+}
+.blog-single-hero__cat { display:inline-block; background:var(--color-highlight); color:white; font-size:var(--text-xs); font-weight:600; padding:.25rem .8rem; border-radius:999px; text-transform:uppercase; margin-bottom:var(--s-3); }
+.blog-single-hero__title { color:var(--color-white); font-size:clamp(1.75rem, 3vw + 1rem, 2.5rem); line-height:1.2; margin-bottom:var(--s-2); max-width:780px; }
+.blog-single-hero__meta { color:rgba(255,255,255,.6); font-size:var(--text-sm); }
+
+.blog-single-layout { max-width:870px; }
+.blog-single-main { padding-top:var(--s-2); }
+
+/* Prose */
+.prose :global(h2) { font-size:var(--text-3xl); margin-top:var(--s-10); margin-bottom:var(--s-4); padding-bottom:var(--s-3); border-bottom:2px solid var(--color-bg-alt); }
+.prose :global(h3) { font-size:var(--text-2xl); margin-top:var(--s-8); margin-bottom:var(--s-3); }
+.prose :global(p) { line-height:1.85; margin-bottom:var(--s-4); }
+.prose :global(ul) { list-style:disc; padding-left:var(--s-6); margin-bottom:var(--s-5); }
+.prose :global(ol) { list-style:decimal; padding-left:var(--s-6); margin-bottom:var(--s-5); }
+.prose :global(li) { margin-bottom:var(--s-2); line-height:1.7; }
+.prose :global(strong) { font-weight:600; }
+.prose :global(table) { width:100%; border-collapse:collapse; margin-block:var(--s-6); font-size:var(--text-sm); }
+.prose :global(th) { background:var(--color-primary); color:white; padding:var(--s-3) var(--s-4); text-align:left; }
+.prose :global(td) { padding:var(--s-3) var(--s-4); border:1px solid var(--color-border); }
+.prose :global(tr:nth-child(even)) { background:var(--color-bg-alt); }
+.prose :global(.aeo-box) { background:var(--color-bg-alt); border-left:4px solid var(--color-highlight); padding:var(--s-4) var(--s-5); border-radius:var(--r-sm); font-weight:500; color:var(--color-primary); margin-block:var(--s-5); }
+
+/* Related */
+.related { margin-top:var(--s-16); padding-top:var(--s-8); border-top:2px solid var(--color-bg-alt); }
+.related h3 { font-size:var(--text-2xl); margin-bottom:var(--s-6); }
+.related__grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--s-5); }
+.related-card { border-radius:var(--r-lg); overflow:hidden; background:var(--color-white); border:1px solid var(--color-border); transition:box-shadow var(--t-base); }
+.related-card:hover { box-shadow:var(--shadow-md); }
+.related-card img { width:100%; aspect-ratio:16/9; object-fit:cover; }
+.related-card__body { padding:var(--s-4); }
+.related-card__cat { font-size:var(--text-xs); color:var(--color-highlight); font-weight:600; text-transform:uppercase; margin-bottom:var(--s-2); }
+.related-card__title { font-size:var(--text-base); font-weight:600; color:var(--color-primary); line-height:1.4; }
+@media (max-width:560px) { .related__grid { grid-template-columns:1fr; } }
+</style>

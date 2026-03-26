@@ -1,0 +1,102 @@
+---
+export interface Props {
+  title: string;
+  excerpt: string;
+  href: string;
+  icon?: string; // SVG path string
+  featured?: boolean;
+}
+
+const { title, excerpt, href, icon, featured = false } = Astro.props;
+---
+
+<article class={`service-card${featured ? ' service-card--featured' : ''}`}>
+  {icon && (
+    <div class="service-card__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d={icon} />
+      </svg>
+    </div>
+  )}
+  <div class="service-card__body">
+    <h3 class="service-card__title">
+      <a href={href}>{title}</a>
+    </h3>
+    <p class="service-card__excerpt">{excerpt}</p>
+  </div>
+  <a href={href} class="service-card__link" aria-label={`${title} hakkında daha fazla bilgi`}>
+    Detaylı Bilgi
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  </a>
+</article>
+
+<style>
+.service-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border-radius: var(--r-lg);
+  padding: var(--s-8);
+  border: 1px solid var(--color-border);
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base);
+}
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-highlight);
+}
+.service-card--featured {
+  border-color: var(--color-highlight);
+  background: linear-gradient(145deg, #fff 0%, #fdf8f3 100%);
+}
+
+.service-card__icon {
+  width: 52px;
+  height: 52px;
+  background: var(--color-highlight-10, rgba(200,135,58,0.1));
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--s-5);
+  flex-shrink: 0;
+}
+.service-card__icon svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--color-highlight);
+}
+
+.service-card__body { flex: 1; }
+
+.service-card__title {
+  font-size: var(--text-xl);
+  margin-bottom: var(--s-3);
+}
+.service-card__title a {
+  color: var(--color-primary);
+  transition: color var(--t-fast);
+}
+.service-card__title a:hover { color: var(--color-highlight); }
+
+.service-card__excerpt {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--s-5);
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-highlight);
+  margin-top: auto;
+  transition: gap var(--t-fast);
+}
+.service-card__link:hover { gap: var(--s-3); }
+</style>

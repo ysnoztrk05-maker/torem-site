@@ -1,0 +1,375 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import StatsCounter from '../components/StatsCounter.astro';
+import CTABox from '../components/CTABox.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import { hizmetler, blogPosts, stats, company } from '../data/content';
+
+const featuredHizmetler = hizmetler.slice(0, 6);
+
+const faqItems = [
+  { question: 'Fore kazık nedir ve ne zaman kullanılır?', answer: 'Fore kazık, zemin içine açılan deliklere yerinde beton dökülerek oluşturulan derin temel elemanıdır. 400–1500 mm çaplarında, 5–60 m derinliğe imal edilebilir. Zayıf zemin, yüksek yapı ve kentsel alanlar için idealdir.' },
+  { question: 'Jet grout ile zemin iyileştirme kaç günde tamamlanır?', answer: 'Orta ölçekli bir jet grout projesi (500 m² alan) genellikle 5–10 gün sürer. Süre, kolon çapı, derinlik ve zemin cinsine bağlıdır. Torem Zemin iş programını önceden taahhüt eder.' },
+  { question: 'Zemin etüdü olmadan temel tasarımı yapılabilir mi?', answer: 'Hayır. TBDY 2018 ve TS EN 1997 (Eurocode 7) standartları gereği her yapı için sahaya özgü zemin araştırması zorunludur. Zemin etütsüz temel tasarımı hem teknik hem hukuki risk oluşturur.' },
+  { question: 'İstanbul dışında hizmet veriyor musunuz?', answer: 'Evet, Torem Zemin Mühendislik Türkiye\'nin tüm illerinde proje yürütmektedir. Ankara, İzmir, Bursa, Kocaeli ve diğer şehirlerde aktif projelerimiz mevcuttur.' },
+];
+---
+
+<BaseLayout
+  title="Zemin Mühendisliği ve Geoteknik Çözümler | Torem Zemin"
+  description="20+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projeleri. İstanbul merkezli, Türkiye geneli geoteknik mühendislik hizmetleri."
+>
+
+  <!-- ░░ HERO ░░ -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <p class="hero__tag">Geoteknik Mühendislik</p>
+      <h1 class="hero__title">
+        Temelden Zirveye<br>
+        <em>Güvenli Zemin Çözümleri</em>
+      </h1>
+      <p class="hero__sub">
+        20+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projelerinde
+        İstanbul'un güvenilir geoteknik partneri. ISO 9001 kalite güvencesiyle 600+ proje tamamlandı.
+      </p>
+      <div class="hero__actions">
+        <a href="/iletisim/" class="btn btn--primary btn--lg">Ücretsiz Keşif Raporu Alın</a>
+        <a href="/hizmetlerimiz/" class="btn btn--outline btn--lg">Hizmetleri İncele</a>
+      </div>
+      <div class="hero__trust">
+        <span>ISO 9001</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <span>600+ Proje</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <span>20 Yıl Deneyim</span>
+        <span class="sep" aria-hidden="true">·</span>
+        <span>Türkiye Geneli</span>
+      </div>
+    </div>
+    <div class="hero__img-panel" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&h=700&q=80"
+        alt=""
+        width="900" height="700"
+        fetchpriority="high"
+        decoding="async"
+      />
+      <div class="hero__img-overlay"></div>
+    </div>
+    <div class="hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--color-bg)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ░░ STATS ░░ -->
+  <StatsCounter stats={stats} />
+
+  <!-- ░░ HİZMETLER ░░ -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head text-center">
+        <p class="eyebrow">Neler Yapıyoruz</p>
+        <h2>Geoteknik Mühendislik Hizmetlerimiz</h2>
+        <p class="sec-head__sub">Zemin araştırmasından uygulamaya, kalite testinden raporlamaya — anahtar teslim çözümler</p>
+      </div>
+      <div class="services-grid">
+        {featuredHizmetler.map((h) => (
+          <article class="svc-card">
+            <a href={`/hizmetlerimiz/${h.slug}/`} class="svc-card__img-wrap">
+              <img src={h.image} alt={h.title} loading="lazy" width="480" height="320" />
+            </a>
+            <div class="svc-card__body">
+              <p class="svc-card__cat">{h.category}</p>
+              <h3 class="svc-card__title">
+                <a href={`/hizmetlerimiz/${h.slug}/`}>{h.shortTitle}</a>
+              </h3>
+              <p class="svc-card__excerpt">{h.excerpt.slice(0, 110)}…</p>
+              <a href={`/hizmetlerimiz/${h.slug}/`} class="svc-card__link">
+                Detaylı Bilgi →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top:var(--s-10)">
+        <a href="/hizmetlerimiz/" class="btn btn--ghost">Tüm Hizmetleri Görüntüle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ HAKKIMIZDA ░░ -->
+  <section class="section section--alt about">
+    <div class="container about__grid">
+      <div class="about__imgs" aria-hidden="true">
+        <img
+          class="about__img-main"
+          src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=600&h=700&q=80"
+          alt="İnşaat sahası"
+          loading="lazy" width="600" height="700"
+        />
+        <img
+          class="about__img-accent"
+          src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=340&h=280&q=80"
+          alt="Fore kazık makinesi"
+          loading="lazy" width="340" height="280"
+        />
+        <div class="about__badge">
+          <strong>2003'ten</strong><span>beri güvenle inşa ediyoruz</span>
+        </div>
+      </div>
+
+      <div class="about__text">
+        <p class="eyebrow">Biz Kimiz</p>
+        <h2>Sağlam Temellerin<br>Arkasındaki Güç</h2>
+        <div class="aeo-box">
+          Torem Zemin Mühendislik, 2003'ten bu yana İstanbul merkezli olarak Türkiye genelinde
+          600'ü aşkın geoteknik projeye imza atmıştır.
+        </div>
+        <p>
+          Modern makine parkımız, alanında uzman mühendis kadromuz ve ISO 9001:2015 kalite
+          yönetim sistemimizle konut, altyapı ve endüstriyel projelerde güvenilir çözümler sunuyoruz.
+          Fore kazıktan jet grouta, ankrajdan iksa sistemlerine kadar tam kapsamlı geoteknik hizmetler.
+        </p>
+        <ul class="check-list">
+          <li>ISO 9001:2015 Kalite Yönetim Sistemi</li>
+          <li>55'i aşkın modern iş makinesi parkı</li>
+          <li>Deneyimli jeoteknik mühendis kadrosu</li>
+          <li>Türkiye geneli, aynı gün saha ziyareti</li>
+        </ul>
+        <div class="about__actions">
+          <a href="/kurumsal/" class="btn btn--ghost">Hakkımızda Daha Fazla</a>
+          <a href="tel:+905316594636" class="btn btn--primary">{company.phone1}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ REFERANS PROJELERİ ░░ -->
+  <section class="section ref-strip">
+    <div class="container">
+      <p class="eyebrow text-center">Referanslarımızdan</p>
+      <h2 class="text-center ref-strip__title">Tamamlanan Projelerden Seçkiler</h2>
+      <div class="ref-grid">
+        {[
+          { img:'1558618666-fcd25c85cd64', loc:'İstanbul, Kadıköy', type:'Fore Kazık + İksa', title:'Otel Bodrum Kat Genişletme' },
+          { img:'1513467535987-fd81bc7d62f8', loc:'Ankara, Çankaya',  type:'Jet Grout',       title:'Metro İstasyon Temeli' },
+          { img:'1580674684081-7617fbf3d745', loc:'İzmir, Bayraklı',  type:'Öngermeli Ankraj',title:'AVM Derin Kazısı' },
+        ].map((p) => (
+          <div class="ref-card">
+            <img
+              src={`https://images.unsplash.com/photo-${p.img}?auto=format&fit=crop&w=560&h=360&q=80`}
+              alt={p.title}
+              loading="lazy" width="560" height="360"
+            />
+            <div class="ref-card__info">
+              <span class="ref-card__type">{p.type}</span>
+              <strong>{p.title}</strong>
+              <p>{p.loc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top:var(--s-8)">
+        <a href="/projelerimiz/" class="btn btn--ghost">Tüm Projeler</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ BLOG ░░ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="sec-head text-center">
+        <p class="eyebrow">Teknik Blog</p>
+        <h2>Zemin Mühendisliği Bilgi Merkezi</h2>
+      </div>
+      <div class="blog-grid">
+        {blogPosts.map((post) => (
+          <article class="blog-card">
+            <a href={`/blog/${post.slug}/`} class="blog-card__img">
+              <img src={post.image} alt={post.title} loading="lazy" width="480" height="300" />
+              <span class="blog-card__cat">{post.category}</span>
+            </a>
+            <div class="blog-card__body">
+              <p class="blog-card__meta">{post.date} · {post.readTime}</p>
+              <h3 class="blog-card__title">
+                <a href={`/blog/${post.slug}/`}>{post.title}</a>
+              </h3>
+              <p class="blog-card__excerpt">{post.excerpt}</p>
+              <a href={`/blog/${post.slug}/`} class="blog-card__more">Devamını Oku →</a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div class="text-center" style="margin-top:var(--s-8)">
+        <a href="/blog/" class="btn btn--ghost">Tüm Yazılar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ░░ FAQ ░░ -->
+  <FAQAccordion items={faqItems} title="Geoteknik Mühendislik Hakkında Sık Sorulanlar" />
+
+  <!-- ░░ CTA ░░ -->
+  <section class="section">
+    <div class="container">
+      <CTABox />
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+/* ── Eyebrow ── */
+.eyebrow { font-size:var(--text-sm); font-weight:700; color:var(--color-highlight); text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+.sec-head { margin-bottom:var(--s-12); }
+.sec-head h2 { margin-bottom:var(--s-4); }
+.sec-head__sub { color:var(--color-text-muted); font-size:var(--text-lg); max-width:580px; margin-inline:auto; }
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  background: var(--color-primary);
+}
+.hero__bg {
+  position:absolute; inset:0;
+  background: radial-gradient(ellipse at 20% 60%, rgba(46,80,119,0.5) 0%, transparent 60%);
+  pointer-events:none; z-index:1;
+}
+.hero__inner {
+  position:relative; z-index:2;
+  display:flex; flex-direction:column; justify-content:center;
+  padding-block: var(--s-24);
+  grid-column:1;
+}
+.hero__tag {
+  display:inline-flex; align-self:flex-start;
+  background:rgba(200,135,58,.15); color:#E8A85A;
+  border:1px solid rgba(200,135,58,.35);
+  padding:.3rem .9rem; border-radius:999px;
+  font-size:var(--text-sm); font-weight:600; letter-spacing:.05em; text-transform:uppercase;
+  margin-bottom:var(--s-5);
+}
+.hero__title {
+  color:var(--color-white); font-size:clamp(2.25rem, 4vw + 1rem, 3.5rem);
+  line-height:1.1; margin-bottom:var(--s-5);
+}
+.hero__title em { font-style:normal; color:#E8A85A; }
+.hero__sub {
+  color:rgba(255,255,255,.75); font-size:var(--text-lg); line-height:1.7;
+  max-width:520px; margin-bottom:var(--s-8);
+}
+.hero__actions { display:flex; gap:var(--s-4); flex-wrap:wrap; margin-bottom:var(--s-8); }
+.hero__trust {
+  display:flex; align-items:center; gap:var(--s-3); flex-wrap:wrap;
+  font-size:var(--text-sm); color:rgba(255,255,255,.5);
+}
+.hero__trust .sep { opacity:.4; }
+.hero__img-panel {
+  grid-column:2; position:relative; overflow:hidden;
+}
+.hero__img-panel img { width:100%; height:100%; object-fit:cover; }
+.hero__img-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to right, var(--color-primary) 0%, transparent 30%);
+}
+.hero__wave {
+  position:absolute; bottom:0; left:0; right:0; height:60px;
+  z-index:3; line-height:0; grid-column:1/-1;
+}
+.hero__wave svg { width:100%; height:100%; }
+
+@media (max-width:900px) {
+  .hero { grid-template-columns:1fr; min-height:auto; }
+  .hero__img-panel { display:none; }
+  .hero__inner { padding-block:var(--s-20) var(--s-16); text-align:center; align-items:center; }
+  .hero__tag { align-self:center; }
+  .hero__sub { text-align:center; }
+  .hero__actions { justify-content:center; }
+  .hero__trust { justify-content:center; }
+}
+
+/* ── Services grid ── */
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-6); }
+.svc-card { background:var(--color-white); border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--color-border); transition:transform var(--t-base), box-shadow var(--t-base); }
+.svc-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+.svc-card__img-wrap { display:block; aspect-ratio:3/2; overflow:hidden; }
+.svc-card__img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
+.svc-card:hover .svc-card__img-wrap img { transform:scale(1.05); }
+.svc-card__body { padding:var(--s-5) var(--s-6) var(--s-6); }
+.svc-card__cat { font-size:var(--text-xs); text-transform:uppercase; letter-spacing:.07em; color:var(--color-highlight); font-weight:600; margin-bottom:var(--s-2); }
+.svc-card__title { font-size:var(--text-xl); margin-bottom:var(--s-3); }
+.svc-card__title a { color:var(--color-primary); transition:color var(--t-fast); }
+.svc-card__title a:hover { color:var(--color-highlight); }
+.svc-card__excerpt { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.7; margin-bottom:var(--s-4); }
+.svc-card__link { font-size:var(--text-sm); font-weight:600; color:var(--color-highlight); }
+@media (max-width:900px) { .services-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px) { .services-grid { grid-template-columns:1fr; } }
+
+/* ── About ── */
+.about__grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--s-16); align-items:center; }
+.about__imgs { position:relative; height:520px; }
+.about__img-main { position:absolute; left:0; top:0; width:75%; height:100%; object-fit:cover; border-radius:var(--r-xl); box-shadow:var(--shadow-xl); }
+.about__img-accent { position:absolute; right:0; bottom:var(--s-10); width:45%; border-radius:var(--r-lg); box-shadow:var(--shadow-lg); border:4px solid var(--color-white); }
+.about__badge {
+  position:absolute; left:50%; bottom:0; transform:translateX(-50%);
+  background:var(--color-highlight); color:var(--color-white);
+  padding:var(--s-4) var(--s-6); border-radius:var(--r-lg); text-align:center;
+  box-shadow:var(--shadow-lg); white-space:nowrap;
+}
+.about__badge strong { display:block; font-size:var(--text-xl); font-weight:700; }
+.about__badge span   { font-size:var(--text-xs); opacity:.9; }
+.about__text h2 { margin-bottom:var(--s-5); }
+.about__text p  { color:var(--color-text-muted); margin-bottom:var(--s-5); line-height:1.85; }
+.about__actions { display:flex; gap:var(--s-4); flex-wrap:wrap; margin-top:var(--s-6); }
+.check-list { list-style:none; display:flex; flex-direction:column; gap:var(--s-3); margin-bottom:var(--s-2); }
+.check-list li { display:flex; align-items:center; gap:var(--s-3); font-weight:500; font-size:var(--text-sm); }
+.check-list li::before { content:'✓'; color:var(--color-highlight); font-weight:700; font-size:1.1em; flex-shrink:0; }
+@media (max-width:900px) { .about__grid { grid-template-columns:1fr; } .about__imgs { height:300px; } }
+
+/* ── Referans grid ── */
+.ref-strip__title { margin-bottom:var(--s-10); }
+.ref-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-5); }
+.ref-card { border-radius:var(--r-lg); overflow:hidden; position:relative; }
+.ref-card img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; }
+.ref-card__info {
+  position:absolute; inset:0; background:linear-gradient(to top, rgba(27,43,58,.92) 40%, transparent 100%);
+  display:flex; flex-direction:column; justify-content:flex-end; padding:var(--s-5);
+}
+.ref-card__type { font-size:var(--text-xs); color:var(--color-highlight-light,#E8A85A); text-transform:uppercase; letter-spacing:.06em; font-weight:600; margin-bottom:var(--s-1); }
+.ref-card__info strong { color:var(--color-white); font-size:var(--text-lg); display:block; margin-bottom:var(--s-1); }
+.ref-card__info p  { color:rgba(255,255,255,.65); font-size:var(--text-sm); margin:0; }
+@media (max-width:900px) { .ref-grid { grid-template-columns:1fr 1fr; } }
+@media (max-width:560px) { .ref-grid { grid-template-columns:1fr; } }
+
+/* ── Blog ── */
+.blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-6); }
+.blog-card { background:var(--color-white); border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--color-border); transition:transform var(--t-base), box-shadow var(--t-base); }
+.blog-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.blog-card__img { display:block; aspect-ratio:16/10; overflow:hidden; position:relative; }
+.blog-card__img img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
+.blog-card:hover .blog-card__img img { transform:scale(1.05); }
+.blog-card__cat {
+  position:absolute; top:var(--s-3); left:var(--s-3);
+  background:var(--color-highlight); color:white;
+  font-size:var(--text-xs); font-weight:600; padding:.2rem .7rem; border-radius:999px;
+  text-transform:uppercase; letter-spacing:.05em;
+}
+.blog-card__body { padding:var(--s-5) var(--s-6) var(--s-6); }
+.blog-card__meta { font-size:var(--text-xs); color:var(--color-text-muted); margin-bottom:var(--s-2); }
+.blog-card__title { font-size:var(--text-lg); margin-bottom:var(--s-3); line-height:1.35; }
+.blog-card__title a { color:var(--color-primary); transition:color var(--t-fast); }
+.blog-card__title a:hover { color:var(--color-highlight); }
+.blog-card__excerpt { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.7; margin-bottom:var(--s-4); }
+.blog-card__more { font-size:var(--text-sm); font-weight:600; color:var(--color-highlight); }
+@media (max-width:900px) { .blog-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px) { .blog-grid { grid-template-columns:1fr; } }
+</style>
