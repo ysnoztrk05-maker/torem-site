@@ -21,6 +21,111 @@ import { hizmetler } from '../../data/content';
 
   <Breadcrumb items={[{ label: 'Hizmetlerimiz' }]} />
 
+  <!-- ░░ KARAR AĞACI ░░ -->
+  <section class="section section--alt karar-section">
+    <div class="container">
+      <div class="karar-head">
+        <p class="eyebrow">Hangi Yöntemi Seçmeliyim?</p>
+        <h2>Projenize Uygun Çözümü Bulun</h2>
+        <p class="karar-head__sub">3 soruyu yanıtlayın, size özel öneri gelsin.</p>
+      </div>
+      <div class="karar__form" id="karar-form">
+        <div class="karar__row">
+          <p class="karar__q">Zemin tipi nedir?</p>
+          <div class="karar__opts" data-group="zemin">
+            <button class="karar__btn" data-value="kil">Kil / Silt</button>
+            <button class="karar__btn" data-value="kum">Kum / Çakıl</button>
+            <button class="karar__btn" data-value="kaya">Kaya</button>
+          </div>
+        </div>
+        <div class="karar__row">
+          <p class="karar__q">Yapı tipi nedir?</p>
+          <div class="karar__opts" data-group="yapi">
+            <button class="karar__btn" data-value="konut">Konut</button>
+            <button class="karar__btn" data-value="ticari">Ticari / AVM</button>
+            <button class="karar__btn" data-value="altyapi">Altyapı / Metro</button>
+          </div>
+        </div>
+        <div class="karar__row">
+          <p class="karar__q">Temel derinliği?</p>
+          <div class="karar__opts" data-group="derinlik">
+            <button class="karar__btn" data-value="lt10">&lt; 10 m</button>
+            <button class="karar__btn" data-value="mid">10 – 30 m</button>
+            <button class="karar__btn" data-value="gt30">&gt; 30 m</button>
+          </div>
+        </div>
+      </div>
+      <div class="karar__result" id="karar-result" hidden>
+        <div class="karar__result-card">
+          <span class="karar__badge">Önerimiz</span>
+          <h3 id="karar-service"></h3>
+          <p id="karar-why"></p>
+          <a id="karar-link" class="btn btn--primary" href="#">Detaylı Bilgi Al →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const groups: Record<string, string | null> = { zemin: null, yapi: null, derinlik: null };
+    const recs: Record<string, { service: string; why: string; slug: string }> = {
+      kil_konut_lt10:   { service:'Jet Grout',          why:'Kil zemin + sığ konut temeli için jet grout enjeksiyonu idealdir. Düşük maliyet, hızlı uygulama.',                    slug:'/hizmetlerimiz/jet-grout-nedir/' },
+      kil_konut_mid:    { service:'Fore Kazık',          why:'Kil zeminlerde orta derinlikteki konut yapıları için fore kazık ekonomik ve güvenilirdir.',                             slug:'/hizmetlerimiz/fore-kazik-nedir/' },
+      kil_konut_gt30:   { service:'Fore Kazık',          why:'Derin kil zemin gerektiren konut projeleri için Ø600–1200 mm fore kazık uygulanır.',                                   slug:'/hizmetlerimiz/fore-kazik-nedir/' },
+      kil_ticari_lt10:  { service:'Jet Grout',          why:'Ticari yapı + kil zemin + sığ derinlik için zemin iyileştirme önceliklidir.',                                           slug:'/hizmetlerimiz/jet-grout-nedir/' },
+      kil_ticari_mid:   { service:'Fore Kazık',          why:'AVM ve ticari yapıların yüksek yükleri için kil zeminde fore kazık standart çözümdür.',                               slug:'/hizmetlerimiz/fore-kazik-nedir/' },
+      kil_ticari_gt30:  { service:'Fore Kazık',          why:'Büyük ticari yükler + derin kil zemin kombinasyonu için büyük çaplı fore kazık gereklidir.',                          slug:'/hizmetlerimiz/fore-kazik-nedir/' },
+      kil_altyapi_lt10: { service:'İksa Sistemleri',    why:'Metro ve altyapı kazılarında kil zeminde sığ derinlik için ankrajlı palplanş iksa uygulanır.',                         slug:'/hizmetlerimiz/iksa-nedir/' },
+      kil_altyapi_mid:  { service:'Öngermeli Ankraj',   why:'Kil zemin + altyapı kazısı + orta derinlik için öngermeli ankraj ile güçlendirilmiş iksa idealdir.',                  slug:'/hizmetlerimiz/ankraj-nedir/' },
+      kil_altyapi_gt30: { service:'Fore Kazık + İksa',  why:'Derin altyapı kazısında kil zemin için fore kazık perde + çok sıra ankrajlı iksa kombinasyonu şarttır.',              slug:'/hizmetlerimiz/iksa-nedir/' },
+      kum_konut_lt10:   { service:'Zemin Çivisi',       why:'Kum/çakıl zemin + sığ konut temeli için zemin çivisi hızlı, ekonomik ve pratik çözümdür.',                            slug:'/hizmetlerimiz/zemin-civisi-nedir/' },
+      kum_konut_mid:    { service:'Mini Kazık',          why:'Kum/çakıl zemin + orta derinlik için mini kazık sınırlı alanlarda da uygulanabilir.',                                 slug:'/hizmetlerimiz/mini-kazik-nedir/' },
+      kum_konut_gt30:   { service:'Fore Kazık',          why:'Derin kum/çakıl zemin + konut yükü için fore kazık tek güvenilir seçenektir.',                                       slug:'/hizmetlerimiz/fore-kazik-nedir/' },
+      kum_ticari_lt10:  { service:'Mini Kazık',          why:'Ticari yapı + kum zemin + sığ derinlik için mini kazık veya zemin çivisi uygulanır.',                                slug:'/hizmetlerimiz/mini-kazik-nedir/' },
+      kum_ticari_mid:   { service:'Fore Kazık',          why:'Ticari yapı yükleri + kum zemin + orta derinlik için fore kazık güvenilir seçimdir.',                                 slug:'/hizmetlerimiz/fore-kazik-nedir/' },
+      kum_ticari_gt30:  { service:'Fore Kazık',          why:'Derin kum/çakıl zemin + ticari yük kombinasyonu için büyük çaplı fore kazık şarttır.',                               slug:'/hizmetlerimiz/fore-kazik-nedir/' },
+      kum_altyapi_lt10: { service:'İksa Sistemleri',    why:'Kum zemin + altyapı kazısı + sığ derinlik için palplanş veya ankrajlı iksa uygulanır.',                               slug:'/hizmetlerimiz/iksa-nedir/' },
+      kum_altyapi_mid:  { service:'İksa + Ankraj',       why:'Kum/çakıl zemin altyapı kazısı için ankrajlı iksa sistemi en güvenilir çözümdür.',                                   slug:'/hizmetlerimiz/ankraj-nedir/' },
+      kum_altyapi_gt30: { service:'Öngermeli Ankraj',   why:'Derin kum/çakıl zemin altyapı kazısı için çok sıra öngermeli ankraj sistemi gereklidir.',                             slug:'/hizmetlerimiz/ankraj-nedir/' },
+      kaya_konut_lt10:  { service:'Mini Kazık',          why:'Kaya zemin + konut temeli + sığ derinlik için kaya delme ile mini kazık uygulanır.',                                 slug:'/hizmetlerimiz/mini-kazik-nedir/' },
+      kaya_konut_mid:   { service:'Öngermeli Ankraj',   why:'Kaya zemin + orta derinlik için kaya ankrajı optimal çözümdür.',                                                       slug:'/hizmetlerimiz/ankraj-nedir/' },
+      kaya_konut_gt30:  { service:'Öngermeli Ankraj',   why:'Derin kaya zemin + konut için yüksek kapasiteli kaya ankrajı uygulanır.',                                              slug:'/hizmetlerimiz/ankraj-nedir/' },
+      kaya_ticari_lt10: { service:'Mini Kazık',          why:'Ticari yapı + kaya zemin + sığ derinlik için kaya içi mini kazık tercih edilir.',                                    slug:'/hizmetlerimiz/mini-kazik-nedir/' },
+      kaya_ticari_mid:  { service:'Öngermeli Ankraj',   why:'Kaya zemininde ticari yapı için kaya ankrajı ve perde sistemi uygulanır.',                                             slug:'/hizmetlerimiz/ankraj-nedir/' },
+      kaya_ticari_gt30: { service:'Öngermeli Ankraj',   why:'Derin kaya zemin + büyük ticari yük için yüksek kapasiteli öngermeli kaya ankrajı gereklidir.',                       slug:'/hizmetlerimiz/ankraj-nedir/' },
+      kaya_altyapi_lt10:{ service:'İksa Sistemleri',    why:'Kaya zemin + altyapı kazısı + sığ derinlik için kaya içine gömülü iksa sistemi uygulanır.',                          slug:'/hizmetlerimiz/iksa-nedir/' },
+      kaya_altyapi_mid: { service:'Öngermeli Ankraj',   why:'Kaya zemin altyapı kazısı için öngermeli ankraj ile iksa kombinasyonu idealdir.',                                      slug:'/hizmetlerimiz/ankraj-nedir/' },
+      kaya_altyapi_gt30:{ service:'Öngermeli Ankraj',   why:'Derin kaya zemin altyapı projeleri için çok sıra öngermeli kaya ankrajı şarttır.',                                    slug:'/hizmetlerimiz/ankraj-nedir/' },
+    };
+
+    function update() {
+      const { zemin, yapi, derinlik } = groups;
+      if (!zemin || !yapi || !derinlik) return;
+      const rec = recs[`${zemin}_${yapi}_${derinlik}`];
+      if (!rec) return;
+      const result = document.getElementById('karar-result');
+      const svcEl  = document.getElementById('karar-service');
+      const whyEl  = document.getElementById('karar-why');
+      const link   = document.getElementById('karar-link') as HTMLAnchorElement | null;
+      if (svcEl) svcEl.textContent = rec.service;
+      if (whyEl) whyEl.textContent = rec.why;
+      if (link)  link.href = rec.slug;
+      if (result) { result.hidden = false; result.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }
+    }
+
+    document.querySelectorAll('.karar__btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const grp = (btn.closest('[data-group]') as HTMLElement | null)?.dataset.group;
+        const val = (btn as HTMLElement).dataset.value;
+        if (!grp || !val) return;
+        btn.closest('[data-group]')?.querySelectorAll('.karar__btn').forEach((b) => b.classList.remove('karar__btn--active'));
+        btn.classList.add('karar__btn--active');
+        groups[grp] = val;
+        update();
+      });
+    });
+  </script>
+
   <section class="section">
     <div class="container">
       <div class="hizmetler-grid">
@@ -88,4 +193,23 @@ import { hizmetler } from '../../data/content';
 .hcard__link:hover { gap:var(--s-3); }
 @media (max-width:900px) { .hizmetler-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:560px) { .hizmetler-grid { grid-template-columns:1fr; } }
+
+/* ── Karar Ağacı ── */
+.karar-section { background:var(--color-bg-alt, #eef0f2); }
+.karar-head { text-align:center; max-width:520px; margin-inline:auto; margin-bottom:var(--s-10); }
+.karar-head h2 { font-size:var(--text-4xl); margin-bottom:var(--s-3); }
+.karar-head__sub { color:var(--color-text-muted); }
+.karar__form { max-width:680px; margin-inline:auto; display:flex; flex-direction:column; gap:var(--s-5); }
+.karar__row { background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-xl); padding:var(--s-6); }
+.karar__q { font-weight:600; color:var(--color-primary); margin-bottom:var(--s-4); font-size:var(--text-base); }
+.karar__opts { display:flex; gap:var(--s-3); flex-wrap:wrap; }
+.karar__btn { padding:var(--s-2) var(--s-4); border:1.5px solid var(--color-border); border-radius:var(--r-lg); background:var(--color-bg); color:var(--color-text); font-size:var(--text-sm); font-weight:500; cursor:pointer; transition:border-color var(--t-fast), background var(--t-fast), color var(--t-fast); }
+.karar__btn:hover { border-color:var(--color-highlight); background:var(--color-white); }
+.karar__btn--active { background:var(--color-highlight); color:#fff; border-color:var(--color-highlight); }
+.karar__result { max-width:680px; margin-inline:auto; margin-top:var(--s-8); }
+.karar__result-card { background:var(--color-white); border:2px solid var(--color-highlight); border-radius:var(--r-xl); padding:var(--s-8); text-align:center; animation:fadeIn .3s ease; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.karar__badge { display:inline-block; background:var(--color-highlight); color:#fff; font-size:var(--text-xs); font-weight:700; padding:.2rem .8rem; border-radius:999px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:var(--s-3); }
+.karar__result-card h3 { font-size:var(--text-2xl); color:var(--color-primary); margin-bottom:var(--s-3); }
+.karar__result-card p { color:var(--color-text-muted); line-height:1.7; margin-bottom:var(--s-6); }
 </style>

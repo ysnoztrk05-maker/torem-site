@@ -9,6 +9,7 @@ const projects = [
   {
     title: 'Başakşehir Karma Yapı Kompleksi',
     category: 'Fore Kazık',
+    catSlug: 'fore-kazik',
     location: 'İstanbul, Başakşehir',
     year: '2024',
     desc: '48 katlı karma yapı için 512 adet fore kazık uygulaması. Kazık çapı Ø880mm, kazık boyu 28m. 3D zemin modeli ile tasarım.',
@@ -18,6 +19,7 @@ const projects = [
   {
     title: 'Pendik Metro İstasyonu İksası',
     category: 'İksa Sistemleri',
+    catSlug: 'iksa',
     location: 'İstanbul, Pendik',
     year: '2023',
     desc: 'İstanbul metro hattı genişleme projesi. 14m derinliğinde ankrajlı palplanş iksa sistemi, kritik kentsel ortamda sıfır çökme toleransı.',
@@ -27,6 +29,7 @@ const projects = [
   {
     title: 'Kocaeli Endüstriyel Depo Kompleksi',
     category: 'Jet Grout',
+    catSlug: 'jet-grout',
     location: 'Kocaeli, Gebze',
     year: '2023',
     desc: 'Yüksek taşıma kapasiteli endüstriyel zemin için jet grout kolon uygulaması. 80.000 m² alan, zayıf zeminlerin iyileştirilmesi.',
@@ -36,6 +39,7 @@ const projects = [
   {
     title: 'Bursa Toprak Kayma Güçlendirme',
     category: 'Zemin Çivisi',
+    catSlug: 'zemin-civisi',
     location: 'Bursa, Nilüfer',
     year: '2024',
     desc: 'Yerleşim bölgesinde aktif toprak kayması stabilizasyonu. 240 adet zemin çivisi, shotcrete yüzey koruma, izleme sistemi.',
@@ -45,6 +49,7 @@ const projects = [
   {
     title: 'Kadıköy Tarihi Yapı Yenileme',
     category: 'Mini Kazık',
+    catSlug: 'mini-kazik',
     location: 'İstanbul, Kadıköy',
     year: '2022',
     desc: 'Tarihi binanın temel güçlendirmesi. Sınırlı çalışma alanında Ø114mm mini kazık uygulaması, minimum titreşim.',
@@ -54,6 +59,7 @@ const projects = [
   {
     title: 'Ankara OSB Sanayi Binası',
     category: 'Öngermeli Ankraj',
+    catSlug: 'ankraj',
     location: 'Ankara, Sincan OSB',
     year: '2022',
     desc: 'Organize sanayi bölgesinde derin iksa ve kalıcı ankraj sistemi. 18m derinlik, 3 sıra öngermeli ankraj, 2000 kN kapasite.',
@@ -110,9 +116,20 @@ const stats = [
         <p>Her proje, mühendislik mükemmeliyetine olan bağlılığımızın somut kanıtıdır.</p>
       </div>
 
+      <!-- Filtreler -->
+      <div class="proj-filters" role="group" aria-label="Proje kategorisi filtrele">
+        <button class="filter-btn filter-btn--active" data-filter="all">Tümü</button>
+        <button class="filter-btn" data-filter="fore-kazik">Fore Kazık</button>
+        <button class="filter-btn" data-filter="jet-grout">Jet Grout</button>
+        <button class="filter-btn" data-filter="ankraj">Ankraj</button>
+        <button class="filter-btn" data-filter="iksa">İksa</button>
+        <button class="filter-btn" data-filter="mini-kazik">Mini Kazık</button>
+        <button class="filter-btn" data-filter="zemin-civisi">Zemin Çivisi</button>
+      </div>
+
       <div class="proj-grid">
         {projects.map((p) => (
-          <article class="pcard">
+          <article class="pcard" data-cat={p.catSlug}>
             <div class="pcard__img-wrap">
               <img src={p.image} alt={p.title} loading="lazy" width="600" height="400" />
               <span class="pcard__cat">{p.category}</span>
@@ -194,4 +211,36 @@ const stats = [
 
 @media (max-width:900px) { .proj-grid { grid-template-columns:repeat(2,1fr); } .proj-stats { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:560px) { .proj-grid { grid-template-columns:1fr; } .proj-stats { grid-template-columns:1fr 1fr; } }
+
+/* ── Filters ── */
+.proj-filters { display:flex; gap:var(--s-3); flex-wrap:wrap; margin-bottom:var(--s-8); }
+.filter-btn { padding:var(--s-2) var(--s-4); border:1.5px solid var(--color-border); border-radius:var(--r-lg); background:var(--color-white); color:var(--color-text); font-size:var(--text-sm); font-weight:500; cursor:pointer; transition:border-color var(--t-fast), background var(--t-fast), color var(--t-fast); }
+.filter-btn:hover { border-color:var(--color-highlight); }
+.filter-btn--active { background:var(--color-primary); color:#fff; border-color:var(--color-primary); }
+.pcard { transition:opacity .22s ease, transform .22s ease; }
 </style>
+
+<script>
+  const filterBtns = document.querySelectorAll<HTMLElement>('.filter-btn');
+  const cards      = document.querySelectorAll<HTMLElement>('.pcard');
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach((b) => b.classList.remove('filter-btn--active'));
+      btn.classList.add('filter-btn--active');
+
+      const filter = btn.dataset.filter ?? 'all';
+
+      // Fade out all
+      cards.forEach((c) => { c.style.opacity = '0.3'; c.style.transform = 'scale(0.97)'; });
+
+      setTimeout(() => {
+        cards.forEach((c) => {
+          const match = filter === 'all' || c.dataset.cat === filter;
+          c.style.display = match ? '' : 'none';
+          if (match) requestAnimationFrame(() => { c.style.opacity = '1'; c.style.transform = 'scale(1)'; });
+        });
+      }, 180);
+    });
+  });
+</script>
