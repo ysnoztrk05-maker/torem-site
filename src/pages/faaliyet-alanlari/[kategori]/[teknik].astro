@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CTABox from '../../../components/CTABox.astro';
+import { kategoriler, teknikler, getKategori, getTeknik } from '../../../data/faaliyet-alanlari';
+
+export function getStaticPaths() {
+  return teknikler.map((t) => ({
+    params: { kategori: t.kategoriSlug, teknik: t.slug },
+    props: { teknik: t },
+  }));
+}
+
+const { teknik } = Astro.props;
+const kategori = getKategori(teknik.kategoriSlug)!;
+---
+
+<BaseLayout
+  title={`${teknik.title} | Torem Zemin`}
+  description={teknik.excerpt}
+>
+  <!-- Hero -->
+  <section class="teknik-hero">
+    <div class="teknik-hero__bg" aria-hidden="true"></div>
+    <div class="container teknik-hero__inner">
+      <p class="eyebrow">{kategori.title}</p>
+      <h1>{teknik.title}</h1>
+      <p>{teknik.excerpt}</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="bc" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="/"><span itemprop="name">Ana Sayfa</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="/faaliyet-alanlari/"><span itemprop="name">Faaliyet Alanları</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href={`/faaliyet-alanlari/${kategori.slug}/`}><span itemprop="name">{kategori.title}</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+          <span itemprop="name">{teknik.shortTitle}</span>
+          <meta itemprop="position" content="4" />
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- İçerik -->
+  <section class="section">
+    <div class="container teknik-content">
+      <article class="teknik-article" set:html={teknik.content} />
+
+      {teknik.faq.length > 0 && (
+        <div class="teknik-faq">
+          <h2>Sık Sorulan Sorular</h2>
+          {teknik.faq.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      )}
+
+      <CTABox title={`${teknik.shortTitle} Projeleriniz İçin Teklif Alın`} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size:var(--text-sm); font-weight:700; color:#E8A85A; text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+.teknik-hero {
+  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding-block:var(--s-20) var(--s-16); color:var(--color-white);
+  position:relative; overflow:hidden; text-align:center;
+}
+.teknik-hero__bg { position:absolute; inset:0; background:radial-gradient(ellipse at 30% 60%, rgba(74,127,165,.25) 0%, transparent 55%); pointer-events:none; }
+.teknik-hero__inner { position:relative; z-index:1; max-width:700px; margin-inline:auto; }
+.teknik-hero h1 { color:var(--color-white); font-size:var(--text-4xl); margin-bottom:var(--s-4); }
+.teknik-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); }
+
+/* Breadcrumb */
+.breadcrumb-bar { background:var(--color-white); border-bottom:1px solid var(--color-border); padding-block:var(--s-3); }
+.bc { display:flex; flex-wrap:wrap; gap:var(--s-1); font-size:var(--text-sm); color:var(--color-text-muted); list-style:none; }
+.bc li+li::before { content:'›'; margin-right:var(--s-1); }
+.bc a { color:var(--color-accent); }
+.bc a:hover { color:var(--color-highlight); }
+
+/* İçerik */
+.teknik-content { max-width:var(--content-width); margin-inline:auto; }
+.teknik-article { margin-bottom:var(--s-12); }
+.teknik-article :global(h2) { font-size:var(--text-2xl); margin-top:var(--s-10); margin-bottom:var(--s-4); color:var(--color-primary); }
+.teknik-article :global(p) { color:var(--color-text-muted); line-height:1.85; margin-bottom:var(--s-4); }
+.teknik-article :global(ul), .teknik-article :global(ol) { padding-left:var(--s-6); margin-bottom:var(--s-5); color:var(--color-text-muted); line-height:1.85; }
+.teknik-article :global(li) { margin-bottom:var(--s-2); }
+.teknik-article :global(.aeo-box) {
+  background:var(--color-bg); border-left:4px solid var(--color-highlight);
+  padding:var(--s-5) var(--s-6); border-radius:0 var(--r-md) var(--r-md) 0;
+  font-size:var(--text-lg); line-height:1.75; color:var(--color-text); margin-bottom:var(--s-8);
+}
+
+/* FAQ */
+.teknik-faq { margin-bottom:var(--s-12); }
+.teknik-faq h2 { font-size:var(--text-2xl); margin-bottom:var(--s-6); }
+.faq-item { border:1px solid var(--color-border); border-radius:var(--r-lg); margin-bottom:var(--s-3); overflow:hidden; }
+.faq-item summary { padding:var(--s-4) var(--s-5); font-weight:600; cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; }
+.faq-item summary::after { content:'+'; font-size:var(--text-xl); color:var(--color-highlight); flex-shrink:0; margin-left:var(--s-3); }
+.faq-item[open] summary::after { content:'−'; }
+.faq-item p { padding:0 var(--s-5) var(--s-4); color:var(--color-text-muted); line-height:1.75; margin:0; }
+</style>

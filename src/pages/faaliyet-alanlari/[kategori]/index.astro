@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CTABox from '../../../components/CTABox.astro';
+import { kategoriler, getTekniklerByKategori } from '../../../data/faaliyet-alanlari';
+
+export function getStaticPaths() {
+  return kategoriler.map((k) => ({
+    params: { kategori: k.slug },
+    props: { kategori: k },
+  }));
+}
+
+const { kategori } = Astro.props;
+const teknikler = getTekniklerByKategori(kategori.slug);
+---
+
+<BaseLayout
+  title={`${kategori.title} | Torem Zemin`}
+  description={kategori.description}
+>
+  <!-- Hero -->
+  <section class="kat-hero">
+    <div class="kat-hero__bg" aria-hidden="true"></div>
+    <div class="container kat-hero__inner">
+      <p class="eyebrow">Faaliyet Alanları</p>
+      <h1>{kategori.title}</h1>
+      <p>{kategori.description}</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="bc" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="/"><span itemprop="name">Ana Sayfa</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="/faaliyet-alanlari/"><span itemprop="name">Faaliyet Alanları</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+          <span itemprop="name">{kategori.title}</span>
+          <meta itemprop="position" content="3" />
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- Teknikler Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="sec-head">
+        <h2>{kategori.title} Çözümlerimiz</h2>
+        <p class="sec-head__sub">{teknikler.length} farklı yöntem ve uygulama</p>
+      </div>
+      <div class="tek-grid">
+        {teknikler.map((t) => (
+          <article class="tcard">
+            <a href={`/faaliyet-alanlari/${kategori.slug}/${t.slug}/`} class="tcard__img-wrap">
+              <img src={t.image} alt={t.shortTitle} loading="lazy" width="480" height="320" />
+            </a>
+            <div class="tcard__body">
+              <h3 class="tcard__title">
+                <a href={`/faaliyet-alanlari/${kategori.slug}/${t.slug}/`}>{t.shortTitle}</a>
+              </h3>
+              <p class="tcard__excerpt">{t.excerpt}</p>
+              <a href={`/faaliyet-alanlari/${kategori.slug}/${t.slug}/`} class="tcard__link">
+                Detaylı Bilgi
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <CTABox title={`${kategori.title} Projeleriniz İçin Teklif Alın`} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size:var(--text-sm); font-weight:700; color:#E8A85A; text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+.kat-hero {
+  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding-block:var(--s-20) var(--s-16); color:var(--color-white);
+  position:relative; overflow:hidden; text-align:center;
+}
+.kat-hero__bg { position:absolute; inset:0; background:radial-gradient(ellipse at 60% 40%, rgba(74,127,165,.25) 0%, transparent 55%); pointer-events:none; }
+.kat-hero__inner { position:relative; z-index:1; max-width:640px; margin-inline:auto; }
+.kat-hero h1 { color:var(--color-white); font-size:var(--text-5xl); margin-bottom:var(--s-4); }
+.kat-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); }
+
+.breadcrumb-bar { background:var(--color-white); border-bottom:1px solid var(--color-border); padding-block:var(--s-3); }
+.bc { display:flex; flex-wrap:wrap; gap:var(--s-1); font-size:var(--text-sm); color:var(--color-text-muted); list-style:none; }
+.bc li+li::before { content:'›'; margin-right:var(--s-1); }
+.bc a { color:var(--color-accent); }
+.bc a:hover { color:var(--color-highlight); }
+
+.sec-head { margin-bottom:var(--s-10); }
+.sec-head h2 { font-size:var(--text-3xl); margin-bottom:var(--s-2); }
+.sec-head__sub { color:var(--color-text-muted); }
+
+.tek-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-6); margin-bottom:var(--s-16); }
+.tcard { background:var(--color-white); border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--color-border); transition:transform var(--t-base), box-shadow var(--t-base); }
+.tcard:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+.tcard__img-wrap { display:block; aspect-ratio:3/2; overflow:hidden; }
+.tcard__img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
+.tcard:hover .tcard__img-wrap img { transform:scale(1.05); }
+.tcard__body { padding:var(--s-5) var(--s-6) var(--s-6); }
+.tcard__title { font-size:var(--text-xl); margin-bottom:var(--s-3); }
+.tcard__title a { color:var(--color-primary); transition:color var(--t-fast); }
+.tcard__title a:hover { color:var(--color-highlight); }
+.tcard__excerpt { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.7; margin-bottom:var(--s-4); }
+.tcard__link { display:inline-flex; align-items:center; gap:var(--s-2); font-size:var(--text-sm); font-weight:600; color:var(--color-highlight); transition:gap var(--t-fast); }
+.tcard__link:hover { gap:var(--s-3); }
+@media (max-width:900px) { .tek-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px) { .tek-grid { grid-template-columns:1fr; } }
+</style>

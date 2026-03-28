@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { kategoriler } from '../data/faaliyet-alanlari';
 
 export interface Props {
   title: string;
@@ -58,7 +59,7 @@ const schemas = [orgSchema, ...(schema ? (Array.isArray(schema) ? schema : [sche
 const nav = [
   { label: 'Ana Sayfa',       href: '/' },
   { label: 'Kurumsal',        href: '/kurumsal/' },
-  { label: 'Hizmetlerimiz',   href: '/hizmetlerimiz/' },
+  { label: 'Faaliyet Alanları', href: '/faaliyet-alanlari/', mega: true },
   { label: 'Projelerimiz',    href: '/projelerimiz/' },
   { label: 'Blog',            href: '/blog/' },
   { label: 'İletişim',        href: '/iletisim/' },
@@ -122,14 +123,29 @@ const currentPath = Astro.url.pathname;
 
       <nav class="site-nav" id="site-nav" aria-label="Ana Menü">
         <ul class="site-nav__list">
-          {nav.map(({ label, href }) => (
-            <li class="site-nav__item">
+          {nav.map(({ label, href, mega }: any) => (
+            <li class={`site-nav__item${mega ? ' site-nav__item--mega' : ''}`}>
               <a
                 href={href}
                 class={`site-nav__link${currentPath === href || (href !== '/' && currentPath.startsWith(href)) ? ' site-nav__link--active' : ''}`}
               >
-                {label}
+                {label}{mega && <svg class="nav-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4l3 3 3-3"/></svg>}
               </a>
+              {mega && (
+                <div class="mega-menu">
+                  <div class="mega-menu__grid">
+                    {kategoriler.map((k) => (
+                      <a href={`/faaliyet-alanlari/${k.slug}/`} class="mega-menu__item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20" aria-hidden="true"><path d={k.icon}/></svg>
+                        <span>{k.title}</span>
+                      </a>
+                    ))}
+                  </div>
+                  <div class="mega-menu__footer">
+                    <a href="/faaliyet-alanlari/" class="mega-menu__all">Tüm Faaliyet Alanları →</a>
+                  </div>
+                </div>
+              )}
             </li>
           ))}
         </ul>
@@ -361,6 +377,48 @@ const currentPath = Astro.url.pathname;
   border-radius: 2px;
 }
 
+/* === Mega Menu === */
+.site-nav__item--mega { position: relative; }
+.nav-chevron { margin-left: 2px; transition: transform var(--t-fast); }
+.site-nav__item--mega:hover .nav-chevron { transform: rotate(180deg); }
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: var(--s-2);
+  z-index: 300;
+}
+.site-nav__item--mega:hover .mega-menu { display: block; }
+.mega-menu__grid {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-width: 420px;
+  overflow: hidden;
+}
+.mega-menu__item {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-3) var(--s-5);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  transition: background var(--t-fast), color var(--t-fast);
+  border-bottom: 1px solid var(--color-border);
+}
+.mega-menu__item:hover { background: var(--color-bg); color: var(--color-highlight); }
+.mega-menu__item svg { color: var(--color-accent); flex-shrink: 0; }
+.mega-menu__item:hover svg { color: var(--color-highlight); }
+.mega-menu__footer { background: var(--color-bg); padding: var(--s-3) var(--s-5); text-align: center; border: 1px solid var(--color-border); border-top: 0; border-radius: 0 0 var(--r-lg) var(--r-lg); }
+.mega-menu__all { font-size: var(--text-sm); font-weight: 600; color: var(--color-highlight); }
+
 @media (max-width: 900px) {
   .site-header__cta { display: none; }
   .mobile-toggle { display: flex; }
@@ -377,6 +435,10 @@ const currentPath = Astro.url.pathname;
   .site-nav--open { transform: translateX(0); }
   .site-nav__list { flex-direction: column; align-items: stretch; gap: var(--s-2); }
   .site-nav__link { padding: var(--s-4); font-size: var(--text-lg); }
+  .mega-menu { display: block; position: static; transform: none; padding-top: 0; }
+  .mega-menu__grid { min-width: auto; grid-template-columns: 1fr; box-shadow: none; border: 0; border-radius: 0; }
+  .mega-menu__item { padding: var(--s-3) var(--s-6); font-size: var(--text-base); border-bottom: 1px solid var(--color-border); }
+  .mega-menu__footer { border: 0; border-radius: 0; }
 }
 
 /* === CTA Band === */

@@ -1,0 +1,117 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABox from '../../components/CTABox.astro';
+import { kategoriler, getTekniklerByKategori } from '../../data/faaliyet-alanlari';
+---
+
+<BaseLayout
+  title="Faaliyet Alanları | Torem Zemin Mühendislik"
+  description="Kazıklı temeller, iksa sistemleri, zemin iyileştirme, ankraj, şev stabilitesi ve geoteknik proje hizmetleri. 8 uzmanlık alanında 45+ teknik çözüm."
+>
+  <!-- Hero -->
+  <section class="fa-hero">
+    <div class="fa-hero__bg" aria-hidden="true"></div>
+    <div class="container fa-hero__inner">
+      <p class="eyebrow">Faaliyet Alanları</p>
+      <h1>Kapsamlı Geoteknik<br><span>Mühendislik Çözümleri</span></h1>
+      <p>8 uzmanlık alanında 45'i aşkın teknik çözüm. Zemin araştırmasından uygulamaya, testten izlemeye — anahtar teslim geoteknik hizmetler.</p>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="bc" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="/"><span itemprop="name">Ana Sayfa</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+          <span itemprop="name">Faaliyet Alanları</span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- 8 Kategori -->
+  <section class="section">
+    <div class="container">
+      <div class="kat-grid">
+        {kategoriler.map((k) => {
+          const count = getTekniklerByKategori(k.slug).length;
+          return (
+            <article class="kcard">
+              <a href={`/faaliyet-alanlari/${k.slug}/`} class="kcard__img-wrap">
+                <img src={k.image} alt={k.title} loading="lazy" width="600" height="400" />
+                <div class="kcard__overlay">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="36" height="36" aria-hidden="true"><path d={k.icon}/></svg>
+                </div>
+              </a>
+              <div class="kcard__body">
+                <h2 class="kcard__title">
+                  <a href={`/faaliyet-alanlari/${k.slug}/`}>{k.title}</a>
+                </h2>
+                <p class="kcard__desc">{k.description}</p>
+                <div class="kcard__footer">
+                  <span class="kcard__count">{count} Teknik</span>
+                  <a href={`/faaliyet-alanlari/${k.slug}/`} class="kcard__link">
+                    İncele
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                  </a>
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+
+      <CTABox title="Projenize Özel Geoteknik Çözüm İster misiniz?" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.eyebrow { font-size:var(--text-sm); font-weight:700; color:#E8A85A; text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+
+.fa-hero {
+  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding-block:var(--s-20) var(--s-16); color:var(--color-white);
+  position:relative; overflow:hidden; text-align:center;
+}
+.fa-hero__bg { position:absolute; inset:0; background:radial-gradient(ellipse at 70% 50%, rgba(74,127,165,.25) 0%, transparent 60%); pointer-events:none; }
+.fa-hero__inner { position:relative; z-index:1; max-width:680px; margin-inline:auto; }
+.fa-hero h1 { color:var(--color-white); font-size:var(--text-5xl); margin-bottom:var(--s-4); }
+.fa-hero h1 span { color:#E8A85A; }
+.fa-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); }
+
+.breadcrumb-bar { background:var(--color-white); border-bottom:1px solid var(--color-border); padding-block:var(--s-3); }
+.bc { display:flex; flex-wrap:wrap; gap:var(--s-1); font-size:var(--text-sm); color:var(--color-text-muted); list-style:none; }
+.bc li+li::before { content:'›'; margin-right:var(--s-1); }
+.bc a { color:var(--color-accent); }
+.bc a:hover { color:var(--color-highlight); }
+
+.kat-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--s-7); margin-bottom:var(--s-16); }
+.kcard { background:var(--color-white); border-radius:var(--r-xl); overflow:hidden; border:1px solid var(--color-border); transition:transform var(--t-base), box-shadow var(--t-base); }
+.kcard:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+.kcard__img-wrap { display:block; aspect-ratio:16/9; overflow:hidden; position:relative; }
+.kcard__img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
+.kcard:hover .kcard__img-wrap img { transform:scale(1.05); }
+.kcard__overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(27,43,58,.85) 30%, transparent 70%);
+  display:flex; align-items:flex-end; padding:var(--s-5);
+  color:rgba(255,255,255,.9);
+}
+.kcard__body { padding:var(--s-5) var(--s-6) var(--s-6); }
+.kcard__title { font-size:var(--text-xl); margin-bottom:var(--s-3); }
+.kcard__title a { color:var(--color-primary); transition:color var(--t-fast); }
+.kcard__title a:hover { color:var(--color-highlight); }
+.kcard__desc { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.7; margin-bottom:var(--s-4); }
+.kcard__footer { display:flex; align-items:center; justify-content:space-between; }
+.kcard__count { font-size:var(--text-xs); font-weight:600; color:var(--color-accent); background:rgba(74,127,165,.1); padding:.2rem .6rem; border-radius:999px; }
+.kcard__link { display:inline-flex; align-items:center; gap:var(--s-2); font-size:var(--text-sm); font-weight:600; color:var(--color-highlight); transition:gap var(--t-fast); }
+.kcard__link:hover { gap:var(--s-3); }
+
+@media (max-width:560px) { .kat-grid { grid-template-columns:1fr; } }
+</style>
