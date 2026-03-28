@@ -23,11 +23,10 @@ const {
 const siteUrl = 'https://www.toremzemin.com';
 const ogImageAbs = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 
-const phone   = '+90 531 659 46 36';
+const phone    = '+90 531 659 46 36';
 const phoneTel = 'tel:+905316594636';
 const email    = 'info@toremzemin.com';
 
-// Organization schema (her sayfada)
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
@@ -35,34 +34,21 @@ const orgSchema = {
   url: siteUrl,
   telephone: '+905316594636',
   email,
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Pendik',
-    addressRegion: 'İstanbul',
-    addressCountry: 'TR',
-  },
-  areaServed: 'Türkiye',
-  knowsAbout: [
-    'Geoteknik Mühendislik', 'Zemin İyileştirme', 'Fore Kazık',
-    'Jet Grout', 'Öngermeli Ankraj', 'Mini Kazık', 'Zemin Çivisi',
-    'Püskürtme Beton', 'İksa Sistemleri',
-  ],
-  sameAs: [
-    'https://www.linkedin.com/company/toremzemin',
-    'https://www.instagram.com/toremzemin',
-  ],
+  address: { '@type': 'PostalAddress', addressLocality: 'Pendik', addressRegion: 'Istanbul', addressCountry: 'TR' },
+  areaServed: 'Turkiye',
+  knowsAbout: ['Geoteknik Muhendislik','Zemin Iyilestirme','Fore Kazik','Jet Grout','Ongermeli Ankraj','Mini Kazik','Zemin Civisi','Puskurtme Beton','Iksa Sistemleri'],
+  sameAs: ['https://www.linkedin.com/company/toremzemin','https://www.instagram.com/toremzemin'],
 };
 
 const schemas = [orgSchema, ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])];
 
-// Navigasyon
 const nav = [
-  { label: 'Ana Sayfa',       href: '/' },
-  { label: 'Kurumsal',        href: '/kurumsal/' },
-  { label: 'Faaliyet Alanları', href: '/faaliyet-alanlari/', mega: true },
-  { label: 'Projelerimiz',    href: '/projelerimiz/' },
-  { label: 'Blog',            href: '/blog/' },
-  { label: 'İletişim',        href: '/iletisim/' },
+  { label: 'Ana Sayfa',         href: '/' },
+  { label: 'Kurumsal',          href: '/kurumsal/' },
+  { label: 'Faaliyet Alanlari', href: '/faaliyet-alanlari/', mega: true },
+  { label: 'Projelerimiz',      href: '/projelerimiz/' },
+  { label: 'Blog',              href: '/blog/' },
+  { label: 'Iletisim',          href: '/iletisim/' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -74,34 +60,25 @@ const currentPath = Astro.url.pathname;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#1B2B3A" />
-
   <title>{title}</title>
   <meta name="description" content={description} />
   {noindex && <meta name="robots" content="noindex,nofollow" />}
   <link rel="canonical" href={canonical} />
-
-  <!-- Open Graph -->
   <meta property="og:type"        content="website" />
   <meta property="og:title"       content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url"         content={canonical} />
   <meta property="og:image"       content={ogImageAbs} />
   <meta property="og:locale"      content="tr_TR" />
-  <meta property="og:site_name"   content="Torem Zemin Mühendislik" />
-
-  <!-- Favicon -->
+  <meta property="og:site_name"   content="Torem Zemin Muhendislik" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
-  <!-- JSON-LD -->
   {schemas.map((s) => (
     <script type="application/ld+json" set:html={JSON.stringify(s)} />
   ))}
 </head>
-
 <body>
-  <a class="skip-link" href="#main-content">İçeriğe geç</a>
+  <a class="skip-link" href="#main-content">Iceriye gec</a>
 
-  <!-- Top Bar -->
   <div class="topbar">
     <div class="container topbar__inner">
       <a href={phoneTel} class="topbar__link">
@@ -112,37 +89,35 @@ const currentPath = Astro.url.pathname;
     </div>
   </div>
 
-  <!-- Header -->
   <header class="site-header" id="site-header">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Torem Zemin Ana Sayfa">
         <span class="site-logo__torem">Torem</span>
         <span class="site-logo__zemin">Zemin</span>
-        <span class="site-logo__sub">Mühendislik</span>
+        <span class="site-logo__sub">Muhendislik</span>
       </a>
 
-      <nav class="site-nav" id="site-nav" aria-label="Ana Menü">
+      <nav class="site-nav" id="site-nav" aria-label="Ana Menu">
         <ul class="site-nav__list">
           {nav.map(({ label, href, mega }: any) => (
             <li class={`site-nav__item${mega ? ' site-nav__item--mega' : ''}`}>
-              <a
-                href={href}
-                class={`site-nav__link${currentPath === href || (href !== '/' && currentPath.startsWith(href)) ? ' site-nav__link--active' : ''}`}
-              >
+              <a href={href} class={`site-nav__link${currentPath === href || (href !== '/' && currentPath.startsWith(href)) ? ' site-nav__link--active' : ''}`}>
                 {label}{mega && <svg class="nav-chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M2 4l3 3 3-3"/></svg>}
               </a>
               {mega && (
                 <div class="mega-menu">
-                  <div class="mega-menu__grid">
-                    {kategoriler.map((k) => (
-                      <a href={`/faaliyet-alanlari/${k.slug}/`} class="mega-menu__item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20" aria-hidden="true"><path d={k.icon}/></svg>
-                        <span>{k.title}</span>
-                      </a>
-                    ))}
-                  </div>
-                  <div class="mega-menu__footer">
-                    <a href="/faaliyet-alanlari/" class="mega-menu__all">Tüm Faaliyet Alanları →</a>
+                  <div class="mega-menu__panel">
+                    <div class="mega-menu__grid">
+                      {kategoriler.map((k) => (
+                        <a href={`/faaliyet-alanlari/${k.slug}/`} class="mega-menu__item">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20" aria-hidden="true"><path d={k.icon}/></svg>
+                          <span>{k.title}</span>
+                        </a>
+                      ))}
+                    </div>
+                    <div class="mega-menu__footer">
+                      <a href="/faaliyet-alanlari/" class="mega-menu__all">Tum Faaliyet Alanlari</a>
+                    </div>
                   </div>
                 </div>
               )}
@@ -153,31 +128,22 @@ const currentPath = Astro.url.pathname;
 
       <a href="/iletisim/" class="btn btn--primary site-header__cta">Teklif Al</a>
 
-      <button
-        class="mobile-toggle"
-        id="mobile-toggle"
-        aria-controls="site-nav"
-        aria-expanded="false"
-        aria-label="Menüyü aç/kapat"
-      >
+      <button class="mobile-toggle" id="mobile-toggle" aria-controls="site-nav" aria-expanded="false" aria-label="Menuyu ac/kapat">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <main id="main-content">
-    <slot />
-  </main>
+  <main id="main-content"><slot /></main>
 
-  <!-- CTA Band -->
   <section class="cta-band">
     <div class="container cta-band__inner">
       <div>
-        <h2 class="cta-band__title">Projeniz İçin Profesyonel Çözüm mü Arıyorsunuz?</h2>
-        <p class="cta-band__sub">Uzman ekibimizle zemin mühendisliği projelerinizi güvenle hayata geçirin.</p>
+        <h2 class="cta-band__title">Projeniz Icin Profesyonel Cozum mu Ariyorsunuz?</h2>
+        <p class="cta-band__sub">Uzman ekibimizle zemin muhendisligi projelerinizi guvenle hayata gecirin.</p>
       </div>
       <div class="cta-band__actions">
-        <a href="/iletisim/" class="btn btn--primary btn--lg">Ücretsiz Keşif Raporu Alın</a>
+        <a href="/iletisim/" class="btn btn--primary btn--lg">Ucretsiz Kesif Raporu Alin</a>
         <a href={phoneTel} class="btn btn--outline btn--lg">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           {phone}
@@ -186,14 +152,11 @@ const currentPath = Astro.url.pathname;
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="container site-footer__grid">
       <div class="site-footer__about">
-        <a href="/" class="site-footer__logo">
-          <span>Torem</span><span>Zemin</span>
-        </a>
-        <p>Temelden Zirveye Uzanan Çözümler. 20+ yıllık deneyimle geoteknik mühendisliğin güvenilir adresi.</p>
+        <a href="/" class="site-footer__logo"><span>Torem</span><span>Zemin</span></a>
+        <p>Temelden Zirveye Uzanan Cozumler. 20+ yillik deneyimle geoteknik muhendisligin guvenilir adresi.</p>
         <div class="site-footer__social">
           <a href="https://www.linkedin.com/company/toremzemin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -206,355 +169,232 @@ const currentPath = Astro.url.pathname;
           </a>
         </div>
       </div>
-
       <div>
-        <h4>Hizmetlerimiz</h4>
+        <h4>Faaliyet Alanlari</h4>
         <ul class="site-footer__links">
-          <li><a href="/hizmetlerimiz/fore-kazik-nedir/">Fore Kazık</a></li>
-          <li><a href="/hizmetlerimiz/jet-grout-nedir/">Jet Grout</a></li>
-          <li><a href="/hizmetlerimiz/ankraj-nedir/">Öngermeli Ankraj</a></li>
-          <li><a href="/hizmetlerimiz/mini-kazik-nedir/">Mini Kazık</a></li>
-          <li><a href="/hizmetlerimiz/zemin-civisi-nedir/">Zemin Çivisi</a></li>
-          <li><a href="/hizmetlerimiz/iksa-nedir/">İksa Sistemleri</a></li>
+          <li><a href="/faaliyet-alanlari/kazikli-temeller/">Kazikli Temeller</a></li>
+          <li><a href="/faaliyet-alanlari/iksa-sistemleri/">Iksa Sistemleri</a></li>
+          <li><a href="/faaliyet-alanlari/zemin-iyilestirme/">Zemin Iyilestirme</a></li>
+          <li><a href="/faaliyet-alanlari/destekleme-ankraj/">Destekleme ve Ankraj</a></li>
+          <li><a href="/faaliyet-alanlari/sev-stabilitesi/">Sev Stabilitesi</a></li>
+          <li><a href="/faaliyet-alanlari/geoteknik-proje/">Geoteknik Proje</a></li>
         </ul>
       </div>
-
       <div>
         <h4>Kurumsal</h4>
         <ul class="site-footer__links">
-          <li><a href="/kurumsal/">Hakkımızda</a></li>
+          <li><a href="/kurumsal/">Hakkimizda</a></li>
           <li><a href="/projelerimiz/">Projelerimiz</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href="/iletisim/">İletişim</a></li>
+          <li><a href="/iletisim/">Iletisim</a></li>
         </ul>
       </div>
-
       <div>
-        <h4>İletişim</h4>
+        <h4>Iletisim</h4>
         <ul class="site-footer__contact">
           <li><a href={phoneTel}>{phone}</a></li>
           <li><a href="tel:+902163793310">+90 216 379 33 10</a></li>
           <li><a href={`mailto:${email}`}>{email}</a></li>
-          <li>Pendik, İstanbul</li>
+          <li>Pendik, Istanbul</li>
         </ul>
       </div>
     </div>
-
     <div class="site-footer__bottom">
       <div class="container">
-        <p>&copy; {new Date().getFullYear()} Torem Zemin Mühendislik. Tüm hakları saklıdır.</p>
+        <p>&copy; {new Date().getFullYear()} Torem Zemin Muhendislik. Tum haklari saklidir.</p>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp FAB -->
-  <a
-    href="https://wa.me/905316594636"
-    class="whatsapp-fab"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp ile iletişime geçin"
-  >
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="28" height="28">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
+  <a href="https://wa.me/905316594636" class="whatsapp-fab" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp ile iletisime gecin">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
   <script>
-    // Mobile nav toggle
     const toggle = document.getElementById('mobile-toggle');
-    const nav = document.getElementById('site-nav');
+    const navEl  = document.getElementById('site-nav');
     toggle?.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!open));
-      nav?.classList.toggle('site-nav--open', !open);
+      navEl?.classList.toggle('site-nav--open', !open);
     });
 
-    // Mobile mega menu toggle
-    const megaLink = document.querySelector('.site-nav__item--mega > .site-nav__link');
-    const megaMenu = document.querySelector('.mega-menu');
-    if (megaLink && megaMenu && window.innerWidth <= 900) {
-      megaLink.addEventListener('click', (e) => {
+    const megaLink = document.querySelector('.site-nav__item--mega .site-nav__link');
+    const megaMenu = document.querySelector('.site-nav__item--mega .mega-menu');
+    megaLink?.addEventListener('click', (e) => {
+      if (window.innerWidth <= 900) {
         e.preventDefault();
-        megaMenu.classList.toggle('mega-menu--open');
-      });
-    }
+        megaMenu?.classList.toggle('mega-menu--open');
+      }
+    });
 
-    // Sticky header
-    const header = document.getElementById('site-header');
-    const observer = new IntersectionObserver(
-      ([e]) => header?.classList.toggle('site-header--scrolled', !e.isIntersecting),
-      { rootMargin: '-1px 0px 0px 0px', threshold: [1] }
-    );
+    const header   = document.getElementById('site-header');
     const sentinel = document.createElement('div');
     document.body.prepend(sentinel);
-    observer.observe(sentinel);
+    new IntersectionObserver(
+      ([e]) => header?.classList.toggle('site-header--scrolled', !e.isIntersecting),
+      { rootMargin: '-1px 0px 0px 0px', threshold: [1] }
+    ).observe(sentinel);
   </script>
 </body>
 </html>
 
 <style>
-/* === Topbar === */
-.topbar {
-  background: var(--color-primary);
-  color: rgba(255,255,255,0.75);
-  font-size: var(--text-sm);
-  padding-block: 0.4rem;
-}
-.topbar__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: var(--s-4);
-}
-.topbar__link {
-  display: flex;
-  align-items: center;
-  gap: var(--s-2);
-  transition: color var(--t-fast);
-}
-.topbar__link:hover { color: var(--color-white); }
-.topbar__link--email { display: none; }
-@media (min-width: 640px) { .topbar__link--email { display: flex; } }
+.skip-link { position:absolute; top:-100%; left:0; background:var(--color-highlight); color:#fff; padding:var(--s-2) var(--s-4); z-index:9999; font-weight:600; }
+.skip-link:focus { top:0; }
 
-/* === Header === */
+/* Topbar */
+.topbar { background:var(--color-primary); color:rgba(255,255,255,.75); font-size:var(--text-sm); padding-block:.4rem; }
+.topbar__inner { display:flex; justify-content:space-between; align-items:center; gap:var(--s-4); }
+.topbar__link { display:flex; align-items:center; gap:var(--s-2); transition:color var(--t-fast); }
+.topbar__link:hover { color:#fff; }
+.topbar__link--email { display:none; }
+@media(min-width:640px){ .topbar__link--email { display:flex; } }
+
+/* Header */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
-  transition: box-shadow var(--t-base);
+  position:sticky; top:0;
+  z-index:500;              /* sayfa icerigi uzerinde */
+  background:var(--color-white);
+  border-bottom:1px solid var(--color-border);
+  transition:box-shadow var(--t-base);
 }
-.site-header--scrolled { box-shadow: var(--shadow-md); }
+.site-header--scrolled { box-shadow:var(--shadow-md); }
 .site-header__inner {
-  display: flex;
-  align-items: center;
-  gap: var(--s-6);
-  height: var(--header-h);
+  display:flex; align-items:center; gap:var(--s-6);
+  height:var(--header-h);
+  overflow:visible;         /* mega menu kesilmesin */
 }
 
 /* Logo */
-.site-logo {
-  display: flex;
-  align-items: baseline;
-  gap: 0.35rem;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-.site-logo__torem { font-size: 1.5rem; color: var(--color-primary); }
-.site-logo__zemin { font-size: 1.5rem; color: var(--color-highlight); }
-.site-logo__sub   { font-size: 0.7rem; color: var(--color-text-muted); letter-spacing: 0.05em; text-transform: uppercase; display: none; }
-@media (min-width: 768px) { .site-logo__sub { display: block; } }
+.site-logo { display:flex; align-items:baseline; gap:.35rem; font-weight:700; flex-shrink:0; }
+.site-logo__torem { font-size:1.5rem; color:var(--color-primary); }
+.site-logo__zemin { font-size:1.5rem; color:var(--color-highlight); }
+.site-logo__sub   { font-size:.7rem; color:var(--color-text-muted); letter-spacing:.05em; text-transform:uppercase; display:none; }
+@media(min-width:768px){ .site-logo__sub { display:block; } }
 
 /* Nav */
-.site-nav { margin-left: auto; }
-.site-nav__list {
-  display: flex;
-  align-items: center;
-  gap: var(--s-1);
-}
+.site-nav { margin-left:auto; overflow:visible; }
+.site-nav__list { display:flex; align-items:center; gap:var(--s-1); overflow:visible; }
+.site-nav__item { overflow:visible; }
 .site-nav__link {
-  padding: var(--s-2) var(--s-3);
-  border-radius: var(--r-md);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-text);
-  transition: background var(--t-fast), color var(--t-fast);
+  display:flex; align-items:center; gap:4px;
+  padding:var(--s-2) var(--s-3);
+  border-radius:var(--r-md);
+  font-size:var(--text-sm); font-weight:500;
+  color:var(--color-text);
+  transition:background var(--t-fast), color var(--t-fast);
+  white-space:nowrap;
 }
 .site-nav__link:hover,
-.site-nav__link--active {
-  background: var(--color-highlight-10);
-  color: var(--color-highlight);
-}
-.site-header__cta { flex-shrink: 0; }
+.site-nav__link--active { background:var(--color-highlight-10); color:var(--color-highlight); }
+.site-header__cta { flex-shrink:0; }
 
-/* Mobile toggle */
-.mobile-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  padding: var(--s-2);
-  border-radius: var(--r-md);
-  margin-left: auto;
-}
-.mobile-toggle span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--color-primary);
-  transition: transform var(--t-base), opacity var(--t-base);
-  border-radius: 2px;
-}
+.mobile-toggle { display:none; flex-direction:column; gap:5px; padding:var(--s-2); border-radius:var(--r-md); margin-left:auto; }
+.mobile-toggle span { display:block; width:22px; height:2px; background:var(--color-primary); transition:transform var(--t-base),opacity var(--t-base); border-radius:2px; }
 
-/* === Mega Menu === */
-.site-nav__item--mega { position: relative; }
-.nav-chevron { margin-left: 2px; transition: transform var(--t-fast); }
-.site-nav__item--mega:hover .nav-chevron { transform: rotate(180deg); }
+/* Mega Menu */
+.site-nav__item--mega { position:static; }
+.nav-chevron { transition:transform var(--t-fast); flex-shrink:0; }
+.site-nav__item--mega:hover .nav-chevron { transform:rotate(180deg); }
+
 .mega-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  padding-top: var(--s-2);
-  z-index: 1000;
+  display:none;
+  position:absolute;
+  top:var(--header-h);     /* header tabanina yapi?ir */
+  left:50%;
+  transform:translateX(-50%);
+  z-index:1000;
+  padding-top:0;
+}
+/* Hover kopukluğunu kapat — görünmez köprü */
+.mega-menu::before {
+  content:'';
+  position:absolute;
+  top:-8px; left:0; right:0;
+  height:8px;
 }
 .site-nav__item--mega:hover .mega-menu,
-.site-nav__item--mega:focus-within .mega-menu { display: block; }
-.mega-menu__grid {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--r-lg) var(--r-lg) 0 0;
-  box-shadow: var(--shadow-lg);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  min-width: min(420px, 90vw);
-  overflow: hidden;
+.site-nav__item--mega:focus-within .mega-menu { display:block; }
+
+.mega-menu__panel {
+  background:var(--color-white);
+  border:1px solid var(--color-border);
+  border-radius:var(--r-lg);
+  box-shadow:0 8px 40px rgba(27,43,58,.18);
+  overflow:hidden;
+  min-width:min(500px,90vw);
 }
+.mega-menu__grid { display:grid; grid-template-columns:1fr 1fr; gap:0; }
 .mega-menu__item {
-  display: flex;
-  align-items: center;
-  gap: var(--s-3);
-  padding: var(--s-3) var(--s-5);
-  font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--color-text);
-  transition: background var(--t-fast), color var(--t-fast);
-  border-bottom: 1px solid var(--color-border);
+  display:flex; align-items:center; gap:var(--s-3);
+  padding:var(--s-3) var(--s-5);
+  font-size:var(--text-sm); font-weight:500;
+  color:var(--color-text);
+  transition:background var(--t-fast), color var(--t-fast);
+  border-bottom:1px solid var(--color-border);
+  white-space:nowrap;
 }
-.mega-menu__item:hover { background: var(--color-bg); color: var(--color-highlight); }
-.mega-menu__item svg { color: var(--color-accent); flex-shrink: 0; }
-.mega-menu__item:hover svg { color: var(--color-highlight); }
-.mega-menu__footer { background: var(--color-bg); padding: var(--s-3) var(--s-5); text-align: center; border: 1px solid var(--color-border); border-top: 0; border-radius: 0 0 var(--r-lg) var(--r-lg); }
-.mega-menu__all { font-size: var(--text-sm); font-weight: 600; color: var(--color-highlight); }
+.mega-menu__item:hover { background:var(--color-bg); color:var(--color-highlight); }
+.mega-menu__item svg { color:var(--color-accent); flex-shrink:0; }
+.mega-menu__item:hover svg { color:var(--color-highlight); }
+.mega-menu__footer { background:var(--color-bg); padding:var(--s-3) var(--s-5); text-align:center; border-top:1px solid var(--color-border); }
+.mega-menu__all { font-size:var(--text-sm); font-weight:600; color:var(--color-highlight); }
+.mega-menu__all:hover { opacity:.8; }
 
-@media (max-width: 900px) {
-  .site-header__cta { display: none; }
-  .mobile-toggle { display: flex; }
+/* Mobil */
+@media(max-width:900px){
+  .site-header__cta { display:none; }
+  .mobile-toggle { display:flex; }
   .site-nav {
-    position: fixed;
-    inset: var(--header-h) 0 0 0;
-    background: var(--color-white);
-    padding: var(--s-6);
-    transform: translateX(100%);
-    transition: transform var(--t-base);
-    overflow-y: auto;
-    margin-left: 0;
+    position:fixed; inset:var(--header-h) 0 0 0;
+    background:var(--color-white);
+    padding:var(--s-6);
+    transform:translateX(100%);
+    transition:transform var(--t-base);
+    overflow-y:auto;
+    margin-left:0;
   }
-  .site-nav--open { transform: translateX(0); }
-  .site-nav__list { flex-direction: column; align-items: stretch; gap: var(--s-2); }
-  .site-nav__link { padding: var(--s-4); font-size: var(--text-lg); }
-  .mega-menu { display: none; position: static; transform: none; padding-top: 0; }
-  .mega-menu.mega-menu--open { display: block; }
-  .mega-menu__grid { min-width: auto; grid-template-columns: 1fr; box-shadow: none; border: 0; border-radius: 0; }
-  .mega-menu__item { padding: var(--s-3) var(--s-6); font-size: var(--text-base); border-bottom: 1px solid var(--color-border); }
-  .mega-menu__footer { border: 0; border-radius: 0; }
+  .site-nav--open { transform:translateX(0); }
+  .site-nav__list { flex-direction:column; align-items:stretch; gap:var(--s-2); }
+  .site-nav__link { padding:var(--s-4); font-size:var(--text-lg); }
+  .site-nav__item--mega { position:relative; }
+  .mega-menu { display:none; position:static; transform:none; top:auto; }
+  .mega-menu::before { display:none; }
+  .mega-menu.mega-menu--open { display:block; }
+  .mega-menu__panel { border-radius:0; box-shadow:none; border:0; border-top:1px solid var(--color-border); min-width:auto; }
+  .mega-menu__grid { grid-template-columns:1fr; }
+  .mega-menu__item { padding:var(--s-3) var(--s-6); font-size:var(--text-base); }
 }
 
-/* === CTA Band === */
-.cta-band {
-  background: var(--color-primary);
-  color: var(--color-white);
-  padding-block: var(--s-16);
-}
-.cta-band__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s-8);
-  flex-wrap: wrap;
-}
-.cta-band__title { color: var(--color-white); font-size: var(--text-3xl); margin-bottom: var(--s-2); }
-.cta-band__sub   { color: rgba(255,255,255,0.75); margin: 0; }
-.cta-band__actions { display: flex; gap: var(--s-4); flex-wrap: wrap; flex-shrink: 0; }
+/* CTA Band */
+.cta-band { background:var(--color-primary); color:#fff; padding-block:var(--s-16); }
+.cta-band__inner { display:flex; align-items:center; justify-content:space-between; gap:var(--s-8); flex-wrap:wrap; }
+.cta-band__title { color:#fff; font-size:var(--text-3xl); margin-bottom:var(--s-2); }
+.cta-band__sub { color:rgba(255,255,255,.75); margin:0; }
+.cta-band__actions { display:flex; gap:var(--s-4); flex-wrap:wrap; flex-shrink:0; }
+@media(max-width:600px){ .cta-band__inner { flex-direction:column; text-align:center; } }
 
-/* === Footer === */
-.site-footer { background: #111D26; color: rgba(255,255,255,0.8); padding-top: var(--s-16); }
-.site-footer__grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: var(--s-10);
-  padding-bottom: var(--s-12);
-}
-.site-footer h4 { color: var(--color-white); font-size: var(--text-base); margin-bottom: var(--s-5); }
-.site-footer__logo {
-  display: flex;
-  gap: 0.4rem;
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: var(--s-4);
-  color: var(--color-white);
-}
-.site-footer__logo span:last-child { color: var(--color-highlight); }
-.site-footer__about p { font-size: var(--text-sm); line-height: 1.7; color: rgba(255,255,255,0.65); }
-.site-footer__links, .site-footer__contact {
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-3);
-  font-size: var(--text-sm);
-}
-.site-footer__links a, .site-footer__contact a {
-  color: rgba(255,255,255,0.7);
-  transition: color var(--t-fast);
-}
-.site-footer__links a:hover, .site-footer__contact a:hover { color: var(--color-highlight); }
-.site-footer__bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-block: var(--s-5);
-  font-size: var(--text-sm);
-  color: rgba(255,255,255,0.4);
-}
-@media (max-width: 900px) {
-  .site-footer__grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 600px) {
-  .site-footer__grid { grid-template-columns: 1fr; }
-  .cta-band__inner { flex-direction: column; text-align: center; }
-}
+/* Footer */
+.site-footer { background:#111D26; color:rgba(255,255,255,.8); padding-top:var(--s-16); }
+.site-footer__grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:var(--s-10); padding-bottom:var(--s-12); }
+.site-footer h4 { color:#fff; font-size:var(--text-base); margin-bottom:var(--s-5); }
+.site-footer__logo { display:flex; gap:.4rem; font-size:1.4rem; font-weight:700; margin-bottom:var(--s-4); color:#fff; }
+.site-footer__logo span:last-child { color:var(--color-highlight); }
+.site-footer__about p { font-size:var(--text-sm); line-height:1.7; color:rgba(255,255,255,.65); }
+.site-footer__links, .site-footer__contact { display:flex; flex-direction:column; gap:var(--s-3); font-size:var(--text-sm); }
+.site-footer__links a, .site-footer__contact a { color:rgba(255,255,255,.7); transition:color var(--t-fast); }
+.site-footer__links a:hover, .site-footer__contact a:hover { color:var(--color-highlight); }
+.site-footer__bottom { border-top:1px solid rgba(255,255,255,.1); padding-block:var(--s-5); font-size:var(--text-sm); color:rgba(255,255,255,.4); }
+@media(max-width:900px){ .site-footer__grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:600px){ .site-footer__grid { grid-template-columns:1fr; } }
 
-/* === Footer Social === */
-.site-footer__social {
-  display: flex;
-  gap: var(--s-3);
-  margin-top: var(--s-5);
-}
-.site-footer__social a {
-  width: 36px; height: 36px;
-  border-radius: var(--r-md);
-  border: 1px solid rgba(255,255,255,.15);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,.6);
-  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast);
-  text-decoration: none;
-}
-.site-footer__social a:hover {
-  color: var(--color-highlight);
-  border-color: var(--color-highlight);
-  background: rgba(200,135,58,.1);
-}
+/* Social */
+.site-footer__social { display:flex; gap:var(--s-3); margin-top:var(--s-5); }
+.site-footer__social a { width:36px; height:36px; border-radius:var(--r-md); border:1px solid rgba(255,255,255,.15); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.6); transition:color var(--t-fast),border-color var(--t-fast),background var(--t-fast); text-decoration:none; }
+.site-footer__social a:hover { color:var(--color-highlight); border-color:var(--color-highlight); background:rgba(200,135,58,.1); }
 
-/* === WhatsApp FAB === */
-.whatsapp-fab {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 56px;
-  height: 56px;
-  background: #25D366;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 900;
-  box-shadow: 0 4px 14px rgba(0,0,0,.28);
-  transition: transform var(--t-base), box-shadow var(--t-base);
-  text-decoration: none;
-}
-.whatsapp-fab:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,.35);
-}
+/* WhatsApp FAB */
+.whatsapp-fab { position:fixed; bottom:1.5rem; right:1.5rem; width:56px; height:56px; background:#25D366; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:900; box-shadow:0 4px 14px rgba(0,0,0,.28); transition:transform var(--t-base),box-shadow var(--t-base); text-decoration:none; }
+.whatsapp-fab:hover { transform:scale(1.1); box-shadow:0 6px 20px rgba(0,0,0,.35); }
 </style>
