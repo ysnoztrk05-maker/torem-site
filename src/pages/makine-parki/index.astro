@@ -2,235 +2,124 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABox from '../../components/CTABox.astro';
 
-const makineler = [
-  // ── FORE KAZIK MAKİNELERİ ──
-  {
-    name: 'Soilmec SR-40',
-    type: 'Fore Kazık Makinesi',
-    year: '2009',
-    specs: [
-      { label: 'Maks. Çap', value: '150 cm' },
-      { label: 'Maks. Derinlik', value: '36 m' },
-      { label: 'Ağırlık', value: '50 ton' },
-      { label: 'Boyut', value: '19×6×5 m' },
-    ],
-    desc: 'Kazıklı temeller, iksa sistemleri ve zemin iyileştirme projelerinde ana üretim makinesi. Orta-büyük ölçekli projelerde güvenilir performans.',
-    image: '/images/makineler/soilmec-sr40.webp',
-    category: 'Fore Kazık',
-  },
-  {
-    name: 'XCMG-220RD',
-    type: 'Fore Kazık Makinesi',
-    year: '2016',
-    specs: [
-      { label: 'Maks. Çap', value: '200 cm' },
-      { label: 'Maks. Derinlik', value: '45 m' },
-      { label: 'Ağırlık', value: '85 ton' },
-      { label: 'Boyut', value: '22×9×5 m' },
-    ],
-    desc: 'Yüksek kapasiteli fore kazık uygulamaları için tasarlanmış büyük tonajlı makine. Derin ve büyük çaplı kazık projelerinde tercih edilir.',
-    image: '/images/makineler/soilmec-sr40-saha.jpg',
-    category: 'Fore Kazık',
-  },
-  {
-    name: 'Casagrande B200 XP',
-    type: 'Fore Kazık Makinesi',
-    year: '2012',
-    specs: [
-      { label: 'Maks. Çap', value: '200 cm' },
-      { label: 'Maks. Derinlik', value: '48 m' },
-      { label: 'Ağırlık', value: '75 ton' },
-      { label: 'Boyut', value: '22×8×5 m' },
-    ],
-    desc: 'Derin kazık uygulamaları için geliştirilmiş İtalyan teknolojisi. Metro, köprü ve büyük altyapı projelerinde yüksek verimle çalışır.',
-    image: '/images/makineler/casagrande-b200xp.jpg',
-    category: 'Fore Kazık',
-  },
-  {
-    name: 'Soilmec CM-40',
-    type: 'Fore Kazık Makinesi',
-    year: '2006',
-    specs: [
-      { label: 'Maks. Çap', value: '120 cm' },
-      { label: 'Maks. Derinlik', value: '25 m' },
-      { label: 'Ağırlık', value: '40 ton' },
-      { label: 'Boyut', value: '18×7×5 m' },
-    ],
-    desc: 'Orta ölçekli kazık projelerinde kullanılan kompakt fore kazık makinesi. Sınırlı alanlarda manevra kabiliyeti yüksektir.',
-    image: '/images/hero-main.jpg',
-    category: 'Fore Kazık',
-  },
-  {
-    name: 'Bauer BG 18H',
-    type: 'Fore Kazık Makinesi',
-    year: '2005',
-    specs: [
-      { label: 'Maks. Çap', value: '200 cm' },
-      { label: 'Maks. Derinlik', value: '36 m' },
-      { label: 'Ağırlık', value: '70 ton' },
-      { label: 'Boyut', value: '20×6×5 m' },
-    ],
-    desc: 'Alman mühendisliği ile üretilen güçlü performanslı fore kazık makinesi. Kelly bar sistemiyle çeşitli zemin formasyonlarında etkili delgi.',
-    image: '/images/makineler/bauer-bg20.jpg',
-    category: 'Fore Kazık',
-  },
+/* Unsplash fallback'ler */
+const uf = {
+  drill: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
+  anchor: 'https://images.unsplash.com/photo-1590577976322-3d2d6e2130d5?w=800&q=80',
+  equip: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
+  aux: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+};
 
-  // ── MİNİ KAZIK / ANKRAJ / JET GROUT ──
+const foreKazik = [
   {
-    name: 'Soilmec SM-400',
-    type: 'Jet Grout Makinesi',
-    year: '2005',
-    specs: [
-      { label: 'Maks. Derinlik', value: '48 m' },
-      { label: 'Kolon Çapı', value: '40 cm' },
-      { label: 'Ağırlık', value: '16 ton' },
-      { label: 'Adet', value: '2 birim' },
-    ],
-    desc: 'Jet grout enjeksiyonu ile zemin iyileştirme, iksa perdesi ve mikro kazık uygulamalarında kullanılan çok amaçlı geoteknik makinesi.',
+    name: 'Soilmec SR-40', year: '2009', category: 'Fore Kazık',
+    desc: 'Kazıklı temeller, iksa ve zemin iyileştirme projelerinde ana üretim makinesi.',
+    image: '/images/makineler/soilmec-sr40.webp',
+    specs: [{ l:'Çap', v:'Ø150 cm' }, { l:'Derinlik', v:'36 m' }, { l:'Ağırlık', v:'50 ton' }, { l:'Boyut', v:'19×6×5 m' }],
+  },
+  {
+    name: 'XCMG-220RD', year: '2016', category: 'Fore Kazık',
+    desc: 'Yüksek kapasiteli, büyük çaplı ve derin kazık projeleri için tasarlanmış büyük tonajlı makine.',
+    image: '/images/makineler/soilmec-sr40-saha.jpg',
+    specs: [{ l:'Çap', v:'Ø200 cm' }, { l:'Derinlik', v:'45 m' }, { l:'Ağırlık', v:'85 ton' }, { l:'Boyut', v:'22×9×5 m' }],
+  },
+  {
+    name: 'Casagrande B200 XP', year: '2012', category: 'Fore Kazık',
+    desc: 'Derin kazık uygulamaları için geliştirilmiş İtalyan teknolojisi. Metro ve altyapı projelerinde tercih edilir.',
+    image: '/images/makineler/casagrande-b200xp.jpg',
+    specs: [{ l:'Çap', v:'Ø200 cm' }, { l:'Derinlik', v:'48 m' }, { l:'Ağırlık', v:'75 ton' }, { l:'Boyut', v:'22×8×5 m' }],
+  },
+  {
+    name: 'Soilmec CM-40', year: '2006', category: 'Fore Kazık',
+    desc: 'Orta ölçekli kazık projelerinde kullanılan kompakt fore kazık makinesi.',
+    image: '/images/hero-main.jpg',
+    specs: [{ l:'Çap', v:'Ø120 cm' }, { l:'Derinlik', v:'25 m' }, { l:'Ağırlık', v:'40 ton' }, { l:'Boyut', v:'18×7×5 m' }],
+  },
+  {
+    name: 'Bauer BG 18H', year: '2005', category: 'Fore Kazık',
+    desc: 'Alman mühendisliği ile üretilen güçlü performanslı fore kazık makinesi.',
+    image: '/images/makineler/bauer-bg20.jpg',
+    specs: [{ l:'Çap', v:'Ø200 cm' }, { l:'Derinlik', v:'36 m' }, { l:'Ağırlık', v:'70 ton' }, { l:'Boyut', v:'20×6×5 m' }],
+  },
+];
+
+const ankrajJg = [
+  {
+    name: 'Soilmec SM-400', year: '2005', category: 'Jet Grout',
+    desc: 'Jet grout, mikro kazık ve zemin iyileştirme uygulamalarında kullanılan çok amaçlı makine. 2 adet mevcut.',
     image: '/images/zemin-iyilestirme.jpg',
-    category: 'Jet Grout',
+    specs: [{ l:'Derinlik', v:'48 m' }, { l:'Kolon', v:'Ø40 cm' }, { l:'Ağırlık', v:'16 ton' }, { l:'Adet', v:'2 birim' }],
   },
   {
-    name: 'YMC-TR Ankraj Makinesi',
-    type: 'Ankraj Makinesi',
-    year: '2016',
-    specs: [
-      { label: 'Tork', value: '1800 kNm' },
-      { label: 'Ağırlık', value: '18 ton' },
-      { label: 'Boyut', value: '9×7×3 m' },
-      { label: 'Kullanım', value: 'İksa & Ankraj' },
-    ],
-    desc: 'Yüksek kapasiteli öngermeli ankraj, kalıcı ankraj ve zemin çivisi uygulamalarında kullanılan paletli delgi makinesi.',
+    name: 'YMC-TR Ankraj', year: '2016', category: 'Ankraj',
+    desc: 'Yüksek kapasiteli öngermeli ankraj, kalıcı ankraj ve zemin çivisi uygulamalarında kullanılır.',
     image: '/images/makineler/ankraj-makinesi.jpg',
-    category: 'Ankraj',
+    specs: [{ l:'Tork', v:'1800 kNm' }, { l:'Ağırlık', v:'18 ton' }, { l:'Boyut', v:'9×7×3 m' }, { l:'Alan', v:'İksa & Ankraj' }],
   },
   {
-    name: 'Casagrande C6',
-    type: 'Mini Kazık Makinesi',
-    year: '2007',
-    specs: [
-      { label: 'Tork', value: '1600 kNm' },
-      { label: 'Ağırlık', value: '15 ton' },
-      { label: 'Boyut', value: '8×6×3 m' },
-      { label: 'Kullanım', value: 'Mini Kazık' },
-    ],
-    desc: 'Kompakt yapısıyla sınırlı alanlarda mikro kazık, ankraj ve sondaj uygulamalarında kullanılan mobil delgi makinesi.',
+    name: 'Casagrande C6', year: '2007', category: 'Mini Kazık',
+    desc: 'Sınırlı alanlarda mikro kazık, ankraj ve sondaj uygulamalarında kullanılan kompakt makine.',
     image: '/images/makineler/mini-kazik-makinesi.jpg',
-    category: 'Mini Kazık',
+    specs: [{ l:'Tork', v:'1600 kNm' }, { l:'Ağırlık', v:'15 ton' }, { l:'Boyut', v:'8×6×3 m' }, { l:'Alan', v:'Mini Kazık' }],
   },
   {
-    name: 'Furukawa HCR1200-DS',
-    type: 'Zemin Çivisi / Ankraj',
-    year: '2007',
-    specs: [
-      { label: 'Maks. Derinlik', value: '25 m' },
-      { label: 'Çap', value: '150 mm' },
-      { label: 'Ağırlık', value: '25 ton' },
-      { label: 'Boyut', value: '8×7×3 m' },
-    ],
+    name: 'Furukawa HCR1200-DS', year: '2007', category: 'Zemin Çivisi',
     desc: 'İksa sistemleri, zemin çivisi ve ankraj uygulamalarında kullanılan çok amaçlı sondaj makinesi.',
     image: '/images/ankraj.jpg',
-    category: 'Zemin Çivisi',
+    specs: [{ l:'Derinlik', v:'25 m' }, { l:'Çap', v:'Ø150 mm' }, { l:'Ağırlık', v:'25 ton' }, { l:'Boyut', v:'8×7×3 m' }],
   },
+];
 
-  // ── YARDIMCI EKİPMAN ──
+const yardimci = [
   {
-    name: 'PTC 30HD Power Pack',
-    type: 'Vibro Çakma Sistemi',
-    year: '',
-    specs: [
-      { label: 'Kapasite', value: '30 ton' },
-      { label: 'Motor Gücü', value: '300 kW' },
-      { label: 'Frekans', value: '23–38 Hz' },
-      { label: 'Kullanım', value: 'Çakma & Sökme' },
-    ],
-    desc: 'Palplanş ve çelik kazık çakma/sökme işlemlerinde kullanılan yüksek frekanslı hidrolik vibratör ve güç ünitesi.',
+    name: 'PTC 30HD Vibro', year: '', category: 'Vibratör',
+    desc: 'Palplanş ve çelik kazık çakma/sökme işlemlerinde kullanılan hidrolik vibratör.',
     image: '/images/makineler/ptc-vibro.jpg',
-    category: 'Vibratör',
+    specs: [{ l:'Kapasite', v:'30 ton' }, { l:'Güç', v:'300 kW' }, { l:'Frekans', v:'23–38 Hz' }, { l:'Tip', v:'Çakma & Söküm' }],
   },
   {
-    name: 'Tecnipwell TW-352',
-    type: 'Jet Grout Pompası',
-    year: '2005',
-    specs: [
-      { label: 'Basınç', value: '550 bar' },
-      { label: 'Kullanım', value: 'Jet Grout' },
-      { label: 'Zemin İyileştirme', value: 'Evet' },
-      { label: 'Mikro Kazık', value: 'Evet' },
-    ],
-    desc: 'Zemin iyileştirme, şev stabilizasyonu, su yalıtımı ve mikro kazık uygulamalarında kullanılan yüksek basınçlı enjeksiyon pompası.',
+    name: 'Tecnipwell TW-352', year: '2005', category: 'Enjeksiyon',
+    desc: 'Jet grout besleme, zemin iyileştirme ve mikro kazık için yüksek basınçlı enjeksiyon pompası.',
     image: '/images/makineler/enjeksiyon-seti.jpg',
-    category: 'Enjeksiyon',
+    specs: [{ l:'Basınç', v:'550 bar' }, { l:'Tip', v:'JG Pompası' }, { l:'Zemin İyl.', v:'Evet' }, { l:'Mikro Kazık', v:'Evet' }],
   },
   {
-    name: 'Atlas Copco XAVS 307',
-    type: 'Yüksek Basınçlı Kompresör',
-    year: '2010',
-    specs: [
-      { label: 'Basınç', value: '14 bar' },
-      { label: 'Hava Akışı', value: '18,5 m³/dk' },
-      { label: 'Kullanım', value: 'Sondaj & JG' },
-      { label: 'Tip', value: 'Mobil Dizel' },
-    ],
-    desc: 'Zemin sondajı, püskürtme beton, kazık çakma ve jet grouting işlemlerinde hava ihtiyacını karşılayan güvenilir kompresör.',
-    image: '/images/geoteknik-test.jpg',
-    category: 'Kompresör',
+    name: 'Atlas Copco XAVS 307', year: '2010', category: 'Kompresör',
+    desc: 'Sondaj, püskürtme beton ve jet grouting işlemlerinde hava ihtiyacını karşılayan mobil kompresör.',
+    image: uf.aux,
+    specs: [{ l:'Basınç', v:'14 bar' }, { l:'Debi', v:'18,5 m³/dk' }, { l:'Tip', v:'Mobil Dizel' }, { l:'Marka', v:'Atlas Copco' }],
   },
   {
-    name: 'Shotcrete MC-260',
-    type: 'Kuru Beton Püskürtme',
-    year: '2015',
-    specs: [
-      { label: 'Kapasite', value: '5–7 m³/s' },
-      { label: 'Tip', value: 'Kuru Sistem' },
-      { label: 'Kullanım', value: 'Şev & Tünel' },
-      { label: 'Adet', value: '1 birim' },
-    ],
-    desc: 'Şev stabilizasyonu, tünel iç yüzey desteği ve yapı güçlendirme uygulamalarında hızlı ve verimli püskürtme beton performansı.',
+    name: 'Shotcrete MC-260', year: '2015', category: 'Püskürtme Beton',
+    desc: 'Şev stabilitesi, tünel desteği ve yapı güçlendirme uygulamalarında kuru beton püskürtme.',
     image: '/images/puskurtme-beton.jpg',
-    category: 'Püskürtme Beton',
+    specs: [{ l:'Kapasite', v:'5–7 m³/s' }, { l:'Sistem', v:'Kuru Tip' }, { l:'Alan', v:'Şev & Tünel' }, { l:'Adet', v:'1 birim' }],
   },
   {
-    name: 'Pistonlu Enjeksiyon Seti',
-    type: 'Çimento Enjeksiyon',
-    year: '2014',
-    specs: [
-      { label: 'Basınç', value: '150 bar' },
-      { label: 'Adet', value: '2 birim' },
-      { label: 'Kullanım', value: 'Zemin Enj.' },
-      { label: 'Mikro Kazık', value: 'Evet' },
-    ],
-    desc: 'Zemin iyileştirme, su yalıtımı, çatlak doldurma ve mikro kazık uygulamalarında düşük-orta basınçlı enjeksiyon sistemi.',
-    image: '/images/zemin-iyilestirme2.jpg',
-    category: 'Enjeksiyon',
+    name: 'Pistonlu Enjeksiyon Seti', year: '2014', category: 'Enjeksiyon',
+    desc: 'Zemin iyileştirme, su yalıtımı, çatlak doldurma ve mikro kazık uygulamalarında enjeksiyon sistemi.',
+    image: uf.equip,
+    specs: [{ l:'Basınç', v:'150 bar' }, { l:'Adet', v:'2 birim' }, { l:'Alan', v:'Zemin Enj.' }, { l:'Mikro Kazık', v:'Evet' }],
   },
   {
-    name: 'Germe Krikosu (80 ton)',
-    type: 'Ankraj Çekme Makinesi',
-    year: '2015',
-    specs: [
-      { label: 'Kapasite', value: '80 ton' },
-      { label: 'Tip', value: 'Hidromekanik' },
-      { label: 'Kullanım', value: 'Ankraj Germe' },
-      { label: 'Hassasiyet', value: 'Yüksek' },
-    ],
-    desc: 'Öngermeli ve kalıcı ankraj uygulamalarında çelik halatları proje yüküne germe. Köprü ve viyadük projelerinde hassas kontrol sağlar.',
-    image: '/images/proje-gorusme.jpg',
-    category: 'Ankraj',
+    name: 'Germe Krikosu', year: '2015', category: 'Ankraj',
+    desc: 'Öngermeli ve kalıcı ankraj uygulamalarında çelik halatları proje yüküne germe.',
+    image: uf.anchor,
+    specs: [{ l:'Kapasite', v:'80 ton' }, { l:'Tip', v:'Hidromekanik' }, { l:'Alan', v:'Ankraj Germe' }, { l:'Hassasiyet', v:'Yüksek' }],
   },
+];
+
+const gruplar = [
+  { title: 'Fore Kazık Makineleri', items: foreKazik },
+  { title: 'Mini Kazık / Ankraj / Jet Grout', items: ankrajJg },
+  { title: 'Yardımcı Makine ve Ekipmanlar', items: yardimci },
 ];
 
 const stats = [
   { num: '40+', label: 'İş Makinesi' },
   { num: '5', label: 'Fore Kazık Makinesi' },
-  { num: '4', label: 'Ankraj / JG Makinesi' },
+  { num: '4', label: 'JG & Ankraj Makinesi' },
   { num: '7/24', label: 'Teknik Destek' },
-];
-
-const gruplar = [
-  { title: 'Fore Kazık Makineleri', start: 0, end: 5 },
-  { title: 'Mini Kazık / Ankraj / Jet Grout', start: 5, end: 9 },
-  { title: 'Yardımcı Makine ve Ekipmanlar', start: 9, end: 15 },
 ];
 ---
 
@@ -258,7 +147,7 @@ const gruplar = [
     </div>
   </nav>
 
-  <!-- İstatistikler -->
+  <!-- Stats -->
   <section class="section section--dark">
     <div class="container">
       <div class="mp-stats">
@@ -272,31 +161,31 @@ const gruplar = [
     </div>
   </section>
 
-  <!-- Makine Grupları -->
+  <!-- Makine Grupları — 3 Sütun Kart Grid -->
   {gruplar.map((g) => (
     <section class="section">
       <div class="container">
         <h2 class="grup-title">{g.title}</h2>
-        <div class="mp-list">
-          {makineler.slice(g.start, g.end).map((m, i) => (
-            <article class={`mrow ${i % 2 === 1 ? 'mrow--reverse' : ''}`}>
-              <div class="mrow__img">
-                <img src={m.image} alt={m.name} loading="lazy" width="800" height="533" />
-                <span class="mrow__cat">{m.category}</span>
+        <div class="mk-grid">
+          {g.items.map((m) => (
+            <article class="mk">
+              <div class="mk__visual">
+                <img src={m.image} alt={m.name} loading="lazy" width="800" height="500" />
+                <span class="mk__cat">{m.category}</span>
               </div>
-              <div class="mrow__info">
-                <p class="mrow__type">{m.type}{m.year ? ` · ${m.year}` : ''}</p>
-                <h3 class="mrow__name">{m.name}</h3>
-                <p class="mrow__desc">{m.desc}</p>
-                <div class="mrow__specs">
+              <div class="mk__body">
+                <h3 class="mk__name">{m.name}</h3>
+                {m.year && <span class="mk__year">{m.year}</span>}
+                <p class="mk__desc">{m.desc}</p>
+                <div class="mk__specs">
                   {m.specs.map((s) => (
-                    <div class="spec">
-                      <span class="spec__val">{s.value}</span>
-                      <span class="spec__lbl">{s.label}</span>
+                    <div class="sp">
+                      <span class="sp__v">{s.v}</span>
+                      <span class="sp__l">{s.l}</span>
                     </div>
                   ))}
                 </div>
-                <a href="/iletisim/" class="btn btn--primary">Teklif İste →</a>
+                <a href="/iletisim/" class="mk__cta">Teklif Al →</a>
               </div>
             </article>
           ))}
@@ -339,109 +228,96 @@ const gruplar = [
 .mpstat__num { display:block; font-size:var(--text-4xl); font-weight:700; color:var(--color-highlight); }
 .mpstat__lbl { font-size:var(--text-sm); color:rgba(255,255,255,.65); text-transform:uppercase; letter-spacing:.05em; }
 
-/* ── Grup Başlığı ── */
+/* ── Grup Başlık ── */
 .grup-title {
   font-size:var(--text-2xl); font-weight:700; color:var(--color-primary);
   margin-bottom:var(--s-8); padding-bottom:var(--s-3);
   border-bottom:3px solid var(--color-highlight); display:inline-block;
 }
 
-/* ── Makine Satırları — Yatay %55/%45 ── */
-.mp-list { display:flex; flex-direction:column; gap:var(--s-8); }
-
-.mrow {
+/* ── 3 Sütun Kart Grid ── */
+.mk-grid {
   display:grid;
-  grid-template-columns:55% 45%;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--s-6);
+}
+
+/* ── Kart ── */
+.mk {
   background:var(--color-white);
   border-radius:var(--r-xl);
   overflow:hidden;
   border:1px solid var(--color-border);
-  transition:box-shadow var(--t-base);
-  height:380px;
+  display:flex; flex-direction:column;
+  transition:transform var(--t-base), box-shadow var(--t-base);
 }
-.mrow:hover { box-shadow:var(--shadow-lg); }
+.mk:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
 
-.mrow--reverse { direction:rtl; }
-.mrow--reverse > * { direction:ltr; }
-
-/* Sol: Fotoğraf %55 */
-.mrow__img {
+/* Görsel: sabit 220px */
+.mk__visual {
   position:relative;
+  height:220px;
   overflow:hidden;
 }
-.mrow__img img {
+.mk__visual img {
   position:absolute; inset:0;
   width:100%; height:100%;
   object-fit:cover;
   transition:transform var(--t-slow);
 }
-.mrow:hover .mrow__img img { transform:scale(1.03); }
-.mrow__img::after {
-  content:''; position:absolute; inset:0;
-  background:linear-gradient(to right, rgba(27,43,58,.15) 0%, transparent 40%);
-  pointer-events:none; z-index:1;
-}
-.mrow__cat {
-  position:absolute; top:var(--s-4); left:var(--s-4); z-index:2;
-  background:var(--color-highlight); color:white;
-  font-size:var(--text-xs); font-weight:700;
-  padding:.3rem .8rem; border-radius:999px;
+.mk:hover .mk__visual img { transform:scale(1.05); }
+.mk__cat {
+  position:absolute; top:var(--s-3); left:var(--s-3); z-index:1;
+  background:#C8873A; color:#fff;
+  font-size:10px; font-weight:700;
+  padding:.25rem .65rem; border-radius:999px;
   text-transform:uppercase; letter-spacing:.04em;
 }
 
-/* Sağ: Bilgi %45 */
-.mrow__info {
-  padding:var(--s-6) var(--s-7);
-  display:flex; flex-direction:column; justify-content:center;
+/* Body */
+.mk__body {
+  padding:var(--s-5); display:flex; flex-direction:column; flex:1;
 }
-.mrow__type {
-  font-size:var(--text-xs); font-weight:600;
-  color:var(--color-highlight); text-transform:uppercase;
-  letter-spacing:.06em; margin-bottom:var(--s-1);
+.mk__name {
+  font-size:var(--text-lg); font-weight:700; color:var(--color-primary);
+  line-height:1.25; margin-bottom:var(--s-1);
 }
-.mrow__name {
-  font-size:var(--text-xl); font-weight:700;
-  color:var(--color-primary); margin-bottom:var(--s-3);
-  line-height:1.25;
+.mk__year {
+  font-size:var(--text-xs); color:var(--color-accent); font-weight:600;
+  margin-bottom:var(--s-3);
 }
-.mrow__desc {
-  font-size:var(--text-sm); color:var(--color-text-muted);
-  line-height:1.7; margin-bottom:var(--s-5);
+.mk__desc {
+  font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.65;
+  margin-bottom:var(--s-4);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
 }
 
-/* Spec Grid — 2x2 sabit boyut */
-.mrow__specs {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:var(--s-2); margin-bottom:var(--s-5);
+/* Spec 2x2 grid */
+.mk__specs {
+  display:grid; grid-template-columns:1fr 1fr; gap:var(--s-2);
+  margin-bottom:var(--s-4); margin-top:auto;
 }
-.spec {
-  background:var(--color-bg);
-  border:1px solid var(--color-border);
-  border-radius:var(--r-md);
-  padding:var(--s-2) var(--s-3);
-  text-align:center;
+.sp {
+  background:var(--color-bg); border:1px solid var(--color-border);
+  border-radius:var(--r-sm); padding:var(--s-2); text-align:center;
 }
-.spec__val {
-  display:block; font-size:var(--text-sm);
-  font-weight:700; color:var(--color-primary);
-  line-height:1.3;
+.sp__v { display:block; font-size:var(--text-sm); font-weight:700; color:var(--color-primary); line-height:1.2; }
+.sp__l { font-size:9px; color:var(--color-text-muted); text-transform:uppercase; letter-spacing:.03em; }
+
+/* CTA Buton */
+.mk__cta {
+  display:block; text-align:center;
+  background:var(--color-highlight); color:#fff;
+  font-size:var(--text-sm); font-weight:600;
+  padding:var(--s-3); border-radius:var(--r-md);
+  transition:background var(--t-fast);
 }
-.spec__lbl {
-  font-size:10px;
-  color:var(--color-text-muted);
-  text-transform:uppercase; letter-spacing:.03em;
-}
+.mk__cta:hover { background:#b5762f; }
 
 /* ── Responsive ── */
-@media (max-width:900px) {
-  .mrow { grid-template-columns:1fr; height:auto; }
-  .mrow--reverse { direction:ltr; }
-  .mrow__img { aspect-ratio:16/9; }
-  .mrow__img img { position:absolute; inset:0; }
-  .mrow__info { padding:var(--s-5); }
+@media (max-width:1024px) { .mk-grid { grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px) {
+  .mk-grid { grid-template-columns:1fr; }
   .mp-stats { grid-template-columns:repeat(2,1fr); }
-}
-@media (max-width:560px) {
-  .mp-stats { grid-template-columns:1fr 1fr; }
 }
 </style>
