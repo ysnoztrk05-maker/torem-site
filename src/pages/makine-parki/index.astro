@@ -2,25 +2,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABox from '../../components/CTABox.astro';
 
-/* Unsplash fallback'ler */
-const uf = {
-  drill: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80',
-  anchor: 'https://images.unsplash.com/photo-1590577976322-3d2d6e2130d5?w=800&q=80',
-  equip: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80',
-  aux: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-};
-
 const foreKazik = [
   {
     name: 'Soilmec SR-40', year: '2009', category: 'Fore Kazık',
     desc: 'Kazıklı temeller, iksa ve zemin iyileştirme projelerinde ana üretim makinesi.',
-    image: '/images/makineler/soilmec-sr40.webp',
+    image: '/images/makineler/soilmec-sr40.jpg',
     specs: [{ l:'Çap', v:'Ø150 cm' }, { l:'Derinlik', v:'36 m' }, { l:'Ağırlık', v:'50 ton' }, { l:'Boyut', v:'19×6×5 m' }],
   },
   {
     name: 'XCMG-220RD', year: '2016', category: 'Fore Kazık',
     desc: 'Yüksek kapasiteli, büyük çaplı ve derin kazık projeleri için tasarlanmış büyük tonajlı makine.',
-    image: '/images/makineler/soilmec-sr40-saha.jpg',
+    image: '/images/makineler/casagrande-b200xp.jpg',
     specs: [{ l:'Çap', v:'Ø200 cm' }, { l:'Derinlik', v:'45 m' }, { l:'Ağırlık', v:'85 ton' }, { l:'Boyut', v:'22×9×5 m' }],
   },
   {
@@ -32,7 +24,7 @@ const foreKazik = [
   {
     name: 'Soilmec CM-40', year: '2006', category: 'Fore Kazık',
     desc: 'Orta ölçekli kazık projelerinde kullanılan kompakt fore kazık makinesi.',
-    image: '/images/hero-main.jpg',
+    image: '/images/makineler/soilmec-sm400.jpg',
     specs: [{ l:'Çap', v:'Ø120 cm' }, { l:'Derinlik', v:'25 m' }, { l:'Ağırlık', v:'40 ton' }, { l:'Boyut', v:'18×7×5 m' }],
   },
   {
@@ -47,7 +39,7 @@ const ankrajJg = [
   {
     name: 'Soilmec SM-400', year: '2005', category: 'Jet Grout',
     desc: 'Jet grout, mikro kazık ve zemin iyileştirme uygulamalarında kullanılan çok amaçlı makine. 2 adet mevcut.',
-    image: '/images/zemin-iyilestirme.jpg',
+    image: '/images/makineler/jet-grout.jpg',
     specs: [{ l:'Derinlik', v:'48 m' }, { l:'Kolon', v:'Ø40 cm' }, { l:'Ağırlık', v:'16 ton' }, { l:'Adet', v:'2 birim' }],
   },
   {
@@ -59,13 +51,13 @@ const ankrajJg = [
   {
     name: 'Casagrande C6', year: '2007', category: 'Mini Kazık',
     desc: 'Sınırlı alanlarda mikro kazık, ankraj ve sondaj uygulamalarında kullanılan kompakt makine.',
-    image: '/images/makineler/mini-kazik-makinesi.jpg',
+    image: '/images/makineler/mini-kazik.jpg',
     specs: [{ l:'Tork', v:'1600 kNm' }, { l:'Ağırlık', v:'15 ton' }, { l:'Boyut', v:'8×6×3 m' }, { l:'Alan', v:'Mini Kazık' }],
   },
   {
     name: 'Furukawa HCR1200-DS', year: '2007', category: 'Zemin Çivisi',
     desc: 'İksa sistemleri, zemin çivisi ve ankraj uygulamalarında kullanılan çok amaçlı sondaj makinesi.',
-    image: '/images/ankraj.jpg',
+    image: '/images/makineler/ankraj-makinesi.jpg',
     specs: [{ l:'Derinlik', v:'25 m' }, { l:'Çap', v:'Ø150 mm' }, { l:'Ağırlık', v:'25 ton' }, { l:'Boyut', v:'8×7×3 m' }],
   },
 ];
@@ -86,7 +78,7 @@ const yardimci = [
   {
     name: 'Atlas Copco XAVS 307', year: '2010', category: 'Kompresör',
     desc: 'Sondaj, püskürtme beton ve jet grouting işlemlerinde hava ihtiyacını karşılayan mobil kompresör.',
-    image: uf.aux,
+    image: '/images/makineler/enjeksiyon-seti.jpg',
     specs: [{ l:'Basınç', v:'14 bar' }, { l:'Debi', v:'18,5 m³/dk' }, { l:'Tip', v:'Mobil Dizel' }, { l:'Marka', v:'Atlas Copco' }],
   },
   {
@@ -98,13 +90,13 @@ const yardimci = [
   {
     name: 'Pistonlu Enjeksiyon Seti', year: '2014', category: 'Enjeksiyon',
     desc: 'Zemin iyileştirme, su yalıtımı, çatlak doldurma ve mikro kazık uygulamalarında enjeksiyon sistemi.',
-    image: uf.equip,
+    image: '/images/makineler/soilmec-sm400.jpg',
     specs: [{ l:'Basınç', v:'150 bar' }, { l:'Adet', v:'2 birim' }, { l:'Alan', v:'Zemin Enj.' }, { l:'Mikro Kazık', v:'Evet' }],
   },
   {
     name: 'Germe Krikosu', year: '2015', category: 'Ankraj',
     desc: 'Öngermeli ve kalıcı ankraj uygulamalarında çelik halatları proje yüküne germe.',
-    image: uf.anchor,
+    image: '/images/makineler/ankraj-makinesi.jpg',
     specs: [{ l:'Kapasite', v:'80 ton' }, { l:'Tip', v:'Hidromekanik' }, { l:'Alan', v:'Ankraj Germe' }, { l:'Hassasiyet', v:'Yüksek' }],
   },
 ];
