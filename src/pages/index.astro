@@ -52,8 +52,8 @@ const faqItems = [
     </div>
     <div class="hero__img-panel" aria-hidden="true">
       <img
-        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&h=700&q=80"
-        alt=""
+        src="/images/hero-main.jpg"
+        alt="Torem Zemin fore kazık saha çalışması"
         width="900" height="700"
         fetchpriority="high"
         decoding="async"
@@ -77,9 +77,26 @@ const faqItems = [
     </div>
     <div class="logos-track">
       <div class="logos-inner" aria-hidden="true">
-        {['TAV', 'Limak', 'Kalyon', 'Rönesans', 'Torunlar', 'Sur Yapı', 'TAV', 'Limak', 'Kalyon', 'Rönesans', 'Torunlar', 'Sur Yapı'].map((name) => (
+        {[
+          { name:'Rönesans', src:'/images/logos/ronesans.png' },
+          { name:'TOKİ', src:'/images/logos/toki.png' },
+          { name:'İBB', src:'/images/logos/ibb.png' },
+          { name:'Kolin', src:'/images/logos/kolin.png' },
+          { name:'Emlak Konut', src:'/images/logos/emlak-konut.png' },
+          { name:'Fernas', src:'/images/logos/fernas.png' },
+          { name:'Smart', src:'/images/logos/smart.png' },
+          { name:'Doğuş', src:'/images/logos/dogus.png' },
+          { name:'Rönesans', src:'/images/logos/ronesans.png' },
+          { name:'TOKİ', src:'/images/logos/toki.png' },
+          { name:'İBB', src:'/images/logos/ibb.png' },
+          { name:'Kolin', src:'/images/logos/kolin.png' },
+          { name:'Emlak Konut', src:'/images/logos/emlak-konut.png' },
+          { name:'Fernas', src:'/images/logos/fernas.png' },
+          { name:'Smart', src:'/images/logos/smart.png' },
+          { name:'Doğuş', src:'/images/logos/dogus.png' },
+        ].map((logo) => (
           <div class="logo-item">
-            <span class="logo-item__name">{name}</span>
+            <img src={logo.src} alt={logo.name} loading="lazy" width="120" height="40" />
           </div>
         ))}
       </div>
@@ -153,14 +170,14 @@ const faqItems = [
       <div class="about__imgs" aria-hidden="true">
         <img
           class="about__img-main"
-          src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=600&h=700&q=80"
-          alt="İnşaat sahası"
+          src="/images/fore-kazik-saha.jpg"
+          alt="Fore kazık şantiye çalışması"
           loading="lazy" width="600" height="700"
         />
         <img
           class="about__img-accent"
-          src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=340&h=280&q=80"
-          alt="Fore kazık makinesi"
+          src="/images/makine-parki.webp"
+          alt="Soilmec SR-40 fore kazık makinesi"
           loading="lazy" width="340" height="280"
         />
         <div class="about__badge">
@@ -201,13 +218,13 @@ const faqItems = [
       <h2 class="text-center ref-strip__title">Tamamlanan Projelerden Seçkiler</h2>
       <div class="ref-grid">
         {[
-          { img:'1558618666-fcd25c85cd64', loc:'İstanbul, Kadıköy', type:'Fore Kazık + İksa', title:'Otel Bodrum Kat Genişletme' },
-          { img:'1513467535987-fd81bc7d62f8', loc:'Ankara, Çankaya',  type:'Jet Grout',       title:'Metro İstasyon Temeli' },
-          { img:'1580674684081-7617fbf3d745', loc:'İzmir, Bayraklı',  type:'Öngermeli Ankraj',title:'AVM Derin Kazısı' },
+          { img:'/images/iksa-sistemleri.jpg', loc:'İstanbul, Kadıköy', type:'Fore Kazık + İksa', title:'Otel Bodrum Kat Genişletme' },
+          { img:'/images/zemin-iyilestirme.jpg', loc:'Ankara, Çankaya',  type:'Jet Grout',       title:'Metro İstasyon Temeli' },
+          { img:'/images/ankraj.jpg', loc:'İzmir, Bayraklı',  type:'Öngermeli Ankraj',title:'AVM Derin Kazısı' },
         ].map((p) => (
           <div class="ref-card">
             <img
-              src={`https://images.unsplash.com/photo-${p.img}?auto=format&fit=crop&w=560&h=360&q=80`}
+              src={p.img}
               alt={p.title}
               loading="lazy" width="560" height="360"
             />
@@ -488,9 +505,10 @@ const faqItems = [
 .logos-track { overflow:hidden; }
 .logos-inner { display:flex; gap:var(--s-6); width:max-content; animation:marquee 32s linear infinite; }
 .logos-inner:hover { animation-play-state:paused; }
-.logo-item { display:flex; align-items:center; justify-content:center; min-width:148px; height:58px; background:var(--color-bg); border:1px solid var(--color-border); border-radius:var(--r-lg); padding:var(--s-3) var(--s-5); transition:border-color var(--t-fast), background var(--t-fast); }
-.logo-item:hover { border-color:var(--color-highlight); background:var(--color-white); }
-.logo-item__name { font-size:var(--text-sm); font-weight:700; color:var(--color-text-muted); letter-spacing:.03em; white-space:nowrap; }
+.logo-item { display:flex; align-items:center; justify-content:center; min-width:148px; height:58px; background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-lg); padding:var(--s-2) var(--s-5); transition:border-color var(--t-fast), background var(--t-fast); }
+.logo-item:hover { border-color:var(--color-highlight); }
+.logo-item img { max-height:36px; width:auto; object-fit:contain; filter:grayscale(100%) opacity(.6); transition:filter var(--t-fast); }
+.logo-item:hover img { filter:grayscale(0%) opacity(1); }
 @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 @media (prefers-reduced-motion:reduce) { .logos-inner { animation:none; flex-wrap:wrap; justify-content:center; width:auto; } }
 
