@@ -23,8 +23,8 @@ export const company = {
 export const stats = [
   { value: 20,  suffix: '+', label: 'Yıl Deneyim'        },
   { value: 600, suffix: '+', label: 'Tamamlanan Proje'   },
-  { value: 55,  suffix: '+', label: 'Makine Parkı'        },
-  { value: 250, suffix: '+', label: 'Memnun Müşteri'      },
+  { value: 40,  suffix: '+', label: 'Makine Parkı'        },
+  { value: 98,  suffix: '%', label: 'Memnun Müşteri'      },
 ];
 
 // ─── Hizmetler ────────────────────────────────────────────────────────────────
