@@ -164,7 +164,7 @@ export const teknikler: Teknik[] = [
 <p>Bir fore kazığın taşıma kapasitesi, Eurocode 7 (EN 1997-1) ve TS EN 1536 standartlarına göre şu formülle ifade edilir:</p>
 <p><strong>Q_toplam = Q_sürtünme + Q_uç</strong></p>
 <p>Burada Q_sürtünme, kazık çevresindeki sürtünme direncinin toplamı; Q_uç ise kazık ucundaki taşıma kapasitesidir.</p>
-<p>Geleneksel çakma kazıklardan farklı olarak fore kazıklarda zemin yerinden çıkarılır (displacement yok), bu nedenle çevre yapılara titreşim etkisi minimumdur. Bu özellik, fore kazıkları kentsel alanlarda ve mevcut yapılara yakın uygulamalarda vazgeçilmez kılmaktadır.</p>
+<p>Geleneksel çakma kazıklardan farklı olarak fore kazıklarda zemin yerinden çıkarılır (displacement yok), bu nedenle çevre yapılara titreşim etkisi minimumdur. Bu nedenle fore kazıklar, kentsel alanlarda ve mevcut yapılara yakın uygulamalarda standart çözüm olarak tercih edilir.</p>
 <div class="pros-cons">
   <div class="pros"><h4>Avantajları</h4><ul>
     <li>Çok yüksek taşıma kapasitesi (500–30.000+ kN)</li>
@@ -837,7 +837,7 @@ export const teknikler: Teknik[] = [
 </ul>
 <hr/>
 <h2 id="zemin-etudu-ve-fore-kazik-i-liskisi">Zemin Etüdü ve Fore Kazık İlişkisi</h2>
-<div class="highlight-box"><strong>Özet Cevap:</strong> Zemin etüdü, fore kazık tasarımının vazgeçilmez girdisidir. SPT-N değerleri, presiyometre deneyleri, laboratuvar analizleri ve sondaj karotları, kazık çapını, derinliğini ve taşıma kapasitesini belirleyen temel verilerdir. Yetersiz zemin etüdü, fore kazık projelerindeki başarısızlıkların en yaygın sebebidir.</div>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Zemin etüdü, fore kazık tasarımının temel girdisidir. SPT-N değerleri, presiyometre deneyleri, laboratuvar analizleri ve sondaj karotları, kazık çapını, derinliğini ve taşıma kapasitesini belirleyen temel verilerdir. Yetersiz zemin etüdü, fore kazık projelerindeki başarısızlıkların en yaygın sebebidir.</div>
 <h3>Zemin Etüdünün Gerekliliği</h3>
 <p>Her fore kazık projesi, mutlaka kapsamlı bir zemin etüdü raporuna dayanmalıdır. Zemin etüdü olmadan fore kazık tasarımı yapmak, "gözü kapalı cerrahiye" benzer — son derece risklidir. <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">Zemin iyileştirme</a> kararı da dahil olmak üzere tüm geoteknik mühendislik çözümleri, zemin etüdü verilerine dayanır.</p>
 <p>Fore kazık projeleri için zemin etüdünde yapılması gereken işlemler:</p>
