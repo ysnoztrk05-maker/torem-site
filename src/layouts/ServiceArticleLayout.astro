@@ -1,0 +1,330 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  category: string;
+  categorySlug: string;
+  breadcrumbs?: Array<{label: string, href: string}>;
+  badges?: string[];
+  updateDate?: string;
+  wordCount?: number;
+  readTime?: number;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  category,
+  categorySlug,
+  breadcrumbs = [],
+  badges = [],
+  updateDate,
+  wordCount,
+  readTime
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description} canonical={canonical}>
+
+  <!-- HERO -->
+  <section class="srv-hero">
+    <div class="srv-hero__inner">
+      <nav class="srv-bc" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Ana Sayfa</a></li>
+          <li><a href="/faaliyet-alanlari/">Faaliyet Alanları</a></li>
+          <li><a href={`/faaliyet-alanlari/${categorySlug}/`}>{category}</a></li>
+          {breadcrumbs.map(b => <li><a href={b.href}>{b.label}</a></li>)}
+          <li aria-current="page">{title.split('|')[0].trim()}</li>
+        </ol>
+      </nav>
+
+      <span class="srv-cat">{category}</span>
+      <h1>{title.split('|')[0].trim()}</h1>
+      <p class="srv-hero__desc">{description}</p>
+
+      {badges.length > 0 && (
+        <div class="srv-badges">
+          {badges.map(b => <span class="srv-badge">{b}</span>)}
+        </div>
+      )}
+
+      <div class="srv-meta">
+        {updateDate && <span>Güncelleme: {updateDate}</span>}
+        {readTime && <span>{readTime} dk okuma</span>}
+        {wordCount && <span>{wordCount.toLocaleString('tr-TR')} kelime</span>}
+        <span>Uzman incelemesinden geçmiştir</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKALE -->
+  <div class="srv-container">
+    <div class="srv-author">
+      <div class="srv-author__av">TZ</div>
+      <div>
+        <strong>Torem Zemin Mühendislik</strong>
+        <span>20+ Yıl Geoteknik Deneyimi · ISO 9001 · 600+ Proje</span>
+      </div>
+    </div>
+
+    <article class="srv-article">
+      <slot />
+    </article>
+
+    <div class="srv-cta">
+      <h3>Ücretsiz Keşif ve Maliyet Analizi</h3>
+      <p>20+ yıllık deneyimimizle projenize en uygun çözümü sunuyoruz.</p>
+      <div class="srv-cta__btns">
+        <a href="/iletisim/" class="srv-cta__btn">Ücretsiz Teklif Al</a>
+        <a href="tel:+905316594636" class="srv-cta__btn srv-cta__btn--outline">0531 659 46 36</a>
+      </div>
+      <p class="srv-cta__sub">Ofis: <a href="tel:+902163793310">0216 379 33 10</a></p>
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+  /* === HERO === */
+  .srv-hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 60%, var(--color-accent) 100%);
+    color: #fff;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+  .srv-hero__inner { max-width: 860px; margin: 0 auto; }
+
+  .srv-bc ol {
+    display: flex; flex-wrap: wrap; gap: 0.3rem;
+    list-style: none; padding: 0; margin: 0 0 1.5rem;
+    font-size: 0.85rem; opacity: 0.85;
+  }
+  .srv-bc li:not(:last-child)::after { content: '›'; margin-left: 0.4rem; }
+  .srv-bc a { color: rgba(255,255,255,0.85); }
+  .srv-bc a:hover { color: #fff; text-decoration: underline; }
+  .srv-bc li[aria-current] { color: rgba(255,255,255,0.6); }
+
+  .srv-cat {
+    display: inline-block;
+    background: rgba(200,135,58,0.25); color: #f0c070;
+    font-size: 0.8rem; font-weight: 600;
+    padding: 0.25rem 0.75rem; border-radius: 20px;
+    margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.02em;
+  }
+  .srv-hero h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800; line-height: 1.15; margin: 0 0 1rem;
+  }
+  .srv-hero__desc {
+    font-size: 1.1rem; line-height: 1.6; opacity: 0.9;
+    max-width: 700px; margin: 0 0 1.25rem;
+  }
+  .srv-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
+  .srv-badge {
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+    padding: 0.3rem 0.7rem; border-radius: 6px;
+    font-size: 0.78rem; font-weight: 500;
+  }
+  .srv-meta {
+    display: flex; flex-wrap: wrap; gap: 1rem;
+    font-size: 0.82rem; opacity: 0.75;
+    border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1rem;
+  }
+
+  /* === KONTEYNER === */
+  .srv-container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+
+  /* === YAZAR === */
+  .srv-author {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem 1.25rem; background: var(--color-white);
+    border: 1px solid var(--color-border); border-radius: 10px;
+    margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .srv-author__av {
+    width: 48px; height: 48px; border-radius: 50%;
+    background: var(--color-secondary); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem; flex-shrink: 0;
+  }
+  .srv-author strong { display: block; color: var(--color-text); font-size: 0.95rem; }
+  .srv-author span { color: var(--color-text-muted); font-size: 0.82rem; }
+
+  /* === TİPOGRAFİ === */
+  .srv-article { color: var(--color-text); font-size: 1.05rem; line-height: 1.75; }
+
+  .srv-article :global(h2) {
+    font-size: 1.6rem; font-weight: 700; color: var(--color-primary);
+    margin: 3rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-highlight);
+  }
+  .srv-article :global(h3) {
+    font-size: 1.25rem; font-weight: 600; color: var(--color-secondary);
+    margin: 2rem 0 0.75rem;
+  }
+  .srv-article :global(h4) {
+    font-size: 1.05rem; font-weight: 600; color: var(--color-accent);
+    margin: 1.5rem 0 0.5rem;
+  }
+  .srv-article :global(p) { margin: 0 0 1.25rem; }
+
+  /* === ÖZET KUTUSU === */
+  .srv-article :global(.ozet-cevap),
+  .srv-article :global(.highlight-box),
+  .srv-article :global(.aeo-box) {
+    background: linear-gradient(135deg, #FFF8E7, #FFF3D0);
+    border-left: 4px solid var(--color-highlight);
+    padding: 1.25rem 1.5rem; border-radius: 0 10px 10px 0;
+    margin: 1.5rem 0; font-size: 0.95rem; line-height: 1.7;
+  }
+
+  /* === UZMAN İPUCU === */
+  .srv-article :global(.expert-tip) {
+    background: #F0FFF4; border-left: 4px solid #38A169;
+    padding: 1rem 1.25rem; border-radius: 0 8px 8px 0;
+    margin: 1.5rem 0; font-size: 0.92rem;
+  }
+
+  /* === STAT KARTLAR === */
+  .srv-article :global(.stat-row) {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem; margin: 1.5rem 0;
+  }
+  .srv-article :global(.stat-card) {
+    background: var(--color-white); border: 1px solid var(--color-border);
+    border-radius: 10px; padding: 1.25rem; text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .srv-article :global(.stat-number) {
+    display: block; font-size: 1.8rem; font-weight: 800; color: var(--color-secondary);
+  }
+  .srv-article :global(.stat-label) {
+    font-size: 0.82rem; color: var(--color-text-muted); margin-top: 0.25rem;
+  }
+
+  /* === KART GRID === */
+  .srv-article :global(.card-grid) {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem; margin: 1.5rem 0;
+  }
+  .srv-article :global(.grid-card) {
+    background: var(--color-white); border: 1px solid var(--color-border);
+    border-radius: 10px; padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: box-shadow 0.2s;
+  }
+  .srv-article :global(.grid-card:hover) { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+  .srv-article :global(.grid-card h4) { margin: 0.5rem 0 0.4rem; color: var(--color-primary); }
+  .srv-article :global(.grid-card p) { font-size: 0.9rem; color: var(--color-text-muted); margin: 0; }
+
+  /* === SÜREÇ ADIMLARI === */
+  .srv-article :global(.process-steps) { margin: 1.5rem 0; counter-reset: step-counter; }
+  .srv-article :global(.step) {
+    display: flex; gap: 1.25rem; padding: 1.25rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .srv-article :global(.step::before) {
+    counter-increment: step-counter; content: counter(step-counter);
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--color-secondary); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem; flex-shrink: 0;
+  }
+
+  /* === TABLO === */
+  .srv-article :global(.table-wrapper) {
+    overflow-x: auto; margin: 1.5rem 0; border-radius: 10px;
+    border: 1px solid var(--color-border);
+  }
+  .srv-article :global(table) { width: 100%; border-collapse: collapse; font-size: 0.92rem; }
+  .srv-article :global(thead) { background: var(--color-primary); color: #fff; }
+  .srv-article :global(th) { padding: 0.75rem 1rem; text-align: left; font-weight: 600; font-size: 0.85rem; }
+  .srv-article :global(td) { padding: 0.7rem 1rem; border-bottom: 1px solid var(--color-border); }
+  .srv-article :global(tbody tr:hover) { background: #f8f6f2; }
+  .srv-article :global(tbody tr:nth-child(even)) { background: #faf9f7; }
+
+  /* === AVANTAJ / DEZAVANTAJ === */
+  .srv-article :global(.pros-cons) { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5rem 0; }
+  .srv-article :global(.pros) { background: #F0FFF4; border: 1px solid #C6F6D5; border-radius: 10px; padding: 1.25rem; }
+  .srv-article :global(.cons) { background: #FFF5F5; border: 1px solid #FED7D7; border-radius: 10px; padding: 1.25rem; }
+
+  /* === FAQ === */
+  .srv-article :global(.faq-item) {
+    border: 1px solid var(--color-border); border-radius: 8px;
+    margin-bottom: 0.5rem; overflow: hidden;
+  }
+  .srv-article :global(.faq-item summary) {
+    padding: 1rem 1.25rem; font-weight: 600; cursor: pointer;
+    list-style: none; display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.95rem; color: var(--color-primary);
+  }
+  .srv-article :global(.faq-item summary::after) {
+    content: '+'; font-size: 1.3rem; color: var(--color-highlight); flex-shrink: 0; margin-left: 0.5rem;
+  }
+  .srv-article :global(.faq-item[open] summary::after) { content: '−'; }
+  .srv-article :global(.faq-item p) {
+    padding: 0 1.25rem 1rem; font-size: 0.92rem; line-height: 1.7;
+    color: var(--color-text-muted); margin: 0;
+  }
+
+  /* === SVG İNFOGRAFİK === */
+  .srv-article :global(figure) {
+    margin: 2rem 0; border-radius: 10px; overflow: hidden;
+    border: 1px solid var(--color-border); box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .srv-article :global(figure svg) { width: 100%; height: auto; display: block; }
+  .srv-article :global(figcaption) {
+    background: var(--color-primary); color: #fff;
+    text-align: center; padding: 0.6rem 1rem; font-size: 0.85rem;
+  }
+
+  /* === CTA === */
+  .srv-cta {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #fff; padding: 2.5rem 2rem; border-radius: 12px;
+    text-align: center; margin: 3rem 0 2rem;
+  }
+  .srv-cta h3 { font-size: 1.5rem; margin: 0 0 0.75rem; color: #fff; }
+  .srv-cta p { opacity: 0.9; margin: 0 0 1.25rem; }
+  .srv-cta__btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .srv-cta__btn {
+    display: inline-block; background: var(--color-highlight); color: #fff;
+    padding: 0.8rem 1.8rem; border-radius: 8px;
+    font-weight: 600; font-size: 1rem; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .srv-cta__btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(200,135,58,0.4); }
+  .srv-cta__btn--outline { background: transparent; border: 2px solid #fff; }
+  .srv-cta__sub { margin-top: 1rem; font-size: 0.85rem; opacity: 0.8; }
+  .srv-cta__sub a { color: #fff; font-weight: 600; }
+
+  /* === LİSTELER === */
+  .srv-article :global(ul), .srv-article :global(ol) { margin: 0.75rem 0 1.25rem 1.5rem; }
+  .srv-article :global(li) { margin-bottom: 0.4rem; }
+  .srv-article :global(li strong) { color: var(--color-primary); }
+
+  /* === CTA-BOX (inline) === */
+  .srv-article :global(.cta-box) {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: #fff; padding: 1.5rem 2rem; border-radius: 10px;
+    margin: 2rem 0; text-align: center;
+  }
+  .srv-article :global(.cta-box a) { color: #fff; }
+  .srv-article :global(.cta-btn) {
+    display: inline-block; background: var(--color-highlight); color: #fff;
+    padding: 0.6rem 1.5rem; border-radius: 6px; font-weight: 600;
+    margin-top: 0.5rem;
+  }
+
+  /* === RESPONSIVE === */
+  @media (max-width: 768px) {
+    .srv-hero { padding: 2rem 1rem 1.5rem; }
+    .srv-container { padding: 1.5rem 1rem 2rem; }
+    .srv-article :global(h2) { font-size: 1.35rem; }
+    .srv-article :global(.pros-cons) { grid-template-columns: 1fr; }
+    .srv-article :global(.stat-row) { grid-template-columns: repeat(2, 1fr); }
+    .srv-meta { flex-direction: column; gap: 0.4rem; }
+  }
+</style>
