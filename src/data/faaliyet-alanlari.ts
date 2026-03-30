@@ -105,22 +105,1025 @@ export const teknikler: Teknik[] = [
   {
     slug:'fore-kazik', kategoriSlug:'kazikli-temeller',
     title:'Fore Kazık İmalatı', shortTitle:'Fore Kazık',
-    excerpt:'Büyük çaplı (400–1500 mm) yerinde döküm betonarme kazık. Zayıf zeminlerde yüksek taşıma kapasiteli derin temel çözümü.',
+    excerpt:'Büyük çaplı (400–1500 mm) yerinde döküm betonarme kazık. Zayıf zeminlerde yüksek taşıma kapasiteli derin temel çözümü. 2026 fiyatları, çeşitleri ve yapım aşamaları.',
     image:u(ph[0],480,320), heroImage:u(ph[0],1200,500),
-    content:`
-      <div class="aeo-box">Fore kazık; zemin içine döner kafayla delik açılarak donatı yerleştirilip beton dökülen, 400–1500 mm çaplı derin temel elemanıdır.</div>
-      <h2 id="nedir">Fore Kazık Nedir?</h2>
-      <p>Fore kazık (bored pile), döner kafası olan delgi makineleriyle zemin içine belli çaplarda delikler açılarak üretilen yerinde döküm betonarme kazıklardır. Derinlik 5 m'den 60 m'ye kadar çıkabilir. Titreşim ve gürültü seviyeleri düşük olduğundan kentsel alanlarda güvenle uygulanır.</p>
-      <h2 id="kullanim">Kullanım Alanları</h2>
-      <ul>
-        <li>Taşıma gücü düşük, heterojen zeminler</li>
-        <li>Yüksek yapılar ve endüstriyel tesisler</li>
-        <li>Köprü ayakları ve altyapı projeleri</li>
-        <li>Komşu yapılara yakın kentsel inşaatlar</li>
-      </ul>`,
+    content:`<h2 id="fore-kazik-nedir">Fore Kazık Nedir?</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Fore kazık (bored pile), zemin içerisine silindirik bir kuyu açılarak, donatı kafesi indirildikten sonra yerinde beton dökülerek oluşturulan derin temel elemanıdır. 400 mm ile 1500 mm arasında çaplarda ve 5 ila 60 metre derinliklerde uygulanarak yapı yüklerini sağlam zemin tabakalarına aktarır.</div>
+<h3>Tanım ve Temel Kavramlar</h3>
+<p>Fore kazık, İngilizce karşılığıyla "bored pile" veya "drilled shaft" olarak da bilinen, yerinde dökme betonarme derin temel sistemidir. Yüzeydeki zayıf veya taşıma kapasitesi yetersiz zeminlerde, yapı yüklerini derinlerdeki sağlam formasyonlara (sıkı kum, sert kil, kaya tabakası) güvenle aktarmak amacıyla kullanılır. TS EN 1536 standardına göre fore kazık, "zemin içerisinde açılan bir kuyunun betonarme ile doldurulmasıyla oluşturulan derin temel elemanı" şeklinde tanımlanmaktadır.</p>
+<p>Bir fore kazık, çalışma prensibi bakımından iki temel mekanizma üzerinden yük aktarır:</p>
+<ul>
+<li><strong>Çevre Sürtünmesi (Skin Friction / Shaft Resistance):</strong> Kazık gövdesinin dış yüzeyiyle çevreleyen zemin arasındaki aderans kuvveti. Özellikle kohezyonlu (killi) zeminlerde ve uzun kazıklarda baskın taşıma mekanizmasıdır. Kazık boyunca dağılmış sürtünme kuvvetleri, toplam taşıma kapasitesinin %40 ile %80'ini oluşturabilir.</li>
+<li><strong>Uç Direnci (End Bearing / Base Resistance):</strong> Kazığın alt ucunun oturduğu sert zemin veya kaya tabakasına uyguladığı doğrudan basınç kuvveti. Uç direnci, özellikle kazık ucunun kaya formasyonuna soketlendiği (embedded in rock) durumlarda kritik taşıma bileşenidir.</li>
+</ul>
+<h3>Tarihçe ve Gelişim</h3>
+<p>Fore kazık uygulamasının kökleri 19. yüzyılın sonlarına uzanır. İlk mekanize fore kazık uygulamaları 1890'larda ABD'de yapılmıştır. Ancak modern anlamda rotatif delgi teknolojisinin gelişmesi 1950'li yıllara denk gelir. Avrupa'da, özellikle Almanya ve İtalya, fore kazık teknolojisinin öncü ülkeleri olmuştur. Bauer, Soilmec ve Casagrande gibi firmalar rotatif delgi makinelerini geliştirerek teknolojiyi bugünkü seviyeye taşımıştır.</p>
+<p>Türkiye'de fore kazık uygulaması 1970'li yıllardan itibaren büyük altyapı projelerinde kullanılmaya başlanmıştır. Boğaz köprülerinin yaklaşım viyadükleri, metro hatları ve ardından gelen gökdelen projeleri, fore kazık teknolojisinin Türkiye'de yaygınlaşmasını sağlamıştır. Günümüzde Türkiye, yıllık yüz binlerce metre fore kazık imalatının yapıldığı, bölgenin en aktif pazarlarından biridir.</p>
+<h3>Çap Aralıkları ve Derinlik Kapasitesi</h3>
+<p>Fore kazıklar, proje gereksinimlerine bağlı olarak geniş bir çap ve derinlik yelpazesinde üretilebilir:</p>
+<table>
+<thead>
+<tr><th>Parametre</th><th>Aralık</th><th>Tipik Kullanım</th></tr>
+</thead>
+<tbody>
+<tr><td>**Minimum çap**</td><td>400 mm (Ø40 cm)</td><td>Hafif yapılar, güçlendirme projeleri</td></tr>
+<tr><td>**Standart çaplar**</td><td>600–1000 mm (Ø60–100 cm)</td><td>Konut, ticari bina, köprü ayakları</td></tr>
+<tr><td>**Büyük çap**</td><td>1200–1500 mm (Ø120–150 cm)</td><td>Gökdelenler, viyadük, baraj</td></tr>
+<tr><td>**Mega çap**</td><td>1500–3000 mm (Ø150–300 cm)</td><td>Özel projeler, baretten kazıklar</td></tr>
+<tr><td>**Minimum derinlik**</td><td>5 metre</td><td>Sığ kaya, sert zemin koşulları</td></tr>
+<tr><td>**Tipik derinlik**</td><td>15–35 metre</td><td>Genel yapı projeleri</td></tr>
+<tr><td>**Maksimum derinlik**</td><td>60+ metre</td><td>Derin alüvyon, deniz dibi uygulamaları</td></tr>
+</tbody>
+</table>
+<h3>Fore Kazık Sistemi Nasıl Çalışır?</h3>
+<p>Fore kazık sistemi, temelde şu prensiple çalışır: Üst yapıdan gelen düşey yükler (binalar, köprüler) ve yatay yükler (deprem, rüzgar, toprak itkisi), kazık gövdesi boyunca zemine aktarılır. Kazık, üst yapı ile derin zemin katmanları arasında bir "köprü" görevi görür.</p>
+<p>Bir fore kazığın taşıma kapasitesi, Eurocode 7 (EN 1997-1) ve TS EN 1536 standartlarına göre şu formülle ifade edilir:</p>
+<p><strong>Q_toplam = Q_sürtünme + Q_uç</strong></p>
+<p>Burada Q_sürtünme, kazık çevresindeki sürtünme direncinin toplamı; Q_uç ise kazık ucundaki taşıma kapasitesidir.</p>
+<p>Geleneksel çakma kazıklardan farklı olarak fore kazıklarda zemin yerinden çıkarılır (displacement yok), bu nedenle çevre yapılara titreşim etkisi minimumdur. Bu özellik, fore kazıkları kentsel alanlarda ve mevcut yapılara yakın uygulamalarda vazgeçilmez kılmaktadır.</p>
+<p>Torem Zemin Mühendislik olarak 20 yılı aşan tecrübemizle, her projede zemin koşullarına özel fore kazık çözümleri sunuyoruz. Projeniz için en uygun çap, derinlik ve imalat yöntemini belirlemek üzere <strong><a href="#iletisim">ücretsiz keşif randevusu</a></strong> alabilirsiniz.</p>
+<div class="cta-box" style="background:#f0f7ff;border-left:4px solid #0056b3;padding:20px;margin:20px 0;">
+<strong>Projeniz İçin Ücretsiz Keşif Raporu Alın</strong><br>
+<p>Uzman mühendislerimiz sahanızı inceleyerek en uygun fore kazık çözümünü belirlesin.<br></p>
+<a href="tel:+905316594636" style="display:inline-block;background:#0056b3;color:#fff;padding:10px 24px;margin-top:10px;text-decoration:none;border-radius:4px;">📞 Hemen Arayın: 0531 659 46 36</a>
+</div>
+<hr/>
+<figure class="svg-diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900">
+  <defs>
+    <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#A0896B"/>
+      <circle cx="4" cy="4" r="1.2" fill="#7A6B50"/>
+    </pattern>
+    <pattern id="clay" width="10" height="6" patternUnits="userSpaceOnUse">
+      <rect width="10" height="6" fill="#8B7355"/>
+      <line x1="0" y1="3" x2="10" y2="3" stroke="#6B5640" stroke-width="0.8"/>
+    </pattern>
+    <pattern id="sand" width="6" height="6" patternUnits="userSpaceOnUse">
+      <rect width="6" height="6" fill="#C4A95A"/>
+      <circle cx="1" cy="1" r="0.6" fill="#A08940"/>
+      <circle cx="4" cy="4" r="0.6" fill="#A08940"/>
+      <circle cx="2" cy="5" r="0.4" fill="#A08940"/>
+      <circle cx="5" cy="2" r="0.4" fill="#A08940"/>
+    </pattern>
+    <pattern id="gravel" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#9A8A6A"/>
+      <circle cx="3" cy="3" r="2" fill="#7A6A4A" stroke="#6A5A3A" stroke-width="0.5"/>
+      <circle cx="9" cy="8" r="2.5" fill="#8A7A5A" stroke="#6A5A3A" stroke-width="0.5"/>
+      <circle cx="6" cy="11" r="1.5" fill="#7A6A4A" stroke="#6A5A3A" stroke-width="0.5"/>
+    </pattern>
+    <pattern id="rock" width="14" height="10" patternUnits="userSpaceOnUse">
+      <rect width="14" height="10" fill="#6B6B6B"/>
+      <line x1="0" y1="0" x2="7" y2="10" stroke="#555" stroke-width="0.7"/>
+      <line x1="7" y1="0" x2="14" y2="10" stroke="#555" stroke-width="0.7"/>
+      <line x1="0" y1="5" x2="14" y2="5" stroke="#555" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Arka plan -->
+  <rect width="700" height="900" fill="#F5F2ED"/>
+
+  <!-- Başlık -->
+  <rect x="0" y="0" width="700" height="70" fill="#1B2B3A"/>
+  <text x="350" y="28" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Fore Kazık Anatomisi</text>
+  <text x="350" y="52" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="14">Dikey Kesit Diyagramı — Ø80cm / 20m Derinlik</text>
+
+  <!-- Zemin yüzeyi çizgisi -->
+  <line x1="80" y1="150" x2="620" y2="150" stroke="#1B2B3A" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="635" y="155" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">± 0.00</text>
+
+  <!-- Zemin Katmanları -->
+  <!-- Dolgu 2m (150-230) -->
+  <rect x="80" y="150" width="220" height="80" fill="url(#dots)"/>
+  <rect x="400" y="150" width="220" height="80" fill="url(#dots)"/>
+  <rect x="80" y="150" width="220" height="80" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+  <rect x="400" y="150" width="220" height="80" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+
+  <!-- Kil 5m (230-430) -->
+  <rect x="80" y="230" width="220" height="200" fill="url(#clay)"/>
+  <rect x="400" y="230" width="220" height="200" fill="url(#clay)"/>
+  <rect x="80" y="230" width="220" height="200" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+  <rect x="400" y="230" width="220" height="200" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+
+  <!-- Kum 8m (430-750) -->
+  <rect x="80" y="430" width="220" height="320" fill="url(#sand)"/>
+  <rect x="400" y="430" width="220" height="320" fill="url(#sand)"/>
+  <rect x="80" y="430" width="220" height="320" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+  <rect x="400" y="430" width="220" height="320" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+
+  <!-- Çakıl 3m (750-870) -->
+  <rect x="80" y="750" width="220" height="50" fill="url(#gravel)"/>
+  <rect x="400" y="750" width="220" height="50" fill="url(#gravel)"/>
+
+  <!-- Kaya tabakası (870-900) -->
+  <rect x="80" y="800" width="540" height="60" fill="url(#rock)"/>
+  <rect x="80" y="800" width="540" height="60" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+
+  <!-- Derinlik ölçeği (sol) -->
+  <line x1="55" y1="150" x2="55" y2="800" stroke="#1B2B3A" stroke-width="1.5"/>
+  <!-- Çentikler -->
+  <line x1="50" y1="150" x2="60" y2="150" stroke="#1B2B3A" stroke-width="1.5"/>
+  <line x1="50" y1="230" x2="60" y2="230" stroke="#1B2B3A" stroke-width="1.5"/>
+  <line x1="50" y1="430" x2="60" y2="430" stroke="#1B2B3A" stroke-width="1.5"/>
+  <line x1="50" y1="750" x2="60" y2="750" stroke="#1B2B3A" stroke-width="1.5"/>
+  <line x1="50" y1="800" x2="60" y2="800" stroke="#1B2B3A" stroke-width="1.5"/>
+  <!-- Derinlik yazıları -->
+  <text x="45" y="154" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">0m</text>
+  <text x="45" y="234" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">2m</text>
+  <text x="45" y="434" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">7m</text>
+  <text x="45" y="754" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">15m</text>
+  <text x="45" y="804" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">18m</text>
+
+  <!-- Zemin katman etiketleri (sağ taraf) -->
+  <text x="640" y="195" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Dolgu</text>
+  <text x="640" y="210" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">(2m)</text>
+
+  <text x="640" y="335" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kil</text>
+  <text x="640" y="350" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">(5m)</text>
+
+  <text x="640" y="595" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kum</text>
+  <text x="640" y="610" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">(8m)</text>
+
+  <text x="640" y="778" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Çakıl</text>
+  <text x="640" y="793" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">(3m)</text>
+
+  <text x="640" y="835" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kaya</text>
+
+  <!-- FORE KAZIK — Ana gövde -->
+  <!-- Kazık başlığı (üstte, zemin üstü) -->
+  <rect x="310" y="115" width="80" height="35" fill="#1B2B3A" stroke="#C8873A" stroke-width="2" rx="3"/>
+  <text x="350" y="137" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="9" font-weight="bold">KAZIK BAŞLIĞI</text>
+
+  <!-- Muhafaza borusu (üst kısım, dolgu ve kil içinde) -->
+  <rect x="315" y="150" width="70" height="200" fill="none" stroke="#C8873A" stroke-width="3"/>
+  <!-- Boru iç çizgisi -->
+  <rect x="318" y="150" width="64" height="200" fill="none" stroke="#C8873A" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Beton gövde -->
+  <rect x="320" y="150" width="60" height="650" fill="#B0B0B0" stroke="#1B2B3A" stroke-width="1.5"/>
+  <!-- Beton dokusu -->
+  <circle cx="335" cy="200" r="1.5" fill="#999"/>
+  <circle cx="355" cy="250" r="1" fill="#999"/>
+  <circle cx="340" cy="350" r="1.5" fill="#999"/>
+  <circle cx="365" cy="400" r="1" fill="#999"/>
+  <circle cx="330" cy="500" r="1.5" fill="#999"/>
+  <circle cx="360" cy="550" r="1" fill="#999"/>
+  <circle cx="345" cy="650" r="1.5" fill="#999"/>
+  <circle cx="335" cy="720" r="1" fill="#999"/>
+
+  <!-- Donatı kafesi (çelik çubuklar) -->
+  <!-- Boyuna donatılar -->
+  <line x1="328" y1="160" x2="328" y2="790" stroke="#C8873A" stroke-width="2"/>
+  <line x1="340" y1="160" x2="340" y2="790" stroke="#C8873A" stroke-width="2"/>
+  <line x1="352" y1="160" x2="352" y2="790" stroke="#C8873A" stroke-width="2"/>
+  <line x1="364" y1="160" x2="364" y2="790" stroke="#C8873A" stroke-width="2"/>
+  <!-- Etriyeler (yatay) -->
+  <line x1="325" y1="180" x2="375" y2="180" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="220" x2="375" y2="220" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="260" x2="375" y2="260" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="310" x2="375" y2="310" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="360" x2="375" y2="360" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="420" x2="375" y2="420" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="480" x2="375" y2="480" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="540" x2="375" y2="540" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="600" x2="375" y2="600" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="660" x2="375" y2="660" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="720" x2="375" y2="720" stroke="#C8873A" stroke-width="1"/>
+  <line x1="325" y1="770" x2="375" y2="770" stroke="#C8873A" stroke-width="1"/>
+
+  <!-- Kazık ucu -->
+  <polygon points="320,800 380,800 355,830" fill="#1B2B3A" stroke="#C8873A" stroke-width="1.5"/>
+
+  <!-- ETİKET OKLARI — Sol taraf -->
+  <!-- Kazık başlığı etiketi -->
+  <line x1="220" y1="132" x2="308" y2="132" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="130" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Kazık Başlığı</text>
+
+  <!-- Muhafaza borusu etiketi -->
+  <line x1="220" y1="250" x2="313" y2="250" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="245" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Muhafaza Borusu</text>
+  <text x="215" y="260" text-anchor="end" fill="#2E5077" font-family="Arial, sans-serif" font-size="10">(Çelik kılıf)</text>
+
+  <!-- Donatı kafesi etiketi -->
+  <line x1="220" y1="450" x2="325" y2="450" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="445" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Donatı Kafesi</text>
+  <text x="215" y="460" text-anchor="end" fill="#2E5077" font-family="Arial, sans-serif" font-size="10">(Çelik çubuklar)</text>
+
+  <!-- Beton gövde etiketi -->
+  <line x1="220" y1="600" x2="318" y2="600" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="595" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Beton Gövde</text>
+  <text x="215" y="610" text-anchor="end" fill="#2E5077" font-family="Arial, sans-serif" font-size="10">(C30 beton)</text>
+
+  <!-- Kazık ucu etiketi -->
+  <line x1="220" y1="815" x2="318" y2="815" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="812" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Kazık Ucu</text>
+
+  <!-- Ok tanımı -->
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1B2B3A"/>
+    </marker>
+    <marker id="arrowC" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#C8873A"/>
+    </marker>
+    <marker id="arrowCrev" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto">
+      <polygon points="8 0, 0 3, 8 6" fill="#C8873A"/>
+    </marker>
+  </defs>
+
+  <!-- TAŞIMA MEKANİZMASI — Sürtünme direnci (sağ taraftaki oklar) -->
+  <!-- Sürtünme okları (yanlarda) -->
+  <line x1="395" y1="250" x2="395" y2="220" stroke="#C8873A" stroke-width="2" marker-end="url(#arrowC)"/>
+  <line x1="395" y1="350" x2="395" y2="320" stroke="#C8873A" stroke-width="2" marker-end="url(#arrowC)"/>
+  <line x1="395" y1="450" x2="395" y2="420" stroke="#C8873A" stroke-width="2" marker-end="url(#arrowC)"/>
+  <line x1="395" y1="550" x2="395" y2="520" stroke="#C8873A" stroke-width="2" marker-end="url(#arrowC)"/>
+  <line x1="395" y1="650" x2="395" y2="620" stroke="#C8873A" stroke-width="2" marker-end="url(#arrowC)"/>
+  <line x1="395" y1="750" x2="395" y2="720" stroke="#C8873A" stroke-width="2" marker-end="url(#arrowC)"/>
+
+  <!-- Sürtünme direnci etiketi -->
+  <text x="415" y="480" fill="#C8873A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Sürtünme</text>
+  <text x="415" y="496" fill="#C8873A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Direnci</text>
+  <text x="415" y="512" fill="#C8873A" font-family="Arial, sans-serif" font-size="11">(Çevre sürtünmesi)</text>
+
+  <!-- Uç direnci (altta ok) -->
+  <line x1="355" y1="860" x2="355" y2="840" stroke="#C8873A" stroke-width="3" marker-end="url(#arrowC)"/>
+  <text x="355" y="878" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Uç Direnci</text>
+  <text x="355" y="894" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="11">(Taban taşıma)</text>
+
+  <!-- Boyut bilgileri — Çap -->
+  <line x1="320" y1="98" x2="380" y2="98" stroke="#2E5077" stroke-width="1"/>
+  <line x1="320" y1="93" x2="320" y2="103" stroke="#2E5077" stroke-width="1"/>
+  <line x1="380" y1="93" x2="380" y2="103" stroke="#2E5077" stroke-width="1"/>
+  <text x="350" y="93" text-anchor="middle" fill="#2E5077" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Ø80 cm</text>
+
+  <!-- Boyut bilgileri — Derinlik (sağ) -->
+  <line x1="500" y1="150" x2="500" y2="800" stroke="#2E5077" stroke-width="1"/>
+  <line x1="495" y1="150" x2="505" y2="150" stroke="#2E5077" stroke-width="1"/>
+  <line x1="495" y1="800" x2="505" y2="800" stroke="#2E5077" stroke-width="1"/>
+  <text x="510" y="480" fill="#2E5077" font-family="Arial, sans-serif" font-size="13" font-weight="bold" transform="rotate(90,510,480)">20 m Derinlik</text>
+</svg><figcaption>Fore Kazık Anatomi Diyagramı</figcaption></figure>
+<h2 id="fore-kazik-ne-zaman-kullanilir">Fore Kazık Ne Zaman Kullanılır?</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Fore kazık; zayıf zeminlerde yüksek yapıların temellendirilmesinde, derin kazılarda iksa perdesi olarak, köprü ve viyadük ayaklarında, metro tünellerinde, endüstriyel tesislerde ve deprem riski yüksek bölgelerde sıvılaşma önlemi amacıyla kullanılır.</div>
+<h3>Zayıf Zemin Koşulları</h3>
+<p>Üst zemin tabakasının taşıma kapasitesi yetersiz olduğunda — yani gevşek kum, yumuşak kil, organik zemin veya dolgu zemin mevcutsa — yüzeysel temeller (radye, sürekli temel) yapı yüklerini güvenle taşıyamaz. Bu durumda fore kazık, yüzeydeki zayıf tabakaları geçerek derinlerdeki sert zemine veya ana kayaya ulaşır. SPT-N değeri 10'un altında kalan zeminler, genellikle fore kazık uygulaması gerektiren zemin sınıflarıdır.</p>
+<h3>Yüksek Katlı ve Ağır Yapılar</h3>
+<p>10 kattan yüksek konut projeleri, ofis kuleleri, AVM'ler ve endüstriyel tesisler, genellikle metrekare başına 200 kN'u aşan taban basınçları oluşturur. Bu yükler çoğu yüzeysel temel sistemi için aşırıdır. Fore kazıklar, tekil kazık başına 500 kN ile 15.000 kN arasında taşıma kapasitesi sağlayarak ağır yapıları güvenle temellendirir.</p>
+<h3>Kentsel Alan ve Mevcut Yapılara Yakın Uygulamalar</h3>
+<p>Şehir merkezlerinde, bitişik nizamdaki yapıların hemen yanında derin kazı yapılması gerektiğinde, fore kazık <a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/">iksa sistemleri</a> en güvenli çözümdür. Çakma kazıkların aksine, fore kazıklarda titreşim oluşmaz; böylece komşu yapılara zarar verme riski ortadan kalkar.</p>
+<h3>Köprü, Viyadük ve Altyapı Projeleri</h3>
+<p>Otoyol köprü ayakları, demiryolu viyadükleri, havalimanı pistleri ve liman yapılarında fore kazıklar yaygın olarak kullanılır. Bu projelerde kazık çapları genellikle 1000 mm ve üzerindedir ve kazık derinlikleri 30 metreyi aşabilir.</p>
+<h3>Metro ve Tünel Projeleri</h3>
+<p>Metro istasyonlarının derin kazı gerektiren bölümlerinde, istasyon giriş yapılarında ve tünel portal bölgelerinde fore kazıklı iksa perdeleri uygulanır. İstanbul, Ankara ve İzmir metro hatlarında yüzlerce kilometre fore kazık imalatı gerçekleştirilmiştir.</p>
+<h3>Endüstriyel Tesisler ve Özel Yapılar</h3>
+<p>Ağır sanayi tesisleri (çimento fabrikaları, demir-çelik tesisleri), rüzgar türbini temelleri, silo ve tank temelleri gibi yoğun noktasal yük aktaran yapılarda fore kazıklar kritik bir rol oynar. Rüzgar türbini temelleri için tek bir kazık grubunun 20.000 kN'un üzerinde devrilme momentine karşı koyması gerekebilir.</p>
+<hr/>
+<h2 id="fore-kazik-cesitleri-ve-karsilastirma">Fore Kazık Çeşitleri ve Karşılaştırma</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Fore kazıklar uygulama yöntemine göre kuru delgi, bentonit çamurlu delgi, kılıflı (casing) delgi, CFA (sürekli helezon) kazık ve baret kazık olarak sınıflandırılır. Her yöntem farklı zemin koşulları ve proje gereksinimleri için optimize edilmiştir.</div>
+<h3>1. Kuru Delgi Fore Kazık</h3>
+<p>Zemin kendi kendini tutabilecek kadar sağlam olduğunda (sert kil, marn, bozunmuş kaya) muhafaza borusu veya stabilizasyon sıvısı kullanmadan doğrudan delgi yapılır. En ekonomik yöntemdir. Yeraltı su seviyesinin delgi derinliğinin altında olması gerekir. Çevre sürtünme direnci en yüksek değerlere bu yöntemle ulaşır çünkü beton doğrudan doğal zemine temas eder.</p>
+<h3>2. Bentonit Çamurlu (Wet) Delgi</h3>
+<p>Yeraltı su seviyesinin yüksek olduğu ve zeminlerin göçmeye eğilimli olduğu koşullarda, kuyu içerisine bentonit şerbeti (slurry) pompalanarak cidar stabilitesi sağlanır. Bentonit, su ile karıştırılarak hazırlanan tixotropik bir sıvıdır; kuyu duvarında ince bir "kek" tabakası (filter cake) oluşturarak toprak göçmesini önler. Bentonit yoğunluğu genellikle 1,03–1,10 g/cm³ arasında tutulur ve Marsh hunisi akış süresi 32–50 saniye aralığında kontrol edilir.</p>
+<h3>3. Kılıflı (Casing) Delgi</h3>
+<p>Çok gevşek zeminlerde, yeraltı su basıncının yüksek olduğu alüvyon tabakalarında veya kumlu-çakıllı zeminlerde, çelik muhafaza borusu (casing) kuyu içerisine indirilerek göçme önlenir. Kılıf borusu, vibratör (oscillator) veya rotatör yardımıyla zemine sokulur. Betonlama sırasında kılıf kontrollü olarak çekilir. Bu yöntem en güvenilir sonuçları verir ancak maliyet ve imalat süresi bakımından en pahalı seçenektir.</p>
+<h3>4. CFA (Continuous Flight Auger) Kazık</h3>
+<p>CFA kazık, kesintisiz helezon (auger) ile delgi yapılırken eş zamanlı olarak beton pompalanan bir sistemdir. Helezon çekilirken beton basıncıyla kuyu doldurulur ve ardından donatı kafesi taze betona dalarak (vibrasyon ile) indirilir. CFA kazıklar özellikle yumuşak kohezyonlu zeminlerde ve kumlu zeminlerde çok hızlı imalat imkanı sunar. Günlük üretim kapasitesi geleneksel fore kazığın 2-3 katıdır.</p>
+<h3>5. Baret (Barrette) Kazık</h3>
+<p>Dikdörtgen kesitli, genellikle 2,8 m × 0,8 m veya 1,2 m × 0,6 m boyutlarında açılan fore kazıklardır. Hidrolik kama (grab) veya frez (hydrofraise/cutter) ile açılır. Özellikle büyük yükler ve derin yapılar için tercih edilir. Gökdelen projelerinde ve derin metro istasyonlarında yaygındır. Tek bir baret kazık, 30.000 kN'un üzerinde taşıma kapasitesine ulaşabilir.</p>
+<h3>Karşılaştırma Tablosu</h3>
+<table>
+<thead>
+<tr><th>Özellik</th><th>Kuru Delgi</th><th>Bentonit Çamurlu</th><th>Kılıflı (Casing)</th><th>CFA Kazık</th><th>Baret Kazık</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Çap Aralığı</strong></td><td>600–1500 mm</td><td>600–2000 mm</td><td>600–1500 mm</td><td>400–1000 mm</td><td>Dikdörtgen kesit</td></tr>
+<tr><td><strong>Maks. Derinlik</strong></td><td>30 m</td><td>60 m</td><td>40 m</td><td>25 m</td><td>80+ m</td></tr>
+<tr><td><strong>Uygun Zemin</strong></td><td>Sert kil, kaya</td><td>Her zemin türü</td><td>Gevşek kum, alüvyon</td><td>Yumuşak kil, kum</td><td>Her zemin türü</td></tr>
+<tr><td><strong>İmalat Hızı</strong></td><td>Orta</td><td>Yavaş</td><td>Yavaş</td><td>Hızlı</td><td>Yavaş</td></tr>
+<tr><td><strong>Maliyet</strong></td><td>Düşük</td><td>Orta</td><td>Yüksek</td><td>Orta-Düşük</td><td>Yüksek</td></tr>
+<tr><td><strong>Titreşim</strong></td><td>Çok düşük</td><td>Çok düşük</td><td>Düşük</td><td>Çok düşük</td><td>Düşük</td></tr>
+<tr><td><strong>Standart Referans</strong></td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1538</td></tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="fore-kazik-nasil-yapilir-adim-adim-yapim-asamalari">Fore Kazık Nasıl Yapılır? Adım Adım Yapım Aşamaları</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Fore kazık imalatı altı temel aşamadan oluşur: çalışma platformu hazırlığı ve aplikasyon, delgi işlemi, muhafaza (cidar koruma), donatı kafesi indirme, tremi borusu ile betonlama ve kazık başlığı imalatı. Her aşama TS EN 1536'ya uygun kalite kontrolü gerektirir.</div>
+<h3>Adım 1: Çalışma Platformu Hazırlığı ve Aplikasyon</h3>
+<p>Fore kazık imalatına başlamadan önce, delgi makinelerinin güvenle çalışabileceği düzgün ve sağlam bir çalışma platformu oluşturulmalıdır. 80–120 ton ağırlığındaki fore kazık makineleri, zeminden en az 50 kPa taşıma kapasitesi talep eder. Bu nedenle:</p>
+<ul>
+<li>Sahaya 30–50 cm kalınlığında kırma taş (stabilize) serilir ve silindirlenerek sıkıştırılır.</li>
+<li>Platform eğimi %2'yi geçmemelidir; aksi halde makinenin düşeyliği (vertikality) bozulur.</li>
+<li>Topoğrafik ölçüm ekibi (total station veya GPS-RTK ile) kazık merkezlerini milimetrik hassasiyetle aplikasyon yapar.</li>
+<li>Her kazık noktası renkli boya veya çelik çivi ile işaretlenir, kazık numarası ve çapı belirtilir.</li>
+</ul>
+<p>Aplikasyon toleransı TS EN 1536'ya göre ±50 mm'dir. Bu toleransın aşılması durumunda kazık, statik projede öngörülen yükleri doğru açıyla aktaramaz ve yapısal sorunlara yol açabilir.</p>
+<h3>Adım 2: Delgi İşlemi</h3>
+<p>Delgi, fore kazık imalatının en kritik aşamasıdır. Kullanılan ekipman ve yöntem, zemin koşullarına göre belirlenir:</p>
+<ul>
+<li><strong>Rotatif delgi (Rotary drilling):</strong> En yaygın yöntemdir. Bauer BG serisi, Soilmec SR serisi veya Liebherr LB serisi gibi makinelerde Kelly bar (teleskopik çubuk) ucuna takılan burgu (auger), kova (bucket) veya kaya kesici (core barrel/rock auger) ile zemin delinir.</li>
+<li><strong>Ters sirkülasyon (Reverse circulation):</strong> Çok derin ve büyük çaplı kazıklarda, kesilen zemin su ile birlikte yüzeye pompalanır.</li>
+</ul>
+<p>Delgi sırasında dikkat edilmesi gereken parametreler:</p>
+<ul>
+<li><strong>Düşeylik kontrolü:</strong> Kazık eğikliği, kazık boyunun %1'ini geçmemelidir (örn. 20 m kazıkta maks. 200 mm sapma).</li>
+<li><strong>Delgi çapı:</strong> Proje çapına uygun ekipman seçilmelidir. Delgi çapı, nominal kazık çapından 50–100 mm büyük olabilir.</li>
+<li><strong>Zemin kaydı (drilling log):</strong> Her metre derinlik için karşılaşılan zemin türü, rengi, kıvamı ve su durumu kayıt altına alınır. Bu kayıt, zemin etüdü raporuyla karşılaştırılarak tasarım doğrulaması yapılır.</li>
+</ul>
+<p>Kaya formasyonlarında delgi hızı önemli ölçüde düşer. Tek eksenli basınç dayanımı (UCS) 50 MPa'yı aşan kayalarda, kaya kesici (DTH hammer veya rock auger) kullanılması gerekebilir. Kaya soketi genellikle 1,5–3 çap derinliğinde uygulanır.</p>
+<h3>Adım 3: Cidar Koruma (Muhafaza)</h3>
+<p>Delgi sırasında kuyu cidarının göçmesini önlemek için zemin koşullarına uygun muhafaza yöntemi seçilir:</p>
+<ul>
+<li><strong>Kuru delgi:</strong> Muhafaza gerekmez. Yalnızca yüzey kılıfı (starter casing, ~2 m) kullanılır.</li>
+<li><strong>Bentonit şerbeti:</strong> Kuyu, bentonit çamuru ile dolu tutulur. Bentonit seviyesi, yeraltı su seviyesinden en az 1,5 m yukarıda tutulmalıdır.</li>
+<li><strong>Tam kılıf (full casing):</strong> Çelik muhafaza borusu, oscillator veya rotator ile kuyu boyunca indirilir. En güvenli yöntemdir.</li>
+<li><strong>Kısmi kılıf + bentonit:</strong> Üst tabaka kılıfla, alt tabaka bentonitle desteklenir. Karma yöntem yaygın uygulamalardan biridir.</li>
+</ul>
+<h3>Adım 4: Donatı Kafesi İndirme</h3>
+<p>Delgi tamamlandıktan ve kuyu tabanı temizlendikten sonra (kuyu tabanındaki çökelti kalınlığı TS EN 1536'ya göre uç taşıyıcı kazıklarda maks. 50 mm, sürtünme kazıklarında maks. 150 mm), önceden hazırlanmış donatı kafesi (cage) kuyu içerisine indirilir.</p>
+<p>Donatı kafesinin özellikleri:</p>
+<ul>
+<li><strong>Boyuna donatı:</strong> Genellikle Ø20–Ø32 mm nervürlü çelik (B420C veya B500C sınıfı)</li>
+<li><strong>Etriye (Spiral/helezon):</strong> Ø10–Ø16 mm, 150–250 mm aralıklarla sarılır. Deprem bölgelerinde etriye sıklaştırması (100 mm) zorunludur.</li>
+<li><strong>Mesafe tutucu (Spacer):</strong> Beton örtü kalınlığını (min. 75 mm) sağlamak için her 3 metrede bir tekerlekli veya yıldız tip spacer takılır.</li>
+<li><strong>Kafes birleştirme:</strong> Uzun kazıklarda kafes parçaları sahada bindirmeli ek veya kaynaklı ek ile birleştirilir. Bindirme boyu en az 40 × çubuk çapı kadar olmalıdır.</li>
+</ul>
+<p>Donatı kafesi, vinç yardımıyla yavaşça ve dik olarak kuyu içerisine indirilir. Kafes, kuyu tabanına oturtulmaz; kuyu tabanından 100–150 mm yukarıda tutularak askıya alınır. Bu mesafe, beton örtüsünün alt uçta da sağlanmasını garanti eder.</p>
+<h3>Adım 5: Tremi Borusu ile Betonlama</h3>
+<p>Betonlama, fore kazık kalitesini doğrudan belirleyen en hassas aşamadır. Yeraltı suyu olan veya bentonit çamurlu kuyularda, beton mutlaka tremi (tremie) borusu yöntemiyle dökülür:</p>
+<ul>
+<li><strong>Beton sınıfı:</strong> Fore kazıklarda minimum C25/30 (genellikle C30/37) sınıfı beton kullanılır. TBDY 2018'e göre deprem bölgelerinde minimum C30/37 zorunludur.</li>
+<li><strong>Çökme (Slump):</strong> Tremi ile dökülen betonun çökme değeri 180–220 mm arasında olmalıdır (akıcı kıvam).</li>
+<li><strong>Agrega boyutu:</strong> Maksimum agrega boyutu 20–25 mm ile sınırlandırılır (donatı aralıklarından geçebilmesi için).</li>
+<li><strong>Tremi borusu çapı:</strong> Genellikle 250–300 mm, beton pompa hortumu ile beslenir.</li>
+</ul>
+<p>Betonlama prosedürü:</p>
+<ol>
+<li>Tremi borusu, kuyu tabanına kadar indirilir (tabandan 150–300 mm yukarıda).</li>
+<li>Tremi borusu üst ucuna tıkaç (plug/ball) konulur; beton tıkacın üstüne dökülür.</li>
+<li>Beton basıncıyla tıkaç aşağı itilir ve beton kuyu tabanından yukarı doğru yükselir.</li>
+<li>Tremi borusunun alt ucu daima beton içinde en az 2–3 metre gömülü kalmalıdır (kontaminasyonu önlemek için).</li>
+<li>Betonlama kesintisiz sürdürülür. Beton yükseldikçe tremi borusu kontrollü olarak çekilir.</li>
+<li>Beton seviyesi, kazık üst kotunun 0,5–1,0 m üzerine kadar dökülür (kontamine üst beton sonradan kırılacaktır).</li>
+</ol>
+<p>Betonlama sırasında her transmikser için beton numunesi alınır (küp kalıba). 7 ve 28 günlük basınç dayanım testleri yapılır.</p>
+<h3>Adım 6: Kılıf Çekme ve Kazık Başlığı İmalatı</h3>
+<p>Kılıflı sistemlerde, beton döküldükten sonra çelik muhafaza borusu yavaşça ve kontrollü olarak çekilir. Çekme hızı, betonun kuyu cidarını doldurmasına olanak tanıyacak şekilde ayarlanmalıdır. Ani çekme, boşluk (necking) oluşmasına neden olabilir.</p>
+<p>Beton sertleştikten sonra (genellikle 7 gün), kazık başındaki kontamine beton tabakası (genellikle 0,5–1,0 m) hidrolik kırıcı veya manuel olarak kırılır. Temiz, sağlam betonun ve sağlam donatının ortaya çıkması sağlanır. Bu aşamaya "kazık başı tıraşlama" denir.</p>
+<p>Kazık başı tıraşlandıktan sonra, kazık başlığı (pile cap) imalatı için donatılar bükülür ve temel sistemine bağlanır. Kazık başlığı, birden fazla kazığı birbirine bağlayan ve üst yapı yükünü kazıklara dağıtan betonarme plak elemandır.</p>
+<hr/>
+<figure class="svg-diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
+  <defs>
+    <marker id="flowArrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#C8873A"/>
+    </marker>
+  </defs>
+
+  <!-- Arka plan -->
+  <rect width="900" height="520" fill="#F5F2ED" rx="8"/>
+
+  <!-- Başlık bandı -->
+  <rect x="0" y="0" width="900" height="65" fill="#1B2B3A" rx="0"/>
+  <text x="450" y="28" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Fore Kazık İmalat Akış Şeması</text>
+  <text x="450" y="50" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="13">6 Aşamalı Üretim Süreci</text>
+
+  <!-- === ADIM 1: Zemin Etüdü === -->
+  <!-- Numara dairesi -->
+  <circle cx="105" cy="130" r="18" fill="#C8873A"/>
+  <text x="105" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">1</text>
+  <!-- Kutu -->
+  <rect x="45" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <text x="105" y="184" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Zemin</text>
+  <text x="105" y="202" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Etüdü</text>
+  <!-- İkon: büyüteç -->
+  <circle cx="105" cy="240" r="10" fill="none" stroke="#C8873A" stroke-width="1.5"/>
+  <line x1="112" y1="247" x2="118" y2="253" stroke="#C8873A" stroke-width="1.5"/>
+  <!-- Açıklama -->
+  <text x="105" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Sondaj ve zemin</text>
+  <text x="105" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">analizi yapılır</text>
+
+  <!-- Ok 1→2 -->
+  <line x1="167" y1="187" x2="193" y2="187" stroke="#C8873A" stroke-width="2.5" marker-end="url(#flowArrow)"/>
+
+  <!-- === ADIM 2: Delgi === -->
+  <circle cx="255" cy="130" r="18" fill="#C8873A"/>
+  <text x="255" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">2</text>
+  <rect x="195" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <text x="255" y="192" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Delgi</text>
+  <!-- İkon: matkap -->
+  <line x1="255" y1="230" x2="255" y2="258" stroke="#C8873A" stroke-width="2"/>
+  <polygon points="248,230 262,230 255,222" fill="#C8873A"/>
+  <!-- Açıklama -->
+  <text x="255" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Döner delici ile</text>
+  <text x="255" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">kuyu açılır</text>
+
+  <!-- Ok 2→3 -->
+  <line x1="317" y1="187" x2="343" y2="187" stroke="#C8873A" stroke-width="2.5" marker-end="url(#flowArrow)"/>
+
+  <!-- === ADIM 3: Muhafaza Borusu === -->
+  <circle cx="405" cy="130" r="18" fill="#C8873A"/>
+  <text x="405" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">3</text>
+  <rect x="345" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <text x="405" y="184" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Muhafaza</text>
+  <text x="405" y="202" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Borusu</text>
+  <!-- İkon: boru -->
+  <rect x="397" y="228" width="16" height="30" fill="none" stroke="#C8873A" stroke-width="1.5" rx="2"/>
+  <line x1="400" y1="238" x2="410" y2="238" stroke="#C8873A" stroke-width="0.8"/>
+  <line x1="400" y1="248" x2="410" y2="248" stroke="#C8873A" stroke-width="0.8"/>
+  <!-- Açıklama -->
+  <text x="405" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Çelik kılıf zemine</text>
+  <text x="405" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">yerleştirilir</text>
+
+  <!-- Ok 3→4 -->
+  <line x1="467" y1="187" x2="493" y2="187" stroke="#C8873A" stroke-width="2.5" marker-end="url(#flowArrow)"/>
+
+  <!-- === ADIM 4: Donatı Montajı === -->
+  <circle cx="555" cy="130" r="18" fill="#C8873A"/>
+  <text x="555" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">4</text>
+  <rect x="495" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <text x="555" y="184" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Donatı</text>
+  <text x="555" y="202" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Montajı</text>
+  <!-- İkon: kafes -->
+  <line x1="543" y1="228" x2="543" y2="258" stroke="#C8873A" stroke-width="1.5"/>
+  <line x1="555" y1="228" x2="555" y2="258" stroke="#C8873A" stroke-width="1.5"/>
+  <line x1="567" y1="228" x2="567" y2="258" stroke="#C8873A" stroke-width="1.5"/>
+  <line x1="540" y1="235" x2="570" y2="235" stroke="#C8873A" stroke-width="1"/>
+  <line x1="540" y1="245" x2="570" y2="245" stroke="#C8873A" stroke-width="1"/>
+  <line x1="540" y1="255" x2="570" y2="255" stroke="#C8873A" stroke-width="1"/>
+  <!-- Açıklama -->
+  <text x="555" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Çelik kafes kuyuya</text>
+  <text x="555" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">indirilir</text>
+
+  <!-- Ok 4→5 -->
+  <line x1="617" y1="187" x2="643" y2="187" stroke="#C8873A" stroke-width="2.5" marker-end="url(#flowArrow)"/>
+
+  <!-- === ADIM 5: Betonlama === -->
+  <circle cx="705" cy="130" r="18" fill="#C8873A"/>
+  <text x="705" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">5</text>
+  <rect x="645" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <text x="705" y="192" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Betonlama</text>
+  <!-- İkon: beton dökme -->
+  <polygon points="695,228 715,228 710,238 700,238" fill="#C8873A"/>
+  <rect x="700" y="238" width="10" height="18" fill="none" stroke="#C8873A" stroke-width="1.5"/>
+  <!-- Açıklama -->
+  <text x="705" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Tremi ile beton</text>
+  <text x="705" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">dökülür</text>
+
+  <!-- Ok 5→6 -->
+  <line x1="767" y1="187" x2="793" y2="187" stroke="#C8873A" stroke-width="2.5" marker-end="url(#flowArrow)"/>
+
+  <!-- === ADIM 6: Kılıf Çekme === -->
+  <circle cx="855" cy="130" r="18" fill="#C8873A"/>
+  <text x="855" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">6</text>
+  <rect x="795" y="160" width="95" height="55" fill="#2E5077" rx="6"/>
+  <text x="842" y="184" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kılıf</text>
+  <text x="842" y="202" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Çekme</text>
+  <!-- İkon: yukarı ok -->
+  <line x1="842" y1="258" x2="842" y2="232" stroke="#C8873A" stroke-width="2"/>
+  <polygon points="835,235 849,235 842,225" fill="#C8873A"/>
+  <!-- Açıklama -->
+  <text x="842" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Muhafaza borusu</text>
+  <text x="842" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">geri çekilir</text>
+
+  <!-- Alt bilgi bandı -->
+  <rect x="0" y="320" width="900" height="200" fill="#1B2B3A" rx="0"/>
+
+  <!-- Alt bölüm: Önemli notlar -->
+  <text x="450" y="350" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Kritik Kontrol Noktaları</text>
+
+  <!-- Not kutuları -->
+  <!-- Not 1 -->
+  <rect x="40" y="370" width="250" height="60" fill="#2E5077" rx="5" opacity="0.6"/>
+  <circle cx="60" cy="388" r="10" fill="#C8873A"/>
+  <text x="60" y="393" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">!</text>
+  <text x="80" y="390" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Zemin Etüdü</text>
+  <text x="80" y="408" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">SPT deneyi ve laboratuvar</text>
+  <text x="80" y="421" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">analizleri zorunludur</text>
+
+  <!-- Not 2 -->
+  <rect x="325" y="370" width="250" height="60" fill="#2E5077" rx="5" opacity="0.6"/>
+  <circle cx="345" cy="388" r="10" fill="#C8873A"/>
+  <text x="345" y="393" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">!</text>
+  <text x="365" y="390" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Betonlama Süresi</text>
+  <text x="365" y="408" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Tremi beton kesintisiz</text>
+  <text x="365" y="421" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">dökülmelidir</text>
+
+  <!-- Not 3 -->
+  <rect x="610" y="370" width="250" height="60" fill="#2E5077" rx="5" opacity="0.6"/>
+  <circle cx="630" cy="388" r="10" fill="#C8873A"/>
+  <text x="630" y="393" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">!</text>
+  <text x="650" y="390" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Kalite Kontrolü</text>
+  <text x="650" y="408" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Ultrasonik test ve yükleme</text>
+  <text x="650" y="421" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">deneyi ile doğrulama</text>
+
+  <!-- Alt süreç özet çizgisi -->
+  <line x1="40" y1="455" x2="860" y2="455" stroke="#C8873A" stroke-width="1" opacity="0.4"/>
+  <text x="450" y="478" text-anchor="middle" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="11">Tipik imalat süresi: Ø80cm, 20m derinlik — yaklaşık 4-6 saat / kazık</text>
+  <text x="450" y="498" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="10">TS EN 1536 Standardına Uygun Uygulama</text>
+</svg><figcaption>Fore Kazık İmalat Akış Şeması</figcaption></figure>
+<h2 id="fore-kazik-fiyatlari-2026">Fore Kazık Fiyatları 2026</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> 2026 yılı itibarıyla fore kazık metre fiyatları çapa göre 1.800 TL ile 7.500 TL/m arasında değişmektedir. Fiyatı etkileyen başlıca faktörler; kazık çapı, derinlik, zemin koşulları, donatı yoğunluğu, mobilizasyon mesafesi ve proje ölçeğidir.</div>
+<h3>2026 Güncel Birim Fiyat Tablosu</h3>
+<p>Aşağıdaki fiyatlar, 2026 yılı Mart ayı itibarıyla Türkiye genelindeki ortalama piyasa fiyatlarını yansıtmaktadır. Fiyatlar KDV hariç olup, zemin koşulları, proje büyüklüğü ve lokasyona göre değişiklik gösterebilir.</p>
+<table>
+<thead>
+<tr><th>Kazık Çapı</th><th>Birim Fiyat Aralığı (TL/m)</th><th>Ortalama Fiyat (TL/m)</th><th>Tipik Kullanım Alanı</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Ø40 cm (400 mm)</strong></td><td>1.800 – 3.000</td><td>2.400</td><td>Güçlendirme, hafif yapılar</td></tr>
+<tr><td><strong>Ø50 cm (500 mm)</strong></td><td>2.400 – 4.000</td><td>3.200</td><td>Konut projeleri, iksa</td></tr>
+<tr><td><strong>Ø65 cm (650 mm)</strong></td><td>3.400 – 4.000</td><td>3.700</td><td>Orta ölçekli yapılar</td></tr>
+<tr><td><strong>Ø80 cm (800 mm)</strong></td><td>4.500 – 5.000</td><td>4.750</td><td>Ticari yapılar, köprü</td></tr>
+<tr><td><strong>Ø100 cm (1000 mm)</strong></td><td>6.700 – 7.500</td><td>7.100</td><td>Gökdelen, viyadük, büyük projeler</td></tr>
+<tr><td><strong>Ø120 cm (1200 mm)</strong></td><td>8.500 – 10.500</td><td>9.500</td><td>Mega projeler, derin temeller</td></tr>
+<tr><td><strong>Ø150 cm (1500 mm)</strong></td><td>11.000 – 14.000</td><td>12.500</td><td>Özel projeler, baretten kazık</td></tr>
+</tbody>
+</table>
+<p><strong>Not:</strong> Yukarıdaki fiyatlar delgi, beton, donatı ve işçilik dahil "anahtar teslim" birim fiyatlardır. Mobilizasyon/demobilizasyon bedeli ayrıca değerlendirilir.</p>
+<h3>Fiyatı Etkileyen Temel Faktörler</h3>
+<p><strong>1. Kazık Çapı ve Derinliği:</strong> Çap büyüdükçe beton ve donatı hacmi kübik olarak artar. Ø80 cm kazık, Ø40 cm kazığa göre 4 kat daha fazla beton tüketir. Derinlik arttıkça delgi süresi ve ekipman maliyeti de yükselir.</p>
+<p><strong>2. Zemin Koşulları:</strong> Kaya delgisi gerektiren projeler, yumuşak zemine göre %30–50 daha pahalıdır. Kaya kesici (DTH hammer) kullanımı ek maliyet getirir. Bentonit kullanımı da fiyatı %10–15 artırır.</p>
+<p><strong>3. Donatı Yoğunluğu:</strong> Deprem bölgelerindeki projeler daha yoğun donatı gerektirir. Donatı ağırlığı genellikle 80–150 kg/m³ beton arasındadır. Yüksek deprem riskli bölgelerde bu değer 200 kg/m³'e çıkabilir.</p>
+<p><strong>4. Proje Ölçeği:</strong> Kazık adedi arttıkça birim fiyat düşer. 10 kazıklık bir projede birim fiyat, 200 kazıklık bir projeye göre %15–25 daha yüksektir. Mobilizasyon maliyeti sabit olduğundan, küçük projelerde kazık başına düşen pay artar.</p>
+<p><strong>5. Lokasyon ve Erişim:</strong> Şehir merkezlerinde dar alanlarda çalışmak, büyük makinelerin manevra kısıtlaması nedeniyle ek maliyet oluşturur. Uzak şantiyelere mobilizasyon bedeli 50.000–150.000 TL arasında değişebilir.</p>
+<p><strong>6. Beton ve Çelik Piyasa Fiyatları:</strong> 2026 yılı itibarıyla hazır beton (C30/37) fiyatı bölgeye göre 2.500–3.500 TL/m³, inşaat çeliği fiyatı ise 22.000–28.000 TL/ton aralığındadır. Bu hammadde fiyatlarındaki dalgalanmalar doğrudan kazık maliyetine yansır.</p>
+<p><strong>7. Kılıf (Casing) Kullanımı:</strong> Tam kılıflı delgi, kuru delgiye göre %25–40 daha pahalıdır. Kılıf kiralama bedeli ayrıca hesaplanır.</p>
+<h3>Fore Kazık ile Alternatif Temel Sistemlerinin Maliyet Karşılaştırması</h3>
+<p>Fore kazık fiyatları, diğer derin temel sistemleriyle karşılaştırıldığında genellikle orta-üst segmentte yer alır. Ancak taşıma kapasitesi ve güvenilirlik açısından en yüksek performansı sunar. Bir <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">jet grout</a> kolonunun metre fiyatı fore kazığa göre daha düşük olabilir; ancak taşıma kapasitesi karşılaştırıldığında fore kazık çok daha verimlidir.</p>
+<hr/>
+<h2 id="fore-kazik-maliyet-hesaplama">Fore Kazık Maliyet Hesaplama</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Fore kazık toplam maliyeti; kazık adedi, çapı, derinliği ve zemin koşullarına göre hesaplanır. Örnek: 50 adet Ø80 cm × 20 m derinliğinde fore kazık için toplam maliyet yaklaşık 4.750.000 TL'dir (2026 fiyatlarıyla).</div>
+<h3>Örnek Maliyet Hesabı</h3>
+<p>Bir konut projesi için tipik fore kazık maliyet hesaplamasını inceleyelim:</p>
+<p><strong>Proje Verileri:</strong></p>
+<ul>
+<li>Kazık adedi: 50 adet</li>
+<li>Kazık çapı: Ø80 cm (800 mm)</li>
+<li>Kazık derinliği: 20 m</li>
+<li>Zemin türü: Orta sıkı kum + kil (bentonit gerekli)</li>
+<li>Lokasyon: İstanbul</li>
+</ul>
+<p><strong>Hesaplama:</strong></p>
+<table>
+<thead>
+<tr><th>Kalem</th><th>Hesaplama</th><th>Tutar</th></tr>
+</thead>
+<tbody>
+<tr><td>Toplam delgi metrajı</td><td>50 kazık × 20 m</td><td>1.000 m</td></tr>
+<tr><td>Birim fiyat (Ø80 cm, bentonitli)</td><td>—</td><td>4.750 TL/m</td></tr>
+<tr><td>**Delgi + imalat bedeli**</td><td>1.000 m × 4.750 TL/m</td><td>**4.750.000 TL**</td></tr>
+<tr><td>Mobilizasyon/demobilizasyon</td><td>Götürü</td><td>120.000 TL</td></tr>
+<tr><td>Kazık başı tıraşlama</td><td>50 adet × 800 TL</td><td>40.000 TL</td></tr>
+<tr><td>Kazık yük testi (2 adet statik)</td><td>2 × 85.000 TL</td><td>170.000 TL</td></tr>
+<tr><td>Sağlamlık testi (CSL, tüm kazıklar)</td><td>50 × 2.500 TL</td><td>125.000 TL</td></tr>
+<tr><td>**GENEL TOPLAM (KDV hariç)**</td><td>—</td><td>**~5.205.000 TL**</td></tr>
+</tbody>
+</table>
+<h3>Maliyeti Etkileyen Faktörler Listesi</h3>
+<p>Toplam maliyeti doğrudan etkileyen faktörler şunlardır:</p>
+<ol>
+<li><strong>Kazık geometrisi:</strong> Çap ve derinlik artışı maliyet artışının birincil sebebidir.</li>
+<li><strong>Zemin koşulları:</strong> Kaya delgisi, artezyen su, boulderlı (bloklu) zemin ek maliyet yaratır.</li>
+<li><strong>Donatı detayları:</strong> Etriye sıklaştırması, çift sıra donatı, özel çelik sınıfı (B500C) maliyeti artırır.</li>
+<li><strong>Beton sınıfı:</strong> C30/37 yerine C35/45 veya C40/50 kullanımı %8–12 ek maliyet getirir.</li>
+<li><strong>Delgi yöntemi:</strong> CFA kazık genellikle geleneksel fore kazığa göre %10–20 daha ekonomiktir.</li>
+<li><strong>Proje takvimi:</strong> Gece çalışması, hafta sonu çalışması ve acil mobilizasyon ek ücretlere tabidir.</li>
+<li><strong>Kalite kontrol testleri:</strong> Statik yük testi, sonik (CSL) testi, PIT testi gibi testler toplam maliyetin %3–5'ini oluşturur.</li>
+<li><strong>İklim koşulları:</strong> Kış aylarında betonlama için antifrize ve ısıtma önlemleri ek maliyet getirir.</li>
+</ol>
+<p>Kesin maliyet hesabı için zemin etüdü raporunuzla birlikte <a href="/iletisim/">bizimle iletişime geçin</a>.</p>
+<hr/>
+<h2 id="fore-kazik-deprem-dayanikliligi-ve-tbdy-2018">Fore Kazık Deprem Dayanıklılığı ve TBDY 2018</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Fore kazıklar, TBDY 2018 (Türkiye Bina Deprem Yönetmeliği) kapsamında depreme dayanıklı yapı tasarımının temel bileşenlerindendir. Sıvılaşma riski bulunan ZD, ZE ve ZF sınıfı zeminlerde fore kazık uygulaması zorunlu hale gelebilir. Kazık-zemin etkileşimi analizi, deprem tasarımının ayrılmaz parçasıdır.</div>
+<h3>Deprem ve Derin Temel İlişkisi</h3>
+<p>Türkiye, dünyanın en aktif deprem kuşaklarından biri olan Alp-Himalaya deprem kuşağı üzerinde yer alır. Ülke topraklarının %92'si deprem bölgesindedir ve nüfusun büyük bölümü deprem riski altında yaşamaktadır. Bu gerçek, yapı temellerinin depreme dayanıklı tasarlanmasını zorunlu kılmaktadır.</p>
+<p>Fore kazıklar, deprem mühendisliği açısından kritik avantajlar sunar:</p>
+<ul>
+<li><strong>Sıvılaşma önlemi:</strong> Gevşek kumlu ve suya doygun zeminler deprem sırasında sıvılaşabilir (liquefaction). Fore kazıklar, sıvılaşan tabakayı geçerek altındaki sıvılaşmayan katmana ulaşır ve yapı güvenliğini sağlar.</li>
+<li><strong>Yanal yük direnci:</strong> Deprem sırasında yapıya etkiyen yatay kuvvetler, kazık gövdesi boyunca zemine aktarılır. Kazığın eğilme ve kesme kapasitesi, bu yatay yükleri güvenle karşılar.</li>
+<li><strong>Deplasman kontrolü:</strong> Deprem sırasında zemin hareketi ve yapı deplasmanı, <a href="/faaliyet-alanlari/kazikli-temeller/fore-kazik/">kazıklı temeller</a> sayesinde kontrol altında tutulur.</li>
+</ul>
+<h3>TBDY 2018 Gereklilikleri</h3>
+<p>Türkiye Bina Deprem Yönetmeliği 2018 (TBDY 2018), fore kazık tasarımını doğrudan etkileyen önemli düzenlemeler içerir:</p>
+<p><strong>Zemin Sınıfları (ZA–ZF):</strong></p>
+<ul>
+<li><strong>ZA:</strong> Sağlam kaya (Vs30 > 1500 m/s) — Fore kazık genellikle gerekmez</li>
+<li><strong>ZB:</strong> Kaya (760 < Vs30 ≤ 1500 m/s) — Fore kazık nadiren gerekir</li>
+<li><strong>ZC:</strong> Sert zemin (360 < Vs30 ≤ 760 m/s) — Proje özelinde değerlendirilir</li>
+<li><strong>ZD:</strong> Orta sıkı zemin (180 < Vs30 ≤ 360 m/s) — Fore kazık sıklıkla gerekir</li>
+<li><strong>ZE:</strong> Yumuşak zemin (Vs30 ≤ 180 m/s) — Fore kazık genellikle zorunludur</li>
+<li><strong>ZF:</strong> Özel zemin (sıvılaşma, hassas kil vb.) — Fore kazık zorunludur, özel analiz gerektirir</li>
+</ul>
+<p><strong>Yapısal gereksinimler:</strong></p>
+<ul>
+<li>Fore kazık donatı oranı minimum %1 olmalıdır (kazık kesit alanına göre).</li>
+<li>Kazık üst bölgesinde (2 × kazık çapı kadar) etriye sıklaştırması uygulanmalıdır.</li>
+<li>Kazık-başlık birleşimi, moment aktaracak şekilde tasarlanmalıdır.</li>
+<li>Sıvılaşma potansiyeli olan zeminlerde, negatif sürtünme (downdrag) ve yanal yayılma (lateral spreading) etkileri ayrıca hesaba katılmalıdır.</li>
+</ul>
+<h3>Sıvılaşma ve Fore Kazık</h3>
+<p>Sıvılaşma, gevşek kumlu ve suya doygun zeminlerin deprem sırasında boşluk suyu basıncı artışıyla taşıma gücünü kaybetmesi durumudur. TBDY 2018, sıvılaşma potansiyeli değerlendirmesinde SPT, CPT ve Vs verilerini kullanır.</p>
+<p>Sıvılaşma riski tespit edilen zeminlerde fore kazık tasarımında:</p>
+<ul>
+<li>Kazık, sıvılaşan tabakayı tamamen geçerek sıvılaşmayan katmana en az 5 × çap kadar soketlenmelidir.</li>
+<li>Sıvılaşan tabakadaki çevre sürtünmesi, taşıma kapasitesi hesabında sıfır (veya negatif) alınmalıdır.</li>
+<li>Yanal yayılma kuvvetleri, ek yatay yük olarak kazık tasarımına dahil edilmelidir.</li>
+<li>Eurocode 7 ve Eurocode 8 (sismik tasarım) referans alınarak deprem performans analizi yapılmalıdır.</li>
+</ul>
+<hr/>
+<h2 id="ozel-kosullarda-fore-kazik-uygulamasi">Özel Koşullarda Fore Kazık Uygulaması</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Fore kazık, yüksek yeraltı suyu tablası, kaya formasyonları, gevşek kumlu zeminler ve sıkışık kentsel alanlar gibi zorlu koşullarda özel yöntemlerle başarıyla uygulanır. Her koşul, kendine özgü ekipman, teknik ve önlem gerektirir.</div>
+<h3>Yüksek Yeraltı Suyu Tablası</h3>
+<p>Yeraltı su seviyesinin yüzeye yakın olduğu (0–3 m) projelerde, fore kazık delgisi özel önlemler gerektirir:</p>
+<ul>
+<li><strong>Bentonit şerbeti yöntemi:</strong> En yaygın çözümdür. Bentonit slurry, kuyu içindeki hidrostatik basıncı sağlayarak suyun kuyuya sızmasını önler.</li>
+<li><strong>Kılıf (casing) yöntemi:</strong> Tam kılıflı sistemlerde su girişi mekanik olarak engellenir. Artezyen su koşullarında tercih edilir.</li>
+<li><strong>Tremi betonlama zorunluluğu:</strong> Su altında kalan kuyularda beton mutlaka tremi yöntemiyle dökülmelidir. Serbest düşürme (free-fall) betonlama kesinlikle yapılmamalıdır; beton segregasyona uğrar ve kazık kalitesi ciddi şekilde düşer.</li>
+</ul>
+<h3>Kaya Formasyonlarında Delgi</h3>
+<p>Kaya tabakasına ulaşıldığında delgi hızı önemli ölçüde yavaşlar ve standart burgu ekipmanı yetersiz kalır:</p>
+<ul>
+<li><strong>Kaya kovası (Rock bucket/Core barrel):</strong> Orta sert kayalarda (UCS 25–80 MPa) kullanılır. Kayanın parçalanarak çıkarılmasını sağlar.</li>
+<li><strong>DTH hammer (Down-the-hole hammer):</strong> Sert kayalarda (UCS > 80 MPa) darbeli kırıcı kullanılır. Hava veya su basıncıyla çalışır.</li>
+<li><strong>Kaya soketi (Rock socket):</strong> Kazığın kaya içerisine gömülmesi, uç direncini ve toplam taşıma kapasitesini önemli ölçüde artırır. Kaya soketi derinliği genellikle 1,5D–3D (D = kazık çapı) arasındadır.</li>
+</ul>
+<h3>Gevşek Kumlu Zemin</h3>
+<p>Gevşek kum tabakalarında en büyük risk, delgi sırasında kuyu cidarının ani göçmesidir (cave-in). Bu koşullarda:</p>
+<ul>
+<li>Tam kılıf uygulaması veya yoğun bentonit çamuru kullanılmalıdır.</li>
+<li>Betonlama sırasında kılıf çekme hızı çok dikkatli kontrol edilmelidir; hızlı çekme halinde zemin kuyuya akabilir ve kazık boyunda daralma (necking) oluşabilir.</li>
+<li>CFA kazık yöntemi, gevşek kumlarda çok başarılı sonuçlar verir çünkü kuyu hiçbir zaman açık kalmaz.</li>
+</ul>
+<h3>Sıkışık Kentsel Alan</h3>
+<p>Şehir merkezlerinde, dar sokaklarda ve mevcut yapılara bitişik alanlarda fore kazık uygulaması ek zorluklar getirir:</p>
+<ul>
+<li><strong>Düşük başlıklı (low headroom) makineler:</strong> Tavan yüksekliğinin sınırlı olduğu bodrum katı güçlendirmelerinde veya köprü altı çalışmalarda kullanılır.</li>
+<li><strong>Titreşim ve gürültü kontrolü:</strong> Fore kazık, çakma kazığa göre çok daha az titreşim üretir; ancak kılıf indirme/çıkarma sırasında oluşabilecek titreşim izlenmeli ve sınır değerler (DIN 4150-3'e göre tipik konut yapıları için 5 mm/s) aşılmamalıdır.</li>
+<li><strong><a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/">İksa sistemi</a> entegrasyonu:</strong> Kentsel projelerde fore kazıklar, iksa perdesi olarak da görev yapabilir (çift fonksiyon: hem taşıyıcı hem iksa). Bu yaklaşım, toplam maliyeti ve inşaat süresini azaltır.</li>
+</ul>
+<hr/>
+<h2 id="zemin-etudu-ve-fore-kazik-i-liskisi">Zemin Etüdü ve Fore Kazık İlişkisi</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Zemin etüdü, fore kazık tasarımının vazgeçilmez girdisidir. SPT-N değerleri, presiyometre deneyleri, laboratuvar analizleri ve sondaj karotları, kazık çapını, derinliğini ve taşıma kapasitesini belirleyen temel verilerdir. Yetersiz zemin etüdü, fore kazık projelerindeki başarısızlıkların en yaygın sebebidir.</div>
+<h3>Zemin Etüdünün Gerekliliği</h3>
+<p>Her fore kazık projesi, mutlaka kapsamlı bir zemin etüdü raporuna dayanmalıdır. Zemin etüdü olmadan fore kazık tasarımı yapmak, "gözü kapalı cerrahiye" benzer — son derece risklidir. <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">Zemin iyileştirme</a> kararı da dahil olmak üzere tüm geoteknik mühendislik çözümleri, zemin etüdü verilerine dayanır.</p>
+<p>Fore kazık projeleri için zemin etüdünde yapılması gereken işlemler:</p>
+<ul>
+<li><strong>Sondaj:</strong> Kazık derinliğinin en az 5 metre altına kadar yapılmalıdır. Her 1.000 m² alan için en az 1 sondaj noktası önerilir.</li>
+<li><strong>SPT (Standard Penetration Test):</strong> Her 1,5 m derinlikte SPT deneyi yapılarak zemin sıkılığı ölçülür.</li>
+<li><strong>Karot numunesi alma:</strong> Kaya formasyonlarında RQD (Rock Quality Designation) ve UCS (tek eksenli basınç dayanımı) belirlenir.</li>
+<li><strong>Presiyometre deneyi:</strong> Yerinde zemin deformasyon modülü ve limit basıncı ölçülür. Fore kazık taşıma kapasitesi hesabında doğrudan kullanılır.</li>
+<li><strong>Laboratuvar deneyleri:</strong> Su muhtevası, Atterberg limitleri, dane dağılımı (elek analizi), üç eksenli basınç, konsolidasyon deneyleri yapılır.</li>
+<li><strong>Yeraltı suyu ölçümü:</strong> Su seviyesi ve artezyen basıncı tespiti, delgi yöntemi seçimini doğrudan etkiler.</li>
+</ul>
+<h3>SPT-N Değerleri ve Fore Kazık Tasarımı</h3>
+<p>SPT-N değeri, zeminin sıkılık veya kıvam durumunu gösteren en yaygın arazi deneyi parametresidir. Fore kazık tasarımında SPT-N değerleri şu şekilde kullanılır:</p>
+<table>
+<thead>
+<tr><th>SPT-N Değeri</th><th>Zemin Durumu</th><th>Fore Kazık İlişkisi</th></tr>
+</thead>
+<tbody>
+<tr><td>0–4</td><td>Çok gevşek/yumuşak</td><td>Kazık bu tabakadan geçmeli; sürtünme ihmal edilir</td></tr>
+<tr><td>4–10</td><td>Gevşek/orta</td><td>Düşük sürtünme; kazık bu tabakada sonlandırılmamalı</td></tr>
+<tr><td>10–30</td><td>Orta sıkı/sert</td><td>Sürtünme taşıyıcı olarak değerlendirilebilir</td></tr>
+<tr><td>30–50</td><td>Sıkı/çok sert</td><td>Yüksek sürtünme kapasitesi; uç taşıma da değerlendirilir</td></tr>
+<tr><td>50+</td><td>Çok sıkı/kaya</td><td>Kazık ucu için ideal tabaka; uç direnci baskın</td></tr>
+</tbody>
+</table>
+<h3>Taşıma Kapasitesi Hesabı</h3>
+<p>Fore kazık taşıma kapasitesi hesabında en yaygın kullanılan yöntemler:</p>
+<p><strong>1. Meyerhof Yöntemi (SPT tabanlı):</strong></p>
+<p>Kumlu zeminlerde uç direnci: q_uç = 40 × N × (L/D) ≤ 400 × N (kPa)</p>
+<p>Çevre sürtünmesi: f_s = 2 × N (kPa) — kum için</p>
+<p><strong>2. Vesic Yöntemi:</strong></p>
+<p>Uç direnci kavramsal olarak Terzaghi taşıma gücü teorisine dayanır. Derin temel koşullarında düzeltilmiş taşıma gücü katsayıları kullanılır.</p>
+<p><strong>3. Presiyometre Yöntemi (Menard):</strong></p>
+<p>Uç direnci: q_uç = k × p_L (k: zemin türüne göre katsayı, p_L: limit basıncı)</p>
+<p>Bu yöntem, Fransa ve Avrupa'da en yaygın kullanılan yöntemdir ve Eurocode 7 kapsamında referans gösterilmektedir.</p>
+<p><strong>4. α-Yöntemi (Kohezyonlu zeminler):</strong></p>
+<p>Çevre sürtünmesi: f_s = α × c_u (α: yapışma katsayısı, c_u: drenajsız kayma dayanımı)</p>
+<p>Tüm bu yöntemlerin sonuçları, güvenlik katsayısı (genel olarak 2,0–3,0) veya kısmi güvenlik katsayıları (Eurocode 7 yaklaşımı) ile bölünerek tasarım taşıma kapasitesi elde edilir. Tasarım sonuçları mutlaka kazık yük testi ile doğrulanmalıdır.</p>
+<hr/>
+<figure class="svg-diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 850">
+  <defs>
+    <!-- Dolgu deseni: noktalı -->
+    <pattern id="slDots" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#B8A88A"/>
+      <circle cx="2" cy="2" r="1.2" fill="#8A7A5A"/>
+      <circle cx="6" cy="6" r="1.2" fill="#8A7A5A"/>
+    </pattern>
+    <!-- Kil deseni: çizgili -->
+    <pattern id="slClay" width="12" height="6" patternUnits="userSpaceOnUse">
+      <rect width="12" height="6" fill="#9A8060"/>
+      <line x1="0" y1="2" x2="12" y2="2" stroke="#7A6040" stroke-width="1"/>
+      <line x1="0" y1="5" x2="12" y2="5" stroke="#7A6040" stroke-width="0.6"/>
+    </pattern>
+    <!-- Kum deseni: benekli -->
+    <pattern id="slSand" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#D4BA6A"/>
+      <circle cx="1" cy="1" r="0.7" fill="#B09A4A"/>
+      <circle cx="5" cy="3" r="0.5" fill="#B09A4A"/>
+      <circle cx="3" cy="6" r="0.6" fill="#B09A4A"/>
+      <circle cx="7" cy="5" r="0.4" fill="#B09A4A"/>
+      <circle cx="2" cy="4" r="0.3" fill="#B09A4A"/>
+      <circle cx="6" cy="7" r="0.5" fill="#B09A4A"/>
+    </pattern>
+    <!-- Çakıl deseni: daireler -->
+    <pattern id="slGravel" width="16" height="14" patternUnits="userSpaceOnUse">
+      <rect width="16" height="14" fill="#A89A7A"/>
+      <ellipse cx="4" cy="4" rx="3" ry="2.5" fill="#8A7A5A" stroke="#6A5A3A" stroke-width="0.5"/>
+      <ellipse cx="12" cy="10" rx="3.5" ry="2.5" fill="#9A8A6A" stroke="#6A5A3A" stroke-width="0.5"/>
+      <ellipse cx="8" cy="2" rx="2" ry="1.5" fill="#7A6A4A" stroke="#6A5A3A" stroke-width="0.5"/>
+    </pattern>
+    <!-- Kaya deseni: taralı -->
+    <pattern id="slRock" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#707070"/>
+      <line x1="0" y1="0" x2="10" y2="10" stroke="#555" stroke-width="0.8"/>
+      <line x1="10" y1="0" x2="0" y2="10" stroke="#555" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+
+  <!-- Arka plan -->
+  <rect width="700" height="850" fill="#F5F2ED"/>
+
+  <!-- Başlık bandı -->
+  <rect x="0" y="0" width="700" height="70" fill="#1B2B3A"/>
+  <text x="350" y="30" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Tipik Sondaj Logu</text>
+  <text x="350" y="52" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="13">Fore Kazık Projesi — Zemin Profili</text>
+
+  <!-- Sütun başlıkları -->
+  <rect x="20" y="85" width="660" height="35" fill="#2E5077" rx="4"/>
+  <text x="70" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Derinlik</text>
+  <text x="170" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Grafik Log</text>
+  <text x="315" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Zemin Tanımı</text>
+  <text x="455" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">SPT-N</text>
+  <text x="555" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Zemin Sınıfı</text>
+  <text x="645" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Su</text>
+
+  <!-- Ayırıcı çizgiler (dikey) -->
+  <line x1="115" y1="85" x2="115" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
+  <line x1="225" y1="85" x2="225" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
+  <line x1="410" y1="85" x2="410" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
+  <line x1="505" y1="85" x2="505" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
+  <line x1="610" y1="85" x2="610" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- ======= KATMAN 1: DOLGU (0-2m) ======= -->
+  <!-- Derinlik ölçeği -->
+  <text x="70" y="145" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">0.00 m</text>
+  <line x1="25" y1="130" x2="110" y2="130" stroke="#1B2B3A" stroke-width="1"/>
+
+  <!-- Grafik log -->
+  <rect x="120" y="130" width="100" height="130" fill="url(#slDots)" stroke="#1B2B3A" stroke-width="1"/>
+
+  <!-- Zemin tanımı -->
+  <text x="230" y="175" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DOLGU</text>
+  <text x="230" y="195" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Karışık dolgu malzemesi,</text>
+  <text x="230" y="211" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">gevşek, organik katkılı</text>
+
+  <!-- SPT-N değeri -->
+  <rect x="430" y="170" width="50" height="30" fill="#C8873A" rx="4"/>
+  <text x="455" y="191" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">5</text>
+  <!-- SPT bar -->
+  <rect x="430" y="208" width="15" height="8" fill="#C8873A" rx="2" opacity="0.6"/>
+
+  <!-- Zemin sınıfı -->
+  <rect x="520" y="175" width="75" height="28" fill="#1B2B3A" rx="4"/>
+  <text x="557" y="194" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZD</text>
+
+  <!-- Derinlik çizgisi: 2m -->
+  <text x="70" y="275" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">2.00 m</text>
+  <line x1="25" y1="260" x2="610" y2="260" stroke="#1B2B3A" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ======= KATMAN 2: KİL (2-7m) ======= -->
+  <rect x="120" y="260" width="100" height="195" fill="url(#slClay)" stroke="#1B2B3A" stroke-width="1"/>
+
+  <text x="230" y="335" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KİL</text>
+  <text x="230" y="355" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Orta plastisiteli kil (CL),</text>
+  <text x="230" y="371" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">kahverengi-gri, sert</text>
+
+  <!-- SPT-N değeri -->
+  <rect x="430" y="335" width="50" height="30" fill="#C8873A" rx="4"/>
+  <text x="455" y="356" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">8</text>
+  <!-- SPT bar -->
+  <rect x="430" y="373" width="24" height="8" fill="#C8873A" rx="2" opacity="0.6"/>
+
+  <!-- Zemin sınıfı -->
+  <rect x="520" y="340" width="75" height="28" fill="#1B2B3A" rx="4"/>
+  <text x="557" y="359" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZD</text>
+
+  <!-- Su seviyesi göstergesi -->
+  <text x="645" y="310" text-anchor="middle" fill="#2E5077" font-family="Arial, sans-serif" font-size="18">&#9660;</text>
+  <text x="645" y="330" text-anchor="middle" fill="#2E5077" font-family="Arial, sans-serif" font-size="9" font-weight="bold">YASS</text>
+  <text x="645" y="343" text-anchor="middle" fill="#2E5077" font-family="Arial, sans-serif" font-size="9">3.5m</text>
+
+  <!-- Derinlik çizgisi: 7m -->
+  <text x="70" y="470" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">7.00 m</text>
+  <line x1="25" y1="455" x2="610" y2="455" stroke="#1B2B3A" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ======= KATMAN 3: KUM (7-15m) ======= -->
+  <rect x="120" y="455" width="100" height="195" fill="url(#slSand)" stroke="#1B2B3A" stroke-width="1"/>
+
+  <text x="230" y="530" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KUM</text>
+  <text x="230" y="550" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Orta-sıkı kum (SM),</text>
+  <text x="230" y="566" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">sarı-kahve, siltli,</text>
+  <text x="230" y="582" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">yer yer çakıllı</text>
+
+  <!-- SPT-N değeri -->
+  <rect x="430" y="530" width="50" height="30" fill="#C8873A" rx="4"/>
+  <text x="455" y="551" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">15</text>
+  <!-- SPT bar -->
+  <rect x="430" y="568" width="45" height="8" fill="#C8873A" rx="2" opacity="0.6"/>
+
+  <!-- Zemin sınıfı -->
+  <rect x="520" y="535" width="75" height="28" fill="#2E5077" rx="4"/>
+  <text x="557" y="554" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZC</text>
+
+  <!-- Derinlik çizgisi: 15m -->
+  <text x="70" y="665" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">15.00 m</text>
+  <line x1="25" y1="650" x2="610" y2="650" stroke="#1B2B3A" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ======= KATMAN 4: ÇAKIL (15-18m) ======= -->
+  <rect x="120" y="650" width="100" height="70" fill="url(#slGravel)" stroke="#1B2B3A" stroke-width="1"/>
+
+  <text x="230" y="680" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ÇAKIL</text>
+  <text x="230" y="700" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Sıkı çakıl (GP),</text>
+  <text x="230" y="716" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">kumlu, köşeli</text>
+
+  <!-- SPT-N değeri -->
+  <rect x="430" y="672" width="50" height="30" fill="#C8873A" rx="4"/>
+  <text x="455" y="693" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">25</text>
+  <!-- SPT bar -->
+  <rect x="430" y="710" width="75" height="8" fill="#C8873A" rx="2" opacity="0.6"/>
+
+  <!-- Zemin sınıfı -->
+  <rect x="520" y="677" width="75" height="28" fill="#2E5077" rx="4"/>
+  <text x="557" y="696" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZC</text>
+
+  <!-- Derinlik çizgisi: 18m -->
+  <text x="70" y="735" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">18.00 m</text>
+  <line x1="25" y1="720" x2="610" y2="720" stroke="#1B2B3A" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- ======= KATMAN 5: KAYA (18-20m+) ======= -->
+  <rect x="120" y="720" width="100" height="70" fill="url(#slRock)" stroke="#1B2B3A" stroke-width="1"/>
+
+  <text x="230" y="750" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KAYA</text>
+  <text x="230" y="770" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Ayrışmış kaya tabakası,</text>
+  <text x="230" y="786" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">çok sert, delgi sonu</text>
+
+  <!-- SPT-N değeri -->
+  <rect x="430" y="742" width="50" height="30" fill="#C8873A" rx="4"/>
+  <text x="455" y="763" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">50+</text>
+  <!-- SPT bar (tam) -->
+  <rect x="430" y="780" width="100" height="8" fill="#C8873A" rx="2" opacity="0.6"/>
+
+  <!-- Zemin sınıfı -->
+  <rect x="520" y="747" width="75" height="28" fill="#1B2B3A" rx="4"/>
+  <text x="557" y="766" text-anchor="middle" fill="#C8873A" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZB</text>
+
+  <!-- Derinlik çizgisi: 20m -->
+  <text x="70" y="805" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">20.00 m</text>
+  <line x1="25" y1="790" x2="610" y2="790" stroke="#1B2B3A" stroke-width="1"/>
+
+  <!-- Alt bilgi bandı -->
+  <rect x="0" y="810" width="700" height="40" fill="#1B2B3A"/>
+
+  <!-- Lejant -->
+  <text x="30" y="834" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="10" font-weight="bold">SPT-N:</text>
+  <text x="75" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Standart Penetrasyon Deneyi</text>
+
+  <text x="260" y="834" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="10" font-weight="bold">YASS:</text>
+  <text x="295" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Yeraltı Su Seviyesi</text>
+
+  <text x="430" y="834" fill="#C8873A" font-family="Arial, sans-serif" font-size="10" font-weight="bold">ZB:</text>
+  <text x="450" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Sağlam</text>
+
+  <text x="505" y="834" fill="#C8873A" font-family="Arial, sans-serif" font-size="10" font-weight="bold">ZC:</text>
+  <text x="525" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Orta sıkı</text>
+
+  <text x="595" y="834" fill="#C8873A" font-family="Arial, sans-serif" font-size="10" font-weight="bold">ZD:</text>
+  <text x="615" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Yumuşak/Gevşek</text>
+</svg><figcaption>Tipik Sondaj Logu — Zemin Profili</figcaption></figure>
+<h2 id="fore-kazik-vs-alternatifler">Fore Kazık vs Alternatifler</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Fore kazık, çakma kazık, jet grout ve mini kazık ile farklı açılardan karşılaştırılabilir. Fore kazık, yüksek taşıma kapasitesi, düşük titreşim ve geniş çap esnekliği ile öne çıkarken; maliyet ve imalat hızı bakımından her projede en uygun çözüm olmayabilir.</div>
+<h3>Fore Kazık vs Çakma Kazık</h3>
+<table>
+<thead>
+<tr><th>Karşılaştırma Kriteri</th><th>Fore Kazık (Bored Pile)</th><th>Çakma Kazık (Driven Pile)</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Yapım Yöntemi</strong></td><td>Zemin delinerek yerinde beton dökülür</td><td>Prefabrik kazık çakılarak zemine sokulur</td></tr>
+<tr><td><strong>Çap Aralığı</strong></td><td>400–3000 mm</td><td>200–600 mm (kare/dairesel)</td></tr>
+<tr><td><strong>Taşıma Kapasitesi</strong></td><td>500–30.000+ kN</td><td>300–3.000 kN</td></tr>
+<tr><td><strong>Titreşim</strong></td><td>Çok düşük (zemin çıkarılır)</td><td>Çok yüksek (zemine çakılır)</td></tr>
+<tr><td><strong>Gürültü</strong></td><td>Düşük-orta</td><td>Çok yüksek</td></tr>
+<tr><td><strong>Kentsel Uygunluk</strong></td><td>Çok uygun</td><td>Uygun değil (titreşim/gürültü)</td></tr>
+<tr><td><strong>Zemin Kontrolü</strong></td><td>Delgi sırasında zemin görülür/kontrol edilir</td><td>Zemin kontrolü yapılamaz</td></tr>
+<tr><td><strong>Maliyet</strong></td><td>Orta-yüksek</td><td>Düşük-orta</td></tr>
+<tr><td><strong>İmalat Hızı</strong></td><td>Orta (3–5 kazık/gün)</td><td>Hızlı (10–20 kazık/gün)</td></tr>
+<tr><td><strong>Kaya Soketi</strong></td><td>Mümkün</td><td>Mümkün değil</td></tr>
+</tbody>
+</table>
+<p><strong>Sonuç:</strong> Fore kazık; yüksek taşıma kapasitesi, düşük titreşim ve kaya soketi gerektiren projelerde üstündür. Çakma kazık ise düşük maliyetli, hızlı imalat gereken kırsal projelerde avantajlıdır.</p>
+<h3>Fore Kazık vs Jet Grout</h3>
+<table>
+<thead>
+<tr><th>Karşılaştırma Kriteri</th><th>Fore Kazık</th><th><a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">Jet Grout</a></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Çalışma Prensibi</strong></td><td>Betonarme yapısal eleman</td><td>Zemin-çimento karışımı kolon</td></tr>
+<tr><td><strong>Taşıma Kapasitesi</strong></td><td>Çok yüksek (yapısal eleman)</td><td>Orta (zemin iyileştirme)</td></tr>
+<tr><td><strong>Kullanım Amacı</strong></td><td>Yapısal temel, iksa</td><td>Zemin iyileştirme, sızdırmazlık, perde</td></tr>
+<tr><td><strong>Çap Kontrolü</strong></td><td>Tam kontrol (delgi çapı = kazık çapı)</td><td>Sınırlı kontrol (zemine bağlı)</td></tr>
+<tr><td><strong>Donatı</strong></td><td>Betonarme kafes (yüksek eğilme/çekme kapasitesi)</td><td>Genellikle donatısız veya tek çubuk</td></tr>
+<tr><td><strong>Maliyet (TL/m)</strong></td><td>2.400–14.000</td><td>1.200–3.500</td></tr>
+<tr><td><strong>Deprem Performansı</strong></td><td>Çok iyi (sünek davranış)</td><td>Orta (gevrek davranış)</td></tr>
+<tr><td><strong>Standart</strong></td><td>TS EN 1536</td><td>TS EN 12716</td></tr>
+</tbody>
+</table>
+<p><strong>Sonuç:</strong> Fore kazık yapısal taşıma ve deprem dayanımı gerektiren projelerde tercih edilirken, jet grout zemin iyileştirme ve sızdırmazlık amaçlı projelerde daha uygundur. Bazı projelerde ikisi birlikte de kullanılabilir (örn. fore kazık iksa + jet grout sızdırmazlık perdesi).</p>
+<h3>Fore Kazık vs Mini Kazık</h3>
+<table>
+<thead>
+<tr><th>Karşılaştırma Kriteri</th><th>Fore Kazık</th><th><a href="/faaliyet-alanlari/kazikli-temeller/mini-kazik/">Mini Kazık</a></th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Çap Aralığı</strong></td><td>400–3000 mm</td><td>150–400 mm</td></tr>
+<tr><td><strong>Taşıma Kapasitesi</strong></td><td>500–30.000+ kN</td><td>100–800 kN</td></tr>
+<tr><td><strong>Makine Boyutu</strong></td><td>Büyük (60–120 ton)</td><td>Kompakt (5–30 ton)</td></tr>
+<tr><td><strong>Dar Alan Uygunluğu</strong></td><td>Sınırlı</td><td>Çok uygun (bina içi, bodrum)</td></tr>
+<tr><td><strong>Güçlendirme</strong></td><td>Sınırlı (makine erişimi)</td><td>İdeal (mevcut bina altı)</td></tr>
+<tr><td><strong>Derinlik</strong></td><td>5–60+ m</td><td>5–25 m</td></tr>
+<tr><td><strong>Maliyet (TL/m)</strong></td><td>1.800–14.000</td><td>1.000–2.500</td></tr>
+<tr><td><strong>İmalat Hızı</strong></td><td>3–5 adet/gün (Ø80 cm)</td><td>8–15 adet/gün</td></tr>
+</tbody>
+</table>
+<p><strong>Sonuç:</strong> Fore kazık, yüksek yapısal yüklerin olduğu yeni inşaat projelerinde tercih edilirken, <a href="/faaliyet-alanlari/kazikli-temeller/mini-kazik/">mini kazık</a> mevcut bina güçlendirme, dar alan ve düşük yük projelerinde avantajlıdır.</p>
+<div class="cta-box" style="background:#f0f7ff;border-left:4px solid #0056b3;padding:20px;margin:20px 0;">
+<strong>Hangi Temel Sistemi Sizin Projenize Uygun?</strong><br>
+<p>Zemin etüdü raporunuzla birlikte bizi arayın, uzman mühendislerimiz en uygun ve ekonomik çözümü belirlesin.<br></p>
+<a href="tel:+905316594636" style="display:inline-block;background:#0056b3;color:#fff;padding:10px 24px;margin-top:10px;text-decoration:none;border-radius:4px;">📞 Hemen Arayın: 0531 659 46 36</a>
+</div>
+<hr/>
+<h2 id="sik-sorulan-sorular-sss">Sık Sorulan Sorular (SSS)</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Fore kazık hakkında en çok merak edilen konular; tanım, fiyat, derinlik, kullanım alanları, deprem dayanıklılığı, alternatif karşılaştırmaları, beton sınıfı, taşıma kapasitesi hesabı, kılıf kullanımı, imalat süresi ve yük testi zorunluluğudur.</div>
+<h3>1. Fore kazık nedir ve ne işe yarar?</h3>
+<p>Fore kazık, zemin içerisine silindirik bir kuyu açılarak, donatı kafesi yerleştirildikten sonra yerinde beton dökülerek oluşturulan derin temel elemanıdır. Üst yapıdan gelen düşey ve yatay yükleri, yüzeydeki zayıf zemini aşarak derinlerdeki sağlam zemin tabakalarına veya ana kayaya aktarır. "Bored pile" veya "drilled shaft" olarak da bilinir. Konut, ticari bina, köprü, metro, endüstriyel tesis ve iksa projelerinde yaygın olarak kullanılır. TS EN 1536 standardına göre tasarlanır ve uygulanır.</p>
+<h3>2. 1 metre fore kazık fiyatı ne kadar?</h3>
+<p>2026 yılı itibarıyla 1 metre fore kazık fiyatı, kazık çapına göre 1.800 TL ile 14.000 TL arasında değişmektedir. Ø40 cm kazık için ortalama 2.400 TL/m, Ø80 cm kazık için ortalama 4.750 TL/m, Ø100 cm kazık için ortalama 7.100 TL/m'dir. Bu fiyatlar delgi, beton, donatı ve işçilik dahil anahtar teslim birim fiyatlardır. Mobilizasyon, kalite kontrol testleri ve kazık başlığı imalatı gibi kalemler ayrıca fiyatlandırılır. Kesin fiyat için zemin koşulları, kazık adedi ve lokasyon bilgisi gereklidir.</p>
+<h3>3. Fore kazık ne kadar derine iner?</h3>
+<p>Fore kazık derinliği, zemin koşullarına ve proje gereksinimlerine bağlı olarak 5 metreden 60 metrenin üzerine kadar çıkabilir. Tipik uygulamalarda derinlik 15–35 metre arasındadır. Derinliği belirleyen temel faktörler: sağlam zemin veya kaya tabakasının derinliği, proje yükleri ve sıvılaşma tabakası kalınlığıdır. Baret kazık gibi özel uygulamalarda 80 metrenin üzerine çıkılabilir. Zemin etüdü raporu, kazık derinliğinin belirlenmesinde en kritik veri kaynağıdır.</p>
+<h3>4. Fore kazık nerelerde kullanılır?</h3>
+<p>Fore kazık başlıca şu alanlarda kullanılır: yüksek katlı bina temelleri, köprü ve viyadük ayakları, metro istasyonları, derin kazılarda <a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/">iksa sistemleri</a>, liman ve rıhtım yapıları, endüstriyel tesis temelleri, rüzgar türbini temelleri ve heyelan stabilizasyonu. Özellikle zayıf zemin koşullarında, deprem riski yüksek bölgelerde ve mevcut yapılara yakın çalışmaların gerektiği kentsel alanlarda fore kazık tercih edilir.</p>
+<h3>5. Fore kazık depreme dayanıklı mı?</h3>
+<p>Evet, fore kazıklar depreme oldukça dayanıklıdır. TBDY 2018'e uygun tasarlanan fore kazıklar, deprem yüklerini güvenle karşılayacak eğilme, kesme ve eksenel yük kapasitesine sahiptir. Betonarme yapısı sayesinde sünek davranış gösterir ve enerji sönümleme kapasitesi yüksektir. Sıvılaşma riski bulunan zeminlerde, fore kazıklar sıvılaşan tabakayı geçerek yapıyı güvende tutar. Türkiye'deki büyük depremlerde (1999 Kocaeli, 2023 Kahramanmaras), fore kazıklı temellere sahip yapıların büyük çoğunluğu hasar almadan ayakta kalmıştır.</p>
+<h3>6. Fore kazık ve jet grout farkı nedir?</h3>
+<p>Fore kazık betonarme yapısal eleman iken, <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">jet grout</a> zemin-çimento karışımı kolon olarak zemin iyileştirme yöntemidir. Temel farklar: Fore kazık çok yüksek taşıma kapasitesine sahipken, jet grout orta düzeyde taşıma kapasitesi sunar. Fore kazıkta donatı kafesi bulunduğundan eğilme ve çekme kuvvetlerine dayanır; jet grout donatısız olduğundan yalnızca basınç kuvvetlerini karşılar. Fore kazık yapısal temel elemanı olarak, jet grout ise zemin iyileştirme, sızdırmazlık perdesi ve temel altı zemin güçlendirme amacıyla kullanılır.</p>
+<h3>7. Fore kazık ve çakma kazık farkı?</h3>
+<p>Fore kazık yerinde döküm yöntemiyle yapılırken, çakma kazık prefabrik olarak üretilip zemine çakılır (darbeli veya vibrasyonlu). Fore kazığın en büyük avantajı düşük titreşimdir — kentsel alanlarda mevcut yapılara zarar vermez. Çakma kazık ise çok yüksek titreşim ve gürültü üretir. Fore kazık, 3000 mm'e kadar çap ve 30.000 kN'u aşan taşıma kapasitesi sunarken, çakma kazık genellikle 600 mm çap ve 3.000 kN ile sınırlıdır. Ancak çakma kazık imalat hızı (günde 10–20 adet) fore kazığa (günde 3–5 adet) göre çok daha yüksektir.</p>
+<h3>8. Fore kazık beton sınıfı ne olmalı?</h3>
+<p>TS EN 1536 ve TBDY 2018'e göre fore kazıklarda minimum beton sınıfı C25/30'dur. Ancak deprem bölgelerinde ve yapısal yük taşıyan kazıklarda minimum C30/37 kullanılması zorunludur. Pratikte en yaygın kullanılan sınıf C30/37'dir. Tremi yöntemiyle dökülen betonun çökme değeri (slump) 180–220 mm arasında, maksimum agrega boyutu 20–25 mm olmalıdır. Beton, sülfata dayanıklı çimento (CEM I veya CEM II/A) ile üretilmeli ve su/çimento oranı 0,50'nin altında tutulmalıdır.</p>
+<h3>9. Fore kazık taşıma kapasitesi nasıl hesaplanır?</h3>
+<p>Fore kazık taşıma kapasitesi, çevre sürtünmesi ve uç direnci toplamından oluşur: Q_toplam = Q_sürtünme + Q_uç. Hesap yöntemleri zemin türüne göre değişir. Kumlu zeminlerde Meyerhof yöntemi (SPT-N tabanlı), killi zeminlerde alfa (α) yöntemi (drenajsız kayma dayanımı tabanlı), presiyometre verileri için Menard yöntemi kullanılır. Eurocode 7 kapsamında kısmi güvenlik katsayıları uygulanarak tasarım taşıma kapasitesi belirlenir. Hesaplanan değerler mutlaka sahada yapılacak kazık yük testi ile doğrulanmalıdır.</p>
+<h3>10. Fore kazıkta kılıf (casing) ne zaman kullanılır?</h3>
+<p>Kılıf (casing) şu koşullarda kullanılır: yeraltı su seviyesinin yüksek olduğu zeminlerde, gevşek kumlu ve çakıllı tabakalarda kuyu göçmesini önlemek için, artezyen su basıncı bulunan bölgelerde, komşu yapılara çok yakın çalışmalarda zemin hareketini kontrol etmek için ve sıvılaşma potansiyeli olan zeminlerde. Kılıf, tam boy (full casing) veya kısmi boy (partial casing, genellikle üst 5–10 m) olarak uygulanabilir. Tam kılıf uygulaması, en güvenli ancak en maliyetli yöntemdir (%25–40 ek maliyet).</p>
+<h3>11. Fore kazık imalatı kaç gün sürer?</h3>
+<p>Tek bir fore kazığın imalat süresi çap ve derinliğe bağlı olarak genellikle 4–12 saattir: Ø60 cm × 15 m kazık yaklaşık 4–6 saat, Ø80 cm × 25 m kazık yaklaşık 6–8 saat, Ø100 cm × 30 m kazık yaklaşık 8–12 saat sürer. Kaya delgisi olan projelerde bu süreler 2–3 katına çıkabilir. Günde ortalama 3–5 kazık imal edilir. 50 kazıklık bir proje, mobilizasyon dahil yaklaşık 15–20 iş gününde tamamlanır. CFA kazık yönteminde günlük üretim 8–12 kazığa çıkabilir. Beton kürü, yük testi ve başlık imalatı süresi ayrıca planlanmalıdır.</p>
+<h3>12. Fore kazık yük testi zorunlu mu?</h3>
+<p>Evet, fore kazık yük testi Türkiye'de zorunludur. TBDY 2018 ve ilgili şartnamelere göre her projede en az 1 adet (genellikle toplam kazık sayısının %1–2'si kadar) statik veya dinamik yük testi yapılmalıdır. Statik yük testi (Static Load Test), en güvenilir yöntemdir; kazığa kademeli olarak tasarım yükünün 1,5–2,0 katı yük uygulanır ve oturma miktarları ölçülür. Ayrıca tüm kazıklarda sağlamlık testi (Crosshole Sonic Logging - CSL veya Pile Integrity Test - PIT) uygulanması yaygın uygulamadır. Bu testler, kazık gövdesindeki olası beton kusurlarını (necking, boşluk, segregasyon) tespit eder.</p>
+<hr/>
+<h2 id="torem-zemin-ile-fore-kazik-projelerinizde-guvenilir-cozum">Torem Zemin ile Fore Kazık Projelerinizde Güvenilir Çözüm</h2>
+<div class="ozet-cevap"><strong>Özet:</strong> Torem Zemin Mühendislik, 20 yılı aşan saha tecrübesiyle fore kazık projelendirme, imalat ve kalite kontrol hizmetleri sunmaktadır. Uzman kadromuz, keşiften teslimatına kadar tüm süreçlerde yanınızdadır.</div>
+<p>Torem Zemin Mühendislik olarak, Türkiye genelinde yüzlerce fore kazık projesini başarıyla tamamladık. <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">Zemin iyileştirme</a>, <a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/">iksa sistemleri</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/">öngermeli ankraj</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/">zemin çivisi</a> ve <a href="/faaliyet-alanlari/kazikli-temeller/fore-kazik/">kazıklı temeller</a> dahil tüm geoteknik mühendislik çözümlerinde uzman kadromuzla hizmetinizdeyiz.</p>
+<p><strong>Neden Torem Zemin?</strong></p>
+<ul>
+<li>20+ yıl saha tecrübesi</li>
+<li>TBDY 2018 ve Eurocode 7 uyumlu tasarım</li>
+<li>Son teknoloji delgi ekipmanları (Bauer, Soilmec)</li>
+<li>Keşiften teslimata anahtar teslim hizmet</li>
+<li>Her projede kapsamlı kalite kontrol ve raporlama</li>
+</ul>
+<p><strong>Ücretsiz keşif raporu ve fiyat teklifi almak için hemen bizi arayın:</strong></p>
+<div class="cta-box" style="background:#0056b3;color:#fff;padding:30px;margin:20px 0;text-align:center;border-radius:8px;">
+<h3 style="color:#fff;margin-top:0;">Ücretsiz Keşif Raporu Alın</h3>
+<p>Uzman mühendislerimiz sahanızı inceleyerek en uygun fore kazık çözümünü ve maliyet analizini hazırlasın.</p>
+<p style="font-size:24px;font-weight:bold;margin:15px 0;">
+<a href="tel:+905316594636" style="color:#fff;text-decoration:none;">📞 0531 659 46 36</a>
+</p>
+<p>
+<a href="/iletisim/" style="display:inline-block;background:#fff;color:#0056b3;padding:12px 32px;text-decoration:none;border-radius:4px;font-weight:bold;">İletişim Formu</a>
+</p>
+</div>
+<hr/>
+<p>*Bu içerik, Torem Zemin Mühendislik'in geoteknik uzmanları tarafından hazırlanmış olup, TBDY 2018, TS EN 1536, TS EN 1538, Eurocode 7 (EN 1997-1) ve Eurocode 8 standartları referans alınarak teknik doğruluk sağlanmıştır. Son güncelleme: Mart 2026.*</p>`,
     faq:[
-      {q:'Fore kazık ile çakma kazık arasındaki fark nedir?',a:'Fore kazık yerinde döküm betonarme kazıktır ve titreşimsiz uygulanır. Çakma kazık ise prefabrik olup çakma aparatıyla zemine itilir; kentsel alanlarda sınırlı kullanılır.'},
-      {q:'Günde kaç adet fore kazık imal edilebilir?',a:'Zemin koşullarına bağlı olarak günde 4–8 adet kazık imal edilebilir. 50 kazıklık bir proje yaklaşık 1–2 haftada tamamlanır.'},
+      {q:'Fore kazık nedir ve ne işe yarar?',a:'Fore kazık, zemin içerisine silindirik bir kuyu açılarak, donatı kafesi yerleştirildikten sonra yerinde beton dökülerek oluşturulan derin temel elemanıdır. Üst yapıdan gelen düşey ve yatay yükleri, yüzeydeki zayıf zemini aşarak derinlerdeki sağlam zemin tabakalarına veya ana kayaya aktarır. "Bored pile" veya "drilled shaft" olarak da bilinir. Konut, ticari bina, köprü, metro, endüstriyel tesis ve iksa projelerinde yaygın olarak kullanılır. TS EN 1536 standardına göre tasarlanır ve uygulanır.'},
+      {q:'1 metre fore kazık fiyatı ne kadar?',a:'2026 yılı itibarıyla 1 metre fore kazık fiyatı, kazık çapına göre 1.800 TL ile 14.000 TL arasında değişmektedir. Ø40 cm kazık için ortalama 2.400 TL/m, Ø80 cm kazık için ortalama 4.750 TL/m, Ø100 cm kazık için ortalama 7.100 TL/m\'dir. Bu fiyatlar delgi, beton, donatı ve işçilik dahil anahtar teslim birim fiyatlardır. Mobilizasyon, kalite kontrol testleri ve kazık başlığı imalatı gibi kalemler ayrıca fiyatlandırılır. Kesin fiyat için zemin koşulları, kazık adedi ve lokasyon bilgisi gereklidir.'},
+      {q:'Fore kazık ne kadar derine iner?',a:'Fore kazık derinliği, zemin koşullarına ve proje gereksinimlerine bağlı olarak 5 metreden 60 metrenin üzerine kadar çıkabilir. Tipik uygulamalarda derinlik 15–35 metre arasındadır. Derinliği belirleyen temel faktörler: sağlam zemin veya kaya tabakasının derinliği, proje yükleri ve sıvılaşma tabakası kalınlığıdır. Baret kazık gibi özel uygulamalarda 80 metrenin üzerine çıkılabilir. Zemin etüdü raporu, kazık derinliğinin belirlenmesinde en kritik veri kaynağıdır.'},
+      {q:'Fore kazık nerelerde kullanılır?',a:'Fore kazık başlıca şu alanlarda kullanılır: yüksek katlı bina temelleri, köprü ve viyadük ayakları, metro istasyonları, derin kazılarda iksa sistemleri, liman ve rıhtım yapıları, endüstriyel tesis temelleri, rüzgar türbini temelleri ve heyelan stabilizasyonu. Özellikle zayıf zemin koşullarında, deprem riski yüksek bölgelerde ve mevcut yapılara yakın çalışmaların gerektiği kentsel alanlarda fore kazık tercih edilir.'},
+      {q:'Fore kazık depreme dayanıklı mı?',a:'Evet, fore kazıklar depreme oldukça dayanıklıdır. TBDY 2018\'e uygun tasarlanan fore kazıklar, deprem yüklerini güvenle karşılayacak eğilme, kesme ve eksenel yük kapasitesine sahiptir. Betonarme yapısı sayesinde sünek davranış gösterir ve enerji sönümleme kapasitesi yüksektir. Sıvılaşma riski bulunan zeminlerde, fore kazıklar sıvılaşan tabakayı geçerek yapıyı güvende tutar. Türkiye\'deki büyük depremlerde (1999 Kocaeli, 2023 Kahramanmaras), fore kazıklı temellere sahip yapıların büyük çoğunluğu hasar almadan ayakta kalmıştır.'},
+      {q:'Fore kazık ve jet grout farkı nedir?',a:'Fore kazık betonarme yapısal eleman iken, jet grout zemin-çimento karışımı kolon olarak zemin iyileştirme yöntemidir. Temel farklar: Fore kazık çok yüksek taşıma kapasitesine sahipken, jet grout orta düzeyde taşıma kapasitesi sunar. Fore kazıkta donatı kafesi bulunduğundan eğilme ve çekme kuvvetlerine dayanır; jet grout donatısız olduğundan yalnızca basınç kuvvetlerini karşılar. Fore kazık yapısal temel elemanı olarak, jet grout ise zemin iyileştirme, sızdırmazlık perdesi ve temel altı zemin güçlendirme amacıyla kullanılır.'},
+      {q:'Fore kazık ve çakma kazık farkı?',a:'Fore kazık yerinde döküm yöntemiyle yapılırken, çakma kazık prefabrik olarak üretilip zemine çakılır (darbeli veya vibrasyonlu). Fore kazığın en büyük avantajı düşük titreşimdir — kentsel alanlarda mevcut yapılara zarar vermez. Çakma kazık ise çok yüksek titreşim ve gürültü üretir. Fore kazık, 3000 mm\'e kadar çap ve 30.000 kN\'u aşan taşıma kapasitesi sunarken, çakma kazık genellikle 600 mm çap ve 3.000 kN ile sınırlıdır. Ancak çakma kazık imalat hızı (günde 10–20 adet) fore kazığa (günde 3–5 adet) göre çok daha yüksektir.'},
+      {q:'Fore kazık beton sınıfı ne olmalı?',a:'TS EN 1536 ve TBDY 2018\'e göre fore kazıklarda minimum beton sınıfı C25/30\'dur. Ancak deprem bölgelerinde ve yapısal yük taşıyan kazıklarda minimum C30/37 kullanılması zorunludur. Pratikte en yaygın kullanılan sınıf C30/37\'dir. Tremi yöntemiyle dökülen betonun çökme değeri (slump) 180–220 mm arasında, maksimum agrega boyutu 20–25 mm olmalıdır. Beton, sülfata dayanıklı çimento (CEM I veya CEM II/A) ile üretilmeli ve su/çimento oranı 0,50\'nin altında tutulmalıdır.'},
+      {q:'Fore kazık taşıma kapasitesi nasıl hesaplanır?',a:'Fore kazık taşıma kapasitesi, çevre sürtünmesi ve uç direnci toplamından oluşur: Q_toplam = Q_sürtünme + Q_uç. Hesap yöntemleri zemin türüne göre değişir. Kumlu zeminlerde Meyerhof yöntemi (SPT-N tabanlı), killi zeminlerde alfa (α) yöntemi (drenajsız kayma dayanımı tabanlı), presiyometre verileri için Menard yöntemi kullanılır. Eurocode 7 kapsamında kısmi güvenlik katsayıları uygulanarak tasarım taşıma kapasitesi belirlenir. Hesaplanan değerler mutlaka sahada yapılacak kazık yük testi ile doğrulanmalıdır.'},
+      {q:'Fore kazıkta kılıf (casing) ne zaman kullanılır?',a:'Kılıf (casing) şu koşullarda kullanılır: yeraltı su seviyesinin yüksek olduğu zeminlerde, gevşek kumlu ve çakıllı tabakalarda kuyu göçmesini önlemek için, artezyen su basıncı bulunan bölgelerde, komşu yapılara çok yakın çalışmalarda zemin hareketini kontrol etmek için ve sıvılaşma potansiyeli olan zeminlerde. Kılıf, tam boy (full casing) veya kısmi boy (partial casing, genellikle üst 5–10 m) olarak uygulanabilir. Tam kılıf uygulaması, en güvenli ancak en maliyetli yöntemdir (%25–40 ek maliyet).'},
+      {q:'Fore kazık imalatı kaç gün sürer?',a:'Tek bir fore kazığın imalat süresi çap ve derinliğe bağlı olarak genellikle 4–12 saattir: Ø60 cm × 15 m kazık yaklaşık 4–6 saat, Ø80 cm × 25 m kazık yaklaşık 6–8 saat, Ø100 cm × 30 m kazık yaklaşık 8–12 saat sürer. Kaya delgisi olan projelerde bu süreler 2–3 katına çıkabilir. Günde ortalama 3–5 kazık imal edilir. 50 kazıklık bir proje, mobilizasyon dahil yaklaşık 15–20 iş gününde tamamlanır. CFA kazık yönteminde günlük üretim 8–12 kazığa çıkabilir. Beton kürü, yük testi ve başlık imalatı süresi ayrıca planlanmalıdır.'},
+      {q:'Fore kazık yük testi zorunlu mu?',a:'Evet, fore kazık yük testi Türkiye\'de zorunludur. TBDY 2018 ve ilgili şartnamelere göre her projede en az 1 adet (genellikle toplam kazık sayısının %1–2\'si kadar) statik veya dinamik yük testi yapılmalıdır. Statik yük testi (Static Load Test), en güvenilir yöntemdir; kazığa kademeli olarak tasarım yükünün 1,5–2,0 katı yük uygulanır ve oturma miktarları ölçülür. Ayrıca tüm kazıklarda sağlamlık testi (Crosshole Sonic Logging - CSL veya Pile Integrity Test - PIT) uygulanması yaygın uygulamadır. Bu testler, kazık gövdesindeki olası beton kusurlarını (necking, boşluk, segregasyon) tespit eder.'},
     ],
   },
   {
