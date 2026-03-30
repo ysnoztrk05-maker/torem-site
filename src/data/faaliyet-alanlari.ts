@@ -188,7 +188,7 @@ export const teknikler: Teknik[] = [
 <p>Uzman mühendislerimiz sahanızı inceleyerek en uygun fore kazık çözümünü belirlesin.</p>
 <a href="tel:+905316594636" class="cta-btn">Hemen Arayın: 0531 659 46 36</a>
 </div>
-<hr/>
+
 <figure class="svg-diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900">
   <defs>
     <pattern id="dots" width="8" height="8" patternUnits="userSpaceOnUse">
@@ -416,7 +416,7 @@ export const teknikler: Teknik[] = [
 <p>Metro istasyonlarının derin kazı gerektiren bölümlerinde, istasyon giriş yapılarında ve tünel portal bölgelerinde fore kazıklı iksa perdeleri uygulanır. İstanbul, Ankara ve İzmir metro hatlarında yüzlerce kilometre fore kazık imalatı gerçekleştirilmiştir.</p>
 <h3>Endüstriyel Tesisler ve Özel Yapılar</h3>
 <p>Ağır sanayi tesisleri (çimento fabrikaları, demir-çelik tesisleri), rüzgar türbini temelleri, silo ve tank temelleri gibi yoğun noktasal yük aktaran yapılarda fore kazıklar kritik bir rol oynar. Rüzgar türbini temelleri için tek bir kazık grubunun 20.000 kN'un üzerinde devrilme momentine karşı koyması gerekebilir.</p>
-<hr/>
+
 <h2 id="fore-kazik-cesitleri-ve-karsilastirma">Fore Kazık Çeşitleri ve Karşılaştırma</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazıklar uygulama yöntemine göre kuru delgi, bentonit çamurlu delgi, kılıflı (casing) delgi, CFA (sürekli helezon) kazık ve baret kazık olarak sınıflandırılır. Her yöntem farklı zemin koşulları ve proje gereksinimleri için optimize edilmiştir.</div>
 <div class="card-grid">
@@ -456,7 +456,7 @@ export const teknikler: Teknik[] = [
 <tr><td><strong>Standart Referans</strong></td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1538</td></tr>
 </tbody>
 </table></div>
-<hr/>
+
 <h2 id="fore-kazik-nasil-yapilir-adim-adim-yapim-asamalari">Fore Kazık Nasıl Yapılır? Adım Adım Yapım Aşamaları</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık imalatı altı temel aşamadan oluşur: çalışma platformu hazırlığı ve aplikasyon, delgi işlemi, muhafaza (cidar koruma), donatı kafesi indirme, tremi borusu ile betonlama ve kazık başlığı imalatı. Her aşama TS EN 1536\'ya uygun kalite kontrolü gerektirir.</div>
 <figure><img src="/images/fore-kazik-saha.jpg" alt="Fore kazık şantiyesi — donatı kafesi indirme ve delgi makineleri" loading="lazy" width="860" height="480" /><figcaption>Kentsel şantiyede fore kazık imalatı — donatı kafesi indirme operasyonu</figcaption></figure>
@@ -543,7 +543,7 @@ export const teknikler: Teknik[] = [
     </div>
   </div>
 </div>
-<hr/>
+
 <figure class="svg-diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520">
   <defs>
     <marker id="flowArrow" markerWidth="10" markerHeight="8" refX="10" refY="4" orient="auto">
@@ -722,7 +722,7 @@ export const teknikler: Teknik[] = [
 <p><strong>7. Kılıf (Casing) Kullanımı:</strong> Tam kılıflı delgi, kuru delgiye göre %25–40 daha pahalıdır. Kılıf kiralama bedeli ayrıca hesaplanır.</p>
 <h3>Fore Kazık ile Alternatif Temel Sistemlerinin Maliyet Karşılaştırması</h3>
 <p>Fore kazık fiyatları, diğer derin temel sistemleriyle karşılaştırıldığında genellikle orta-üst segmentte yer alır. Ancak taşıma kapasitesi ve güvenilirlik açısından en yüksek performansı sunar. Bir <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">jet grout</a> kolonunun metre fiyatı fore kazığa göre daha düşük olabilir; ancak taşıma kapasitesi karşılaştırıldığında fore kazık çok daha verimlidir.</p>
-<hr/>
+
 <h2 id="fore-kazik-maliyet-hesaplama">Fore Kazık Maliyet Hesaplama</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık toplam maliyeti; kazık adedi, çapı, derinliği ve zemin koşullarına göre hesaplanır. Örnek: 50 adet Ø80 cm x 20 m derinliğinde fore kazık için toplam maliyet yaklaşık 4.750.000 TL\'dir (2026 fiyatlarıyla).</div>
 <h3>Örnek Maliyet Hesabı</h3>
@@ -764,7 +764,7 @@ export const teknikler: Teknik[] = [
 <li><strong>İklim koşulları:</strong> Kış aylarında betonlama için antifrize ve ısıtma önlemleri ek maliyet getirir.</li>
 </ol>
 <p>Kesin maliyet hesabı için zemin etüdü raporunuzla birlikte <a href="/iletisim/">bizimle iletişime geçin</a>.</p>
-<hr/>
+
 <figure><img src="/images/makineler/bauer-bg20.jpg" alt="Bauer BG 20 fore kazık makinesi — donatı kafesleri ile saha çalışması" loading="lazy" width="860" height="480" /><figcaption>Bauer BG 20 fore kazık makinesi — demir donatı kafesleri hazır, delgi operasyonu</figcaption></figure>
 <h2 id="fore-kazik-deprem-dayanikliligi-ve-tbdy-2018">Fore Kazık Deprem Dayanıklılığı ve TBDY 2018</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazıklar, TBDY 2018 (Türkiye Bina Deprem Yönetmeliği) kapsamında depreme dayanıklı yapı tasarımının temel bileşenlerindendir. Sıvılaşma riski bulunan ZD, ZE ve ZF sınıfı zeminlerde fore kazık uygulaması zorunlu hale gelebilir. Kazık-zemin etkileşimi analizi, deprem tasarımının ayrılmaz parçasıdır.</div>
@@ -804,7 +804,7 @@ export const teknikler: Teknik[] = [
 <li>Yanal yayılma kuvvetleri, ek yatay yük olarak kazık tasarımına dahil edilmelidir.</li>
 <li>Eurocode 7 ve Eurocode 8 (sismik tasarım) referans alınarak deprem performans analizi yapılmalıdır.</li>
 </ul>
-<hr/>
+
 <h2 id="ozel-kosullarda-fore-kazik-uygulamasi">Özel Koşullarda Fore Kazık Uygulaması</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık, yüksek yeraltı suyu tablası, kaya formasyonları, gevşek kumlu zeminler ve sıkışık kentsel alanlar gibi zorlu koşullarda özel yöntemlerle başarıyla uygulanır. Her koşul, kendine özgü ekipman, teknik ve önlem gerektirir.</div>
 <h3>Yüksek Yeraltı Suyu Tablası</h3>
@@ -835,7 +835,7 @@ export const teknikler: Teknik[] = [
 <li><strong>Titreşim ve gürültü kontrolü:</strong> Fore kazık, çakma kazığa göre çok daha az titreşim üretir; ancak kılıf indirme/çıkarma sırasında oluşabilecek titreşim izlenmeli ve sınır değerler (DIN 4150-3'e göre tipik konut yapıları için 5 mm/s) aşılmamalıdır.</li>
 <li><strong><a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/">İksa sistemi</a> entegrasyonu:</strong> Kentsel projelerde fore kazıklar, iksa perdesi olarak da görev yapabilir (çift fonksiyon: hem taşıyıcı hem iksa). Bu yaklaşım, toplam maliyeti ve inşaat süresini azaltır.</li>
 </ul>
-<hr/>
+
 <h2 id="zemin-etudu-ve-fore-kazik-i-liskisi">Zemin Etüdü ve Fore Kazık İlişkisi</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Zemin etüdü, fore kazık tasarımının temel girdisidir. SPT-N değerleri, presiyometre deneyleri, laboratuvar analizleri ve sondaj karotları, kazık çapını, derinliğini ve taşıma kapasitesini belirleyen temel verilerdir. Yetersiz zemin etüdü, fore kazık projelerindeki başarısızlıkların en yaygın sebebidir.</div>
 <h3>Zemin Etüdünün Gerekliliği</h3>
@@ -876,7 +876,7 @@ export const teknikler: Teknik[] = [
 <p><strong>4. α-Yöntemi (Kohezyonlu zeminler):</strong></p>
 <p>Çevre sürtünmesi: f_s = α × c_u (α: yapışma katsayısı, c_u: drenajsız kayma dayanımı)</p>
 <p>Tüm bu yöntemlerin sonuçları, güvenlik katsayısı (genel olarak 2,0–3,0) veya kısmi güvenlik katsayıları (Eurocode 7 yaklaşımı) ile bölünerek tasarım taşıma kapasitesi elde edilir. Tasarım sonuçları mutlaka kazık yük testi ile doğrulanmalıdır.</p>
-<hr/>
+
 <figure class="svg-diagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 850">
   <defs>
     <!-- Dolgu deseni: noktalı -->
@@ -1136,7 +1136,7 @@ export const teknikler: Teknik[] = [
 <p>Zemin etüdü raporunuzla birlikte bizi arayın, uzman mühendislerimiz en uygun ve ekonomik çözümü belirlesin.</p>
 <a href="tel:+905316594636" class="cta-btn">Hemen Arayın: 0531 659 46 36</a>
 </div>
-<hr/>
+
 <h2 id="sik-sorulan-sorular-sss">Sık Sorulan Sorular (SSS)</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık hakkında en çok merak edilen konular; tanım, fiyat, derinlik, kullanım alanları, deprem dayanıklılığı, alternatif karşılaştırmaları, beton sınıfı, taşıma kapasitesi hesabı, kılıf kullanımı, imalat süresi ve yük testi zorunluluğudur.</div>
 <details class="faq-item"><summary>1. Fore kazık nedir ve ne işe yarar?</summary><p>Fore kazık, zemin içerisine silindirik bir kuyu açılarak, donatı kafesi yerleştirildikten sonra yerinde beton dökülerek oluşturulan derin temel elemanıdır. Üst yapıdan gelen düşey ve yatay yükleri, yüzeydeki zayıf zemini aşarak derinlerdeki sağlam zemin tabakalarına veya ana kayaya aktarır. "Bored pile" veya "drilled shaft" olarak da bilinir. TS EN 1536 standardına göre tasarlanır ve uygulanır.</p></details>
@@ -1151,7 +1151,7 @@ export const teknikler: Teknik[] = [
 <details class="faq-item"><summary>10. Kılıf (casing) ne zaman kullanılır?</summary><p>Yeraltı su seviyesinin yüksek olduğu, gevşek kumlu-çakıllı tabakalarda, artezyen basıncı bulunan bölgelerde ve sıvılaşma potansiyeli olan zeminlerde kullanılır. Tam kılıf uygulaması %25–40 ek maliyet getirir.</p></details>
 <details class="faq-item"><summary>11. İmalat süresi ne kadardır?</summary><p>Tek kazık imalatı çap ve derinliğe bağlı olarak 4–12 saat sürer. Günde ortalama 3–5 kazık imal edilir. 50 kazıklık bir proje yaklaşık 15–20 iş gününde tamamlanır. CFA kazıkta günlük üretim 8–12 kazığa çıkabilir.</p></details>
 <details class="faq-item"><summary>12. Yük testi zorunlu mu?</summary><p>Evet, TBDY 2018\'e göre her projede en az 1 adet statik veya dinamik yük testi zorunludur. Ayrıca tüm kazıklarda sağlamlık testi (CSL veya PIT) uygulanması yaygın uygulamadır.</p></details>
-<hr/>
+
 <h2 id="torem-zemin-ile-fore-kazik-projelerinizde-guvenilir-cozum">Torem Zemin ile Fore Kazık Projelerinizde Güvenilir Çözüm</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Torem Zemin Mühendislik, 20 yılı aşan saha tecrübesiyle fore kazık projelendirme, imalat ve kalite kontrol hizmetleri sunmaktadır. Uzman kadromuz, keşiften teslimatına kadar tüm süreçlerde yanınızdadır.</div>
 <p>Torem Zemin Mühendislik olarak, Türkiye genelinde yüzlerce fore kazık projesini başarıyla tamamladık. <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">Zemin iyileştirme</a>, <a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/">iksa sistemleri</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/">öngermeli ankraj</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/">zemin çivisi</a> ve <a href="/faaliyet-alanlari/kazikli-temeller/fore-kazik/">kazıklı temeller</a> dahil tüm geoteknik mühendislik çözümlerinde uzman kadromuzla hizmetinizdeyiz.</p>
@@ -1178,7 +1178,7 @@ export const teknikler: Teknik[] = [
   <a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/" class="related-link">Zemin Çivisi</a>
   <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/" class="related-link">Zemin İyileştirme</a>
 </div>
-<hr/>
+
 <p>*Bu içerik, Torem Zemin Mühendislik'in geoteknik uzmanları tarafından hazırlanmış olup, TBDY 2018, TS EN 1536, TS EN 1538, Eurocode 7 (EN 1997-1) ve Eurocode 8 standartları referans alınarak teknik doğruluk sağlanmıştır. Son güncelleme: Mart 2026.*</p>`,
     faq:[
       {q:'Fore kazık nedir ve ne işe yarar?',a:'Fore kazık, zemin içerisine silindirik bir kuyu açılarak, donatı kafesi yerleştirildikten sonra yerinde beton dökülerek oluşturulan derin temel elemanıdır. Üst yapıdan gelen düşey ve yatay yükleri, yüzeydeki zayıf zemini aşarak derinlerdeki sağlam zemin tabakalarına veya ana kayaya aktarır. "Bored pile" veya "drilled shaft" olarak da bilinir. Konut, ticari bina, köprü, metro, endüstriyel tesis ve iksa projelerinde yaygın olarak kullanılır. TS EN 1536 standardına göre tasarlanır ve uygulanır.'},
