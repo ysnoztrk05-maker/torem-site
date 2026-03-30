@@ -696,7 +696,7 @@ export const teknikler: Teknik[] = [
 <h2 id="fore-kazik-fiyatlari-2026">Fore Kazık Fiyatları 2026</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> 2026 yılı itibarıyla fore kazık metre fiyatları çapa göre 1.800 TL ile 7.500 TL/m arasında değişmektedir. Fiyatı etkileyen başlıca faktörler; kazık çapı, derinlik, zemin koşulları, donatı yoğunluğu, mobilizasyon mesafesi ve proje ölçeğidir.</div>
 <h3>2026 Güncel Birim Fiyat Tablosu</h3>
-<p>Aşağıdaki fiyatlar, 2026 yılı Mart ayı itibarıyla Türkiye genelindeki ortalama piyasa fiyatlarını yansıtmaktadır. Fiyatlar KDV hariç olup, zemin koşulları, proje büyüklüğü ve lokasyona göre değişiklik gösterebilir.</p>
+<div class="expert-tip">Aşağıdaki fiyatlar 2026 yılı piyasa ortalamasıdır. Kesin fiyatlar zemin koşulları, proje ölçeği ve lokasyona göre değişir. Güncel teklif için <a href="/iletisim/">iletişime geçin</a>.</div>
 <div class="table-wrapper"><table>
 <thead>
 <tr><th>Kazık Çapı</th><th>Birim Fiyat Aralığı (TL/m)</th><th>Ortalama Fiyat (TL/m)</th><th>Tipik Kullanım Alanı</th></tr>
