@@ -107,8 +107,26 @@ export const teknikler: Teknik[] = [
     title:'Fore Kazık İmalatı', shortTitle:'Fore Kazık',
     excerpt:'Büyük çaplı (400–1500 mm) yerinde döküm betonarme kazık. Zayıf zeminlerde yüksek taşıma kapasiteli derin temel çözümü. 2026 fiyatları, çeşitleri ve yapım aşamaları.',
     image:u(ph[0],480,320), heroImage:u(ph[0],1200,500),
-    content:`<h2 id="fore-kazik-nedir">Fore Kazık Nedir?</h2>
+    content:`<nav class="toc" aria-label="İçindekiler">
+<h2 class="toc__title">İçindekiler</h2>
+<ol class="toc__list">
+<li><a href="#fore-kazik-nedir">Fore Kazık Nedir?</a></li>
+<li><a href="#fore-kazik-ne-zaman-kullanilir">Ne Zaman Kullanılır?</a></li>
+<li><a href="#fore-kazik-cesitleri-ve-karsilastirma">Çeşitleri ve Karşılaştırma</a></li>
+<li><a href="#fore-kazik-nasil-yapilir-adim-adim-yapim-asamalari">Nasıl Yapılır? Adım Adım</a></li>
+<li><a href="#fore-kazik-fiyatlari-2026">Fiyatları 2026</a></li>
+<li><a href="#fore-kazik-maliyet-hesaplama">Maliyet Hesaplama</a></li>
+<li><a href="#fore-kazik-deprem-dayanikliligi-ve-tbdy-2018">Deprem Dayanıklılığı</a></li>
+<li><a href="#ozel-kosullarda-fore-kazik-uygulamasi">Özel Koşullarda Uygulama</a></li>
+<li><a href="#zemin-etudu-ve-fore-kazik-i-liskisi">Zemin Etüdü İlişkisi</a></li>
+<li><a href="#fore-kazik-vs-alternatifler">Alternatiflerle Karşılaştırma</a></li>
+<li><a href="#sik-sorulan-sorular-sss">Sık Sorulan Sorular</a></li>
+</ol>
+</nav>
+
+<h2 id="fore-kazik-nedir">Fore Kazık Nedir?</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık (bored pile), zemin içerisine silindirik bir kuyu açılarak, donatı kafesi indirildikten sonra yerinde beton dökülerek oluşturulan derin temel elemanıdır. 400 mm ile 1500 mm arasında çaplarda ve 5 ila 60 metre derinliklerde uygulanarak yapı yüklerini sağlam zemin tabakalarına aktarır.</div>
+<figure><img src="/images/hero-main.jpg" alt="Fore kazık delgi makinesi saha çalışması — Torem Zemin Mühendislik" loading="lazy" width="860" height="480" /><figcaption>Fore kazık imalatı — rotary delgi makinesi ile zemine giriş anı</figcaption></figure>
 <h3>Tanım ve Temel Kavramlar</h3>
 <p>Fore kazık, İngilizce karşılığıyla "bored pile" veya "drilled shaft" olarak da bilinen, yerinde dökme betonarme derin temel sistemidir. Yüzeydeki zayıf veya taşıma kapasitesi yetersiz zeminlerde, yapı yüklerini derinlerdeki sağlam formasyonlara (sıkı kum, sert kil, kaya tabakası) güvenle aktarmak amacıyla kullanılır. TS EN 1536 standardına göre fore kazık, "zemin içerisinde açılan bir kuyunun betonarme ile doldurulmasıyla oluşturulan derin temel elemanı" şeklinde tanımlanmaktadır.</p>
 <p>Bir fore kazık, çalışma prensibi bakımından iki temel mekanizma üzerinden yük aktarır:</p>
@@ -132,13 +150,13 @@ export const teknikler: Teknik[] = [
 <tr><th>Parametre</th><th>Aralık</th><th>Tipik Kullanım</th></tr>
 </thead>
 <tbody>
-<tr><td>**Minimum çap**</td><td>400 mm (Ø40 cm)</td><td>Hafif yapılar, güçlendirme projeleri</td></tr>
-<tr><td>**Standart çaplar**</td><td>600–1000 mm (Ø60–100 cm)</td><td>Konut, ticari bina, köprü ayakları</td></tr>
-<tr><td>**Büyük çap**</td><td>1200–1500 mm (Ø120–150 cm)</td><td>Gökdelenler, viyadük, baraj</td></tr>
-<tr><td>**Mega çap**</td><td>1500–3000 mm (Ø150–300 cm)</td><td>Özel projeler, baretten kazıklar</td></tr>
-<tr><td>**Minimum derinlik**</td><td>5 metre</td><td>Sığ kaya, sert zemin koşulları</td></tr>
-<tr><td>**Tipik derinlik**</td><td>15–35 metre</td><td>Genel yapı projeleri</td></tr>
-<tr><td>**Maksimum derinlik**</td><td>60+ metre</td><td>Derin alüvyon, deniz dibi uygulamaları</td></tr>
+<tr><td><strong>Minimum çap</strong></td><td>400 mm (Ø40 cm)</td><td>Hafif yapılar, güçlendirme projeleri</td></tr>
+<tr><td><strong>Standart çaplar</strong></td><td>600–1000 mm (Ø60–100 cm)</td><td>Konut, ticari bina, köprü ayakları</td></tr>
+<tr><td><strong>Büyük çap</strong></td><td>1200–1500 mm (Ø120–150 cm)</td><td>Gökdelenler, viyadük, baraj</td></tr>
+<tr><td><strong>Mega çap</strong></td><td>1500–3000 mm (Ø150–300 cm)</td><td>Özel projeler, baretten kazıklar</td></tr>
+<tr><td><strong>Minimum derinlik</strong></td><td>5 metre</td><td>Sığ kaya, sert zemin koşulları</td></tr>
+<tr><td><strong>Tipik derinlik</strong></td><td>15–35 metre</td><td>Genel yapı projeleri</td></tr>
+<tr><td><strong>Maksimum derinlik</strong></td><td>60+ metre</td><td>Derin alüvyon, deniz dibi uygulamaları</td></tr>
 </tbody>
 </table></div>
 <h3>Fore Kazık Sistemi Nasıl Çalışır?</h3>
@@ -441,6 +459,7 @@ export const teknikler: Teknik[] = [
 <hr/>
 <h2 id="fore-kazik-nasil-yapilir-adim-adim-yapim-asamalari">Fore Kazık Nasıl Yapılır? Adım Adım Yapım Aşamaları</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık imalatı altı temel aşamadan oluşur: çalışma platformu hazırlığı ve aplikasyon, delgi işlemi, muhafaza (cidar koruma), donatı kafesi indirme, tremi borusu ile betonlama ve kazık başlığı imalatı. Her aşama TS EN 1536\'ya uygun kalite kontrolü gerektirir.</div>
+<figure><img src="/images/fore-kazik-saha.jpg" alt="Fore kazık şantiyesi — donatı kafesi indirme ve delgi makineleri" loading="lazy" width="860" height="480" /><figcaption>Kentsel şantiyede fore kazık imalatı — donatı kafesi indirme operasyonu</figcaption></figure>
 <div class="process-steps">
   <div class="step">
     <div><h4>Çalışma Platformu Hazırlığı ve Aplikasyon</h4>
@@ -724,12 +743,12 @@ export const teknikler: Teknik[] = [
 <tbody>
 <tr><td>Toplam delgi metrajı</td><td>50 kazık x 20 m</td><td>1.000 m</td></tr>
 <tr><td>Birim fiyat (Ø80 cm, bentonitli)</td><td>—</td><td>4.750 TL/m</td></tr>
-<tr><td>**Delgi + imalat bedeli**</td><td>1.000 m x 4.750 TL/m</td><td>**4.750.000 TL**</td></tr>
+<tr><td><strong>Delgi + imalat bedeli**</td><td>1.000 m x 4.750 TL/m</td><td>**4.750.000 TL</strong></td></tr>
 <tr><td>Mobilizasyon/demobilizasyon</td><td>Götürü</td><td>120.000 TL</td></tr>
 <tr><td>Kazık başı tıraşlama</td><td>50 adet x 800 TL</td><td>40.000 TL</td></tr>
 <tr><td>Kazık yük testi (2 adet statik)</td><td>2 x 85.000 TL</td><td>170.000 TL</td></tr>
 <tr><td>Sağlamlık testi (CSL, tüm kazıklar)</td><td>50 x 2.500 TL</td><td>125.000 TL</td></tr>
-<tr><td>**GENEL TOPLAM (KDV hariç)**</td><td>—</td><td>**~5.205.000 TL**</td></tr>
+<tr><td><strong>GENEL TOPLAM (KDV hariç)**</td><td>—</td><td>**~5.205.000 TL</strong></td></tr>
 </tbody>
 </table></div>
 <h3>Maliyeti Etkileyen Faktörler Listesi</h3>
@@ -746,6 +765,7 @@ export const teknikler: Teknik[] = [
 </ol>
 <p>Kesin maliyet hesabı için zemin etüdü raporunuzla birlikte <a href="/iletisim/">bizimle iletişime geçin</a>.</p>
 <hr/>
+<figure><img src="/images/makineler/bauer-bg20.jpg" alt="Bauer BG 20 fore kazık makinesi — donatı kafesleri ile saha çalışması" loading="lazy" width="860" height="480" /><figcaption>Bauer BG 20 fore kazık makinesi — demir donatı kafesleri hazır, delgi operasyonu</figcaption></figure>
 <h2 id="fore-kazik-deprem-dayanikliligi-ve-tbdy-2018">Fore Kazık Deprem Dayanıklılığı ve TBDY 2018</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazıklar, TBDY 2018 (Türkiye Bina Deprem Yönetmeliği) kapsamında depreme dayanıklı yapı tasarımının temel bileşenlerindendir. Sıvılaşma riski bulunan ZD, ZE ve ZF sınıfı zeminlerde fore kazık uygulaması zorunlu hale gelebilir. Kazık-zemin etkileşimi analizi, deprem tasarımının ayrılmaz parçasıdır.</div>
 <h3>Deprem ve Derin Temel İlişkisi</h3>

@@ -29,18 +29,6 @@ const isRich = teknik.content.length > 1000;
     wordCount={teknik.content.split(/\s+/).length}
   >
     <Fragment set:html={teknik.content} />
-
-    {teknik.faq.length > 0 && (
-      <h2>Sık Sorulan Sorular</h2>
-      <div>
-        {teknik.faq.map((item) => (
-          <details class="faq-item">
-            <summary>{item.q}</summary>
-            <p>{item.a}</p>
-          </details>
-        ))}
-      </div>
-    )}
   </ServiceArticleLayout>
 ) : (
   <!-- Kısa içerikli sayfalar: BaseLayout -->

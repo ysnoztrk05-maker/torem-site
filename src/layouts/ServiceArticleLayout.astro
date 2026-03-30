@@ -118,6 +118,7 @@ const {
   .srv-hero h1 {
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 800; line-height: 1.15; margin: 0 0 1rem;
+    color: #ffffff;
   }
   .srv-hero__desc {
     font-size: 1.1rem; line-height: 1.6; opacity: 0.9;
@@ -163,7 +164,7 @@ const {
     border-bottom: 3px solid var(--color-highlight);
   }
   .srv-article :global(h3) {
-    font-size: 1.25rem; font-weight: 600; color: var(--color-secondary);
+    font-size: 1.15rem; font-weight: 600; color: var(--color-secondary);
     margin: 2rem 0 0.75rem;
   }
   .srv-article :global(h4) {
@@ -171,6 +172,28 @@ const {
     margin: 1.5rem 0 0.5rem;
   }
   .srv-article :global(p) { margin: 0 0 1.25rem; }
+
+  /* === İÇİNDEKİLER === */
+  .srv-article :global(.toc) {
+    background: var(--color-white); border: 1px solid var(--color-border);
+    border-radius: 10px; padding: 1.5rem 2rem; margin-bottom: 2.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .srv-article :global(.toc__title) {
+    font-size: 1.1rem; font-weight: 700; color: var(--color-primary);
+    margin: 0 0 0.75rem; padding: 0; border: none;
+  }
+  .srv-article :global(.toc__list) {
+    margin: 0; padding-left: 1.25rem; counter-reset: none;
+  }
+  .srv-article :global(.toc__list li) {
+    margin-bottom: 0.4rem; font-size: 0.92rem;
+  }
+  .srv-article :global(.toc__list a) {
+    color: var(--color-accent); font-weight: 500;
+    transition: color 0.15s;
+  }
+  .srv-article :global(.toc__list a:hover) { color: var(--color-highlight); }
 
   /* === ÖZET KUTUSU === */
   .srv-article :global(.ozet-cevap),
