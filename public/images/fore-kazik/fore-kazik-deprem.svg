@@ -1,0 +1,195 @@
+<svg viewBox="0 0 1024 1024" width="1024" height="1024" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define patterns for soil textures -->
+  <defs>
+    <!-- Pattern for topsoil (Üst Dolgu) -->
+    <pattern id="pattern-topsoil" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="8" fill="#C4A574"/>
+      <circle cx="2" cy="2" r="1" fill="#8B7355" opacity="0.6"/>
+      <circle cx="6" cy="6" r="1" fill="#8B7355" opacity="0.6"/>
+      <circle cx="6" cy="2" r="0.8" fill="#A0826D" opacity="0.5"/>
+    </pattern>
+    
+    <!-- Pattern for sandy clay (Kumlu Kil) -->
+    <pattern id="pattern-sandyclay" patternUnits="userSpaceOnUse" width="6" height="6">
+      <rect width="6" height="6" fill="#D4B896"/>
+      <line x1="0" y1="0" x2="6" y2="6" stroke="#C4A574" stroke-width="0.5" opacity="0.4"/>
+      <line x1="6" y1="0" x2="0" y2="6" stroke="#C4A574" stroke-width="0.5" opacity="0.4"/>
+    </pattern>
+    
+    <!-- Pattern for gravel and sand (Yoğun Çakıl ve Kum) -->
+    <pattern id="pattern-gravel" patternUnits="userSpaceOnUse" width="10" height="10">
+      <rect width="10" height="10" fill="#A89968"/>
+      <circle cx="3" cy="3" r="2" fill="#8B8B7A" opacity="0.7"/>
+      <circle cx="7" cy="6" r="1.5" fill="#7A7A6A" opacity="0.7"/>
+      <circle cx="5" cy="2" r="1" fill="#6A6A5A" opacity="0.6"/>
+      <polygon points="2,8 4,7 3,9" fill="#8B8B7A" opacity="0.6"/>
+    </pattern>
+    
+    <!-- Pattern for bedrock (Ana Kaya) -->
+    <pattern id="pattern-bedrock" patternUnits="userSpaceOnUse" width="12" height="12">
+      <rect width="12" height="12" fill="#3A3A3A"/>
+      <line x1="0" y1="2" x2="12" y2="2" stroke="#4A4A4A" stroke-width="0.5" opacity="0.5"/>
+      <line x1="0" y1="6" x2="12" y2="6" stroke="#4A4A4A" stroke-width="0.5" opacity="0.5"/>
+      <line x1="0" y1="10" x2="12" y2="10" stroke="#4A4A4A" stroke-width="0.5" opacity="0.5"/>
+      <polygon points="3,1 5,3 4,5" fill="#2A2A2A" opacity="0.4"/>
+      <polygon points="9,4 11,6 10,8" fill="#2A2A2A" opacity="0.4"/>
+    </pattern>
+
+    <!-- Gradient for building -->
+    <linearGradient id="grad-building" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#E8EEF5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D0DAED;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#C7382D"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#F5F5F5"/>
+
+  <!-- Title -->
+  <text x="512" y="40" font-size="32" font-weight="bold" text-anchor="middle" fill="#1A1A1A" font-family="Arial, sans-serif">
+    Fore Kazık - Deprem Davranışı
+  </text>
+
+  <!-- Ground surface line -->
+  <line x1="60" y1="320" x2="750" y2="320" stroke="#2D5016" stroke-width="3"/>
+  <line x1="60" y1="322" x2="750" y2="322" stroke="#1A1A1A" stroke-width="1" opacity="0.3"/>
+
+  <!-- SOIL LAYERS -->
+  <!-- Layer 1: Üst Dolgu (Topsoil) ~80px thick -->
+  <rect x="60" y="320" width="690" height="80" fill="url(#pattern-topsoil)" stroke="#8B7355" stroke-width="1"/>
+  <text x="770" y="365" font-size="13" font-weight="bold" fill="#333" font-family="Arial, sans-serif">Üst Dolgu</text>
+  <text x="770" y="380" font-size="11" fill="#666" font-family="Arial, sans-serif">(Topsoil)</text>
+
+  <!-- Layer 2: Kumlu Kil (Sandy Clay) ~150px thick -->
+  <rect x="60" y="400" width="690" height="150" fill="url(#pattern-sandyclay)" stroke="#A0826D" stroke-width="1"/>
+  <text x="770" y="480" font-size="13" font-weight="bold" fill="#333" font-family="Arial, sans-serif">Kumlu Kil</text>
+  <text x="770" y="495" font-size="11" fill="#666" font-family="Arial, sans-serif">(Sandy Clay)</text>
+
+  <!-- Layer 3: Yoğun Çakıl ve Kum ~150px thick -->
+  <rect x="60" y="550" width="690" height="150" fill="url(#pattern-gravel)" stroke="#6A6A5A" stroke-width="1"/>
+  <text x="770" y="630" font-size="13" font-weight="bold" fill="#333" font-family="Arial, sans-serif">Yoğun Çakıl ve Kum</text>
+  <text x="770" y="645" font-size="11" fill="#666" font-family="Arial, sans-serif">(Dense Gravel &amp; Sand)</text>
+
+  <!-- Layer 4: Ana Kaya (Bedrock) -->
+  <rect x="60" y="700" width="690" height="200" fill="url(#pattern-bedrock)" stroke="#1A1A1A" stroke-width="1"/>
+  <text x="770" y="800" font-size="13" font-weight="bold" fill="#333" font-family="Arial, sans-serif">Ana Kaya</text>
+  <text x="770" y="815" font-size="11" fill="#666" font-family="Arial, sans-serif">(Bedrock)</text>
+
+  <!-- BORED PILES (Fore Kazık) -->
+  <rect x="120" y="290" width="35" height="615" fill="#5A7A8C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <circle cx="137.5" cy="290" r="17.5" fill="#6A8A9C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <ellipse cx="137.5" cy="295" rx="15" ry="4" fill="#7A9AAC" opacity="0.6"/>
+
+  <rect x="200" y="290" width="35" height="615" fill="#5A7A8C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <circle cx="217.5" cy="290" r="17.5" fill="#6A8A9C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <ellipse cx="217.5" cy="295" rx="15" ry="4" fill="#7A9AAC" opacity="0.6"/>
+
+  <rect x="280" y="290" width="35" height="615" fill="#5A7A8C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <circle cx="297.5" cy="290" r="17.5" fill="#6A8A9C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <ellipse cx="297.5" cy="295" rx="15" ry="4" fill="#7A9AAC" opacity="0.6"/>
+
+  <rect x="360" y="290" width="35" height="615" fill="#5A7A8C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <circle cx="377.5" cy="290" r="17.5" fill="#6A8A9C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <ellipse cx="377.5" cy="295" rx="15" ry="4" fill="#7A9AAC" opacity="0.6"/>
+
+  <rect x="440" y="290" width="35" height="615" fill="#5A7A8C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <circle cx="457.5" cy="290" r="17.5" fill="#6A8A9C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <ellipse cx="457.5" cy="295" rx="15" ry="4" fill="#7A9AAC" opacity="0.6"/>
+
+  <rect x="520" y="290" width="35" height="615" fill="#5A7A8C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <circle cx="537.5" cy="290" r="17.5" fill="#6A8A9C" stroke="#3A4A5C" stroke-width="1.5"/>
+  <ellipse cx="537.5" cy="295" rx="15" ry="4" fill="#7A9AAC" opacity="0.6"/>
+
+  <!-- BUILDING -->
+  <rect x="100" y="300" width="480" height="25" fill="#7A6F63" stroke="#4A3F33" stroke-width="2"/>
+  <g filter="url(#shadow)">
+    <rect x="110" y="120" width="460" height="180" fill="url(#grad-building)" stroke="#4A5A7A" stroke-width="2" rx="4"/>
+    <rect x="130" y="140" width="35" height="35" fill="#5A8FC7" stroke="#2A4A7A" stroke-width="1" rx="2"/>
+    <rect x="130" y="185" width="35" height="35" fill="#5A8FC7" stroke="#2A4A7A" stroke-width="1" rx="2"/>
+    <rect x="130" y="230" width="35" height="35" fill="#5A8FC7" stroke="#2A4A7A" stroke-width="1" rx="2"/>
+    <rect x="240" y="140" width="35" height="35" fill="#5A8FC7" stroke="#2A4A7A" stroke-width="1" rx="2"/>
+    <rect x="240" y="185" width="35" height="35" fill="#5A8FC7" stroke="#2A4A7A" stroke-width="1" rx="2"/>
+    <rect x="240" y="230" width="35" height="35" fill="#5A8FC7" stroke="#2A4A7A" stroke-width="1" rx="2"/>
+    <rect x="350" y="140" width="35" height="35" fill="#5A8FC7" stroke="#2A4A7A" stroke-width="1" rx="2"/>
+    <rect x="350" y="185" width="35" height="35" fill="#5A8FC7" stroke="#2A4A7A" stroke-width="1" rx="2"/>
+    <rect x="350" y="230" width="35" height="35" fill="#5A8FC7" stroke="#2A4A7A" stroke-width="1" rx="2"/>
+    <polygon points="110,120 340,80 570,120" fill="#5A6F7A" stroke="#3A4F5A" stroke-width="2"/>
+  </g>
+
+  <!-- EARTHQUAKE VIBRATION LINES -->
+  <g opacity="0.4" stroke="#E84C3D" stroke-width="2" stroke-dasharray="5,5">
+    <path d="M 50 150 Q 80 145 110 150" fill="none"/>
+    <path d="M 50 200 Q 80 195 110 200" fill="none"/>
+    <path d="M 50 250 Q 80 245 110 250" fill="none"/>
+    <path d="M 570 150 Q 600 145 630 150" fill="none"/>
+    <path d="M 570 200 Q 600 195 630 200" fill="none"/>
+    <path d="M 570 250 Q 600 245 630 250" fill="none"/>
+  </g>
+  <g opacity="0.6" stroke="#D64035" stroke-width="2.5">
+    <path d="M 45 170 Q 80 160 115 170" fill="none"/>
+    <path d="M 45 220 Q 80 210 115 220" fill="none"/>
+    <path d="M 575 170 Q 610 160 645 170" fill="none"/>
+    <path d="M 575 220 Q 610 210 645 220" fill="none"/>
+  </g>
+  <g opacity="0.8" stroke="#C7382D" stroke-width="3">
+    <path d="M 40 190 Q 80 175 120 190" fill="none"/>
+    <path d="M 575 190 Q 615 175 655 190" fill="none"/>
+  </g>
+  <text x="25" y="195" font-size="10" fill="#C7382D" font-family="Arial, sans-serif" font-weight="bold">a</text>
+  <text x="660" y="195" font-size="10" fill="#C7382D" font-family="Arial, sans-serif" font-weight="bold">a</text>
+
+  <!-- DEPTH SCALE -->
+  <g stroke="#999" stroke-width="0.5" opacity="0.6">
+    <line x1="50" y1="320" x2="55" y2="320"/>
+    <line x1="50" y1="420" x2="55" y2="420"/>
+    <line x1="50" y1="520" x2="55" y2="520"/>
+    <line x1="50" y1="620" x2="55" y2="620"/>
+    <line x1="50" y1="720" x2="55" y2="720"/>
+  </g>
+  <text x="30" y="325" font-size="9" text-anchor="end" fill="#666" font-family="Arial, sans-serif">0m</text>
+  <text x="30" y="625" font-size="9" text-anchor="end" fill="#666" font-family="Arial, sans-serif">-15m</text>
+  <text x="30" y="725" font-size="9" text-anchor="end" fill="#666" font-family="Arial, sans-serif">-20m</text>
+
+  <!-- LEGEND BOX -->
+  <rect x="780" y="500" width="220" height="280" fill="#F9F9F9" stroke="#999" stroke-width="1" rx="4" opacity="0.95"/>
+  <text x="890" y="520" font-size="12" font-weight="bold" text-anchor="middle" fill="#1A1A1A" font-family="Arial, sans-serif">Teknik Bilgiler</text>
+  <rect x="790" y="535" width="15" height="15" fill="#5A7A8C" stroke="#3A4A5C" stroke-width="1"/>
+  <text x="815" y="547" font-size="11" fill="#333" font-family="Arial, sans-serif">Fore Kazık</text>
+  <text x="790" y="575" font-size="10" fill="#333" font-family="Arial, sans-serif" font-weight="bold">Derinlik: ~20m</text>
+  <text x="790" y="595" font-size="10" fill="#333" font-family="Arial, sans-serif" font-weight="bold">Çap: ~0.6-1.0m</text>
+  <text x="790" y="620" font-size="10" fill="#333" font-family="Arial, sans-serif" font-weight="bold">Deprem Tepkisi:</text>
+  <text x="795" y="635" font-size="9" fill="#555" font-family="Arial, sans-serif">• Katı kaya tabanına ankraj</text>
+  <text x="795" y="650" font-size="9" fill="#555" font-family="Arial, sans-serif">• Yanal yükleri iyi dağıtır</text>
+  <text x="795" y="665" font-size="9" fill="#555" font-family="Arial, sans-serif">• Depremde stabilite sağlar</text>
+  <text x="795" y="685" font-size="9" fill="#555" font-family="Arial, sans-serif" font-style="italic">Sayı: 6 adet</text>
+
+  <!-- NORTH ARROW -->
+  <g transform="translate(90, 920)">
+    <circle cx="0" cy="0" r="12" fill="white" stroke="#333" stroke-width="1"/>
+    <polygon points="0,-10 3,-3 0,-4 -3,-3" fill="#C7382D"/>
+    <text x="0" y="18" font-size="10" text-anchor="middle" fill="#333" font-family="Arial, sans-serif" font-weight="bold">K</text>
+  </g>
+
+  <!-- SCALE BAR -->
+  <g transform="translate(350, 920)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#333" stroke-width="2"/>
+    <line x1="0" y1="-3" x2="0" y2="3" stroke="#333" stroke-width="2"/>
+    <line x1="50" y1="-3" x2="50" y2="3" stroke="#333" stroke-width="2"/>
+    <text x="25" y="15" font-size="9" text-anchor="middle" fill="#333" font-family="Arial, sans-serif">5m</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="512" y="985" font-size="9" text-anchor="middle" fill="#999" font-family="Arial, sans-serif">
+    Kesit Görünüş | Ölçek: 1:100
+  </text>
+</svg>

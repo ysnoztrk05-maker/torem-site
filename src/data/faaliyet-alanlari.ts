@@ -165,7 +165,7 @@ export const teknikler: Teknik[] = [
 <p><strong>Q_toplam = Q_sürtünme + Q_uç</strong></p>
 <p>Burada Q_sürtünme, kazık çevresindeki sürtünme direncinin toplamı; Q_uç ise kazık ucundaki taşıma kapasitesidir.</p>
 <p>Geleneksel çakma kazıklardan farklı olarak fore kazıklarda zemin yerinden çıkarılır (displacement yok), bu nedenle çevre yapılara titreşim etkisi minimumdur. Bu nedenle fore kazıklar, kentsel alanlarda ve mevcut yapılara yakın uygulamalarda standart çözüm olarak tercih edilir.</p>
-<figure><img src="/images/fore-kazik/fore-kazik-hero.webp" alt="Fore kazık delgi makinesi — rotatif delgi sistemi ile zemine giriş" loading="lazy" width="1200" height="675" /><figcaption>Fore kazık imalatında rotatif delgi makinesi ile zemine giriş anı</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-calismaprensibi.webp" alt="Fore kazık çalışma prensibi — 3D kesit görünümünde çevre sürtünmesi ve uç direnci yük aktarım mekanizması" loading="lazy" width="860" height="860" /><figcaption>Fore kazık yük aktarım mekanizması — kırmızı oklar yapı yükü, turuncu oklar çevre sürtünmesi, mavi oklar uç direnci</figcaption></figure>
 <div class="pros-cons">
   <div class="pros"><h4>Avantajları</h4><ul>
     <li>Çok yüksek taşıma kapasitesi (500–30.000+ kN)</li>
@@ -768,7 +768,7 @@ export const teknikler: Teknik[] = [
 </ol>
 <p>Kesin maliyet hesabı için zemin etüdü raporunuzla birlikte <a href="/iletisim/">bizimle iletişime geçin</a>.</p>
 
-<figure><img src="/images/makineler/bauer-bg20.jpg" alt="Bauer BG 20 fore kazık makinesi — donatı kafesleri ile saha çalışması" loading="lazy" width="860" height="480" /><figcaption>Bauer BG 20 fore kazık makinesi — demir donatı kafesleri hazır, delgi operasyonu</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-ekipman.webp" alt="Fore kazık şantiyesi ekipman panoraması — delgi makinesi, beton pompası ve vinç eş zamanlı çalışıyor" loading="lazy" width="860" height="480" /><figcaption>Büyük ölçekli fore kazık projesi — çoklu ekipman eş zamanlı operasyonu, maliyetin ölçeğini gösteren şantiye panoraması</figcaption></figure>
 <h2 id="fore-kazik-deprem-dayanikliligi-ve-tbdy-2018">Fore Kazık Deprem Dayanıklılığı ve TBDY 2018</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazıklar, TBDY 2018 (Türkiye Bina Deprem Yönetmeliği) kapsamında depreme dayanıklı yapı tasarımının temel bileşenlerindendir. Sıvılaşma riski bulunan ZD, ZE ve ZF sınıfı zeminlerde fore kazık uygulaması zorunlu hale gelebilir. Kazık-zemin etkileşimi analizi, deprem tasarımının ayrılmaz parçasıdır.</div>
 <h3>Deprem ve Derin Temel İlişkisi</h3>
