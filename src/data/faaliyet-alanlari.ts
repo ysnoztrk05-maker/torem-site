@@ -105,8 +105,8 @@ export const teknikler: Teknik[] = [
   {
     slug:'fore-kazik', kategoriSlug:'kazikli-temeller',
     title:'Fore Kazık İmalatı', shortTitle:'Fore Kazık',
-    excerpt:'Büyük çaplı (400–1500 mm) yerinde döküm betonarme kazık. Zayıf zeminlerde yüksek taşıma kapasiteli derin temel çözümü. 2026 fiyatları, çeşitleri ve yapım aşamaları.',
-    image:u(ph[0],480,320), heroImage:u(ph[0],1200,500),
+    excerpt:'Büyük çaplı (400–1500 mm) yerinde döküm betonarme kazık. Zayıf zeminlerde yüksek taşıma kapasiteli derin temel çözümü. 2026 fiyatları, çeşitleri ve yapım aşamaları',
+    image:'/images/fore-kazik-saha.jpg', heroImage:'/images/fore-kazik-saha.jpg',
     content:`<nav class="toc" aria-label="İçindekiler">
 <h2 class="toc__title">İçindekiler</h2>
 <ol class="toc__list">
@@ -165,6 +165,7 @@ export const teknikler: Teknik[] = [
 <p><strong>Q_toplam = Q_sürtünme + Q_uç</strong></p>
 <p>Burada Q_sürtünme, kazık çevresindeki sürtünme direncinin toplamı; Q_uç ise kazık ucundaki taşıma kapasitesidir.</p>
 <p>Geleneksel çakma kazıklardan farklı olarak fore kazıklarda zemin yerinden çıkarılır (displacement yok), bu nedenle çevre yapılara titreşim etkisi minimumdur. Bu nedenle fore kazıklar, kentsel alanlarda ve mevcut yapılara yakın uygulamalarda standart çözüm olarak tercih edilir.</p>
+<figure><img src="/images/fore-kazik/fore-kazik_01.png" alt="Fore kazık delgi makinesi — rotatif delgi sistemi ile zemine giriş" loading="lazy" width="860" height="480" /><figcaption>Fore kazık imalatında rotatif delgi makinesi ile zemine giriş anı</figcaption></figure>
 <div class="pros-cons">
   <div class="pros"><h4>Avantajları</h4><ul>
     <li>Çok yüksek taşıma kapasitesi (500–30.000+ kN)</li>
@@ -456,6 +457,7 @@ export const teknikler: Teknik[] = [
 <tr><td><strong>Standart Referans</strong></td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1538</td></tr>
 </tbody>
 </table></div>
+<figure><img src="/images/fore-kazik/fore-kazik_02.png" alt="Fore kazık donatı kafesi — çelik donatı indirme operasyonu" loading="lazy" width="860" height="480" /><figcaption>Donatı kafesi vinç yardımıyla fore kazık kuyusuna indiriliyor</figcaption></figure>
 
 <h2 id="fore-kazik-nasil-yapilir-adim-adim-yapim-asamalari">Fore Kazık Nasıl Yapılır? Adım Adım Yapım Aşamaları</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık imalatı altı temel aşamadan oluşur: çalışma platformu hazırlığı ve aplikasyon, delgi işlemi, muhafaza (cidar koruma), donatı kafesi indirme, tremi borusu ile betonlama ve kazık başlığı imalatı. Her aşama TS EN 1536\'ya uygun kalite kontrolü gerektirir.</div>
@@ -774,7 +776,7 @@ export const teknikler: Teknik[] = [
 <ul>
 <li><strong>Sıvılaşma önlemi:</strong> Gevşek kumlu ve suya doygun zeminler deprem sırasında sıvılaşabilir (liquefaction). Fore kazıklar, sıvılaşan tabakayı geçerek altındaki sıvılaşmayan katmana ulaşır ve yapı güvenliğini sağlar.</li>
 <li><strong>Yanal yük direnci:</strong> Deprem sırasında yapıya etkiyen yatay kuvvetler, kazık gövdesi boyunca zemine aktarılır. Kazığın eğilme ve kesme kapasitesi, bu yatay yükleri güvenle karşılar.</li>
-<li><strong>Deplasman kontrolü:</strong> Deprem sırasında zemin hareketi ve yapı deplasmanı, <a href="/faaliyet-alanlari/kazikli-temeller/fore-kazik/">kazıklı temeller</a> sayesinde kontrol altında tutulur.</li>
+<li><strong>Deplasman kontrolü:</strong> Deprem sırasında zemin hareketi ve yapı deplasmanı, <strong>kazıklı temeller</strong> sayesinde kontrol altında tutulur.</li>
 </ul>
 <h3>TBDY 2018 Gereklilikleri</h3>
 <p>Türkiye Bina Deprem Yönetmeliği 2018 (TBDY 2018), fore kazık tasarımını doğrudan etkileyen önemli düzenlemeler içerir:</p>
@@ -804,6 +806,7 @@ export const teknikler: Teknik[] = [
 <li>Yanal yayılma kuvvetleri, ek yatay yük olarak kazık tasarımına dahil edilmelidir.</li>
 <li>Eurocode 7 ve Eurocode 8 (sismik tasarım) referans alınarak deprem performans analizi yapılmalıdır.</li>
 </ul>
+<figure><img src="/images/fore-kazik/fore-kazik_03.png" alt="Fore kazık şantiyesi panorama — çoklu kazık imalatı" loading="lazy" width="860" height="480" /><figcaption>Büyük ölçekli fore kazık projesi — eş zamanlı çoklu imalat</figcaption></figure>
 
 <h2 id="ozel-kosullarda-fore-kazik-uygulamasi">Özel Koşullarda Fore Kazık Uygulaması</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık, yüksek yeraltı suyu tablası, kaya formasyonları, gevşek kumlu zeminler ve sıkışık kentsel alanlar gibi zorlu koşullarda özel yöntemlerle başarıyla uygulanır. Her koşul, kendine özgü ekipman, teknik ve önlem gerektirir.</div>
@@ -1154,7 +1157,7 @@ export const teknikler: Teknik[] = [
 
 <h2 id="torem-zemin-ile-fore-kazik-projelerinizde-guvenilir-cozum">Torem Zemin ile Fore Kazık Projelerinizde Güvenilir Çözüm</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Torem Zemin Mühendislik, 20 yılı aşan saha tecrübesiyle fore kazık projelendirme, imalat ve kalite kontrol hizmetleri sunmaktadır. Uzman kadromuz, keşiften teslimatına kadar tüm süreçlerde yanınızdadır.</div>
-<p>Torem Zemin Mühendislik olarak, Türkiye genelinde yüzlerce fore kazık projesini başarıyla tamamladık. <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">Zemin iyileştirme</a>, <a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/">iksa sistemleri</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/">öngermeli ankraj</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/">zemin çivisi</a> ve <a href="/faaliyet-alanlari/kazikli-temeller/fore-kazik/">kazıklı temeller</a> dahil tüm geoteknik mühendislik çözümlerinde uzman kadromuzla hizmetinizdeyiz.</p>
+<p>Torem Zemin Mühendislik olarak, Türkiye genelinde yüzlerce fore kazık projesini başarıyla tamamladık. <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">Zemin iyileştirme</a>, <a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/">iksa sistemleri</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/">öngermeli ankraj</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/">zemin çivisi</a> ve <strong>kazıklı temeller</strong> dahil tüm geoteknik mühendislik çözümlerinde uzman kadromuzla hizmetinizdeyiz.</p>
 <p><strong>Neden Torem Zemin?</strong></p>
 <ul>
 <li>20+ yıl saha tecrübesi</li>
@@ -1176,7 +1179,7 @@ export const teknikler: Teknik[] = [
   <a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/" class="related-link">İksa Sistemleri</a>
   <a href="/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/" class="related-link">Öngermeli Ankraj</a>
   <a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/" class="related-link">Zemin Çivisi</a>
-  <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/" class="related-link">Zemin İyileştirme</a>
+  <a href="/faaliyet-alanlari/geoteknik-proje/zemin-etudu/" class="related-link">Zemin Etüdü</a>
 </div>
 
 <p>*Bu içerik, Torem Zemin Mühendislik'in geoteknik uzmanları tarafından hazırlanmış olup, TBDY 2018, TS EN 1536, TS EN 1538, Eurocode 7 (EN 1997-1) ve Eurocode 8 standartları referans alınarak teknik doğruluk sağlanmıştır. Son güncelleme: Mart 2026.*</p>`,

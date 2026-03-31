@@ -5,6 +5,9 @@ interface Props {
   title: string;
   description: string;
   canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  schema?: object | object[];
   category: string;
   categorySlug: string;
   breadcrumbs?: Array<{label: string, href: string}>;
@@ -18,6 +21,9 @@ const {
   title,
   description,
   canonical,
+  ogImage,
+  ogType,
+  schema,
   category,
   categorySlug,
   breadcrumbs = [],
@@ -28,7 +34,7 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} canonical={canonical}>
+<BaseLayout title={title} description={description} canonical={canonical} ogImage={ogImage} ogType={ogType} schema={schema}>
 
   <!-- HERO -->
   <section class="srv-hero">
