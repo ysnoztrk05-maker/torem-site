@@ -106,7 +106,7 @@ export const teknikler: Teknik[] = [
     slug:'fore-kazik', kategoriSlug:'kazikli-temeller',
     title:'Fore Kazık İmalatı', shortTitle:'Fore Kazık',
     excerpt:'Büyük çaplı (400–1500 mm) yerinde döküm betonarme kazık. Zayıf zeminlerde yüksek taşıma kapasiteli derin temel çözümü. 2026 fiyatları, çeşitleri ve yapım aşamaları',
-    image:'/images/fore-kazik-saha.jpg', heroImage:'/images/fore-kazik-saha.jpg',
+    image:'/images/fore-kazik/fore-kazik-hero.webp', heroImage:'/images/fore-kazik/fore-kazik-hero.webp',
     content:`<nav class="toc" aria-label="İçindekiler">
 <h2 class="toc__title">İçindekiler</h2>
 <ol class="toc__list">
@@ -126,7 +126,7 @@ export const teknikler: Teknik[] = [
 
 <h2 id="fore-kazik-nedir">Fore Kazık Nedir?</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık (bored pile), zemin içerisine silindirik bir kuyu açılarak, donatı kafesi indirildikten sonra yerinde beton dökülerek oluşturulan derin temel elemanıdır. 400 mm ile 1500 mm arasında çaplarda ve 5 ila 60 metre derinliklerde uygulanarak yapı yüklerini sağlam zemin tabakalarına aktarır.</div>
-<figure><img src="/images/hero-main.jpg" alt="Fore kazık delgi makinesi saha çalışması — Torem Zemin Mühendislik" loading="lazy" width="860" height="480" /><figcaption>Fore kazık imalatı — rotary delgi makinesi ile zemine giriş anı</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-hero.webp" alt="Fore kazık delgi makinesi şantiye çalışması — altın saat ışığında rotatif delgi operasyonu" loading="lazy" width="1200" height="675" /><figcaption>Fore kazık imalatı — rotatif delgi makinesi ile zemine giriş anı, donatı kafesleri sahada hazır</figcaption></figure>
 <h3>Tanım ve Temel Kavramlar</h3>
 <p>Fore kazık, İngilizce karşılığıyla "bored pile" veya "drilled shaft" olarak da bilinen, yerinde dökme betonarme derin temel sistemidir. Yüzeydeki zayıf veya taşıma kapasitesi yetersiz zeminlerde, yapı yüklerini derinlerdeki sağlam formasyonlara (sıkı kum, sert kil, kaya tabakası) güvenle aktarmak amacıyla kullanılır. TS EN 1536 standardına göre fore kazık, "zemin içerisinde açılan bir kuyunun betonarme ile doldurulmasıyla oluşturulan derin temel elemanı" şeklinde tanımlanmaktadır.</p>
 <p>Bir fore kazık, çalışma prensibi bakımından iki temel mekanizma üzerinden yük aktarır:</p>
@@ -165,7 +165,7 @@ export const teknikler: Teknik[] = [
 <p><strong>Q_toplam = Q_sürtünme + Q_uç</strong></p>
 <p>Burada Q_sürtünme, kazık çevresindeki sürtünme direncinin toplamı; Q_uç ise kazık ucundaki taşıma kapasitesidir.</p>
 <p>Geleneksel çakma kazıklardan farklı olarak fore kazıklarda zemin yerinden çıkarılır (displacement yok), bu nedenle çevre yapılara titreşim etkisi minimumdur. Bu nedenle fore kazıklar, kentsel alanlarda ve mevcut yapılara yakın uygulamalarda standart çözüm olarak tercih edilir.</p>
-<figure><img src="/images/fore-kazik/fore-kazik_01.png" alt="Fore kazık delgi makinesi — rotatif delgi sistemi ile zemine giriş" loading="lazy" width="860" height="480" /><figcaption>Fore kazık imalatında rotatif delgi makinesi ile zemine giriş anı</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-hero.webp" alt="Fore kazık delgi makinesi — rotatif delgi sistemi ile zemine giriş" loading="lazy" width="1200" height="675" /><figcaption>Fore kazık imalatında rotatif delgi makinesi ile zemine giriş anı</figcaption></figure>
 <div class="pros-cons">
   <div class="pros"><h4>Avantajları</h4><ul>
     <li>Çok yüksek taşıma kapasitesi (500–30.000+ kN)</li>
@@ -457,11 +457,12 @@ export const teknikler: Teknik[] = [
 <tr><td><strong>Standart Referans</strong></td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1538</td></tr>
 </tbody>
 </table></div>
-<figure><img src="/images/fore-kazik/fore-kazik_02.png" alt="Fore kazık donatı kafesi — çelik donatı indirme operasyonu" loading="lazy" width="860" height="480" /><figcaption>Donatı kafesi vinç yardımıyla fore kazık kuyusuna indiriliyor</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-donati.webp" alt="Fore kazık donatı kafesi — çelik donatı kafesi vinçle kuyuya indiriliyor" loading="lazy" width="860" height="860" /><figcaption>Donatı kafesi vinç yardımıyla fore kazık kuyusuna indiriliyor — spiral etriye detayı</figcaption></figure>
 
 <h2 id="fore-kazik-nasil-yapilir-adim-adim-yapim-asamalari">Fore Kazık Nasıl Yapılır? Adım Adım Yapım Aşamaları</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık imalatı altı temel aşamadan oluşur: çalışma platformu hazırlığı ve aplikasyon, delgi işlemi, muhafaza (cidar koruma), donatı kafesi indirme, tremi borusu ile betonlama ve kazık başlığı imalatı. Her aşama TS EN 1536\'ya uygun kalite kontrolü gerektirir.</div>
 <figure><img src="/images/fore-kazik-saha.jpg" alt="Fore kazık şantiyesi — donatı kafesi indirme ve delgi makineleri" loading="lazy" width="860" height="480" /><figcaption>Kentsel şantiyede fore kazık imalatı — donatı kafesi indirme operasyonu</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-beton.webp" alt="Fore kazık beton dökümü — tremie borusuyla taze beton kazık kuyusuna dökülüyor" loading="lazy" width="860" height="860" /><figcaption>Tremie borusu ile fore kazık kuyusuna beton dökümü — beton pompası ve şantiye ekibi</figcaption></figure>
 <div class="process-steps">
   <div class="step">
     <div><h4>Çalışma Platformu Hazırlığı ve Aplikasyon</h4>
@@ -806,7 +807,7 @@ export const teknikler: Teknik[] = [
 <li>Yanal yayılma kuvvetleri, ek yatay yük olarak kazık tasarımına dahil edilmelidir.</li>
 <li>Eurocode 7 ve Eurocode 8 (sismik tasarım) referans alınarak deprem performans analizi yapılmalıdır.</li>
 </ul>
-<figure><img src="/images/fore-kazik/fore-kazik_03.png" alt="Fore kazık şantiyesi panorama — çoklu kazık imalatı" loading="lazy" width="860" height="480" /><figcaption>Büyük ölçekli fore kazık projesi — eş zamanlı çoklu imalat</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-deprem.webp" alt="Fore kazık temel sistemi kesit görünümü — bina altında derin kazıklar farklı zemin katmanlarından ana kayaya ulaşıyor" loading="lazy" width="860" height="860" /><figcaption>Fore kazık temel sistemi kesit illüstrasyonu — kazıklar zemin katmanlarını geçerek ana kayaya oturuyor</figcaption></figure>
 
 <h2 id="ozel-kosullarda-fore-kazik-uygulamasi">Özel Koşullarda Fore Kazık Uygulaması</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık, yüksek yeraltı suyu tablası, kaya formasyonları, gevşek kumlu zeminler ve sıkışık kentsel alanlar gibi zorlu koşullarda özel yöntemlerle başarıyla uygulanır. Her koşul, kendine özgü ekipman, teknik ve önlem gerektirir.</div>
