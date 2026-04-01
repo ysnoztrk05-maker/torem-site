@@ -129,6 +129,9 @@ export const teknikler: Teknik[] = [
 <figure><img src="/images/fore-kazik/fore-kazik-hero.webp" alt="Fore kazık delgi makinesi şantiye çalışması — altın saat ışığında rotatif delgi operasyonu" loading="eager" fetchpriority="high" decoding="async" width="1200" height="675" /><figcaption>Fore kazık imalatı — rotatif delgi makinesi ile zemine giriş anı, donatı kafesleri sahada hazır</figcaption></figure>
 <h3>Tanım ve Temel Kavramlar</h3>
 <p>Fore kazık, İngilizce karşılığıyla "bored pile" veya "drilled shaft" olarak da bilinen, yerinde dökme betonarme derin temel sistemidir. Yüzeydeki zayıf veya taşıma kapasitesi yetersiz zeminlerde, yapı yüklerini derinlerdeki sağlam formasyonlara (sıkı kum, sert kil, kaya tabakası) güvenle aktarmak amacıyla kullanılır. TS EN 1536 standardına göre fore kazık, "zemin içerisinde açılan bir kuyunun betonarme ile doldurulmasıyla oluşturulan derin temel elemanı" şeklinde tanımlanmaktadır.</p>
+<div class="saha-notu">
+<strong>📋 Mevzuat Notu:</strong> TS EN 1536 standardına göre fore kazık minimum çapı 300 mm olarak tanımlanır. Sahada en yaygın çaplar 600–1500 mm aralığındadır. Standart dışı çaplarda üretim yapılması halinde özel kalite kontrol prosedürü uygulanmalıdır.
+</div>
 <p>Bir fore kazık, çalışma prensibi bakımından iki temel mekanizma üzerinden yük aktarır:</p>
 <ul>
 <li><strong>Çevre Sürtünmesi (Skin Friction / Shaft Resistance):</strong> Kazık gövdesinin dış yüzeyiyle çevreleyen zemin arasındaki aderans kuvveti. Özellikle kohezyonlu (killi) zeminlerde ve uzun kazıklarda baskın taşıma mekanizmasıdır. Kazık boyunca dağılmış sürtünme kuvvetleri, toplam taşıma kapasitesinin %40 ile %80'ini oluşturabilir.</li>
@@ -420,6 +423,9 @@ export const teknikler: Teknik[] = [
 
 <h2 id="fore-kazik-cesitleri-ve-karsilastirma">Fore Kazık Çeşitleri ve Karşılaştırma</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazıklar uygulama yöntemine göre kuru delgi, bentonit çamurlu delgi, kılıflı (casing) delgi, CFA (sürekli helezon) kazık ve baret kazık olarak sınıflandırılır. Her yöntem farklı zemin koşulları ve proje gereksinimleri için optimize edilmiştir.</div>
+<div class="saha-notu">
+<strong>💡 Pratik İpucu:</strong> CFA (Sürekli Helisel Auger) kazık uygulamasında beton basma hızı ile auger çekme hızı senkron olmalı. Hız uyumsuzluğu boyun oluşumuna (necking) neden olur. Tecrübeli operatör farkı burada ortaya çıkar.
+</div>
 <div class="card-grid">
   <div class="grid-card">
     <h4>1. Kuru Delgi Fore Kazık</h4>
@@ -463,6 +469,9 @@ export const teknikler: Teknik[] = [
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık imalatı altı temel aşamadan oluşur: çalışma platformu hazırlığı ve aplikasyon, delgi işlemi, muhafaza (cidar koruma), donatı kafesi indirme, tremi borusu ile betonlama ve kazık başlığı imalatı. Her aşama TS EN 1536\'ya uygun kalite kontrolü gerektirir.</div>
 <figure><img src="/images/fore-kazik-saha.jpg" alt="Fore kazık şantiyesi — donatı kafesi indirme ve delgi makineleri" loading="lazy" decoding="async" width="860" height="480" /><figcaption>Kentsel şantiyede fore kazık imalatı — donatı kafesi indirme operasyonu</figcaption></figure>
 <figure><img src="/images/fore-kazik/fore-kazik-beton.webp" alt="Fore kazık beton dökümü — tremie borusuyla taze beton kazık kuyusuna dökülüyor" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Tremie borusu ile fore kazık kuyusuna beton dökümü — beton pompası ve şantiye ekibi</figcaption></figure>
+<div class="saha-notu">
+<strong>⚠️ Saha Uyarısı:</strong> Delgi sırasında bentonit seviyesi sürekli kontrol edilmeli. Bentonit seviyesi kuyu ağzının 1,5 m altına düşerse kuyu göçme riski artar. Özellikle gevşek kumlu zeminlerde bu seviye dakikalar içinde düşebilir — pompa sürekli çalışmalı.
+</div>
 <div class="process-steps">
   <div class="step">
     <div><h4>Çalışma Platformu Hazırlığı ve Aplikasyon</h4>
@@ -698,6 +707,9 @@ export const teknikler: Teknik[] = [
 </svg><figcaption>Fore Kazık İmalat Akış Şeması</figcaption></figure>
 <h2 id="fore-kazik-fiyatlari-2026">Fore Kazık Fiyatları 2026</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> 2026 yılı itibarıyla fore kazık metre fiyatları çapa göre 1.800 TL ile 7.500 TL/m arasında değişmektedir. Fiyatı etkileyen başlıca faktörler; kazık çapı, derinlik, zemin koşulları, donatı yoğunluğu, mobilizasyon mesafesi ve proje ölçeğidir.</div>
+<div class="saha-notu">
+<strong>💰 Maliyet Notu:</strong> Fore kazık maliyetinin %40-50\'si beton ve donatı çeliğidir. Çelik fiyatlarındaki dalgalanma toplam maliyeti doğrudan etkiler. Büyük projelerde çelik tedarikini önceden sabitlemek %10-15 tasarruf sağlayabilir.
+</div>
 <h3>2026 Güncel Birim Fiyat Tablosu</h3>
 <div class="expert-tip">Aşağıdaki fiyatlar 2026 yılı piyasa ortalamasıdır. Kesin fiyatlar zemin koşulları, proje ölçeği ve lokasyona göre değişir. Güncel teklif için <a href="/iletisim/">iletişime geçin</a>.</div>
 <div class="table-wrapper"><table>
@@ -771,6 +783,9 @@ export const teknikler: Teknik[] = [
 <figure><img src="/images/fore-kazik/fore-kazik-ekipman.webp" alt="Fore kazık şantiyesi ekipman panoraması — delgi makinesi, beton pompası ve vinç eş zamanlı çalışıyor" loading="lazy" decoding="async" width="860" height="480" /><figcaption>Büyük ölçekli fore kazık projesi — çoklu ekipman eş zamanlı operasyonu, maliyetin ölçeğini gösteren şantiye panoraması</figcaption></figure>
 <h2 id="fore-kazik-deprem-dayanikliligi-ve-tbdy-2018">Fore Kazık Deprem Dayanıklılığı ve TBDY 2018</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazıklar, TBDY 2018 (Türkiye Bina Deprem Yönetmeliği) kapsamında depreme dayanıklı yapı tasarımının temel bileşenlerindendir. Sıvılaşma riski bulunan ZD, ZE ve ZF sınıfı zeminlerde fore kazık uygulaması zorunlu hale gelebilir. Kazık-zemin etkileşimi analizi, deprem tasarımının ayrılmaz parçasıdır.</div>
+<div class="saha-notu">
+<strong>📋 Mevzuat Notu:</strong> TBDY 2018\'e göre ZC ve ZD zemin sınıflarında kazıklı temel zorunludur. Müteahhitler bazen "radye yeter" der ama yönetmelik açık — zayıf zeminde derin temel şart. Deprem yükü hesabı olmadan kazık boyutlandırması yapılamaz.
+</div>
 <h3>Deprem ve Derin Temel İlişkisi</h3>
 <p>Türkiye, dünyanın en aktif deprem kuşaklarından biri olan Alp-Himalaya deprem kuşağı üzerinde yer alır. Ülke topraklarının %92'si deprem bölgesindedir ve nüfusun büyük bölümü deprem riski altında yaşamaktadır. Bu gerçek, yapı temellerinin depreme dayanıklı tasarlanmasını zorunlu kılmaktadır.</p>
 <p>Fore kazıklar, deprem mühendisliği açısından kritik avantajlar sunar:</p>
@@ -811,6 +826,9 @@ export const teknikler: Teknik[] = [
 
 <h2 id="ozel-kosullarda-fore-kazik-uygulamasi">Özel Koşullarda Fore Kazık Uygulaması</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık, yüksek yeraltı suyu tablası, kaya formasyonları, gevşek kumlu zeminler ve sıkışık kentsel alanlar gibi zorlu koşullarda özel yöntemlerle başarıyla uygulanır. Her koşul, kendine özgü ekipman, teknik ve önlem gerektirir.</div>
+<div class="saha-notu">
+<strong>🏗️ Torem Deneyimi:</strong> İstanbul Pendik-Kurtköy bölgesinde alüvyon zemin koşullarında Ø80 cm fore kazıklar ile 35 m derinliğe ulaştık. Yeraltı suyu seviyesi -3 m\'de olmasına rağmen bentonitli delgi yöntemiyle sorunsuz imalat gerçekleştirdik.
+</div>
 <h3>Yüksek Yeraltı Suyu Tablası</h3>
 <p>Yeraltı su seviyesinin yüzeye yakın olduğu (0–3 m) projelerde, fore kazık delgisi özel önlemler gerektirir:</p>
 <ul>
@@ -842,6 +860,9 @@ export const teknikler: Teknik[] = [
 
 <h2 id="zemin-etudu-ve-fore-kazik-i-liskisi">Zemin Etüdü ve Fore Kazık İlişkisi</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Zemin etüdü, fore kazık tasarımının temel girdisidir. SPT-N değerleri, presiyometre deneyleri, laboratuvar analizleri ve sondaj karotları, kazık çapını, derinliğini ve taşıma kapasitesini belirleyen temel verilerdir. Yetersiz zemin etüdü, fore kazık projelerindeki başarısızlıkların en yaygın sebebidir.</div>
+<div class="saha-notu">
+<strong>🔍 Zemin Okuma:</strong> Kazık çakma/delme loglarında ani ilerleme hızı artışı, zemin geçişini gösterir. Sert tabakadan yumuşak tabakaya geçiş anı kritiktir — bu noktada delgi parametreleri (devir, basınç) ayarlanmazsa kazık eğrilebilir.
+</div>
 <h3>Zemin Etüdünün Gerekliliği</h3>
 <p>Her fore kazık projesi, mutlaka kapsamlı bir zemin etüdü raporuna dayanmalıdır. Zemin etüdü olmadan fore kazık tasarımı yapmak, "gözü kapalı cerrahiye" benzer — son derece risklidir. <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">Zemin iyileştirme</a> kararı da dahil olmak üzere tüm geoteknik mühendislik çözümleri, zemin etüdü verilerine dayanır.</p>
 <p>Fore kazık projeleri için zemin etüdünde yapılması gereken işlemler:</p>
@@ -1139,6 +1160,10 @@ export const teknikler: Teknik[] = [
 <strong>Hangi Temel Sistemi Sizin Projenize Uygun?</strong>
 <p>Zemin etüdü raporunuzla birlikte bizi arayın, uzman mühendislerimiz en uygun ve ekonomik çözümü belirlesin.</p>
 <a href="tel:+905316594636" class="cta-btn">Hemen Arayın: 0531 659 46 36</a>
+</div>
+
+<div class="saha-notu">
+<strong>🦺 İSG Notu:</strong> Fore kazık şantiyesinde en büyük risk vinç operasyonları ve donatı kafesi indirmedir. Donatı kafesi kaldırılırken tüm personel güvenli mesafede olmalı. Rüzgar hızı 40 km/s\'yi aştığında kaldırma işlemi durdurulmalı.
 </div>
 
 <h2 id="sik-sorulan-sorular-sss">Sık Sorulan Sorular (SSS)</h2>
