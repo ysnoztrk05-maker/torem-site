@@ -1509,7 +1509,7 @@ export const teknikler: Teknik[] = [
   <div class="stat-card"><span class="stat-number">5–30</span><span class="stat-label">MPa Basınç Dayanımı</span></div>
 </div>
 
-<figure><img src="/images/jet-grout/jet-grout-hero.webp" alt="Jet grout uygulama şantiyesi — yüksek basınçlı enjeksiyon ekipmanı çalışırken" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout uygulaması — yüksek basınçlı çimento enjeksiyonu ile zemin iyileştirme</figcaption></figure>
+<figure><img src="/images/jet-grout/jet-grout-hero.webp" alt="Jet grout uygulama şantiyesi — yüksek basınçlı enjeksiyon ekipmanı çalışırken" loading="eager" fetchpriority="high" decoding="async" width="860" height="860" /><figcaption>Jet grout uygulaması — yüksek basınçlı çimento enjeksiyonu ile zemin iyileştirme</figcaption></figure>
 <h3>Jet Grout Çalışma Prensibi</h3>
 <p>Jet grout uygulaması iki aşamadan oluşur. İlk aşamada, bir delgi makinesi ile hedef derinliğe kadar delgi yapılır. İkinci aşamada, delgi kolu zemin içinden yukarıya çekilirken, monitor ucundaki nozzle\'lardan yüksek basınçlı çimento şerbeti (ve sisteme bağlı olarak hava ve/veya su) zemine enjekte edilir.</p>
 
