@@ -47,7 +47,39 @@ const faqSchema = teknik.faq.length > 0 ? {
   }))
 } : null;
 
-const pageSchemas = [articleSchema, faqSchema].filter(Boolean);
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Ana Sayfa', item: siteUrl },
+    { '@type': 'ListItem', position: 2, name: 'Faaliyet Alanları', item: `${siteUrl}/faaliyet-alanlari/` },
+    { '@type': 'ListItem', position: 3, name: kategori.title, item: `${siteUrl}/faaliyet-alanlari/${kategori.slug}/` },
+    { '@type': 'ListItem', position: 4, name: teknik.shortTitle }
+  ]
+};
+
+const hasProcessSteps = teknik.content.includes('class="process-steps"');
+const howToSchema = hasProcessSteps ? {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: `${teknik.shortTitle} Nasıl Yapılır?`,
+  description: teknik.excerpt,
+  step: (() => {
+    const stepMatches = teknik.content.match(/<div class="step">[\s\S]*?<h4>([\s\S]*?)<\/h4>[\s\S]*?<p>([\s\S]*?)<\/p>/g) || [];
+    return stepMatches.map((s: string, i: number) => {
+      const titleMatch = s.match(/<h4>([\s\S]*?)<\/h4>/);
+      const textMatch = s.match(/<p>([\s\S]*?)<\/p>/);
+      return {
+        '@type': 'HowToStep',
+        position: i + 1,
+        name: titleMatch ? titleMatch[1].replace(/<[^>]*>/g, '') : `Adım ${i + 1}`,
+        text: textMatch ? textMatch[1].replace(/<[^>]*>/g, '').substring(0, 300) : ''
+      };
+    });
+  })()
+} : null;
+
+const pageSchemas = [articleSchema, faqSchema, breadcrumbSchema, howToSchema].filter(Boolean);
 const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.image : '/og-default.jpg';
 ---
 
