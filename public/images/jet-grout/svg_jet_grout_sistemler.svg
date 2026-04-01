@@ -1,0 +1,104 @@
+<svg viewBox="0 0 860 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jet1, Jet2, Jet3 Sistem Karşılaştırması">
+  <defs>
+    <linearGradient id="bgSys" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F2ED"/>
+      <stop offset="100%" stop-color="#E8E4DD"/>
+    </linearGradient>
+    <filter id="sShadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/></filter>
+  </defs>
+
+  <rect width="860" height="520" rx="16" fill="url(#bgSys)"/>
+  <text x="430" y="40" text-anchor="middle" font-family="system-ui,sans-serif" font-size="20" font-weight="700" fill="#1B2B3A">Jet Grout Sistemleri Karşılaştırması</text>
+  <line x1="300" y1="50" x2="560" y2="50" stroke="#C8873A" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- JET1 -->
+  <g transform="translate(25,70)">
+    <rect width="260" height="430" rx="12" fill="#ffffff" filter="url(#sShadow)"/>
+    <rect width="260" height="50" rx="12" fill="#4A7FA5"/>
+    <rect y="38" width="260" height="12" fill="#4A7FA5"/>
+    <text x="130" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#ffffff">JET1 — Tek Akışkan</text>
+
+    <!-- Nozzle illüstrasyon -->
+    <g transform="translate(90,70)">
+      <rect x="30" y="0" width="20" height="80" rx="4" fill="#5A6A7A"/>
+      <circle cx="40" cy="85" r="6" fill="#4A7FA5"/>
+      <line x1="40" y1="91" x2="20" y2="130" stroke="#4A7FA5" stroke-width="2" stroke-dasharray="4"/>
+      <line x1="40" y1="91" x2="60" y2="130" stroke="#4A7FA5" stroke-width="2" stroke-dasharray="4"/>
+      <text x="40" y="150" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#4A7FA5" font-weight="600">Çimento</text>
+    </g>
+
+    <line x1="20" y1="235" x2="240" y2="235" stroke="#E0DCD6" stroke-width="1"/>
+    <text x="20" y="260" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Kolon Çapı</text>
+    <text x="240" y="260" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#4A7FA5">30–80 cm</text>
+    <text x="20" y="290" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Basınç</text>
+    <text x="240" y="290" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#4A7FA5">300–400 bar</text>
+    <text x="20" y="320" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Nozzle</text>
+    <text x="240" y="320" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#4A7FA5">1,5–2,5 mm</text>
+    <text x="20" y="350" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Maliyet</text>
+    <text x="240" y="350" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#4A7FA5">Düşük</text>
+
+    <rect x="20" y="375" width="220" height="35" rx="6" fill="#EDF5FC"/>
+    <text x="130" y="397" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#4A7FA5">Kum, gevşek silt</text>
+  </g>
+
+  <!-- JET2 -->
+  <g transform="translate(300,70)">
+    <rect width="260" height="430" rx="12" fill="#ffffff" filter="url(#sShadow)"/>
+    <rect width="260" height="50" rx="12" fill="#2E5077"/>
+    <rect y="38" width="260" height="12" fill="#2E5077"/>
+    <text x="130" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#ffffff">JET2 — Çift Akışkan</text>
+
+    <g transform="translate(90,70)">
+      <rect x="30" y="0" width="20" height="80" rx="4" fill="#5A6A7A"/>
+      <circle cx="40" cy="85" r="6" fill="#2E5077"/>
+      <circle cx="40" cy="85" r="12" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-dasharray="3"/>
+      <line x1="40" y1="97" x2="15" y2="130" stroke="#2E5077" stroke-width="2" stroke-dasharray="4"/>
+      <line x1="40" y1="97" x2="65" y2="130" stroke="#2E5077" stroke-width="2" stroke-dasharray="4"/>
+      <text x="40" y="148" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#2E5077" font-weight="600">Çimento + Hava</text>
+    </g>
+
+    <line x1="20" y1="235" x2="240" y2="235" stroke="#E0DCD6" stroke-width="1"/>
+    <text x="20" y="260" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Kolon Çapı</text>
+    <text x="240" y="260" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2E5077">60–120 cm</text>
+    <text x="20" y="290" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Basınç</text>
+    <text x="240" y="290" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2E5077">300–500 bar</text>
+    <text x="20" y="320" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Nozzle</text>
+    <text x="240" y="320" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2E5077">2,0–3,0 mm</text>
+    <text x="20" y="350" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Maliyet</text>
+    <text x="240" y="350" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#2E5077">Orta</text>
+
+    <rect x="20" y="375" width="220" height="35" rx="6" fill="#E8EEF6"/>
+    <text x="130" y="397" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#2E5077">Silt, kil, kum</text>
+  </g>
+
+  <!-- JET3 -->
+  <g transform="translate(575,70)">
+    <rect width="260" height="430" rx="12" fill="#ffffff" filter="url(#sShadow)"/>
+    <rect width="260" height="50" rx="12" fill="#C8873A"/>
+    <rect y="38" width="260" height="12" fill="#C8873A"/>
+    <text x="130" y="33" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#ffffff">JET3 — Üç Akışkan</text>
+
+    <g transform="translate(90,70)">
+      <rect x="30" y="0" width="20" height="80" rx="4" fill="#5A6A7A"/>
+      <circle cx="40" cy="85" r="6" fill="#C8873A"/>
+      <circle cx="40" cy="85" r="12" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="3" stroke-dasharray="3"/>
+      <circle cx="40" cy="85" r="18" fill="none" stroke="#4A7FA5" stroke-width="2" stroke-dasharray="3"/>
+      <line x1="40" y1="103" x2="10" y2="130" stroke="#C8873A" stroke-width="2" stroke-dasharray="4"/>
+      <line x1="40" y1="103" x2="70" y2="130" stroke="#C8873A" stroke-width="2" stroke-dasharray="4"/>
+      <text x="40" y="148" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#C8873A" font-weight="600">Su + Hava + Çimento</text>
+    </g>
+
+    <line x1="20" y1="235" x2="240" y2="235" stroke="#E0DCD6" stroke-width="1"/>
+    <text x="20" y="260" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Kolon Çapı</text>
+    <text x="240" y="260" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#C8873A">80–250 cm</text>
+    <text x="20" y="290" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Basınç</text>
+    <text x="240" y="290" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#C8873A">400–600 bar</text>
+    <text x="20" y="320" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Nozzle</text>
+    <text x="240" y="320" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#C8873A">2,5–4,0 mm</text>
+    <text x="20" y="350" font-family="system-ui,sans-serif" font-size="12" font-weight="600" fill="#1B2B3A">Maliyet</text>
+    <text x="240" y="350" text-anchor="end" font-family="system-ui,sans-serif" font-size="13" font-weight="700" fill="#C8873A">Yüksek</text>
+
+    <rect x="20" y="375" width="220" height="35" rx="6" fill="#FFF3E0"/>
+    <text x="130" y="397" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#C8873A">Tüm zemin tipleri</text>
+  </g>
+</svg>

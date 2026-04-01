@@ -1,0 +1,101 @@
+<svg viewBox="0 0 860 620" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Jet Grout Uygulama Akış Şeması">
+  <defs>
+    <linearGradient id="jgBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5F2ED"/>
+      <stop offset="100%" stop-color="#E8E4DD"/>
+    </linearGradient>
+    <linearGradient id="jgStep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2E5077"/>
+      <stop offset="100%" stop-color="#1B2B3A"/>
+    </linearGradient>
+    <filter id="jgShadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.1"/></filter>
+  </defs>
+
+  <rect width="860" height="620" rx="16" fill="url(#jgBg)"/>
+
+  <text x="430" y="45" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="700" fill="#1B2B3A">Jet Grout Uygulama Akış Şeması</text>
+  <line x1="330" y1="55" x2="530" y2="55" stroke="#C8873A" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- ADIM 1 -->
+  <g transform="translate(40,80)">
+    <rect width="370" height="120" rx="12" fill="#ffffff" filter="url(#jgShadow)"/>
+    <circle cx="35" cy="60" r="24" fill="url(#jgStep)"/>
+    <text x="35" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#ffffff">1</text>
+    <text x="75" y="35" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1B2B3A">Delme Aşaması</text>
+    <text x="75" y="56" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">Delgi makinesi ile hedef derinliğe</text>
+    <text x="75" y="72" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">kadar döner delgi (90-150 mm çap)</text>
+    <text x="75" y="100" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#C8873A">Derinlik: 5–35+ m</text>
+  </g>
+
+  <!-- ADIM 2 -->
+  <g transform="translate(450,80)">
+    <rect width="370" height="120" rx="12" fill="#ffffff" filter="url(#jgShadow)"/>
+    <circle cx="35" cy="60" r="24" fill="url(#jgStep)"/>
+    <text x="35" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#ffffff">2</text>
+    <text x="75" y="35" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1B2B3A">Yüksek Basınçlı Enjeksiyon</text>
+    <text x="75" y="56" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">Nozzle'lardan 300–600 bar basınçla</text>
+    <text x="75" y="72" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">çimento şerbeti zemine enjekte edilir</text>
+    <text x="75" y="100" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#C8873A">Jet hızı: 100–300 m/s</text>
+  </g>
+
+  <!-- Ok 1→2 -->
+  <path d="M 415 140 L 445 140" stroke="#C8873A" stroke-width="2.5" fill="none" marker-end="url(#arrowJ)"/>
+  <defs><marker id="arrowJ" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#C8873A"/></marker></defs>
+
+  <!-- ADIM 3 -->
+  <g transform="translate(40,240)">
+    <rect width="370" height="120" rx="12" fill="#ffffff" filter="url(#jgShadow)"/>
+    <circle cx="35" cy="60" r="24" fill="url(#jgStep)"/>
+    <text x="35" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#ffffff">3</text>
+    <text x="75" y="35" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1B2B3A">Kolon Oluşumu</text>
+    <text x="75" y="56" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">Zemin partikülleri + çimento karışarak</text>
+    <text x="75" y="72" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">silindirik soilcrete kolon oluşur</text>
+    <text x="75" y="100" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#C8873A">Kolon çapı: 30–250 cm</text>
+  </g>
+
+  <!-- ADIM 4 -->
+  <g transform="translate(450,240)">
+    <rect width="370" height="120" rx="12" fill="#ffffff" filter="url(#jgShadow)"/>
+    <circle cx="35" cy="60" r="24" fill="url(#jgStep)"/>
+    <text x="35" y="67" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" font-weight="700" fill="#ffffff">4</text>
+    <text x="75" y="35" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1B2B3A">Kalite Kontrol</text>
+    <text x="75" y="56" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">Deneme kolonu, karot alma,</text>
+    <text x="75" y="72" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">basınç dayanımı testi (UCS)</text>
+    <text x="75" y="100" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#C8873A">Hedef: 5–30 MPa</text>
+  </g>
+
+  <!-- Ok 1→3 (aşağı) -->
+  <path d="M 225 200 L 225 235" stroke="#C8873A" stroke-width="2.5" fill="none" marker-end="url(#arrowJ)"/>
+  <!-- Ok 2→4 (aşağı) -->
+  <path d="M 635 200 L 635 235" stroke="#C8873A" stroke-width="2.5" fill="none" marker-end="url(#arrowJ)"/>
+
+  <!-- Alt bilgi kutusu -->
+  <g transform="translate(40,400)">
+    <rect width="780" height="200" rx="12" fill="#1B2B3A"/>
+    <text x="390" y="35" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#C8873A">Jet Grout Temel Parametreleri</text>
+
+    <g transform="translate(30,55)">
+      <rect width="165" height="70" rx="8" fill="#2E5077"/>
+      <text x="82" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="#ffffff">300–600</text>
+      <text x="82" y="52" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">Bar Enjeksiyon Basıncı</text>
+    </g>
+    <g transform="translate(220,55)">
+      <rect width="165" height="70" rx="8" fill="#2E5077"/>
+      <text x="82" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="#ffffff">30–250</text>
+      <text x="82" y="52" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">cm Kolon Çapı</text>
+    </g>
+    <g transform="translate(410,55)">
+      <rect width="165" height="70" rx="8" fill="#2E5077"/>
+      <text x="82" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="#ffffff">35+</text>
+      <text x="82" y="52" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">m Maks. Derinlik</text>
+    </g>
+    <g transform="translate(600,55)">
+      <rect width="165" height="70" rx="8" fill="#2E5077"/>
+      <text x="82" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="22" font-weight="800" fill="#ffffff">5–30</text>
+      <text x="82" y="52" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.7)">MPa Basınç Dayanımı</text>
+    </g>
+
+    <text x="390" y="160" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Kaynak: TS EN 12716 · TBDY 2018 · Eurocode 7</text>
+    <text x="390" y="180" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="rgba(255,255,255,0.5)">Torem Zemin Mühendislik — toremzemin.com</text>
+  </g>
+</svg>
