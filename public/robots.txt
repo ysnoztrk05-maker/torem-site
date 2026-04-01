@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /taslak/
+Disallow: /_assets/
+
+Sitemap: https://www.toremzemin.com/sitemap-index.xml

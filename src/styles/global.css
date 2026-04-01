@@ -190,9 +190,62 @@ strong { font-weight: 600; }
   z-index: 9999;
 }
 
+/* === Scroll Reveal Animasyonları === */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms;
     transition-duration: 0.01ms;
   }
+  .reveal, .reveal-left, .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* === Saha Notu Bileşeni === */
+.saha-notu {
+  background: linear-gradient(135deg, #FFF8F0 0%, #FFF3E6 100%);
+  border-left: 4px solid var(--color-highlight, #C8873A);
+  padding: var(--s-4, 1rem) var(--s-5, 1.25rem);
+  margin: var(--s-4, 1rem) 0;
+  border-radius: 0 8px 8px 0;
+  font-size: var(--text-sm, 0.9rem);
+  line-height: 1.7;
+}
+.saha-notu strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--color-primary, #1B2B3A);
+  font-size: var(--text-base, 1rem);
 }

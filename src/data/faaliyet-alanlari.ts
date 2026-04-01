@@ -126,7 +126,7 @@ export const teknikler: Teknik[] = [
 
 <h2 id="fore-kazik-nedir">Fore Kazık Nedir?</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık (bored pile), zemin içerisine silindirik bir kuyu açılarak, donatı kafesi indirildikten sonra yerinde beton dökülerek oluşturulan derin temel elemanıdır. 400 mm ile 1500 mm arasında çaplarda ve 5 ila 60 metre derinliklerde uygulanarak yapı yüklerini sağlam zemin tabakalarına aktarır.</div>
-<figure><img src="/images/fore-kazik/fore-kazik-hero.webp" alt="Fore kazık delgi makinesi şantiye çalışması — altın saat ışığında rotatif delgi operasyonu" loading="lazy" width="1200" height="675" /><figcaption>Fore kazık imalatı — rotatif delgi makinesi ile zemine giriş anı, donatı kafesleri sahada hazır</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-hero.webp" alt="Fore kazık delgi makinesi şantiye çalışması — altın saat ışığında rotatif delgi operasyonu" loading="eager" fetchpriority="high" decoding="async" width="1200" height="675" /><figcaption>Fore kazık imalatı — rotatif delgi makinesi ile zemine giriş anı, donatı kafesleri sahada hazır</figcaption></figure>
 <h3>Tanım ve Temel Kavramlar</h3>
 <p>Fore kazık, İngilizce karşılığıyla "bored pile" veya "drilled shaft" olarak da bilinen, yerinde dökme betonarme derin temel sistemidir. Yüzeydeki zayıf veya taşıma kapasitesi yetersiz zeminlerde, yapı yüklerini derinlerdeki sağlam formasyonlara (sıkı kum, sert kil, kaya tabakası) güvenle aktarmak amacıyla kullanılır. TS EN 1536 standardına göre fore kazık, "zemin içerisinde açılan bir kuyunun betonarme ile doldurulmasıyla oluşturulan derin temel elemanı" şeklinde tanımlanmaktadır.</p>
 <p>Bir fore kazık, çalışma prensibi bakımından iki temel mekanizma üzerinden yük aktarır:</p>
@@ -165,7 +165,7 @@ export const teknikler: Teknik[] = [
 <p><strong>Q_toplam = Q_sürtünme + Q_uç</strong></p>
 <p>Burada Q_sürtünme, kazık çevresindeki sürtünme direncinin toplamı; Q_uç ise kazık ucundaki taşıma kapasitesidir.</p>
 <p>Geleneksel çakma kazıklardan farklı olarak fore kazıklarda zemin yerinden çıkarılır (displacement yok), bu nedenle çevre yapılara titreşim etkisi minimumdur. Bu nedenle fore kazıklar, kentsel alanlarda ve mevcut yapılara yakın uygulamalarda standart çözüm olarak tercih edilir.</p>
-<figure><img src="/images/fore-kazik/fore-kazik-calismaprensibi.webp" alt="Fore kazık çalışma prensibi — 3D kesit görünümünde çevre sürtünmesi ve uç direnci yük aktarım mekanizması" loading="lazy" width="860" height="860" /><figcaption>Fore kazık yük aktarım mekanizması — kırmızı oklar yapı yükü, turuncu oklar çevre sürtünmesi, mavi oklar uç direnci</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-calismaprensibi.webp" alt="Fore kazık çalışma prensibi — 3D kesit görünümünde çevre sürtünmesi ve uç direnci yük aktarım mekanizması" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Fore kazık yük aktarım mekanizması — kırmızı oklar yapı yükü, turuncu oklar çevre sürtünmesi, mavi oklar uç direnci</figcaption></figure>
 <div class="pros-cons">
   <div class="pros"><h4>Avantajları</h4><ul>
     <li>Çok yüksek taşıma kapasitesi (500–30.000+ kN)</li>
@@ -457,12 +457,12 @@ export const teknikler: Teknik[] = [
 <tr><td><strong>Standart Referans</strong></td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1536</td><td>TS EN 1538</td></tr>
 </tbody>
 </table></div>
-<figure><img src="/images/fore-kazik/fore-kazik-donati.webp" alt="Fore kazık donatı kafesi — çelik donatı kafesi vinçle kuyuya indiriliyor" loading="lazy" width="860" height="860" /><figcaption>Donatı kafesi vinç yardımıyla fore kazık kuyusuna indiriliyor — spiral etriye detayı</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-donati.webp" alt="Fore kazık donatı kafesi — çelik donatı kafesi vinçle kuyuya indiriliyor" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Donatı kafesi vinç yardımıyla fore kazık kuyusuna indiriliyor — spiral etriye detayı</figcaption></figure>
 
 <h2 id="fore-kazik-nasil-yapilir-adim-adim-yapim-asamalari">Fore Kazık Nasıl Yapılır? Adım Adım Yapım Aşamaları</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık imalatı altı temel aşamadan oluşur: çalışma platformu hazırlığı ve aplikasyon, delgi işlemi, muhafaza (cidar koruma), donatı kafesi indirme, tremi borusu ile betonlama ve kazık başlığı imalatı. Her aşama TS EN 1536\'ya uygun kalite kontrolü gerektirir.</div>
-<figure><img src="/images/fore-kazik-saha.jpg" alt="Fore kazık şantiyesi — donatı kafesi indirme ve delgi makineleri" loading="lazy" width="860" height="480" /><figcaption>Kentsel şantiyede fore kazık imalatı — donatı kafesi indirme operasyonu</figcaption></figure>
-<figure><img src="/images/fore-kazik/fore-kazik-beton.webp" alt="Fore kazık beton dökümü — tremie borusuyla taze beton kazık kuyusuna dökülüyor" loading="lazy" width="860" height="860" /><figcaption>Tremie borusu ile fore kazık kuyusuna beton dökümü — beton pompası ve şantiye ekibi</figcaption></figure>
+<figure><img src="/images/fore-kazik-saha.jpg" alt="Fore kazık şantiyesi — donatı kafesi indirme ve delgi makineleri" loading="lazy" decoding="async" width="860" height="480" /><figcaption>Kentsel şantiyede fore kazık imalatı — donatı kafesi indirme operasyonu</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-beton.webp" alt="Fore kazık beton dökümü — tremie borusuyla taze beton kazık kuyusuna dökülüyor" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Tremie borusu ile fore kazık kuyusuna beton dökümü — beton pompası ve şantiye ekibi</figcaption></figure>
 <div class="process-steps">
   <div class="step">
     <div><h4>Çalışma Platformu Hazırlığı ve Aplikasyon</h4>
@@ -768,7 +768,7 @@ export const teknikler: Teknik[] = [
 </ol>
 <p>Kesin maliyet hesabı için zemin etüdü raporunuzla birlikte <a href="/iletisim/">bizimle iletişime geçin</a>.</p>
 
-<figure><img src="/images/fore-kazik/fore-kazik-ekipman.webp" alt="Fore kazık şantiyesi ekipman panoraması — delgi makinesi, beton pompası ve vinç eş zamanlı çalışıyor" loading="lazy" width="860" height="480" /><figcaption>Büyük ölçekli fore kazık projesi — çoklu ekipman eş zamanlı operasyonu, maliyetin ölçeğini gösteren şantiye panoraması</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-ekipman.webp" alt="Fore kazık şantiyesi ekipman panoraması — delgi makinesi, beton pompası ve vinç eş zamanlı çalışıyor" loading="lazy" decoding="async" width="860" height="480" /><figcaption>Büyük ölçekli fore kazık projesi — çoklu ekipman eş zamanlı operasyonu, maliyetin ölçeğini gösteren şantiye panoraması</figcaption></figure>
 <h2 id="fore-kazik-deprem-dayanikliligi-ve-tbdy-2018">Fore Kazık Deprem Dayanıklılığı ve TBDY 2018</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazıklar, TBDY 2018 (Türkiye Bina Deprem Yönetmeliği) kapsamında depreme dayanıklı yapı tasarımının temel bileşenlerindendir. Sıvılaşma riski bulunan ZD, ZE ve ZF sınıfı zeminlerde fore kazık uygulaması zorunlu hale gelebilir. Kazık-zemin etkileşimi analizi, deprem tasarımının ayrılmaz parçasıdır.</div>
 <h3>Deprem ve Derin Temel İlişkisi</h3>
@@ -807,7 +807,7 @@ export const teknikler: Teknik[] = [
 <li>Yanal yayılma kuvvetleri, ek yatay yük olarak kazık tasarımına dahil edilmelidir.</li>
 <li>Eurocode 7 ve Eurocode 8 (sismik tasarım) referans alınarak deprem performans analizi yapılmalıdır.</li>
 </ul>
-<figure><img src="/images/fore-kazik/fore-kazik-deprem.webp" alt="Fore kazık temel sistemi kesit görünümü — bina altında derin kazıklar farklı zemin katmanlarından ana kayaya ulaşıyor" loading="lazy" width="860" height="860" /><figcaption>Fore kazık temel sistemi kesit illüstrasyonu — kazıklar zemin katmanlarını geçerek ana kayaya oturuyor</figcaption></figure>
+<figure><img src="/images/fore-kazik/fore-kazik-deprem.webp" alt="Fore kazık temel sistemi kesit görünümü — bina altında derin kazıklar farklı zemin katmanlarından ana kayaya ulaşıyor" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Fore kazık temel sistemi kesit illüstrasyonu — kazıklar zemin katmanlarını geçerek ana kayaya oturuyor</figcaption></figure>
 
 <h2 id="ozel-kosullarda-fore-kazik-uygulamasi">Özel Koşullarda Fore Kazık Uygulaması</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık, yüksek yeraltı suyu tablası, kaya formasyonları, gevşek kumlu zeminler ve sıkışık kentsel alanlar gibi zorlu koşullarda özel yöntemlerle başarıyla uygulanır. Her koşul, kendine özgü ekipman, teknik ve önlem gerektirir.</div>
@@ -1484,7 +1484,7 @@ export const teknikler: Teknik[] = [
   <div class="stat-card"><span class="stat-number">5–30</span><span class="stat-label">MPa Basınç Dayanımı</span></div>
 </div>
 
-<figure><img src="/images/jet-grout/jet-grout-hero.webp" alt="Jet grout uygulama şantiyesi — yüksek basınçlı enjeksiyon ekipmanı çalışırken" loading="lazy" width="860" height="860" /><figcaption>Jet grout uygulaması — yüksek basınçlı çimento enjeksiyonu ile zemin iyileştirme</figcaption></figure>
+<figure><img src="/images/jet-grout/jet-grout-hero.webp" alt="Jet grout uygulama şantiyesi — yüksek basınçlı enjeksiyon ekipmanı çalışırken" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout uygulaması — yüksek basınçlı çimento enjeksiyonu ile zemin iyileştirme</figcaption></figure>
 <h3>Jet Grout Çalışma Prensibi</h3>
 <p>Jet grout uygulaması iki aşamadan oluşur. İlk aşamada, bir delgi makinesi ile hedef derinliğe kadar delgi yapılır. İkinci aşamada, delgi kolu zemin içinden yukarıya çekilirken, monitor ucundaki nozzle\'lardan yüksek basınçlı çimento şerbeti (ve sisteme bağlı olarak hava ve/veya su) zemine enjekte edilir.</p>
 
@@ -1495,8 +1495,8 @@ export const teknikler: Teknik[] = [
 <h2 id="jet-grout-nasil-yapilir">Jet Grout Nasıl Yapılır? Uygulama Adımları</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout uygulaması dört temel aşamadan oluşur: çalışma platformu hazırlığı ve delgi, yüksek basınçlı enjeksiyon ile kolon oluşturma, spoil (artık malzeme) yönetimi ve kalite kontrol testleri. Her aşama TS EN 12716 standardına uygun olarak yürütülür.</div>
 
-<figure><img src="/images/jet-grout/svg_jet_grout_akis.svg" alt="Jet grout uygulama akış şeması — delme, enjeksiyon, kolon oluşumu ve kalite kontrol adımları" loading="lazy" width="860" height="620" /><figcaption>Jet grout uygulama süreci — 4 temel aşama ve parametreler</figcaption></figure>
-<figure><img src="/images/jet-grout/jet-grout-enjeksiyon.webp" alt="Jet grout enjeksiyon anı — yüksek basınçlı çimento şerbeti nozzle'dan zemine enjekte ediliyor" loading="lazy" width="860" height="860" /><figcaption>Yüksek basınçlı enjeksiyon — çimento şerbeti 300–600 bar basınçla zemine enjekte edilirken</figcaption></figure>
+<figure><img src="/images/jet-grout/svg_jet_grout_akis.svg" alt="Jet grout uygulama akış şeması — delme, enjeksiyon, kolon oluşumu ve kalite kontrol adımları" loading="lazy" decoding="async" width="860" height="620" /><figcaption>Jet grout uygulama süreci — 4 temel aşama ve parametreler</figcaption></figure>
+<figure><img src="/images/jet-grout/jet-grout-enjeksiyon.webp" alt="Jet grout enjeksiyon anı — yüksek basınçlı çimento şerbeti nozzle'dan zemine enjekte ediliyor" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Yüksek basınçlı enjeksiyon — çimento şerbeti 300–600 bar basınçla zemine enjekte edilirken</figcaption></figure>
 <div class="process-steps">
   <div class="step">
     <div><h4>Delme Aşaması</h4>
@@ -1527,8 +1527,8 @@ export const teknikler: Teknik[] = [
 <h2 id="jet1-jet2-jet3-sistemleri">Jet1, Jet2, Jet3 Sistemleri ve Karşılaştırma</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout üç farklı sistemle uygulanır: Jet1 (tek akışkan — sadece çimento), Jet2 (çift akışkan — çimento + hava) ve Jet3 (üç akışkan — su + hava + çimento). Jet1 en basit ve ekonomik, Jet3 en geniş çaplı kolonlar üretir. Sistem seçimi zemin tipine, hedef kolon çapına ve proje gereksinimlerine göre yapılır.</div>
 
-<figure><img src="/images/jet-grout/svg_jet_grout_sistemler.svg" alt="Jet1, Jet2, Jet3 sistem karşılaştırması — kolon çapları, basınç değerleri ve uygun zemin tipleri" loading="lazy" width="860" height="520" /><figcaption>Jet grout sistemleri karşılaştırması — Jet1 (tek), Jet2 (çift) ve Jet3 (üç akışkan)</figcaption></figure>
-<figure><img src="/images/jet-grout/jet-grout-kolon.webp" alt="Jet grout kolonu yakın çekim — soilcrete kolon yapısı ve çimento-zemin karışım detayı" loading="lazy" width="860" height="860" /><figcaption>Jet grout kolonu — çimento ve zemin partiküllerinin karışımıyla oluşan soilcrete yapısı</figcaption></figure>
+<figure><img src="/images/jet-grout/svg_jet_grout_sistemler.svg" alt="Jet1, Jet2, Jet3 sistem karşılaştırması — kolon çapları, basınç değerleri ve uygun zemin tipleri" loading="lazy" decoding="async" width="860" height="520" /><figcaption>Jet grout sistemleri karşılaştırması — Jet1 (tek), Jet2 (çift) ve Jet3 (üç akışkan)</figcaption></figure>
+<figure><img src="/images/jet-grout/jet-grout-kolon.webp" alt="Jet grout kolonu yakın çekim — soilcrete kolon yapısı ve çimento-zemin karışım detayı" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout kolonu — çimento ve zemin partiküllerinin karışımıyla oluşan soilcrete yapısı</figcaption></figure>
 <div class="card-grid">
   <div class="grid-card">
     <h4>Jet1 — Tek Akışkan Sistemi</h4>
@@ -1577,7 +1577,7 @@ export const teknikler: Teknik[] = [
 
 <div class="expert-tip"><strong>Uzman Notu:</strong> Organik içeriği %5\'in üzerinde olan zeminlerde çimento-zemin bağı yeterli oluşmaz. Aşırı plastik killerde (PI > 40) erozyon verimliliği düşer ve kolon çapı küçülür. Bu zeminlerde jet grout yerine derin karıştırma (deep soil mixing) veya taş kolon gibi alternatif yöntemler değerlendirilmelidir.</div>
 
-<figure><img src="/images/jet-grout/jet-grout-uygulama.webp" alt="Jet grout uygulama alanı — derin kazı çevresinde geçirimsizlik perdesi oluşturma" loading="lazy" width="860" height="860" /><figcaption>Jet grout uygulama alanı — derin kazı projesinde geçirimsizlik perdesi oluşturulması</figcaption></figure>
+<figure><img src="/images/jet-grout/jet-grout-uygulama.webp" alt="Jet grout uygulama alanı — derin kazı çevresinde geçirimsizlik perdesi oluşturma" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout uygulama alanı — derin kazı projesinde geçirimsizlik perdesi oluşturulması</figcaption></figure>
 
 <h2 id="jet-grout-uygulama-alanlari">Jet Grout Uygulama Alanları</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout; temel takviyesi, geçirimsizlik perdesi, tünel ön destekleme, sıvılaşma önleme, iksa perdesi ve mevcut yapı altı iyileştirme gibi çok çeşitli geoteknik uygulamalarda kullanılır.</div>
@@ -1609,7 +1609,7 @@ export const teknikler: Teknik[] = [
   </div>
 </div>
 
-<figure><img src="/images/jet-grout/jet-grout-santiye.webp" alt="Jet grout şantiyesi panorama — çoklu enjeksiyon ekipmanı eş zamanlı çalışıyor" loading="lazy" width="860" height="860" /><figcaption>Büyük ölçekli jet grout projesi — çoklu ekipman eş zamanlı operasyonu</figcaption></figure>
+<figure><img src="/images/jet-grout/jet-grout-santiye.webp" alt="Jet grout şantiyesi panorama — çoklu enjeksiyon ekipmanı eş zamanlı çalışıyor" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Büyük ölçekli jet grout projesi — çoklu ekipman eş zamanlı operasyonu</figcaption></figure>
 
 <h2 id="jet-grout-avantajlari">Jet Grout Avantajları ve Sınırlamaları</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout\'un en büyük avantajları dar alanlarda uygulanabilmesi, düşük titreşim üretmesi ve mevcut yapı altında çalışabilmesidir. Sınırlamaları arasında organik zeminlerde düşük verim, kolon çapı kontrolündeki belirsizlik ve spoil yönetimi yer alır.</div>
@@ -1637,8 +1637,8 @@ export const teknikler: Teknik[] = [
 <h2 id="jet-grout-kolon-parametreleri">Jet Grout Kolon Parametreleri</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout kolon parametreleri; enjeksiyon basıncı (300–600 bar), çimento debisi (80–300 lt/dk), çekme hızı (3–10 cm/dk), dönme hızı (6–30 devir/dk) ve nozzle çapı (1,5–4,0 mm) ile kontrol edilir. Bu parametreler deneme kolonunda optimize edilir.</div>
 
-<figure><img src="/images/jet-grout/svg_jet_grout_kesit.svg" alt="Jet grout kolon kesit diyagramı — zemin katmanları içinde soilcrete kolon yapısı" loading="lazy" width="860" height="620" /><figcaption>Jet grout kolon kesit görünümü — zemin katmanlarını geçerek sağlam zemine ulaşan soilcrete kolon</figcaption></figure>
-<figure><img src="/images/jet-grout/jet-grout-ekipman.webp" alt="Jet grout ekipmanı — yüksek basınçlı pompa ünitesi ve enjeksiyon hortumları" loading="lazy" width="860" height="860" /><figcaption>Jet grout ekipmanı — yüksek basınçlı pompa ünitesi ve enjeksiyon sistemi</figcaption></figure>
+<figure><img src="/images/jet-grout/svg_jet_grout_kesit.svg" alt="Jet grout kolon kesit diyagramı — zemin katmanları içinde soilcrete kolon yapısı" loading="lazy" decoding="async" width="860" height="620" /><figcaption>Jet grout kolon kesit görünümü — zemin katmanlarını geçerek sağlam zemine ulaşan soilcrete kolon</figcaption></figure>
+<figure><img src="/images/jet-grout/jet-grout-ekipman.webp" alt="Jet grout ekipmanı — yüksek basınçlı pompa ünitesi ve enjeksiyon hortumları" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout ekipmanı — yüksek basınçlı pompa ünitesi ve enjeksiyon sistemi</figcaption></figure>
 <div class="table-wrapper"><table>
 <thead><tr><th>Parametre</th><th>Jet1</th><th>Jet2</th><th>Jet3</th><th>Birim</th></tr></thead>
 <tbody>
@@ -1710,7 +1710,7 @@ export const teknikler: Teknik[] = [
 <h2 id="kalite-kontrol-ve-testler">Kalite Kontrol ve Testler</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout kalite kontrolü; deneme kolonu ile parametre optimizasyonu, üretim sırasında gerçek zamanlı parametre izleme, kolon başından karot alarak basınç dayanımı testi ve gerektiğinde statik yükleme deneyi ile yapılır. TS EN 12716 ve Eurocode 7 referans alınır.</div>
 
-<figure><img src="/images/jet-grout/jet-grout-test.webp" alt="Jet grout kalite kontrol — karot numunesi alınarak basınç dayanımı testi yapılıyor" loading="lazy" width="860" height="860" /><figcaption>Jet grout kalite kontrolü — karot alımı ve basınç dayanımı testi</figcaption></figure>
+<figure><img src="/images/jet-grout/jet-grout-test.webp" alt="Jet grout kalite kontrol — karot numunesi alınarak basınç dayanımı testi yapılıyor" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout kalite kontrolü — karot alımı ve basınç dayanımı testi</figcaption></figure>
 <h3>Deneme Kolonu (Test Column)</h3>
 <p>Jet grout uygulamasının en kritik aşamalarından biri deneme kolonu üretimidir. Deneme kolonu ile:</p>
 <ul>
@@ -1737,7 +1737,7 @@ export const teknikler: Teknik[] = [
 <h2 id="deprem-bolgelerinde-jet-grout">Deprem Bölgelerinde Jet Grout</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout, deprem bölgelerinde sıvılaşma önleme ve zemin rijitliğini artırma amacıyla yaygın kullanılır. TBDY 2018\'e göre ZD, ZE ve ZF sınıfı zeminlerde sıvılaşma potansiyeli tespit edildiğinde jet grout uygulaması en etkili iyileştirme yöntemlerinden biridir.</div>
 
-<figure><img src="/images/jet-grout/jet-grout-deprem.webp" alt="Deprem bölgesinde jet grout uygulaması — sıvılaşma riski olan zeminde kolon imalatı" loading="lazy" width="860" height="860" /><figcaption>Deprem bölgesinde jet grout — sıvılaşma önleme amaçlı zemin iyileştirme</figcaption></figure>
+<figure><img src="/images/jet-grout/jet-grout-deprem.webp" alt="Deprem bölgesinde jet grout uygulaması — sıvılaşma riski olan zeminde kolon imalatı" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Deprem bölgesinde jet grout — sıvılaşma önleme amaçlı zemin iyileştirme</figcaption></figure>
 <h3>Sıvılaşma ve Jet Grout</h3>
 <p>Sıvılaşma, gevşek kumlu ve suya doygun zeminlerin deprem titreşimleriyle taşıma gücünü kaybetmesi durumudur. Jet grout kolonları, sıvılaşma potansiyeli olan zeminde iki mekanizma ile koruma sağlar:</p>
 <ul>
