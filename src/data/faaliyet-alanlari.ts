@@ -72,10 +72,26 @@ export const kategoriler: Kategori[] = [
     description: 'Fore kazık, mini kazık, CFA kazık ve çakma kazık ile derin temel çözümleri.',
     image: '/images/kazikli-temeller.jpg',
     icon: 'M6 2v20M12 2v20M18 2v20M4 8h16',
-    aeoSummary: '',
-    kararKartlari: [],
-    sahaNotlari: [],
-    categoryFaq: [],
+    aeoSummary: 'Kazıklı temel, yüzeydeki zayıf zemin tabakalarını geçerek yapı yüklerini derinlerdeki sağlam zemine aktaran derin temel sistemidir. Fore kazık, CFA kazık, mini kazık, baret kazık ve çakma kazık gibi farklı yöntemler; zemin koşulları, yapı yükü ve proje gereksinimlerine göre seçilir.',
+    kararKartlari: [
+      { icon: '🏢', title: 'Yüksek Katlı Bina (10+ kat)', description: 'Konut kuleleri, ofis binaları, AVM gibi ağır yapılar', recommendation: 'Fore Kazık (Ø80–150 cm)' },
+      { icon: '🔬', title: 'Güçlendirme / Dar Alan', description: 'Mevcut yapı güçlendirme, bodrum içi uygulama', recommendation: 'Mini Kazık / CFA Kazık' },
+      { icon: '⚡', title: 'Hızlı Üretim Gerekli', description: 'Sıkı takvimli projelerde yüksek günlük üretim', recommendation: 'CFA Kazık / Çakma Kazık' },
+      { icon: '🌊', title: 'Deniz / Liman Yapısı', description: 'İskele, rıhtım, açık deniz platformu temelleri', recommendation: 'Çelik Çakma Kazık / Baret Kazık' },
+      { icon: '🏗️', title: 'Mega Proje (Köprü, Viyadük)', description: 'Çok yüksek yükler ve moment kapasitesi gereken projeler', recommendation: 'Baret Kazık / Fore Kazık (Ø120+ cm)' },
+      { icon: '💰', title: 'Ekonomik Çözüm', description: 'Orta yüklü yapılarda maliyet optimize temel', recommendation: 'Betonarme Çakma Kazık / CFA Kazık' },
+    ],
+    sahaNotlari: [
+      { type: 'uyari' as const, icon: '⚠️', title: 'Saha Uyarısı', content: 'Fore kazık imalatında en kritik hata, tremi betonlamanın kesintiye uğramasıdır. Beton tedarikçisi ile koordinasyon bozulması halinde kazık gövdesinde boşluk (necking) oluşur ve kazık reddedilir. Betonlama başlamadan önce yeterli transmikser sahada hazır olmalıdır.' },
+      { type: 'mevzuat' as const, icon: '📋', title: 'Mevzuat Notu', content: 'TBDY 2018\'e göre ZD, ZE ve ZF sınıfı zeminlerde sıvılaşma analizi zorunludur. Sıvılaşma riski tespit edilen sahalarda fore kazık, sıvılaşan tabakayı geçerek sıvılaşmayan katmana en az 5 × çap kadar soketlenmelidir.' },
+    ],
+    categoryFaq: [
+      { q: 'Kazıklı temel ne zaman gerekir?', a: 'Üst zemin tabakasının taşıma kapasitesi yetersiz olduğunda, yapı yüklerinin derinlerdeki sağlam zemine aktarılması gerektiğinde kazıklı temel uygulanır. SPT-N değeri 10 altında kalan zeminler genellikle kazık gerektirir.' },
+      { q: 'Fore kazık ile çakma kazık arasındaki fark nedir?', a: 'Fore kazık yerinde döküm betonarme olup titreşimsizdir; çakma kazık prefabrik olup darbe ile çakılır. Kentsel alanlarda titreşim sınırlaması nedeniyle fore kazık tercih edilir.' },
+      { q: 'Kazık çapı ve derinliği nasıl belirlenir?', a: 'Zemin etüdü verileri, yapı yükleri ve oturma sınır değerleri analiz edilerek optimum çap ve derinlik belirlenir. Geoteknik mühendisinin tasarımı esastır.' },
+      { q: 'CFA kazık hangi durumlarda tercih edilir?', a: 'Yumuşak kil ve gevşek kum zeminlerde, hızlı üretim gerektiğinde ve 25 m derinliğe kadar olan projelerde CFA kazık maliyet ve hız avantajı sunar.' },
+      { q: 'Kazık yük testi zorunlu mu?', a: 'TBDY 2018 gereği her projede en az 1 adet statik veya dinamik yük testi zorunludur. Tüm kazıklarda sağlamlık testi (PIT/CSL) önerilir.' },
+    ],
   },
   {
     slug: 'iksa-sistemleri',
@@ -111,10 +127,26 @@ export const kategoriler: Kategori[] = [
     description: 'Jet grout, derin karıştırma, taş kolon ve vibro kompaksiyon ile zayıf zeminlerin güçlendirilmesi.',
     image: '/images/zemin-iyilestirme.jpg',
     icon: 'M12 2v8l4 4-4 4v6M8 10h8',
-    aeoSummary: '',
-    kararKartlari: [],
-    sahaNotlari: [],
-    categoryFaq: [],
+    aeoSummary: 'Zemin iyileştirme, yapı temelinin oturacağı zayıf zemin tabakalarının taşıma gücünü artırmak, oturmayı azaltmak veya sıvılaşma riskini ortadan kaldırmak için uygulanan mühendislik yöntemleridir. Jet grout, derin karıştırma, taş kolon, vibro kompaksiyon, fitil dren ve zemin enjeksiyonu gibi teknikler projenin zemin koşullarına göre seçilir.',
+    kararKartlari: [
+      { icon: '🧱', title: 'Zayıf Kil Zemin', description: 'Yumuşak kilde taşıma gücü artırma ve oturma kontrolü', recommendation: 'Jet Grout / Derin Karıştırma' },
+      { icon: '💧', title: 'Sıvılaşma Riski', description: 'Gevşek kumda deprem sıvılaşma önlemi', recommendation: 'Vibro Kompaksiyon / Taş Kolon' },
+      { icon: '⏱️', title: 'Hızlı Konsolidasyon', description: 'Yumuşak zeminlerde oturma süresini kısaltma', recommendation: 'Fitil Dren + Ön Yükleme' },
+      { icon: '🔒', title: 'Su Geçirimsizlik', description: 'Zemin geçirgenliğini azaltma, sızıntı engelleme', recommendation: 'Jet Grout / Zemin Enjeksiyonu' },
+      { icon: '🏗️', title: 'Mevcut Yapı Altı', description: 'İnşa edilmiş yapının altında zemin güçlendirme', recommendation: 'Zemin Enjeksiyonu / Mini Kazık' },
+      { icon: '💰', title: 'Geniş Alan Ekonomik', description: 'Büyük alanlarda düşük maliyetli iyileştirme', recommendation: 'Taş Kolon / Vibro Kompaksiyon' },
+    ],
+    sahaNotlari: [
+      { type: 'uyari' as const, icon: '⚠️', title: 'Saha Uyarısı', content: 'Jet grout uygulamasında en kritik parametre deneme kolonudur. İlk 3-5 kolon mutlaka karot alınarak dayanım ve çap doğrulanmalıdır. Zemin heterojenliği nedeniyle aynı sahada bile parametreler değişkenlik gösterebilir — kör uygulama ciddi kalite sorunlarına yol açar.' },
+      { type: 'mevzuat' as const, icon: '📋', title: 'Mevzuat Notu', content: 'TBDY 2018 kapsamında ZD, ZE ve ZF sınıfı zeminlerde sıvılaşma potansiyeli değerlendirmesi zorunludur. Sıvılaşma riski tespit edildiğinde zemin iyileştirme veya derin temel uygulaması şarttır — yüzeysel temelle devam edilemez.' },
+    ],
+    categoryFaq: [
+      { q: 'Zemin iyileştirme ne zaman gerekir?', a: 'Zemin taşıma gücü yetersiz olduğunda, aşırı oturma riski bulunduğunda veya sıvılaşma potansiyeli tespit edildiğinde zemin iyileştirme uygulanır.' },
+      { q: 'Jet grout ile taş kolon arasındaki fark nedir?', a: 'Jet grout çimento bazlı kimyasal iyileştirmedir ve su geçirimsizlik de sağlar. Taş kolon mekanik sıkıştırma + drenaj ile çalışır ve genellikle daha ekonomiktir.' },
+      { q: 'Zemin iyileştirme maliyeti ne kadardır?', a: 'Yönteme ve alana göre değişir. Vibro kompaksiyon ve fitil dren en ekonomik; jet grout ve derin karıştırma orta-yüksek maliyetlidir. Kazıklı temele göre genellikle daha ekonomiktir.' },
+      { q: 'Sıvılaşma riski nasıl giderilir?', a: 'Gevşek kumlu zeminlerde vibro kompaksiyon veya taş kolon ile zemin sıkıştırılarak sıvılaşma potansiyeli ortadan kaldırılır. Killi zeminlerde jet grout tercih edilir.' },
+      { q: 'İyileştirme sonrası kontrol nasıl yapılır?', a: 'SPT, CPT veya presiyometre deneyleri ile iyileştirme öncesi-sonrası karşılaştırma yapılır. Jet grout kolonlarından karot alınarak dayanım doğrulanır.' },
+    ],
   },
   {
     slug: 'destekleme-ankraj',
@@ -122,10 +154,24 @@ export const kategoriler: Kategori[] = [
     description: 'Öngermeli ankraj, kalıcı ankraj, kaya ankrajı ve zemin çivisi uygulamaları.',
     image: '/images/ankraj.jpg',
     icon: 'M12 2l-2 6h4l-2 6M8 16h8M12 16v6M9 22h6',
-    aeoSummary: '',
-    kararKartlari: [],
-    sahaNotlari: [],
-    categoryFaq: [],
+    aeoSummary: 'Ankraj ve destekleme sistemleri, iksa perdelerine aktif gergi kuvveti aktararak veya zemin kütlesini pasif donatılarla güçlendirerek kazı güvenliğini sağlayan geoteknik çözümlerdir. Öngermeli ankraj, kalıcı ankraj, geçici ankraj, kaya ankrajı ve zemin çivisi gibi yöntemler proje koşullarına göre seçilir.',
+    kararKartlari: [
+      { icon: '🏗️', title: 'Derin Kazı İksası', description: 'İksa perdelerine aktif destek kuvveti gerektiğinde', recommendation: 'Öngermeli Ankraj (Geçici/Kalıcı)' },
+      { icon: '🏔️', title: 'Kaya Şev Stabilitesi', description: 'Sert kaya formasyonlarında sabitleme ve gergi', recommendation: 'Kaya Ankrajı' },
+      { icon: '💰', title: 'Ekonomik Şev Destek', description: 'Orta derinlikte kazı şevlerinin hızlı stabilizasyonu', recommendation: 'Zemin Çivisi + Püskürtme Beton' },
+      { icon: '⏳', title: 'Kalıcı Yapı (50+ yıl)', description: 'Yapı ömrü boyunca aktif kalacak destek sistemi', recommendation: 'Kalıcı Ankraj (Çift Korozyon Korumalı)' },
+    ],
+    sahaNotlari: [
+      { type: 'uyari' as const, icon: '⚠️', title: 'Saha Uyarısı', content: 'Ankraj çekme testinde tasarım yükünün üzerinde ani yük kaybı gözlenirse kök bölgesinde sıyrılma (pull-out) var demektir. Bu durumda ankraj reddedilmeli ve ek ankraj planlanmalıdır. Kök boyu artırımı veya enjeksiyon tekrarı değerlendirilmelidir.' },
+      { type: 'mevzuat' as const, icon: '📋', title: 'Mevzuat Notu', content: 'EN 1537 standardına göre her ankraj üretim sonrası çekme testine tabi tutulmalıdır. Kalıcı ankrajlarda çift bariyer korozyon koruması (HDPE kılıf + yağ/mum) zorunludur ve periyodik yük izleme planı hazırlanmalıdır.' },
+    ],
+    categoryFaq: [
+      { q: 'Ankraj ile zemin çivisi arasındaki fark nedir?', a: 'Ankraj aktif sistemdir — tasarım yüküne gerilerek çalışır. Zemin çivisi pasif sistemdir — germe yapılmaz, zemin hareket ettiğinde devreye girer. Ankraj daha yüksek kapasitelidir.' },
+      { q: 'Geçici ankraj ne kadar süre kullanılır?', a: 'Geçici ankrajlar maksimum 2 yıl hizmet ömrü için tasarlanır. İnşaat süresi 2 yılı aşarsa kalıcı ankraj tasarımına geçilmelidir.' },
+      { q: 'Ankraj kapasitesi nasıl doğrulanır?', a: 'Her ankraj üretim çekme testi ile doğrulanır. Belirli yüzdesi uygunluk testine, seçilmişler kabul testine tabi tutulur. Tasarım yükünün 1,25–1,5 katına kadar test edilir.' },
+      { q: 'Kalıcı ankraj bakım gerektirir mi?', a: 'Evet, kalıcı ankrajlarda periyodik yük izlemesi (yıllık) önerilir. Yük kaybı tespit edilirse yeniden germe yapılabilir.' },
+      { q: 'Zemin çivisi hangi derinliğe kadar uygulanır?', a: 'Zemin çivisi tipik olarak 3–20 m uzunluğunda uygulanır. 10 m üzeri kazılarda ankrajlı sistem daha güvenlidir.' },
+    ],
   },
   {
     slug: 'gecirimsizlik-perdeleri',
@@ -133,10 +179,23 @@ export const kategoriler: Kategori[] = [
     description: 'Jet grout perdesi, secant perde, slurry perde ve enjeksiyon perdesi ile yeraltı suyu kontrolü.',
     image: '/images/puskurtme-beton.jpg',
     icon: 'M3 6h18v12H3zM3 12h18M9 6v12M15 6v12',
-    aeoSummary: '',
-    kararKartlari: [],
-    sahaNotlari: [],
-    categoryFaq: [],
+    aeoSummary: 'Geçirimsizlik perdesi, yeraltı suyunun kazı alanına sızmasını engellemek veya kirli sahaları izole etmek amacıyla zemin içinde oluşturulan su geçirmez bariyer yapısıdır. Jet grout perdesi, secant perde, slurry perde ve enjeksiyon perdesi gibi yöntemler zemin türü ve geçirimsizlik gereksinimlerine göre tercih edilir.',
+    kararKartlari: [
+      { icon: '💧', title: 'Derin Kazı Su Kesme', description: 'Kazı çevresinde yeraltı suyunu engelleme', recommendation: 'Jet Grout Perdesi / Secant Perde' },
+      { icon: '🏭', title: 'Kirli Saha İzolasyonu', description: 'Kontamine alanın çevre zeminlerden izolasyonu', recommendation: 'Slurry Perde / Enjeksiyon Perdesi' },
+      { icon: '🏗️', title: 'İksa + Geçirimsizlik', description: 'Hem yapısal destek hem su kesme birlikte', recommendation: 'Secant Perde / Diyafram Duvar' },
+      { icon: '🏔️', title: 'Baraj Altı Sızıntı', description: 'Baraj temelinden geçen sızıntı kontrolü', recommendation: 'Enjeksiyon Perdesi / Slurry Perde' },
+    ],
+    sahaNotlari: [
+      { type: 'uyari' as const, icon: '⚠️', title: 'Saha Uyarısı', content: 'Geçirimsizlik perdelerinde en kritik nokta kolon/panel bindirme bölgeleridir. Yetersiz bindirme veya üretim sapması su kaçağına neden olur. Jet grout perdesinde kolon merkezleri GPS ile kontrol edilmeli, secant perdede kazık düşeylik toleransı sıkı tutulmalıdır.' },
+      { type: 'mevzuat' as const, icon: '📋', title: 'Mevzuat Notu', content: 'Kirli saha izolasyonunda çevre mevzuatı gereği geçirimsizlik katsayısının (k) 10⁻⁹ m/s altında olması zorunludur. İzleme kuyuları ile su kalitesi periyodik olarak kontrol edilmeli ve raporlanmalıdır.' },
+    ],
+    categoryFaq: [
+      { q: 'Geçirimsizlik perdesi ne zaman gerekir?', a: 'Yeraltı su tablası kazı kotunun üzerinde olduğunda, kirli saha izolasyonunda veya baraj altı sızıntı kontrolünde geçirimsizlik perdesi uygulanır.' },
+      { q: 'Hangi perde tipi en su geçirmezdir?', a: 'Secant perde ve diyafram duvar yapısal olarak en iyi geçirimsizliği sağlar. Jet grout perdesi ve slurry perde de k ≤ 10⁻⁹ m/s değerlerine ulaşabilir.' },
+      { q: 'Geçirimsizlik perdesi kalıcı mıdır?', a: 'Evet, tüm perde tipleri çimento bazlı olduğundan kalıcıdır. Slurry perde ve enjeksiyon perdesi 50+ yıl hizmet ömrü sağlar.' },
+      { q: 'Perde derinliği nasıl belirlenir?', a: 'Perde, geçirimsiz tabakaya (kil, kaya) en az 1 m soketlenmelidir. Geçirimsiz tabaka derinliğine göre perde boyu belirlenir.' },
+    ],
   },
   {
     slug: 'sev-stabilitesi',
@@ -144,10 +203,23 @@ export const kategoriler: Kategori[] = [
     description: 'Heyelan önleme, kaya düşmesi bariyeri, istinat duvarı ve çelik hasır ağ sistemleri.',
     image: '/images/zemin-iyilestirme2.jpg',
     icon: 'M2 22l10-16 10 16H2zM7 14h10',
-    aeoSummary: '',
-    kararKartlari: [],
-    sahaNotlari: [],
-    categoryFaq: [],
+    aeoSummary: 'Şev stabilitesi, doğal yamaçların veya yapay kazı şevlerinin kayma, devrilme ve erozyon gibi kütle hareketlerine karşı güvenliğinin sağlanmasıdır. Heyelan önleme, kaya düşmesi bariyeri, istinat duvarı, çelik hasır ağ ve moloz akışı önleme sistemleri proje koşullarına göre tek başına veya kombine uygulanır.',
+    kararKartlari: [
+      { icon: '🏔️', title: 'Aktif Heyelan', description: 'Hareket halindeki veya yüksek riskli heyelan alanları', recommendation: 'Ankraj + Fore Kazık Perdesi + Drenaj' },
+      { icon: '🪨', title: 'Kaya Düşmesi', description: 'Yol kenarı veya yerleşim üzerinde kaya blok riski', recommendation: 'Enerji Bariyeri / Çelik Ağ Kaplama' },
+      { icon: '🧱', title: 'Kalıcı Dayanma Yapısı', description: 'Yol, bina veya altyapı arkasında kalıcı destek', recommendation: 'İstinat Duvarı / Toprakarme Duvar' },
+      { icon: '🌊', title: 'Dere Yatağı / Moloz Akışı', description: 'Sel ve moloz akışı riski olan vadiler', recommendation: 'Moloz Bariyeri + Saptırma Duvarı' },
+    ],
+    sahaNotlari: [
+      { type: 'uyari' as const, icon: '⚠️', title: 'Saha Uyarısı', content: 'Heyelan bölgelerinde yüzey drenajı ihmal edildiğinde en pahalı ankraj sistemi bile yetersiz kalır. Su, heyelanın birincil tetikleyicisidir — derin drenaj ve yüzey suyu uzaklaştırma her heyelan projesinin olmazsa olmazıdır.' },
+      { type: 'mevzuat' as const, icon: '📋', title: 'Mevzuat Notu', content: 'Afet riski altındaki alanlarda 7269 sayılı kanun ve ilgili yönetmelikler kapsamında jeolojik-geoteknik etüt raporu zorunludur. Heyelan riski tespit edilen alanlarda yapılaşma izni verilmeden önce stabilizasyon projesi onaylanmalıdır.' },
+    ],
+    categoryFaq: [
+      { q: 'Heyelan riski nasıl tespit edilir?', a: 'Jeolojik haritalama, inklinometre ölçümleri, drone ile yüzey hareketleri takibi ve zemin etüdü ile heyelan riski ve kayma yüzeyi derinliği tespit edilir.' },
+      { q: 'İstinat duvarı mı yoksa ankraj mı tercih edilmeli?', a: 'Düşük yüksekliklerde (2-6 m) istinat duvarı ekonomiktir. Yüksek şevlerde ve derin kaymalarda ankraj + kazık sistemi daha güvenlidir.' },
+      { q: 'Kaya düşmesi bariyeri kaç yıl dayanır?', a: 'Galvanize çelik ring-net bariyerler 25-50 yıl hizmet ömrü sunar. Periyodik kontrol ve darbe sonrası bakım gerektirir.' },
+      { q: 'Şev stabilitesi projesi ne kadar sürer?', a: 'Etüt ve proje 4-8 hafta, uygulama projenin büyüklüğüne göre 2-6 ay arasında sürer.' },
+    ],
   },
   {
     slug: 'geoteknik-test-izleme',
@@ -155,10 +227,23 @@ export const kategoriler: Kategori[] = [
     description: 'Statik yükleme, dinamik PDA, PIT testi, inklinometre ve aletsel gözlem sistemleri.',
     image: '/images/geoteknik-test.jpg',
     icon: 'M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2',
-    aeoSummary: '',
-    kararKartlari: [],
-    sahaNotlari: [],
-    categoryFaq: [],
+    aeoSummary: 'Geoteknik test ve izleme, kazık taşıma kapasitesinin doğrulanması, kazık gövde sağlamlığının kontrolü ve zemin/yapı deformasyonlarının gerçek zamanlı izlenmesini kapsayan mühendislik hizmetleridir. Statik yükleme, dinamik PDA, PIT testi, inklinometre ve aletsel gözlem sistemleri proje gereksinimlerine göre uygulanır.',
+    kararKartlari: [
+      { icon: '📊', title: 'Kazık Kapasitesi Doğrulama', description: 'Kazığın tasarım yükünü güvenle taşıdığını kanıtlama', recommendation: 'Statik Yükleme / Dinamik PDA' },
+      { icon: '🔍', title: 'Kazık Sağlamlık Kontrolü', description: 'Kazık gövdesinde kusur (boşluk, çatlak) tespiti', recommendation: 'PIT Testi / CSL Testi' },
+      { icon: '📐', title: 'Zemin Deformasyon İzleme', description: 'İksa arkası veya heyelan bölgesinde hareket takibi', recommendation: 'İnklinometre İzleme' },
+      { icon: '🖥️', title: 'Kapsamlı Proje İzleme', description: 'Büyük projelerde çoklu parametre izleme sistemi', recommendation: 'Aletsel Gözlem Sistemi' },
+    ],
+    sahaNotlari: [
+      { type: 'uyari' as const, icon: '⚠️', title: 'Saha Uyarısı', content: 'Statik yükleme testinde reaksiyon kazıkları/yığma ağırlık yetersiz olduğunda test yarıda kesilmek zorunda kalır. Test öncesi reaksiyon kapasitesinin tasarım test yükünün en az 1,2 katı olduğu doğrulanmalıdır.' },
+      { type: 'mevzuat' as const, icon: '📋', title: 'Mevzuat Notu', content: 'TBDY 2018 ve TS EN 1997 gereği her kazıklı temel projesinde yük testi zorunludur. Minimum 1 adet (veya toplam kazık sayısının %1-2\'si kadar) statik/dinamik test ve tüm kazıklarda sağlamlık testi uygulanmalıdır.' },
+    ],
+    categoryFaq: [
+      { q: 'Statik yükleme testi ne kadar sürer?', a: 'Standart test 24-72 saat sürer. Hızlı test yöntemiyle 8-12 saatte tamamlanabilir. Kurulum ve hazırlık 2-3 gün ek gerektirir.' },
+      { q: 'PDA testi statik testin yerini alır mı?', a: 'Kalibre edilmiş PDA-CAPWAP analizi kabul edilebilir doğrulukta sonuç verir; ancak büyük projelerde en az birkaç statik test ile kalibrasyon yapılması önerilir.' },
+      { q: 'İnklinometre ne sıklıkla okunmalı?', a: 'Kritik kazı aşamalarında günlük, normal durumda haftalık, uzun vadeli izlemede aylık okuma önerilir. Alarm eşiği aşılırsa anında okuma yapılır.' },
+      { q: 'Test maliyeti proje bütçesinin ne kadarıdır?', a: 'Kalite kontrol testleri toplam proje maliyetinin %3-5\'ini oluşturur. Bu yatırım olası kazık kusurlarının erken tespitini sağlayarak çok daha büyük riskleri önler.' },
+    ],
   },
   {
     slug: 'geoteknik-proje',
@@ -166,10 +251,25 @@ export const kategoriler: Kategori[] = [
     description: 'Zemin etüdü, projelendirme, derin kazı projesi, saha denetimi ve teknik danışmanlık.',
     image: '/images/saha-muhendis.jpg',
     icon: 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zM14 2v6h6M10 13h4M10 17h4',
-    aeoSummary: '',
-    kararKartlari: [],
-    sahaNotlari: [],
-    categoryFaq: [],
+    aeoSummary: 'Geoteknik proje hizmetleri, yapı inşaatının her aşamasında zemin mühendisliği desteği sağlar. Zemin etüdü ile başlayan süreç; temel sistemi, iksa ve zemin iyileştirme projelendirmesi, saha denetimi ve teknik danışmanlık ile devam eder. Her proje sahaya özgü zemin verileri ve mühendislik analizleri ile tasarlanır.',
+    kararKartlari: [
+      { icon: '🔬', title: 'Proje Başlangıcı', description: 'Henüz zemin bilgisi yok, sıfırdan başlıyoruz', recommendation: 'Zemin Etüdü & Raporlama' },
+      { icon: '📐', title: 'Temel / İksa Tasarımı', description: 'Zemin etüdü var, proje tasarımı gerekiyor', recommendation: 'Geoteknik Projelendirme' },
+      { icon: '🏗️', title: 'Derin Kazı Planlama', description: 'Çok katlı bodrum veya metro gibi derin kazı', recommendation: 'Derin Kazı Projesi' },
+      { icon: '✅', title: 'Uygulama Kalite Kontrolü', description: 'İmalat sürecinde kalite güvence ve denetim', recommendation: 'Saha Denetimi' },
+      { icon: '💡', title: 'İkinci Görüş / Optimizasyon', description: 'Mevcut projeyi değerlendirme veya maliyet düşürme', recommendation: 'Teknik Danışmanlık' },
+    ],
+    sahaNotlari: [
+      { type: 'uyari' as const, icon: '⚠️', title: 'Saha Uyarısı', content: 'Zemin etüdü raporu olmadan geoteknik proje yapılamaz. Yetersiz sondaj sayısı veya derinliği ile hazırlanan etüt raporları, proje tasarımında hatalı varsayımlara ve sahada sürprizlere yol açar. Sondaj sayısı ve derinliği TBDY 2018 Tablo 16.1\'e uygun olmalıdır.' },
+      { type: 'mevzuat' as const, icon: '📋', title: 'Mevzuat Notu', content: 'TBDY 2018\'e göre her yapı için sahaya özgü zemin araştırması zorunludur. Zemin etüdü raporu; sondaj, arazi deneyleri, laboratuvar analizleri ve geoteknik değerlendirmeyi kapsamalı ve yetkili mühendis tarafından imzalanmalıdır.' },
+    ],
+    categoryFaq: [
+      { q: 'Zemin etüdü ne kadar sürer?', a: 'Sondaj süresi proje büyüklüğüne göre 3-10 gün, laboratuvar ve rapor yazımı 2-3 hafta sürer. Toplam süre genellikle 3-5 haftadır.' },
+      { q: 'Zemin etüdü maliyeti ne kadardır?', a: 'İnşaat maliyetinin %1-2\'si kadardır. Bu küçük yatırım, hatalı temel tasarımından kaynaklanabilecek milyonlarca liralık riski önler.' },
+      { q: 'Geoteknik projelendirmede hangi yazılımlar kullanılır?', a: 'Plaxis 2D/3D, GeoStudio, RSPile, DeepEX gibi geoteknik analiz yazılımları ve AutoCAD ile tasarım yapılır.' },
+      { q: 'Saha denetimi zorunlu mu?', a: 'Yapı denetim mevzuatı gereği belirli proje sınıflarında zorunludur. Tüm geoteknik projelerde kalite güvencesi açısından güçlü şekilde tavsiye edilir.' },
+      { q: 'Teknik danışmanlık hangi aşamada alınmalı?', a: 'İdeal olarak proje tasarım aşamasında başlanmalıdır. Ancak uygulama sırasında sorun yaşandığında veya maliyet optimizasyonu istendiğinde de etkili çözüm sağlanır.' },
+    ],
   },
 ];
 
@@ -185,6 +285,9 @@ export const teknikler: Teknik[] = [
     title:'Fore Kazık İmalatı', shortTitle:'Fore Kazık',
     excerpt:'Büyük çaplı (400–1500 mm) yerinde döküm betonarme kazık. Zayıf zeminlerde yüksek taşıma kapasiteli derin temel çözümü. 2026 fiyatları, çeşitleri ve yapım aşamaları',
     image:'/images/fore-kazik/fore-kazik-hero.webp', heroImage:'/images/fore-kazik/fore-kazik-hero.webp',
+    badge: 'En Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Maks. Derinlik', value: '≤ 60 m' }, { label: 'Kazık Çapı', value: 'Ø40–150 cm' }],
+    comparison: { maxDerinlik: '60 m', derinlikBar: 85, maliyetLabel: 'Orta-Yüksek', maliyetBar: 65, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`<nav class="toc" aria-label="İçindekiler">
 <h2 class="toc__title">İçindekiler</h2>
 <ol class="toc__list">
@@ -1307,6 +1410,9 @@ export const teknikler: Teknik[] = [
     title:'Mini Kazık (Mikro Kazık)', shortTitle:'Mini Kazık',
     excerpt:'150–300 mm çaplı küçük eksenli kazık. Dar alanlarda ve mevcut yapı güçlendirmede ideal.',
     image:u(ph[2],480,320), heroImage:u(ph[2],1200,500),
+    badge: 'Dar Alan', badgeType: 'ozel',
+    metrics: [{ label: 'Kazık Çapı', value: 'Ø15–30 cm' }, { label: 'Min. Tavan', value: '2,5 m' }],
+    comparison: { maxDerinlik: '20 m', derinlikBar: 28, maliyetLabel: 'Orta', maliyetBar: 50, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Mini kazık (mikro kazık); 150–300 mm çaplı, basınçlı enjeksiyonlu küçük eksenli kazık tipidir.</div>
       <h2 id="nedir">Mini Kazık Nedir?</h2>
@@ -1327,6 +1433,9 @@ export const teknikler: Teknik[] = [
     title:'CFA Kazık (Sürekli Helezon Kazık)', shortTitle:'CFA Kazık',
     excerpt:'Sürekli helis auger ile hızlı kazık imalatı. Yumuşak ve orta sıkılıktaki zeminlerde verimli çözüm.',
     image:u(ph[4],480,320), heroImage:u(ph[4],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Maks. Derinlik', value: '≤ 25 m' }, { label: 'Günlük Üretim', value: '15–30 kazık' }],
+    comparison: { maxDerinlik: '25 m', derinlikBar: 35, maliyetLabel: 'Düşük-Orta', maliyetBar: 35, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">CFA (Continuous Flight Auger) kazık; sürekli helezon burgulu delgi ile zemin çıkarılırken eş zamanlı beton basılan hızlı kazık üretim yöntemidir.</div>
       <h2 id="nedir">CFA Kazık Nedir?</h2>
@@ -1347,6 +1456,9 @@ export const teknikler: Teknik[] = [
     title:'Baret (Dikdörtgen) Kazık', shortTitle:'Baret Kazık',
     excerpt:'Dikdörtgen kesitli derin temel elemanı. Diyafram duvar tekniğiyle üretilen yüksek moment kapasiteli kazık.',
     image:u(ph[6],480,320), heroImage:u(ph[6],1200,500),
+    badge: 'Premium', badgeType: 'premium',
+    metrics: [{ label: 'Maks. Derinlik', value: '≤ 100 m' }, { label: 'Kesit', value: 'Dikdörtgen' }],
+    comparison: { maxDerinlik: '100 m', derinlikBar: 100, maliyetLabel: 'Yüksek', maliyetBar: 90, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Baret kazık; dikdörtgen kesitli, diyafram duvar makineleri ile üretilen yüksek yük ve moment kapasiteli derin temel elemanıdır.</div>
       <h2 id="nedir">Baret Kazık Nedir?</h2>
@@ -1367,6 +1479,9 @@ export const teknikler: Teknik[] = [
     title:'Betonarme Çakma Kazık', shortTitle:'Betonarme Kazık',
     excerpt:'Fabrikada üretilen prefabrik betonarme kazıkların çakma aparatıyla zemine çakılması.',
     image:u(ph[8],480,320), heroImage:u(ph[8],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Günlük Üretim', value: '20–50 kazık' }, { label: 'Kesit', value: '25×25–50×50 cm' }],
+    comparison: { maxDerinlik: '40 m', derinlikBar: 57, maliyetLabel: 'Düşük', maliyetBar: 25, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Betonarme çakma kazık; fabrikada prefabrik olarak üretilen kare veya sekizgen kesitli betonarme kazıkların darbe ile zemine çakılmasıdır.</div>
       <h2 id="nedir">Betonarme Çakma Kazık Nedir?</h2>
@@ -1387,6 +1502,9 @@ export const teknikler: Teknik[] = [
     title:'Çelik Çakma Kazık', shortTitle:'Çakma Kazık',
     excerpt:'Çelik H-profil veya boru kazıkların darbe ya da vibrasyonla zemine çakılması.',
     image:u(ph[1],480,320), heroImage:u(ph[1],1200,500),
+    badge: 'Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Malzeme', value: 'Çelik H/Boru' }, { label: 'Kullanım', value: 'Liman/Köprü' }],
+    comparison: { maxDerinlik: '50 m', derinlikBar: 71, maliyetLabel: 'Orta', maliyetBar: 55, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Çelik çakma kazık; H-profil, boru veya palplanş şeklindeki çelik elemanların darbe çekici veya vibratörle zemine itilmesidir.</div>
       <h2 id="nedir">Çelik Çakma Kazık Nedir?</h2>
@@ -1582,6 +1700,9 @@ export const teknikler: Teknik[] = [
     title:'Jet Grout Nedir? Uygulama, Avantajlar ve 2026 Fiyatları', shortTitle:'Jet Grout',
     excerpt:'Jet grout (soilcrete) nedir, nasıl yapılır? Jet1-Jet2-Jet3 farkları, kolon çapları, fiyatları ve uygulama alanları. Saha deneyimiyle Torem Zemin',
     image:'/images/jet-grout/jet-grout-hero.webp', heroImage:'/images/jet-grout/jet-grout-hero.webp',
+    badge: 'En Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Kolon Çapı', value: 'Ø60–250 cm' }, { label: 'Maks. Derinlik', value: '≤ 35 m' }],
+    comparison: { maxDerinlik: '35 m', derinlikBar: 70, maliyetLabel: 'Orta-Yüksek', maliyetBar: 65, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
     content:`<nav class="toc" aria-label="İçindekiler">
 <h2 class="toc__title">İçindekiler</h2>
 <ol class="toc__list">
@@ -1958,6 +2079,9 @@ export const teknikler: Teknik[] = [
     title:'Derin Karıştırma (Deep Soil Mixing)', shortTitle:'Derin Karıştırma',
     excerpt:'Mekanik karıştırıcı ile çimento/kireç bağlayıcıyı zemine yerinde karıştırarak iyileştirme.',
     image:u(ph[5],480,320), heroImage:u(ph[5],1200,500),
+    badge: 'Özel Uygulama', badgeType: 'ozel',
+    metrics: [{ label: 'Kolon Çapı', value: 'Ø70–150 cm' }, { label: 'Maks. Derinlik', value: '≤ 30 m' }],
+    comparison: { maxDerinlik: '30 m', derinlikBar: 60, maliyetLabel: 'Orta', maliyetBar: 55, suGecirimsizlik: 'Kısmi', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Derin karıştırma (DSM); özel karıştırma kanatlarıyla bağlayıcı (çimento/kireç) ile zeminin yerinde mekanik olarak karıştırılmasıyla zemin-bağlayıcı kolon/panel oluşturma yöntemidir.</div>
       <h2 id="nedir">Derin Karıştırma Nedir?</h2>
@@ -1974,6 +2098,9 @@ export const teknikler: Teknik[] = [
     title:'Zemin Enjeksiyonu', shortTitle:'Zemin Enjeksiyonu',
     excerpt:'Düşük basınçlı çimento veya kimyasal enjeksiyon ile zemin boşluklarını doldurma ve sızdırmazlık.',
     image:u(ph[7],480,320), heroImage:u(ph[7],1200,500),
+    badge: 'Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Basınç', value: '1–30 bar' }, { label: 'Uygulama', value: 'Tüm zeminler' }],
+    comparison: { maxDerinlik: '50 m', derinlikBar: 100, maliyetLabel: 'Düşük-Orta', maliyetBar: 40, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Zemin enjeksiyonu; çimento, silikat veya reçine bazlı solüsyonların zemin boşluklarına basınçla enjekte edilerek dayanım artırma ve su geçirimsizlik sağlama yöntemidir.</div>
       <h2 id="nedir">Zemin Enjeksiyonu Nedir?</h2>
@@ -1990,6 +2117,9 @@ export const teknikler: Teknik[] = [
     title:'Taş Kolon (Stone Column)', shortTitle:'Taş Kolon',
     excerpt:'Vibro ikame yöntemiyle kırma taş dolgulu kolonlar oluşturarak yumuşak zeminlerin taşıma gücünü artırma.',
     image:u(ph[0],480,320), heroImage:u(ph[0],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Kolon Çapı', value: 'Ø60–100 cm' }, { label: 'Maks. Derinlik', value: '≤ 15 m' }],
+    comparison: { maxDerinlik: '15 m', derinlikBar: 30, maliyetLabel: 'Düşük', maliyetBar: 25, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Taş kolon; vibro-ikame (vibro-replacement) yöntemiyle zayıf zemine açılan deliğin kırma taş ile doldurulup sıkıştırılmasıyla oluşturulan rijit kolon elemanıdır.</div>
       <h2 id="nedir">Taş Kolon Nedir?</h2>
@@ -2006,6 +2136,9 @@ export const teknikler: Teknik[] = [
     title:'Fitil Dren (PVD)', shortTitle:'Fitil Dren',
     excerpt:'Prefabrik vertikal dren ile yumuşak killerin konsolidasyonunu hızlandırma.',
     image:u(ph[2],480,320), heroImage:u(ph[2],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Maks. Derinlik', value: '≤ 30 m' }, { label: 'Süre', value: '3–12 ay' }],
+    comparison: { maxDerinlik: '30 m', derinlikBar: 60, maliyetLabel: 'Çok Düşük', maliyetBar: 10, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Fitil dren (PVD — Prefabricated Vertical Drain); yumuşak killerde ön yükleme ile birlikte kullanılarak boşluk suyu basıncının hızla sönümlenmesini sağlayan şerit dren elemanıdır.</div>
       <h2 id="nedir">Fitil Dren Nedir?</h2>
@@ -2022,6 +2155,9 @@ export const teknikler: Teknik[] = [
     title:'Vibro Kompaksiyon', shortTitle:'Vibro Kompaksiyon',
     excerpt:'Titreşimli sonda ile gevşek granüler zeminlerin derinlemesine sıkıştırılması.',
     image:u(ph[4],480,320), heroImage:u(ph[4],1200,500),
+    badge: 'Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Maks. Derinlik', value: '≤ 20 m' }, { label: 'Etki', value: 'Sıkılaştırma 2-3×' }],
+    comparison: { maxDerinlik: '20 m', derinlikBar: 40, maliyetLabel: 'Düşük', maliyetBar: 20, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Vibro kompaksiyon; derinlik vibratörünün (vibroflot) kum ve çakıl zeminler içine indirilerek yoğun titreşim ile zeminlerin yerinde sıkıştırılması yöntemidir.</div>
       <h2 id="nedir">Vibro Kompaksiyon Nedir?</h2>
@@ -2040,6 +2176,9 @@ export const teknikler: Teknik[] = [
     title:'Öngermeli Ankraj', shortTitle:'Öngermeli Ankraj',
     excerpt:'Çelik tendon/kablo ile iksa perdelerine aktif gergi kuvveti aktarma. 500–5000 kN kapasite.',
     image:u(ph[6],480,320), heroImage:u(ph[6],1200,500),
+    badge: 'En Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Kapasite', value: '500–5000 kN' }, { label: 'Uzunluk', value: '10–40 m' }],
+    comparison: { maxDerinlik: '40 m', derinlikBar: 80, maliyetLabel: 'Orta-Yüksek', maliyetBar: 60, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Öngermeli ankraj; çelik kablo (strand) veya çubuk tendonun zemine/kayaya yerleştirilerek tasarım yüküne gerildikten sonra kama sistemiyle kilitlenmesidir.</div>
       <h2 id="nedir">Öngermeli Ankraj Nedir?</h2>
@@ -2056,6 +2195,9 @@ export const teknikler: Teknik[] = [
     title:'Kalıcı Ankraj', shortTitle:'Kalıcı Ankraj',
     excerpt:'Çift korozyon korumalı, 50+ yıl tasarım ömürlü kalıcı çekme elemanı.',
     image:u(ph[8],480,320), heroImage:u(ph[8],1200,500),
+    badge: 'Premium', badgeType: 'premium',
+    metrics: [{ label: 'Ömür', value: '50+ yıl' }, { label: 'Koruma', value: 'Çift bariyer' }],
+    comparison: { maxDerinlik: '40 m', derinlikBar: 80, maliyetLabel: 'Yüksek', maliyetBar: 80, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Kalıcı ankraj; yapının ömrü boyunca aktif kalacak şekilde tasarlanan, çift bariyer korozyon korumalı öngermeli veya pasif ankraj sistemidir.</div>
       <h2 id="nedir">Kalıcı Ankraj Nedir?</h2>
@@ -2072,6 +2214,9 @@ export const teknikler: Teknik[] = [
     title:'Geçici Ankraj', shortTitle:'Geçici Ankraj',
     excerpt:'İnşaat süresiyle sınırlı (≤2 yıl), sökülebilir geçici destek ankrajı.',
     image:u(ph[1],480,320), heroImage:u(ph[1],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Ömür', value: '≤ 2 yıl' }, { label: 'Maliyet', value: 'Kalıcıya göre -%30' }],
+    comparison: { maxDerinlik: '30 m', derinlikBar: 60, maliyetLabel: 'Orta', maliyetBar: 40, suGecirimsizlik: 'Yok', kaliciKullanim: 'Geçici' },
     content:`
       <div class="aeo-box">Geçici ankraj; inşaat süresince (maksimum 2 yıl) kullanılmak üzere tasarlanan, tekli korozyon korumalı destek ankrajıdır.</div>
       <h2 id="nedir">Geçici Ankraj Nedir?</h2>
@@ -2088,6 +2233,9 @@ export const teknikler: Teknik[] = [
     title:'Kaya Ankrajı', shortTitle:'Kaya Ankrajı',
     excerpt:'Sert kaya formasyonlarına bağlanan yüksek kapasiteli sabitleme ve gergi elemanı.',
     image:u(ph[3],480,320), heroImage:u(ph[3],1200,500),
+    badge: 'Özel Uygulama', badgeType: 'ozel',
+    metrics: [{ label: 'Formasyon', value: 'Sert kaya' }, { label: 'Derinlik', value: '5–50 m' }],
+    comparison: { maxDerinlik: '50 m', derinlikBar: 100, maliyetLabel: 'Orta-Yüksek', maliyetBar: 65, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Kaya ankrajı; kaya kütlesi içine delgi ile yerleştirilen çelik tendon veya çubuk elemanın çimento enjeksiyonu ile sabitlenmesidir.</div>
       <h2 id="nedir">Kaya Ankrajı Nedir?</h2>
@@ -2104,6 +2252,9 @@ export const teknikler: Teknik[] = [
     title:'Zemin Çivisi (Soil Nailing)', shortTitle:'Zemin Çivisi',
     excerpt:'Pasif çelik donatı ile kazı şevlerinin ve doğal yamaçların stabilizasyonu.',
     image:u(ph[5],480,320), heroImage:u(ph[5],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Uzunluk', value: '3–20 m' }, { label: 'Aralık', value: '1,0–1,5 m' }],
+    comparison: { maxDerinlik: '20 m', derinlikBar: 40, maliyetLabel: 'Düşük', maliyetBar: 25, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Zemin çivisi; zemin kütlesine yoğun aralıklı pasif çelik donatı yerleştirilerek zemin-donatı bütünleşik bir kütleye dönüştürülmesi yöntemidir.</div>
       <h2 id="nedir">Zemin Çivisi Nedir?</h2>
@@ -2122,6 +2273,9 @@ export const teknikler: Teknik[] = [
     title:'Jet Grout Perdesi', shortTitle:'Jet Grout Perdesi',
     excerpt:'Yan yana jet grout kolonlarıyla oluşturulan su geçirimsiz bariyer.',
     image:u(ph[7],480,320), heroImage:u(ph[7],1200,500),
+    badge: 'Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Kolon Çapı', value: 'Ø60–200 cm' }, { label: 'Geçirimsizlik', value: 'k ≤ 10⁻⁹ m/s' }],
+    comparison: { maxDerinlik: '30 m', derinlikBar: 60, maliyetLabel: 'Orta', maliyetBar: 55, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Jet grout perdesi; yan yana üretilen jet grout kolonlarının birbirine bindirilerek sürekli su geçirimsiz perde oluşturulmasıdır.</div>
       <h2 id="nedir">Jet Grout Perdesi Nedir?</h2>
@@ -2138,6 +2292,9 @@ export const teknikler: Teknik[] = [
     title:'Secant (Kesişen) Perde', shortTitle:'Secant Perde',
     excerpt:'Birbirine bindirmeli fore kazıklar ile sürekli geçirimsizlik perdesi.',
     image:u(ph[0],480,320), heroImage:u(ph[0],1200,500),
+    badge: 'Premium', badgeType: 'premium',
+    metrics: [{ label: 'Kazık Çapı', value: 'Ø60–120 cm' }, { label: 'İşlev', value: 'İksa + Perde' }],
+    comparison: { maxDerinlik: '50 m', derinlikBar: 100, maliyetLabel: 'Yüksek', maliyetBar: 80, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Secant perde; kesişen kazıklı iksa sistemiyle oluşturulan su geçirimsiz yapısal perdedir. Hem iksa hem geçirimsizlik işlevi görür.</div>
       <h2 id="nedir">Secant Perde Nedir?</h2>
@@ -2154,6 +2311,9 @@ export const teknikler: Teknik[] = [
     title:'Çamur Perde (Slurry Wall)', shortTitle:'Slurry Perde',
     excerpt:'Çimento-bentonit karışımı ile derin geçirimsizlik perdesi.',
     image:u(ph[2],480,320), heroImage:u(ph[2],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Genişlik', value: '0,6–1,5 m' }, { label: 'Maks. Derinlik', value: '≤ 50 m' }],
+    comparison: { maxDerinlik: '50 m', derinlikBar: 100, maliyetLabel: 'Düşük-Orta', maliyetBar: 35, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Slurry perde; bentonit çamuru destekli hendek kazılarak çimento-bentonit veya toprak-bentonit karışımı ile doldurulan derin geçirimsizlik perdesidir.</div>
       <h2 id="nedir">Slurry Perde Nedir?</h2>
@@ -2170,6 +2330,9 @@ export const teknikler: Teknik[] = [
     title:'Enjeksiyon Perdesi', shortTitle:'Enjeksiyon Perdesi',
     excerpt:'Basınçlı çimento enjeksiyonu ile zemin gözeneklerini doldurarak su geçişini engelleme.',
     image:u(ph[4],480,320), heroImage:u(ph[4],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Yöntem', value: 'Aşamalı enjeksiyon' }, { label: 'Uygun Zemin', value: 'Granüler/Kaya' }],
+    comparison: { maxDerinlik: '80 m', derinlikBar: 100, maliyetLabel: 'Düşük', maliyetBar: 25, suGecirimsizlik: 'Kısmi', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Enjeksiyon perdesi; belirli aralıklarla delgi yapılarak basınçlı çimento veya kimyasal enjeksiyon ile zemin gözeneklerinin doldurulmasıyla oluşturulan geçirimsizlik bariyeridir.</div>
       <h2 id="nedir">Enjeksiyon Perdesi Nedir?</h2>
@@ -2188,6 +2351,9 @@ export const teknikler: Teknik[] = [
     title:'Heyelan Önleme Sistemleri', shortTitle:'Heyelan Önleme',
     excerpt:'Ankraj, kazık, drenaj ve istinat duvarı kombinasyonları ile heyelan riski azaltma.',
     image:u(ph[6],480,320), heroImage:u(ph[6],1200,500),
+    badge: 'Kritik', badgeType: 'premium',
+    metrics: [{ label: 'Yöntem', value: 'Kombine sistem' }, { label: 'Kapsam', value: 'Etüt → Uygulama' }],
+    comparison: { maxDerinlik: '40 m', derinlikBar: 80, maliyetLabel: 'Yüksek', maliyetBar: 85, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Heyelan önleme; aktif veya potansiyel heyelan bölgelerinde ankraj, kazık, drenaj ve istinat yapıları kombinasyonuyla zemin hareketinin kontrol altına alınmasıdır.</div>
       <h2 id="nedir">Heyelan Önleme Nedir?</h2>
@@ -2204,6 +2370,9 @@ export const teknikler: Teknik[] = [
     title:'Kaya Düşmesi Önleme', shortTitle:'Kaya Düşmesi Önleme',
     excerpt:'Çelik ağ, enerji sönümleyici bariyer ve kaya cıvatası ile kaya düşme riskinin kontrolü.',
     image:u(ph[8],480,320), heroImage:u(ph[8],1200,500),
+    badge: 'Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Enerji', value: '100–5000 kJ' }, { label: 'Ömür', value: '25–50 yıl' }],
+    comparison: { maxDerinlik: 'Yüzey', derinlikBar: 15, maliyetLabel: 'Orta', maliyetBar: 50, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Kaya düşmesi önleme; yol kenarı, yerleşim alanı ve altyapı güzergahlarında kopan/devrilen kaya bloklarının kontrol altına alınması için uygulanan aktif ve pasif koruma sistemleridir.</div>
       <h2 id="nedir">Kaya Düşmesi Önleme Nedir?</h2>
@@ -2220,6 +2389,9 @@ export const teknikler: Teknik[] = [
     title:'İstinat Duvarı', shortTitle:'İstinat Duvarı',
     excerpt:'Betonarme konsol, ağırlık ve yarı-ağırlık tipi dayanma yapıları ile yanal zemin basıncı kontrolü.',
     image:u(ph[1],480,320), heroImage:u(ph[1],1200,500),
+    badge: 'En Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Maks. Yükseklik', value: '2–15 m' }, { label: 'Tip', value: 'Konsol/Ağırlık' }],
+    comparison: { maxDerinlik: '15 m', derinlikBar: 30, maliyetLabel: 'Orta', maliyetBar: 45, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">İstinat duvarı; toprak kütlesinin yanal basıncına karşı koymak üzere tasarlanan betonarme veya taş yığma dayanma yapısıdır.</div>
       <h2 id="nedir">İstinat Duvarı Nedir?</h2>
@@ -2236,6 +2408,9 @@ export const teknikler: Teknik[] = [
     title:'Çelik Hasır Ağ Kaplama', shortTitle:'Çelik Hasır Ağ',
     excerpt:'Yüksek mukavemetli çelik ağ ile kaya yüzeylerinin kaplanması ve kontrollü erozyon önleme.',
     image:u(ph[3],480,320), heroImage:u(ph[3],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Kaplama', value: 'Geniş alan' }, { label: 'Kurulum', value: 'Hızlı' }],
+    comparison: { maxDerinlik: 'Yüzey', derinlikBar: 10, maliyetLabel: 'Düşük', maliyetBar: 20, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Çelik hasır ağ kaplama; kaya şevlerinin yüksek mukavemetli çelik ağ ile örtülmesi ve kaya cıvatalarıyla sabitlenmesiyle küçük blokların düşmesinin önlenmesidir.</div>
       <h2 id="nedir">Çelik Hasır Ağ Nedir?</h2>
@@ -2252,6 +2427,9 @@ export const teknikler: Teknik[] = [
     title:'Moloz Akışı Önleme', shortTitle:'Moloz Akışı Önleme',
     excerpt:'Çelik bariyer, saptırma duvarı ve drenaj kanalı ile dere yatağı moloz akışı kontrolü.',
     image:u(ph[5],480,320), heroImage:u(ph[5],1200,500),
+    badge: 'Özel Uygulama', badgeType: 'ozel',
+    metrics: [{ label: 'Kapasite', value: '100–10.000 m³' }, { label: 'Sistem', value: 'Ring-net/Beton' }],
+    comparison: { maxDerinlik: 'Vadi', derinlikBar: 20, maliyetLabel: 'Orta-Yüksek', maliyetBar: 60, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Moloz akışı önleme; dere yatakları ve dik vadilerde yoğun yağışla tetiklenen çamur, kaya ve toprak akışının bariyerler ve saptırma yapıları ile kontrol altına alınmasıdır.</div>
       <h2 id="nedir">Moloz Akışı Önleme Nedir?</h2>
@@ -2270,6 +2448,9 @@ export const teknikler: Teknik[] = [
     title:'Statik Yükleme Testi', shortTitle:'Statik Yükleme',
     excerpt:'Hidrolik kriko ile kazık üzerine kademeli yük uygulayarak taşıma kapasitesinin doğrulanması.',
     image:u(ph[7],480,320), heroImage:u(ph[7],1200,500),
+    badge: 'Referans Test', badgeType: 'premium',
+    metrics: [{ label: 'Test Yükü', value: '1,5–2,0 × tasarım' }, { label: 'Süre', value: '24–72 saat' }],
+    comparison: { maxDerinlik: 'Yerinde', derinlikBar: 100, maliyetLabel: 'Yüksek', maliyetBar: 90, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Statik yükleme testi; kazık başına hidrolik krikolarla kademeli yük uygulanarak yük-oturma davranışının ölçülmesi ve taşıma kapasitesinin doğrulanmasıdır.</div>
       <h2 id="nedir">Statik Yükleme Testi Nedir?</h2>
@@ -2286,6 +2467,9 @@ export const teknikler: Teknik[] = [
     title:'Dinamik PDA Testi', shortTitle:'Dinamik PDA',
     excerpt:'Pile Driving Analyzer ile kazık çakma sırasında veya sonrasında taşıma kapasitesi ölçümü.',
     image:u(ph[0],480,320), heroImage:u(ph[0],1200,500),
+    badge: 'Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Hız', value: 'Günde 10+ kazık' }, { label: 'Analiz', value: 'CAPWAP' }],
+    comparison: { maxDerinlik: 'Yerinde', derinlikBar: 80, maliyetLabel: 'Orta', maliyetBar: 45, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Dinamik PDA (Pile Driving Analyzer) testi; kazık başına darbe uygulanarak ivme ve birim deformasyon sensörleri ile dalga yayılma analizinden taşıma kapasitesinin hesaplanmasıdır.</div>
       <h2 id="nedir">Dinamik PDA Testi Nedir?</h2>
@@ -2302,6 +2486,9 @@ export const teknikler: Teknik[] = [
     title:'PIT (Sağlamlık) Testi', shortTitle:'PIT Testi',
     excerpt:'Pile Integrity Test ile kazık gövdesi sağlamlığının ultrasonik dalga ile kontrolü.',
     image:u(ph[2],480,320), heroImage:u(ph[2],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Hız', value: 'Günde 40–80 kazık' }, { label: 'Yöntem', value: 'Tahribatsız' }],
+    comparison: { maxDerinlik: 'Yerinde', derinlikBar: 50, maliyetLabel: 'Düşük', maliyetBar: 15, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">PIT (Pile Integrity Test); kazık başına hafif darbe uygulanarak yansıyan dalga sinyalinin analizi ile kazık gövdesi boyunca kusur ve boyut değişimlerinin tespitidir.</div>
       <h2 id="nedir">PIT Testi Nedir?</h2>
@@ -2318,6 +2505,9 @@ export const teknikler: Teknik[] = [
     title:'İnklinometre İzleme', shortTitle:'İnklinometre',
     excerpt:'Zemin içi yatay deformasyon hareketlerinin derinlikle profil olarak ölçülmesi.',
     image:u(ph[4],480,320), heroImage:u(ph[4],1200,500),
+    badge: 'Kritik İzleme', badgeType: 'ozel',
+    metrics: [{ label: 'Hassasiyet', value: '±0,1 mm/m' }, { label: 'Derinlik', value: '≤ 60 m' }],
+    comparison: { maxDerinlik: '60 m', derinlikBar: 100, maliyetLabel: 'Orta', maliyetBar: 40, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">İnklinometre; zemine yerleştirilen kılavuz boruya indirilen eğim sensörü ile derinlik boyunca yatay yer değiştirmelerin periyodik ölçülmesidir.</div>
       <h2 id="nedir">İnklinometre İzleme Nedir?</h2>
@@ -2334,6 +2524,9 @@ export const teknikler: Teknik[] = [
     title:'Aletsel Gözlem Sistemi', shortTitle:'Aletsel Gözlem',
     excerpt:'Piyezometre, tiltmetre, manyetik oturma ölçer ve çatlak ölçer ile kapsamlı geoteknik izleme.',
     image:u(ph[6],480,320), heroImage:u(ph[6],1200,500),
+    badge: 'Kapsamlı', badgeType: 'premium',
+    metrics: [{ label: 'Alet Sayısı', value: '5+ tip' }, { label: 'İzleme', value: 'Otomatik/Manuel' }],
+    comparison: { maxDerinlik: 'Proje bazlı', derinlikBar: 100, maliyetLabel: 'Orta-Yüksek', maliyetBar: 65, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Aletsel gözlem; birden fazla geoteknik izleme aletinin entegre kullanımıyla zemin ve yapı davranışının kapsamlı olarak izlenmesidir.</div>
       <h2 id="nedir">Aletsel Gözlem Nedir?</h2>
@@ -2352,6 +2545,9 @@ export const teknikler: Teknik[] = [
     title:'Zemin Etüdü & Raporlama', shortTitle:'Zemin Etüdü',
     excerpt:'TBDY 2018 uyumlu sondaj, SPT, laboratuvar deneyleri ve zemin etüdü raporu.',
     image:u(ph[8],480,320), heroImage:u(ph[8],1200,500),
+    badge: 'Temel Hizmet', badgeType: 'popular',
+    metrics: [{ label: 'Kapsam', value: 'Sondaj + Lab + Rapor' }, { label: 'Standart', value: 'TBDY 2018' }],
+    comparison: { maxDerinlik: 'Proje bazlı', derinlikBar: 100, maliyetLabel: 'Düşük', maliyetBar: 20, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Zemin etüdü; yapı inşaatından önce arazinin taşıma kapasitesini, zemin katman yapısını ve yeraltı suyu koşullarını belirlemek amacıyla yapılan sondaj, arazi deneyi ve laboratuvar analizleri bütünüdür.</div>
       <h2 id="nedir">Zemin Etüdü Nedir?</h2>
@@ -2368,6 +2564,9 @@ export const teknikler: Teknik[] = [
     title:'Geoteknik Projelendirme', shortTitle:'Projelendirme',
     excerpt:'Zemin verileri doğrultusunda fore kazık, iksa, ankraj ve zemin iyileştirme projelerinin tasarımı.',
     image:u(ph[1],480,320), heroImage:u(ph[1],1200,500),
+    badge: 'Kapsamlı', badgeType: 'premium',
+    metrics: [{ label: 'Analiz', value: 'FEM + Stabilite' }, { label: 'Süre', value: '2–6 hafta' }],
+    comparison: { maxDerinlik: 'Proje bazlı', derinlikBar: 100, maliyetLabel: 'Orta', maliyetBar: 45, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Geoteknik projelendirme; zemin etüdü verileri doğrultusunda temel sistemi, iksa, ankraj ve zemin iyileştirme çözümlerinin analiz ve tasarımını kapsar.</div>
       <h2 id="nedir">Geoteknik Projelendirme Nedir?</h2>
@@ -2384,6 +2583,9 @@ export const teknikler: Teknik[] = [
     title:'Derin Kazı Projesi', shortTitle:'Derin Kazı Projesi',
     excerpt:'İksa sistemi seçimi, kazı aşamaları planlaması ve FEM modelleme ile derin kazı mühendisliği.',
     image:u(ph[3],480,320), heroImage:u(ph[3],1200,500),
+    badge: 'Özel Uygulama', badgeType: 'ozel',
+    metrics: [{ label: 'Analiz', value: 'FEM Modelleme' }, { label: 'Kapsam', value: 'İksa + İzleme Planı' }],
+    comparison: { maxDerinlik: 'Proje bazlı', derinlikBar: 100, maliyetLabel: 'Orta-Yüksek', maliyetBar: 60, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Derin kazı projesi; kazı derinliği, zemin koşulları, komşu yapılar ve yeraltı suyu durumuna göre en uygun iksa sisteminin tasarlanması ve uygulama planının oluşturulmasıdır.</div>
       <h2 id="nedir">Derin Kazı Projesi Nedir?</h2>
@@ -2400,6 +2602,9 @@ export const teknikler: Teknik[] = [
     title:'Saha Denetimi', shortTitle:'Saha Denetimi',
     excerpt:'İmalat kalite kontrolü, test denetimi ve raporlama ile uygulama sürecinin izlenmesi.',
     image:u(ph[5],480,320), heroImage:u(ph[5],1200,500),
+    badge: 'Kalite Güvence', badgeType: 'popular',
+    metrics: [{ label: 'Kapsam', value: 'İmalat + Test' }, { label: 'Maliyet', value: 'Projenin %3–5' }],
+    comparison: { maxDerinlik: 'Yerinde', derinlikBar: 50, maliyetLabel: 'Düşük', maliyetBar: 15, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Saha denetimi; geoteknik projelerde imalat kalite kontrolü, test denetimi, sapma takibi ve düzeltici eylem önerileriyle uygulama sürecinin izlenmesidir.</div>
       <h2 id="nedir">Saha Denetimi Nedir?</h2>
@@ -2416,6 +2621,9 @@ export const teknikler: Teknik[] = [
     title:'Teknik Danışmanlık', shortTitle:'Teknik Danışmanlık',
     excerpt:'Geoteknik sorunlara uzman değerlendirmesi, ikinci görüş ve proje optimizasyonu hizmeti.',
     image:u(ph[7],480,320), heroImage:u(ph[7],1200,500),
+    badge: 'Uzman Hizmeti', badgeType: 'premium',
+    metrics: [{ label: 'Deneyim', value: '20+ yıl' }, { label: 'Hizmet', value: 'Uzaktan/Yerinde' }],
+    comparison: { maxDerinlik: 'Proje bazlı', derinlikBar: 50, maliyetLabel: 'Düşük-Orta', maliyetBar: 30, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Teknik danışmanlık; mevcut veya planlanan geoteknik projelerde uzman mühendis değerlendirmesi, ikinci görüş, optimizasyon önerisi ve sorun çözme hizmeti sunulmasıdır.</div>
       <h2 id="nedir">Teknik Danışmanlık Nedir?</h2>
