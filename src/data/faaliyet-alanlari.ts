@@ -15,12 +15,30 @@ const ph = [
 ];
 
 // ─── Arayüzler ───────────────────────────────────────────────────────────────
+export interface KararKarti {
+  icon: string;
+  title: string;
+  description: string;
+  recommendation: string;
+}
+
+export interface SahaNotuKat {
+  type: 'uyari' | 'mevzuat';
+  icon: string;
+  title: string;
+  content: string;
+}
+
 export interface Kategori {
   slug: string;
   title: string;
   description: string;
   image: string;
   icon: string;
+  aeoSummary: string;
+  kararKartlari: KararKarti[];
+  sahaNotlari: SahaNotuKat[];
+  categoryFaq: { q: string; a: string }[];
 }
 
 export interface Teknik {
@@ -33,6 +51,17 @@ export interface Teknik {
   heroImage: string;
   content: string;
   faq: { q: string; a: string }[];
+  badge?: string;
+  badgeType?: string;
+  metrics?: { label: string; value: string }[];
+  comparison?: {
+    maxDerinlik: string;
+    derinlikBar: number;
+    maliyetLabel: string;
+    maliyetBar: number;
+    suGecirimsizlik: string;
+    kaliciKullanim: string;
+  };
 }
 
 // ─── 8 Kategori ──────────────────────────────────────────────────────────────
@@ -43,6 +72,10 @@ export const kategoriler: Kategori[] = [
     description: 'Fore kazık, mini kazık, CFA kazık ve çakma kazık ile derin temel çözümleri.',
     image: '/images/kazikli-temeller.jpg',
     icon: 'M6 2v20M12 2v20M18 2v20M4 8h16',
+    aeoSummary: '',
+    kararKartlari: [],
+    sahaNotlari: [],
+    categoryFaq: [],
   },
   {
     slug: 'iksa-sistemleri',
@@ -50,6 +83,27 @@ export const kategoriler: Kategori[] = [
     description: 'Ankrajlı fore kazık, diyafram duvar, palplanş ve Berlin duvarı iksa çözümleri.',
     image: '/images/iksa-sistemleri.jpg',
     icon: 'M3 21V7h18v14M7 7V3M17 7V3M3 14h18',
+    aeoSummary: 'İksa sistemi, derin kazı çalışmalarında çevredeki zemin ve yapıların stabilitesini korumak için kazı çeperlerine uygulanan geçici veya kalıcı destek yapısıdır. Yöntem seçimi kazı derinliği, zemin koşulları, yeraltı suyu seviyesi ve çevre yapılara yakınlığa göre belirlenir. 9 farklı iksa yöntemi arasında projenize en uygun çözümü aşağıda bulabilirsiniz.',
+    kararKartlari: [
+      { icon: '🏗️', title: 'Derin Kazı (15+ m)', description: 'Metro, AVM bodrum katı, yer altı otoparkı gibi derin kazılarda', recommendation: 'Ankrajlı Fore Kazık / Diyafram Duvar' },
+      { icon: '💧', title: 'Yüksek Yeraltı Suyu', description: 'Su tablası kazı kotunun üzerinde, geçirimsizlik kritik', recommendation: 'Secant Pile / Palplanş / Diyafram Duvar' },
+      { icon: '💰', title: 'Ekonomik Çözüm (<10 m)', description: 'Sığ kazılarda düşük bütçeli, hızlı uygulanabilir çözüm', recommendation: 'Berlin Duvarı / Püskürtme Beton' },
+      { icon: '🏠', title: 'Dar Alan / Yapı Bitişiği', description: 'Mevcut yapıya bitişik kazıda titreşimsiz, kompakt çözüm', recommendation: 'Mini Kazıklı İksa / Secant Pile' },
+      { icon: '🏔️', title: 'Kalıcı Yapı (Bodrum Duvarı)', description: 'Kalıcı bodrum perde duvarı olarak kullanılacaksa', recommendation: 'Diyafram Duvar / Secant Pile' },
+      { icon: '🛤️', title: 'Şev Koruması', description: 'Doğal şev veya kazı şevi stabilizasyonu', recommendation: 'Toprakarme Duvar / Püskürtme Beton' },
+    ],
+    sahaNotlari: [
+      { type: 'uyari', icon: '⚠️', title: 'Saha Uyarısı', content: 'İksa projelerinde en sık yapılan hata, zemin etüdü verisi yetersizken yöntem seçimi yapmaktır. Kazı sırasında beklenmeyen zemin tabakasıyla karşılaşılması, proje revizyonuna ve ciddi maliyet artışına neden olur. Yöntem seçimi mutlaka yeterli sayıda sondaj verisine dayanmalıdır.' },
+      { type: 'mevzuat', icon: '📋', title: 'Mevzuat Notu', content: '2018 Kazı Güvenliği Yönetmeliği\'ne göre kohezyonsuz zeminlerde iksa yapılmadan 1,5 m\'den derin kazı yapılması yasaktır. Kentsel alanlarda komşu yapıların güvenliği için inklinometre okumaları zorunludur — okumalarda eşik değer aşılırsa kazı derhal durdurulmalıdır.' },
+    ],
+    categoryFaq: [
+      { q: 'Derin kazıda hangi iksa yöntemi tercih edilmeli?', a: 'Kazı derinliği 15 m\'yi aştığında ankrajlı fore kazık veya diyafram duvar en güvenli çözümlerdir. Seçim; zemin koşulları, yeraltı suyu seviyesi ve çevre yapılara yakınlığa göre yapılır.' },
+      { q: 'İksa sistemi geçici mi kalıcı mı kullanılır?', a: 'Berlin duvarı ve palplanş genellikle geçici uygulamalardır. Diyafram duvar, secant pile ve ankrajlı fore kazık ise kalıcı bodrum perde duvarı olarak kullanılabilir.' },
+      { q: 'İksa maliyetini etkileyen faktörler nelerdir?', a: 'Kazı derinliği, zemin koşulları, yeraltı suyu seviyesi, yöntem seçimi ve proje lokasyonu başlıca faktörlerdir.' },
+      { q: 'Yeraltı suyu yüksekse hangi iksa yöntemi kullanılır?', a: 'Su geçirimsizlik gerektiğinde diyafram duvar, secant pile veya palplanş tercih edilir.' },
+      { q: 'Komşu yapılara zarar vermeden iksa nasıl yapılır?', a: 'Titreşim oluşturmayan yöntemler (fore kazıklı iksa, secant pile, mini kazıklı iksa) tercih edilir. İnklinometre ve deformasyon ölçümleri ile komşu yapılar sürekli izlenir.' },
+      { q: 'İksa projesi için zemin etüdü zorunlu mu?', a: 'Kesinlikle zorunludur. Zemin etüdü olmadan iksa projesi yapılamaz — sondaj verileri iksa yöntem seçiminin ve boyutlandırmanın temelidir.' },
+    ],
   },
   {
     slug: 'zemin-iyilestirme',
@@ -57,6 +111,10 @@ export const kategoriler: Kategori[] = [
     description: 'Jet grout, derin karıştırma, taş kolon ve vibro kompaksiyon ile zayıf zeminlerin güçlendirilmesi.',
     image: '/images/zemin-iyilestirme.jpg',
     icon: 'M12 2v8l4 4-4 4v6M8 10h8',
+    aeoSummary: '',
+    kararKartlari: [],
+    sahaNotlari: [],
+    categoryFaq: [],
   },
   {
     slug: 'destekleme-ankraj',
@@ -64,6 +122,10 @@ export const kategoriler: Kategori[] = [
     description: 'Öngermeli ankraj, kalıcı ankraj, kaya ankrajı ve zemin çivisi uygulamaları.',
     image: '/images/ankraj.jpg',
     icon: 'M12 2l-2 6h4l-2 6M8 16h8M12 16v6M9 22h6',
+    aeoSummary: '',
+    kararKartlari: [],
+    sahaNotlari: [],
+    categoryFaq: [],
   },
   {
     slug: 'gecirimsizlik-perdeleri',
@@ -71,6 +133,10 @@ export const kategoriler: Kategori[] = [
     description: 'Jet grout perdesi, secant perde, slurry perde ve enjeksiyon perdesi ile yeraltı suyu kontrolü.',
     image: '/images/puskurtme-beton.jpg',
     icon: 'M3 6h18v12H3zM3 12h18M9 6v12M15 6v12',
+    aeoSummary: '',
+    kararKartlari: [],
+    sahaNotlari: [],
+    categoryFaq: [],
   },
   {
     slug: 'sev-stabilitesi',
@@ -78,6 +144,10 @@ export const kategoriler: Kategori[] = [
     description: 'Heyelan önleme, kaya düşmesi bariyeri, istinat duvarı ve çelik hasır ağ sistemleri.',
     image: '/images/zemin-iyilestirme2.jpg',
     icon: 'M2 22l10-16 10 16H2zM7 14h10',
+    aeoSummary: '',
+    kararKartlari: [],
+    sahaNotlari: [],
+    categoryFaq: [],
   },
   {
     slug: 'geoteknik-test-izleme',
@@ -85,6 +155,10 @@ export const kategoriler: Kategori[] = [
     description: 'Statik yükleme, dinamik PDA, PIT testi, inklinometre ve aletsel gözlem sistemleri.',
     image: '/images/geoteknik-test.jpg',
     icon: 'M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4 2',
+    aeoSummary: '',
+    kararKartlari: [],
+    sahaNotlari: [],
+    categoryFaq: [],
   },
   {
     slug: 'geoteknik-proje',
@@ -92,6 +166,10 @@ export const kategoriler: Kategori[] = [
     description: 'Zemin etüdü, projelendirme, derin kazı projesi, saha denetimi ve teknik danışmanlık.',
     image: '/images/saha-muhendis.jpg',
     icon: 'M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zM14 2v6h6M10 13h4M10 17h4',
+    aeoSummary: '',
+    kararKartlari: [],
+    sahaNotlari: [],
+    categoryFaq: [],
   },
 ];
 
@@ -1331,6 +1409,9 @@ export const teknikler: Teknik[] = [
     title:'Ankrajlı Fore Kazıklı İksa', shortTitle:'Ankrajlı Fore Kazık',
     excerpt:'Fore kazık perdesi + öngermeli ankraj kombinasyonu ile derin kazı destek sistemi.',
     image:u(ph[3],480,320), heroImage:u(ph[3],1200,500),
+    badge: 'En Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Maks. Derinlik', value: '≤ 30 m' }, { label: 'Kazık Çapı', value: 'Ø60–120 cm' }],
+    comparison: { maxDerinlik: '30 m', derinlikBar: 75, maliyetLabel: 'Orta-Yüksek', maliyetBar: 65, suGecirimsizlik: 'Kısmi', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Ankrajlı fore kazıklı iksa; yan yana fore kazık perdesi ile öngermeli ankrajların birlikte çalıştığı en yaygın derin kazı destek yöntemidir.</div>
       <h2 id="nedir">Nasıl Çalışır?</h2>
@@ -1347,6 +1428,9 @@ export const teknikler: Teknik[] = [
     title:'Diyafram Duvar', shortTitle:'Diyafram Duvar',
     excerpt:'Yerinde dökme betonarme perde duvar. Su geçirimsiz, kalıcı bodrum duvarı olarak da kullanılır.',
     image:u(ph[5],480,320), heroImage:u(ph[5],1200,500),
+    badge: 'Premium', badgeType: 'premium',
+    metrics: [{ label: 'Maks. Derinlik', value: '≤ 100 m' }, { label: 'Duvar Kalınlığı', value: '60–150 cm' }],
+    comparison: { maxDerinlik: '100 m', derinlikBar: 100, maliyetLabel: 'Yüksek', maliyetBar: 95, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Diyafram duvar; özel kepçe veya hidrolik frezeyle kazılan hendeklere bentonit destek sıvısı altında donatı yerleştirip beton dökülerek oluşturulan yerinde dökme betonarme perdedir.</div>
       <h2 id="nedir">Diyafram Duvar Nedir?</h2>
@@ -1363,6 +1447,9 @@ export const teknikler: Teknik[] = [
     title:'Çamur Hendek (Slurry Trench)', shortTitle:'Slurry Trench',
     excerpt:'Bentonit çamuru destekli derin hendek kazısı ile geçirimsizlik veya iksa perdesi.',
     image:u(ph[7],480,320), heroImage:u(ph[7],1200,500),
+    badge: 'Özel Uygulama', badgeType: 'ozel',
+    metrics: [{ label: 'Maks. Derinlik', value: '≤ 50 m' }, { label: 'Geçirimsizlik', value: 'k ≤ 10⁻⁹ m/s' }],
+    comparison: { maxDerinlik: '50 m', derinlikBar: 50, maliyetLabel: 'Orta', maliyetBar: 60, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Slurry trench; bentonit süspansiyonu ile desteklenen dar hendek kazılarak çimento-bentonit karışımı ile doldurulmasıyla oluşturulan geçirimsizlik perdesidir.</div>
       <h2 id="nedir">Slurry Trench Nedir?</h2>
@@ -1379,6 +1466,9 @@ export const teknikler: Teknik[] = [
     title:'Berlin Duvarı İksası', shortTitle:'Berlin Duvarı',
     excerpt:'Aralıklı H-profil çelik kazıklar arası ahşap veya beton panellerle ekonomik geçici iksa.',
     image:u(ph[0],480,320), heroImage:u(ph[0],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Ankrajsız', value: '8–10 m' }, { label: 'Malzeme', value: 'Geri kazanım' }],
+    comparison: { maxDerinlik: '10 m', derinlikBar: 25, maliyetLabel: 'Düşük', maliyetBar: 25, suGecirimsizlik: 'Yok', kaliciKullanim: 'Geçici' },
     content:`
       <div class="aeo-box">Berlin duvarı; belirli aralıklarla çakılan çelik H-profil kazıklar arasına ahşap veya beton pano yerleştirilerek oluşturulan ekonomik geçici iksa sistemidir.</div>
       <h2 id="nedir">Berlin İksası Nedir?</h2>
@@ -1395,6 +1485,9 @@ export const teknikler: Teknik[] = [
     title:'Palplanş İksa', shortTitle:'Palplanş',
     excerpt:'Kilitli çelik profil palplanş kazıkların vibrasyonlu çakma ile su geçirimsiz iksa perdesi.',
     image:u(ph[2],480,320), heroImage:u(ph[2],1200,500),
+    badge: 'Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Maks. Derinlik', value: '≤ 15 m' }, { label: 'Yeniden kullanım', value: 'Sökülebilir' }],
+    comparison: { maxDerinlik: '15 m', derinlikBar: 37, maliyetLabel: 'Orta', maliyetBar: 40, suGecirimsizlik: 'Tam', kaliciKullanim: 'Sökülebilir' },
     content:`
       <div class="aeo-box">Palplanş iksa; U veya Z profilli çelik palplanş kazıkların birbirine kilitlenmesiyle oluşturulan su geçirimsiz geçici veya kalıcı iksa perdesidir.</div>
       <h2 id="nedir">Palplanş İksa Nedir?</h2>
@@ -1411,6 +1504,9 @@ export const teknikler: Teknik[] = [
     title:'Kesişen Kazıklı (Secant Pile) İksa', shortTitle:'Secant Pile',
     excerpt:'Birbirine bindirmeli fore kazıklar ile su geçirimsiz sürekli iksa perdesi.',
     image:u(ph[4],480,320), heroImage:u(ph[4],1200,500),
+    badge: 'Premium', badgeType: 'premium',
+    metrics: [{ label: 'Kazık Çapı', value: 'Ø60–120 cm' }, { label: 'Sürekli perde', value: 'Su geçirmez' }],
+    comparison: { maxDerinlik: '25 m', derinlikBar: 62, maliyetLabel: 'Yüksek', maliyetBar: 80, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Secant pile; önce düşük mukavemetli dolgu kazıklar, ardından aralarına donatılı ana kazıklar yapılarak sürekli su geçirimsiz perde oluşturulan iksa yöntemidir.</div>
       <h2 id="nedir">Secant Pile Nedir?</h2>
@@ -1427,6 +1523,9 @@ export const teknikler: Teknik[] = [
     title:'Mini Kazıklı İksa', shortTitle:'Mini Kazıklı İksa',
     excerpt:'Dar alanlarda mikro kazıklarla hafif iksa perdesi oluşturma.',
     image:u(ph[6],480,320), heroImage:u(ph[6],1200,500),
+    badge: 'Dar Alan', badgeType: 'ozel',
+    metrics: [{ label: 'Kazık Çapı', value: 'Ø15–30 cm' }, { label: 'Min. Çalışma Alanı', value: '2,5 m tavan' }],
+    comparison: { maxDerinlik: '12 m', derinlikBar: 30, maliyetLabel: 'Orta', maliyetBar: 45, suGecirimsizlik: 'Yok', kaliciKullanim: 'Duruma Göre' },
     content:`
       <div class="aeo-box">Mini kazıklı iksa; sınırlı çalışma alanlarında 150–300 mm çaplı mikro kazıkların perde oluşturacak şekilde uygulanmasıdır.</div>
       <h2 id="nedir">Mini Kazıklı İksa Nedir?</h2>
@@ -1443,6 +1542,9 @@ export const teknikler: Teknik[] = [
     title:'Toprakarme Duvar (MSE)', shortTitle:'Toprakarme Duvar',
     excerpt:'Geosentetik donatılı zemin yapısı ile esnek ve ekonomik dayanma duvarı.',
     image:u(ph[8],480,320), heroImage:u(ph[8],1200,500),
+    badge: 'Ekonomik', badgeType: 'ekonomik',
+    metrics: [{ label: 'Maks. Yükseklik', value: '≤ 30 m' }, { label: 'Maliyet Avantajı', value: '%30–50' }],
+    comparison: { maxDerinlik: '30 m', derinlikBar: 75, maliyetLabel: 'Düşük', maliyetBar: 30, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Toprakarme duvar (MSE — Mechanically Stabilized Earth); zemin dolgu ile geosentetik veya çelik şerit donatıların katmanlı olarak birleştirilmesiyle oluşturulan esnek dayanma yapısıdır.</div>
       <h2 id="nedir">Toprakarme Duvar Nedir?</h2>
@@ -1459,6 +1561,9 @@ export const teknikler: Teknik[] = [
     title:'Püskürtme Beton (Shotcrete)', shortTitle:'Püskürtme Beton',
     excerpt:'Basınçlı beton püskürtme ile şev yüzeyi kaplaması ve iksa destek katmanı.',
     image:u(ph[1],480,320), heroImage:u(ph[1],1200,500),
+    badge: 'Yaygın', badgeType: 'popular',
+    metrics: [{ label: 'Kalınlık', value: '8–15 cm' }, { label: 'Dayanım Sınıfı', value: 'C25–C40' }],
+    comparison: { maxDerinlik: 'Yüzey', derinlikBar: 18, maliyetLabel: 'Düşük', maliyetBar: 20, suGecirimsizlik: 'Kısmi', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Püskürtme beton (shotcrete); yüksek basınçlı hava veya pompa ile beton karışımının doğrudan yüzeye püskürtülmesiyle uygulanan yapısal kaplama yöntemidir.</div>
       <h2 id="nedir">Püskürtme Beton Nedir?</h2>
