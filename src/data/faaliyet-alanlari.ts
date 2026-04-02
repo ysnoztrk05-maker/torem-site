@@ -1499,6 +1499,9 @@ export const teknikler: Teknik[] = [
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout, yüksek basınçlı (300–600 bar) çimento şerbetinin özel nozzle\'lardan zemine enjekte edilerek zemin partikülleriyle karıştırılması ve yerinde silindirik çimento-zemin kolonları (soilcrete) oluşturulması yöntemidir. TS EN 12716 standardına göre tasarlanır ve uygulanır.</div>
 
 <p>Jet grout, geoteknik mühendisliğin en çok yönlü zemin iyileştirme tekniklerinden biridir. Yöntemin temelinde yüksek enerjili akışkan jetinin zemin yapısını parçalayarak çimento ile karıştırması yatar. Ortaya çıkan çimento-zemin karışımı (soilcrete), doğal zeminden çok daha yüksek dayanıma sahiptir.</p>
+<div class="saha-notu">
+<strong>📋 Mevzuat Notu:</strong> TS EN 12716 standardı, jet grout uygulamasının her aşamasını düzenler — deneme kolonundan parametre izlemeye kadar. Sahada bu standardın en çok atlanan maddesi: deneme kolonu yapılmadan üretime geçilmesi. Yönetmelik buna izin vermez, ama bütçe baskısıyla atlayan firmalar var. Sonucu: kolon çapı tutmaz, dayanım düşer, perde sızar.
+</div>
 
 <p>Jet grout terimi, İngilizce "jet" (yüksek basınçlı akışkan püskürtme) ve "grout" (çimento şerbeti) kelimelerinden türetilmiştir. Uluslararası literatürde "soilcrete" veya "jet grouting" olarak da bilinir. Türkiye\'de yaygın kullanımı 1990\'lı yılların sonunda başlamış, özellikle İstanbul metro projeleri ve büyük ölçekli derin kazı uygulamalarıyla hız kazanmıştır.</p>
 
@@ -1522,6 +1525,9 @@ export const teknikler: Teknik[] = [
 
 <figure><img src="/images/jet-grout/svg_jet_grout_akis.svg" alt="Jet grout uygulama akış şeması — delme, enjeksiyon, kolon oluşumu ve kalite kontrol adımları" loading="lazy" decoding="async" width="860" height="620" /><figcaption>Jet grout uygulama süreci — 4 temel aşama ve parametreler</figcaption></figure>
 <figure><img src="/images/jet-grout/jet-grout-enjeksiyon.webp" alt="Jet grout enjeksiyon anı — yüksek basınçlı çimento şerbeti nozzle'dan zemine enjekte ediliyor" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Yüksek basınçlı enjeksiyon — çimento şerbeti 300–600 bar basınçla zemine enjekte edilirken</figcaption></figure>
+<div class="saha-notu">
+<strong>⚠️ Saha Uyarısı:</strong> Spoil (artık malzeme) çıkışı aniden durursa ALARM: kuyu içi basınç tehlikeli şekilde artmış demektir. Çevre zeminde istenmeyen kabarmalar ve yüzey kalkmaları başlayabilir. Spoil kanalının tıkanmaması için delgi çapı yeterli genişlikte olmalı ve spoil akışı sürekli izlenmeli. Tıkanma fark edilirse enjeksiyon derhal durdurulmalı.
+</div>
 <div class="process-steps">
   <div class="step">
     <div><h4>Delme Aşaması</h4>
@@ -1554,6 +1560,9 @@ export const teknikler: Teknik[] = [
 
 <figure><img src="/images/jet-grout/svg_jet_grout_sistemler.svg" alt="Jet1, Jet2, Jet3 sistem karşılaştırması — kolon çapları, basınç değerleri ve uygun zemin tipleri" loading="lazy" decoding="async" width="860" height="520" /><figcaption>Jet grout sistemleri karşılaştırması — Jet1 (tek), Jet2 (çift) ve Jet3 (üç akışkan)</figcaption></figure>
 <figure><img src="/images/jet-grout/jet-grout-kolon.webp" alt="Jet grout kolonu yakın çekim — soilcrete kolon yapısı ve çimento-zemin karışım detayı" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout kolonu — çimento ve zemin partiküllerinin karışımıyla oluşan soilcrete yapısı</figcaption></figure>
+<div class="saha-notu">
+<strong>💡 Pratik İpucu:</strong> Sistem seçimi sahada hızlı karar gerektiren bir süreçtir. Deneme kolonu Jet2 ile yapıldı ama hedef çapa ulaşılamadıysa, aynı proje içinde Jet3\'e geçiş kararı verilmeli. Zemin profili değiştikçe sistem de değişebilir — tek bir projede hem Jet1 hem Jet3 kullanıldığı oluyor. Esnek olmayan firmalar projeyi riske atar.
+</div>
 <div class="card-grid">
   <div class="grid-card">
     <h4>Jet1 — Tek Akışkan Sistemi</h4>
@@ -1585,6 +1594,9 @@ export const teknikler: Teknik[] = [
 
 <h2 id="hangi-zeminlerde-uygulanir">Hangi Zeminlerde Uygulanır?</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout; kum, silt, kil ve çakıl içeren zeminlerde uygulanır. Gevşek kumlu zeminlerde en yüksek verim elde edilirken, sert plastik killer ve organik topraklarda etkinliği düşer. Çok sert kaya formasyonlarında uygulanamaz.</div>
+<div class="saha-notu">
+<strong>🔍 Zemin Okuma:</strong> Sondaj logunda plastisite indeksi (PI) 40\'ın üzerinde çıkan kil tabakaları gördüğünüzde jet grout verimliliği ciddi düşer. Jet akımı bu killeri yeterince parçalayamaz — kolon çapı beklenenden %30-40 küçük kalır. Bu tabakalarda deep soil mixing veya alternatif yöntem düşünülmeli. Zemin etüdünü okumadan jet grout teklifi veren firmaya güvenmeyin.
+</div>
 
 <div class="table-wrapper"><table>
 <thead><tr><th>Zemin Tipi</th><th>Uygunluk</th><th>Önerilen Sistem</th><th>Beklenen Kolon Çapı</th><th>Beklenen Dayanım</th></tr></thead>
@@ -1606,6 +1618,9 @@ export const teknikler: Teknik[] = [
 
 <h2 id="jet-grout-uygulama-alanlari">Jet Grout Uygulama Alanları</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout; temel takviyesi, geçirimsizlik perdesi, tünel ön destekleme, sıvılaşma önleme, iksa perdesi ve mevcut yapı altı iyileştirme gibi çok çeşitli geoteknik uygulamalarda kullanılır.</div>
+<div class="saha-notu">
+<strong>🏗️ Saha Deneyimi:</strong> Derin kazı projelerinde jet grout perdesi uygulanırken en sık yapılan hata, kolon bindirme mesafesini yetersiz tutmaktır. Kolonlar arası sızıntıyı önlemek için minimum 15–20 cm bindirme şarttır — bazı zeminlerde bu 30 cm\'ye çıkar. Bindirme yetersizse perde "elek" gibi su geçirir ve kazı tabanı su altında kalır. Perdede her kolonun as-built koordinatı kaydedilmeli ve sapma toleransı (±50 mm) aşılmamalıdır.
+</div>
 
 <div class="card-grid">
   <div class="grid-card">
@@ -1711,6 +1726,9 @@ export const teknikler: Teknik[] = [
 
 <h2 id="jet-grout-fiyatlari-2026">Jet Grout Fiyatları 2026</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout fiyatları; zemin tipi, kolon çapı, derinlik, sistem tipi (Jet1/Jet2/Jet3), mobilizasyon mesafesi ve proje büyüklüğüne bağlı olarak değişir. Kesin fiyat, saha koşullarının değerlendirilmesinden sonra proje bazlı belirlenir.</div>
+<div class="saha-notu">
+<strong>💰 Maliyet Notu:</strong> Jet grout maliyetinin %30-40\'ı çimento gideridir. Özellikle Jet3 sisteminde metre başına 400-800 kg çimento tüketilir — büyük projelerde çimento tedarik sözleşmesi önceden yapılmazsa bütçe %15-20 şişebilir. Spoil bertaraf maliyeti de genellikle teklif dışı bırakılır ama ciddi bir kalemdir: proje büyüklüğüne göre toplam maliyetin %5-10\'u.
+</div>
 
 <div class="expert-tip"><strong>Uzman Notu:</strong> Aşağıdaki bilgiler genel maliyet faktörleridir. Her projenin zemin koşulları, erişim durumu ve tasarım gereksinimleri farklıdır. Kesin maliyet için saha incelemesi ve proje özel teklif gereklidir.</div>
 
@@ -1735,6 +1753,9 @@ export const teknikler: Teknik[] = [
 <h2 id="kalite-kontrol-ve-testler">Kalite Kontrol ve Testler</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout kalite kontrolü; deneme kolonu ile parametre optimizasyonu, üretim sırasında gerçek zamanlı parametre izleme, kolon başından karot alarak basınç dayanımı testi ve gerektiğinde statik yükleme deneyi ile yapılır. TS EN 12716 ve Eurocode 7 referans alınır.</div>
 
+<div class="saha-notu">
+<strong>🦺 İSG Notu:</strong> Jet grout şantiyesinde en büyük risk yüksek basınçlı hortum patlaması ve spoil sıçramasıdır. 300-600 bar basınçla çalışan hortumların bağlantı noktaları her vardiya başında kontrol edilmeli. Spoil havuzu çevresinde kaygan zemin oluşur — personelin kayma/düşme önleyici ekipman giymesi zorunlu. Enjeksiyon anında monitor ucuna 3 m\'den fazla yaklaşılmamalı.
+</div>
 <figure><img src="/images/jet-grout/jet-grout-test.webp" alt="Jet grout kalite kontrol — karot numunesi alınarak basınç dayanımı testi yapılıyor" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout kalite kontrolü — karot alımı ve basınç dayanımı testi</figcaption></figure>
 <h3>Deneme Kolonu (Test Column)</h3>
 <p>Jet grout uygulamasının en kritik aşamalarından biri deneme kolonu üretimidir. Deneme kolonu ile:</p>
@@ -1762,6 +1783,9 @@ export const teknikler: Teknik[] = [
 <h2 id="deprem-bolgelerinde-jet-grout">Deprem Bölgelerinde Jet Grout</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout, deprem bölgelerinde sıvılaşma önleme ve zemin rijitliğini artırma amacıyla yaygın kullanılır. TBDY 2018\'e göre ZD, ZE ve ZF sınıfı zeminlerde sıvılaşma potansiyeli tespit edildiğinde jet grout uygulaması en etkili iyileştirme yöntemlerinden biridir.</div>
 
+<div class="saha-notu">
+<strong>📋 Mevzuat Notu:</strong> TBDY 2018\'e göre sıvılaşma riski tespit edilen ZD ve ZE sınıfı zeminlerde iyileştirme zorunludur. Ancak yönetmelik hangi yöntemin kullanılacağını belirtmez — bu karar geoteknik mühendisinin sorumluluğundadır. Jet grout, sıvılaşma önlemede en yaygın tercih olmakla birlikte, zemin etüdü verilerine dayalı karşılaştırmalı analiz yapılmadan karar verilmemelidir.
+</div>
 <figure><img src="/images/jet-grout/jet-grout-deprem.webp" alt="Deprem bölgesinde jet grout uygulaması — sıvılaşma riski olan zeminde kolon imalatı" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Deprem bölgesinde jet grout — sıvılaşma önleme amaçlı zemin iyileştirme</figcaption></figure>
 <h3>Sıvılaşma ve Jet Grout</h3>
 <p>Sıvılaşma, gevşek kumlu ve suya doygun zeminlerin deprem titreşimleriyle taşıma gücünü kaybetmesi durumudur. Jet grout kolonları, sıvılaşma potansiyeli olan zeminde iki mekanizma ile koruma sağlar:</p>
