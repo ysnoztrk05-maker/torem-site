@@ -1503,7 +1503,7 @@ export const teknikler: Teknik[] = [
 <strong>📋 Mevzuat Notu:</strong> TS EN 12716 standardı, jet grout uygulamasının her aşamasını düzenler — deneme kolonundan parametre izlemeye kadar. Sahada bu standardın en çok atlanan maddesi: deneme kolonu yapılmadan üretime geçilmesi. Yönetmelik buna izin vermez, ama bütçe baskısıyla atlayan firmalar var. Sonucu: kolon çapı tutmaz, dayanım düşer, perde sızar.
 </div>
 
-<p>Jet grout terimi, İngilizce "jet" (yüksek basınçlı akışkan püskürtme) ve "grout" (çimento şerbeti) kelimelerinden türetilmiştir. Uluslararası literatürde "soilcrete" veya "jet grouting" olarak da bilinir. Türkiye\'de yaygın kullanımı 1990\'lı yılların sonunda başlamış, özellikle İstanbul metro projeleri ve büyük ölçekli derin kazı uygulamalarıyla hız kazanmıştır.</p>
+<p>Jet grout terimi, İngilizce "jet" (yüksek basınçlı akışkan püskürtme) ve "grout" (çimento şerbeti) kelimelerinden türetilmiştir. Uluslararası literatürde "soilcrete" veya "jet grouting" olarak da bilinir. Türkiye\'de yaygın kullanımı 1990\'lı yılların sonunda başlamış, özellikle İstanbul metro projeleri ve büyük ölçekli <a href="/faaliyet-alanlari/iksa-sistemleri/">derin kazı</a> uygulamalarıyla hız kazanmıştır.</p>
 
 <div class="stat-row">
   <div class="stat-card"><span class="stat-number">300–600</span><span class="stat-label">Bar Basınç</span></div>
@@ -1531,7 +1531,7 @@ export const teknikler: Teknik[] = [
 <div class="process-steps">
   <div class="step">
     <div><h4>Delme Aşaması</h4>
-    <p>Jet grout uygulamasının ilk aşamasında, çalışma platformu hazırlanır ve kolon noktaları aplikasyon planına göre işaretlenir. Delgi makinesi, hedef derinliğe kadar döner delgi (rotary drilling) yöntemiyle zemine girer. Delgi çapı genellikle 90–150 mm arasındadır. Delgi sırasında zemin profili gözlemlenir ve tasarım parametreleri son kez doğrulanır.</p>
+    <p>Jet grout uygulamasının ilk aşamasında, çalışma platformu hazırlanır ve kolon noktaları aplikasyon planına göre işaretlenir. Delgi makinesi, hedef derinliğe kadar döner delgi (rotary drilling) yöntemiyle zemine girer. Delgi çapı genellikle 90–150 mm arasındadır. Delgi sırasında <a href="/faaliyet-alanlari/geoteknik-proje/zemin-etudu/">zemin profili</a> gözlemlenir ve tasarım parametreleri son kez doğrulanır.</p>
     <p>Delgi derinliği proje gereksinimlerine göre 5 m ile 35+ m arasında değişir. Delgi sırasında yeraltı suyu seviyesi, zemin geçişleri ve olası engeller (eski temel, kaya blokları) kaydedilir.</p>
     </div>
   </div>
@@ -1612,7 +1612,7 @@ export const teknikler: Teknik[] = [
 </tbody>
 </table></div>
 
-<div class="expert-tip"><strong>Uzman Notu:</strong> Organik içeriği %5\'in üzerinde olan zeminlerde çimento-zemin bağı yeterli oluşmaz. Aşırı plastik killerde (PI > 40) erozyon verimliliği düşer ve kolon çapı küçülür. Bu zeminlerde jet grout yerine derin karıştırma (deep soil mixing) veya taş kolon gibi alternatif yöntemler değerlendirilmelidir.</div>
+<div class="expert-tip"><strong>Uzman Notu:</strong> Organik içeriği %5\'in üzerinde olan zeminlerde çimento-zemin bağı yeterli oluşmaz. Aşırı plastik killerde (PI > 40) erozyon verimliliği düşer ve kolon çapı küçülür. Bu zeminlerde jet grout yerine derin karıştırma (deep soil mixing) veya <a href="/faaliyet-alanlari/zemin-iyilestirme/tas-kolon/">taş kolon</a> gibi alternatif yöntemler değerlendirilmelidir.</div>
 
 <figure><img src="/images/jet-grout/jet-grout-uygulama.webp" alt="Jet grout uygulama alanı — derin kazı çevresinde geçirimsizlik perdesi oluşturma" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout uygulama alanı — derin kazı projesinde geçirimsizlik perdesi oluşturulması</figcaption></figure>
 
@@ -1675,7 +1675,7 @@ export const teknikler: Teknik[] = [
 </div>
 
 <h2 id="jet-grout-kolon-parametreleri">Jet Grout Kolon Parametreleri</h2>
-<div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout kolon parametreleri; enjeksiyon basıncı (300–600 bar), çimento debisi (80–300 lt/dk), çekme hızı (3–10 cm/dk), dönme hızı (6–30 devir/dk) ve nozzle çapı (1,5–4,0 mm) ile kontrol edilir. Bu parametreler deneme kolonunda optimize edilir.</div>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Jet grout kolon parametreleri; enjeksiyon basıncı (300–600 bar), çimento debisi (80–300 lt/dk), çekme hızı (3–10 cm/dk), dönme hızı (6–30 devir/dk) ve nozzle çapı (1,5–4,0 mm) ile kontrol edilir. Bu parametreler <a href="/faaliyet-alanlari/geoteknik-test-izleme/">deneme kolonunda</a> optimize edilir.</div>
 
 <figure><img src="/images/jet-grout/svg_jet_grout_kesit.svg" alt="Jet grout kolon kesit diyagramı — zemin katmanları içinde soilcrete kolon yapısı" loading="lazy" decoding="async" width="860" height="620" /><figcaption>Jet grout kolon kesit görünümü — zemin katmanlarını geçerek sağlam zemine ulaşan soilcrete kolon</figcaption></figure>
 <figure><img src="/images/jet-grout/jet-grout-ekipman.webp" alt="Jet grout ekipmanı — yüksek basınçlı pompa ünitesi ve enjeksiyon hortumları" loading="lazy" decoding="async" width="860" height="860" /><figcaption>Jet grout ekipmanı — yüksek basınçlı pompa ünitesi ve enjeksiyon sistemi</figcaption></figure>
@@ -1795,7 +1795,7 @@ export const teknikler: Teknik[] = [
 </ul>
 
 <h3>TBDY 2018 Kapsamında Jet Grout</h3>
-<p>Türkiye Bina Deprem Yönetmeliği 2018 (TBDY 2018), sıvılaşma riski tespit edilen sahalarda zemin iyileştirmesi yapılmasını önerir. Jet grout, TBDY 2018 kapsamında kabul gören zemin iyileştirme yöntemlerinden biridir. Sıvılaşma analizi SPT, CPT ve Vs verilerine göre yapılır.</p>
+<p>Türkiye Bina Deprem Yönetmeliği 2018 (TBDY 2018), sıvılaşma riski tespit edilen sahalarda <a href="/faaliyet-alanlari/zemin-iyilestirme/">zemin iyileştirmesi</a> yapılmasını önerir. Jet grout, TBDY 2018 kapsamında kabul gören zemin iyileştirme yöntemlerinden biridir. Sıvılaşma analizi <a href="/faaliyet-alanlari/geoteknik-test-izleme/statik-yukleme/">SPT, CPT ve Vs</a> verilerine göre yapılır.</p>
 
 <p>Deprem bölgelerinde jet grout tasarımında Eurocode 8 (sismik tasarım) ve Eurocode 7 (geoteknik tasarım) referans alınır. Tasarımda deprem yükleri altında kolon-zemin etkileşimi, kolon yer değiştirmeleri ve grup etkisi hesaba katılmalıdır.</p>
 
