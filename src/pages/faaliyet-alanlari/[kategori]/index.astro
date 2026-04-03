@@ -294,7 +294,8 @@ function kaliciIcon(val: string) {
 /* 1. HERO SECTION */
 .tz-hero {
     position: relative; background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
-    padding: 120px 0 90px; color: #fff; text-align: center; overflow: hidden; margin-top: -80px;
+    /* Topbar (~38px) + sticky header (72px) = 110px */
+    padding: 165px 0 90px; color: #fff; text-align: center; overflow: hidden; margin-top: -110px;
 }
 .tz-hero-pattern {
     position: absolute; inset: 0; opacity: 0.05;
@@ -314,15 +315,17 @@ function kaliciIcon(val: string) {
     border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-.tz-hero h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: #fff; }
-.tz-hero p { font-size: clamp(1.1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.85); font-weight: 300; line-height: 1.6; }
+/* Spesifik selector — global.css h1 { color: var(--color-primary) } override */
+header.tz-hero h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: #ffffff; }
+header.tz-hero p { font-size: clamp(1.1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.85); font-weight: 300; line-height: 1.6; }
 
 .tz-hero-wave { position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: translateY(1px); }
 .tz-hero-wave svg { display: block; width: calc(100% + 1.3px); height: 60px; }
-.tz-hero-wave .shape-fill { fill: #ffffff; }
+/* Overview section background = #F5F2ED krem — tam eşleşme */
+.tz-hero-wave .shape-fill { fill: var(--color-bg, #F5F2ED); }
 
 /* 2. OVERVIEW & AEO */
-.tz-overview { padding: 60px 0; background-color: #fff; }
+.tz-overview { padding: 60px 0; background-color: var(--color-bg, #F5F2ED); }
 .tz-overview-container { display: grid; grid-template-columns: 3fr 2fr; gap: 60px; align-items: center; }
 .tz-section-title { font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--navy); font-weight: 800; margin-bottom: 24px; }
 .tz-overview-content p { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
@@ -340,8 +343,8 @@ function kaliciIcon(val: string) {
 .tz-aeo-body strong { color: var(--text-main); font-weight: 700; }
 
 /* 3. SECTIONS COMMON */
-.tz-section { padding: 80px 0; background-color: #fff; }
-.tz-section-alt { padding: 80px 0; background-color: var(--bg-cream); border-top: 1px solid rgba(0,0,0,0.03); border-bottom: 1px solid rgba(0,0,0,0.03); }
+.tz-section { padding: 80px 0; background-color: #ffffff; }
+.tz-section-alt { padding: 80px 0; background-color: var(--color-bg, #F5F2ED); border-top: 1px solid rgba(0,0,0,0.03); border-bottom: 1px solid rgba(0,0,0,0.03); }
 .tz-center-header { text-align: center; max-width: 700px; margin: 0 auto 50px; }
 .tz-center-header h2 { font-size: clamp(2rem, 3vw, 2.5rem); color: var(--navy); font-weight: 800; margin-bottom: 15px; }
 .tz-center-header p { font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; }

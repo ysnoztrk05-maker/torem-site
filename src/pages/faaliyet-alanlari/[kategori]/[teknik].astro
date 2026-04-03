@@ -204,11 +204,12 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
 
 .tz-article-hero {
     background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
-    padding: 110px 0 90px;
+    /* Topbar (~38px) + header (72px) = 110px */
+    padding: 165px 0 90px;
     position: relative;
     text-align: center;
     color: #fff;
-    margin-top: -80px;
+    margin-top: -110px;
     overflow: hidden;
 }
 .tz-hero-pattern {
@@ -229,15 +230,17 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
     border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-.tz-article-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 800; line-height: 1.25; margin-bottom: 24px; color: #fff; text-wrap: balance; }
+/* Spesifik selector — global.css h1 { color: var(--color-primary) } override */
+header.tz-article-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 800; line-height: 1.25; margin-bottom: 24px; color: #ffffff; text-wrap: balance; }
 .tz-hero-excerpt { font-size: clamp(1.1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.85); line-height: 1.7; font-weight: 300; max-width: 720px; margin: 0 auto; }
 
 .tz-hero-wave { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 0; transform: translateY(1px); }
 .tz-hero-wave svg { display: block; width: calc(100% + 1.3px); height: 60px; }
-.tz-hero-wave .shape-fill { fill: var(--bg-cream); } /* Krem arkaplanla bütünleşir */
+/* global.css --color-bg: #F5F2ED — wave geçişi tam eşleşir */
+.tz-hero-wave .shape-fill { fill: var(--color-bg, #F5F2ED); }
 
-.tz-article-main { background-color: var(--bg-cream); padding: 50px 0 60px; }
-.tz-content-container { max-width: 800px; margin: 0 auto; } /* Optimal okuma genişliği, 70-80 karakter satır başına */
+.tz-article-main { background-color: var(--color-bg, #F5F2ED); padding: 50px 0 60px; }
+.tz-content-container { max-width: 800px; margin: 0 auto; padding: 0 var(--s-6); } /* Optimal okuma genişliği */
 
 /* --- TYPOGRAPHY (READABILITY STANDARTLARI) --- */
 .tz-readability-wrapper {

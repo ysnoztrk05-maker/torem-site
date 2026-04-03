@@ -135,14 +135,17 @@ import { kategoriler, getTekniklerByKategori } from '../../data/faaliyet-alanlar
     color: #fff;
     text-align: center;
     overflow: hidden;
-    margin-top: -80px; /* Basit layout hizalamaları için opsiyonel, theme'e göre ayarlanabilir */
+    /* Topbar (~38px) + sticky header (72px) = 110px — negatif margin ile header altına tam oturur */
+    margin-top: -110px;
+    padding-top: 155px; /* -margin + orijinal padding = içerik yerinde kalır */
 }
 
 .tz-hero-wave {
     position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: translateY(1px);
 }
 .tz-hero-wave svg { display: block; width: calc(100% + 1.3px); height: 60px; }
-.tz-hero-wave .shape-fill { fill: var(--bg-cream); }
+/* var(--color-bg) = #F5F2ED — global body background ile tam eşleşme */
+.tz-hero-wave .shape-fill { fill: var(--color-bg, #F5F2ED); }
 
 .tz-hero-pattern {
     position: absolute; inset: 0; opacity: 0.05;
@@ -161,17 +164,18 @@ import { kategoriler, getTekniklerByKategori } from '../../data/faaliyet-alanlar
     border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
-.tz-category-hero h1 {
-    font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: #fff;
+/* Spesifik selectors — global.css h1/h2/h3 { color: var(--color-primary) } kuralını override eder */
+header.tz-category-hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: #ffffff;
 }
-.tz-category-hero h1 span { color: var(--gold); }
-.tz-category-hero p {
+header.tz-category-hero h1 span { color: var(--gold); }
+header.tz-category-hero p {
     font-size: clamp(1.1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.85); font-weight: 300; line-height: 1.6;
 }
 
 /* 2. SERVICES GRID */
 .tz-services-section {
-    background-color: var(--bg-cream);
+    background-color: var(--color-bg); /* global.css --color-bg: #F5F2ED ile senkron */
     padding: 20px 0 80px;
 }
 
