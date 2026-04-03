@@ -84,7 +84,7 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
 ---
 
 {isRich ? (
-  <!-- Zengin içerikli sayfalar: ServiceArticleLayout -->
+  <!-- Zengin içerikli sayfalar: ServiceArticleLayout (O layout da kendisi update edilebilir, ancak genelde core logic buradadır) -->
   <ServiceArticleLayout
     title={`${teknik.title} | Torem Zemin`}
     description={teknik.excerpt}
@@ -98,10 +98,12 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
     ogType="article"
     schema={pageSchemas}
   >
-    <Fragment set:html={teknik.content} />
+    <div class="tz-readability-wrapper">
+       <Fragment set:html={teknik.content} />
+    </div>
   </ServiceArticleLayout>
 ) : (
-  <!-- Kısa içerikli sayfalar: BaseLayout -->
+  <!-- Kısa içerikli sayfalar: BaseLayout ile V2.0 Premium Readability Deneyimi -->
   <BaseLayout
     title={`${teknik.title} | Torem Zemin`}
     description={teknik.excerpt}
@@ -109,95 +111,206 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
     ogType="article"
     schema={pageSchemas}
   >
-    <section class="teknik-hero">
-      <div class="teknik-hero__bg" aria-hidden="true"></div>
-      <div class="container teknik-hero__inner">
-        <p class="eyebrow">{kategori.title}</p>
+    <!-- PREMIUM V2 HERO -->
+    <header class="tz-article-hero">
+      <div class="tz-hero-pattern"></div>
+      <div class="container tz-hero-inner">
+        <nav class="tz-breadcrumb" aria-label="Breadcrumb">
+          <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href="/"><span itemprop="name">Ana Sayfa</span></a>
+              <meta itemprop="position" content="1" />
+            </li>
+            <li>/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href="/faaliyet-alanlari/"><span itemprop="name">Faaliyet Alanları</span></a>
+              <meta itemprop="position" content="2" />
+            </li>
+            <li>/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+              <a itemprop="item" href={`/faaliyet-alanlari/${kategori.slug}/`}><span itemprop="name">{kategori.title}</span></a>
+              <meta itemprop="position" content="3" />
+            </li>
+            <li>/</li>
+            <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
+              <span itemprop="name" style="color:var(--gold);">{teknik.shortTitle}</span>
+              <meta itemprop="position" content="4" />
+            </li>
+          </ol>
+        </nav>
+
+        <span class="tz-badge-gold">{kategori.title} Yöntemi</span>
         <h1>{teknik.title}</h1>
-        <p>{teknik.excerpt}</p>
+        <p class="tz-hero-excerpt">{teknik.excerpt}</p>
       </div>
-    </section>
 
-    <nav class="breadcrumb-bar" aria-label="Breadcrumb">
-      <div class="container">
-        <ol class="bc" itemscope itemtype="https://schema.org/BreadcrumbList">
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="/"><span itemprop="name">Ana Sayfa</span></a>
-            <meta itemprop="position" content="1" />
-          </li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href="/faaliyet-alanlari/"><span itemprop="name">Faaliyet Alanları</span></a>
-            <meta itemprop="position" content="2" />
-          </li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-            <a itemprop="item" href={`/faaliyet-alanlari/${kategori.slug}/`}><span itemprop="name">{kategori.title}</span></a>
-            <meta itemprop="position" content="3" />
-          </li>
-          <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem" aria-current="page">
-            <span itemprop="name">{teknik.shortTitle}</span>
-            <meta itemprop="position" content="4" />
-          </li>
-        </ol>
+      <div class="tz-hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,115.11,192.5,102.7c54.74-11,109.9-38.35,164.71-36.4C366.5,67,344.6,60.77,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
       </div>
-    </nav>
+    </header>
 
-    <section class="section">
-      <div class="container teknik-content">
-        <article class="teknik-article" set:html={teknik.content} />
+    <main class="tz-article-main">
+      <div class="container tz-content-container">
+        
+        <!-- YAZI İÇERİĞİ -->
+        <article class="tz-readability-wrapper tz-article-body" set:html={teknik.content} />
 
+        <!-- SIK SORULAN SORULAR -->
         {teknik.faq.length > 0 && (
-          <div class="teknik-faq">
-            <h2>Sık Sorulan Sorular</h2>
-            {teknik.faq.map((item) => (
-              <details class="faq-item">
-                <summary>{item.q}</summary>
-                <p>{item.a}</p>
-              </details>
-            ))}
+          <div class="tz-article-faq">
+            <h2>{teknik.shortTitle} Hakkında Merak Edilenler</h2>
+            <div class="tz-faq-group">
+              {teknik.faq.map((item) => (
+                <details class="tz-faq-item">
+                  <summary>{item.q}
+                     <svg class="tz-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                  </summary>
+                  <div class="tz-faq-body">
+                     <p>{item.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
           </div>
         )}
 
-        <CTABox title={`${teknik.shortTitle} Projeleriniz İçin Teklif Alın`} />
       </div>
-    </section>
+    </main>
+    
+    <div class="container" style="padding-bottom: 80px;">
+      <CTABox title={`${teknik.shortTitle} Çözümleri İçin Uzmanlarımızla Görüşün`} />
+    </div>
+
   </BaseLayout>
 )}
 
-<style>
-.eyebrow { font-size:var(--text-sm); font-weight:700; color:#E8A85A; text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
-.teknik-hero {
-  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  padding-block:var(--s-20) var(--s-16); color:var(--color-white);
-  position:relative; overflow:hidden; text-align:center;
-}
-.teknik-hero__bg { position:absolute; inset:0; background:radial-gradient(ellipse at 30% 60%, rgba(74,127,165,.25) 0%, transparent 55%); pointer-events:none; }
-.teknik-hero__inner { position:relative; z-index:1; max-width:700px; margin-inline:auto; }
-.teknik-hero h1 { color:var(--color-white); font-size:var(--text-4xl); margin-bottom:var(--s-4); }
-.teknik-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); }
+<style is:global>
+/* =========================================================================
+   TOREM ZEMİN V2.0 - MAKALE & TEKNİK YAZI (READABILITY) STİLLERİ
+   (is:global çünkü Astro set:html ile gelen içeriklerde local scope çalışmaz)
+   ========================================================================= */
 
-.breadcrumb-bar { background:var(--color-white); border-bottom:1px solid var(--color-border); padding-block:var(--s-3); }
-.bc { display:flex; flex-wrap:wrap; gap:var(--s-1); font-size:var(--text-sm); color:var(--color-text-muted); list-style:none; }
-.bc li+li::before { content:'›'; margin-right:var(--s-1); }
-.bc a { color:var(--color-accent); }
-.bc a:hover { color:var(--color-highlight); }
-
-.teknik-content { max-width:var(--content-width); margin-inline:auto; }
-.teknik-article { margin-bottom:var(--s-12); }
-.teknik-article :global(h2) { font-size:var(--text-2xl); margin-top:var(--s-10); margin-bottom:var(--s-4); color:var(--color-primary); }
-.teknik-article :global(p) { color:var(--color-text-muted); line-height:1.85; margin-bottom:var(--s-4); }
-.teknik-article :global(ul), .teknik-article :global(ol) { padding-left:var(--s-6); margin-bottom:var(--s-5); color:var(--color-text-muted); line-height:1.85; }
-.teknik-article :global(li) { margin-bottom:var(--s-2); }
-.teknik-article :global(.aeo-box) {
-  background:var(--color-bg); border-left:4px solid var(--color-highlight);
-  padding:var(--s-5) var(--s-6); border-radius:0 var(--r-md) var(--r-md) 0;
-  font-size:var(--text-lg); line-height:1.75; color:var(--color-text); margin-bottom:var(--s-8);
+:root {
+    --navy-deep: #001530;
+    --navy: #002147;
+    --navy-light: #003366;
+    --gold: #d4af37;
+    --bg-cream: #fafaf7;
+    --text-article: #33333e; /* Salt siyah yerine daha yumuşak, okunabilir bir ton */
+    --text-muted: #5a5a70;
 }
 
-.teknik-faq { margin-bottom:var(--s-12); }
-.teknik-faq h2 { font-size:var(--text-2xl); margin-bottom:var(--s-6); }
-.faq-item { border:1px solid var(--color-border); border-radius:var(--r-lg); margin-bottom:var(--s-3); overflow:hidden; }
-.faq-item summary { padding:var(--s-4) var(--s-5); font-weight:600; cursor:pointer; list-style:none; display:flex; align-items:center; justify-content:space-between; }
-.faq-item summary::after { content:'+'; font-size:var(--text-xl); color:var(--color-highlight); flex-shrink:0; margin-left:var(--s-3); }
-.faq-item[open] summary::after { content:'−'; }
-.faq-item p { padding:0 var(--s-5) var(--s-4); color:var(--color-text-muted); line-height:1.75; margin:0; }
+.tz-article-hero {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+    padding: 110px 0 90px;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    margin-top: -80px;
+    overflow: hidden;
+}
+.tz-hero-pattern {
+    position: absolute; inset: 0; opacity: 0.05;
+    background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+    background-size: 30px 30px; z-index: 1;
+}
+
+.tz-hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+
+.tz-breadcrumb ol { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 25px; }
+.tz-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.tz-breadcrumb a:hover { color: var(--gold); }
+
+.tz-badge-gold {
+    display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold);
+    padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; margin-bottom: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.tz-article-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight: 800; line-height: 1.25; margin-bottom: 24px; color: #fff; text-wrap: balance; }
+.tz-hero-excerpt { font-size: clamp(1.1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.85); line-height: 1.7; font-weight: 300; max-width: 720px; margin: 0 auto; }
+
+.tz-hero-wave { position: absolute; bottom: 0; left: 0; width: 100%; line-height: 0; transform: translateY(1px); }
+.tz-hero-wave svg { display: block; width: calc(100% + 1.3px); height: 60px; }
+.tz-hero-wave .shape-fill { fill: var(--bg-cream); } /* Krem arkaplanla bütünleşir */
+
+.tz-article-main { background-color: var(--bg-cream); padding: 50px 0 60px; }
+.tz-content-container { max-width: 800px; margin: 0 auto; } /* Optimal okuma genişliği, 70-80 karakter satır başına */
+
+/* --- TYPOGRAPHY (READABILITY STANDARTLARI) --- */
+.tz-readability-wrapper {
+    font-size: 1.1rem; /* 17.6px */
+    line-height: 1.85; /* Optik akışkanlık için geniş line-height */
+    color: var(--text-article);
+    font-family: inherit;
+}
+
+.tz-readability-wrapper p { margin-bottom: 1.5rem; }
+.tz-readability-wrapper p strong { font-weight: 700; color: var(--navy); }
+
+.tz-readability-wrapper h2 {
+    font-size: 2.1rem; font-weight: 800; color: var(--navy); margin-top: 3rem; margin-bottom: 1.2rem; line-height: 1.3;
+    position: relative; padding-bottom: 15px; border-bottom: 2px solid rgba(0,33,71,0.05);
+}
+.tz-readability-wrapper h2::after { content:''; position: absolute; left:0; bottom:-2px; width:60px; height:2px; background:var(--gold); }
+
+.tz-readability-wrapper h3 { font-size: 1.5rem; font-weight: 700; color: var(--navy-light); margin-top: 2.5rem; margin-bottom: 1rem; }
+.tz-readability-wrapper h4 { font-size: 1.25rem; font-weight: 700; color: var(--text-article); margin-top: 2rem; margin-bottom: 0.8rem; }
+
+.tz-readability-wrapper ul,
+.tz-readability-wrapper ol { margin-bottom: 2rem; padding-left: 1.5rem; }
+
+.tz-readability-wrapper li { margin-bottom: 0.8rem; padding-left: 0.5rem; }
+.tz-readability-wrapper li::marker { color: var(--gold); font-weight: bold; } /* Listelerde altın markör */
+
+.tz-readability-wrapper img { width: 100%; height: auto; border-radius: 12px; margin: 2.5rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.tz-readability-wrapper figure { margin: 2.5rem 0; }
+.tz-readability-wrapper figcaption { text-align: center; font-size: 0.9rem; color: var(--text-muted); padding-top: 0.8rem; font-style: italic; }
+
+.tz-readability-wrapper blockquote {
+    font-size: 1.25rem; font-style: italic; font-weight: 300; border-left: 4px solid var(--gold);
+    padding: 1.5rem 2rem; margin: 3rem 0; background-color: #fff; color: var(--navy); border-radius: 0 12px 12px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.tz-readability-wrapper table { width: 100%; border-collapse: collapse; margin: 2.5rem 0; font-size: 0.95rem; background:#fff; border-radius:8px; overflow:hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+.tz-readability-wrapper th { background: var(--navy); color: #fff; padding: 15px; font-weight: 600; text-align: left; }
+.tz-readability-wrapper td { padding: 15px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.tz-readability-wrapper tr:nth-child(even) td { background-color: rgba(0,0,0,0.01); }
+
+/* V2 SEO AEO (Answer Engine Optimization) Box */
+.tz-readability-wrapper .aeo-box {
+    background: #fff; border-left: 4px solid var(--gold); padding: 2rem; border-radius: 0 12px 12px 0;
+    font-size: 1.05rem; line-height: 1.7; color: var(--text-article); margin: 3rem 0; box-shadow: 0 10px 30px rgba(0,33,71,0.05);
+}
+.tz-readability-wrapper .aeo-box strong { font-size: 1.2rem; display: block; margin-bottom: 10px; color: var(--navy); }
+
+/* --- FAQ BÖLÜMÜ --- */
+.tz-article-faq { margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(0,0,0,0.05); }
+.tz-article-faq h2 { font-size: 2rem; font-weight: 800; color: var(--navy); margin-bottom: 2rem; text-align: center; }
+
+.tz-faq-group { max-width: 800px; margin: 0 auto; }
+.tz-faq-item {
+    background: #fff; border: 1px solid rgba(0,0,0,0.05); border-radius: 8px; margin-bottom: 12px;
+    overflow: hidden; transition: box-shadow 0.3s ease;
+}
+.tz-faq-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+.tz-faq-item summary {
+    display: flex; justify-content: space-between; align-items: center; padding: 20px 24px;
+    font-size: 1.05rem; font-weight: 700; color: var(--navy); cursor: pointer; list-style: none; user-select: none;
+}
+.tz-faq-item summary::-webkit-details-marker { display: none; }
+.tz-faq-icon { width: 22px; height: 22px; transition: transform 0.3s ease; color: var(--gold); }
+.tz-faq-item[open] summary { border-bottom: 1px solid rgba(0,0,0,0.05); }
+.tz-faq-item[open] .tz-faq-icon { transform: rotate(180deg); }
+.tz-faq-body { padding: 20px 24px; color: var(--text-muted); font-size: 1rem; line-height: 1.7; background-color: var(--bg-cream); }
+.tz-faq-body p { margin: 0; }
+
+@media (max-width: 768px) {
+    .tz-content-container { padding: 0; }
+    .tz-readability-wrapper { font-size: 1.05rem; }
+    .tz-article-hero { padding: 90px 20px 60px; }
+}
 </style>
