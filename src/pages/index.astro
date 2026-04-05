@@ -62,13 +62,10 @@ const faqItems = [
     </div>
     <div class="hero__wave" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--color-bg)"/>
+        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--color-white)"/>
       </svg>
     </div>
   </section>
-
-  <!-- ░░ STATS ░░ -->
-  <StatsCounter stats={stats} />
 
   <!-- ░░ REFERANS LOGO BANDI ░░ -->
   <section class="logos-band" aria-label="Referans müşterilerimiz">
@@ -102,6 +99,9 @@ const faqItems = [
       </div>
     </div>
   </section>
+
+  <!-- ░░ STATS ░░ -->
+  <StatsCounter stats={stats} />
 
   <!-- ░░ HİZMETLER ░░ -->
   <section class="section">
@@ -363,22 +363,27 @@ const faqItems = [
   grid-template-columns: 1fr 1fr;
   overflow: hidden;
   background: var(--color-primary);
+  margin-top: -110px;
 }
 .hero__bg {
   position:absolute; inset:0;
-  background: radial-gradient(ellipse at 20% 60%, rgba(46,80,119,0.5) 0%, transparent 60%);
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
   pointer-events:none; z-index:1;
 }
 .hero__inner {
   position:relative; z-index:2;
   display:flex; flex-direction:column; justify-content:center;
   padding-block: var(--s-24);
+  padding-top: calc(var(--s-24) + 110px);
   grid-column:1;
 }
 .hero__tag {
   display:inline-flex; align-self:flex-start;
-  background:rgba(200,135,58,.15); color:#E8A85A;
-  border:1px solid rgba(200,135,58,.35);
+  background:rgba(212,175,55,.15); color:var(--color-highlight);
+  border:1px solid rgba(212,175,55,.35);
   padding:.3rem .9rem; border-radius:999px;
   font-size:var(--text-sm); font-weight:600; letter-spacing:.05em; text-transform:uppercase;
   margin-bottom:var(--s-5);
@@ -387,7 +392,7 @@ const faqItems = [
   color:var(--color-white); font-size:clamp(2.25rem, 4vw + 1rem, 3.5rem);
   line-height:1.1; margin-bottom:var(--s-5);
 }
-.hero__title em { font-style:normal; color:#E8A85A; }
+.hero__title em { font-style:normal; color:var(--color-highlight); }
 .hero__sub {
   color:rgba(255,255,255,.75); font-size:var(--text-lg); line-height:1.7;
   max-width:520px; margin-bottom:var(--s-8);
@@ -466,10 +471,10 @@ const faqItems = [
 .ref-card { border-radius:var(--r-lg); overflow:hidden; position:relative; }
 .ref-card img { width:100%; aspect-ratio:16/10; object-fit:cover; display:block; }
 .ref-card__info {
-  position:absolute; inset:0; background:linear-gradient(to top, rgba(27,43,58,.92) 40%, transparent 100%);
+  position:absolute; inset:0; background:linear-gradient(to top, rgba(0,21,71,.92) 40%, transparent 100%);
   display:flex; flex-direction:column; justify-content:flex-end; padding:var(--s-5);
 }
-.ref-card__type { font-size:var(--text-xs); color:var(--color-highlight-light,#E8A85A); text-transform:uppercase; letter-spacing:.06em; font-weight:600; margin-bottom:var(--s-1); }
+.ref-card__type { font-size:var(--text-xs); color:var(--color-highlight-light,#f0cc5c); text-transform:uppercase; letter-spacing:.06em; font-weight:600; margin-bottom:var(--s-1); }
 .ref-card__info strong { color:var(--color-white); font-size:var(--text-lg); display:block; margin-bottom:var(--s-1); }
 .ref-card__info p  { color:rgba(255,255,255,.65); font-size:var(--text-sm); margin:0; }
 @media (max-width:900px) { .ref-grid { grid-template-columns:1fr 1fr; } }

@@ -7,32 +7,95 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Aradığınız sayfa bulunamadı."
   noindex={true}
 >
-  <div class="not-found section">
-    <div class="container not-found__inner text-center">
-      <div class="not-found__code" aria-hidden="true">404</div>
+  <header class="nf-hero">
+    <div class="nf-hero__bg" aria-hidden="true"></div>
+    <div class="container nf-hero__inner">
+      <span class="gold-badge">404 Hatası</span>
+      <div class="nf-code" aria-hidden="true">404</div>
       <h1>Sayfa Bulunamadı</h1>
       <p>Aradığınız sayfa kaldırılmış, taşınmış veya hiç var olmamış olabilir.</p>
-      <div class="not-found__actions">
-        <a href="/" class="btn btn--primary">Ana Sayfaya Dön</a>
-        <a href="/hizmetlerimiz/" class="btn btn--ghost">Hizmetlerimiz</a>
-        <a href="/iletisim/" class="btn btn--ghost">İletişim</a>
+      <div class="nf-actions">
+        <a href="/" class="btn btn--primary btn--lg">Ana Sayfaya Dön</a>
+        <a href="/hizmetlerimiz/" class="btn btn--outline btn--lg">Hizmetlerimiz</a>
       </div>
     </div>
-  </div>
+    <div class="nf-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)" />
+      </svg>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container nf-links">
+      <p class="eyebrow text-center">Hızlı Bağlantılar</p>
+      <div class="nf-grid">
+        <a href="/faaliyet-alanlari/" class="nf-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 2v20M12 2v20M18 2v20M4 8h16" stroke-linecap="round"/></svg>
+          <strong>Faaliyet Alanları</strong>
+          <span>8 uzmanlık alanında çözümler</span>
+        </a>
+        <a href="/projelerimiz/" class="nf-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <strong>Projelerimiz</strong>
+          <span>600+ tamamlanan proje</span>
+        </a>
+        <a href="/iletisim/" class="nf-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.5a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .84h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <strong>İletişim</strong>
+          <span>Ücretsiz keşif raporu alın</span>
+        </a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-.not-found { min-height: 60vh; display: flex; align-items: center; }
-.not-found__inner { max-width: 500px; margin-inline: auto; }
-.not-found__code {
-  font-size: 8rem;
-  font-weight: 700;
-  color: var(--color-highlight);
-  line-height: 1;
-  margin-bottom: var(--s-4);
-  opacity: 0.3;
+/* Hero */
+.nf-hero {
+  background:linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary) 100%);
+  margin-top:-110px;
+  padding-block:calc(var(--s-20) + 110px) calc(var(--s-16) + 60px);
+  color:var(--color-white); text-align:center;
+  position:relative; overflow:hidden;
 }
-.not-found h1 { margin-bottom: var(--s-4); }
-.not-found p  { color: var(--color-text-muted); margin-bottom: var(--s-8); }
-.not-found__actions { display: flex; gap: var(--s-4); justify-content: center; flex-wrap: wrap; }
+.nf-hero__bg {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:30px 30px; pointer-events:none; z-index:1;
+}
+.nf-hero__inner { position:relative; z-index:2; max-width:600px; margin-inline:auto; }
+.nf-hero__wave { position:absolute; bottom:0; left:0; right:0; height:60px; z-index:3; line-height:0; }
+.nf-hero__wave svg { width:100%; height:100%; }
+
+.nf-code {
+  font-size:clamp(5rem, 12vw, 9rem);
+  font-weight:800;
+  color:var(--color-highlight);
+  line-height:1;
+  opacity:0.25;
+  margin-block:var(--s-4);
+}
+.nf-hero h1 { color:var(--color-white); font-size:var(--text-4xl); margin-bottom:var(--s-4); }
+.nf-hero p  { color:rgba(255,255,255,.75); font-size:var(--text-lg); margin-bottom:var(--s-8); }
+.nf-actions { display:flex; gap:var(--s-4); justify-content:center; flex-wrap:wrap; }
+
+/* Quick links */
+.nf-links { max-width:860px; margin-inline:auto; }
+.nf-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-5); margin-top:var(--s-8); }
+.nf-card {
+  display:flex; flex-direction:column; align-items:center; text-align:center;
+  gap:var(--s-3); padding:var(--s-8) var(--s-5);
+  background:var(--color-white); border:1px solid var(--color-border);
+  border-radius:var(--r-xl); text-decoration:none;
+  transition:transform var(--t-base), box-shadow var(--t-base), border-color var(--t-fast);
+}
+.nf-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); border-color:var(--color-highlight); }
+.nf-card svg { width:40px; height:40px; color:var(--color-highlight); }
+.nf-card strong { font-size:var(--text-base); color:var(--color-primary); }
+.nf-card span { font-size:var(--text-sm); color:var(--color-text-muted); }
+
+@media (max-width:600px) { .nf-grid { grid-template-columns:1fr; } }
 </style>

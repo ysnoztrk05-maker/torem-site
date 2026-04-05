@@ -62,7 +62,7 @@ const currentPath = Astro.url.pathname;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#1B2B3A" />
+  <meta name="theme-color" content="#002147" />
   <title>{title}</title>
   <meta name="description" content={description} />
   {noindex && <meta name="robots" content="noindex,nofollow" />}
@@ -140,8 +140,10 @@ const currentPath = Astro.url.pathname;
   <main id="main-content"><slot /></main>
 
   <section class="cta-band">
+    <div class="cta-band__top-line" aria-hidden="true"></div>
     <div class="container cta-band__inner">
       <div>
+        <span class="cta-band__badge">Hızlı Yanıt Garantisi</span>
         <h2 class="cta-band__title">Projeniz İçin Profesyonel Çözüm mü Arıyorsunuz?</h2>
         <p class="cta-band__sub">Uzman ekibimizle zemin mühendisliği projelerinizi güvenle hayata geçirin.</p>
       </div>
@@ -397,7 +399,9 @@ const currentPath = Astro.url.pathname;
 }
 
 /* CTA Band */
-.cta-band { background:var(--color-primary); color:#fff; padding-block:var(--s-16); }
+.cta-band { background:linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary) 100%); color:#fff; padding-block:var(--s-16); position:relative; overflow:hidden; }
+.cta-band__top-line { position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--color-highlight), transparent); }
+.cta-band__badge { display:inline-block; background:rgba(212,175,55,0.15); color:var(--color-highlight); border:1px solid rgba(212,175,55,0.3); padding:.25rem .85rem; border-radius:999px; font-size:var(--text-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-bottom:var(--s-3); }
 .cta-band__inner { display:flex; align-items:center; justify-content:space-between; gap:var(--s-8); flex-wrap:wrap; }
 .cta-band__title { color:#fff; font-size:var(--text-3xl); margin-bottom:var(--s-2); }
 .cta-band__sub { color:rgba(255,255,255,.75); margin:0; }
@@ -405,7 +409,7 @@ const currentPath = Astro.url.pathname;
 @media(max-width:600px){ .cta-band__inner { flex-direction:column; text-align:center; } }
 
 /* Footer */
-.site-footer { background:#111D26; color:rgba(255,255,255,.8); padding-top:var(--s-16); }
+.site-footer { background:#0d1520; color:rgba(255,255,255,.8); padding-top:var(--s-16); }
 .site-footer__grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:var(--s-10); padding-bottom:var(--s-12); }
 .site-footer h4 { color:#fff; font-size:var(--text-base); margin-bottom:var(--s-5); }
 .site-footer__logo { display:flex; gap:.4rem; font-size:1.4rem; font-weight:700; margin-bottom:var(--s-4); color:#fff; }
@@ -431,13 +435,13 @@ const currentPath = Astro.url.pathname;
 .scroll-top {
   position:fixed; bottom:5rem; right:1.5rem;
   width:44px; height:44px; border-radius:50%;
-  background:var(--color-highlight); color:#fff;
+  background:var(--color-highlight); color:#1a1400;
   border:none; cursor:pointer;
   display:flex; align-items:center; justify-content:center;
-  z-index:899; box-shadow:0 3px 10px rgba(0,0,0,.2);
+  z-index:899; box-shadow:0 3px 10px rgba(212,175,55,.4);
   transition:transform var(--t-base), box-shadow var(--t-base), opacity var(--t-base);
   opacity:0.9;
 }
-.scroll-top:hover { transform:scale(1.1); box-shadow:0 5px 16px rgba(200,135,58,.4); opacity:1; }
+.scroll-top:hover { transform:scale(1.1); box-shadow:0 5px 16px rgba(212,175,55,.5); opacity:1; }
 .scroll-top[hidden] { display:none; }
 </style>

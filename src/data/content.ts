@@ -3,10 +3,6 @@
  * WP API bağımlılığı yok. Tüm içerik burada.
  */
 
-// ─── Unsplash görsel URL yardımcısı ───────────────────────────────────────────
-const u = (id: string, w = 800, h = 500) =>
-  `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
-
 // ─── Şirket Bilgileri ─────────────────────────────────────────────────────────
 export const company = {
   name:    'Torem Zemin Mühendislik',
@@ -47,8 +43,8 @@ export const hizmetler: Hizmet[] = [
     title:      'Fore Kazık İmalatı',
     shortTitle: 'Fore Kazık',
     excerpt:    'Büyük çaplı, yüksek taşıma kapasiteli yerinde döküm beton kazık imalatı. Zayıf ve heterojen zeminlerde güvenli derin temel çözümü.',
-    image:      u('1504307651254-35680f356dfd', 480, 320),
-    heroImage:  u('1504307651254-35680f356dfd', 1200, 500),
+    image:      '/images/kazikli-temeller/fore-kazik.jpg',
+    heroImage:  '/images/fore-kazik/fore-kazik-hero.webp',
     icon:       'M12 2v20M8 6l4-4 4 4M8 18l4 4 4-4',
     category:   'Kazıklı Temeller',
     content: `
@@ -102,8 +98,8 @@ export const hizmetler: Hizmet[] = [
     title:      'Jet Grout Uygulaması',
     shortTitle: 'Jet Grout',
     excerpt:    'Yüksek basınçlı çimento süspansiyonuyla zemin içinde sütun veya panel oluşturarak zemin iyileştirme ve su geçirimsizlik sağlama.',
-    image:      u('1504307651254-35680f356dfd', 480, 320),
-    heroImage:  u('1504307651254-35680f356dfd', 1200, 500),
+    image:      '/images/zemin-iyilestirme/jet-grout.jpg',
+    heroImage:  '/images/jet-grout/jet-grout-hero.webp',
     icon:       'M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18',
     category:   'Zemin İyileştirme',
     content: `
@@ -137,8 +133,8 @@ export const hizmetler: Hizmet[] = [
     title:      'Öngermeli Ankraj Sistemleri',
     shortTitle: 'Öngermeli Ankraj',
     excerpt:    'İksa perdeleri ve şev stabilitesi için yüksek kapasiteli öngermeli zemin ve kaya ankrajı projelendirme ve uygulaması.',
-    image:      u('1541888946425-d81bb19240f5', 480, 320),
-    heroImage:  u('1541888946425-d81bb19240f5', 1200, 500),
+    image:      '/images/ankraj.jpg',
+    heroImage:  '/images/destekleme-ankraj/zemin-ankraj.jpg',
     icon:       'M12 22V2m-7 9 7-7 7 7M5 21h14',
     category:   'İksa Sistemleri',
     content: `
@@ -168,8 +164,8 @@ export const hizmetler: Hizmet[] = [
     title:      'Mini Kazık Uygulaması',
     shortTitle: 'Mini Kazık',
     excerpt:    'Dar ve sınırlı alanlarda, mevcut yapıların güçlendirilmesinde ve ulaşımı zor bölgelerde 150–300 mm çaplı küçük eksenli kazık çözümleri.',
-    image:      u('1486325212027-8081e485255e', 480, 320),
-    heroImage:  u('1486325212027-8081e485255e', 1200, 500),
+    image:      '/images/kazikli-temeller/mini-kazik.jpg',
+    heroImage:  '/images/kazikli-temeller/mini-kazik.jpg',
     icon:       'M8 2v20M16 2v20M3 7h18M3 17h18',
     category:   'Kazıklı Temeller',
     content: `
@@ -200,8 +196,8 @@ export const hizmetler: Hizmet[] = [
     title:      'Zemin Çivisi (Soil Nailing)',
     shortTitle: 'Zemin Çivisi',
     excerpt:    'Kazı şevlerinin ve doğal yamaçların pasif çelik donatı ile stabilizasyonu. Ekonomik, hızlı uygulamalı şev tutma yöntemi.',
-    image:      u('1580674684081-7617fbf3d745', 480, 320),
-    heroImage:  u('1580674684081-7617fbf3d745', 1200, 500),
+    image:      '/images/destekleme-ankraj/zemin-civisi.jpg',
+    heroImage:  '/images/sev-stabilitesi/sev-zemin-civisi.jpg',
     icon:       'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5',
     category:   'İksa Sistemleri',
     content: `
@@ -226,8 +222,8 @@ export const hizmetler: Hizmet[] = [
     title:      'İksa Sistemleri',
     shortTitle: 'İksa',
     excerpt:    'Derin kazı çevrelerinde yapı ve zemin güvenliğini sağlayan fore kazıklı, ankrajlı, sürtünme kazıklı ve kesişen kazıklı iksa çözümleri.',
-    image:      u('1558618666-fcd25c85cd64', 480, 320),
-    heroImage:  u('1558618666-fcd25c85cd64', 1200, 500),
+    image:      '/images/iksa-sistemleri.jpg',
+    heroImage:  '/images/iksa/ankrajli-fore-kazik.jpg',
     icon:       'M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11',
     category:   'İksa Sistemleri',
     content: `
@@ -273,8 +269,8 @@ export const blogPosts: BlogPost[] = [
     title:    'Zemin Etüdü Neden Yapı Güvenliğinin Temel Taşıdır?',
     date:     '15 Mart 2026',
     excerpt:  'Bir yapının kalıcılığı, temelden başlar. Zemin etüdü atlandığında oluşabilecek riskler ve doğru geoteknik araştırmanın önemi.',
-    image:    u('1477959858617-67f85cf4f1df', 480, 300),
-    heroImage:u('1477959858617-67f85cf4f1df', 1200, 500),
+    image:    '/images/geoteknik-proje/zemin-etudu.jpg',
+    heroImage:'/images/geoteknik-proje/zemin-etudu.jpg',
     category: 'Geoteknik',
     readTime: '6 dakika',
     content: `
@@ -307,8 +303,8 @@ export const blogPosts: BlogPost[] = [
     title:    'Fore Kazık mı, Çakma Kazık mı? Doğru Tercihin Kılavuzu',
     date:     '28 Şubat 2026',
     excerpt:  'İki temel derin temel yöntemini karşılaştırıyoruz: Fore kazık ve çakma kazık arasındaki farklar, avantajlar ve hangi projede ne seçilmeli.',
-    image:    u('1581094271901-8022df4466f9', 480, 300),
-    heroImage:u('1581094271901-8022df4466f9', 1200, 500),
+    image:    '/images/fore-kazik-saha.jpg',
+    heroImage:'/images/fore-kazik/fore-kazik-hero.webp',
     category: 'Teknik',
     readTime: '8 dakika',
     content: `
@@ -343,8 +339,8 @@ export const blogPosts: BlogPost[] = [
     title:    'TBDY 2018\'e Göre Depreme Dayanıklı Temel Tasarımı',
     date:     '10 Ocak 2026',
     excerpt:  'Türkiye Bina Deprem Yönetmeliği 2018 kapsamında derin temel sistemlerinin deprem etkisi altında tasarım esasları ve geoteknik gereklilikler.',
-    image:    u('1513467535987-fd81bc7d62f8', 480, 300),
-    heroImage:u('1513467535987-fd81bc7d62f8', 1200, 500),
+    image:    '/images/geoteknik-test.jpg',
+    heroImage:'/images/geoteknik-proje/geoteknik-proje-hero.jpg',
     category: 'Yönetmelik',
     readTime: '10 dakika',
     content: `

@@ -26,6 +26,11 @@ const certs = [
       <h1>20 Yıllık Deneyim,<br><span>Güvenilir Mühendislik</span></h1>
       <p>Torem Zemin, İstanbul merkezli geoteknik mühendislik firmasıdır. Fore kazık, jet grout, ankraj ve zemin iyileştirme alanlarında anahtar teslim çözümler sunmaktadır.</p>
     </div>
+    <div class="kurumsal-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)" />
+      </svg>
+    </div>
   </section>
 
   <Breadcrumb items={[{ label: 'Kurumsal' }]} />
@@ -50,15 +55,15 @@ const certs = [
 
       <div class="about-imgs">
         <img
-          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&h=700&q=80"
+          src="/images/fore-kazik-saha.jpg"
           alt="Saha mühendisliği çalışması"
           width="600" height="700"
           class="about-imgs__main"
           loading="lazy"
         />
         <img
-          src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=300&h=320&q=80"
-          alt="Zemin sondaj operasyonu"
+          src="/images/makine-parki.webp"
+          alt="Soilmec fore kazık makinesi"
           width="300" height="320"
           class="about-imgs__secondary"
           loading="lazy"
@@ -138,23 +143,29 @@ const certs = [
 </BaseLayout>
 
 <style>
-.eyebrow { font-size:var(--text-sm); font-weight:700; color:#E8A85A; text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+.eyebrow { font-size:var(--text-sm); font-weight:700; color:var(--color-highlight); text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
 .eyebrow-sm { font-size:var(--text-xs); font-weight:700; color:var(--color-highlight); text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-2); }
 
 /* Hero */
 .kurumsal-hero {
-  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  padding-block:var(--s-20) var(--s-16); color:var(--color-white);
+  background:linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary) 100%);
+  margin-top: -110px;
+  padding-block:calc(var(--s-20) + 110px) calc(var(--s-16) + 60px); color:var(--color-white);
   position:relative; overflow:hidden; text-align:center;
 }
 .kurumsal-hero__bg {
   position:absolute; inset:0;
-  background:radial-gradient(ellipse at 70% 50%, rgba(74,127,165,.25) 0%, transparent 60%);
-  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events:none; z-index:1;
 }
-.kurumsal-hero__inner { position:relative; z-index:1; max-width:640px; margin-inline:auto; }
+.kurumsal-hero__inner { position:relative; z-index:2; max-width:640px; margin-inline:auto; }
+.kurumsal-hero__wave { position:absolute; bottom:0; left:0; right:0; height:60px; z-index:3; line-height:0; }
+.kurumsal-hero__wave svg { width:100%; height:100%; }
 .kurumsal-hero h1 { color:var(--color-white); font-size:var(--text-5xl); margin-bottom:var(--s-4); }
-.kurumsal-hero h1 span { color:#E8A85A; }
+.kurumsal-hero h1 span { color:var(--color-highlight); }
 .kurumsal-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); }
 
 /* About Grid */
@@ -177,7 +188,8 @@ const certs = [
 
 /* Misyon Vizyon */
 .mv-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-6); }
-.mv-card { background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-xl); padding:var(--s-8); }
+.mv-card { background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-xl); padding:var(--s-8); transition:transform var(--t-base), box-shadow var(--t-base); }
+.mv-card:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
 .mv-card--mission { border-top:3px solid var(--color-highlight); }
 .mv-card--vision { border-top:3px solid var(--color-secondary); }
 .mv-card--values { border-top:3px solid var(--color-accent); }
@@ -187,7 +199,8 @@ const certs = [
 
 /* Certs */
 .cert-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-6); }
-.cert-card { background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-lg); padding:var(--s-6); display:flex; flex-direction:column; align-items:center; gap:var(--s-3); text-align:center; }
+.cert-card { background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-lg); padding:var(--s-6); display:flex; flex-direction:column; align-items:center; gap:var(--s-3); text-align:center; transition:transform var(--t-base), box-shadow var(--t-base), border-color var(--t-fast); }
+.cert-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--color-highlight); }
 .cert-card__badge { width:40px; height:40px; color:var(--color-highlight); }
 .cert-card strong { font-size:var(--text-base); color:var(--color-primary); }
 .cert-card span { font-size:var(--text-sm); color:var(--color-text-muted); }

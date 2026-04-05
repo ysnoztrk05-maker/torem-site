@@ -19,6 +19,7 @@ const {
 ---
 
 <div class="cta-box">
+  <div class="cta-box__accent" aria-hidden="true"></div>
   <h3 class="cta-box__title">{title}</h3>
   <p class="cta-box__text">{text}</p>
   <div class="cta-box__actions">
@@ -31,12 +32,21 @@ const {
 
 <style>
 .cta-box {
-  background: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary) 100%);
   color: var(--color-white);
-  border-radius: var(--r-lg);
+  border-radius: var(--r-xl);
   padding: var(--s-10) var(--s-12);
   text-align: center;
   margin-block: var(--s-10);
+  position: relative;
+  overflow: hidden;
+}
+/* Gold top accent line */
+.cta-box__accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-highlight), transparent);
 }
 .cta-box__title {
   color: var(--color-white);

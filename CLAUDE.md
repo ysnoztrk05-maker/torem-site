@@ -2,6 +2,13 @@
 
 Bu dosyayı her oturumda oku. Tüm kararlarını buna göre ver.
 
+## ⛔ İZOLASYON KURALI — KRİTİK
+Bu proje **Astro statik site** projesidir.
+- SADECE `scratch/torem-site/` klasöründe çalış
+- `scratch/torem-zemin-2026/` klasörüne DOKUNMA (ayrı WordPress projesi)
+- `scratch/fore-kazik/`, `scratch/jet-grout/` vb. içerik klasörlerine DOKUNMA
+- Bu kuralı hiçbir koşulda geçersiz sayma
+
 ---
 
 ## 1. Proje Kimliği

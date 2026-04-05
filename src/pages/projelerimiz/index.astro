@@ -13,7 +13,7 @@ const projects = [
     location: 'İstanbul, Başakşehir',
     year: '2024',
     desc: '48 katlı karma yapı için 512 adet fore kazık uygulaması. Kazık çapı Ø880mm, kazık boyu 28m. 3D zemin modeli ile tasarım.',
-    image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&h=400&q=80',
+    image: '/images/fore-kazik-saha.jpg',
     tags: ['Ø880mm', '28m Derinlik', '512 Kazık'],
   },
   {
@@ -23,7 +23,7 @@ const projects = [
     location: 'İstanbul, Pendik',
     year: '2023',
     desc: 'İstanbul metro hattı genişleme projesi. 14m derinliğinde ankrajlı palplanş iksa sistemi, kritik kentsel ortamda sıfır çökme toleransı.',
-    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=600&h=400&q=80',
+    image: '/images/iksa-sistemleri.jpg',
     tags: ['14m Derinlik', 'Kentsel Ortam', 'Ankrajlı'],
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     location: 'Kocaeli, Gebze',
     year: '2023',
     desc: 'Yüksek taşıma kapasiteli endüstriyel zemin için jet grout kolon uygulaması. 80.000 m² alan, zayıf zeminlerin iyileştirilmesi.',
-    image: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&w=600&h=400&q=80',
+    image: '/images/zemin-iyilestirme.jpg',
     tags: ['80.000 m²', 'Zemin İyileştirme', 'Jet Grout'],
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     location: 'Bursa, Nilüfer',
     year: '2024',
     desc: 'Yerleşim bölgesinde aktif toprak kayması stabilizasyonu. 240 adet zemin çivisi, shotcrete yüzey koruma, izleme sistemi.',
-    image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?auto=format&fit=crop&w=600&h=400&q=80',
+    image: '/images/hero-main.jpg',
     tags: ['240 Çivi', 'Shotcrete', 'İzleme Sistemi'],
   },
   {
@@ -53,7 +53,7 @@ const projects = [
     location: 'İstanbul, Kadıköy',
     year: '2022',
     desc: 'Tarihi binanın temel güçlendirmesi. Sınırlı çalışma alanında Ø114mm mini kazık uygulaması, minimum titreşim.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&h=400&q=80',
+    image: '/images/makine-parki.webp',
     tags: ['Ø114mm', 'Tarihi Yapı', 'Mini Kazık'],
   },
   {
@@ -63,7 +63,7 @@ const projects = [
     location: 'Ankara, Sincan OSB',
     year: '2022',
     desc: 'Organize sanayi bölgesinde derin iksa ve kalıcı ankraj sistemi. 18m derinlik, 3 sıra öngermeli ankraj, 2000 kN kapasite.',
-    image: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?auto=format&fit=crop&w=600&h=400&q=80',
+    image: '/images/ankraj.jpg',
     tags: ['18m Derinlik', '2000 kN', 'Kalıcı Ankraj'],
   },
 ];
@@ -88,6 +88,11 @@ const stats = [
       <p class="eyebrow">Referans Projeler</p>
       <h1>Güçlü Zemin,<br><span>Sağlam Yapılar</span></h1>
       <p>600'ü aşkın tamamlanan projeden seçmeler — konut, altyapı, endüstriyel ve kamu projelerinde kanıtlanmış başarı.</p>
+    </div>
+    <div class="projeler-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)" />
+      </svg>
     </div>
   </section>
 
@@ -160,23 +165,29 @@ const stats = [
 </BaseLayout>
 
 <style>
-.eyebrow { font-size:var(--text-sm); font-weight:700; color:#E8A85A; text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+.eyebrow { font-size:var(--text-sm); font-weight:700; color:var(--color-highlight); text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
 .eyebrow-sm { font-size:var(--text-xs); font-weight:700; color:var(--color-highlight); text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-2); }
 
 /* Hero */
 .projeler-hero {
-  background:linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  padding-block:var(--s-20) var(--s-16); color:var(--color-white);
+  background:linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary) 100%);
+  margin-top: -110px;
+  padding-block:calc(var(--s-20) + 110px) calc(var(--s-16) + 60px); color:var(--color-white);
   position:relative; overflow:hidden; text-align:center;
 }
 .projeler-hero__bg {
   position:absolute; inset:0;
-  background:radial-gradient(ellipse at 30% 60%, rgba(74,127,165,.3) 0%, transparent 55%);
-  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events:none; z-index:1;
 }
-.projeler-hero__inner { position:relative; z-index:1; max-width:640px; margin-inline:auto; }
+.projeler-hero__inner { position:relative; z-index:2; max-width:640px; margin-inline:auto; }
+.projeler-hero__wave { position:absolute; bottom:0; left:0; right:0; height:60px; z-index:3; line-height:0; }
+.projeler-hero__wave svg { width:100%; height:100%; }
 .projeler-hero h1 { color:var(--color-white); font-size:var(--text-5xl); margin-bottom:var(--s-4); }
-.projeler-hero h1 span { color:#E8A85A; }
+.projeler-hero h1 span { color:var(--color-highlight); }
 .projeler-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); }
 
 /* Stats dark band */
@@ -216,7 +227,7 @@ const stats = [
 .proj-filters { display:flex; gap:var(--s-3); flex-wrap:wrap; margin-bottom:var(--s-8); }
 .filter-btn { padding:var(--s-2) var(--s-4); border:1.5px solid var(--color-border); border-radius:var(--r-lg); background:var(--color-white); color:var(--color-text); font-size:var(--text-sm); font-weight:500; cursor:pointer; transition:border-color var(--t-fast), background var(--t-fast), color var(--t-fast); }
 .filter-btn:hover { border-color:var(--color-highlight); }
-.filter-btn--active { background:var(--color-primary); color:#fff; border-color:var(--color-primary); }
+.filter-btn--active { background:var(--color-highlight); color:#1a1400; border-color:var(--color-highlight); }
 .pcard { transition:opacity .22s ease, transform .22s ease; }
 </style>
 
