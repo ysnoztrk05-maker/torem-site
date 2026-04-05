@@ -348,11 +348,14 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--s-8);
+  padding-block: var(--s-8);
+  background: var(--color-bg);
 }
 
 .makine-card {
   background: white;
-  border: 1px solid var(--color-border);
+  min-height: 400px;
+  border: 2px solid var(--color-border);
   border-radius: 12px;
   overflow: hidden;
   display: flex;
@@ -369,6 +372,8 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
   position: relative;
   aspect-ratio: 400/260;
   overflow: hidden;
+  background: #1a2a3a; /* görsel yüklenemezse koyu arka plan */
+  min-height: 200px;
 }
 
 .makine-card__img img {
