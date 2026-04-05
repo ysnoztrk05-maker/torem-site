@@ -24,43 +24,32 @@ const faqItems = [
 >
 
   <!-- ░░ HERO ░░ -->
-  <section class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="container hero__inner">
-      <p class="hero__tag">Geoteknik Mühendislik</p>
-      <h1 class="hero__title">
-        Temelden Zirveye<br>
-        <em>Güvenli Zemin Çözümleri</em>
-      </h1>
-      <p class="hero__sub">
-        20+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projelerinde
-        İstanbul'un güvenilir geoteknik partneri. ISO 9001 kalite güvencesiyle 600+ proje tamamlandı.
-      </p>
-      <div class="hero__actions">
-        <a href="/iletisim/" class="btn btn--primary btn--lg">Ücretsiz Keşif Raporu Alın</a>
-        <a href="/hizmetlerimiz/" class="btn btn--outline btn--lg">Hizmetleri İncele</a>
-      </div>
-      <div class="hero__trust">
-        <span>ISO 9001</span>
-        <span class="sep" aria-hidden="true">·</span>
-        <span>600+ Proje</span>
-        <span class="sep" aria-hidden="true">·</span>
-        <span>20 Yıl Deneyim</span>
-        <span class="sep" aria-hidden="true">·</span>
-        <span>Türkiye Geneli</span>
+  <section class="premium-hero">
+    <div class="premium-hero__bg"></div>
+    <div class="premium-hero__overlay"></div>
+    <div class="container premium-hero__inner">
+      <div class="premium-hero__content">
+        <span class="eyebrow eyebrow--gold">Geoteknik Mühendislik</span>
+        <h1 class="premium-hero__title">
+          Temelden Zirveye<br>
+          <span class="text-gradient">Güvenli Zemin Çözümleri</span>
+        </h1>
+        <p class="premium-hero__sub">
+          20+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projelerinde
+          İstanbul'un güvenilir geoteknik partneri. ISO 9001 kalite güvencesiyle 600+ proje tamamlandı.
+        </p>
+        <div class="premium-hero__actions">
+          <a href="/iletisim/" class="btn btn--primary btn--lg shadow-glow">Ücretsiz Keşif Raporu Alın</a>
+          <a href="/hizmetlerimiz/" class="btn btn--outline btn--ghost-light btn--lg">Hizmetleri İncele</a>
+        </div>
+        <div class="premium-hero__trust">
+          <div class="trust-item"><span class="trust-icon">✓</span> ISO 9001</div>
+          <div class="trust-item"><span class="trust-icon">✓</span> 600+ Proje</div>
+          <div class="trust-item"><span class="trust-icon">✓</span> 20 Yıl Deneyim</div>
+        </div>
       </div>
     </div>
-    <div class="hero__img-panel" aria-hidden="true">
-      <img
-        src="/images/hero-main.jpg"
-        alt="Torem Zemin fore kazık saha çalışması"
-        width="900" height="700"
-        fetchpriority="high"
-        decoding="async"
-      />
-      <div class="hero__img-overlay"></div>
-    </div>
-    <div class="hero__wave" aria-hidden="true">
+    <div class="premium-hero__wave" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--color-white)"/>
       </svg>
@@ -355,76 +344,121 @@ const faqItems = [
 .sec-head h2 { margin-bottom:var(--s-4); }
 .sec-head__sub { color:var(--color-text-muted); font-size:var(--text-lg); max-width:580px; margin-inline:auto; }
 
-/* ── Hero ── */
-.hero {
+/* ── Premium Hero ── */
+.premium-hero {
   position: relative;
-  min-height: 90vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-  background: var(--color-primary);
+  background-color: var(--color-navy-dark, #0a192f);
   margin-top: -110px;
+  padding-block: 220px 140px;
+  overflow: hidden;
+  text-align: center;
 }
-.hero__bg {
-  position:absolute; inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
-  pointer-events:none; z-index:1;
+.premium-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/hero-main.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  mix-blend-mode: luminosity;
 }
-.hero__inner {
-  position:relative; z-index:2;
-  display:flex; flex-direction:column; justify-content:center;
-  padding-block: var(--s-24);
-  padding-top: calc(var(--s-24) + 110px);
-  grid-column:1;
+.premium-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10, 25, 47, 0.8) 0%, rgba(10, 25, 47, 1) 100%);
 }
-.hero__tag {
-  display:inline-flex; align-self:flex-start;
-  background:rgba(212,175,55,.15); color:var(--color-highlight);
-  border:1px solid rgba(212,175,55,.35);
-  padding:.3rem .9rem; border-radius:999px;
-  font-size:var(--text-sm); font-weight:600; letter-spacing:.05em; text-transform:uppercase;
-  margin-bottom:var(--s-5);
+.premium-hero__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
 }
-.hero__title {
-  color:var(--color-white); font-size:clamp(2.25rem, 4vw + 1rem, 3.5rem);
-  line-height:1.1; margin-bottom:var(--s-5);
+.premium-hero__content {
+  max-width: 900px;
 }
-.hero__title em { font-style:normal; color:var(--color-highlight); }
-.hero__sub {
-  color:rgba(255,255,255,.75); font-size:var(--text-lg); line-height:1.7;
-  max-width:520px; margin-bottom:var(--s-8);
+.eyebrow {
+  display: inline-block;
+  font-size: 0.85rem; 
+  font-weight: 700; 
+  color: var(--color-navy-light, #003366); 
+  text-transform: uppercase; 
+  letter-spacing: 0.1em; 
+  margin-bottom: 1.5rem; 
+  background: var(--color-gray-100, #f3f4f6);
+  padding: 0.35rem 0.8rem;
+  border-radius: 4px;
 }
-.hero__actions { display:flex; gap:var(--s-4); flex-wrap:wrap; margin-bottom:var(--s-8); }
-.hero__trust {
-  display:flex; align-items:center; gap:var(--s-3); flex-wrap:wrap;
-  font-size:var(--text-sm); color:rgba(255,255,255,.5);
+.eyebrow--gold {
+  color: var(--color-navy-dark, #0a192f);
+  background: var(--color-gold, #cfa856);
 }
-.hero__trust .sep { opacity:.4; }
-.hero__img-panel {
-  grid-column:2; position:relative; overflow:hidden;
+.text-gradient {
+  background: linear-gradient(135deg, var(--color-gold, #cfa856) 0%, #ebb44d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.hero__img-panel img { width:100%; height:100%; object-fit:cover; }
-.hero__img-overlay {
-  position:absolute; inset:0;
-  background:linear-gradient(to right, var(--color-primary) 0%, transparent 30%);
+.shadow-glow {
+  box-shadow: 0 4px 20px rgba(207, 168, 86, 0.4);
 }
-.hero__wave {
-  position:absolute; bottom:0; left:0; right:0; height:60px;
-  z-index:3; line-height:0; grid-column:1/-1;
+.btn--ghost-light {
+  border-color: rgba(255,255,255,0.3);
+  color: white;
 }
-.hero__wave svg { width:100%; height:100%; }
+.btn--ghost-light:hover {
+  background: white;
+  color: var(--color-navy-dark, #0a192f);
+}
+.premium-hero__title {
+  color: white;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+.premium-hero__sub {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.25rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+}
+.premium-hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+.premium-hero__trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.trust-item {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.trust-icon {
+  color: var(--color-gold, #cfa856);
+  font-weight: bold;
+}
+.premium-hero__wave {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  z-index: 3;
+  line-height: 0;
+}
+.premium-hero__wave svg { width: 100%; height: 100%; }
 
-@media (max-width:900px) {
-  .hero { grid-template-columns:1fr; min-height:auto; }
-  .hero__img-panel { display:none; }
-  .hero__inner { padding-block:var(--s-20) var(--s-16); text-align:center; align-items:center; }
-  .hero__tag { align-self:center; }
-  .hero__sub { text-align:center; }
-  .hero__actions { justify-content:center; }
-  .hero__trust { justify-content:center; }
+@media (max-width: 768px) {
+  .premium-hero { padding-block: 160px 100px; }
+  .premium-hero__trust { gap: 1rem; }
 }
 
 /* ── Services grid ── */

@@ -4,31 +4,31 @@ import CTABox from '../../components/CTABox.astro';
 
 const foreKazik = [
   {
-    name: 'Soilmec SR-40', year: '2009', category: 'Fore Kazık',
+    name: 'Soilmec SR-40', year: '2009', category: 'fore-kazik', catName: 'Fore Kazık',
     desc: 'Kazıklı temeller, iksa ve zemin iyileştirme projelerinde ana üretim makinesi.',
     image: '/images/makineler/soilmec-sr40.jpg',
     specs: [{ l:'Çap', v:'Ø150 cm' }, { l:'Derinlik', v:'36 m' }, { l:'Ağırlık', v:'50 ton' }, { l:'Boyut', v:'19×6×5 m' }],
   },
   {
-    name: 'XCMG-220RD', year: '2016', category: 'Fore Kazık',
+    name: 'XCMG-220RD', year: '2016', category: 'fore-kazik', catName: 'Fore Kazık',
     desc: 'Yüksek kapasiteli, büyük çaplı ve derin kazık projeleri için tasarlanmış büyük tonajlı makine.',
     image: '/images/makineler/casagrande-b200xp.jpg',
     specs: [{ l:'Çap', v:'Ø200 cm' }, { l:'Derinlik', v:'45 m' }, { l:'Ağırlık', v:'85 ton' }, { l:'Boyut', v:'22×9×5 m' }],
   },
   {
-    name: 'Casagrande B200 XP', year: '2012', category: 'Fore Kazık',
+    name: 'Casagrande B200 XP', year: '2012', category: 'fore-kazik', catName: 'Fore Kazık',
     desc: 'Derin kazık uygulamaları için geliştirilmiş İtalyan teknolojisi. Metro ve altyapı projelerinde tercih edilir.',
     image: '/images/makineler/casagrande-b200xp.jpg',
     specs: [{ l:'Çap', v:'Ø200 cm' }, { l:'Derinlik', v:'48 m' }, { l:'Ağırlık', v:'75 ton' }, { l:'Boyut', v:'22×8×5 m' }],
   },
   {
-    name: 'Soilmec CM-40', year: '2006', category: 'Fore Kazık',
+    name: 'Soilmec CM-40', year: '2006', category: 'fore-kazik', catName: 'Fore Kazık',
     desc: 'Orta ölçekli kazık projelerinde kullanılan kompakt fore kazık makinesi.',
     image: '/images/makineler/soilmec-sm400.jpg',
     specs: [{ l:'Çap', v:'Ø120 cm' }, { l:'Derinlik', v:'25 m' }, { l:'Ağırlık', v:'40 ton' }, { l:'Boyut', v:'18×7×5 m' }],
   },
   {
-    name: 'Bauer BG 18H', year: '2005', category: 'Fore Kazık',
+    name: 'Bauer BG 18H', year: '2005', category: 'fore-kazik', catName: 'Fore Kazık',
     desc: 'Alman mühendisliği ile üretilen güçlü performanslı fore kazık makinesi.',
     image: '/images/makineler/bauer-bg20.jpg',
     specs: [{ l:'Çap', v:'Ø200 cm' }, { l:'Derinlik', v:'36 m' }, { l:'Ağırlık', v:'70 ton' }, { l:'Boyut', v:'20×6×5 m' }],
@@ -37,25 +37,25 @@ const foreKazik = [
 
 const ankrajJg = [
   {
-    name: 'Soilmec SM-400', year: '2005', category: 'Jet Grout',
+    name: 'Soilmec SM-400', year: '2005', category: 'mini-kazik', catName: 'Jet Grout',
     desc: 'Jet grout, mikro kazık ve zemin iyileştirme uygulamalarında kullanılan çok amaçlı makine. 2 adet mevcut.',
     image: '/images/makineler/jet-grout.jpg',
     specs: [{ l:'Derinlik', v:'48 m' }, { l:'Kolon', v:'Ø40 cm' }, { l:'Ağırlık', v:'16 ton' }, { l:'Adet', v:'2 birim' }],
   },
   {
-    name: 'YMC-TR Ankraj', year: '2016', category: 'Ankraj',
+    name: 'YMC-TR Ankraj', year: '2016', category: 'mini-kazik', catName: 'Ankraj',
     desc: 'Yüksek kapasiteli öngermeli ankraj, kalıcı ankraj ve zemin çivisi uygulamalarında kullanılır.',
     image: '/images/makineler/ankraj-makinesi.jpg',
     specs: [{ l:'Tork', v:'1800 kNm' }, { l:'Ağırlık', v:'18 ton' }, { l:'Boyut', v:'9×7×3 m' }, { l:'Alan', v:'İksa & Ankraj' }],
   },
   {
-    name: 'Casagrande C6', year: '2007', category: 'Mini Kazık',
+    name: 'Casagrande C6', year: '2007', category: 'mini-kazik', catName: 'Mini Kazık',
     desc: 'Sınırlı alanlarda mikro kazık, ankraj ve sondaj uygulamalarında kullanılan kompakt makine.',
     image: '/images/makineler/mini-kazik.jpg',
     specs: [{ l:'Tork', v:'1600 kNm' }, { l:'Ağırlık', v:'15 ton' }, { l:'Boyut', v:'8×6×3 m' }, { l:'Alan', v:'Mini Kazık' }],
   },
   {
-    name: 'Furukawa HCR1200-DS', year: '2007', category: 'Zemin Çivisi',
+    name: 'Furukawa HCR1200-DS', year: '2007', category: 'mini-kazik', catName: 'Zemin Çivisi',
     desc: 'İksa sistemleri, zemin çivisi ve ankraj uygulamalarında kullanılan çok amaçlı sondaj makinesi.',
     image: '/images/makineler/ankraj-makinesi.jpg',
     specs: [{ l:'Derinlik', v:'25 m' }, { l:'Çap', v:'Ø150 mm' }, { l:'Ağırlık', v:'25 ton' }, { l:'Boyut', v:'8×7×3 m' }],
@@ -64,70 +64,66 @@ const ankrajJg = [
 
 const yardimci = [
   {
-    name: 'PTC 30HD Vibro', year: '', category: 'Vibratör',
+    name: 'PTC 30HD Vibro', year: '', category: 'yardimci', catName: 'Vibratör',
     desc: 'Palplanş ve çelik kazık çakma/sökme işlemlerinde kullanılan hidrolik vibratör.',
     image: '/images/makineler/ptc-vibro.jpg',
     specs: [{ l:'Kapasite', v:'30 ton' }, { l:'Güç', v:'300 kW' }, { l:'Frekans', v:'23–38 Hz' }, { l:'Tip', v:'Çakma & Söküm' }],
   },
   {
-    name: 'Tecnipwell TW-352', year: '2005', category: 'Enjeksiyon',
+    name: 'Tecnipwell TW-352', year: '2005', category: 'yardimci', catName: 'Enjeksiyon',
     desc: 'Jet grout besleme, zemin iyileştirme ve mikro kazık için yüksek basınçlı enjeksiyon pompası.',
     image: '/images/makineler/enjeksiyon-seti.jpg',
     specs: [{ l:'Basınç', v:'550 bar' }, { l:'Tip', v:'JG Pompası' }, { l:'Zemin İyl.', v:'Evet' }, { l:'Mikro Kazık', v:'Evet' }],
   },
   {
-    name: 'Atlas Copco XAVS 307', year: '2010', category: 'Kompresör',
+    name: 'Atlas Copco XAVS 307', year: '2010', category: 'yardimci', catName: 'Kompresör',
     desc: 'Sondaj, püskürtme beton ve jet grouting işlemlerinde hava ihtiyacını karşılayan mobil kompresör.',
     image: '/images/makineler/enjeksiyon-seti.jpg',
     specs: [{ l:'Basınç', v:'14 bar' }, { l:'Debi', v:'18,5 m³/dk' }, { l:'Tip', v:'Mobil Dizel' }, { l:'Marka', v:'Atlas Copco' }],
   },
   {
-    name: 'Shotcrete MC-260', year: '2015', category: 'Püskürtme Beton',
+    name: 'Shotcrete MC-260', year: '2015', category: 'yardimci', catName: 'Püskürtme Beton',
     desc: 'Şev stabilitesi, tünel desteği ve yapı güçlendirme uygulamalarında kuru beton püskürtme.',
     image: '/images/puskurtme-beton.jpg',
     specs: [{ l:'Kapasite', v:'5–7 m³/s' }, { l:'Sistem', v:'Kuru Tip' }, { l:'Alan', v:'Şev & Tünel' }, { l:'Adet', v:'1 birim' }],
   },
   {
-    name: 'Pistonlu Enjeksiyon Seti', year: '2014', category: 'Enjeksiyon',
+    name: 'Pistonlu Enjeksiyon Seti', year: '2014', category: 'yardimci', catName: 'Enjeksiyon',
     desc: 'Zemin iyileştirme, su yalıtımı, çatlak doldurma ve mikro kazık uygulamalarında enjeksiyon sistemi.',
     image: '/images/makineler/soilmec-sm400.jpg',
     specs: [{ l:'Basınç', v:'150 bar' }, { l:'Adet', v:'2 birim' }, { l:'Alan', v:'Zemin Enj.' }, { l:'Mikro Kazık', v:'Evet' }],
   },
   {
-    name: 'Germe Krikosu', year: '2015', category: 'Ankraj',
+    name: 'Germe Krikosu', year: '2015', category: 'yardimci', catName: 'Ankraj',
     desc: 'Öngermeli ve kalıcı ankraj uygulamalarında çelik halatları proje yüküne germe.',
     image: '/images/makineler/ankraj-makinesi.jpg',
     specs: [{ l:'Kapasite', v:'80 ton' }, { l:'Tip', v:'Hidromekanik' }, { l:'Alan', v:'Ankraj Germe' }, { l:'Hassasiyet', v:'Yüksek' }],
   },
 ];
 
-const gruplar = [
-  { title: 'Fore Kazık Makineleri', items: foreKazik },
-  { title: 'Mini Kazık / Ankraj / Jet Grout', items: ankrajJg },
-  { title: 'Yardımcı Makine ve Ekipmanlar', items: yardimci },
-];
-
-const stats = [
-  { num: '40+', label: 'İş Makinesi' },
-  { num: '5', label: 'Fore Kazık Makinesi' },
-  { num: '4', label: 'JG & Ankraj Makinesi' },
-  { num: '7/24', label: 'Teknik Destek' },
-];
+const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
 ---
 
 <BaseLayout
-  title="Makine Parkı | Fore Kazık ve Geoteknik Ekipmanlar | Torem Zemin"
-  description="Soilmec SR-40, Casagrande B200 XP, Bauer BG18H, XCMG-220RD fore kazık makineleri, Soilmec SM-400 jet grout ve ankraj ekipmanları. 40+ modern geoteknik iş makinesi."
+  title="Makine Parkı | 55+ İş Makinesi, Tek Telefon | Torem Zemin"
+  description="Soilmec SR-40, Casagrande B200 XP, Bauer BG18H, XCMG-220RD fore kazık makineleri ve modern geoteknik ekipmanlar. Güç ve hassasiyet bir arada."
 >
-  <!-- Hero -->
-  <section class="mp-hero">
-    <div class="mp-hero__bg" aria-hidden="true"></div>
-    <div class="container mp-hero__inner">
-      <p class="eyebrow">Ekipman Filosu</p>
-      <h1>Modern Makine<br><span>Parkımız</span></h1>
-      <p>40'ı aşkın modern geoteknik iş makinesiyle Türkiye genelinde hizmet. Soilmec, Casagrande, Bauer ve XCMG markaları ile güvenilir performans.</p>
+  <!-- Premium Hero -->
+  <section class="mp-premium-hero">
+    <div class="container">
+      <div class="mp-premium-hero__grid">
+        <div class="mp-premium-hero__content">
+          <p class="eyebrow eyebrow--gold">Güç ve Hassasiyet</p>
+          <h1>55+ İş Makinesi,<br><span>Tek Telefon</span></h1>
+          <p class="subtitle">Bauer · Casagrande · Soilmec · XCMG</p>
+          <div class="mp-premium-hero__stats">
+            <div class="stat-badge"><span>20+ Yıl</span> Deneyim</div>
+            <div class="stat-badge"><span>7/24</span> Teknik Destek</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="mp-hero__wave" aria-hidden="true">
+    <div class="mp-premium-hero__wave" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)" />
       </svg>
@@ -144,187 +140,407 @@ const stats = [
     </div>
   </nav>
 
-  <!-- Stats -->
-  <section class="section section--dark">
+  <!-- Sticky Filtre Bar -->
+  <div class="filter-bar">
     <div class="container">
-      <div class="mp-stats">
-        {stats.map((s) => (
-          <div class="mpstat">
-            <span class="mpstat__num">{s.num}</span>
-            <span class="mpstat__lbl">{s.label}</span>
-          </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-cat="all">Tüm Araçlar</button>
+        <button class="filter-btn" data-cat="fore-kazik">Fore Kazık</button>
+        <button class="filter-btn" data-cat="mini-kazik">Ankraj & Jet Grout</button>
+        <button class="filter-btn" data-cat="yardimci">Yardımcı Makine</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="makine-grid">
+        {tumMakineler.map((m) => (
+          <article class="makine-card" data-cat={m.category}>
+            <div class="makine-card__visual">
+              <img src={m.image} alt={m.name} loading="lazy" width="800" height="600" />
+              <div class="makine-card__overlay"></div>
+              <span class="makine-card__badge">{m.catName}</span>
+              {m.year && <span class="makine-card__year">{m.year}</span>}
+            </div>
+            
+            <div class="makine-card__body">
+              <h3 class="makine-card__name">{m.name}</h3>
+              <p class="makine-card__desc">{m.desc}</p>
+              
+              <div class="spec-grid">
+                {m.specs.map((s) => (
+                  <div class="spec-item">
+                    <span class="spec-item__label">{s.l}</span>
+                    <span class="spec-item__value">{s.v}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <a href="/iletisim/" class="makine-card__cta">Detay İste →</a>
+            </div>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Makine Grupları — 3 Sütun Kart Grid -->
-  {gruplar.map((g) => (
-    <section class="section">
-      <div class="container">
-        <h2 class="grup-title">{g.title}</h2>
-        <div class="mk-grid">
-          {g.items.map((m) => (
-            <article class="mk">
-              <div class="mk__visual">
-                <img src={m.image} alt={m.name} loading="lazy" width="800" height="500" />
-                <span class="mk__cat">{m.category}</span>
-              </div>
-              <div class="mk__body">
-                <h3 class="mk__name">{m.name}</h3>
-                {m.year && <span class="mk__year">{m.year}</span>}
-                <p class="mk__desc">{m.desc}</p>
-                <div class="mk__specs">
-                  {m.specs.map((s) => (
-                    <div class="sp">
-                      <span class="sp__v">{s.v}</span>
-                      <span class="sp__l">{s.l}</span>
-                    </div>
-                  ))}
-                </div>
-                <a href="/iletisim/" class="mk__cta">Teklif Al →</a>
-              </div>
-            </article>
-          ))}
-        </div>
+  <!-- Bottom CTA -->
+  <section class="bottom-cta section">
+    <div class="container">
+      <div class="bottom-cta__inner">
+        <h2>Projeniz için doğru makineyi birlikte seçelim</h2>
+        <a href="tel:+905316594636" class="btn btn--gold">Teknik Ekibimizi Arayın → +90 531 659 46 36</a>
       </div>
-    </section>
-  ))}
+    </div>
+  </section>
 
-  <div class="section container">
-    <CTABox title="Makine Parkımız Hakkında Bilgi Alın" />
-  </div>
 </BaseLayout>
 
-<style>
-.eyebrow { font-size:var(--text-sm); font-weight:700; color:var(--color-highlight); text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+<script>
+  // Add listener for filters mapping
+  // Using vanilla js
+  document.addEventListener("DOMContentLoaded", () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.makine-card');
 
-/* ── Hero ── */
-.mp-hero {
-  background:linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary) 100%);
+    if (filterBtns.length > 0) {
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const cat = btn.getAttribute('data-cat');
+          
+          // Update active style
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          // Filter elements
+          cards.forEach(card => {
+            const cardEl = card as HTMLElement;
+            if (cat === 'all' || cardEl.getAttribute('data-cat') === cat) {
+              cardEl.style.display = 'flex';
+            } else {
+              cardEl.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+  });
+</script>
+
+<style>
+/* ── Premium Hero ── */
+.mp-premium-hero {
+  background: var(--color-navy-dark, #002147);
+  background-image: radial-gradient(circle at 75% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 30px 30px, 30px 30px;
   margin-top: -110px;
-  padding-block:calc(var(--s-20) + 110px) calc(var(--s-16) + 60px); color:var(--color-white);
-  position:relative; overflow:hidden; text-align:center;
+  padding-block: calc(var(--s-20) + 110px) calc(var(--s-20) + 60px);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
 }
-.mp-hero__bg {
-  position:absolute; inset:0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 30px 30px;
-  pointer-events:none; z-index:1;
+
+.mp-premium-hero__grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
-.mp-hero__inner { position:relative; z-index:2; max-width:640px; margin-inline:auto; }
-.mp-hero__wave { position:absolute; bottom:0; left:0; right:0; height:60px; z-index:3; line-height:0; }
-.mp-hero__wave svg { width:100%; height:100%; }
-.mp-hero h1 { color:var(--color-white); font-size:var(--text-5xl); margin-bottom:var(--s-4); }
-.mp-hero h1 span { color:var(--color-highlight); }
-.mp-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); }
+
+.mp-premium-hero__content {
+  max-width: 650px;
+}
+
+.eyebrow--gold {
+  color: var(--color-gold, #d4af37);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+}
+
+.mp-premium-hero h1 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: var(--s-4);
+  font-weight: 800;
+  color: #fff;
+}
+
+.mp-premium-hero h1 span {
+  color: var(--color-gold, #d4af37);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: var(--s-8);
+}
+
+.mp-premium-hero__stats {
+  display: flex;
+  gap: var(--s-4);
+}
+
+.stat-badge {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+}
+
+.stat-badge span {
+  color: var(--color-gold, #d4af37);
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.mp-premium-hero__wave {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 60px; z-index: 3; line-height: 0;
+}
+.mp-premium-hero__wave svg { width: 100%; height: 100%; }
 
 /* ── Breadcrumb ── */
-.breadcrumb-bar { background:var(--color-white); border-bottom:1px solid var(--color-border); padding-block:var(--s-3); }
-.bc { display:flex; flex-wrap:wrap; gap:var(--s-1); font-size:var(--text-sm); color:var(--color-text-muted); list-style:none; }
-.bc li+li::before { content:'›'; margin-right:var(--s-1); }
-.bc a { color:var(--color-accent); }
-.bc a:hover { color:var(--color-highlight); }
+.breadcrumb-bar { background: var(--color-white); border-bottom: 1px solid var(--color-border); padding-block: var(--s-4); }
+.bc { display: flex; flex-wrap: wrap; gap: var(--s-2); font-size: 0.85rem; color: var(--color-text-muted); list-style: none; margin: 0; padding: 0; }
+.bc li+li::before { content: '›'; margin-right: var(--s-2); opacity: 0.5; }
+.bc a { color: var(--color-primary); font-weight: 500; text-decoration: none; }
+.bc a:hover { color: var(--color-gold, #d4af37); }
 
-/* ── Stats ── */
-.section--dark { background:var(--color-primary); }
-.mp-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-6); }
-.mpstat { text-align:center; padding:var(--s-6); }
-.mpstat__num { display:block; font-size:var(--text-4xl); font-weight:700; color:var(--color-highlight); }
-.mpstat__lbl { font-size:var(--text-sm); color:rgba(255,255,255,.65); text-transform:uppercase; letter-spacing:.05em; }
-
-/* ── Grup Başlık ── */
-.grup-title {
-  font-size:var(--text-2xl); font-weight:700; color:var(--color-primary);
-  margin-bottom:var(--s-8); padding-bottom:var(--s-3);
-  border-bottom:3px solid var(--color-highlight); display:inline-block;
+/* ── Sticky Filtre Bar ── */
+.filter-bar {
+  position: sticky;
+  top: 72px; /* Adjust according to header height */
+  z-index: 10;
+  background: var(--color-white);
+  border-bottom: 2px solid var(--color-border);
+  padding: 16px 0;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.03);
 }
 
-/* ── 3 Sütun Kart Grid ── */
-.mk-grid {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:var(--s-6);
+.filter-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-/* ── Kart ── */
-.mk {
-  background:var(--color-white);
-  border-radius:var(--r-xl);
-  overflow:hidden;
-  border:1px solid var(--color-border);
-  display:flex; flex-direction:column;
-  transition:transform var(--t-base), box-shadow var(--t-base);
-}
-.mk:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
-
-/* Görsel: sabit 220px */
-.mk__visual {
-  position:relative;
-  height:220px;
-  overflow:hidden;
-}
-.mk__visual img {
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover;
-  transition:transform var(--t-slow);
-}
-.mk:hover .mk__visual img { transform:scale(1.05); }
-.mk__cat {
-  position:absolute; top:var(--s-3); left:var(--s-3); z-index:1;
-  background:var(--color-highlight); color:#fff;
-  font-size:10px; font-weight:700;
-  padding:.25rem .65rem; border-radius:999px;
-  text-transform:uppercase; letter-spacing:.04em;
+.filter-btn {
+  border: 1.5px solid var(--color-border);
+  background: var(--color-white);
+  color: var(--color-text);
+  border-radius: 100px;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-/* Body */
-.mk__body {
-  padding:var(--s-5); display:flex; flex-direction:column; flex:1;
-}
-.mk__name {
-  font-size:var(--text-lg); font-weight:700; color:var(--color-primary);
-  line-height:1.25; margin-bottom:var(--s-1);
-}
-.mk__year {
-  font-size:var(--text-xs); color:var(--color-accent); font-weight:600;
-  margin-bottom:var(--s-3);
-}
-.mk__desc {
-  font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.65;
-  margin-bottom:var(--s-4);
-  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+.filter-btn:hover, .filter-btn.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
 }
 
-/* Spec 2x2 grid */
-.mk__specs {
-  display:grid; grid-template-columns:1fr 1fr; gap:var(--s-2);
-  margin-bottom:var(--s-4); margin-top:auto;
+/* ── Makine Grid ── */
+.section { padding-block: var(--s-16); }
+.makine-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s-8);
 }
-.sp {
-  background:var(--color-bg); border:1px solid var(--color-border);
-  border-radius:var(--r-sm); padding:var(--s-2); text-align:center;
-}
-.sp__v { display:block; font-size:var(--text-sm); font-weight:700; color:var(--color-primary); line-height:1.2; }
-.sp__l { font-size:9px; color:var(--color-text-muted); text-transform:uppercase; letter-spacing:.03em; }
 
-/* CTA Buton */
-.mk__cta {
-  display:block; text-align:center;
-  background:var(--color-highlight); color:#fff;
-  font-size:var(--text-sm); font-weight:600;
-  padding:var(--s-3); border-radius:var(--r-md);
-  transition:background var(--t-fast);
+.makine-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.mk__cta:hover { background:var(--color-gold-dark, #b5952f); }
 
-/* ── Responsive ── */
-@media (max-width:1024px) { .mk-grid { grid-template-columns:repeat(2,1fr); } }
-@media (max-width:640px) {
-  .mk-grid { grid-template-columns:1fr; }
-  .mp-stats { grid-template-columns:repeat(2,1fr); }
+.makine-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0, 33, 71, 0.15);
+}
+
+.makine-card__visual {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.makine-card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.makine-card:hover .makine-card__visual img {
+  transform: scale(1.05);
+}
+
+.makine-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,33,71,0.8), transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.makine-card:hover .makine-card__overlay {
+  opacity: 1;
+}
+
+.makine-card__badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--color-gold, #d4af37);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.makine-card__year {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.9);
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+.makine-card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.makine-card__name {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.makine-card__desc {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  min-height: 48px;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--color-border);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: auto;
+  margin-bottom: 24px;
+}
+
+.spec-item {
+  background: var(--color-bg, #fafaf7);
+  padding: 10px 14px;
+}
+
+.spec-item__label {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.spec-item__value {
+  display: block;
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+.makine-card__cta {
+  display: block;
+  text-align: center;
+  border: 2px solid var(--color-border);
+  color: var(--color-primary);
+  font-weight: 700;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.makine-card:hover .makine-card__cta {
+  background: var(--color-gold, #d4af37);
+  border-color: var(--color-gold, #d4af37);
+  color: var(--color-primary);
+}
+
+/* ── Bottom CTA ── */
+.bottom-cta {
+  background: var(--color-navy-dark, #002147);
+  color: white;
+  text-align: center;
+  padding-block: var(--s-16);
+}
+
+.bottom-cta h2 {
+  color: white;
+  font-size: 2.2rem;
+  margin-bottom: var(--s-8);
+  font-weight: 700;
+}
+
+.btn--gold {
+  display: inline-block;
+  background: var(--color-gold, #d4af37);
+  color: var(--color-navy-dark, #002147);
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn--gold:hover {
+  background: #e6c245; /* Lighter gold */
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .makine-grid { grid-template-columns: repeat(2, 1fr); }
+  .mp-premium-hero h1 { font-size: 3rem; }
+}
+
+@media (max-width: 768px) {
+  .makine-grid { grid-template-columns: 1fr; }
+  .mp-premium-hero { text-align: center; }
+  .mp-premium-hero h1 { font-size: 2.5rem; }
+  .filter-buttons { justify-content: center; }
 }
 </style>
+
