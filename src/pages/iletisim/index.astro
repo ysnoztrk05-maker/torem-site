@@ -196,6 +196,10 @@ const localBusinessSchema = {
 /* ── Hero ── */
 .iletisim-premium-hero {
   background: var(--color-navy-dark, #002147);
+  background-image: radial-gradient(circle at 30% 50%, rgba(212,175,55,0.12) 0%, transparent 60%),
+                    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
   margin-top: -110px;
   padding-block: calc(var(--s-20) + 110px) calc(var(--s-16) + 60px);
   color: var(--color-white);
@@ -211,6 +215,7 @@ const localBusinessSchema = {
   font-weight: 800;
   margin-bottom: var(--s-6);
   line-height: 1.1;
+  color: #ffffff;
 }
 .iletisim-premium-hero__content h1 span {
   color: var(--color-gold, #d4af37);
