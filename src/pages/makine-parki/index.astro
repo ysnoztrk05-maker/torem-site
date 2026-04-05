@@ -155,20 +155,17 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
   <!-- Cards Grid -->
   <section class="section">
     <div class="container">
-      <div class="makine-grid">
+      <div class="makine-grid" id="makine-grid">
         {tumMakineler.map((m) => (
-          <article class="makine-card" data-cat={m.category}>
-            <div class="makine-card__visual">
-              <img src={m.image} alt={m.name} loading="lazy" width="800" height="600" />
-              <div class="makine-card__overlay"></div>
+          <div class="makine-card" data-cat={m.category}>
+            <div class="makine-card__img">
+              <img src={m.image} alt={m.name} loading="lazy" width="400" height="260" />
               <span class="makine-card__badge">{m.catName}</span>
               {m.year && <span class="makine-card__year">{m.year}</span>}
             </div>
-            
             <div class="makine-card__body">
               <h3 class="makine-card__name">{m.name}</h3>
               <p class="makine-card__desc">{m.desc}</p>
-              
               <div class="spec-grid">
                 {m.specs.map((s) => (
                   <div class="spec-item">
@@ -177,10 +174,9 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
                   </div>
                 ))}
               </div>
-              
-              <a href="/iletisim/" class="makine-card__cta">Detay İste →</a>
+              <a href="/iletisim/" class="makine-card__cta">Teknik Detay İste →</a>
             </div>
-          </article>
+          </div>
         ))}
       </div>
     </div>
@@ -369,33 +365,21 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
   box-shadow: 0 20px 60px rgba(0, 33, 71, 0.15);
 }
 
-.makine-card__visual {
+.makine-card__img {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 400/260;
   overflow: hidden;
 }
 
-.makine-card__visual img {
+.makine-card__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.makine-card:hover .makine-card__visual img {
+.makine-card:hover .makine-card__img img {
   transform: scale(1.05);
-}
-
-.makine-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,33,71,0.8), transparent 50%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.makine-card:hover .makine-card__overlay {
-  opacity: 1;
 }
 
 .makine-card__badge {
