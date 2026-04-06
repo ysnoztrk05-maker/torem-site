@@ -433,7 +433,7 @@ const faqItems = [
   position: relative;
   background-color: var(--color-navy-dark, #0a192f);
   margin-top: -110px;
-  padding-block: 220px 140px;
+  padding-block: 160px 100px;
   overflow: hidden;
   text-align: center;
 }
@@ -778,7 +778,7 @@ const faqItems = [
 
 /* ── Process Steps ── */
 .process__steps { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-8); position:relative; padding-top:var(--s-2); margin-top:var(--s-12); }
-.process__steps::before { content:''; position:absolute; top:20px; left:12.5%; right:12.5%; height:2px; background:var(--color-highlight); z-index:0; opacity: 0.2; }
+.process__steps::before { content:''; position:absolute; top:20px; left:12.5%; right:12.5%; height:2px; background:linear-gradient(to right, var(--color-gold, #d4af37) 0%, rgba(212,175,55,0.3) 100%); z-index:0; }
 .process__step { display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; z-index:1; }
 .process__badge { width:40px; height:40px; border-radius:50%; background:var(--color-highlight); color:#fff; display:flex; align-items:center; justify-content:center; font-size:var(--text-base); font-weight:700; margin-bottom:var(--s-5); border:3px solid #eef0f2; flex-shrink:0; }
 .process__icon { width:64px; height:64px; background:var(--color-white); border:1.5px solid var(--color-border); border-radius:var(--r-xl); display:flex; align-items:center; justify-content:center; margin-bottom:var(--s-5); color:var(--color-secondary); padding:var(--s-3); }
