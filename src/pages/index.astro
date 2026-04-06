@@ -23,33 +23,73 @@ const faqItems = [
   description="20+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projeleri. İstanbul merkezli, Türkiye geneli geoteknik mühendislik hizmetleri."
 >
 
-  <!-- ░░ HERO ░░ -->
-  <section class="premium-hero">
-    <div class="premium-hero__bg"></div>
+  <!-- ░░ HERO SLIDER ░░ -->
+  <section class="premium-hero slider-hero">
+    <!-- Slider Backgrounds -->
+    <div class="slider-bg act" style="background-image: url('/images/hero-main.jpg')"></div>
+    <div class="slider-bg" style="background-image: url('/images/fore-kazik-saha.jpg')"></div>
+    <div class="slider-bg" style="background-image: url('/images/iksa-sistemleri.jpg')"></div>
+    
     <div class="premium-hero__overlay"></div>
+
     <div class="container premium-hero__inner">
       <div class="premium-hero__content">
-        <span class="eyebrow eyebrow--gold">Geoteknik Mühendislik</span>
-        <h1 class="premium-hero__title">
-          Temelden Zirveye<br>
-          <span class="text-gradient">Güvenli Zemin Çözümleri</span>
-        </h1>
-        <p class="premium-hero__sub">
-          20+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projelerinde
-          İstanbul'un güvenilir geoteknik partneri. ISO 9001 kalite güvencesiyle 600+ proje tamamlandı.
-        </p>
-        <div class="premium-hero__actions">
-          <a href="/iletisim/" class="btn btn--primary btn--lg shadow-glow">Ücretsiz Keşif Raporu Alın</a>
-          <a href="/hizmetlerimiz/" class="btn btn--outline btn--ghost-light btn--lg">Hizmetleri İncele</a>
+        <!-- Slides Data Container -->
+        <div class="hero-slides-wrapper">
+          <!-- Slide 1 -->
+          <div class="hero-slide active">
+            <span class="eyebrow eyebrow--gold slide-up">Geoteknik Mühendislik</span>
+            <h1 class="premium-hero__title slide-up">
+              Temelden Zirveye<br>
+              <span class="text-gradient">Güvenli Zemin Çözümleri</span>
+            </h1>
+            <p class="premium-hero__sub slide-up">
+              20+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projelerinde
+              İstanbul'un güvenilir geoteknik partneri. ISO 9001 kalite güvencesiyle 600+ proje tamamlandı.
+            </p>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="hero-slide">
+            <span class="eyebrow eyebrow--gold slide-up">İleri Teknoloji</span>
+            <h1 class="premium-hero__title slide-up">
+              Modern Makine Parkı<br>
+              <span class="text-gradient">Sınırsız Kapasite</span>
+            </h1>
+            <p class="premium-hero__sub slide-up">
+              55'i aşkın zemin makinesi ve donanımımızla, büyük ölçekli ve zorlu zemin koşullarına sahip projelerde hızlı ve güvenilir uygulamalar gerçekleştiriyoruz.
+            </p>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="hero-slide">
+            <span class="eyebrow eyebrow--gold slide-up">Uluslararası Standartlar</span>
+            <h1 class="premium-hero__title slide-up">
+              Mühendislikte<br>
+              <span class="text-gradient">Sıfır Tolerans & Güven</span>
+            </h1>
+            <p class="premium-hero__sub slide-up">
+              TBDY 2018 deprem yönetmeliklerine tam uyumlu, ISO 9001 sertifikalı sistemimizle en zor zeminleri güvenle yapılaşmaya hazır hale getiriyoruz.
+            </p>
+          </div>
         </div>
-        <div class="premium-hero__trust">
-          <div class="trust-item"><span class="trust-icon">✓</span> ISO 9001</div>
-          <div class="trust-item"><span class="trust-icon">✓</span> 600+ Proje</div>
-          <div class="trust-item"><span class="trust-icon">✓</span> 20 Yıl Deneyim</div>
+
+        <!-- Static Actions & Trust (Persists across slides) -->
+        <div class="premium-hero__bottom slide-up">
+          <div class="premium-hero__actions">
+            <a href="/iletisim/" class="btn btn--primary btn--lg shadow-glow">Ücretsiz Keşif Raporu Alın</a>
+            <a href="/hizmetlerimiz/" class="btn btn--outline btn--ghost-light btn--lg">Hizmetleri İncele</a>
+          </div>
+          <div class="premium-hero__trust">
+            <div class="trust-item"><span class="trust-icon">✓</span> ISO 9001</div>
+            <div class="trust-item"><span class="trust-icon">✓</span> 600+ Proje</div>
+            <div class="trust-item"><span class="trust-icon">✓</span> 20 Yıl Deneyim</div>
+          </div>
         </div>
       </div>
+
       <!-- Floating Stat Cards -->
-      <div class="hero-floating-stats" aria-hidden="true">
+      <div class="hero-floating-stats intro-fade-up" aria-hidden="true">
         <div class="floating-stat stat-1">
           <span class="stat-val">600+</span>
           <span class="stat-lbl">Proje</span>
@@ -60,6 +100,14 @@ const faqItems = [
         </div>
       </div>
     </div>
+    
+    <!-- Slider Navigation / Progress -->
+    <div class="slider-progress-container container">
+      <div class="slider-dot active" data-index="0"></div>
+      <div class="slider-dot" data-index="1"></div>
+      <div class="slider-dot" data-index="2"></div>
+    </div>
+
     <div class="premium-hero__wave" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--color-white)"/>
@@ -334,6 +382,45 @@ const faqItems = [
 
 </BaseLayout>
 
+<script>
+  // Simple Vanilla JS Slider Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.hero-slide');
+    const bgs = document.querySelectorAll('.slider-bg');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    if(slides.length === 0) return;
+
+    const showSlide = (index) => {
+      slides.forEach(s => s.classList.remove('active'));
+      bgs.forEach(b => b.classList.remove('act'));
+      dots.forEach(d => d.classList.remove('active'));
+
+      slides[index].classList.add('active');
+      bgs[index].classList.add('act');
+      dots[index].classList.add('active');
+    };
+
+    const nextSlide = () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    };
+
+    let slideInterval = setInterval(nextSlide, 7000); // 7s per slide
+
+    // Dot click handling
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        currentSlide = idx;
+        showSlide(currentSlide);
+        slideInterval = setInterval(nextSlide, 7000); // Reset timer
+      });
+    });
+  });
+</script>
+
 <style>
 /* ── Eyebrow ── */
 .eyebrow { font-size:var(--text-sm); font-weight:700; color:var(--color-highlight); text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
@@ -350,19 +437,26 @@ const faqItems = [
   overflow: hidden;
   text-align: center;
 }
-.premium-hero__bg {
+.slider-bg {
   position: absolute;
   inset: 0;
-  background-image: url('/images/hero-main.jpg');
   background-size: cover;
   background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out, transform 8s linear;
+  transform: scale(1);
+  mix-blend-mode: luminosity; 
+  z-index: 0;
+}
+.slider-bg.act {
   opacity: 0.25;
-  mix-blend-mode: luminosity;
+  transform: scale(1.08); /* Ken Burns effect */
 }
 .premium-hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(10, 25, 47, 0.8) 0%, rgba(10, 25, 47, 1) 100%);
+  z-index: 1;
 }
 .premium-hero__inner {
   position: relative;
@@ -444,6 +538,89 @@ const faqItems = [
   color: var(--color-gold, #cfa856);
   font-weight: bold;
 }
+
+/* Slider Typography & Animation */
+.hero-slides-wrapper {
+  position: relative;
+  min-height: 250px; /* Space for the sliding content */
+}
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+}
+.hero-slide.active {
+  position: static; /* so it takes up layout space */
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero-slide .slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.hero-slide.active .slide-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.premium-hero__bottom.slide-up {
+  animation: heroInit 1s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+@keyframes heroInit {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress Indicators */
+.slider-progress-container {
+  position: absolute;
+  bottom: 80px; 
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.slider-dot {
+  width: 40px;
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.slider-dot::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background: var(--color-gold, #cfa856);
+  transition: none;
+}
+.slider-dot.active::after {
+  width: 100%;
+  transition: width 7s linear; /* Match interval */
+}
+
+/* Base animations */
+.intro-fade-up {
+  animation: heroInit 1s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
 .premium-hero__wave {
   position: absolute;
   bottom: 0; left: 0; right: 0;
