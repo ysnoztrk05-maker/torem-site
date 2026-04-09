@@ -47,6 +47,9 @@ const schemas = [orgSchema, ...(schema ? (Array.isArray(schema) ? schema : [sche
 const nav = [
   { label: 'Ana Sayfa',         href: '/' },
   { label: 'Kurumsal',          href: '/kurumsal/' },
+  { label: 'Neden Torem?',      href: '/kurumsal/neden-torem/', parent: 'kurumsal' },
+  { label: 'Ekibimiz',          href: '/kurumsal/ekibimiz/',    parent: 'kurumsal' },
+  { label: 'Belgelerimiz',      href: '/kurumsal/belgelerimiz/', parent: 'kurumsal' },
   { label: 'Faaliyet Alanları', href: '/faaliyet-alanlari/', mega: true },
   { label: 'Projelerimiz',      href: '/projelerimiz/' },
   { label: 'Makine Parkı',     href: '/makine-parki/' },

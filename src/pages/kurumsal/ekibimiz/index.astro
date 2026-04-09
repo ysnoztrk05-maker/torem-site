@@ -1,0 +1,232 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CTABox from '../../../components/CTABox.astro';
+
+const canonical = 'https://www.toremzemin.com/kurumsal/ekibimiz/';
+
+const yonetim = [
+  {
+    ad: 'Genel Müdür',
+    unvan: 'Genel Müdür & Kurucu',
+    brans: 'İnşaat Mühendisi, 20+ yıl geoteknik deneyim',
+    foto: '/images/saha-muhendis.jpg',
+    linkedin: '#',
+    uzmanlık: ['Fore Kazık', 'Derin Temel Tasarımı', 'Proje Yönetimi'],
+  },
+  {
+    ad: 'Teknik Direktör',
+    unvan: 'Teknik Direktör',
+    brans: 'İnşaat Mühendisi, Geoteknik Uzmanı',
+    foto: '/images/proje-gorusme.jpg',
+    linkedin: '#',
+    uzmanlık: ['Zemin İyileştirme', 'Jet Grout', 'TBDY 2018'],
+  },
+];
+
+const departmanlar = [
+  {
+    isim: 'Zemin Mühendisliği',
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+    aciklama: 'Zemin etüdü, temel tasarımı ve geoteknik proje mühendisleri.',
+    kisi: '8 Mühendis',
+  },
+  {
+    isim: 'Saha Operasyonları',
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
+    aciklama: 'Fore kazık, jet grout, ankraj ve iksa sahalarında uygulama ekipleri.',
+    kisi: '30+ Teknisyen',
+  },
+  {
+    isim: 'Kalite & Denetim',
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+    aciklama: 'ISO 9001 süreç denetimi, yükleme testleri ve kalite güvence.',
+    kisi: '4 Uzman',
+  },
+  {
+    isim: 'Makine & Bakım',
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>`,
+    aciklama: '55+ iş makinesinin bakım, operasyon ve lojistik yönetimi.',
+    kisi: '12 Operatör',
+  },
+  {
+    isim: 'Proje Geliştirme',
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>`,
+    aciklama: 'Teknik teklif, müşteri ilişkileri ve yeni proje geliştirme.',
+    kisi: '5 Uzman',
+  },
+  {
+    isim: 'Ar-Ge & İnovasyon',
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+    aciklama: 'Yeni zemin teknolojileri araştırma ve pilot uygulama ekibi.',
+    kisi: '3 Araştırmacı',
+  },
+];
+---
+
+<BaseLayout
+  title="Ekibimiz | Torem Zemin Mühendislik"
+  description="Torem Zemin'in deneyimli mühendis kadrosu ve uzman ekipleri. 20+ yıllık geoteknik deneyimle Türkiye genelinde hizmet veren profesyoneller."
+  canonical={canonical}
+>
+  <!-- HERO -->
+  <section class="ekip-hero">
+    <div class="ekip-hero__bg" aria-hidden="true"></div>
+    <div class="container ekip-hero__inner">
+      <span class="eyebrow eyebrow--gold">Ekibimiz</span>
+      <h1>İnsanlar,<br/><span>Mühendisliğin Özüdür</span></h1>
+      <p>Deneyimli mühendisler, uzman teknisyenler ve sahada kanıtlanmış operatörlerden oluşan güçlü kadromuzla her projede fark yaratıyoruz.</p>
+    </div>
+    <div class="ekip-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)"/></svg>
+    </div>
+  </section>
+
+  <Breadcrumb items={[
+    { label: 'Kurumsal', href: '/kurumsal/' },
+    { label: 'Ekibimiz' }
+  ]} />
+
+  <!-- YÖNETİM -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Liderlik</span>
+        <h2>Yönetim Kadrosu</h2>
+        <p>Her biri sektörde 15+ yıl deneyime sahip uzman liderler.</p>
+      </div>
+      <div class="yonetim-grid">
+        {yonetim.map((kisi) => (
+          <div class="yonetim-card">
+            <div class="yonetim-card__foto">
+              <img src={kisi.foto} alt={kisi.ad} loading="lazy" width="400" height="480" />
+              <div class="yonetim-card__overlay">
+                <a href={kisi.linkedin} class="linkedin-btn" aria-label="LinkedIn profili">
+                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="yonetim-card__body">
+              <h3>{kisi.ad}</h3>
+              <p class="yonetim-card__unvan">{kisi.unvan}</p>
+              <p class="yonetim-card__brans">{kisi.brans}</p>
+              <div class="yonetim-card__tags">
+                {kisi.uzmanlık.map((u) => <span class="uzm-tag">{u}</span>)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPARTMANLAR -->
+  <section class="section dept-section">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="eyebrow">Organizasyon</span>
+        <h2>Departmanlarımız</h2>
+        <p>Her biri kendi alanında uzmanlaşmış, birbirine entegre çalışan ekipler.</p>
+      </div>
+      <div class="dept-grid">
+        {departmanlar.map((d) => (
+          <div class="dept-card">
+            <div class="dept-card__icon" set:html={d.ikon} />
+            <div class="dept-card__body">
+              <h3>{d.isim}</h3>
+              <p>{d.aciklama}</p>
+              <span class="dept-card__kisi">{d.kisi}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- KARİYER CTA -->
+  <section class="section kariyer-cta-section">
+    <div class="container kariyer-cta">
+      <div class="kariyer-cta__text">
+        <h2>Ekibimize Katılmak İster misiniz?</h2>
+        <p>Geoteknik mühendislik alanında kariyer yapmak isteyen yetenekli mühendis ve teknisyenleri arıyoruz.</p>
+      </div>
+      <a href="/iletisim/" class="btn btn--primary btn--lg">Özgeçmiş Gönderin</a>
+    </div>
+  </section>
+
+  <div class="section container">
+    <CTABox title="Uzman Ekibimizle Projenizi Konuşalım" />
+  </div>
+</BaseLayout>
+
+<style>
+/* Hero */
+.ekip-hero {
+  background: linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary, #1B2B3A) 100%);
+  margin-top: -110px;
+  padding-block: calc(var(--s-20) + 110px) calc(var(--s-16) + 60px);
+  color: white; position: relative; overflow: hidden; text-align: center;
+}
+.ekip-hero__bg {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 70% 30%, rgba(212,175,55,0.1) 0%, transparent 60%),
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 100%, 40px 40px, 40px 40px;
+  pointer-events: none;
+}
+.ekip-hero__inner { position: relative; z-index: 2; max-width: 640px; margin-inline: auto; }
+.ekip-hero h1 { color: white; font-size: var(--text-5xl, 3rem); margin-bottom: var(--s-4, 1rem); line-height: 1.1; }
+.ekip-hero h1 span { color: var(--color-highlight, #C8873A); }
+.ekip-hero p { color: rgba(255,255,255,.75); font-size: var(--text-lg, 1.125rem); }
+.ekip-hero__wave { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; z-index: 3; line-height: 0; }
+.ekip-hero__wave svg { width: 100%; height: 100%; }
+
+/* Eyebrow */
+.eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1rem; background: rgba(200,135,58,.1); color: var(--color-highlight, #C8873A); padding: .3rem .8rem; border-radius: 4px; }
+.eyebrow--gold { background: var(--color-highlight, #C8873A); color: white; }
+
+/* Section head */
+.section-head { margin-bottom: 3rem; }
+.section-head.text-center { text-align: center; max-width: 560px; margin-inline: auto; margin-bottom: 3rem; }
+.section-head h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); color: var(--color-primary, #1B2B3A); margin-bottom: .75rem; }
+.section-head p { color: var(--color-text-muted, #5A6A7A); font-size: 1.05rem; line-height: 1.6; }
+
+/* Yönetim grid */
+.yonetim-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; max-width: 900px; margin-inline: auto; }
+.yonetim-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.06); box-shadow: 0 4px 20px rgba(0,0,0,.06); transition: transform .3s ease, box-shadow .3s ease; }
+.yonetim-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.12); }
+.yonetim-card__foto { position: relative; aspect-ratio: 4/5; overflow: hidden; }
+.yonetim-card__foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.yonetim-card:hover .yonetim-card__foto img { transform: scale(1.05); }
+.yonetim-card__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,21,48,.7) 0%, transparent 50%); display: flex; align-items: flex-end; justify-content: flex-end; padding: 1.25rem; opacity: 0; transition: opacity .3s ease; }
+.yonetim-card:hover .yonetim-card__overlay { opacity: 1; }
+.linkedin-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0077b5; color: white; border-radius: 8px; text-decoration: none; transition: transform .2s ease; }
+.linkedin-btn:hover { transform: scale(1.1); }
+.yonetim-card__body { padding: 1.5rem; }
+.yonetim-card__body h3 { font-size: 1.25rem; font-weight: 700; color: var(--color-primary, #1B2B3A); margin-bottom: .25rem; }
+.yonetim-card__unvan { font-size: .875rem; font-weight: 600; color: var(--color-highlight, #C8873A); margin-bottom: .5rem; }
+.yonetim-card__brans { font-size: .85rem; color: var(--color-text-muted, #5A6A7A); margin-bottom: 1rem; line-height: 1.5; }
+.yonetim-card__tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.uzm-tag { font-size: .75rem; background: rgba(27,43,58,.06); border: 1px solid rgba(27,43,58,.1); color: var(--color-primary, #1B2B3A); padding: .2rem .6rem; border-radius: 999px; font-weight: 500; }
+
+/* Departmanlar */
+.dept-section { background: #fafaf7; }
+.dept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.dept-card { background: white; border: 1px solid rgba(0,0,0,.06); border-radius: 14px; padding: 1.75rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.dept-card:hover { border-color: var(--color-highlight, #C8873A); box-shadow: 0 8px 24px rgba(0,0,0,.08); transform: translateY(-3px); }
+.dept-card__icon { flex-shrink: 0; width: 44px; height: 44px; background: rgba(200,135,58,.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--color-highlight, #C8873A); }
+.dept-card__icon svg { width: 22px; height: 22px; }
+.dept-card__body h3 { font-size: 1rem; font-weight: 700; color: var(--color-primary, #1B2B3A); margin-bottom: .4rem; }
+.dept-card__body p { font-size: .875rem; color: var(--color-text-muted, #5A6A7A); line-height: 1.6; margin-bottom: .75rem; }
+.dept-card__kisi { font-size: .8rem; font-weight: 700; color: var(--color-highlight, #C8873A); background: rgba(200,135,58,.1); padding: .2rem .6rem; border-radius: 999px; }
+
+/* Kariyer CTA */
+.kariyer-cta-section { background: var(--color-primary, #1B2B3A); }
+.kariyer-cta { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-block: 3.5rem; }
+.kariyer-cta__text h2 { color: white; font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: .5rem; }
+.kariyer-cta__text p { color: rgba(255,255,255,.7); font-size: 1rem; }
+
+@media (max-width: 900px) { .dept-grid { grid-template-columns: repeat(2,1fr); } .yonetim-grid { grid-template-columns: 1fr; max-width: 440px; } }
+@media (max-width: 640px) { .dept-grid { grid-template-columns: 1fr; } .kariyer-cta { flex-direction: column; text-align: center; } }
+</style>

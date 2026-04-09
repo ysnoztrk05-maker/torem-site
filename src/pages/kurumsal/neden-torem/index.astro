@@ -1,0 +1,175 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+import CTABox from '../../../components/CTABox.astro';
+
+const canonical = 'https://www.toremzemin.com/kurumsal/neden-torem/';
+
+const avantajlar = [
+  {
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"/><path d="M5 20V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 16v4"/><path d="M15 16v4"/><path d="M9 12h6"/><path d="M9 8h6"/></svg>`,
+    baslik: 'Mühendislik Deneyimi',
+    aciklama: 'Yalnızca uygulayıcı değil, çözüm üreten mühendisleriz. En karmaşık zemin koşullarında bile, teorik bilgiyle pratik saha tecrübemizi birleştirerek optimum geoteknik tasarımı sunarız.'
+  },
+  {
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+    baslik: 'Gelişmiş Makine Parkuru',
+    aciklama: 'Her zemin sınıfına ve proje ölçeğine uygun, teknolojik ve düzenli bakımları yapılan zengin bir makine-ekipman altyapısına sahibiz. Dışa bağımlı olmadan hızlı organize oluruz.'
+  },
+  {
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>`,
+    baslik: 'Zaman ve Maliyet Optimizasyonu',
+    aciklama: 'Standardı kopyalamak yerine, projeye özel değer mühendisliği (value engineering) yaparız. Doğru yöntem seçimiyle projeyi hem daha ekonomik hem de belirlenen takvimden önce tamamlarız.'
+  },
+  {
+    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+    baslik: 'Tavizsiz Kalite ve Güvenlik',
+    aciklama: 'ISO standartları ve TBDY 2018 normlarında çalışırız. İş güvenliği bizim için bürokratik bir zorunluluk değil, saha kültürümüzün temelidir. Sıfır kaza hedefiyle sahaya ineriz.'
+  }
+];
+
+const rakamlar = [
+  { deger: '10+', etiket: 'Yıllık Sektör Deneyimi' },
+  { deger: '>500', etiket: 'Tamamlanan Proje' },
+  { deger: '%100', etiket: 'Müşteri Memnuniyeti' },
+  { deger: '7/24', etiket: 'Saha Desteği' },
+];
+---
+
+<BaseLayout
+  title="Neden Torem Zemin? | Avantajlarımız"
+  description="Zemin güçlendirme ve iksa projelerinde neden Torem Zemin'i seçmelisiniz? Deneyimimiz, makine parkurumuz ve zaman-maliyet optimizasyon felsefemiz."
+  canonical={canonical}
+>
+  <!-- HERO -->
+  <section class="neden-hero">
+    <div class="neden-hero__bg" aria-hidden="true"></div>
+    <div class="container neden-hero__inner">
+      <span class="eyebrow eyebrow--gold">Neden Torem?</span>
+      <h1>Sağlam Temeller,<br/><span>Akılcı Çözümler</span></h1>
+      <p>Yalnızca zemin güçlendirmiyoruz; projelerinizin güvenle, zamanında ve en uygun maliyetle yükselmesi için mühendislik üretiyoruz.</p>
+    </div>
+    <div class="neden-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)"/></svg>
+    </div>
+  </section>
+
+  <Breadcrumb items={[
+    { label: 'Kurumsal', href: '/kurumsal/' },
+    { label: 'Neden Torem' }
+  ]} />
+
+  <!-- AÇIKLAMA METNİ -->
+  <section class="section">
+    <div class="container">
+      <div class="farkimiz-intro">
+        <h2>Zor Zeminlerin Çözüm Ortağı</h2>
+        <p class="farkimiz-intro__lead">Torem Zemin olarak, inşaat sektörünün en kritik ve belirsizliği en yüksek aşaması olan temel ve zemin uygulamalarında riskleri yönetiyoruz.</p>
+        <p>Her şantiye kendi içinde eşsiz zorluklar barındırır. Biz ezberlenmiş şablonlarla değil; sahanın dinamiklerini, zemin profilini ve yapısal yükleri bütüncül bir yaklaşımla analiz ederek o projeye en uygun geoteknik senaryoyu yazarız. Amacımız sadece fore kazık çakmak değil, inşaatınızın kesintisiz devam edebileceği güvenli platformu en verimli şekilde teslim etmektir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVANTAJLAR GRID -->
+  <section class="section avantajlar-kapsayici">
+    <div class="container">
+      <div class="avantajlar-grid">
+        {avantajlar.map((item, idx) => (
+          <div class="avantaj-kart">
+            <span class="avantaj-kart__no">{String(idx + 1).padStart(2, '0')}</span>
+            <div class="avantaj-kart__baslik-alan">
+              <div class="avantaj-kart__ikon" set:html={item.ikon} />
+              <h3>{item.baslik}</h3>
+            </div>
+            <p>{item.aciklama}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- RAKAMLAR / BANT -->
+  <section class="section fark-rakamlar">
+    <div class="container">
+      <div class="fark-grid">
+        <div class="fark-metin">
+          <h2>Rakamların Ötesinde<br/><span>Güven İnşa Ediyoruz</span></h2>
+          <p>Mühendislik bilgi birikimi, operasyon hızı ve sarsılmaz kalite anlayışımızla Türkiye'nin dört bir yanındaki dev projelere imza atıyoruz.</p>
+        </div>
+        <div class="fark-stats">
+          {rakamlar.map((r) => (
+            <div class="fstat">
+              <span class="fstat__deger">{r.deger}</span>
+              <span class="fstat__etiket">{r.etiket}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="section container">
+    <CTABox 
+      title="Zemin Probleminiz Mi Var?" 
+      text="Projelerinizin zemin etüt raporlarını bizimle paylaşın, en güvenli ve ekonomik çözümü projelendirip uygulayalım."
+    />
+  </div>
+
+</BaseLayout>
+
+<style>
+/* Hero */
+.neden-hero {
+  background: linear-gradient(135deg, var(--color-primary, #1B2B3A) 0%, var(--color-navy-dark, #001530) 100%);
+  margin-top: -110px; padding-block: calc(var(--s-20, 5rem) + 110px) calc(var(--s-16, 4rem) + 60px);
+  color: white; position: relative; overflow: hidden; text-align: center;
+}
+.neden-hero__bg {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(circle at 70% 30%, rgba(200,135,58,0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+.neden-hero__inner { position: relative; z-index: 2; max-width: 640px; margin-inline: auto; }
+.neden-hero h1 { color: white; font-size: clamp(2.5rem, 5vw, 3.75rem); line-height: 1.1; margin-bottom: 1rem; }
+.neden-hero h1 span { color: var(--color-highlight, #C8873A); }
+.neden-hero p { color: rgba(255,255,255,.75); font-size: 1.1rem; }
+.neden-hero__wave { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; z-index: 3; line-height: 0; }
+.neden-hero__wave svg { width: 100%; height: 100%; }
+
+.eyebrow { display: inline-block; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; background: rgba(200,135,58,.1); color: var(--color-highlight, #C8873A); padding: .3rem .8rem; border-radius: 4px; margin-bottom: 1rem; }
+.eyebrow--gold { background: var(--color-highlight, #C8873A); color: white; }
+
+/* Intro */
+.farkimiz-intro { max-width: 800px; margin-inline: auto; text-align: center; }
+.farkimiz-intro h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); color: var(--color-primary, #1B2B3A); margin-bottom: 1.25rem; }
+.farkimiz-intro__lead { font-size: 1.25rem; color: var(--color-primary, #1B2B3A); font-weight: 500; margin-bottom: 1.25rem; line-height: 1.5; }
+.farkimiz-intro p { color: var(--color-text-muted, #5A6A7A); line-height: 1.7; font-size: 1.05rem; }
+
+/* Avantajlar */
+.avantajlar-kapsayici { background: #fafaf7; padding-block: 5rem; }
+.avantajlar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px; margin-inline: auto; }
+.avantaj-kart { background: white; padding: 2.5rem; border-radius: 16px; border: 1px solid rgba(0,0,0,.04); position: relative; overflow: hidden; transition: box-shadow .3s, transform .3s; }
+.avantaj-kart:hover { box-shadow: 0 12px 32px rgba(0,0,0,.08); transform: translateY(-4px); }
+.avantaj-kart__no { position: absolute; top: -10px; right: -10px; font-size: 8rem; font-weight: 900; color: rgba(200,135,58,.04); line-height: 1; pointer-events: none; transition: color .3s; }
+.avantaj-kart:hover .avantaj-kart__no { color: rgba(200,135,58,.08); }
+.avantaj-kart__baslik-alan { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; position: relative; z-index: 2; }
+.avantaj-kart__ikon { width: 48px; height: 48px; border-radius: 12px; background: rgba(200,135,58,.1); color: var(--color-highlight, #C8873A); display: flex; align-items: center; justify-content: center; }
+.avantaj-kart__ikon svg { width: 24px; height: 24px; }
+.avantaj-kart h3 { font-size: 1.25rem; color: var(--color-primary, #1B2B3A); }
+.avantaj-kart p { color: var(--color-text-muted, #5A6A7A); line-height: 1.6; position: relative; z-index: 2; }
+
+/* Fark Rakamlar */
+.fark-rakamlar { background: var(--color-navy-dark, #001530); padding-block: 5rem; color: white; }
+.fark-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.fark-metin h2 { font-size: clamp(2rem, 4vw, 2.75rem); color: white; line-height: 1.2; margin-bottom: 1rem; }
+.fark-metin h2 span { color: var(--color-highlight, #C8873A); }
+.fark-metin p { color: rgba(255,255,255,.7); font-size: 1.1rem; line-height: 1.6; }
+.fark-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.fstat { border-left: 2px solid rgba(200,135,58,.4); padding-left: 1.25rem; }
+.fstat__deger { display: block; font-size: 2.5rem; font-weight: 800; color: white; line-height: 1; margin-bottom: .5rem; }
+.fstat__etiket { color: var(--color-highlight, #C8873A); font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+
+@media (max-width: 900px) { .fark-grid { grid-template-columns: 1fr; gap: 3rem; } .fark-metin { text-align: center; } .fstat { border-left: none; border-bottom: 2px solid rgba(200,135,58,.4); padding-left: 0; padding-bottom: 1rem; text-align: center; } }
+@media (max-width: 768px) { .avantajlar-grid { grid-template-columns: 1fr; } }
+</style>
