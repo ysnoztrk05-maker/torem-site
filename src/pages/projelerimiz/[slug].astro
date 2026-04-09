@@ -1,0 +1,255 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABox from '../../components/CTABox.astro';
+import { projeler, getPruje } from '../../data/projeler';
+
+export function getStaticPaths() {
+  return projeler.map((p) => ({
+    params: { slug: p.slug },
+    props: { proje: p },
+  }));
+}
+
+const { proje } = Astro.props;
+const related = projeler.filter((p) => proje.relatedSlugs.includes(p.slug));
+const canonical = `https://www.toremzemin.com/projelerimiz/${proje.slug}/`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: proje.title,
+  description: proje.desc,
+  image: `https://www.toremzemin.com${proje.heroImage}`,
+  author: {
+    '@type': 'Organization',
+    name: 'Torem Zemin Mühendislik',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Torem Zemin Mühendislik',
+    url: 'https://www.toremzemin.com',
+  },
+};
+---
+
+<BaseLayout
+  title={`${proje.title} | Torem Zemin Projelerimiz`}
+  description={proje.desc}
+  canonical={canonical}
+  schema={schema}
+>
+  <!-- HERO -->
+  <section class="proje-hero">
+    <div class="proje-hero__bg" style={`background-image:url('${proje.heroImage}')`} aria-hidden="true"></div>
+    <div class="proje-hero__overlay" aria-hidden="true"></div>
+    <div class="container proje-hero__inner">
+      <span class="proje-hero__cat">{proje.category}</span>
+      <h1>{proje.title}</h1>
+      <div class="proje-hero__meta">
+        <span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" width="14" height="14"><path d="M8 2a4 4 0 100 8A4 4 0 008 2zM8 14s-6-4-6-7a6 6 0 1112 0c0 3-6 7-6 7z"/></svg>
+          {proje.location}
+        </span>
+        <span>{proje.year}</span>
+        <span>{proje.client}</span>
+      </div>
+    </div>
+    <div class="proje-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)" />
+      </svg>
+    </div>
+  </section>
+
+  <Breadcrumb items={[
+    { label: 'Projelerimiz', href: '/projelerimiz/' },
+    { label: proje.title },
+  ]} />
+
+  <!-- METRİKLER -->
+  <section class="section section--metrics">
+    <div class="container">
+      <div class="metrics-grid">
+        {proje.metrics.map((m) => (
+          <div class="metric-card">
+            <span class="metric-card__val">{m.value}</span>
+            <span class="metric-card__lbl">{m.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAY İÇERİK -->
+  <section class="section">
+    <div class="container proje-content-grid">
+
+      <!-- Sol: Ana içerik -->
+      <div class="proje-main">
+        <div class="proje-block">
+          <h2>Proje Özeti</h2>
+          <p>{proje.desc}</p>
+        </div>
+
+        <div class="proje-block">
+          <h2>Zorluk</h2>
+          <p>{proje.challenge}</p>
+        </div>
+
+        <div class="proje-block">
+          <h2>Çözüm</h2>
+          <p>{proje.solution}</p>
+        </div>
+
+        <div class="proje-block">
+          <h2>Sonuç</h2>
+          <p class="proje-result">{proje.result}</p>
+        </div>
+
+        <!-- Galeri -->
+        {proje.gallery.length > 1 && (
+          <div class="proje-block">
+            <h2>Proje Fotoğrafları</h2>
+            <div class="proje-gallery">
+              {proje.gallery.map((g) => (
+                <figure class="gallery-item">
+                  <img src={g.src} alt={g.alt} loading="lazy" width="600" height="400" />
+                </figure>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <!-- Sağ: Sidebar -->
+      <aside class="proje-sidebar">
+        <div class="sidebar-card">
+          <h3>Proje Detayları</h3>
+          <ul class="sidebar-list">
+            <li><span class="sidebar-list__lbl">Müşteri</span><span>{proje.client}</span></li>
+            <li><span class="sidebar-list__lbl">Konum</span><span>{proje.location}</span></li>
+            <li><span class="sidebar-list__lbl">Yıl</span><span>{proje.year}</span></li>
+            <li><span class="sidebar-list__lbl">Süre</span><span>{proje.duration}</span></li>
+            <li><span class="sidebar-list__lbl">Kapsam</span><span>{proje.scope}</span></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-cta">
+          <p>Benzer bir projeniz mi var?</p>
+          <a href="/iletisim/" class="btn btn--primary" style="width:100%;text-align:center;">Ücretsiz Keşif Raporu Alın</a>
+          <a href="tel:+905316594636" class="btn btn--outline" style="width:100%;text-align:center;margin-top:0.75rem;">+90 531 659 46 36</a>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- İLGİLİ PROJELER -->
+  {related.length > 0 && (
+    <section class="section related-section">
+      <div class="container">
+        <h2 class="related-title">İlgili Projeler</h2>
+        <div class="related-grid">
+          {related.map((r) => (
+            <a href={`/projelerimiz/${r.slug}/`} class="related-card">
+              <div class="related-card__img">
+                <img src={r.image} alt={r.title} loading="lazy" width="400" height="260" />
+                <span class="related-card__cat">{r.category}</span>
+              </div>
+              <div class="related-card__body">
+                <h3>{r.title}</h3>
+                <p>{r.location} · {r.year}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <div class="section container">
+    <CTABox title="Projenizi Birlikte Tasarlayalım" />
+  </div>
+</BaseLayout>
+
+<style>
+/* Hero */
+.proje-hero {
+  position:relative; margin-top:-110px;
+  padding-block:calc(var(--s-20) + 110px) calc(var(--s-16) + 60px);
+  color:var(--color-white); overflow:hidden;
+}
+.proje-hero__bg {
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+  z-index:0;
+}
+.proje-hero__overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(0,21,48,0.88) 0%, rgba(27,43,58,0.75) 100%);
+  z-index:1;
+}
+.proje-hero__inner { position:relative; z-index:2; max-width:720px; }
+.proje-hero__cat {
+  display:inline-block; background:var(--color-highlight); color:white;
+  font-size:var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:.08em;
+  padding:.3rem .9rem; border-radius:999px; margin-bottom:var(--s-4);
+}
+.proje-hero h1 { color:white; font-size:var(--text-5xl); margin-bottom:var(--s-4); line-height:1.1; }
+.proje-hero__meta { display:flex; gap:var(--s-5); flex-wrap:wrap; color:rgba(255,255,255,.7); font-size:var(--text-sm); }
+.proje-hero__meta span { display:inline-flex; align-items:center; gap:var(--s-1); }
+.proje-hero__wave { position:absolute; bottom:0; left:0; right:0; height:60px; z-index:3; line-height:0; }
+.proje-hero__wave svg { width:100%; height:100%; }
+
+/* Metrikler */
+.section--metrics { background:var(--color-primary); padding-block:var(--s-10); }
+.metrics-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-6); }
+.metric-card { text-align:center; padding:var(--s-5); }
+.metric-card__val { display:block; font-size:var(--text-4xl); font-weight:800; color:var(--color-highlight); line-height:1; margin-bottom:var(--s-2); }
+.metric-card__lbl { font-size:var(--text-sm); color:rgba(255,255,255,.65); text-transform:uppercase; letter-spacing:.05em; }
+
+/* İçerik grid */
+.proje-content-grid { display:grid; grid-template-columns:1fr 340px; gap:var(--s-12); align-items:start; }
+.proje-main { display:flex; flex-direction:column; gap:var(--s-10); }
+.proje-block h2 { font-size:var(--text-2xl); color:var(--color-primary); margin-bottom:var(--s-4); padding-bottom:var(--s-3); border-bottom:2px solid var(--color-highlight); display:inline-block; }
+.proje-block p { color:var(--color-text-muted); line-height:1.75; font-size:var(--text-base); }
+.proje-result { background:rgba(200,135,58,.08); border-left:4px solid var(--color-highlight); padding:var(--s-4) var(--s-5); border-radius:0 var(--r-lg) var(--r-lg) 0; font-weight:500; color:var(--color-text) !important; }
+
+/* Galeri */
+.proje-gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--s-4); }
+.gallery-item { margin:0; border-radius:var(--r-lg); overflow:hidden; aspect-ratio:3/2; }
+.gallery-item img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
+.gallery-item:hover img { transform:scale(1.04); }
+
+/* Sidebar */
+.proje-sidebar { position:sticky; top:calc(var(--s-16) + var(--s-4)); display:flex; flex-direction:column; gap:var(--s-6); }
+.sidebar-card { background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-xl); padding:var(--s-6); }
+.sidebar-card h3 { font-size:var(--text-lg); color:var(--color-primary); margin-bottom:var(--s-5); }
+.sidebar-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:var(--s-3); }
+.sidebar-list li { display:flex; flex-direction:column; gap:var(--s-1); padding-bottom:var(--s-3); border-bottom:1px solid var(--color-border); }
+.sidebar-list li:last-child { border-bottom:none; padding-bottom:0; }
+.sidebar-list__lbl { font-size:var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--color-text-muted); }
+.sidebar-list span:not(.sidebar-list__lbl) { font-size:var(--text-sm); color:var(--color-text); font-weight:500; }
+.sidebar-cta { background:var(--color-primary); border-radius:var(--r-xl); padding:var(--s-6); }
+.sidebar-cta p { color:rgba(255,255,255,.8); font-size:var(--text-sm); margin-bottom:var(--s-4); }
+
+/* İlgili projeler */
+.related-section { background:var(--color-bg); }
+.related-title { font-size:var(--text-3xl); color:var(--color-primary); margin-bottom:var(--s-8); }
+.related-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-6); }
+.related-card { text-decoration:none; color:inherit; background:var(--color-white); border-radius:var(--r-xl); overflow:hidden; border:1px solid var(--color-border); transition:transform var(--t-base), box-shadow var(--t-base); display:block; }
+.related-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.related-card__img { position:relative; aspect-ratio:3/2; overflow:hidden; }
+.related-card__img img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
+.related-card:hover .related-card__img img { transform:scale(1.04); }
+.related-card__cat { position:absolute; top:var(--s-3); left:var(--s-3); background:var(--color-highlight); color:white; font-size:var(--text-xs); font-weight:600; padding:.2rem .7rem; border-radius:999px; }
+.related-card__body { padding:var(--s-4); }
+.related-card__body h3 { font-size:var(--text-base); font-weight:700; color:var(--color-primary); margin-bottom:var(--s-1); }
+.related-card__body p { font-size:var(--text-xs); color:var(--color-text-muted); }
+
+/* Responsive */
+@media (max-width:1024px) { .proje-content-grid { grid-template-columns:1fr; } .proje-sidebar { position:static; } }
+@media (max-width:768px) { .metrics-grid { grid-template-columns:repeat(2,1fr); } .proje-gallery { grid-template-columns:1fr; } .related-grid { grid-template-columns:1fr; } }
+@media (max-width:480px) { .proje-hero h1 { font-size:var(--text-3xl); } }
+</style>

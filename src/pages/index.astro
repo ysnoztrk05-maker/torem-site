@@ -123,11 +123,32 @@ const faqItems = [
     <div class="logos-track">
       <div class="logos-inner" aria-hidden="true">
         {[
-          'Rönesans', 'TOKİ', 'İBB', 'Kolin', 'Emlak Konut', 'Fernas', 'Smart', 'Doğuş',
-          'Rönesans', 'TOKİ', 'İBB', 'Kolin', 'Emlak Konut', 'Fernas', 'Smart', 'Doğuş'
-        ].map((name) => (
+          { name: 'Rönesans',     src: '/images/logos/ronesans.png'     },
+          { name: 'TOKİ',         src: '/images/logos/toki.png'         },
+          { name: 'İBB',          src: '/images/logos/ibb.png'          },
+          { name: 'Kolin',        src: '/images/logos/kolin.png'        },
+          { name: 'Emlak Konut',  src: '/images/logos/emlak-konut.png'  },
+          { name: 'Fernas',       src: '/images/logos/fernas.png'       },
+          { name: 'Smart',        src: '/images/logos/smart.png'        },
+          { name: 'Doğuş',        src: '/images/logos/dogus.png'        },
+          { name: 'Rönesans',     src: '/images/logos/ronesans.png'     },
+          { name: 'TOKİ',         src: '/images/logos/toki.png'         },
+          { name: 'İBB',          src: '/images/logos/ibb.png'          },
+          { name: 'Kolin',        src: '/images/logos/kolin.png'        },
+          { name: 'Emlak Konut',  src: '/images/logos/emlak-konut.png'  },
+          { name: 'Fernas',       src: '/images/logos/fernas.png'       },
+          { name: 'Smart',        src: '/images/logos/smart.png'        },
+          { name: 'Doğuş',        src: '/images/logos/dogus.png'        },
+        ].map((logo) => (
           <div class="logo-item">
-            <span class="logo-text">{name}</span>
+            <img
+              src={logo.src}
+              alt={logo.name + ' — Torem Zemin referans müşteri'}
+              loading="lazy"
+              width="120"
+              height="40"
+              style="object-fit:contain; max-height:40px; width:auto;"
+            />
           </div>
         ))}
       </div>
@@ -769,10 +790,8 @@ const faqItems = [
 .logos-track { overflow:hidden; }
 .logos-inner { display:flex; gap:var(--s-6); width:max-content; animation:marquee 32s linear infinite; }
 .logos-inner:hover { animation-play-state:paused; }
-.logo-item { display:flex; align-items:center; justify-content:center; min-width:148px; height:58px; background:var(--color-bg); border:1px solid var(--color-border); border-radius:var(--r-lg); padding:var(--s-2) var(--s-5); transition:border-color var(--t-fast), box-shadow var(--t-fast); }
-.logo-item:hover { border-color:var(--color-highlight); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-.logo-text { font-weight: 800; font-family: monospace; font-size: 1.1rem; color: var(--color-text-muted); opacity: 0.5; transition: opacity var(--t-fast), color var(--t-fast); text-transform: uppercase; letter-spacing: 0.05em; }
-.logo-item:hover .logo-text { opacity: 1; color: var(--color-navy-dark, #0a192f); }
+.logo-item { display:flex; align-items:center; justify-content:center; min-width:148px; height:58px; background:var(--color-bg); border:1px solid var(--color-border); border-radius:var(--r-lg); padding:var(--s-2) var(--s-5); filter:grayscale(1); opacity:0.6; transition:border-color var(--t-fast), box-shadow var(--t-fast), filter var(--t-fast), opacity var(--t-fast); }
+.logo-item:hover { border-color:var(--color-highlight); box-shadow:0 4px 12px rgba(0,0,0,0.05); filter:grayscale(0); opacity:1; }
 @keyframes marquee { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
 @media (prefers-reduced-motion:reduce) { .logos-inner { animation:none; flex-wrap:wrap; justify-content:center; width:auto; } }
 

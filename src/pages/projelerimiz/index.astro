@@ -2,71 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABox from '../../components/CTABox.astro';
+import { projeler } from '../../data/projeler';
 
 const canonical = 'https://www.toremzemin.com/projelerimiz/';
 
-const projects = [
-  {
-    title: 'Başakşehir Karma Yapı Kompleksi',
-    category: 'Fore Kazık',
-    catSlug: 'fore-kazik',
-    location: 'İstanbul, Başakşehir',
-    year: '2024',
-    desc: '48 katlı karma yapı için 512 adet fore kazık uygulaması. Kazık çapı Ø880mm, kazık boyu 28m. 3D zemin modeli ile tasarım.',
-    image: '/images/fore-kazik-saha.jpg',
-    tags: ['Ø880mm', '28m Derinlik', '512 Kazık'],
-  },
-  {
-    title: 'Pendik Metro İstasyonu İksası',
-    category: 'İksa Sistemleri',
-    catSlug: 'iksa',
-    location: 'İstanbul, Pendik',
-    year: '2023',
-    desc: 'İstanbul metro hattı genişleme projesi. 14m derinliğinde ankrajlı palplanş iksa sistemi, kritik kentsel ortamda sıfır çökme toleransı.',
-    image: '/images/iksa-sistemleri.jpg',
-    tags: ['14m Derinlik', 'Kentsel Ortam', 'Ankrajlı'],
-  },
-  {
-    title: 'Kocaeli Endüstriyel Depo Kompleksi',
-    category: 'Jet Grout',
-    catSlug: 'jet-grout',
-    location: 'Kocaeli, Gebze',
-    year: '2023',
-    desc: 'Yüksek taşıma kapasiteli endüstriyel zemin için jet grout kolon uygulaması. 80.000 m² alan, zayıf zeminlerin iyileştirilmesi.',
-    image: '/images/zemin-iyilestirme.jpg',
-    tags: ['80.000 m²', 'Zemin İyileştirme', 'Jet Grout'],
-  },
-  {
-    title: 'Bursa Toprak Kayma Güçlendirme',
-    category: 'Zemin Çivisi',
-    catSlug: 'zemin-civisi',
-    location: 'Bursa, Nilüfer',
-    year: '2024',
-    desc: 'Yerleşim bölgesinde aktif toprak kayması stabilizasyonu. 240 adet zemin çivisi, shotcrete yüzey koruma, izleme sistemi.',
-    image: '/images/hero-main.jpg',
-    tags: ['240 Çivi', 'Shotcrete', 'İzleme Sistemi'],
-  },
-  {
-    title: 'Kadıköy Tarihi Yapı Yenileme',
-    category: 'Mini Kazık',
-    catSlug: 'mini-kazik',
-    location: 'İstanbul, Kadıköy',
-    year: '2022',
-    desc: 'Tarihi binanın temel güçlendirmesi. Sınırlı çalışma alanında Ø114mm mini kazık uygulaması, minimum titreşim.',
-    image: '/images/makine-parki.webp',
-    tags: ['Ø114mm', 'Tarihi Yapı', 'Mini Kazık'],
-  },
-  {
-    title: 'Ankara OSB Sanayi Binası',
-    category: 'Öngermeli Ankraj',
-    catSlug: 'ankraj',
-    location: 'Ankara, Sincan OSB',
-    year: '2022',
-    desc: 'Organize sanayi bölgesinde derin iksa ve kalıcı ankraj sistemi. 18m derinlik, 3 sıra öngermeli ankraj, 2000 kN kapasite.',
-    image: '/images/ankraj.jpg',
-    tags: ['18m Derinlik', '2000 kN', 'Kalıcı Ankraj'],
-  },
-];
+const projects = projeler;
 
 const stats = [
   { num: '600+', label: 'Tamamlanan Proje' },
@@ -134,10 +74,11 @@ const stats = [
 
       <div class="proj-grid">
         {projects.map((p) => (
-          <article class="pcard" data-cat={p.catSlug}>
+          <a href={`/projelerimiz/${p.slug}/`} class="pcard" data-cat={p.catSlug}>
             <div class="pcard__img-wrap">
               <img src={p.image} alt={p.title} loading="lazy" width="600" height="400" />
               <span class="pcard__cat">{p.category}</span>
+              <span class="pcard__arrow" aria-hidden="true">→</span>
             </div>
             <div class="pcard__body">
               <div class="pcard__meta">
@@ -153,7 +94,7 @@ const stats = [
                 {p.tags.map((t) => <span class="ptag">{t}</span>)}
               </div>
             </div>
-          </article>
+          </a>
         ))}
       </div>
     </div>
@@ -228,7 +169,19 @@ const stats = [
 .filter-btn { padding:var(--s-2) var(--s-4); border:1.5px solid var(--color-border); border-radius:var(--r-lg); background:var(--color-white); color:var(--color-text); font-size:var(--text-sm); font-weight:500; cursor:pointer; transition:border-color var(--t-fast), background var(--t-fast), color var(--t-fast); }
 .filter-btn:hover { border-color:var(--color-highlight); }
 .filter-btn--active { background:var(--color-highlight); color:#1a1400; border-color:var(--color-highlight); }
-.pcard { transition:opacity .22s ease, transform .22s ease; }
+/* Kart link */
+.pcard { display:block; text-decoration:none; color:inherit; transition:opacity .22s ease, transform .22s ease; }
+/* Ok ikonu */
+.pcard__arrow {
+  position:absolute; bottom:var(--s-3); right:var(--s-3);
+  background:var(--color-highlight); color:white;
+  width:32px; height:32px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem; font-weight:700;
+  opacity:0; transform:scale(0.8);
+  transition:opacity var(--t-fast), transform var(--t-fast);
+}
+.pcard:hover .pcard__arrow { opacity:1; transform:scale(1); }
 </style>
 
 <script>
