@@ -8,7 +8,7 @@ import FAQAccordion from '../components/FAQAccordion.astro';
 import { hizmetler, blogPosts, stats, company } from '../data/content';
 import { kategoriler, getTekniklerByKategori } from '../data/faaliyet-alanlari';
 import { projeler } from '../data/projeler';
-import { heroStats } from '../data/sirket';
+import { heroStats, makineSayisi, sirket } from '../data/sirket';
 
 const featuredHizmetler = hizmetler.slice(0, 6);
 const featuredProjeler = projeler.slice(0, 3);
@@ -187,7 +187,7 @@ const faqItems = [
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
           <h3>Kendi Makine Parkı</h3>
-          <p>55+ iş makinesi — kiralık değil, kendi mülkümüz. Soilmec, Casagrande, Bauer. İş programı değişse bile ekipman sahada hazır.</p>
+          <p>{makineSayisi} iş makinesi — kiralık değil, kendi mülkümüz. Soilmec, Casagrande, Bauer. İş programı değişse bile ekipman sahada hazır.</p>
         </div>
 
         <div class="neden-kart">
@@ -310,7 +310,7 @@ const faqItems = [
           loading="lazy" width="340" height="280"
         />
         <div class="about__badge">
-          <strong>2003'ten</strong><span>beri güvenle inşa ediyoruz</span>
+          <strong>{sirket.kurulus}'ten</strong><span>beri güvenle inşa ediyoruz</span>
         </div>
       </div>
 
@@ -318,8 +318,8 @@ const faqItems = [
         <p class="eyebrow">Biz Kimiz</p>
         <h2>Sağlam Temellerin<br>Arkasındaki Güç</h2>
         <div class="aeo-box">
-          Torem Zemin Mühendislik, 2003'ten bu yana İstanbul merkezli olarak Türkiye genelinde
-          600'ü aşkın geoteknik projeye imza atmıştır.
+          Torem Zemin Mühendislik, {sirket.kurulus}'ten bu yana İstanbul merkezli olarak Türkiye genelinde
+          250'yi aşkın geoteknik projeye imza atmıştır.
         </div>
         <p>
           Modern makine parkımız, alanında uzman mühendis kadromuz ve ISO 9001:2015 kalite
@@ -328,7 +328,7 @@ const faqItems = [
         </p>
         <ul class="check-list">
           <li>ISO 9001:2015 Kalite Yönetim Sistemi</li>
-          <li>55'i aşkın modern iş makinesi parkı</li>
+          <li>{makineSayisi} modern iş makinesi parkı</li>
           <li>Deneyimli jeoteknik mühendis kadrosu</li>
           <li>Türkiye geneli, aynı gün saha ziyareti</li>
         </ul>
