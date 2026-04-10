@@ -8,6 +8,7 @@ import FAQAccordion from '../components/FAQAccordion.astro';
 import { hizmetler, blogPosts, stats, company } from '../data/content';
 import { kategoriler, getTekniklerByKategori } from '../data/faaliyet-alanlari';
 import { projeler } from '../data/projeler';
+import { heroStats } from '../data/sirket';
 
 const featuredHizmetler = hizmetler.slice(0, 6);
 const featuredProjeler = projeler.slice(0, 3);
@@ -25,96 +26,107 @@ const faqItems = [
   description="20+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projeleri. İstanbul merkezli, Türkiye geneli geoteknik mühendislik hizmetleri."
 >
 
-  <!-- ░░ HERO SLIDER ░░ -->
-  <section class="premium-hero slider-hero">
-    <!-- Slider Backgrounds -->
-    <div class="slider-bg act" style="background-image: url('/images/hero-main.jpg')"></div>
-    <div class="slider-bg" style="background-image: url('/images/fore-kazik-saha.jpg')"></div>
-    <div class="slider-bg" style="background-image: url('/images/iksa-sistemleri.jpg')"></div>
-    
-    <div class="premium-hero__overlay"></div>
+  <!-- ░░ HERO ░░ -->
+  <section class="hero">
 
-    <div class="container premium-hero__inner">
-      <div class="premium-hero__content">
-        <!-- Slides Data Container -->
-        <div class="hero-slides-wrapper">
-          <!-- Slide 1 -->
-          <div class="hero-slide active">
-            <span class="eyebrow eyebrow--gold slide-up">Geoteknik Mühendislik</span>
-            <h1 class="premium-hero__title slide-up">
-              Temelden Zirveye<br>
-              <span class="text-gradient">Güvenli Zemin Çözümleri</span>
-            </h1>
-            <p class="premium-hero__sub slide-up">
-              20+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projelerinde
-              İstanbul'un güvenilir geoteknik partneri. ISO 9001 kalite güvencesiyle 600+ proje tamamlandı.
-            </p>
-          </div>
-
-          <!-- Slide 2 -->
-          <div class="hero-slide">
-            <span class="eyebrow eyebrow--gold slide-up">İleri Teknoloji</span>
-            <h1 class="premium-hero__title slide-up">
-              Modern Makine Parkı<br>
-              <span class="text-gradient">Sınırsız Kapasite</span>
-            </h1>
-            <p class="premium-hero__sub slide-up">
-              55'i aşkın zemin makinesi ve donanımımızla, büyük ölçekli ve zorlu zemin koşullarına sahip projelerde hızlı ve güvenilir uygulamalar gerçekleştiriyoruz.
-            </p>
-          </div>
-
-          <!-- Slide 3 -->
-          <div class="hero-slide">
-            <span class="eyebrow eyebrow--gold slide-up">Uluslararası Standartlar</span>
-            <h1 class="premium-hero__title slide-up">
-              Mühendislikte<br>
-              <span class="text-gradient">Sıfır Tolerans & Güven</span>
-            </h1>
-            <p class="premium-hero__sub slide-up">
-              TBDY 2018 deprem yönetmeliklerine tam uyumlu, ISO 9001 sertifikalı sistemimizle en zor zeminleri güvenle yapılaşmaya hazır hale getiriyoruz.
-            </p>
-          </div>
-        </div>
-
-        <!-- Static Actions & Trust (Persists across slides) -->
-        <div class="premium-hero__bottom slide-up">
-          <div class="premium-hero__actions">
-            <a href="/iletisim/" class="btn btn--primary btn--lg shadow-glow">Ücretsiz Keşif Raporu Alın</a>
-            <a href="/hizmetlerimiz/" class="btn btn--outline btn--ghost-light btn--lg">Hizmetleri İncele</a>
-          </div>
-          <div class="premium-hero__trust">
-            <div class="trust-item"><span class="trust-icon">✓</span> ISO 9001</div>
-            <div class="trust-item"><span class="trust-icon">✓</span> 600+ Proje</div>
-            <div class="trust-item"><span class="trust-icon">✓</span> 20 Yıl Deneyim</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Floating Stat Cards -->
-      <div class="hero-floating-stats intro-fade-up" aria-hidden="true">
-        <div class="floating-stat stat-1">
-          <span class="stat-val">600+</span>
-          <span class="stat-lbl">Proje</span>
-        </div>
-        <div class="floating-stat stat-2">
-          <span class="stat-val">55+</span>
-          <span class="stat-lbl">Makine</span>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Slider Navigation / Progress -->
-    <div class="slider-progress-container container">
-      <div class="slider-dot active" data-index="0"></div>
-      <div class="slider-dot" data-index="1"></div>
-      <div class="slider-dot" data-index="2"></div>
+    <!-- Slide Backgrounds -->
+    <div class="hero-slides">
+      <div class="hero-slide hero-slide--1 is-active"></div>
+      <div class="hero-slide hero-slide--2"></div>
+      <div class="hero-slide hero-slide--3"></div>
     </div>
 
-    <div class="premium-hero__wave" aria-hidden="true">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--color-white)"/>
+    <!-- Animated SVG Layer — zemin mühendisliği görsel dili -->
+    <div class="hero-svg-layer" aria-hidden="true">
+      <svg viewBox="0 0 1440 820" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Zemin katman çizgileri -->
+        <line class="geo-layer geo-layer--1" x1="-50" y1="540" x2="1500" y2="480" />
+        <line class="geo-layer geo-layer--2" x1="-50" y1="590" x2="1500" y2="535" />
+        <line class="geo-layer geo-layer--3" x1="-50" y1="650" x2="1500" y2="600" />
+        <line class="geo-layer geo-layer--4" x1="-50" y1="700" x2="1500" y2="660" />
+        <line class="geo-layer geo-layer--5" x1="-50" y1="760" x2="1500" y2="720" />
+
+        <!-- Zemin eğrisi -->
+        <path class="geo-layer geo-layer--curve"
+          d="M 0 580 Q 200 520 400 560 T 800 540 T 1200 510 T 1500 500" />
+
+        <!-- Fore kazık -->
+        <line class="pile-line pile-line--1" x1="1224" y1="300" x2="1224" y2="640" />
+        <line class="pile-line pile-line--2" x1="1234" y1="300" x2="1234" y2="640" />
+
+        <!-- Kazık başlığı -->
+        <rect class="pile-head pile-head--top" x="1210" y="290" width="36" height="14" rx="3" />
+        <!-- Fore kazık tabanı -->
+        <ellipse class="pile-head pile-head--base" cx="1229" cy="650" rx="22" ry="8" />
+
+        <!-- Radar pulse -->
+        <circle class="radar-circle radar-circle--1" cx="1229" cy="648" r="10" />
+        <circle class="radar-circle radar-circle--2" cx="1229" cy="648" r="10" />
+        <circle class="radar-circle radar-circle--3" cx="1229" cy="648" r="10" />
+
+        <!-- Nokta desen -->
+        <defs>
+          <pattern id="heroDots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="1" fill="rgba(200,135,58,0.13)" />
+          </pattern>
+        </defs>
+        <rect x="820" y="0" width="620" height="480" fill="url(#heroDots)" />
+
+        <!-- Diagonal accent -->
+        <line class="geo-layer geo-layer--diag"
+          x1="1050" y1="0" x2="1440" y2="320"
+          style="stroke-dasharray:800; stroke-dashoffset:800;" />
+
       </svg>
     </div>
+
+    <!-- Gradient Overlay -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Slide Numarası -->
+    <div class="hero-slide-label" aria-hidden="true">
+      Proje <span id="heroSlideNum">01</span> / 03
+    </div>
+
+    <!-- İçerik -->
+    <div class="hero-content container">
+      <p class="hero-eyebrow"><span>Türkiye'nin Güvenilir Geoteknik Ortağı</span></p>
+
+      <h1 class="hero-title" id="heroTitle"></h1>
+
+      <p class="hero-sub" id="heroSub"></p>
+
+      <div class="hero-cta">
+        <a href="/projelerimiz/" class="btn btn--primary btn--hero-primary">
+          Projelerimizi İncele
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+        </a>
+        <a href="/iletisim/" class="btn btn--ghost btn--hero-ghost">
+          Ücretsiz Keşif İste
+        </a>
+      </div>
+    </div>
+
+    <!-- Floating Stats — sirket.ts'den otomatik -->
+    <div class="hero-stats" aria-label="Proje İstatistikleri">
+      {heroStats.map((stat) => (
+        <div class="hero-stat-card">
+          <span class="hero-stat-card__num">{stat.deger}</span>
+          <span class="hero-stat-card__lbl">{stat.etiket}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Progress Dots -->
+    <div class="hero-dots" id="heroDots" role="tablist" aria-label="Hero slaytlar"></div>
+
+    <!-- Scroll İndikatörü -->
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll__line"></div>
+      <span>Aşağı Kaydır</span>
+    </div>
+
   </section>
 
   <!-- ░░ REFERANS LOGO BANDI ░░ -->
@@ -472,42 +484,123 @@ const faqItems = [
 </BaseLayout>
 
 <script>
-  // Simple Vanilla JS Slider Logic
-  document.addEventListener('DOMContentLoaded', () => {
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.hero-slide');
-    const bgs = document.querySelectorAll('.slider-bg');
-    const dots = document.querySelectorAll('.slider-dot');
-    
-    if(slides.length === 0) return;
+// ══════════════════════════════════════════
+// HERO — Sinematik Slider + Animated SVG
+// ══════════════════════════════════════════
+(function () {
+  'use strict';
 
-    const showSlide = (index) => {
-      slides.forEach(s => s.classList.remove('active'));
-      bgs.forEach(b => b.classList.remove('act'));
-      dots.forEach(d => d.classList.remove('active'));
+  const SLIDES = [
+    {
+      title: 'Zemini Biz Biliriz, Projenizi Biz Taşırız',
+      sub: 'Fore kazık, ankraj, jet grout ve zemin iyileştirme çözümlerinde 13 yıllık deneyim. Türkiye\'nin en zorlu zeminlerinde güvenle inşa ediyoruz.',
+      label: '01'
+    },
+    {
+      title: 'Güçlü Makine Parkuru — Proje Yerine Her Zaman Hazır',
+      sub: 'Soilmec, Casagrande ve Bauer makinelerimiz kendi mülkümüz. İş programı değişse bile ekipman sahada, projeniz programda.',
+      label: '02'
+    },
+    {
+      title: 'ISO 9001 Kalite, TBDY 2018 Uyumu — Belgeli Güvence',
+      sub: 'Her kazık yükleme testinden geçer. Zemin etüdünden anahtar teslime tek elden, şeffaf raporlama ile.',
+      label: '03'
+    }
+  ];
 
-      slides[index].classList.add('active');
-      bgs[index].classList.add('act');
-      dots[index].classList.add('active');
-    };
+  const INTERVAL = 7000;
+  let current = 0;
+  let timer   = null;
 
-    const nextSlide = () => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    };
+  const slideEls   = document.querySelectorAll('.hero-slide');
+  const titleEl    = document.getElementById('heroTitle');
+  const subEl      = document.getElementById('heroSub');
+  const slideNumEl = document.getElementById('heroSlideNum');
+  const dotsEl     = document.getElementById('heroDots');
+  const svgLayer   = document.querySelector('.hero-svg-layer');
 
-    let slideInterval = setInterval(nextSlide, 7000); // 7s per slide
+  if (!slideEls.length || !titleEl || !dotsEl) return;
 
-    // Dot click handling
-    dots.forEach((dot, idx) => {
-      dot.addEventListener('click', () => {
-        clearInterval(slideInterval);
-        currentSlide = idx;
-        showSlide(currentSlide);
-        slideInterval = setInterval(nextSlide, 7000); // Reset timer
-      });
-    });
+  function wrapWords(text) {
+    return text.split(' ')
+      .map((w, i) => `<span class="word"><span style="animation-delay:${0.4 + i * 0.12}s">${w}</span></span>`)
+      .join(' ');
+  }
+
+  SLIDES.forEach((_, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'hero-dot' + (i === 0 ? ' is-active' : '');
+    btn.setAttribute('aria-label', `Slayt ${i + 1}`);
+    btn.setAttribute('role', 'tab');
+    btn.addEventListener('click', () => goTo(i));
+    dotsEl.appendChild(btn);
   });
+
+  function updateDots(idx) {
+    dotsEl.querySelectorAll('.hero-dot').forEach((d, i) => {
+      d.className = 'hero-dot' + (i === idx ? ' is-active' : '');
+    });
+  }
+
+  function updateContent(idx, animate) {
+    const data = SLIDES[idx];
+    titleEl.innerHTML = wrapWords(data.title);
+    if (animate) {
+      subEl.style.opacity = '0';
+      subEl.style.transform = 'translateY(12px)';
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          subEl.textContent = data.sub;
+          subEl.style.opacity = '1';
+          subEl.style.transform = 'translateY(0)';
+        }, 280);
+      });
+    } else {
+      subEl.textContent = data.sub;
+    }
+    if (slideNumEl) slideNumEl.textContent = data.label;
+  }
+
+  function goTo(next) {
+    if (next === current) return;
+    const prev = current;
+    current = next;
+    const prevEl = slideEls[prev];
+    const nextEl = slideEls[next];
+    prevEl.classList.remove('is-active', 'wipe-in');
+    prevEl.classList.add('wipe-out');
+    prevEl.addEventListener('animationend', () => {
+      prevEl.classList.remove('wipe-out');
+      prevEl.style.opacity = '0';
+    }, { once: true });
+    nextEl.style.opacity = '1';
+    nextEl.classList.remove('wipe-out');
+    nextEl.classList.add('wipe-in');
+    nextEl.addEventListener('animationend', () => {
+      nextEl.classList.remove('wipe-in');
+      nextEl.classList.add('is-active');
+    }, { once: true });
+    updateContent(next, true);
+    updateDots(next);
+    resetTimer();
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo((current + 1) % SLIDES.length), INTERVAL);
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!svgLayer) return;
+    const y = window.scrollY;
+    if (y < window.innerHeight) {
+      svgLayer.style.transform = `translateY(${y * 0.14}px)`;
+    }
+  }, { passive: true });
+
+  updateContent(0, false);
+  resetTimer();
+})();
 </script>
 
 <style>
@@ -517,262 +610,369 @@ const faqItems = [
 .sec-head h2 { margin-bottom:var(--s-4); }
 .sec-head__sub { color:var(--color-text-muted); font-size:var(--text-lg); max-width:580px; margin-inline:auto; }
 
-/* ── Premium Hero ── */
-.premium-hero {
+/* ══════════════════════════════════════════════════
+   HERO — Sinematik + Animated SVG
+══════════════════════════════════════════════════ */
+
+.hero {
   position: relative;
-  background-color: var(--color-navy-dark, #0a192f);
-  margin-top: -110px;
-  padding-block: 160px 100px;
+  width: 100%;
+  height: 100svh;
+  min-height: 620px;
   overflow: hidden;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
-.slider-bg {
+
+/* ── Slide Backgrounds ── */
+.hero-slides { position: absolute; inset: 0; z-index: 0; }
+
+.hero-slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1.5s ease-in-out, transform 8s linear;
+  transform: scale(1.06);
+  will-change: opacity, transform;
+}
+
+.hero-slide--1 {
+  background-image:
+    linear-gradient(135deg, rgba(0,21,48,.52) 0%, rgba(0,21,48,.18) 55%, rgba(0,21,48,.45) 100%),
+    url('/images/hero-main.jpg');
+}
+.hero-slide--2 {
+  background-image:
+    linear-gradient(135deg, rgba(0,21,48,.52) 0%, rgba(0,21,48,.18) 55%, rgba(0,21,48,.45) 100%),
+    url('/images/fore-kazik-saha.jpg');
+}
+.hero-slide--3 {
+  background-image:
+    linear-gradient(135deg, rgba(0,21,48,.52) 0%, rgba(0,21,48,.18) 55%, rgba(0,21,48,.45) 100%),
+    url('/images/iksa-sistemleri.jpg');
+}
+
+.hero-slide.is-active {
+  opacity: 1;
   transform: scale(1);
-  mix-blend-mode: luminosity; 
-  z-index: 0;
+  transition: transform 9s ease-out;
 }
-.slider-bg.act {
-  opacity: 0.25;
-  transform: scale(1.08); /* Ken Burns effect */
+
+.hero-slide.wipe-in {
+  opacity: 1;
+  transform: scale(1);
+  animation: heroWipeIn 1.1s cubic-bezier(.77,0,.175,1) forwards;
+  transition: transform 9s ease-out;
 }
-.premium-hero__overlay {
+.hero-slide.wipe-out {
+  opacity: 1;
+  animation: heroWipeOut 1.1s cubic-bezier(.77,0,.175,1) forwards;
+}
+
+@keyframes heroWipeIn  { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0% 0 0); } }
+@keyframes heroWipeOut { from { clip-path: inset(0 0% 0 0); }  to { clip-path: inset(0 0 0 100%); } }
+
+/* ── SVG Layer ── */
+.hero-svg-layer {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10, 25, 47, 0.8) 0%, rgba(10, 25, 47, 1) 100%);
   z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  will-change: transform;
 }
-.premium-hero__inner {
-  position: relative;
+.hero-svg-layer svg { width: 100%; height: 100%; }
+
+.geo-layer {
+  fill: none;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
+  animation: heroDrawLine 2.4s ease-out forwards;
+}
+.geo-layer--1 { stroke: rgba(200,135,58,.22); stroke-width:1;   animation-delay:.2s; }
+.geo-layer--2 { stroke: rgba(200,135,58,.16); stroke-width:1;   animation-delay:.5s; }
+.geo-layer--3 { stroke: rgba(200,135,58,.12); stroke-width:1;   animation-delay:.8s; }
+.geo-layer--4 { stroke: rgba(255,255,255,.08); stroke-width:.8; animation-delay:1.1s; }
+.geo-layer--5 { stroke: rgba(255,255,255,.06); stroke-width:.8; animation-delay:1.3s; }
+.geo-layer--curve { stroke: rgba(200,135,58,.08); stroke-width:1.5; animation-delay:1.6s; stroke-dasharray:2000; stroke-dashoffset:2000; }
+.geo-layer--diag  { stroke: rgba(200,135,58,.15); stroke-width:1;   animation-delay:1.8s; }
+
+@keyframes heroDrawLine { to { stroke-dashoffset: 0; } }
+
+.pile-line {
+  fill: none;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: heroDrawLine 1.8s ease-in-out forwards;
+}
+.pile-line--1 { stroke: rgba(200,135,58,.5); stroke-width:2; animation-delay:.6s; }
+.pile-line--2 { stroke: rgba(200,135,58,.3); stroke-width:1.5; animation-delay:.85s; }
+
+.pile-head {
+  fill: none;
+  stroke: rgba(200,135,58,.6);
+  stroke-width: 2;
+  opacity: 0;
+  animation: heroFadeIn .4s ease forwards;
+}
+.pile-head--top  { animation-delay: 2s; }
+.pile-head--base { animation-delay: 2.2s; }
+
+@keyframes heroFadeIn { to { opacity: 1; } }
+
+.radar-circle {
+  fill: none;
+  stroke-width: 1.5;
+}
+.radar-circle--1 { stroke: rgba(200,135,58,.45); animation: heroRadar 2.4s ease-out 1.8s infinite; }
+.radar-circle--2 { stroke: rgba(200,135,58,.28); animation: heroRadar 2.4s ease-out 2.1s infinite; }
+.radar-circle--3 { stroke: rgba(200,135,58,.14); animation: heroRadar 2.4s ease-out 2.5s infinite; }
+
+@keyframes heroRadar {
+  0%   { r: 5;  opacity: 1; }
+  100% { r: 62; opacity: 0; }
+}
+
+/* ── Gradient Overlay ── */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
   z-index: 2;
-  display: flex;
-  justify-content: center;
+  background:
+    linear-gradient(to right, rgba(0,21,48,.72) 0%, rgba(0,21,48,.3) 52%, rgba(0,21,48,.08) 100%),
+    linear-gradient(to top, rgba(0,21,48,.65) 0%, transparent 42%);
+  pointer-events: none;
 }
-.premium-hero__content {
-  max-width: 900px;
+
+/* ── Slide Etiketi ── */
+.hero-slide-label {
+  position: absolute;
+  top: calc(var(--header-h, 80px) + 1.5rem);
+  right: max(2rem, calc(50% - 640px + 2rem));
+  z-index: 10;
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.45);
+  animation: heroSlideUp .5s ease 2s both;
 }
-.eyebrow {
+.hero-slide-label span { color: var(--color-highlight); font-weight: 700; }
+
+/* ── İçerik ── */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  padding-top: calc(var(--header-h, 80px) + 2rem);
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+  margin-bottom: 1.4rem;
+  overflow: hidden;
+}
+.hero-eyebrow span {
   display: inline-block;
-  font-size: 0.85rem; 
-  font-weight: 700; 
-  color: var(--color-navy-light, #003366); 
-  text-transform: uppercase; 
-  letter-spacing: 0.1em; 
-  margin-bottom: 1.5rem; 
-  background: var(--color-gray-100, #f3f4f6);
-  padding: 0.35rem 0.8rem;
-  border-radius: 4px;
+  animation: heroSlideUp .6s cubic-bezier(.22,1,.36,1) .3s both;
 }
-.eyebrow--gold {
-  color: var(--color-navy-dark, #0a192f);
-  background: var(--color-gold, #cfa856);
+.hero-eyebrow::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--color-highlight);
+  display: inline-block;
+  animation: heroExpandW .6s ease .1s both;
 }
-.text-gradient {
-  background: linear-gradient(135deg, var(--color-gold, #cfa856) 0%, #ebb44d 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+@keyframes heroExpandW { to { width: 28px; } }
+
+.hero-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.08;
+  color: var(--color-white);
+  margin-bottom: 1.4rem;
+  letter-spacing: -.02em;
+  max-width: 680px;
 }
-.shadow-glow {
-  box-shadow: 0 4px 20px rgba(207, 168, 86, 0.4);
+.hero-title .word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  margin-right: .16em;
 }
-.btn--ghost-light {
-  border-color: rgba(255,255,255,0.3);
-  color: white;
+.hero-title .word span {
+  display: inline-block;
+  animation: heroWordReveal .7s cubic-bezier(.22,1,.36,1) both;
 }
-.btn--ghost-light:hover {
-  background: white;
-  color: var(--color-navy-dark, #0a192f);
+@keyframes heroWordReveal {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
 }
-.premium-hero__title {
-  color: white;
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,.72);
+  line-height: 1.65;
+  max-width: 500px;
+  margin-bottom: 2.4rem;
+  animation: heroSlideUp .7s cubic-bezier(.22,1,.36,1) 1.3s both;
+  transition: opacity .3s ease, transform .3s ease;
 }
-.premium-hero__sub {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.25rem;
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 0 auto 2.5rem auto;
-}
-.premium-hero__actions {
+
+.hero-cta {
   display: flex;
   gap: 1rem;
-  justify-content: center;
-  margin-bottom: 3rem;
   flex-wrap: wrap;
+  animation: heroSlideUp .7s cubic-bezier(.22,1,.36,1) 1.5s both;
 }
-.premium-hero__trust {
-  display: flex;
+
+.btn--hero-primary {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  gap: .5rem;
+  box-shadow: 0 4px 20px rgba(200,135,58,.4);
 }
-.trust-item {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-  font-weight: 500;
-  display: flex;
+.btn--hero-primary:hover { box-shadow: 0 8px 32px rgba(200,135,58,.55); }
+
+.btn--hero-ghost {
+  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: .5rem;
+  border-color: rgba(255,255,255,.35);
+  color: var(--color-white);
 }
-.trust-icon {
-  color: var(--color-gold, #cfa856);
-  font-weight: bold;
+.btn--hero-ghost:hover {
+  border-color: rgba(255,255,255,.75);
+  background: rgba(255,255,255,.08);
+  color: var(--color-white);
 }
 
-/* Slider Typography & Animation */
-.hero-slides-wrapper {
-  position: relative;
-  min-height: 250px; /* Space for the sliding content */
-}
-.hero-slide {
+/* ── Floating Stats ── */
+.hero-stats {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.6s ease;
-}
-.hero-slide.active {
-  position: static; /* so it takes up layout space */
-  opacity: 1;
-  visibility: visible;
-}
-
-.hero-slide .slide-up {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.hero-slide.active .slide-up {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.premium-hero__bottom.slide-up {
-  animation: heroInit 1s ease forwards;
-  animation-delay: 0.4s;
-  opacity: 0;
-}
-@keyframes heroInit {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Progress Indicators */
-.slider-progress-container {
-  position: absolute;
-  bottom: 80px; 
-  left: 0;
-  right: 0;
-  z-index: 5;
+  right: max(2rem, calc(50% - 640px + 2rem));
+  bottom: 12%;
+  z-index: 10;
   display: flex;
-  justify-content: center;
-  gap: 0.8rem;
+  flex-direction: column;
+  gap: .875rem;
+  animation: heroSlideUp .8s cubic-bezier(.22,1,.36,1) 1.8s both;
 }
-.slider-dot {
-  width: 40px;
-  height: 4px;
-  background: rgba(255,255,255,0.2);
+.hero-stat-card {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 14px;
+  padding: .875rem 1.25rem;
+  text-align: center;
+  min-width: 128px;
+  transition: background .3s, transform .3s;
+}
+.hero-stat-card:hover { background: rgba(255,255,255,.12); transform: translateX(-4px); }
+.hero-stat-card__num {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-highlight);
+  line-height: 1;
+}
+.hero-stat-card__lbl {
+  display: block;
+  font-size: .68rem;
+  color: rgba(255,255,255,.6);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-top: .25rem;
+}
+
+/* ── Progress Dots ── */
+.hero-dots {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+}
+.hero-dot {
+  width: 32px;
+  height: 3px;
   border-radius: 2px;
+  background: rgba(255,255,255,.22);
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  border: none;
+  padding: 0;
+  transition: background .3s;
 }
-.slider-dot::after {
+.hero-dot.is-active { background: rgba(255,255,255,.3); }
+.hero-dot.is-active::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  background: var(--color-gold, #cfa856);
-  transition: none;
-}
-.slider-dot.active::after {
-  width: 100%;
-  transition: width 7s linear; /* Match interval */
-}
-
-/* Base animations */
-.intro-fade-up {
-  animation: heroInit 1s ease forwards;
-  animation-delay: 0.6s;
-  opacity: 0;
-}
-
-.premium-hero__wave {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  height: 60px;
-  z-index: 3;
-  line-height: 0;
-}
-.premium-hero__wave svg { width: 100%; height: 100%; }
-
-/* Floating Stats */
-.hero-floating-stats {
-  position: absolute;
   inset: 0;
-  pointer-events: none;
+  background: var(--color-highlight);
+  border-radius: 2px;
+  animation: heroProgress 7s linear forwards;
+  transform-origin: left;
 }
-.floating-stat {
+@keyframes heroProgress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ── Scroll İndikatörü ── */
+.hero-scroll {
   position: absolute;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1rem 1.5rem;
-  border-radius: 12px;
-  color: white;
+  bottom: 2rem;
+  right: max(2rem, calc(50% - 640px + 2rem));
+  z-index: 10;
   display: flex;
   flex-direction: column;
-  animation: float 6s ease-in-out infinite;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-.floating-stat.stat-1 {
-  top: 15%;
-  left: 5%;
-  animation-delay: 0s;
-}
-.floating-stat.stat-2 {
-  bottom: 30%;
-  right: 5%;
-  animation-delay: 3s;
-}
-.stat-val {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--color-gold, #cfa856);
-  line-height: 1;
-}
-.stat-lbl {
-  font-size: 0.85rem;
+  align-items: center;
+  gap: .4rem;
+  color: rgba(255,255,255,.4);
+  font-size: .62rem;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.8;
-  margin-top: 0.25rem;
+  animation: heroSlideUp .6s ease 2.2s both;
+}
+.hero-scroll__line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(200,135,58,.7), transparent);
+  animation: heroScrollLine 1.8s ease-in-out 2.4s infinite;
+}
+@keyframes heroScrollLine {
+  0%   { transform: scaleY(0); transform-origin: top;    opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top;    opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: bottom; opacity: 0; }
 }
 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+@keyframes heroSlideUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
 }
 
-@media (max-width: 768px) {
-  .premium-hero { padding-block: 160px 100px; }
-  .premium-hero__trust { gap: 1rem; }
-  .floating-stat { display: none; } /* Hide on mobile to avoid clutter */
+@media (max-width: 900px) {
+  .hero-stats { display: none; }
+  .hero-slide-label { display: none; }
+  .hero-scroll { display: none; }
+  .hero-title { font-size: clamp(1.9rem, 6vw, 3rem); }
+}
+@media (max-width: 560px) {
+  .hero-cta { flex-direction: column; }
+  .hero-cta .btn { text-align: center; justify-content: center; }
+  .hero-svg-layer { opacity: 0.6; }
 }
 
 /* ── Services grid ── */
