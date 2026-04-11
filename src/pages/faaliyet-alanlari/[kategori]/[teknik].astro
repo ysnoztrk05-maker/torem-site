@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ServiceArticleLayout from '../../../layouts/ServiceArticleLayout.astro';
 import CTABox from '../../../components/CTABox.astro';
-import { kategoriler, teknikler, getKategori, getTeknik } from '../../../data/faaliyet-alanlari';
+import { kategoriler, teknikler, getKategori, getTeknik, getTekniklerByKategori } from '../../../data/faaliyet-alanlari';
 
 export function getStaticPaths() {
   return teknikler.map((t) => ({
@@ -14,6 +14,10 @@ export function getStaticPaths() {
 const { teknik } = Astro.props;
 const kategori = getKategori(teknik.kategoriSlug)!;
 const isRich = teknik.content.length > 1000;
+
+const ilgiliTeknikler = getTekniklerByKategori(teknik.kategoriSlug)
+  .filter(t => t.slug !== teknik.slug)
+  .slice(0, 4);
 
 const siteUrl = 'https://www.toremzemin.com';
 
@@ -101,6 +105,23 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
     <div class="tz-readability-wrapper">
        <Fragment set:html={teknik.content} />
     </div>
+    {ilgiliTeknikler.length > 0 && (
+      <div class="tz-related-container" style="margin-top: 4rem;">
+        <h2 class="tz-section-title">{kategori.title} Kapsamındaki Diğer Yöntemler</h2>
+        <div class="tz-related-grid">
+          {ilgiliTeknikler.map((t) => (
+            <a href={`/faaliyet-alanlari/${t.kategoriSlug}/${t.slug}/`} class="tz-related-card">
+              <img src={t.image} alt={t.title} loading="lazy" width="320" height="200" />
+              <div class="tz-related-card__body">
+                {t.badge && <span class="tz-related-card__badge">{t.badge}</span>}
+                <h3>{t.shortTitle}</h3>
+                <p>{t.excerpt.slice(0, 80)}…</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
   </ServiceArticleLayout>
 ) : (
   <!-- Kısa içerikli sayfalar: BaseLayout ile V2.0 Premium Readability Deneyimi -->
@@ -157,6 +178,60 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
         <!-- YAZI İÇERİĞİ -->
         <article class="tz-readability-wrapper tz-article-body" set:html={teknik.content} />
 
+        <!-- UYGULAMA ADIMLARI -->
+        {teknik.steps && teknik.steps.length > 0 && (
+          <div class="tz-section">
+            <h2 class="tz-section-title">Uygulama Adımları</h2>
+            <ol class="tz-steps">
+              {teknik.steps.map((s) => (
+                <li class="tz-step">
+                  <span class="tz-step__title">{s.title}</span>
+                  <p class="tz-step__desc">{s.desc}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
+        <!-- TEKNİK PARAMETRELER -->
+        {teknik.params && teknik.params.length > 0 && (
+          <div class="tz-section">
+            <h2 class="tz-section-title">Teknik Parametreler</h2>
+            <div class="tz-params-wrap">
+              <table class="tz-params-table">
+                <thead>
+                  <tr>
+                    <th>Parametre</th>
+                    <th>Tipik Değer</th>
+                    <th>Açıklama</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {teknik.params.map((p) => (
+                    <tr>
+                      <td><strong>{p.name}</strong></td>
+                      <td class="tz-params-table__value">{p.value}</td>
+                      <td>{p.desc}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        <!-- UYGUN ZEMİN TÜRLERİ -->
+        {teknik.zeminTurleri && teknik.zeminTurleri.length > 0 && (
+          <div class="tz-section">
+            <h2 class="tz-section-title">Uygun Zemin Türleri</h2>
+            <div class="tz-zemin-chips">
+              {teknik.zeminTurleri.map((z) => (
+                <span class="tz-zemin-chip">{z}</span>
+              ))}
+            </div>
+          </div>
+        )}
+
         <!-- SIK SORULAN SORULAR -->
         {teknik.faq.length > 0 && (
           <div class="tz-article-faq">
@@ -179,6 +254,24 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
       </div>
     </main>
     
+    {ilgiliTeknikler.length > 0 && (
+      <div class="container tz-related-container">
+        <h2 class="tz-section-title">{kategori.title} Kapsamındaki Diğer Yöntemler</h2>
+        <div class="tz-related-grid">
+          {ilgiliTeknikler.map((t) => (
+            <a href={`/faaliyet-alanlari/${t.kategoriSlug}/${t.slug}/`} class="tz-related-card">
+              <img src={t.image} alt={t.title} loading="lazy" width="320" height="200" />
+              <div class="tz-related-card__body">
+                {t.badge && <span class="tz-related-card__badge">{t.badge}</span>}
+                <h3>{t.shortTitle}</h3>
+                <p>{t.excerpt.slice(0, 80)}…</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
     <div class="container" style="padding-bottom: 80px;">
       <CTABox title={`${teknik.shortTitle} Çözümleri İçin Uzmanlarımızla Görüşün`} />
     </div>
@@ -315,5 +408,217 @@ header.tz-article-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight
     .tz-content-container { padding: 0; }
     .tz-readability-wrapper { font-size: 1.05rem; }
     .tz-article-hero { padding: 90px 20px 60px; }
+}
+
+/* =========================================================================
+   YENİ STRUCTURED SECTIONS
+   ========================================================================= */
+
+.tz-section {
+  margin-top: 3.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.tz-section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 1.75rem;
+  position: relative;
+  padding-bottom: 12px;
+}
+.tz-section-title::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 48px; height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* ── Uygulama Adımları ──────────────────────────────────────────────── */
+.tz-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: steps-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tz-step {
+  counter-increment: steps-counter;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1.5rem 1.5rem 5rem;
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.tz-step:hover {
+  box-shadow: 0 6px 20px rgba(0,33,71,0.07);
+  transform: translateX(4px);
+}
+.tz-step::before {
+  content: counter(steps-counter);
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.5rem; height: 2.5rem;
+  background: var(--navy);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.tz-step__title {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+.tz-step__desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ── Teknik Parametreler ────────────────────────────────────────────── */
+.tz-params-wrap { overflow-x: auto; }
+
+.tz-params-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  font-size: 0.95rem;
+}
+.tz-params-table thead tr {
+  background: var(--navy);
+}
+.tz-params-table th {
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 18px;
+  text-align: left;
+  white-space: nowrap;
+}
+.tz-params-table td {
+  padding: 13px 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: var(--text-article);
+  vertical-align: top;
+}
+.tz-params-table tr:last-child td { border-bottom: none; }
+.tz-params-table tr:nth-child(even) td { background: rgba(0,0,0,0.015); }
+.tz-params-table__value {
+  color: var(--navy);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ── Uygun Zemin Türleri ────────────────────────────────────────────── */
+.tz-zemin-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.tz-zemin-chip {
+  background: rgba(212,175,55,0.1);
+  color: var(--navy);
+  border: 1px solid rgba(212,175,55,0.35);
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.2s, border-color 0.2s;
+}
+.tz-zemin-chip:hover {
+  background: rgba(212,175,55,0.2);
+  border-color: var(--gold);
+}
+
+/* ── İlgili Hizmetler ───────────────────────────────────────────────── */
+.tz-related-container {
+  padding-block: 3rem;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.tz-related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 0;
+}
+.tz-related-card {
+  display: block;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.06);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.tz-related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,33,71,0.1);
+}
+.tz-related-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.tz-related-card__body {
+  padding: 1rem 1.1rem 1.25rem;
+}
+.tz-related-card__badge {
+  display: inline-block;
+  background: rgba(212,175,55,0.12);
+  color: var(--navy-light);
+  border: 1px solid rgba(212,175,55,0.3);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  margin-bottom: 0.6rem;
+}
+.tz-related-card__body h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 0.4rem;
+  line-height: 1.3;
+}
+.tz-related-card__body p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .tz-step { padding-left: 4.5rem; }
+  .tz-step::before { width: 2rem; height: 2rem; font-size: 0.85rem; }
+  .tz-params-table th, .tz-params-table td { padding: 10px 12px; }
+  .tz-related-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 400px) {
+  .tz-related-grid { grid-template-columns: 1fr; }
 }
 </style>

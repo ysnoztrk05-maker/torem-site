@@ -52,6 +52,9 @@ export interface Teknik {
     suGecirimsizlik: string;
     kaliciKullanim: string;
   };
+  steps?:        { title: string; desc: string }[];
+  params?:       { name: string; value: string; desc: string }[];
+  zeminTurleri?: string[];
 }
 
 // ─── 8 Kategori ──────────────────────────────────────────────────────────────
@@ -1403,6 +1406,21 @@ export const teknikler: Teknik[] = [
     badge: 'Dar Alan', badgeType: 'ozel',
     metrics: [{ label: 'Kazık Çapı', value: 'Ø15–30 cm' }, { label: 'Min. Tavan', value: '2,5 m' }],
     comparison: { maxDerinlik: '20 m', derinlikBar: 28, maliyetLabel: 'Orta', maliyetBar: 50, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
+    steps: [
+      { title: 'Saha Hazırlama ve Ekipman Konumlandırma', desc: 'Kazık eksenleri belirlenir, kompakt delgi makinesi alana yerleştirilir. Minimum 2,5 m tavan yüksekliği yeterlidir.' },
+      { title: 'Delgi', desc: 'Ø150–300 mm çaplı rotary delgi ile belirlenen derinliğe (genellikle 5–20 m) kadar ilerlenir.' },
+      { title: 'Donatı Montajı', desc: 'Çelik çubuk veya boru donatı deliğe indirilir; donatı boyunca merkezleme elemanları yerleştirilir.' },
+      { title: 'Çimento Enjeksiyonu', desc: 'Yüksek basınçlı (50–100 bar) çimento şerbeti enjekte edilerek kazık gövdesi oluşturulur.' },
+      { title: 'Kürleme ve Başlık İmalatı', desc: 'Beton 24–48 saat kürlenir, ardından kazık başlığı ve bağlantı betonarme imalatı yapılır.' },
+    ],
+    params: [
+      { name: 'Kazık Çapı', value: 'Ø150–300 mm', desc: 'Standart mini kazık çap aralığı' },
+      { name: 'Maksimum Derinlik', value: '20 m', desc: 'Standart uygulamada sınır; özel ekipmanla artırılabilir' },
+      { name: 'Taşıma Kapasitesi', value: '500–3.000 kN', desc: 'Zemin koşuluna ve enjeksiyon basıncına göre değişir' },
+      { name: 'Min. Tavan Yüksekliği', value: '2,5 m', desc: 'Kapalı mekân uygulamaları için minimum gereksinim' },
+      { name: 'Beton Sınıfı', value: 'C30/37', desc: 'Çimento şerbeti sınıfı; w/c ≤ 0,45' },
+    ],
+    zeminTurleri: ['Kil', 'Silt', 'Kum', 'Kumlu çakıl', 'Yumuşak kaya', 'Kireçtaşı'],
     content:`
       <div class="aeo-box">Mini kazık (mikro kazık); 150–300 mm çaplı, basınçlı enjeksiyonlu küçük eksenli kazık tipidir.</div>
       <h2 id="nedir">Mini Kazık Nedir?</h2>
@@ -1426,6 +1444,21 @@ export const teknikler: Teknik[] = [
     badge: 'Ekonomik', badgeType: 'ekonomik',
     metrics: [{ label: 'Maks. Derinlik', value: '≤ 25 m' }, { label: 'Günlük Üretim', value: '15–30 kazık' }],
     comparison: { maxDerinlik: '25 m', derinlikBar: 35, maliyetLabel: 'Düşük-Orta', maliyetBar: 35, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
+    steps: [
+      { title: 'Pozisyon Ayarlama', desc: 'CFA makinesi kazık ekseni üzerine getirilir; otomasyon sistemi derinlik ve tork takibini başlatır.' },
+      { title: 'Sürekli Helezon Delgisi', desc: 'Burgu zemine eş dönme hızıyla sokulur; zemin helezon üzerinde yüzeye taşınır. Muhafaza borusu gerektirmez.' },
+      { title: 'Eş Zamanlı Beton Basımı', desc: 'Burgu istenen derinliğe ulaşınca geri çekilirken, gövde içinden basınçlı beton (slump ≥ 200 mm) enjekte edilir.' },
+      { title: 'Donatı Kafesi İndirilmesi', desc: 'Beton taze iken titreşimli vibratör yardımıyla donatı kafesi taze betona itilir. İşlem 30 dakika içinde tamamlanmalıdır.' },
+      { title: 'Kazık Başlığı İmalatı', desc: 'Beton kürü sonrası kazık başı kesilir; taşıyıcı sisteme bağlantı başlığı betonarme imalatı yapılır.' },
+    ],
+    params: [
+      { name: 'Kazık Çapı', value: 'Ø300–1000 mm', desc: 'En yaygın çap: Ø450–600 mm' },
+      { name: 'Maksimum Derinlik', value: '25 m', desc: 'Standart auger uzunluğu; derin projeler için fore kazık tercih edilir' },
+      { name: 'Günlük Üretim', value: '15–30 kazık', desc: 'Fore kazığa kıyasla 3–5× daha hızlı' },
+      { name: 'Beton Basınç Dayanımı', value: 'C25/30 – C30/37', desc: 'Akıcı beton (slump ≥ 200 mm) zorunludur' },
+      { name: 'Donatı Montaj Süresi', value: '< 30 dk', desc: 'Beton prizlenmeden önce tamamlanmalıdır' },
+    ],
+    zeminTurleri: ['Yumuşak kil', 'Orta sıkı kil', 'Silt', 'Gevşek kum', 'Orta sıkı kum'],
     content:`
       <div class="aeo-box">CFA (Continuous Flight Auger) kazık; sürekli helezon burgulu delgi ile zemin çıkarılırken eş zamanlı beton basılan hızlı kazık üretim yöntemidir.</div>
       <h2 id="nedir">CFA Kazık Nedir?</h2>
@@ -1577,6 +1610,21 @@ export const teknikler: Teknik[] = [
     badge: 'Ekonomik', badgeType: 'ekonomik',
     metrics: [{ label: 'Ankrajsız', value: '8–10 m' }, { label: 'Malzeme', value: 'Geri kazanım' }],
     comparison: { maxDerinlik: '10 m', derinlikBar: 25, maliyetLabel: 'Düşük', maliyetBar: 25, suGecirimsizlik: 'Yok', kaliciKullanim: 'Geçici' },
+    steps: [
+      { title: 'H-Profil Çakımı', desc: 'Çelik H-profiller 1,5–3,0 m aralıklarla hidrolik çekiç veya vibratörle zemine çakılır ya da fore deliğe yerleştirilir.' },
+      { title: 'İlk Kazı Basamağı', desc: 'Profiller arası zemin belirli derinliğe (1,0–1,5 m) kadar kazılır. Şev güvenliği kontrol edilir.' },
+      { title: 'Panel Yerleştirme', desc: 'Açıklanan profil arasına ahşap kalas veya prefabrik beton panel yerleştirilir. Zemin ilerledikçe katman katman ekleme yapılır.' },
+      { title: 'Ankraj Uygulaması (Gerektiğinde)', desc: '8–10 m derinliği aşan kazılarda zemin ankrajları veya strütler devreye alınarak yatay destek sağlanır.' },
+      { title: 'Kazı Tamamlama ve Yapım', desc: 'İksa perdesinin arkasındaki yapı tamamlandıktan sonra profiller vibratörle sökülüp geri kazanılır.' },
+    ],
+    params: [
+      { name: 'H-Profil Aralığı', value: '1,5–3,0 m', desc: 'Zemin ve kazı derinliğine göre statik hesapla belirlenir' },
+      { name: 'Maksimum Derinlik (Ankrajsız)', value: '8–10 m', desc: 'Daha derinde yatay destek (ankraj veya strüt) zorunludur' },
+      { name: 'Panel Malzemesi', value: 'Ahşap kalas / Beton pano', desc: 'Ahşap daha ekonomik; beton daha dayanıklıdır' },
+      { name: 'Malzeme Geri Kazanımı', value: 'Evet (profiller)', desc: 'Çelik H-profiller sökülerek yeniden kullanılabilir' },
+      { name: 'Su Geçirimsizliği', value: 'Yok', desc: 'Yeraltı suyu yüksek alanlarda uygun değildir' },
+    ],
+    zeminTurleri: ['Kil', 'Sıkı silt', 'Sıkı kum', 'Çakıl', 'Kumtaşı'],
     content:`
       <div class="aeo-box">Berlin duvarı; belirli aralıklarla çakılan çelik H-profil kazıklar arasına ahşap veya beton pano yerleştirilerek oluşturulan ekonomik geçici iksa sistemidir.</div>
       <h2 id="nedir">Berlin İksası Nedir?</h2>
@@ -2207,6 +2255,22 @@ export const teknikler: Teknik[] = [
     badge: 'Ekonomik', badgeType: 'ekonomik',
     metrics: [{ label: 'Ömür', value: '≤ 2 yıl' }, { label: 'Maliyet', value: 'Kalıcıya göre -%30' }],
     comparison: { maxDerinlik: '30 m', derinlikBar: 60, maliyetLabel: 'Orta', maliyetBar: 40, suGecirimsizlik: 'Yok', kaliciKullanim: 'Geçici' },
+    steps: [
+      { title: 'Delgi', desc: 'Tasarlanan açı ve uzunlukta (genellikle 10–30 m) Ø100–150 mm çaplı delik açılır.' },
+      { title: 'Tendon Montajı', desc: 'Tekli korozyon korumalı çelik tendon veya yüksek mukavemetli çubuk deliğe indirilir.' },
+      { title: 'Çimento Enjeksiyonu', desc: 'Enjeksiyon borusuyla dipten yüzeye çimento şerbeti basılarak kök boyu oluşturulur.' },
+      { title: 'Kürleme', desc: 'Çimento kökü minimum 48–72 saat kürlenir; hava şartlarına göre süre uzayabilir.' },
+      { title: 'Germe ve Yük Testi', desc: 'Tasarım yükünün %10–25 fazlasıyla kabul testi yapılır; limit yük ve sürünme kontrol edilir.' },
+      { title: 'Kilitme ve Devre Dışı Bırakma', desc: 'Kama veya somun sistemiyle kilitlenir. İnşaat sonunda tendon kesilerek ankraj işlevi sona erdirilir.' },
+    ],
+    params: [
+      { name: 'Tasarım Ömrü', value: '≤ 2 yıl', desc: 'Aşılması halinde kalıcı ankraj tasarımı zorunludur' },
+      { name: 'Delgi Çapı', value: 'Ø100–150 mm', desc: 'Tendon boyutuna ve zemin sınıfına göre belirlenir' },
+      { name: 'Kök Uzunluğu', value: '4–8 m', desc: 'Zemine bağlı; enjeksiyon basıncıyla kapasitesi artırılabilir' },
+      { name: 'Maliyet Avantajı', value: '%30–40 tasarruf', desc: 'Çift korozyon koruması gerektirmediğinden daha ekonomiktir' },
+      { name: 'Kabul Testi Yükü', value: 'Tasarım × 1,25', desc: 'EN 1537 standardına göre kriter' },
+    ],
+    zeminTurleri: ['Kil', 'Silt', 'Kum', 'Çakıl', 'Kaya'],
     content:`
       <div class="aeo-box">Geçici ankraj; inşaat süresince (maksimum 2 yıl) kullanılmak üzere tasarlanan, tekli korozyon korumalı destek ankrajıdır.</div>
       <h2 id="nedir">Geçici Ankraj Nedir?</h2>
@@ -2266,6 +2330,21 @@ export const teknikler: Teknik[] = [
     badge: 'Yaygın', badgeType: 'popular',
     metrics: [{ label: 'Kolon Çapı', value: 'Ø60–200 cm' }, { label: 'Geçirimsizlik', value: 'k ≤ 10⁻⁹ m/s' }],
     comparison: { maxDerinlik: '30 m', derinlikBar: 60, maliyetLabel: 'Orta', maliyetBar: 55, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
+    steps: [
+      { title: 'Perde Planlaması ve Eksen İşaretleme', desc: 'Kolon eksenleri perde aksına göre işaretlenir; bindirme oranı (%15–25) hesaplanarak kolon aralığı belirlenir.' },
+      { title: 'Pilot Delgi', desc: 'Ø100–130 mm çaplı monitor borusu tasarlanan derinliğe (5–30 m) kadar indirilir.' },
+      { title: 'Yüksek Basınçlı Enjeksiyon', desc: 'Monitor çekilirken 200–400 bar basınçta çimento süspansiyonu püskürtülür; zemin parçalanarak çimentoyla karışır.' },
+      { title: 'Kolon Olgunlaşması', desc: 'Soilcrete kolonlar 7–28 gün kürlenme süresi gerektirir; minimum basınç dayanımı 1–5 MPa ulaşılır.' },
+      { title: 'Geçirimsizlik Testi', desc: 'Packer testi veya su emme deneyi ile perdenin k değeri (≤ 10⁻⁸ m/s) doğrulanır.' },
+    ],
+    params: [
+      { name: 'Kolon Çapı', value: 'Ø600–2000 mm', desc: 'Tek/çift/üçlü sisteme ve zemin sınıfına göre değişir' },
+      { name: 'Geçirimsizlik Katsayısı', value: 'k ≤ 10⁻⁸–10⁻⁹ m/s', desc: 'Doğal zemine göre 100–1000× iyileşme' },
+      { name: 'Bindirme Oranı', value: '%15–25', desc: 'Sürekli perde için minimum bindirme şartı' },
+      { name: 'Çimento Dozajı', value: '350–600 kg/m³', desc: 'Zemin türüne göre optimum karışım tasarlanır' },
+      { name: 'Basınç Dayanımı', value: '1–10 MPa', desc: 'Soilcrete; saf çimentoya göre daha düşük, betondan düşük' },
+    ],
+    zeminTurleri: ['Kum', 'Siltli kum', 'Çakıl', 'Kil', 'Alüvyon', 'Yumuşak kaya'],
     content:`
       <div class="aeo-box">Jet grout perdesi; yan yana üretilen jet grout kolonlarının birbirine bindirilerek sürekli su geçirimsiz perde oluşturulmasıdır.</div>
       <h2 id="nedir">Jet Grout Perdesi Nedir?</h2>
