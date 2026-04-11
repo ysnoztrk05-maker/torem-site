@@ -50,10 +50,14 @@ const nav = [
     label: 'Kurumsal',
     href: '/kurumsal/',
     dropdown: [
-      { label: 'Hakkımızda',   href: '/kurumsal/' },
-      { label: 'Neden Torem?', href: '/kurumsal/neden-torem/' },
-      { label: 'Ekibimiz',     href: '/kurumsal/ekibimiz/' },
-      { label: 'Belgelerimiz', href: '/kurumsal/belgelerimiz/' },
+      { label: 'Hakkımızda',        href: '/kurumsal/' },
+      { label: 'Neden Torem?',      href: '/kurumsal/neden-torem/' },
+      { label: 'Ekibimiz',          href: '/kurumsal/ekibimiz/' },
+      { label: 'Belgelerimiz',      href: '/kurumsal/belgelerimiz/' },
+      { label: '—', href: '' },
+      { label: 'KVKK Aydınlatma',   href: '/yasal/kvkk-aydinlatma/' },
+      { label: 'Gizlilik Politikası', href: '/yasal/gizlilik-politikasi/' },
+      { label: 'Çerez Politikası',  href: '/yasal/cerez-politikasi/' },
     ],
   },
   { label: 'Faaliyet Alanları', href: '/faaliyet-alanlari/', mega: true },
@@ -131,14 +135,18 @@ const currentPath = Astro.url.pathname;
               {/* Dropdown menü — Kurumsal gibi küçük alt menüler */}
               {dropdown && (
                 <div class="dropdown-menu">
-                  {dropdown.map((item: any) => (
-                    <a
-                      href={item.href}
-                      class={`dropdown-menu__link${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? ' dropdown-menu__link--active' : ''}`}
-                    >
-                      {item.label}
-                    </a>
-                  ))}
+                  {dropdown.map((item: any) =>
+                    item.href === '' ? (
+                      <hr class="dropdown-menu__sep" />
+                    ) : (
+                      <a
+                        href={item.href}
+                        class={`dropdown-menu__link${currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)) ? ' dropdown-menu__link--active' : ''}`}
+                      >
+                        {item.label}
+                      </a>
+                    )
+                  )}
                 </div>
               )}
 
@@ -474,6 +482,12 @@ const currentPath = Astro.url.pathname;
 .dropdown-menu__link:hover {
   background: var(--color-bg, #F5F2ED);
   color: var(--color-highlight, #C8873A);
+}
+
+.dropdown-menu__sep {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  margin: 0.3rem 0.75rem;
 }
 
 .dropdown-menu__link--active {
