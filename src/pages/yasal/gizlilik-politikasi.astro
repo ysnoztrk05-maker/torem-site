@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const canonical = 'https://www.toremzemin.com/yasal/gizlilik-politikasi/';
+const guncelleme = '12 Nisan 2026';
+---
+
+<BaseLayout
+  title="Gizlilik Politikası | Torem Zemin Mühendislik"
+  description="Torem Zemin Mühendislik Gizlilik Politikası — kişisel verilerinizi nasıl topladığımız, kullandığımız ve koruduğumuza ilişkin bilgiler."
+  canonical={canonical}
+>
+  <div class="yasal-wrap container">
+    <div class="yasal-meta">Son güncelleme: {guncelleme}</div>
+    <h1>Gizlilik Politikası</h1>
+
+    <p>Torem Zemin Mühendislik olarak, <strong>toremzemin.com</strong> alan adlı web sitemizi ziyaret eden kişilerin gizliliğine önem veriyoruz. Bu Gizlilik Politikası; hangi verileri topladığımızı, bu verileri nasıl kullandığımızı ve haklarınızı açıklamaktadır. Politikamız, 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) ile uyumludur.</p>
+
+    <h2>1. Topladığımız Veriler</h2>
+    <p>Sitemizde iki tür veri toplanmaktadır:</p>
+    <ul>
+      <li><strong>Doğrudan sağlanan veriler:</strong> İletişim formu, teklif talebi veya keşif raporu formu aracılığıyla ilettiğiniz ad, soyad, şirket adı, telefon numarası, e-posta adresi ve mesaj içeriği.</li>
+      <li><strong>Otomatik toplanan teknik veriler:</strong> IP adresi, tarayıcı türü, işletim sistemi, ziyaret edilen sayfalar ve oturum süresi gibi bilgiler. Bu veriler analitik araçlar (Google Analytics) üzerinden anonim veya takma adlı biçimde toplanmaktadır.</li>
+    </ul>
+
+    <h2>2. Verilerin Kullanım Amaçları</h2>
+    <ul>
+      <li>Teknik danışmanlık talepleri ile teklif süreçlerini yönetmek</li>
+      <li>Hizmetlerimiz hakkında bilgi vermek ve sorularınızı yanıtlamak</li>
+      <li>Site performansını ve kullanıcı deneyimini iyileştirmek</li>
+      <li>Yasal yükümlülükleri yerine getirmek</li>
+      <li>Güvenlik açıklarını tespit etmek ve önlem almak</li>
+    </ul>
+
+    <h2>3. Form Altyapısı ve Veri İşleyiciler</h2>
+    <p>İletişim formlarımız <strong>Formspree</strong> (formspree.io) altyapısı üzerinden çalışmaktadır. Form aracılığıyla ilettiğiniz veriler Formspree'nin sunucularında işlenmektedir. Formspree'nin gizlilik politikasına <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">formspree.io</a> adresinden ulaşabilirsiniz.</p>
+    <p>Site analitikleri için Google Analytics kullanılmaktadır. Google'ın veri işleme koşullarına ilişkin bilgiye <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Gizlilik Politikası</a> üzerinden ulaşabilirsiniz.</p>
+
+    <h2>4. Verilerin Saklanması ve Güvenliği</h2>
+    <p>Kişisel verileriniz, işlenme amacının gerektirdiği süre boyunca veya yasal saklama yükümlülükleri kapsamında muhafaza edilmektedir. Sitemiz HTTPS protokolü ile şifrelenmiş bağlantı üzerinden hizmet vermektedir. Üçüncü taraf altyapı sağlayıcılarının güvenlik standartlarına uyumu, veri işleme sözleşmeleri çerçevesinde güvence altına alınmaktadır.</p>
+
+    <h2>5. Üçüncü Taraflarla Veri Paylaşımı</h2>
+    <p>Kişisel verileriniz; hizmet alınan altyapı sağlayıcıları dışında hiçbir ticari amaçla üçüncü kişilerle paylaşılmaz, satılmaz veya kiralanmaz. Yalnızca yasal zorunluluk halinde yetkili kamu kurum ve kuruluşlarıyla paylaşılabilir.</p>
+
+    <h2>6. Yurt Dışına Veri Aktarımı</h2>
+    <p>Formspree ve Google Analytics altyapıları nedeniyle bazı veriler Avrupa Ekonomik Alanı dışındaki sunucularda işlenebilmektedir. Bu aktarımlar, KVKK'nın 9. maddesi ve AB Standart Sözleşme Maddeleri (SCC) kapsamındaki güvenceler çerçevesinde gerçekleştirilmektedir.</p>
+
+    <h2>7. Haklarınız</h2>
+    <p>KVKK'nın 11. ve GDPR'ın 15–22. maddeleri kapsamında; verilerinize erişme, düzeltme, silme, işlemeyi kısıtlama, itiraz etme ve veri taşınabilirliği haklarına sahipsiniz. Talepleriniz için <a href="mailto:info@toremzemin.com">info@toremzemin.com</a> adresine ulaşabilirsiniz.</p>
+
+    <h2>8. Çerezler</h2>
+    <p>Sitemizde çerez kullanımına ilişkin ayrıntılı bilgiye <a href="/yasal/cerez-politikasi/">Çerez Politikamız</a> üzerinden ulaşabilirsiniz.</p>
+
+    <h2>9. İletişim</h2>
+    <p>Bu politikayla ilgili sorularınız için:<br>
+    <a href="mailto:info@toremzemin.com">info@toremzemin.com</a> · <a href="tel:+905316594636">+90 531 659 46 36</a></p>
+  </div>
+</BaseLayout>
+
+<style>
+  .yasal-wrap {
+    max-width: 780px;
+    padding-block: var(--s-16);
+  }
+  .yasal-meta {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--s-4);
+  }
+  .yasal-wrap h1 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--color-primary);
+    margin-bottom: var(--s-8);
+    line-height: 1.3;
+  }
+  .yasal-wrap h2 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-top: var(--s-10);
+    margin-bottom: var(--s-3);
+    padding-bottom: var(--s-2);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .yasal-wrap p,
+  .yasal-wrap li {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+  .yasal-wrap ul {
+    padding-left: 1.5rem;
+    margin-top: var(--s-3);
+  }
+  .yasal-wrap li {
+    margin-bottom: var(--s-2);
+  }
+  .yasal-wrap a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>
