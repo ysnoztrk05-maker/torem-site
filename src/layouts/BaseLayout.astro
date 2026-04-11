@@ -84,6 +84,9 @@ const currentPath = Astro.url.pathname;
   <meta property="og:locale"      content="tr_TR" />
   <meta property="og:site_name"   content="Torem Zemin Mühendislik" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   {schemas.map((s) => (
     <script type="application/ld+json" set:html={JSON.stringify(s)} />
   ))}
@@ -104,9 +107,9 @@ const currentPath = Astro.url.pathname;
   <header class="site-header" id="site-header">
     <div class="container site-header__inner">
       <a href="/" class="site-logo" aria-label="Torem Zemin Ana Sayfa">
+        <span class="site-logo__bar"></span>
         <span class="site-logo__torem">Torem</span>
         <span class="site-logo__zemin">Zemin</span>
-        <span class="site-logo__sub">Mühendislik</span>
       </a>
 
       <nav class="site-nav" id="site-nav" aria-label="Ana Menu">
@@ -193,7 +196,11 @@ const currentPath = Astro.url.pathname;
   <footer class="site-footer">
     <div class="container site-footer__grid">
       <div class="site-footer__about">
-        <a href="/" class="site-footer__logo"><span>Torem</span><span>Zemin</span></a>
+        <a href="/" class="site-footer__logo" aria-label="Torem Zemin Ana Sayfa">
+          <span class="site-footer__logo-bar"></span>
+          <span class="site-footer__logo-torem">Torem</span>
+          <span class="site-footer__logo-zemin">Zemin</span>
+        </a>
         <p>Temelden Zirveye Uzanan Çözümler. 13+ yıllık deneyimle geoteknik mühendisliğin güvenilir adresi.</p>
         <div class="site-footer__social">
           <a href="https://www.linkedin.com/company/toremzemin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -332,11 +339,39 @@ const currentPath = Astro.url.pathname;
 }
 
 /* Logo */
-.site-logo { display:flex; align-items:baseline; gap:.35rem; font-weight:700; flex-shrink:0; }
-.site-logo__torem { font-size:1.5rem; color:var(--color-primary); }
-.site-logo__zemin { font-size:1.5rem; color:var(--color-highlight); }
-.site-logo__sub   { font-size:.7rem; color:var(--color-text-muted); letter-spacing:.05em; text-transform:uppercase; display:none; }
-@media(min-width:768px){ .site-logo__sub { display:block; } }
+.site-logo {
+  display:flex;
+  align-items:center;
+  gap:0;
+  flex-shrink:0;
+  text-decoration:none;
+}
+.site-logo__bar {
+  display:block;
+  width:3px;
+  height:1.8rem;
+  background:var(--color-highlight);
+  border-radius:2px;
+  margin-right:12px;
+  flex-shrink:0;
+}
+.site-logo__torem {
+  font-size:1.875rem;
+  font-weight:800;
+  color:#002147;
+  letter-spacing:0.1em;
+  line-height:1;
+  text-transform:uppercase;
+}
+.site-logo__zemin {
+  font-size:1.875rem;
+  font-weight:800;
+  color:#d4af37;
+  letter-spacing:0.1em;
+  line-height:1;
+  text-transform:uppercase;
+  margin-left:0.3em;
+}
 
 /* Nav */
 .site-nav { margin-left:auto; overflow:visible; }
@@ -527,8 +562,39 @@ const currentPath = Astro.url.pathname;
 .site-footer { background:#0d1520; color:rgba(255,255,255,.8); padding-top:var(--s-16); }
 .site-footer__grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:var(--s-10); padding-bottom:var(--s-12); }
 .site-footer h4 { color:#fff; font-size:var(--text-base); margin-bottom:var(--s-5); }
-.site-footer__logo { display:flex; gap:.4rem; font-size:1.4rem; font-weight:700; margin-bottom:var(--s-4); color:#fff; }
-.site-footer__logo span:last-child { color:var(--color-highlight); }
+.site-footer__logo {
+  display:inline-flex;
+  align-items:center;
+  gap:0;
+  margin-bottom:var(--s-4);
+  text-decoration:none;
+}
+.site-footer__logo-bar {
+  display:block;
+  width:3px;
+  height:1.5rem;
+  background:var(--color-highlight);
+  border-radius:2px;
+  margin-right:12px;
+  flex-shrink:0;
+}
+.site-footer__logo-torem {
+  font-size:1.625rem;
+  font-weight:800;
+  color:#fff;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  line-height:1;
+}
+.site-footer__logo-zemin {
+  font-size:1.625rem;
+  font-weight:800;
+  color:#d4af37;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  line-height:1;
+  margin-left:0.3em;
+}
 .site-footer__about p { font-size:var(--text-sm); line-height:1.7; color:rgba(255,255,255,.65); }
 .site-footer__links, .site-footer__contact { display:flex; flex-direction:column; gap:var(--s-3); font-size:var(--text-sm); }
 .site-footer__links a, .site-footer__contact a { color:rgba(255,255,255,.7); transition:color var(--t-fast); }
