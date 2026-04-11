@@ -1,5 +1,6 @@
 ---
 export interface Props {
+  variant?: 'inline' | 'footer';
   title?: string;
   text?: string;
   primaryText?: string;
@@ -9,6 +10,7 @@ export interface Props {
 }
 
 const {
+  variant = 'inline',
   title = 'Projeniz İçin Ücretsiz Keşif Raporu Alın',
   text = 'Deneyimli mühendis ekibimiz zemin etüdünden projelendirmeye kadar tüm aşamalarda yanınızda.',
   primaryText = 'Hemen İletişime Geçin',
@@ -18,7 +20,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="cta-box">
+<div class={`cta-box cta-box--${variant}`}>
   <div class="cta-box__accent" aria-hidden="true"></div>
   <h3 class="cta-box__title">{title}</h3>
   <p class="cta-box__text">{text}</p>
@@ -31,9 +33,8 @@ const {
 </div>
 
 <style>
+/* ── Ortak temel ─────────────────────────────────────────── */
 .cta-box {
-  background: linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary) 100%);
-  color: var(--color-white);
   border-radius: var(--r-xl);
   padding: var(--s-10) var(--s-12);
   text-align: center;
@@ -41,30 +42,55 @@ const {
   position: relative;
   overflow: hidden;
 }
-/* Gold top accent line */
-.cta-box__accent {
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--color-highlight), transparent);
-}
-.cta-box__title {
-  color: var(--color-white);
-  font-size: var(--text-2xl);
-  margin-bottom: var(--s-3);
-}
-.cta-box__text {
-  color: rgba(255,255,255,0.75);
-  margin-bottom: var(--s-6);
-  max-width: 540px;
-  margin-inline: auto;
-}
 .cta-box__actions {
   display: flex;
   justify-content: center;
   gap: var(--s-4);
   flex-wrap: wrap;
 }
+
+/* ── inline variant — hafif kart (default) ──────────────── */
+.cta-box--inline {
+  background: var(--color-white, #fff);
+  border: 1px solid rgba(0,0,0,0.07);
+  border-top: 3px solid var(--color-highlight);
+}
+.cta-box--inline .cta-box__accent { display: none; }
+.cta-box--inline .cta-box__title {
+  color: var(--color-primary);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--s-3);
+}
+.cta-box--inline .cta-box__text {
+  color: var(--color-text-muted);
+  margin-bottom: var(--s-6);
+  max-width: 540px;
+  margin-inline: auto;
+}
+
+/* ── footer variant — koyu gradyan ─────────────────────── */
+.cta-box--footer {
+  background: linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary) 100%);
+  color: var(--color-white);
+}
+.cta-box--footer .cta-box__accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-highlight), transparent);
+}
+.cta-box--footer .cta-box__title {
+  color: var(--color-white);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--s-3);
+}
+.cta-box--footer .cta-box__text {
+  color: rgba(255,255,255,0.75);
+  margin-bottom: var(--s-6);
+  max-width: 540px;
+  margin-inline: auto;
+}
+
 @media (max-width: 560px) {
   .cta-box { padding: var(--s-8) var(--s-6); }
   .cta-box__actions { flex-direction: column; align-items: center; }
