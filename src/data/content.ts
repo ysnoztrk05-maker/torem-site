@@ -2,12 +2,13 @@
  * Torem Zemin — Statik Demo İçeriği
  * WP API bağımlılığı yok. Tüm içerik burada.
  */
+import { makineSayisi, sirket } from './sirket';
 
 // ─── Şirket Bilgileri ─────────────────────────────────────────────────────────
 export const company = {
   name:    'Torem Zemin Mühendislik',
   slogan:  'Temelden Zirveye Uzanan Çözümler',
-  founded: 2003,
+  founded: sirket.kurulus,
   phone1:  '+90 531 659 46 36',
   phone2:  '+90 216 379 33 10',
   email:   'info@toremzemin.com',
@@ -17,10 +18,10 @@ export const company = {
 
 // ─── İstatistikler ────────────────────────────────────────────────────────────
 export const stats = [
-  { value: 20,  suffix: '+', label: 'Yıl Deneyim'        },
-  { value: 600, suffix: '+', label: 'Tamamlanan Proje'   },
-  { value: 40,  suffix: '+', label: 'Makine Parkı'        },
-  { value: 98,  suffix: '%', label: 'Memnun Müşteri'      },
+  { value: new Date().getFullYear() - sirket.kurulus, suffix: '+', label: 'Yıl Deneyim'        },
+  { value: 350, suffix: '+', label: 'Tamamlanan Proje'   },
+  { value: makineSayisi,                              suffix: '+', label: 'İş Makinesi'         },
+  { value: 100, suffix: '%', label: 'Müşteri Memnuniyeti'},
 ];
 
 // ─── Hizmetler ────────────────────────────────────────────────────────────────

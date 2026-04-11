@@ -10,10 +10,10 @@ export interface Props {
 }
 
 const defaultStats: Stat[] = [
-  { value: 20,  suffix: '+', label: 'Yıl Deneyim' },
-  { value: 500, suffix: '+', label: 'Tamamlanan Proje' },
-  { value: 50,  suffix: '+', label: 'Makine Parkı' },
-  { value: 200, suffix: '+', label: 'Mutlu Müşteri' },
+  { value: new Date().getFullYear() - 2013, suffix: '+', label: 'Yıl Deneyim'        },
+  { value: 350, suffix: '+', label: 'Tamamlanan Proje'   },
+  { value: 15,  suffix: '+', label: 'İş Makinesi'        },
+  { value: 100, suffix: '%', label: 'Müşteri Memnuniyeti'},
 ];
 
 const { stats = defaultStats } = Astro.props;
@@ -56,25 +56,35 @@ const { stats = defaultStats } = Astro.props;
 </style>
 
 <script>
-  const counters = document.querySelectorAll<HTMLElement>('.stats__value');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target as HTMLElement;
-      const target = parseInt(el.dataset.target ?? '0', 10);
-      const duration = 1800;
-      const start = performance.now();
-      const tick = (now: number) => {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target).toString();
-        if (progress < 1) requestAnimationFrame(tick);
-      };
-      requestAnimationFrame(tick);
-      observer.unobserve(el);
-    });
-  }, { threshold: 0.2, rootMargin: '0px 0px -80px 0px' });
+  function initStatsCounter() {
+    const counters = document.querySelectorAll<HTMLElement>('.stats__value');
+    if (!counters.length) return;
 
-  counters.forEach((el) => observer.observe(el));
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+        const target = parseInt(el.dataset.target ?? '0', 10);
+        const duration = 1800;
+        const start = performance.now();
+        const tick = (now: number) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target).toString();
+          if (progress < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.1 });
+
+    counters.forEach((el) => observer.observe(el));
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStatsCounter);
+  } else {
+    initStatsCounter();
+  }
 </script>
