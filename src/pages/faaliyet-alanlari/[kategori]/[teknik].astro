@@ -105,6 +105,54 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
     <div class="tz-readability-wrapper">
        <Fragment set:html={teknik.content} />
     </div>
+
+    {teknik.steps && teknik.steps.length > 0 && (
+      <div class="tz-section" style="max-width:800px;margin-inline:auto;padding-inline:var(--s-6,1.5rem);">
+        <h2 class="tz-section-title">Uygulama Adımları — Özet</h2>
+        <ol class="tz-steps">
+          {teknik.steps.map((s) => (
+            <li class="tz-step">
+              <span class="tz-step__title">{s.title}</span>
+              <p class="tz-step__desc">{s.desc}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    )}
+
+    {teknik.params && teknik.params.length > 0 && (
+      <div class="tz-section" style="max-width:800px;margin-inline:auto;padding-inline:var(--s-6,1.5rem);">
+        <h2 class="tz-section-title">Teknik Parametreler</h2>
+        <div class="tz-params-wrap">
+          <table class="tz-params-table">
+            <thead>
+              <tr><th>Parametre</th><th>Tipik Değer</th><th>Açıklama</th></tr>
+            </thead>
+            <tbody>
+              {teknik.params.map((p) => (
+                <tr>
+                  <td><strong>{p.name}</strong></td>
+                  <td class="tz-params-table__value">{p.value}</td>
+                  <td>{p.desc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    )}
+
+    {teknik.zeminTurleri && teknik.zeminTurleri.length > 0 && (
+      <div class="tz-section" style="max-width:800px;margin-inline:auto;padding-inline:var(--s-6,1.5rem);">
+        <h2 class="tz-section-title">Uygun Zemin Türleri</h2>
+        <div class="tz-zemin-chips">
+          {teknik.zeminTurleri.map((z) => (
+            <span class="tz-zemin-chip">{z}</span>
+          ))}
+        </div>
+      </div>
+    )}
+
     {ilgiliTeknikler.length > 0 && (
       <div class="tz-related-container" style="margin-top: 4rem;">
         <h2 class="tz-section-title">{kategori.title} Kapsamındaki Diğer Yöntemler</h2>

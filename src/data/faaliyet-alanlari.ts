@@ -281,6 +281,23 @@ export const teknikler: Teknik[] = [
     badge: 'En Yaygın', badgeType: 'popular',
     metrics: [{ label: 'Maks. Derinlik', value: '≤ 60 m' }, { label: 'Kazık Çapı', value: 'Ø40–150 cm' }],
     comparison: { maxDerinlik: '60 m', derinlikBar: 85, maliyetLabel: 'Orta-Yüksek', maliyetBar: 65, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
+    steps: [
+      { title: 'Saha Platformu ve Nokta Aplikasyonu', desc: '80–120 tonluk delgi makinesi için min. 50 kPa taşımalı stabilize platform hazırlanır. Kazık merkezleri total station ile ±50 mm toleransla işaretlenir.' },
+      { title: 'Zemine Giriş ve Delgi', desc: 'Zemin sınıfına göre rotatif burgu, kepçe veya kaya kesici seçilir. Her metre zemin profili kayıt altına alınarak tasarım doğrulanır.' },
+      { title: 'Kuyu Cidarının Korunması', desc: 'Gevşek zemin veya yüksek su tablasında bentonit şerbeti ya da çelik muhafaza borusu (casing) devreye girer; kuru, sağlam zeminlerde sadece yüzey kılıfı yeterlidir.' },
+      { title: 'Donatı Kafesinin İndirilmesi', desc: 'Proje statik hesabına göre üretilen betonarme kafes, kuyu tabanından 100–150 mm yukarıda askıya alınır. Beton örtüsü spacer\'larla sağlanır.' },
+      { title: 'Tremi Yöntemiyle Betonlama', desc: 'C30/37 sınıfı, slump ≥ 180 mm beton dipten yüzeye tremi borusuyla dökülür. Kesintisiz betonlama ve casing çekme hızının senkronizasyonu kaliteyi doğrudan belirler.' },
+      { title: 'Yük Testi ve Kabul', desc: 'TBDY 2018 gereği her projede en az 1 statik veya dinamik yük testi yapılır. Tüm kazıklarda PIT/CSL sağlamlık testi uygulanarak gövde bütünlüğü teyit edilir.' },
+    ],
+    params: [
+      { name: 'Kazık Çapı', value: 'Ø400–1500 mm', desc: 'Mega projelerde 3000 mm\'e kadar (baret)' },
+      { name: 'Maksimum Derinlik', value: '60 m', desc: 'Standart; kaya soketi ile proje gereksinimine göre artırılabilir' },
+      { name: 'Taşıma Kapasitesi', value: '500–30.000+ kN', desc: 'Çap, derinlik ve zemine göre; yük testi ile doğrulanır' },
+      { name: 'Minimum Beton Sınıfı', value: 'C30/37', desc: 'TBDY 2018 deprem bölgeleri için zorunlu minimum' },
+      { name: 'Günlük Üretim', value: '3–5 kazık', desc: 'Çap ve derinliğe göre; kaya delgisinde daha az' },
+      { name: 'Yük Testi', value: 'Zorunlu', desc: 'TBDY 2018 — her projede min. 1 statik veya dinamik test' },
+    ],
+    zeminTurleri: ['Yumuşak kil', 'Sert kil', 'Silt', 'Gevşek kum', 'Sıkı kum', 'Çakıl', 'Kaya (soketli)', 'Alüvyon'],
     content:`<nav class="toc" aria-label="İçindekiler">
 <h2 class="toc__title">İçindekiler</h2>
 <ol class="toc__list">
@@ -1741,6 +1758,22 @@ export const teknikler: Teknik[] = [
     badge: 'En Yaygın', badgeType: 'popular',
     metrics: [{ label: 'Kolon Çapı', value: 'Ø60–250 cm' }, { label: 'Maks. Derinlik', value: '≤ 35 m' }],
     comparison: { maxDerinlik: '35 m', derinlikBar: 70, maliyetLabel: 'Orta-Yüksek', maliyetBar: 65, suGecirimsizlik: 'Tam', kaliciKullanim: 'Evet' },
+    steps: [
+      { title: 'Saha Hazırlığı ve Eksen Aplikasyonu', desc: 'Kolon eksenleri tasarım planına göre işaretlenir. Yüzey engelleri (mevcut temel, altyapı) tespit edilerek delgi güzergahı netleştirilir.' },
+      { title: 'Pilot Delgi', desc: 'Ø90–150 mm monitor borusu hedef derinliğe (5–35 m) kadar indirilir; delgi sırasında zemin profili ve su tabası kayıt altına alınır.' },
+      { title: 'Yüksek Basınçlı Enjeksiyon', desc: '200–600 bar basınçla çimento şerbeti püskürtülürken boru 3–10 cm/dk hızla yukarı çekilir. Çekme hızı kolon çapını doğrudan belirler.' },
+      { title: 'Spoil Yönetimi', desc: 'Zemin-çimento karışımının %30–70\'i yüzeye çıkar. Spoil kanalının açık tutulması kuyu içi basınç artışını engeller.' },
+      { title: 'Deneme Kolonu ve Kalite Kontrolü', desc: 'TS EN 12716 gereği üretime başlamadan deneme kolonu yapılır; karot alınarak dayanım ve çap bağımsız laboratuvarda doğrulanır.' },
+    ],
+    params: [
+      { name: 'Kolon Çapı', value: 'Ø300–2500 mm', desc: 'Jet1: 30–80 cm / Jet2: 60–120 cm / Jet3: 80–250 cm' },
+      { name: 'Enjeksiyon Basıncı', value: '200–600 bar', desc: 'Sistem ve zemine göre; Jet3\'te su jeti 400–600 bar' },
+      { name: 'Maks. Derinlik', value: '35 m', desc: 'Standart uygulama; özel ekipmanla 50 m\'ye çıkabilir' },
+      { name: 'Soilcrete Dayanımı', value: '1–10 MPa', desc: 'Zemin tipine göre; kumda daha yüksek, kilde daha düşük' },
+      { name: 'Kür Süresi', value: '7–28 gün', desc: 'Tam dayanıma 28 günde ulaşılır' },
+      { name: 'Geçirimsizlik', value: 'k ≤ 10⁻⁸ m/s', desc: 'Perde uygulamalarında hedef değer' },
+    ],
+    zeminTurleri: ['Kum', 'Siltli kum', 'Kil', 'Silt', 'Gevşek çakıl', 'Alüvyon', 'Organik zemin (Jet3)'],
     content:`<nav class="toc" aria-label="İçindekiler">
 <h2 class="toc__title">İçindekiler</h2>
 <ol class="toc__list">
