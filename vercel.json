@@ -1,0 +1,11 @@
+{
+  "redirects": [
+    { "source": "/hizmetlerimiz/fore-kazik/",      "destination": "/faaliyet-alanlari/kazikli-temeller/fore-kazik/",        "permanent": true },
+    { "source": "/hizmetlerimiz/jet-grout/",        "destination": "/faaliyet-alanlari/zemin-iyilestirme/jet-grout/",        "permanent": true },
+    { "source": "/hizmetlerimiz/ongermeli-ankraj/", "destination": "/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/", "permanent": true },
+    { "source": "/hizmetlerimiz/mini-kazik/",       "destination": "/faaliyet-alanlari/kazikli-temeller/mini-kazik/",        "permanent": true },
+    { "source": "/hizmetlerimiz/zemin-civisi/",     "destination": "/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/",     "permanent": true },
+    { "source": "/hizmetlerimiz/iksa-sistemleri/",  "destination": "/faaliyet-alanlari/iksa-sistemleri/",                   "permanent": true },
+    { "source": "/hizmetlerimiz/",                  "destination": "/faaliyet-alanlari/",                                   "permanent": true }
+  ]
+}

@@ -34,6 +34,7 @@ export interface Hizmet {
   heroImage:   string;
   icon:        string; // SVG path
   category:    string;
+  href:        string; // canonical URL — faaliyet-alanlari yapısı
   content:     string; // HTML
   faq:         { q: string; a: string }[];
 }
@@ -48,6 +49,7 @@ export const hizmetler: Hizmet[] = [
     heroImage:  '/images/fore-kazik/fore-kazik-hero.webp',
     icon:       'M12 2v20M8 6l4-4 4 4M8 18l4 4 4-4',
     category:   'Kazıklı Temeller',
+    href:       '/faaliyet-alanlari/kazikli-temeller/fore-kazik/',
     content: `
       <div class="aeo-box">
         Fore kazık; zemin içine döner kafayla delik açılarak, içine donatı yerleştirilip beton dökülmesiyle oluşturulan,
@@ -103,6 +105,7 @@ export const hizmetler: Hizmet[] = [
     heroImage:  '/images/jet-grout/jet-grout-hero.webp',
     icon:       'M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18',
     category:   'Zemin İyileştirme',
+    href:       '/faaliyet-alanlari/zemin-iyilestirme/jet-grout/',
     content: `
       <div class="aeo-box">
         Jet grout; yüksek basınçlı (200–400 bar) çimento sütunu oluşturma yöntemidir.
@@ -138,6 +141,7 @@ export const hizmetler: Hizmet[] = [
     heroImage:  '/images/destekleme-ankraj/zemin-ankraj.jpg',
     icon:       'M12 22V2m-7 9 7-7 7 7M5 21h14',
     category:   'İksa Sistemleri',
+    href:       '/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/',
     content: `
       <div class="aeo-box">
         Öngermeli ankraj; derin kazı çevrelerinde yer alan iksa perdeleri, şev yüzeyleri ve
@@ -169,6 +173,7 @@ export const hizmetler: Hizmet[] = [
     heroImage:  '/images/kazikli-temeller/mini-kazik.jpg',
     icon:       'M8 2v20M16 2v20M3 7h18M3 17h18',
     category:   'Kazıklı Temeller',
+    href:       '/faaliyet-alanlari/kazikli-temeller/mini-kazik/',
     content: `
       <div class="aeo-box">
         Mini kazık (mikro kazık); 150 mm ile 300 mm arasında küçük çaplı,
@@ -201,6 +206,7 @@ export const hizmetler: Hizmet[] = [
     heroImage:  '/images/sev-stabilitesi/sev-zemin-civisi.jpg',
     icon:       'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5',
     category:   'İksa Sistemleri',
+    href:       '/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/',
     content: `
       <div class="aeo-box">
         Zemin çivisi (soil nailing); zemin kütlesine yoğun aralıklı pasif çelik donatı
@@ -227,6 +233,7 @@ export const hizmetler: Hizmet[] = [
     heroImage:  '/images/iksa/ankrajli-fore-kazik.jpg',
     icon:       'M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11M20 10v11M8 10v11M12 10v11M16 10v11',
     category:   'İksa Sistemleri',
+    href:       '/faaliyet-alanlari/iksa-sistemleri/',
     content: `
       <div class="aeo-box">
         İksa; derin kazı çevrelerindeki zemin ve su basıncına karşı koymak için

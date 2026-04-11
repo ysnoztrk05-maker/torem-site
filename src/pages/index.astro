@@ -243,16 +243,16 @@ const faqItems = [
       <div class="services-grid">
         {featuredHizmetler.map((h) => (
           <article class="svc-card">
-            <a href={`/hizmetlerimiz/${h.slug}/`} class="svc-card__img-wrap">
+            <a href={h.href} class="svc-card__img-wrap">
               <img src={h.image} alt={h.title} loading="lazy" width="480" height="320" />
             </a>
             <div class="svc-card__body">
               <p class="svc-card__cat">{h.category}</p>
               <h3 class="svc-card__title">
-                <a href={`/hizmetlerimiz/${h.slug}/`}>{h.shortTitle}</a>
+                <a href={h.href}>{h.shortTitle}</a>
               </h3>
               <p class="svc-card__excerpt">{h.excerpt.slice(0, 110)}…</p>
-              <a href={`/hizmetlerimiz/${h.slug}/`} class="svc-card__link">
+              <a href={h.href} class="svc-card__link">
                 Detaylı Bilgi →
               </a>
             </div>
@@ -260,7 +260,7 @@ const faqItems = [
         ))}
       </div>
       <div class="text-center" style="margin-top:var(--s-10)">
-        <a href="/hizmetlerimiz/" class="btn btn--ghost">Tüm Hizmetleri Görüntüle</a>
+        <a href="/faaliyet-alanlari/" class="btn btn--ghost">Tüm Hizmetleri Görüntüle</a>
       </div>
     </div>
   </section>
