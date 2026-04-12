@@ -2251,14 +2251,476 @@ export const teknikler: Teknik[] = [
     metrics: [{ label: 'Kapasite', value: '500–5000 kN' }, { label: 'Uzunluk', value: '10–40 m' }],
     comparison: { maxDerinlik: '40 m', derinlikBar: 80, maliyetLabel: 'Orta-Yüksek', maliyetBar: 60, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
-      <div class="aeo-box">Öngermeli ankraj; çelik kablo (strand) veya çubuk tendonun zemine/kayaya yerleştirilerek tasarım yüküne gerildikten sonra kama sistemiyle kilitlenmesidir.</div>
-      <h2 id="nedir">Öngermeli Ankraj Nedir?</h2>
-      <p>Ankraj boyu genellikle 10–40 m, kapasite 500–5000 kN arasındadır. Serbest boy ve kök boyu olmak üzere iki bölümden oluşur. Kök boyu çimento enjeksiyonu ile zemine yapışır.</p>
-      <h2 id="cesitleri">Çeşitleri</h2>
-      <ul><li>Geçici ankraj: ≤2 yıl, inşaat süresince</li><li>Kalıcı ankraj: Korozyon korumalı, 50+ yıl</li><li>Tekrar gerilebilir ankraj: İzleme + ayarlanabilir</li></ul>`,
+<div class="aeo-box"><strong>Özet Cevap:</strong> Öngermeli ankraj; çelik kablo (strand) veya çubuk tendonun zemine/kayaya yerleştirilerek tasarım yüküne gerildikten sonra kama sistemiyle kilitlenmesidir. 500–5000 kN kapasite, 10–40 m uzunluk. <strong>Serbest boy</strong> (enjeksiyonsuz) ile <strong>kök boyu</strong> (çimento enjeksiyonlu) olmak üzere iki bölümden oluşur. EN 1537 standardına göre tasarlanır; her ankraj üretim ve kabul çekme testine tabi tutulur.</div>
+
+<nav class="toc" aria-label="İçindekiler">
+<p class="toc__title">İçindekiler</p>
+<ol class="toc__list">
+<li><a href="#nedir">Öngermeli Ankraj Nedir?</a></li>
+<li><a href="#cesitler">Çeşitleri ve Farkları</a></li>
+<li><a href="#nasil-yapilir">Nasıl Uygulanır? — 7 Adım</a></li>
+<li><a href="#tasima-kapasitesi">Taşıma Kapasitesi ve Hesaplama</a></li>
+<li><a href="#uygulama-alanlari">Kullanım Alanları</a></li>
+<li><a href="#depreme-dayanikli">Depreme Dayanıklılık (TBDY 2018)</a></li>
+<li><a href="#zemin-etudu">Zemin Etüdü İlişkisi</a></li>
+<li><a href="#kalite-kontrol">Kalite Kontrol ve Germe Testi</a></li>
+<li><a href="#hatalar">Sık Yapılan Hatalar</a></li>
+<li><a href="#makine">Makine ve Ekipmanlar</a></li>
+<li><a href="#maliyet">Maliyet Analizi 2026</a></li>
+<li><a href="#uygulama-suresi">Uygulama Süresi</a></li>
+<li><a href="#karsilastirma">Zemin Çivisi vs Ankraj</a></li>
+<li><a href="#torem-deneyimi">Torem Saha Deneyimi</a></li>
+<li><a href="#avantaj-dezavantaj">Avantajlar ve Dezavantajlar</a></li>
+</ol>
+</nav>
+
+<h2 id="nedir">Öngermeli Ankraj Nedir?</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Öngermeli ankraj, zemin veya kaya kütlesine aktif gergi kuvveti uygulayan çekme elemanıdır. Pasif zemin çivisinden temel farkı: sisteme önceden yük verilerek (pre-stressing) yapı hareketleri minimize edilir.</div>
+<p>Öngermeli ankraj; yüksek mukavemetli çelik strand (halat grubu) veya rijit çubuğun delgi ile zemine/kayaya yerleştirilip çimento şerbetiyle kök bölgesinde sabitlenmesi, ardından hidrolik kriko ile tasarım yüküne gerilerek çift kama veya somun sistemiyle kilitlenmesi ilkesine dayanır. Çekme kuvvetini zemine aktaran bu sistem, iksa perdelerini, şev stabilizasyon yapılarını ve temel güçlendirmelerini destekler.</p>
+<p>Sistem iki temel bölümden oluşur:</p>
+<ul>
+<li><strong>Serbest boy (free length / tendon boyu):</strong> İksa perdesi veya yapı yüzeyinden kök boyunun başlangıcına kadar olan mesafe. Bu bölge çimento enjeksiyonu almaz — plastik kılıf ile korunur; aktif uzama (elongation) bu bölgede gerçekleşir. Tasarımda en kritik parametredir.</li>
+<li><strong>Kök boyu (bond length / ankraj boyu):</strong> Çimento şerbetiyle zemine/kayaya yapışan bölge. Tüm çekme kuvvetini zemin reaksiyonu olarak alır. Zemin cinsine, strand sayısına ve tasarım yüküne göre 4–10 m arasında hesaplanır.</li>
+</ul>
+<p>Ankraj boyu tipik olarak 10–40 m, kapasite ise konfigürasyona bağlı olarak 500–5000 kN arasındadır. Çok halatlı (multi-strand) sistemlerde 3, 4, 6, 9 veya 12 adet 0,6 inç (15,2 mm) çaplı sarmal tel kullanılır. Daha az halatla daha uzun kök boyu ya da daha çok halatla daha kısa kök boyu aynı kapasiteyi verebilir.</p>
+<figure>
+<svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Öngermeli Ankraj Anatomisi: Serbest boy ve kök boyu kesit diyagramı">
+  <rect width="800" height="440" fill="#F5F2ED"/>
+  <rect x="0" y="105" width="800" height="335" fill="#C9A96E" opacity="0.12"/>
+  <line x1="0" y1="105" x2="800" y2="105" stroke="#8B7355" stroke-width="2"/>
+  <text x="600" y="100" font-size="11" fill="#8B7355" font-family="Arial,sans-serif">Zemin Yüzeyi ±0.00</text>
+  <rect x="140" y="28" width="44" height="280" fill="#2E5077" rx="2"/>
+  <text x="100" y="22" font-size="11" fill="#2E5077" font-family="Arial,sans-serif" font-weight="bold">İksa Perdesi</text>
+  <rect x="174" y="62" width="72" height="22" fill="#C8873A" rx="2"/>
+  <rect x="188" y="47" width="44" height="17" fill="#C8873A" rx="2"/>
+  <text x="255" y="62" font-size="11" fill="#C8873A" font-family="Arial,sans-serif" font-weight="bold">← Ankraj Kafası</text>
+  <text x="255" y="76" font-size="10" fill="#8B5A1A" font-family="Arial,sans-serif">(Plaka + Kama + Kriko bağlantısı)</text>
+  <rect x="205" y="84" width="9" height="160" fill="#4A7FA5" opacity="0.35" rx="4"/>
+  <rect x="208" y="87" width="2.5" height="154" fill="#4A7FA5"/>
+  <rect x="211" y="87" width="2" height="154" fill="#2E5077" opacity="0.6"/>
+  <rect x="214" y="87" width="1.5" height="154" fill="#4A7FA5" opacity="0.4"/>
+  <rect x="202" y="242" width="16" height="150" fill="#C8873A" opacity="0.55" rx="4"/>
+  <rect x="208" y="244" width="2.5" height="144" fill="#C8873A"/>
+  <rect x="211" y="244" width="2" height="144" fill="#A06820" opacity="0.7"/>
+  <rect x="214" y="244" width="1.5" height="144" fill="#C8873A" opacity="0.5"/>
+  <line x1="230" y1="95" x2="230" y2="245" stroke="#4A7FA5" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="226" y1="95" x2="234" y2="95" stroke="#4A7FA5" stroke-width="1.5"/>
+  <line x1="226" y1="245" x2="234" y2="245" stroke="#4A7FA5" stroke-width="1.5"/>
+  <text x="238" y="153" font-size="13" fill="#2E5077" font-family="Arial,sans-serif" font-weight="bold">SERBEST BOY</text>
+  <text x="238" y="169" font-size="11" fill="#4A7FA5" font-family="Arial,sans-serif">Enjeksiyonsuz</text>
+  <text x="238" y="183" font-size="11" fill="#4A7FA5" font-family="Arial,sans-serif">Plastik kılıf korumalı</text>
+  <text x="238" y="197" font-size="11" fill="#4A7FA5" font-family="Arial,sans-serif">Uzama bu bölgede olur</text>
+  <line x1="230" y1="248" x2="230" y2="392" stroke="#C8873A" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="226" y1="248" x2="234" y2="248" stroke="#C8873A" stroke-width="1.5"/>
+  <line x1="226" y1="392" x2="234" y2="392" stroke="#C8873A" stroke-width="1.5"/>
+  <text x="238" y="300" font-size="13" fill="#A06820" font-family="Arial,sans-serif" font-weight="bold">KÖK BOYU</text>
+  <text x="238" y="316" font-size="11" fill="#C8873A" font-family="Arial,sans-serif">Çimento enjeksiyonlu</text>
+  <text x="238" y="330" font-size="11" fill="#C8873A" font-family="Arial,sans-serif">Zemine aderans sağlar</text>
+  <text x="238" y="344" font-size="11" fill="#C8873A" font-family="Arial,sans-serif">Kök yüzeyi çamursuz olmalı</text>
+  <rect x="430" y="108" width="350" height="300" fill="white" rx="8" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="430" y="108" width="350" height="34" fill="#1B2B3A" rx="8"/>
+  <rect x="430" y="128" width="350" height="14" fill="#1B2B3A"/>
+  <text x="445" y="130" font-size="12" fill="white" font-family="Arial,sans-serif" font-weight="bold">Teknik Parametreler</text>
+  <text x="445" y="162" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Toplam Uzunluk</text><text x="640" y="162" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">10 – 40 m</text>
+  <line x1="445" y1="170" x2="765" y2="170" stroke="#f0ece6" stroke-width="1"/>
+  <text x="445" y="186" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Kapasite</text><text x="640" y="186" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">500 – 5.000 kN</text>
+  <line x1="445" y1="194" x2="765" y2="194" stroke="#f0ece6" stroke-width="1"/>
+  <text x="445" y="210" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Delgi Çapı</text><text x="640" y="210" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">Ø100 – 200 mm</text>
+  <line x1="445" y1="218" x2="765" y2="218" stroke="#f0ece6" stroke-width="1"/>
+  <text x="445" y="234" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Kök Boyu</text><text x="640" y="234" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">4 – 10 m</text>
+  <line x1="445" y1="242" x2="765" y2="242" stroke="#f0ece6" stroke-width="1"/>
+  <text x="445" y="258" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Strand Çapı</text><text x="640" y="258" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">0,6 inç (15,2 mm)</text>
+  <line x1="445" y1="266" x2="765" y2="266" stroke="#f0ece6" stroke-width="1"/>
+  <text x="445" y="282" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Germe Yükü</text><text x="640" y="282" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">%110–125 × P_d</text>
+  <line x1="445" y1="290" x2="765" y2="290" stroke="#f0ece6" stroke-width="1"/>
+  <text x="445" y="306" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Standart</text><text x="640" y="306" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">EN 1537 / BS 8081</text>
+  <line x1="445" y1="318" x2="765" y2="318" stroke="#f0ece6" stroke-width="1"/>
+  <rect x="445" y="330" width="320" height="62" fill="#FFF8E7" rx="4"/>
+  <text x="455" y="347" font-size="11" fill="#A06820" font-family="Arial,sans-serif" font-weight="bold">⚠ Kritik Kural (EN 1537 §7.4.2)</text>
+  <text x="455" y="362" font-size="10" fill="#5A6A7A" font-family="Arial,sans-serif">Serbest boy enjeksiyon almamalıdır.</text>
+  <text x="455" y="376" font-size="10" fill="#5A6A7A" font-family="Arial,sans-serif">Aksi halde sağlıklı uzama ölçümü yapılamaz.</text>
+  <text x="400" y="22" font-size="14" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Öngermeli Ankraj — Anatomik Kesit</text>
+</svg>
+<figcaption>Şekil 1 — Öngermeli ankrajın serbest boy / kök boyu anatomisi. Turuncu bölge: çimento enjeksiyonlu kök; mavi bölge: enjeksiyonsuz serbest boy. EN 1537 uyumlu şematik.</figcaption>
+</figure>
+<div class="saha-notu"><strong>📋 Mevzuat Notu (EN 1537 §7.4.2):</strong> Serbest boyun enjeksiyon almaması teknik bir tercih değil, standartta tanımlanmış zorunlu kuraldır. Bu bölge plastik kılıfla korunmalı, zemine bağlanmamalıdır. Çimento kılıfı serbest boyda oluşursa germe testi sırasında uzama değerleri hatalı ölçülür; ankraj kapasitesi tasarımın altında kalır.</div>
+
+<h2 id="cesitler">Öngermeli Ankraj Çeşitleri</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Ömür, korozyon koruması ve sökülebilirlik kriterlerine göre üç ana tip: geçici (≤2 yıl), kalıcı (50+ yıl çift bariyer), tekrar gerilebilir (izlemeli, ayarlanabilir).</div>
+<div class="card-grid">
+<div class="grid-card">
+<h4>Geçici Ankraj</h4>
+<p>İnşaat süresince kullanılır, maksimum 2 yıl tasarım ömrü. Tekli korozyon koruması (yağlı kılıf veya çimento) yeterlidir. Kalıcı ankraja göre %30–40 daha ekonomiktir. İksa sistemlerinde en yaygın tipidir. Yapı tamamlandığında tendon kesilerek veya çekilerek devre dışı bırakılır.</p>
+</div>
+<div class="grid-card">
+<h4>Kalıcı Ankraj</h4>
+<p>Yapı ömrü boyunca aktif kalır, 50–100 yıl tasarım ömrü. EN 1537'ye göre zorunlu çift bariyer korozyon koruması: HDPE kılıf + çimento şerbeti veya mum enjeksiyonu. Periyodik yük izlemesi (monitoring) önerilir. Şev stabilitesi, baraj güçlendirme ve kalıcı istinat yapılarında tercih edilir.</p>
+</div>
+<div class="grid-card">
+<h4>Tekrar Gerilebilir Ankraj</h4>
+<p>Özel kafa tasarımıyla yapı ömrü boyunca ek germe imkânı sunar. Uzun vadeli izleme projeleri ve oturma hassasiyetli yapılarda tercih edilir. Sürünme (creep) eğilimli kil zeminlerde zaman içinde yük düşmesini telafi eder. Maliyet en yüksek tiptir.</p>
+</div>
+<div class="grid-card">
+<h4>Kaya Ankrajı (Rock Bolt)</h4>
+<p>Sert kaya formasyonlarında uygulanır. Çimento yerine reçine kapsüllü veya mekanik sabitleme kullanılabilir. Kısa kök boyuyla çok yüksek kapasite elde edilir — kaya aderansı zemine göre 3–5 kat daha yüksektir. Tünel, şev ve baraj gövde uygulamalarında kullanılır.</p>
+</div>
+</div>
+
+<h2 id="nasil-yapilir">Öngermeli Ankraj Nasıl Uygulanır? — 7 Adım</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Delgi → tendon montajı → enjeksiyon → kürleme → germe testi → kilitlenir. Kritik nokta: serbest boyun enjeksiyon almaması ve germe testinde minimum 5 dakika beklenmesidir.</div>
+<div class="process-steps">
+<div class="step">
+<div><h4>1. Zemin Etüdü ve Tasarım</h4>
+<p>Zemin sınıflandırması (kil, kum, kaya) yapılır. Delgi açısı, uzunluğu, kök boyu ve strand sayısı zemin emniyet gerilmesi (qs) değerine göre hesaplanır. Tasarım yükü (Pd), güvenlik katsayısı 1.5–2.0 alınarak belirlenir. Geçici mi kalıcı mı olduğu korozyon koruması için kritiktir.</p></div>
+</div>
+<div class="step">
+<div><h4>2. Delgi</h4>
+<p>Tasarlanan açı (genellikle yataydan 10°–45° aşağı) ve uzunlukta Ø100–200 mm çaplı delik açılır. Zemin türüne göre yöntem seçilir:</p>
+<ul>
+<li><strong>Sulu/gevşek zeminlerde:</strong> Su basınçlı rotary delgi — su hem delgiyi hem de kuyu stabilitesini sağlar</li>
+<li><strong>Normal/sert zeminlerde:</strong> Kuru rotary veya CFA tipi delgi; kılavuz kasa (casing) gerekebilir</li>
+<li><strong>Kaya formasyonunda:</strong> DTH (down-the-hole) çekiçli delgi</li>
+</ul></div>
+</div>
+<div class="step">
+<div><h4>3. Tendon Montajı</h4>
+<p>Strand demeti (3, 4, 6 veya daha fazla halat) enjeksiyon borusuyla birlikte delgiye indirilir. Halatların kuyuya atılışı sırasında kontrol kritik — dolanma veya kırılma riski vardır (bkz. saha uyarısı). Spacer (aralayıcı) ile strandlar eşit aralıklı tutulur. Serbest boy bölgesine plastik kılıf geçirilmiş olmalıdır.</p></div>
+</div>
+<div class="step">
+<div><h4>4. Çimento Enjeksiyonu</h4>
+<p>Enjeksiyon borusuyla dipten yüzeye doğru çimento şerbeti (w/c oranı 0.40–0.45) basılır. Zemin türüne göre enjeksiyon yöntemi farklılaşır. <strong>KRİTİK:</strong> Enjeksiyon yalnızca kök boyu bölgesinde gerçekleşmeli; serbest boy plastik kılıfı nedeniyle enjeksiyon almamalıdır. İyi kalite enjeksiyon için Sika veya muadili katkı maddesi kullanımı önerilir.</p></div>
+</div>
+<div class="step">
+<div><h4>5. Kürleme</h4>
+<p>Çimento şerbeti minimum 3–7 gün kürlenmeye bırakılır (hava sıcaklığı ve çimento sınıfına göre değişir). Bu süre tamamlanmadan germe yapılırsa enjeksiyonlu kök bölgesi yetersiz dayanımda çalışır, gerçek kapasite ölçülemez. Soğuk havalarda (0°C altı) özel önlemler alınmalıdır.</p></div>
+</div>
+<div class="step">
+<div><h4>6. Germe Testi (Kalite Kontrol)</h4>
+<p>Hidrolik kriko ankraj kafasına monte edilir. Önce kilit yükü (yakl. %10 P_d), ardından uygunluk testi yükü (%150 P_d) veya kabul testi yükü (%125 P_d) uygulanır. Test yükünde minimum 5 dakika beklenerek sürünme (creep) gözlemlenir. Uzama değerleri teorik değerlerle karşılaştırılır. (Detaylar için bkz. Kalite Kontrol bölümü.)</p></div>
+</div>
+<div class="step">
+<div><h4>7. Kilitleme ve Başlık Montajı</h4>
+<p>Tasarım kilitlenmesi yüküne çekilip çift kama sistemiyle veya somunla kilitlenir. Fazla strand uçları taşlama ile kesilir. Plaka ve kafa korozyon koruyucu ile kaplanır, kalıcı ankrajlarda ilave koruyucu kapak monte edilir.</p></div>
+</div>
+</div>
+<div class="saha-notu"><strong>⚠️ Saha Uyarısı — Enjeksiyon Hataları (Yasin Öztürk, 13+ yıl):</strong> Enjeksiyonların düzgün yapılmaması en kritik ve en sık karşılaşılan hatadır. Serbest bölgenin enjeksiyon almaması sağlıklı uzama için zorunludur — bu bölgeye çimento girerse halatlar tutmaz, germe testi gerçeği yansıtmaz. Sulu zeminlerde enjeksiyonla birlikte delgi yapılır, giriş ve çıkışlara dikkat edilmelidir. Normal zeminlerde kılavuz kasa atılması gerekir. Sika katkı maddesi kullanılmazsa enjeksiyon kalitesi ve aderans düşer.</div>
+
+<h2 id="tasima-kapasitesi">Taşıma Kapasitesi ve Hesaplama</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Ankraj kapasitesi, zemin-grout arayüz aderansı (qs) × kök boyu çevresi × kök uzunluğu formülüyle hesaplanır. Kaya formasyonlarında qs değeri kumlu zeminlere göre 3–10 kat daha yüksektir.</div>
+<p>Ankraj çekme kapasitesi (Ra) temel olarak üç parametreyle belirlenir:</p>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>Parametre</th><th>Formül / Değer</th><th>Açıklama</th></tr></thead>
+<tbody>
+<tr><td>Zemin-grout aderansı (qs)</td><td>Kil: 50–100 kPa / Kum: 100–250 kPa / Kaya: 500–2000 kPa</td><td>Zemin cinsine ve enjeksiyon basıncına göre değişir</td></tr>
+<tr><td>Kök boyu (Lb)</td><td>4 – 10 m</td><td>Uzatıldıkça kapasite artar (sınıra kadar)</td></tr>
+<tr><td>Delgi çapı (D)</td><td>Ø100 – 200 mm</td><td>Çevre = π × D → kapasite doğru orantılı</td></tr>
+<tr><td>Strand kesit alanı (Ap)</td><td>0,6 inç: 139 mm²/adet</td><td>Çekme kapasitesi sınırı: 0,8 × fpu × Ap</td></tr>
+<tr><td>Güvenlik katsayısı (FS)</td><td>1,5 – 2,0</td><td>EN 1537: geçici 1,5, kalıcı 2,0 tavsiye edilir</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Tasarım formülü (basitleştirilmiş):</strong> Ra = qs × π × D × Lb / FS</p>
+<p>Örnek: Ø150 mm delgi, 7 m kök boyu, orta sıkı kum (qs=150 kPa), FS=1.5 → Ra = 150 × π × 0.15 × 7 / 1.5 ≈ 330 kN. Bu kapasiteye erişmek için minimum 3 adet 0,6 inç strand yeterlidir (3 × 139 mm² = 417 mm² çekme kapasitesi ≈ 750 kN &gt; 330 kN).</p>
+<p>Yüksek basınçlı (post-grouting / IRS) enjeksiyonla qs değeri gevşek zeminlerde 1.5–2.5 kat artırılabilir. Bu özellikle balçık ve yumuşak kil zeminlerde kapasite sıkıntısını gidermek için kullanılır.</p>
+<div class="stat-row">
+<div class="stat-card"><span class="stat-number">500</span><span class="stat-label">kN — Minimum tipik kapasite</span></div>
+<div class="stat-card"><span class="stat-number">5.000</span><span class="stat-label">kN — Yüksek kapasiteli çok halatlı sistem</span></div>
+<div class="stat-card"><span class="stat-number">2.000</span><span class="stat-label">kPa — Kaya qs değeri (tipik)</span></div>
+<div class="stat-card"><span class="stat-number">EN 1537</span><span class="stat-label">Tasarım standardı (Avrupa)</span></div>
+</div>
+
+<h2 id="uygulama-alanlari">Kullanım Alanları</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Öngermeli ankraj en çok derin iksa perdelerinin (diyafram duvar, fore kazık perdesi, Berlin duvarı) tutulmasında kullanılır. İkinci yaygın uygulama şev stabilitesidir.</div>
+<ul>
+<li><strong>Derin iksa sistemleri:</strong> Ticari ve konut yapıları için bodrum katı kazılarında iksa perdelerine (diyafram duvar, ankrajlı fore kazık perdesi, Berlin duvarı) aktif gergi kuvveti uygulanır. Özellikle 10 m'yi aşan kazılarda strüt yerine ankraj tercih edilir — çalışma alanı tamamen açık kalır.</li>
+<li><strong>Şev stabilitesi:</strong> Kazı şevlerinde ve doğal yamaçlarda heyelan riskine karşı kalıcı veya geçici ankrajlı püskürtme beton uygulanır. Kaya ve yumuşak zemin şevlerinde etkili yöntemdir.</li>
+<li><strong>Temel güçlendirme:</strong> Mevcut binalara bitişik derin kazılarda komşu temel altı desteklenir; zemin ankrajı ile oturma riski minimize edilir.</li>
+<li><strong>Baraj ve hidrolik yapılar:</strong> Kalıcı yüklü yapılarda ankraj uzun vadeli stabilite sağlar. Çift korozyon koruması zorunludur.</li>
+<li><strong>İstinat duvarları:</strong> Geleneksel kütlesel istinat duvarı yerine daha ince ve daha hafif ankrajlı panel duvar çözümü sağlar.</li>
+<li><strong>Tünel portalleri:</strong> Gevşek zemin veya kaya ayrışma zonlarında portal stabilitesi için kısa kaya bulonları (rock bolt) ile birlikte kullanılır.</li>
+</ul>
+
+<h2 id="depreme-dayanikli">Depreme Dayanıklılık — TBDY 2018</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> TBDY 2018, deprem etkisindeki iksa yapılarında ankraj tasarımını dinamik katsayılarla günceller. DD-2 deprem düzeyi (50 yılda %10 aşılma) tasarım için esas alınır.</div>
+<p>Türkiye Bina Deprem Yönetmeliği (TBDY 2018) kapsamında ankraj tasarımında aşağıdaki hususlar öne çıkar:</p>
+<ul>
+<li><strong>Dinamik zemin basıncı artışı:</strong> Coulomb ya da Rankine yöntemiyle statik hesaplanan zemin basıncı, deprem katsayısı (kh = 0.20–0.35 DD-2 için) ile artırılarak dinamik basınç elde edilir. Bu artış ankraj yüküne doğrudan yansır.</li>
+<li><strong>Sıvılaşma kontrolü:</strong> Gevşek kumlarda (Dr &lt; %40) sismik yük altında sıvılaşma riski söz konusudur. Sıvılaşma bölgesinde ankraj kapasitesi büyük ölçüde düşer. Zemin iyileştirmesi (jet grout, taş kolon) ile öncelikle sıvılaşma giderilmelidir.</li>
+<li><strong>Deprem sonrası kontrol:</strong> Kalıcı ankrajlarda büyük deprem (M &gt; 6.5) sonrasında yük testi ile ankraj kapasitesi doğrulanmalıdır.</li>
+<li><strong>Kilitlenme yükü güncellenmesi:</strong> Deprem bölgesinde tasarım yükü statik hesaba göre %20–35 artırılabilir; bu strand sayısını veya kök boyunu etkiler.</li>
+</ul>
+<p>İstanbul ve İzmir gibi aktif fay zonlarındaki projelerde DD-2 deprem senaryosu için özel dinamik analiz (Newmark, PLAXIS dinamik modülü) yapılması tavsiye edilir.</p>
+
+<h2 id="zemin-etudu">Zemin Etüdü İlişkisi</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Ankraj tasarımında zemin etüdü iki parametreyi doğrudan belirler: zemin emniyet gerilmesi (qs) ve zemin sınıfı (sıvılaşma riski, balçık yüzdesi). Bu parametreler yanlışsa tasarım ankrajı tehlikeli biçimde eksik boyutlandırır.</div>
+<p>Kapsamlı bir zemin etüdü raporunda şu bilgilerin bulunması ankraj tasarımı için zorunludur:</p>
+<ul>
+<li>SPT-N darbe sayıları (zemin sıkılığı / mukavemet)</li>
+<li>Zemin sınıflandırması (USCS veya TS EN ISO 14688)</li>
+<li>Yeraltı suyu seviyesi ve mevsimsel değişimi</li>
+<li>Kohezyonsuz zeminlerde granülometri (ince malzeme yüzdesi — balçık oranı kritik)</li>
+<li>Kohezyonlu zeminlerde kıvam indisi ve konsolidasyon parametreleri</li>
+<li>Kaya formasyonu varsa RQD ve süreksizlik yönleri</li>
+</ul>
+<div class="saha-notu"><strong>🔍 Zemin Okuma — Riskli Koşullar (Yasin Öztürk):</strong> Üç zemin tipinde özel dikkat gerekir: <strong>1. Balçık zeminler</strong> — ankraj aderansını ciddi ölçüde düşürür, kök boyu uzatılmalı veya IRS enjeksiyonu uygulanmalıdır. <strong>2. Suya doygun zeminler</strong> — enjeksiyon sertleşmeden önce çimento süt olarak kayabilir, düşük w/c oranı ve katkı maddesi (Sika) şarttır. <strong>3. Yüksek yeraltı suyu</strong> — delgi yöntemi ve enjeksiyon sırası değiştirilmelidir; rotary su basınçlı delgi tercih edilir.</div>
+
+<h2 id="kalite-kontrol">Kalite Kontrol ve Germe Testi</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> EN 1537'ye göre her ankraj üretim çekme testine, belirli bir yüzdesi uygunluk ve kabul testlerine tabi tutulur. Germe testi 4 aşamadan oluşur; test yükünde 5 dakika beklenmesi zorunludur.</div>
+<p>EN 1537 standardı üç test türü tanımlar:</p>
+<ul>
+<li><strong>Araştırma (investigation) testi:</strong> Tasarım öncesinde yapılır. Yük artırımlı germe ile zemin-grout aderans dayanımı (qs) deneysel olarak belirlenir. Kırılmaya kadar yüklenir. Her projede en az 3 adet önerilir.</li>
+<li><strong>Uygunluk (suitability) testi:</strong> Üretim öncesinde prova ankraj üzerinde yapılır. Test yükü: 1,5 × Pd. Tüm üretim ankrajları için geçerli tasarım parametrelerini doğrular.</li>
+<li><strong>Kabul (acceptance) testi:</strong> Üretilen her ankraja uygulanır. Test yükü: 1,25 × Pd. Pratikte en sık bu test uygulanır.</li>
+</ul>
+<figure>
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Germe testi prosedür akış şeması">
+  <rect width="800" height="380" fill="#F5F2ED"/>
+  <text x="400" y="28" font-size="14" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Kabul Testi Prosedürü (EN 1537)</text>
+  <rect x="60" y="50" width="140" height="50" fill="#2E5077" rx="6"/>
+  <text x="130" y="72" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">1. Kriko Montajı</text>
+  <text x="130" y="88" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">Hidrolik kriko + ölçüm</text>
+  <line x1="200" y1="75" x2="230" y2="75" stroke="#1B2B3A" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="230" y="50" width="140" height="50" fill="#2E5077" rx="6"/>
+  <text x="300" y="72" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">2. Kilit Yükü</text>
+  <text x="300" y="88" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">≈ 0,10 × Pd</text>
+  <line x1="370" y1="75" x2="400" y2="75" stroke="#1B2B3A" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="400" y="50" width="140" height="50" fill="#C8873A" rx="6"/>
+  <text x="470" y="72" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">3. Test Yükü</text>
+  <text x="470" y="88" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">1,25 × Pd</text>
+  <line x1="540" y1="75" x2="570" y2="75" stroke="#1B2B3A" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="570" y="50" width="160" height="50" fill="#C8873A" rx="6"/>
+  <text x="650" y="67" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">4. Bekleme</text>
+  <text x="650" y="81" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Min. 5 Dakika</text>
+  <text x="650" y="95" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">Sürünme gözlemi</text>
+  <line x1="650" y1="130" x2="650" y2="155" stroke="#1B2B3A" stroke-width="2"/>
+  <rect x="570" y="155" width="160" height="50" fill="#2E5077" rx="6"/>
+  <text x="650" y="177" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">5. Uzama Ölçümü</text>
+  <text x="650" y="193" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">δ gerçek vs δ teorik</text>
+  <line x1="570" y1="180" x2="480" y2="180" stroke="#1B2B3A" stroke-width="2"/>
+  <polygon points="478,175 470,180 478,185" fill="#1B2B3A"/>
+  <rect x="330" y="155" width="140" height="50" fill="#38A169" rx="6"/>
+  <text x="400" y="174" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">KABUL ✓</text>
+  <text x="400" y="190" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">Kilitlenme yükü uygulanır</text>
+  <rect x="170" y="155" width="140" height="50" fill="#E53E3E" rx="6"/>
+  <text x="240" y="174" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">BAŞARISIZ ✗</text>
+  <text x="240" y="190" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">Ankraj iptal / yenile</text>
+  <line x1="330" y1="180" x2="310" y2="180" stroke="#1B2B3A" stroke-width="1.5"/>
+  <polygon points="312,175 304,180 312,185" fill="#1B2B3A"/>
+  <rect x="60" y="250" width="680" height="100" fill="white" rx="8" stroke="#e2e8f0"/>
+  <rect x="60" y="250" width="680" height="28" fill="#1B2B3A" rx="8"/>
+  <rect x="60" y="265" width="680" height="13" fill="#1B2B3A"/>
+  <text x="400" y="266" font-size="12" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Kritik Kontrol Kriterleri</text>
+  <text x="80" y="298" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">▸ Uzama = Serbest boy × (Pt - P0) / (Ap × Es) — tolerans ±10%</text>
+  <text x="80" y="316" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">▸ Sürünme (creep): 5 dk içinde &lt;1 mm uzama artışı kabul edilir</text>
+  <text x="80" y="334" font-size="11" fill="#C8873A" font-family="Arial,sans-serif" font-weight="bold">▸ Kalibrasyon: Kriko kalibre değeri kontrol edilmeden test GEÇERSIZDIR</text>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#1B2B3A"/>
+    </marker>
+  </defs>
+</svg>
+<figcaption>Şekil 2 — EN 1537 kabul testi prosedürü. Test yükünde 5 dakika bekleme sürünme değerlendirmesi için zorunludur.</figcaption>
+</figure>
+<div class="saha-notu"><strong>🦺 İSG / Güvenlik — Germe Testi (Yasin Öztürk):</strong> Germe testi sırasında en az iki kritik güvenlik noktası: <strong>1. Kilit yükü ve test yükü değerlerine doğru çıkmak şarttır</strong> — basınç göstergesi hatalıysa ankraj aşırı yüklenir. <strong>2. Germe makinesinin kalibrasyon değeri mutlaka kontrol edilmelidir</strong> — kalibrasyonsuz kriko yanlış okur, test başarılı görünse de ankraj tasarım yükünün altında kalmış olabilir. Test yükünde minimum 5 dakika bekleme zorunludur — bu süre atlanırsa sürünme değerlendirmesi yapılamaz ve ankrajın uzun dönem davranışı bilinmez.</div>
+
+<h2 id="hatalar">Sık Yapılan Hatalar</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Saha deneyimine göre en kritik hatalar: serbest boyun enjeksiyon alması, kalibrasyonsuz kriko kullanımı, kök yüzeyinin çamurlu olması ve halatların kontrolsüz kuyuya atılmasıdır.</div>
+<div class="card-grid">
+<div class="grid-card">
+<h4>⚠️ Serbest Boya Enjeksiyon Girmesi</h4>
+<p>En yaygın ve en tehlikeli hata. Plastik kılıf takılmamış veya hasar görmüşse serbest boy da enjeksiyon alır. Sonuç: uzama ölçümü hatalı, germe testi anlamsız, ankraj kapasitesi bilinmez. Gerçek başarısızlık çıkış çalışması sırasında ya da depremde ortaya çıkar.</p>
+</div>
+<div class="grid-card">
+<h4>⚠️ Kök Yüzeyinin Çamurlu Olması</h4>
+<p>Kuyuya çamur veya zemin doluşu engellenmezse kök yüzeyi pislenmiş olur — çimento-zemin aderansı ortadan kalkar. Özellikle su altında yapılan delgilerde tehlikelidir. Kural: kuyu delgisi biter bitmez en kısa sürede tendon indirilmeli ve enjeksiyona geçilmelidir.</p>
+</div>
+<div class="grid-card">
+<h4>⚠️ Kontrolsüz Halat Atışı</h4>
+<p>Strand demetinin kuyuya atılması sırasında kontrol sağlanmazsa halatlar dolaşır veya kırılır. Spacer aralayıcıları düzensiz dağılır. Sonuç: tutarsız aderans dağılımı, bazı halatlar yük almaz. Halat demetinin kademeli ve kontrollü olarak indirilmesi zorunludur.</p>
+</div>
+<div class="grid-card">
+<h4>⚠️ Erken Germe (Yetersiz Kürleme)</h4>
+<p>Çimento şerbeti tam kürlemeden germe yapılırsa kök bölgesi gerilme altında çatlayabilir. Minimum 3 gün beklenmesi şarttır; düşük sıcaklıklarda (10°C altı) bu süre 5–7 güne uzar. Erken germe hem ankrajı hem de saha kaydını geçersiz kılar.</p>
+</div>
+<div class="grid-card">
+<h4>⚠️ Hatalı Açı</h4>
+<p>Tasarlanan açıdan sapma oluşursa kök boyu beklenen zemin katmanına erişemeyebilir veya kritik kırılma yüzeyini geçemez. Açı toleransı EN 1537'ye göre ±3° olarak öngörülür. Ankraj kılavuz borusu monte edilmeden delgi yapılmamalıdır.</p>
+</div>
+<div class="grid-card">
+<h4>⚠️ Kalibrasyonsuz Kriko</h4>
+<p>Germe makinesinin kalibrasyon sertifikası süresi dolmuşsa basınç-kuvvet dönüşümü güvenilmez olur. Test yükleri hatalı uygulanır, kabul kriterleri yanıltıcı görünür. Pratikte çoğu sorun germe makinesinin kalibrasyon geçerliliğinin kontrol edilmemesinden kaynaklanır.</p>
+</div>
+</div>
+<div class="saha-notu"><strong>⚠️ Saha Hikayesi — "Kesinlikle Yapmayın" (Yasin Öztürk):</strong> İki uygulama hatası sahada tekrar tekrar karşılaşılan vakalar: <strong>1.</strong> Halatların kuyuya atılması sırasında kontrol sağlanmadan yapılan hızlı indirme — halat dolaşması ile sonuçlanır ve ankraj iptal edilmek zorunda kalınır. <strong>2.</strong> Enjeksiyonda Sika katkı maddesi kullanılmaması — özellikle sulu ve balçıklı zeminlerde çimento kaçar, kök boyu düzgün oluşmaz, ankraj kapasitesi tasarımın çok altında kalır ve bu germe testinde ortaya çıkar.</div>
+
+<h2 id="makine">Makine ve Ekipmanlar</h2>
+<p>Öngermeli ankraj uygulamasında kullanılan ekipmanlar zemin tipine ve ankraj boyutuna göre seçilir:</p>
+<div class="card-grid">
+<div class="grid-card">
+<h4>Delgi Makinesi</h4>
+<p><strong>Soilmec SM-400</strong> — Torem'in ankraj ve enjeksiyon uygulamalarında kullandığı ana ekipman. Hem rotary hem DTH modunda çalışabilir. 200 m'ye kadar delgi kapasitesi. Darbe frekansı ve dönme hızı ayarlı — zemine göre optimize edilebilir.</p>
+</div>
+<div class="grid-card">
+<h4>Enjeksiyon Sistemi</h4>
+<p>Pistonlu veya pervane tip çimento enjeksiyon pompası. 20–60 bar basınç kapasitesi. IRS (tekrarlı enjeksiyon) sisteminde çift vantalı packer kullanılır. Çimento-su karışım oranını sabit tutan otomatik mikserle birlikte kullanılır.</p>
+</div>
+<div class="grid-card">
+<h4>Germe (Stressing) Makinesi</h4>
+<p>Merkezi delikli hidrolik kriko (center-hole jack). Tek strand veya çok strand (monostrand/multistrand) versiyonları vardır. Kalibrasyon sertifikası zorunludur (her 6–12 ayda yenilenir). 500–3000 kN kapasiteli modeller yaygındır.</p>
+</div>
+<div class="grid-card">
+<h4>Yardımcı Ekipman</h4>
+<p>Strand kesme aleti (hidrolik kesici), torkmetre (somun testi için), dijital uzama ölçer (LVDT veya mekanik), kumpas (strand çapı kontrolü), kuyuya indirme kılavuzu (spacer montajı için).</p>
+</div>
+</div>
+
+<h2 id="maliyet">Maliyet Analizi 2026</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> 2026 yılı ankraj birim fiyatı; delgi tipi, strand sayısı, kök boyu ve zemin koşullarına göre büyük farklılık gösterir. Kaba tahminler yanıltıcıdır — kesin fiyat için zemin etüdü ve tasarım gereklidir.</div>
+<p>Ankraj maliyetini belirleyen başlıca faktörler:</p>
+<ul>
+<li><strong>Delgi metresi:</strong> Toplam ankraj uzunluğu × delgi maliyeti. Zemin sertliğine göre değişir (kaya delgisi yumuşak zemine göre %50–100 daha pahalıdır).</li>
+<li><strong>Strand sayısı ve kalitesi:</strong> 3 halatlı ile 6 halatlı ankraj arasında malzeme maliyeti ikiye katlanabilir.</li>
+<li><strong>Korozyon koruması:</strong> Kalıcı ankrajda gerekli çift bariyer (HDPE kılıf + mum/yağ) maliyeti %25–40 artırır.</li>
+<li><strong>Germe testi:</strong> Her ankraj için germe testi işçilik ve makine maliyeti hesaba katılmalıdır.</li>
+<li><strong>Mobilizasyon:</strong> Küçük iş tutarlı projeler birim fiyatı yukarı çeker.</li>
+</ul>
+<p>En az tahmin edilen ve bütçeyi en çok aşan kalem: çimento sarfiyatı.</p>
+<figure>
+<svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zemin tipine göre çimento sarfiyatı karşılaştırması">
+  <rect width="800" height="320" fill="#F5F2ED"/>
+  <text x="400" y="28" font-size="14" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Zemin Tipine Göre Çimento Sarfiyatı (Ø150 mm, 7 m kök boyu)</text>
+  <text x="40" y="60" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Sıkı Kil / Kaya</text>
+  <rect x="200" y="47" width="80" height="22" fill="#38A169" rx="3"/>
+  <text x="288" y="62" font-size="11" fill="#38A169" font-family="Arial,sans-serif">~80–120 kg</text>
+  <text x="40" y="100" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Orta Sıkı Kil</text>
+  <rect x="200" y="87" width="160" height="22" fill="#4A7FA5" rx="3"/>
+  <text x="368" y="102" font-size="11" fill="#4A7FA5" font-family="Arial,sans-serif">~180–280 kg</text>
+  <text x="40" y="140" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Gevşek Kum/Silt</text>
+  <rect x="200" y="127" width="260" height="22" fill="#C8873A" rx="3"/>
+  <text x="468" y="142" font-size="11" fill="#C8873A" font-family="Arial,sans-serif">~320–500 kg</text>
+  <text x="40" y="180" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Balçık / Boşluklu</text>
+  <rect x="200" y="167" width="420" height="22" fill="#E53E3E" rx="3"/>
+  <text x="628" y="182" font-size="11" fill="#E53E3E" font-family="Arial,sans-serif">~500–900+ kg</text>
+  <text x="40" y="220" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Yeraltı Suyu Yüksek</text>
+  <rect x="200" y="207" width="340" height="22" fill="#805AD5" rx="3"/>
+  <text x="548" y="222" font-size="11" fill="#805AD5" font-family="Arial,sans-serif">~400–700 kg (sızıntıya bağlı)</text>
+  <line x1="200" y1="240" x2="200" y2="260" stroke="#5A6A7A" stroke-width="1"/>
+  <line x1="200" y1="260" x2="700" y2="260" stroke="#5A6A7A" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text x="430" y="276" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif" text-anchor="middle">Sarfiyat artışı →</text>
+  <rect x="60" y="290" width="680" height="22" fill="#FFF8E7" rx="4"/>
+  <text x="400" y="305" font-size="11" fill="#A06820" font-family="Arial,sans-serif" text-anchor="middle">⚠ Balçık ve boşluklu zeminlerde sarfiyat bütçeyi %40–80 aşabilir — keşif öncesi etüt zorunludur</text>
+  <defs>
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#5A6A7A"/>
+    </marker>
+  </defs>
+</svg>
+<figcaption>Şekil 3 — Zemin tipine göre tahmini çimento sarfiyatı (Ø150 mm delgi, 7 m kök boyu). Gevşek/boşluklu zeminlerde sarfiyat bütçeyi önemli ölçüde aşabilir.</figcaption>
+</figure>
+<div class="saha-notu"><strong>💰 Maliyet Gerçekliği — Çimento Sarfiyatı (Yasin Öztürk):</strong> Müşterilerin en büyük sürprizle karşılaştığı kalem çimento sarfiyatıdır. Sıkı kil veya kaya delgilerinde teorik hesaba yakın sarfiyat çıkar. Ancak gevşek, boşluklu veya suya doygun zeminlerde çimento zemin boşluklarına kaçar — teorik değerin 3–6 katı sarfiyat görülebilir. Delgi çapı ve yöntemi bu farkı doğrudan etkiler. Zemin etüdü yapılmadan verilen götürü teklif bu nedenle proje için tehlikelidir.</div>
+
+<h2 id="uygulama-suresi">Uygulama Süresi</h2>
+<p>Öngermeli ankraj uygulaması her bir ankraj için kaba tahminle şu süreleri alır (deneyimli ekip, uygun zemin):</p>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>Aşama</th><th>Süre (tahmini)</th><th>Notlar</th></tr></thead>
+<tbody>
+<tr><td>Delgi (10–20 m)</td><td>2–4 saat/adet</td><td>Zemine ve çapa göre değişir; kaya 2× uzar</td></tr>
+<tr><td>Tendon montajı</td><td>1–2 saat/adet</td><td>Halat sayısı arttıkça uzar</td></tr>
+<tr><td>Enjeksiyon</td><td>0,5–1 saat/adet</td><td>IRS (çift enjeksiyon) durumunda 2× uzar</td></tr>
+<tr><td>Kürleme bekleme</td><td>3–7 gün</td><td>Bu süre paralel ankrajlar ilerletilerek değerlendirilir</td></tr>
+<tr><td>Germe + test</td><td>1–2 saat/adet</td><td>Çok halatlı ankrajlarda daha uzun</td></tr>
+<tr><td>Toplam (aktif)</td><td>4–9 saat/adet</td><td>Kürleme dahil değil</td></tr>
+</tbody>
+</table>
+</div>
+<p>Bir şantiyede günde 3–6 ankraj ilerlemesi gerçekçi bir hedeftir. Büyük projelerde (200+ ankraj) paralel delgi-enjeksiyon-germe programlamasıyla süre optimize edilir.</p>
+
+<h2 id="karsilastirma">Öngermeli Ankraj vs Zemin Çivisi Karşılaştırması</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Zemin çivisi pasif (gerilmesiz) çalışır; ankraj aktif sistemdir. Ankraj daha yüksek kapasite verir ama daha maliyetlidir. Derin kazılarda (15 m+) ankraj zorunlu; sığ kazılarda zemin çivisi ekonomiktir.</div>
+<div class="table-wrapper">
+<table>
+<thead><tr><th>Kriter</th><th>Öngermeli Ankraj</th><th>Zemin Çivisi</th></tr></thead>
+<tbody>
+<tr><td>Çalışma prensibi</td><td>Aktif — önceden gerilir</td><td>Pasif — yük altında çalışır</td></tr>
+<tr><td>Yapı hareketi</td><td>Minimize edilir</td><td>Küçük ölçüde hareket kabul edilir</td></tr>
+<tr><td>Kapasite (tek eleman)</td><td>500 – 5.000 kN</td><td>50 – 300 kN</td></tr>
+<tr><td>Uygulama derinliği</td><td>10 – 40 m</td><td>3 – 20 m</td></tr>
+<tr><td>Maliyet (göreli)</td><td>Yüksek</td><td>Düşük – orta</td></tr>
+<tr><td>Germe testi</td><td>Her ankraja zorunlu</td><td>Yok</td></tr>
+<tr><td>Kalıcı kullanım</td><td>Evet (çift koruma ile)</td><td>Evet</td></tr>
+<tr><td>Yeraltı suyu etkisi</td><td>Yönetilebilir</td><td>Sınırlayıcı</td></tr>
+<tr><td>Standart</td><td>EN 1537</td><td>EN 14490</td></tr>
+</tbody>
+</table>
+</div>
+<p>İkisi bir arada da kullanılabilir: üst kısımlarda zemin çivisi (daha ekonomik), alt kısımlarda ankraj (yüksek kapasiteli). Bu karma çözüm büyük derin kazılarda maliyet optimizasyonu sağlar. Bkz: <a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/">Zemin Çivisi (Soil Nailing)</a> sayfamız.</p>
+
+<h2 id="torem-deneyimi">Torem Zemin Saha Deneyimi</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Torem Zemin, çok halatlı uzun ankrajlardan kentsel derin kazılara kadar geniş proje portföyüyle 13+ yıl saha birikimi taşır. DAP Kartal projesi çok halatlı ankrajın uygulama zorluğunun tipik örneğidir.</div>
+<p>Torem Zemin Mühendislik olarak öngermeli ankraj projelerinde edindiğimiz saha deneyiminin önemli bir bölümü, standart hesapların sahadaki gerçeklikle ne zaman örtüştüğünü ne zaman ayrıştığını görmekten kaynaklanır.</p>
+<div class="saha-notu"><strong>🏗️ Proje Deneyimi — DAP Kartal, İstanbul:</strong> Bu projede <strong>6 halatlı, 40 metre uzunluğunda öngermeli ankrajlar</strong> uygulandı. Uzun ankraj + çoklu halat kombinasyonu uygulama zorluğunu önemli ölçüde artırdı — halat demetinin kuyuya indirilmesi, doğru spacer aralıklarının korunması ve enjeksiyon kontrolü standart ankrajlara göre çok daha dikkat ve süre gerektirdi. Yoğun işçilik gerektiren bu proje, çok halatlı uzun ankrajlarda saha kalite kontrolünün önemini somut biçimde gösterdi.</div>
+<p>Kentsel projelerde edindiğimiz diğer kritik gözlemler:</p>
+<ul>
+<li>Komşu binaların yakınında uygulanan ankrajlarda germe testindeki deplasman değerleri izlenmiş; komşu yapıya etkinin minimal olduğu doğrulanmıştır.</li>
+<li>Farklı şantiyelerdeki zemin profilleri aynı bölgede dahi büyük farklılık gösterebilir — etüt verisi olmadan başlanan enjeksiyonlar kötü sürprizlere yol açar.</li>
+<li>Soilmec SM-400 ile 40 metrelik ankrajlarda rotary su basınçlı delgi yöntemi sulu kil/balçık geçişlerinde en güvenli sonucu vermiştir.</li>
+</ul>
+<p>Projenize özel ankraj tasarımı ve şantiye uygulaması için <a href="/iletisim/">teknik danışmanlık talep edebilirsiniz</a>.</p>
+
+<h2 id="avantaj-dezavantaj">Avantajlar ve Dezavantajlar</h2>
+<div class="pros-cons">
+<div class="pros">
+<h4>✓ Avantajlar</h4>
+<ul>
+<li>Aktif sistem — yapı hareketini minimize eder</li>
+<li>Çalışma alanını tamamen boşaltır (strüt gerekmez)</li>
+<li>Geniş kapasite aralığı: 500–5000 kN</li>
+<li>Her ankraj test edilir — güvenilirlik belgelenir</li>
+<li>Hem geçici hem kalıcı tasarım esnekliği</li>
+<li>Zemin ve kaya dahil geniş uygulama alanı</li>
+<li>Uzun vadeli izleme ve yeniden germe imkânı</li>
+</ul>
+</div>
+<div class="cons">
+<h4>✗ Dezavantajlar</h4>
+<ul>
+<li>Zemin çivisine göre daha yüksek maliyet</li>
+<li>Özel ekipman (kriko, kalibrasyon) gerektirir</li>
+<li>Kürleme süresi proje takvimini etkiler</li>
+<li>Komşu parsel sınırını geçebilir (izin gerekir)</li>
+<li>Balçık zeminlerde kapasite sınırlı</li>
+<li>Enjeksiyon kalitesi operatör deneyimine bağlı</li>
+<li>Kalıcı ankrajda periyodik izleme gerektirir</li>
+</ul>
+</div>
+</div>
+
+<div class="highlight-box" style="margin-top:2rem;">
+<p><strong>İlgili Hizmetlerimiz:</strong></p>
+<p>
+<a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/" class="related-link">Ankrajlı Fore Kazık İksa</a> ·
+<a href="/faaliyet-alanlari/destekleme-ankraj/kalici-ankraj/" class="related-link">Kalıcı Ankraj</a> ·
+<a href="/faaliyet-alanlari/destekleme-ankraj/gecici-ankraj/" class="related-link">Geçici Ankraj</a> ·
+<a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/" class="related-link">Zemin Çivisi</a> ·
+<a href="/faaliyet-alanlari/kazikli-temeller/fore-kazik/" class="related-link">Fore Kazık</a> ·
+<a href="/faaliyet-alanlari/geoteknik-proje/zemin-etudu/" class="related-link">Zemin Etüdü</a>
+</p>
+</div>`,
     faq:[
-      {q:'Ankraj kapasitesi nasıl doğrulanır?',a:'Her ankraj üretim çekme testi ile doğrulanır; belli yüzdesi uygunluk ve kabul deney yüküne tabi tutulur.'},
-      {q:'Ankraj ömrü ne kadardır?',a:'Geçici ankrajlar 2 yıla kadar; kalıcı ankrajlar çift korozyon koruması ile 50–100 yıl hizmet eder.'},
+      {q:'Öngermeli ankraj nedir?',a:'Öngermeli ankraj; çelik kablo (strand) veya çubuk tendonun zemine/kayaya yerleştirilerek tasarım yüküne gerildikten sonra kama sistemiyle kilitlenmesidir. İksa perdelerine ve şev yapılarına aktif gergi kuvveti uygular. Serbest boy (enjeksiyonsuz) ve kök boyu (çimento enjeksiyonlu) olmak üzere iki bölümden oluşur. EN 1537 standardına göre tasarlanır.'},
+      {q:'Serbest boy neden enjeksiyon almamalıdır?',a:'Serbest boy, gerilme altında uzayan bölgedir. Bu bölge çimento alırsa zemine bağlanır ve uzama gerçekleşmez. Germe testi sırasında uzama ölçümü hatalı çıkar, ankraj kapasitesi doğrulanamaz. EN 1537 §7.4.2 bu kuralı zorunlu kılar. Serbest boy plastik kılıfla korunmalıdır.'},
+      {q:'Ankraj kapasitesi nasıl doğrulanır?',a:'Her üretim ankrajına EN 1537 kabul testi uygulanır: tasarım yükünün %125\'ine çekilir, minimum 5 dakika beklenir (sürünme gözlemi), uzama değerleri teorik değerlerle karşılaştırılır. Ek olarak belirli bir yüzdesi uygunluk testine (%150 Pd) tabi tutulur. Kalibrasyonlu kriko zorunludur.'},
+      {q:'Germe testinde neden 5 dakika beklenir?',a:'Test yükünde 5 dakika beklenmesi, strand-grout-zemin sisteminin sürünme (creep) davranışını değerlendirmek için zorunludur. 5 dakika içinde 1 mm\'den az uzama artışı kabul kriteri olarak belirlenir. Bu bekleme atlanırsa ankrajın uzun vadeli yük taşıma davranışı bilinmez.'},
+      {q:'Geçici ve kalıcı ankraj farkı nedir?',a:'Geçici ankraj: ≤2 yıl tasarım ömrü, tekli korozyon koruması, kalıcıya göre %30-40 daha ekonomik. Kalıcı ankraj: 50–100 yıl ömür, EN 1537 zorunlu çift bariyer korozyon koruması (HDPE kılıf + çimento/mum), periyodik izleme gerektirir. 2 yılı aşan tüm uygulamalarda kalıcı ankraj tasarımı şarttır.'},
+      {q:'Ankraj fiyatı ne kadar? (2026)',a:'2026 yılı ankraj birim fiyatı; delgi tipi, strand sayısı, kök boyu ve zemin koşullarına göre büyük farklılık gösterir. Kaba tahminler yanıltıcıdır. En değişken maliyet kalemi çimento sarfiyatıdır: gevşek/boşluklu zeminlerde sarfiyat teorik değerin 3–6 katına çıkabilir. Doğru fiyat için zemin etüdü ve proje tasarımı gereklidir.'},
+      {q:'Balçık zeminde ankraj uygulanabilir mi?',a:'Uygulanabilir ancak kapasite düşüktür. Balçık zeminlerde zemin-grout aderansı (qs) çok düşüktür. Kök boyu uzatılarak veya IRS (tekrarlı yüksek basınçlı enjeksiyon) yöntemiyle kapasite artırılabilir. Zemin iyileştirmesi (jet grout, derin karıştırma) ile önce aderans artırılması tercih edilen çözümdür.'},
+      {q:'TBDY 2018\'e göre deprem bölgesinde ankraj tasarımı nasıl yapılır?',a:'TBDY 2018 DD-2 deprem düzeyi için dinamik zemin basıncı artışı hesaplanır (kh=0.20–0.35). Bu artış ankraj yüküne yansıtılır; strand sayısı veya kök boyu büyütülür. Sıvılaşma riski taşıyan gevşek kumlarda önce zemin iyileştirmesi gerekebilir. Büyük deprem sonrası kalıcı ankrajların yük testi ile kontrolü tavsiye edilir.'},
+      {q:'Ankraj ömrü ne kadardır?',a:'Geçici ankrajlar en fazla 2 yıl kullanılır; inşaat sonunda tendon kesilir. Kalıcı ankrajlar çift bariyer korozyon koruması (HDPE kılıf + çimento şerbeti veya mum) ile 50–100 yıl tasarım ömrüne sahiptir. Periyodik yük izlemesi ile uzun dönem davranış takip edilir; gerektiğinde yeniden germe yapılır.'},
+      {q:'Komşu parsele ankraj uzanabilir mi?',a:'Kendi parseli sınırı dışına taşan ankrajlar için komşu parsel sahibinden yazılı izin alınması gerekir. Uygulamada çoğu proje ankraj açısını dik tutarak veya serbest boyu kısaltarak kendi parsel sınırı içinde kalmaya çalışır. Hukuki sorun yaşanmaması için proje aşamasında parsel sınırı kontrolü zorunludur.'},
+      {q:'Kalibrasyonsuz kriko kullanılırsa ne olur?',a:'Kalibrasyonsuz krikoda basınç göstergesi ile uygulanan kuvvet arasındaki ilişki güvenilmez olur. Tasarım yükünün %125\'ini uyguladığınızı sanırken gerçekte %90 veya %140 uyguluyor olabilirsiniz. Bu durum ya ankrajın başarısız sayılmaması gereken bir testte reddedilmesine ya da aşırı yüklenerek hasarlanmasına yol açar. Kriko kalibrasyon sertifikası her 6–12 ayda yenilenmelidir.'},
+      {q:'Ankraj uygulamasında Sika katkı maddesi neden önemlidir?',a:'Özellikle sulu, balçıklı veya boşluklu zeminlerde çimento şerbeti zemin boşluklarına kaçma veya yıkanma eğilimi gösterir. Sika akış düzenleyici ve hızlandırıcı katkılar çimento şerbetin kıvamını, priz süresini ve aderans kalitesini iyileştirir. Katkısız enjeksiyonda kök boyu tasarıma göre eksik ve düzensiz oluşur; germe testinde kapasite eksikliği ortaya çıkar.'},
     ],
   },
   {
