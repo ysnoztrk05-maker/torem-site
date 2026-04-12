@@ -12,7 +12,7 @@ const foreKazik = [
   {
     name: 'XCMG-220RD', year: '2016', category: 'fore-kazik', catName: 'Fore Kazık',
     desc: 'Yüksek kapasiteli, büyük çaplı ve derin kazık projeleri için tasarlanmış büyük tonajlı makine.',
-    image: '/images/makineler/xcmg-220rd.jpg',
+    image: '/images/makineler/soilmec-sr40-saha.jpg',
     specs: [{ l:'Çap', v:'Ø200 cm' }, { l:'Derinlik', v:'45 m' }, { l:'Ağırlık', v:'85 ton' }, { l:'Boyut', v:'22×9×5 m' }],
   },
   {
@@ -24,7 +24,7 @@ const foreKazik = [
   {
     name: 'Soilmec CM-40', year: '2006', category: 'fore-kazik', catName: 'Fore Kazık',
     desc: 'Orta ölçekli kazık projelerinde kullanılan kompakt fore kazık makinesi.',
-    image: '/images/makineler/soilmec-sm400.jpg',
+    image: '/images/makineler/soilmec-sr40.jpg',
     specs: [{ l:'Çap', v:'Ø120 cm' }, { l:'Derinlik', v:'25 m' }, { l:'Ağırlık', v:'40 ton' }, { l:'Boyut', v:'18×7×5 m' }],
   },
   {
@@ -90,7 +90,7 @@ const yardimci = [
   {
     name: 'Pistonlu Enjeksiyon Seti', year: '2014', category: 'yardimci', catName: 'Enjeksiyon',
     desc: 'Zemin iyileştirme, su yalıtımı, çatlak doldurma ve mikro kazık uygulamalarında enjeksiyon sistemi.',
-    image: '/images/makineler/soilmec-sm400.jpg',
+    image: '/images/makineler/enjeksiyon-seti.jpg',
     specs: [{ l:'Basınç', v:'150 bar' }, { l:'Adet', v:'2 birim' }, { l:'Alan', v:'Zemin Enj.' }, { l:'Mikro Kazık', v:'Evet' }],
   },
   {
@@ -154,7 +154,7 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
 
   <!-- Cards Grid -->
   <section class="section">
-    <div class="container" style="background: #f0f0eb; padding: 2rem; border-radius: 12px;">
+    <div class="container">
       <div class="makine-grid" id="makine-grid">
         {tumMakineler.map((m) => (
           <div class="makine-card" data-cat={m.category}>
@@ -228,8 +228,8 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
 <style>
 /* ── Premium Hero ── */
 .mp-premium-hero {
-  background: var(--color-navy-dark, #002147);
-  background-image: radial-gradient(circle at 75% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+  background: var(--color-primary);
+  background-image: radial-gradient(circle at 75% 50%, rgba(200, 135, 58, 0.08) 0%, transparent 50%),
                     linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 100% 100%, 30px 30px, 30px 30px;
@@ -253,7 +253,7 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
 }
 
 .eyebrow--gold {
-  color: var(--color-gold, #d4af37);
+  color: var(--color-highlight);
   font-size: 0.8rem;
   letter-spacing: 0.15em;
 }
@@ -267,7 +267,7 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
 }
 
 .mp-premium-hero h1 span {
-  color: var(--color-gold, #d4af37);
+  color: var(--color-highlight);
 }
 
 .subtitle {
@@ -290,7 +290,7 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
 }
 
 .stat-badge span {
-  color: var(--color-gold, #d4af37);
+  color: var(--color-highlight);
   font-weight: 700;
   margin-right: 4px;
 }
@@ -305,7 +305,7 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
 .bc { display: flex; flex-wrap: wrap; gap: var(--s-2); font-size: 0.85rem; color: var(--color-text-muted); list-style: none; margin: 0; padding: 0; }
 .bc li+li::before { content: '›'; margin-right: var(--s-2); opacity: 0.5; }
 .bc a { color: var(--color-primary); font-weight: 500; text-decoration: none; }
-.bc a:hover { color: var(--color-gold, #d4af37); }
+.bc a:hover { color: var(--color-highlight); }
 
 /* ── Sticky Filtre Bar ── */
 .filter-bar {
@@ -349,23 +349,23 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
   grid-template-columns: repeat(3, 1fr);
   gap: var(--s-8);
   padding-block: var(--s-8);
-  background: var(--color-bg);
 }
 
 .makine-card {
-  background: white !important;
+  background: white;
   min-height: 400px;
-  border: 2px solid #002147 !important;
-  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 10px 30px rgba(0,21,48,0.04);
 }
 
 .makine-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0, 33, 71, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0, 21, 48, 0.12);
 }
 
 .makine-card__img {
@@ -391,7 +391,7 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
   position: absolute;
   top: 16px;
   left: 16px;
-  background: var(--color-gold, #d4af37);
+  background: var(--color-highlight);
   color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
@@ -483,14 +483,14 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
 }
 
 .makine-card:hover .makine-card__cta {
-  background: var(--color-gold, #d4af37);
-  border-color: var(--color-gold, #d4af37);
-  color: var(--color-primary);
+  background: var(--color-highlight);
+  border-color: var(--color-highlight);
+  color: var(--color-white);
 }
 
 /* ── Bottom CTA ── */
 .bottom-cta {
-  background: var(--color-navy-dark, #002147);
+  background: var(--color-primary);
   color: white;
   text-align: center;
   padding-block: var(--s-16);
@@ -505,18 +505,18 @@ const tumMakineler = [...foreKazik, ...ankrajJg, ...yardimci];
 
 .btn--gold {
   display: inline-block;
-  background: var(--color-gold, #d4af37);
-  color: var(--color-navy-dark, #002147);
+  background: var(--color-highlight);
+  color: var(--color-white);
   padding: 16px 32px;
   font-size: 1.1rem;
   font-weight: 800;
   border-radius: 8px;
   text-decoration: none;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, filter 0.2s ease;
 }
 
 .btn--gold:hover {
-  background: #e6c245; /* Lighter gold */
+  filter: brightness(1.1);
   transform: translateY(-2px);
 }
 
