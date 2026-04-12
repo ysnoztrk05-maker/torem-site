@@ -38,7 +38,7 @@ export const makineSayisi = makineler.length; // otomatik — elle yazma
 // Bu değerler hero stat kartlarına, footer'a, "Hakkımızda" sayfasına gider
 export const heroStats = [
   {
-    deger: '250+',
+    deger: '350+',
     etiket: 'Tamamlanan Proje',
     aciklama: 'Referans sayfasından doğrulandı',
   },
@@ -56,6 +56,7 @@ export const heroStats = [
 
 // ── Sertifikalar / Belgeler ─────────────────────────────────────
 export const sertifikalar = [
-  { ad: 'ISO 9001:2015', kapsam: 'Kalite Yönetim Sistemi' },
-  { ad: 'TBDY 2018',     kapsam: 'Türkiye Bina Deprem Yönetmeliği Uyumu' },
+  { ad: 'ISO 9001:2015',      kapsam: 'Kalite Yönetim Sistemi',                                          tip: 'sertifika' },
+  { ad: 'TBDY 2018',          kapsam: 'Türkiye Bina Deprem Yönetmeliği Uyumu',                           tip: 'yonetmelik' },
+  { ad: 'Zeminciler Derneği', kapsam: 'Zemin Mekaniği ve Geoteknik Mühendisliği Sektörel Birlik Üyesi', tip: 'uyelik', url: 'https://zemincilerdernegi.com/' },
 ] as const;
