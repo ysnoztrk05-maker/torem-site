@@ -112,25 +112,12 @@ import { kategoriler, getTekniklerByKategori } from '../../data/faaliyet-alanlar
    TOREM ZEMİN V2.0 - FAALİYETLER SCOPED CSS
    ========================================================================= */
 
-:root {
-    --navy-deep: #001530;
-    --navy: #002147;
-    --gold: #d4af37;
-    --gold-dark: #b5952f;
-    --bg-cream: #fafaf7;
-    --text-main: #333333;
-    --text-secondary: #4a4a6a;
-    --shadow-md: 0 8px 16px rgba(0,33,71,0.08);
-    --shadow-lg: 0 16px 32px rgba(0,33,71,0.12);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
 .container { margin: 0 auto; max-width: 1200px; padding: 0 20px; }
 
 /* 1. HERO SECTION */
 .tz-category-hero {
     position: relative;
-    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+    background: linear-gradient(135deg, var(--color-primary) 0%, rgba(10, 25, 47, 0.95) 100%);
     padding: 100px 0 80px;
     color: #fff;
     text-align: center;
@@ -148,9 +135,12 @@ import { kategoriler, getTekniklerByKategori } from '../../data/faaliyet-alanlar
 .tz-hero-wave .shape-fill { fill: var(--color-bg, #fafaf7); }
 
 .tz-hero-pattern {
-    position: absolute; inset: 0; opacity: 0.05;
-    background-image: linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
-    background-size: 30px 30px; z-index: 1;
+    position: absolute; inset: 0; opacity: 0.15;
+    background-image: url('/images/kurumsal-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    mix-blend-mode: luminosity;
+    z-index: 1;
 }
 
 .tz-category-hero-content {
@@ -158,17 +148,19 @@ import { kategoriler, getTekniklerByKategori } from '../../data/faaliyet-alanlar
 }
 
 .tz-badge-gold {
-    display: inline-block; background: rgba(212, 175, 55, 0.15); color: var(--gold);
-    padding: 6px 16px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;
+    display: inline-block; background: rgba(255, 120, 0, 0.15); color: var(--color-accent);
+    padding: 8px 18px; border-radius: 30px; font-size: 0.85rem; font-weight: 700;
     letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1px solid rgba(255, 120, 0, 0.3);
 }
 
 /* Spesifik selectors — global.css h1/h2/h3 { color: var(--color-primary) } kuralını override eder */
 header.tz-category-hero h1 {
     font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.15; margin-bottom: 24px; color: #ffffff;
 }
-header.tz-category-hero h1 span { color: var(--gold); }
+header.tz-category-hero h1 span {
+    color: var(--color-highlight);
+}
 header.tz-category-hero p {
     font-size: clamp(1.1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.85); font-weight: 300; line-height: 1.6;
 }
@@ -187,11 +179,17 @@ header.tz-category-hero p {
 
 .tz-service-card {
     background: #fff; border-radius: 16px; overflow: hidden;
-    box-shadow: var(--shadow-md); transition: var(--transition);
-    display: flex; flex-direction: column; border: 1px solid rgba(0,0,0,0.03);
-    text-decoration: none; color: inherit;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex; flex-direction: column; border: 1px solid #e2e8f0;
+    text-decoration: none; color: inherit; position: relative;
 }
-.tz-service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: rgba(212, 175, 55, 0.3); }
+.tz-service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: #cbd5e1; }
+.tz-service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; z-index: 10;
+}
+.tz-service-card:hover::before { transform: scaleX(1); }
 
 .tz-card-image { position: relative; height: 260px; overflow: hidden; }
 .tz-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
@@ -206,41 +204,41 @@ header.tz-category-hero p {
     position: absolute; bottom: 20px; left: 24px; right: 24px; z-index: 2;
 }
 .tz-card-title-overlay h2 {
-    color: #fff; font-size: 1.5rem; font-weight: 700; margin: 0; display: flex; align-items: center; gap: 10px;
+    color: #fff; font-size: 1.5rem; font-weight: 800; margin: 0; display: flex; align-items: center; gap: 10px;
 }
-.tz-card-icon { width: 24px; height: 24px; stroke: var(--gold); }
+.tz-card-icon { width: 24px; height: 24px; stroke: var(--color-accent); }
 
 .tz-card-content { padding: 30px 24px; flex-grow: 1; display: flex; flex-direction: column; }
-.tz-card-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
+.tz-card-desc { color: #475569; font-size: 0.95rem; line-height: 1.6; margin-bottom: 24px; }
 
 .tz-sub-services { list-style: none; margin-bottom: 30px; flex-grow: 1; padding: 0; }
 .tz-sub-services li {
-    position: relative; padding-left: 24px; margin-bottom: 12px; font-size: 0.95rem; color: var(--text-main); font-weight: 500;
+    position: relative; padding-left: 24px; margin-bottom: 12px; font-size: 0.95rem; color: var(--color-primary); font-weight: 600;
 }
 .tz-sub-services li.tz-sub-more {
-    font-style: italic; color: var(--text-secondary); font-size: 0.85rem; padding-left: 0; margin-top: 15px; font-weight: 400;
+    font-style: italic; color: #64748b; font-size: 0.85rem; padding-left: 0; margin-top: 15px; font-weight: 400;
 }
 .tz-sub-services li:not(.tz-sub-more)::before {
-    content: '→'; position: absolute; left: 0; top: 0; color: var(--gold); font-weight: bold;
+    content: '→'; position: absolute; left: 0; top: 0; color: var(--color-accent); font-weight: bold;
 }
 
 .tz-card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 20px; border-top: 1px solid rgba(0,0,0,0.05); }
-.tz-technique-count { font-size: 0.8rem; font-weight: 600; color: var(--navy); background: rgba(0,33,71,0.06); padding: 4px 10px; border-radius: 12px; }
+.tz-technique-count { font-size: 0.8rem; font-weight: 700; color: var(--color-primary); background: rgba(10, 25, 47, 0.05); padding: 5px 12px; border-radius: 12px; }
 
 .tz-card-action {
-    display: flex; align-items: center; color: var(--navy); font-weight: 700; font-size: 0.95rem;
-    text-transform: uppercase; letter-spacing: 0.5px; transition: var(--transition);
+    display: flex; align-items: center; color: var(--color-primary); font-weight: 700; font-size: 0.95rem;
+    text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s ease;
 }
 .tz-card-action svg { margin-left: 6px; transition: transform 0.3s; }
-.tz-service-card:hover .tz-card-action { color: var(--gold-dark); }
+.tz-service-card:hover .tz-card-action { color: var(--color-accent); }
 .tz-service-card:hover .tz-card-action svg { transform: translateX(5px); }
 
 /* 3. STATS */
 .tz-stats-section { background-color: #fff; padding: 70px 0; border-top: 1px solid rgba(0,0,0,0.05); border-bottom: 1px solid rgba(0,0,0,0.05); }
 .tz-stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; text-align: center; }
-.tz-stat-item h3 { font-size: clamp(2rem, 3vw, 3rem); font-weight: 800; color: var(--navy); line-height: 1; margin: 0 0 10px 0; }
-.tz-stat-item h3 span { color: var(--gold); }
-.tz-stat-item p { color: var(--text-secondary); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; margin: 0; }
+.tz-stat-item h3 { font-size: clamp(2rem, 3vw, 3rem); font-weight: 800; color: var(--color-primary); line-height: 1; margin: 0 0 10px 0; }
+.tz-stat-item h3 span { color: var(--color-accent); }
+.tz-stat-item p { color: #64748b; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5em; margin: 0; }
 
 @media (max-width: 900px) {
     .tz-stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px 30px; }
