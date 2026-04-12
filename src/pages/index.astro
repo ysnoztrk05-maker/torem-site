@@ -134,7 +134,7 @@ const faqItems = [
     <div class="container logos-band__head">
       <p class="logos-band__title">Referans Müşterilerimiz</p>
     </div>
-    <div class="logos-track">
+    <div class="logos-track" style="-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
       <div class="logos-inner" aria-hidden="true">
         {[
           { name: 'Rönesans',     src: '/images/logos/ronesans.png'     },
@@ -184,48 +184,47 @@ const faqItems = [
 
         <div class="neden-kart">
           <div class="neden-kart__ikon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
-          <h3>Kendi Makine Parkı</h3>
-          <p>{makineSayisi} iş makinesi — kiralık değil, kendi mülkümüz. Soilmec, Casagrande, Bauer. İş programı değişse bile ekipman sahada hazır.</p>
+          <h3 class="neden-kart__title">Kendi Makine Parkımız</h3>
+          <p class="neden-kart__desc">{makineSayisi} iş makinesi — kiralık değil, mülkümüz. Özel donanımlı filomuzla iş programı değişse bile ekipmanımız sahada daima hazırdır.</p>
         </div>
 
         <div class="neden-kart">
           <div class="neden-kart__ikon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
-          <h3>ISO 9001 &amp; TBDY 2018</h3>
-          <p>Her kazık yükleme testinden geçer, her proje ISO 9001 kalite sisteminde yönetilir. Deprem yönetmeliğine tam uyum — belgelenmiş güvence.</p>
+          <h3 class="neden-kart__title">Standartlara Tam Uyum</h3>
+          <p class="neden-kart__desc">Her kazık sıkı kalite testinden geçer. Projelerimiz ISO 9001 ve TBDY 2018 (Deprem Yönetmeliği) standartlarında güvence altındadır.</p>
         </div>
 
         <div class="neden-kart">
           <div class="neden-kart__ikon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
           </div>
-          <h3>Anahtar Teslim Çözüm</h3>
-          <p>Zemin etüdünden projeye, uygulamadan kalite raporuna tek elden. Koordinasyon kaybı yok, gecikme yok, sürpriz maliyet yok.</p>
+          <h3 class="neden-kart__title">Anahtar Teslim</h3>
+          <p class="neden-kart__desc">Etütten projeye, uygulamadan testlere kadar; gecikme ve sürpriz maliyetler yaşamadan tek elden eksiksiz hizmet.</p>
         </div>
 
         <div class="neden-kart">
           <div class="neden-kart__ikon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <h3>Zamanında Teslim</h3>
-          <p>İş programını başlangıçta yazılı taahhüt ederiz. Haftalık ilerleme raporu, kritik yol takibi — gecikme bizim için kabul edilemez.</p>
+          <h3 class="neden-kart__title">Zamanında Teslim</h3>
+          <p class="neden-kart__desc">Yazılı taahhüt ettiğimiz iş programına uyarız. Haftalık dijital şantiye takibi ve kritik yol analizi ile teslimatlar nettir.</p>
         </div>
 
         <div class="neden-kart">
           <div class="neden-kart__ikon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
-          <h3>Deneyimli Mühendis Kadrosu</h3>
-          <p>Ortalama 12 yıl sahada deneyim. Her projede yetkili inşaat mühendisi denetimi, her aşamada as-built dokümantasyon.</p>
+          <h3 class="neden-kart__title">Saha Pratiği Olan Kadro</h3>
+          <p class="neden-kart__desc">Ortalama 12 yol saha pratiği olan mühendis ekibi. Her projenin yetkili geoteknik mühendisi denetiminde yönetilmesi sağlanır.</p>
         </div>
 
         <div class="neden-kart neden-kart--cta">
-          <p>Projeniz için doğru geoteknik çözümü birlikte belirleyelim.</p>
-          <a href="/kurumsal/neden-torem/" class="btn btn--primary" style="margin-top:1rem;">Detaylı İncele</a>
-          <a href="/iletisim/" class="btn btn--outline" style="margin-top:0.75rem;">Ücretsiz Keşif</a>
+          <p class="neden-kart__desc" style="color:var(--color-primary); font-weight:600; font-size:1.15rem; margin-bottom:1.5rem;">Doğru geoteknik çözümü birlikte planlayalım.</p>
+          <a href="/iletisim/" class="btn btn--primary" style="width:100%; justify-content:center; padding-block:1rem;">Ücretsiz Keşif İste</a>
         </div>
 
       </div>
@@ -385,7 +384,14 @@ const faqItems = [
         <h2>Nasıl Çalışıyoruz?</h2>
         <p class="sec-head__sub">Projelerinizi 4 adımda teslim ediyoruz — saha keşfinden kalite testine kadar</p>
       </div>
-      <div class="process__steps">
+      <div class="process__steps" id="processSteps">
+        <!-- Dinamik Sondaj Çizgisi -->
+        <div class="process__drill" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M9 6h6M8 10h8M9 14h6M10 18h4M12 22l-2-4h4z" />
+          </svg>
+        </div>
+
         <div class="process__step">
           <div class="process__badge" aria-hidden="true">1</div>
           <div class="process__icon" aria-hidden="true">
@@ -440,74 +446,185 @@ const faqItems = [
     </div>
   </section>
 
-  <!-- ░░ MAKİNE PARKI SHOWCASE ░░ -->
+  <!-- ░░ MAKİNE PARKI SHOWCASE (OTOMOTİV TARZI) ░░ -->
   <section class="section makine-showcase">
     <div class="container">
       <div class="sec-head text-center">
         <p class="eyebrow">Kendi Ekipmanımız</p>
         <h2>Kiralık Değil — Kendi Filomuza Güveniyoruz</h2>
-        <p class="sec-head__sub">Soilmec, Casagrande, Bauer — 15 iş makinesi sahada her an hazır.</p>
+        <p class="sec-head__sub">Soilmec, Casagrande, Bauer — 15+ modern iş makinesi sahada her an hazır. Model detaylarını inceleyin.</p>
       </div>
-      <div class="makine-showcase__grid">
-        <div class="makine-showcase__card">
-          <div class="makine-showcase__img">
-            <img src="/images/makineler/soilmec-sr40.jpg" alt="Soilmec SR-40 fore kazık makinesi" loading="lazy" width="400" height="260" />
-            <span class="makine-showcase__badge">Fore Kazık</span>
-          </div>
-          <div class="makine-showcase__info">
-            <h3>Soilmec SR-40</h3>
-            <div class="makine-showcase__specs">
-              <span>Ø150cm çap</span>
-              <span>36m derinlik</span>
-              <span>50 ton</span>
+
+      <div class="makine-interactive">
+        
+        <!-- Sol: Makine Listesi (Menü) -->
+        <div class="makine-menu" role="tablist" aria-label="Makine Listesi">
+          <button class="makine-menu__btn is-active" data-target="makine-1" role="tab" aria-selected="true">
+            <div>
+              <span class="makine-menu__cat">Fore Kazık</span>
+              <span class="makine-menu__name">Soilmec SR-40</span>
             </div>
-          </div>
+            <svg class="makine-menu__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="makine-menu__btn" data-target="makine-2" role="tab" aria-selected="false">
+            <div>
+              <span class="makine-menu__cat">Fore Kazık</span>
+              <span class="makine-menu__name">Casagrande B200 XP</span>
+            </div>
+            <svg class="makine-menu__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="makine-menu__btn" data-target="makine-3" role="tab" aria-selected="false">
+            <div>
+              <span class="makine-menu__cat">Fore Kazık</span>
+              <span class="makine-menu__name">Bauer BG 18H</span>
+            </div>
+            <svg class="makine-menu__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <button class="makine-menu__btn" data-target="makine-4" role="tab" aria-selected="false">
+            <div>
+              <span class="makine-menu__cat">Ankraj / Jet Grout</span>
+              <span class="makine-menu__name">Soilmec SM-400</span>
+            </div>
+            <svg class="makine-menu__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
         </div>
-        <div class="makine-showcase__card">
-          <div class="makine-showcase__img">
-            <img src="/images/makineler/casagrande-b200xp.jpg" alt="Casagrande B200 XP fore kazık makinesi" loading="lazy" width="400" height="260" />
-            <span class="makine-showcase__badge">Fore Kazık</span>
-          </div>
-          <div class="makine-showcase__info">
-            <h3>Casagrande B200 XP</h3>
-            <div class="makine-showcase__specs">
-              <span>Ø200cm çap</span>
-              <span>48m derinlik</span>
-              <span>75 ton</span>
+
+        <!-- Sağ: Makine Detay (Gorunum) -->
+        <div class="makine-display">
+          
+          <!-- Makine 1 -->
+          <div class="makine-panel is-active" id="makine-1" role="tabpanel">
+            <div class="makine-panel__img-layer">
+              <img src="/images/makineler/soilmec-sr40.jpg" alt="Soilmec SR-40" loading="lazy" width="800" height="500" />
+              <div class="makine-panel__overlay"></div>
+            </div>
+            <div class="makine-panel__content">
+              <div class="makine-panel__head">
+                <h3>Soilmec SR-40</h3>
+                <span class="badge">Makine 01</span>
+              </div>
+              <div class="makine-panel__specs-grid">
+                <div class="spec-item">
+                  <span class="spec-lbl">Maks. Çap</span>
+                  <span class="spec-val">Ø1500 mm</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Maks. Derinlik</span>
+                  <span class="spec-val">36 Metre</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Ağırlık</span>
+                  <span class="spec-val">50 Ton</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Motor Gücü</span>
+                  <span class="spec-val">201 kW</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="makine-showcase__card">
-          <div class="makine-showcase__img">
-            <img src="/images/makineler/bauer-bg20.jpg" alt="Bauer BG 18H fore kazık makinesi" loading="lazy" width="400" height="260" />
-            <span class="makine-showcase__badge">Fore Kazık</span>
-          </div>
-          <div class="makine-showcase__info">
-            <h3>Bauer BG 18H</h3>
-            <div class="makine-showcase__specs">
-              <span>Ø200cm çap</span>
-              <span>36m derinlik</span>
-              <span>70 ton</span>
+
+          <!-- Makine 2 -->
+          <div class="makine-panel" id="makine-2" role="tabpanel">
+            <div class="makine-panel__img-layer">
+              <img src="/images/makineler/casagrande-b200xp.jpg" alt="Casagrande B200 XP" loading="lazy" width="800" height="500" />
+              <div class="makine-panel__overlay"></div>
+            </div>
+            <div class="makine-panel__content">
+              <div class="makine-panel__head">
+                <h3>Casagrande B200 XP</h3>
+                <span class="badge">Makine 02</span>
+              </div>
+              <div class="makine-panel__specs-grid">
+                <div class="spec-item">
+                  <span class="spec-lbl">Maks. Çap</span>
+                  <span class="spec-val">Ø2000 mm</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Maks. Derinlik</span>
+                  <span class="spec-val">48 Metre</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Ağırlık</span>
+                  <span class="spec-val">75 Ton</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Motor Gücü</span>
+                  <span class="spec-val">260 kW</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="makine-showcase__card">
-          <div class="makine-showcase__img">
-            <img src="/images/makineler/soilmec-sm400.jpg" alt="Soilmec SM-400 ankraj ve jet grout makinesi" loading="lazy" width="400" height="260" />
-            <span class="makine-showcase__badge">Ankraj / Jet Grout</span>
-          </div>
-          <div class="makine-showcase__info">
-            <h3>Soilmec SM-400</h3>
-            <div class="makine-showcase__specs">
-              <span>Ø80–200mm çap</span>
-              <span>35m derinlik</span>
-              <span>Çift döngü</span>
+
+          <!-- Makine 3 -->
+          <div class="makine-panel" id="makine-3" role="tabpanel">
+            <div class="makine-panel__img-layer">
+              <img src="/images/makineler/bauer-bg20.jpg" alt="Bauer BG 18H" loading="lazy" width="800" height="500" />
+              <div class="makine-panel__overlay"></div>
+            </div>
+            <div class="makine-panel__content">
+              <div class="makine-panel__head">
+                <h3>Bauer BG 18H</h3>
+                <span class="badge">Makine 03</span>
+              </div>
+              <div class="makine-panel__specs-grid">
+                <div class="spec-item">
+                  <span class="spec-lbl">Maks. Çap</span>
+                  <span class="spec-val">Ø1500 mm</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Maks. Derinlik</span>
+                  <span class="spec-val">36 Metre</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Ağırlık</span>
+                  <span class="spec-val">70 Ton</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Motor Gücü</span>
+                  <span class="spec-val">205 kW</span>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- Makine 4 -->
+          <div class="makine-panel" id="makine-4" role="tabpanel">
+            <div class="makine-panel__img-layer">
+              <img src="/images/makineler/soilmec-sm400.jpg" alt="Soilmec SM-400" loading="lazy" width="800" height="500" />
+              <div class="makine-panel__overlay"></div>
+            </div>
+            <div class="makine-panel__content">
+              <div class="makine-panel__head">
+                <h3>Soilmec SM-400</h3>
+                <span class="badge">Makine 04</span>
+              </div>
+              <div class="makine-panel__specs-grid">
+                <div class="spec-item">
+                  <span class="spec-lbl">Kapasite</span>
+                  <span class="spec-val">Ø80–200 mm</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Maks. Derinlik</span>
+                  <span class="spec-val">35 Metre</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Sistem</span>
+                  <span class="spec-val">Çift Döngü</span>
+                </div>
+                <div class="spec-item">
+                  <span class="spec-lbl">Ağırlık</span>
+                  <span class="spec-val">15 Ton</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="text-center" style="margin-top:var(--s-6)">
-        <a href="/makine-parki/" class="btn btn--ghost">Tüm Makine Parkını Görüntüle →</a>
+      
+      <div class="text-center" style="margin-top:var(--s-8)">
+        <a href="/makine-parki/" class="btn btn--ghost btn--ghost-light">Tüm Filoyu İncele →</a>
       </div>
     </div>
   </section>
@@ -729,6 +846,41 @@ const faqItems = [
 
   updateContent(0, false);
   resetTimer();
+})();
+
+// ══════════════════════════════════════════
+// MAKİNE SHOWCASE TABS
+// ══════════════════════════════════════════
+(function() {
+  const btns = document.querySelectorAll('.makine-menu__btn');
+  const panels = document.querySelectorAll('.makine-panel');
+  if (!btns.length || !panels.length) return;
+
+  btns.forEach(btn => {
+    btn.addEventListener('mouseenter', () => activateTab(btn));
+    btn.addEventListener('click', () => activateTab(btn));
+    btn.addEventListener('focus', () => activateTab(btn));
+  });
+
+  function activateTab(btn) {
+    if (btn.classList.contains('is-active')) return;
+    
+    // Deactivate all
+    btns.forEach(b => {
+      b.classList.remove('is-active');
+      b.setAttribute('aria-selected', 'false');
+    });
+    panels.forEach(p => p.classList.remove('is-active'));
+
+    // Activate selected
+    btn.classList.add('is-active');
+    btn.setAttribute('aria-selected', 'true');
+    const targetId = btn.getAttribute('data-target');
+    const targetPanel = document.getElementById(targetId);
+    if (targetPanel) {
+      targetPanel.classList.add('is-active');
+    }
+  }
 })();
 </script>
 
@@ -1163,50 +1315,78 @@ const faqItems = [
 @media (max-width:900px) { .ref-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:560px) { .ref-grid { grid-template-columns:1fr; } }
 
-/* ── Neden Biz? ── */
-.neden-section { background: var(--color-white); }
-.neden-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+/* ── Neden Biz? (Premium Organized Grid) ── */
+.neden-section { background: var(--color-white); padding-bottom: 2rem; }
+.neden-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 2rem; 
+}
 
 .neden-kart {
-  background: var(--color-bg, #F5F2ED);
-  border:1px solid var(--color-border, #e5e7eb);
-  border-radius:16px; padding:2rem;
-  position:relative; overflow:hidden;
-  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  background: var(--color-white); 
+  border: 1px solid rgba(0,21,48,.06);
+  border-radius: 16px; 
+  padding: 2.5rem 2rem; 
+  position: relative; 
+  display: flex; 
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0,0,0,.02);
+  transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease, border-color .4s ease;
 }
-.neden-kart::after {
-  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
-  background:var(--color-highlight, #C8873A);
-  transform:scaleX(0); transform-origin:left;
-  transition:transform .4s ease;
+.neden-kart:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 20px 40px rgba(0,0,0,.06); 
+  border-color: rgba(200,135,58,.3);
 }
-.neden-kart:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(0,0,0,.09); border-color:transparent; }
-.neden-kart:hover::after { transform:scaleX(1); }
 
 .neden-kart__ikon {
-  width:52px; height:52px;
-  background:rgba(200,135,58,.1); border-radius:12px;
-  display:flex; align-items:center; justify-content:center;
-  color:var(--color-highlight, #C8873A);
-  margin-bottom:1.25rem;
+  width: 56px; height: 56px; 
+  background: rgba(200,135,58,.08); 
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-highlight); 
+  margin-bottom: 1.75rem; 
+  flex-shrink: 0;
+  transition: background .4s ease, color .4s ease;
 }
-.neden-kart h3 { font-size:1.05rem; font-weight:700; color:var(--color-primary); margin-bottom:.6rem; }
-.neden-kart p { font-size:.875rem; color:var(--color-text-muted); line-height:1.65; }
-
-.neden-kart--cta {
-  background:var(--color-primary, #1B2B3A);
-  border-color:transparent;
-  display:flex; flex-direction:column; justify-content:center; align-items:flex-start;
+.neden-kart:hover .neden-kart__ikon {
+  background: var(--color-highlight);
+  color: white;
 }
-.neden-kart--cta::after { display:none; }
-.neden-kart--cta:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(0,0,0,.2); }
-.neden-kart--cta p { color:rgba(255,255,255,.8); font-size:1rem; font-weight:500; }
-.neden-kart--cta .btn--outline { border-color:rgba(255,255,255,.3); color:white; width:100%; text-align:center; }
-.neden-kart--cta .btn--outline:hover { background:white; color:var(--color-primary); }
-.neden-kart--cta .btn--primary { width:100%; text-align:center; }
 
-@media (max-width:900px) { .neden-grid { grid-template-columns:repeat(2,1fr); } }
-@media (max-width:560px) { .neden-grid { grid-template-columns:1fr; } }
+.neden-kart__title { 
+  font-size: 1.15rem; font-weight: 700; color: var(--color-primary); 
+  margin-bottom: 0.85rem; line-height: 1.35; 
+}
+.neden-kart__desc { 
+  font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; 
+  flex-grow: 1; margin: 0;
+}
+
+/* CTA Kartı - Özel Tasarım */
+.neden-kart--cta { 
+  background: var(--color-bg); 
+  border: 1px solid transparent; 
+  align-items: center; justify-content: center; text-align: center;
+  box-shadow: none;
+}
+.neden-kart--cta:hover {
+  box-shadow: 0 10px 30px rgba(200,135,58,.12); 
+  background: white;
+  border-color: rgba(200,135,58,.2);
+}
+.neden-kart--cta .btn {
+  box-shadow: 0 4px 15px rgba(200,135,58,.2);
+}
+
+@media (max-width:1024px) {
+  .neden-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+}
+@media (max-width:600px) {
+  .neden-grid { grid-template-columns: 1fr; }
+  .neden-kart { padding: 2rem; }
+}
 
 /* ── Blog ── */
 .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-6); }
@@ -1244,16 +1424,33 @@ const faqItems = [
 @media (prefers-reduced-motion:reduce) { .logos-inner { animation:none; flex-wrap:wrap; justify-content:center; width:auto; } }
 
 /* ── Process Steps ── */
-.process__steps { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-8); position:relative; padding-top:var(--s-2); margin-top:var(--s-12); }
-.process__steps::before { content:''; position:absolute; top:20px; left:12.5%; right:12.5%; height:2px; background:linear-gradient(to right, var(--color-gold, #d4af37) 0%, rgba(212,175,55,0.3) 100%); z-index:0; }
+.process__steps { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-8); position:relative; padding-top:var(--s-2); margin-top:var(--s-12); --scroll-progress: 0; }
+.process__steps::before, .process__steps::after { content:''; position:absolute; top:20px; left:12.5%; height:2px; z-index:0; border-radius: 2px; }
+.process__steps::before { width:75%; background:rgba(0,0,0,0.06); }
+.process__steps::after { width:calc(75% * (var(--scroll-progress) / 100)); background:var(--color-highlight); transition:width 0.1s ease-out; }
+
+.process__drill { position:absolute; top:20px; left:calc(12.5% + (75% * (var(--scroll-progress) / 100))); transform:translate(-50%, -50%) rotate(-90deg); color:var(--color-highlight); z-index:2; width:36px; height:36px; background:var(--color-bg); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 15px rgba(200,135,58,0.3); transition:left 0.1s ease-out; }
+.process__drill svg { width:22px; height:22px; }
+
 .process__step { display:flex; flex-direction:column; align-items:center; text-align:center; position:relative; z-index:1; }
-.process__badge { width:40px; height:40px; border-radius:50%; background:var(--color-highlight); color:#fff; display:flex; align-items:center; justify-content:center; font-size:var(--text-base); font-weight:700; margin-bottom:var(--s-5); border:3px solid #eef0f2; flex-shrink:0; }
-.process__icon { width:64px; height:64px; background:var(--color-white); border:1.5px solid var(--color-border); border-radius:var(--r-xl); display:flex; align-items:center; justify-content:center; margin-bottom:var(--s-5); color:var(--color-secondary); padding:var(--s-3); }
+.process__badge { width:40px; height:40px; border-radius:50%; background:var(--color-bg); color:var(--color-text); display:flex; align-items:center; justify-content:center; font-size:var(--text-base); font-weight:700; margin-bottom:var(--s-5); border:2px solid var(--color-border); flex-shrink:0; transition:all 0.3s ease; box-shadow:0 2px 8px rgba(0,0,0,0.05); }
+.process__step:hover .process__badge { border-color:var(--color-highlight); color:var(--color-highlight); transform:scale(1.1); box-shadow:0 4px 12px rgba(200,135,58,0.2); }
+
+.process__icon { width:64px; height:64px; background:var(--color-white); border:1.5px solid var(--color-border); border-radius:var(--r-xl); display:flex; align-items:center; justify-content:center; margin-bottom:var(--s-5); color:var(--color-secondary); padding:var(--s-3); transition:transform 0.3s ease, border-color 0.3s ease, color 0.3s ease; }
 .process__icon svg { width:38px; height:38px; }
-.process__step h3 { font-size:var(--text-base); font-weight:700; margin-bottom:var(--s-2); color:var(--color-primary); }
+.process__step:hover .process__icon { transform:translateY(-5px); border-color:var(--color-highlight); color:var(--color-highlight); }
+
+.process__step h3 { font-size:var(--text-base); font-weight:700; margin-bottom:var(--s-2); color:var(--color-primary); transition:color 0.3s ease; }
+.process__step:hover h3 { color:var(--color-highlight); }
 .process__step p { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.6; }
-@media (max-width:900px) { .process__steps { grid-template-columns:repeat(2,1fr); } .process__steps::before { display:none; } }
-@media (max-width:560px) { .process__steps { grid-template-columns:1fr; } }
+
+@media (max-width:900px) { 
+  .process__steps { grid-template-columns:1fr; max-width: 400px; margin-inline: auto; gap: var(--s-10); } 
+  .process__steps::before, .process__steps::after { top:20px; left:50%; transform:translateX(-50%); width:2px; height:100%; border-radius: 0; }
+  .process__steps::before { height:calc(100% - 40px); background:rgba(0,0,0,0.06); }
+  .process__steps::after { width:2px; height:calc((100% - 40px) * (var(--scroll-progress) / 100)); transition:height 0.1s ease-out; }
+  .process__drill { left:50%; top:calc(20px + ((100% - 40px) * (var(--scroll-progress) / 100))); transform:translate(-50%, -50%) rotate(0deg); transition:top 0.1s ease-out; }
+}
 
 /* ── FA Grid ── */
 .fa-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-5); }
@@ -1266,24 +1463,224 @@ const faqItems = [
 @media (max-width:900px) { .fa-grid { grid-template-columns:repeat(2,1fr); } }
 @media (max-width:560px) { .fa-grid { grid-template-columns:repeat(2,1fr); gap:var(--s-3); } }
 
-/* ── Makine Parkı Showcase ── */
-.makine-showcase { background:var(--color-primary); padding-block:var(--s-16); }
-.makine-showcase .eyebrow { color:var(--color-highlight); }
-.makine-showcase h2 { color:var(--color-white); }
-.makine-showcase .sec-head__sub { color:rgba(255,255,255,.65); }
-.makine-showcase__grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s-5); margin-top:var(--s-8); }
-.makine-showcase__card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:var(--r-lg); overflow:hidden; transition:transform .3s ease, border-color .3s ease; }
-.makine-showcase__card:hover { transform:translateY(-4px); border-color:var(--color-highlight); }
-.makine-showcase__img { position:relative; aspect-ratio:3/2; overflow:hidden; }
-.makine-showcase__img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
-.makine-showcase__card:hover .makine-showcase__img img { transform:scale(1.06); }
-.makine-showcase__badge { position:absolute; top:var(--s-2); left:var(--s-2); background:var(--color-highlight); color:var(--color-white); font-size:var(--text-xs); font-weight:700; padding:.2rem .6rem; border-radius:999px; text-transform:uppercase; letter-spacing:.04em; }
-.makine-showcase__info { padding:var(--s-4); }
-.makine-showcase__info h3 { font-size:var(--text-base); font-weight:700; color:var(--color-white); margin-bottom:var(--s-2); }
-.makine-showcase__specs { display:flex; flex-wrap:wrap; gap:var(--s-2); }
-.makine-showcase__specs span { font-size:var(--text-xs); color:rgba(255,255,255,.5); background:rgba(255,255,255,.06); padding:.15rem .5rem; border-radius:var(--r-sm); border:1px solid rgba(255,255,255,.08); }
-@media (max-width:900px) { .makine-showcase__grid { grid-template-columns:repeat(2,1fr); } }
-@media (max-width:560px) { .makine-showcase__grid { grid-template-columns:1fr; } }
+/* ── Makine Parkı Showcase (Otomotiv Tarzı) ── */
+.makine-showcase { 
+  background: var(--color-primary); 
+  padding-block: var(--s-16); 
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+}
+.makine-showcase .eyebrow { color: var(--color-highlight); }
+.makine-showcase h2 { color: var(--color-white); }
+.makine-showcase .sec-head__sub { color: rgba(255,255,255,.65); }
+
+.btn--ghost-light {
+  border-color: rgba(255,255,255,.3);
+  color: white;
+  background: transparent;
+}
+.btn--ghost-light:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.6);
+  color: white;
+}
+
+.makine-interactive {
+  display: flex;
+  gap: var(--s-8);
+  margin-top: var(--s-10);
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 20px;
+  min-height: 500px;
+}
+
+/* Sol Menü */
+.makine-menu {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--s-4) 0;
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+.makine-menu__btn {
+  background: transparent;
+  border: none;
+  border-left: 3px solid transparent;
+  color: white;
+  text-align: left;
+  padding: var(--s-4) var(--s-6);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .3s ease;
+  position: relative;
+}
+.makine-menu__btn:hover {
+  background: rgba(255,255,255,.04);
+}
+.makine-menu__btn.is-active {
+  background: linear-gradient(90deg, rgba(200,135,58,.15) 0%, transparent 100%);
+  border-left-color: var(--color-highlight);
+}
+.makine-menu__cat {
+  display: block;
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,.5);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  transition: color .3s ease;
+}
+.makine-menu__name {
+  display: block;
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: rgba(255,255,255,.8);
+  transition: color .3s ease;
+}
+.makine-menu__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-highlight);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all .3s ease;
+}
+.makine-menu__btn.is-active .makine-menu__cat,
+.makine-menu__btn.is-active .makine-menu__name {
+  color: white;
+}
+.makine-menu__btn.is-active .makine-menu__icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Sağ Display */
+.makine-display {
+  width: 65%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 20px 20px 0;
+}
+.makine-panel {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: opacity .5s ease, visibility .5s;
+}
+.makine-panel.is-active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  height: 100%;
+}
+
+.makine-panel__img-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.makine-panel__img-layer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transform-origin: center right;
+  transition: transform 6s cubic-bezier(.22,1,.36,1);
+}
+.makine-panel.is-active .makine-panel__img-layer img {
+  transform: scale(1);
+}
+.makine-panel__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,21,48,.95) 0%, rgba(0,21,48,.5) 50%, transparent 100%),
+              linear-gradient(to right, rgba(0,21,48,.8) 0%, transparent 50%);
+}
+
+.makine-panel__content {
+  position: relative;
+  z-index: 2;
+  padding: var(--s-8) var(--s-8);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all .5s cubic-bezier(.22,1,.36,1) .2s;
+}
+.makine-panel.is-active .makine-panel__content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.makine-panel__head {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+  margin-bottom: var(--s-6);
+  flex-wrap: wrap;
+}
+.makine-panel__head h3 {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  line-height: 1.1;
+}
+.badge {
+  background: rgba(200,135,58,.2);
+  border: 1px solid rgba(200,135,58,.4);
+  color: var(--color-highlight);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: .3rem .8rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.makine-panel__specs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s-4);
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: var(--s-6);
+}
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+.spec-lbl {
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,.5);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.spec-val {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .makine-interactive { flex-direction: column; border-radius: 16px; }
+  .makine-menu { width: 100%; border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); flex-direction: row; overflow-x: auto; padding: 0; }
+  .makine-menu__btn { border-left: none; border-bottom: 3px solid transparent; flex: 0 0 auto; padding: var(--s-4); }
+  .makine-menu__btn.is-active { background: linear-gradient(to top, rgba(200,135,58,.15) 0%, transparent 100%); border-left-color: transparent; border-bottom-color: var(--color-highlight); }
+  .makine-display { width: 100%; border-radius: 0 0 16px 16px; min-height: 400px; }
+  .makine-panel__specs-grid { grid-template-columns: repeat(2, 1fr); }
+  .makine-panel__head h3 { font-size: 1.8rem; }
+}
+@media (max-width: 600px) {
+  .makine-panel__content { padding: var(--s-6) var(--s-4); }
+  .makine-panel__specs-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-3); }
+}
 
 /* ── Sertifika & Üyelik Bandı ── */
 .sertifika-band { background:var(--color-bg); border-top:1px solid var(--color-border,rgba(0,0,0,.08)); border-bottom:1px solid var(--color-border,rgba(0,0,0,.08)); padding-block:var(--s-6); }
@@ -1298,3 +1695,55 @@ const faqItems = [
 .sertifika-band__divider { width:1px; height:32px; background:rgba(0,0,0,.1); }
 @media (max-width:768px) { .sertifika-band__inner { flex-direction:column; gap:var(--s-4); } .sertifika-band__divider { width:60px; height:1px; } }
 </style>
+
+<script>
+  // -- Makine Parkı Interactive Feature (Adım 2 JS) --
+  function initMakineShowcase() {
+    const btns = document.querySelectorAll('.makine-menu__btn');
+    const panels = document.querySelectorAll('.makine-panel');
+
+    btns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-target');
+        
+        // Remove active class from all
+        btns.forEach(b => b.classList.remove('is-active'));
+        panels.forEach(p => p.classList.remove('is-active'));
+        
+        // Add active to current
+        btn.classList.add('is-active');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) {
+          targetPanel.classList.add('is-active');
+        }
+      });
+    });
+  }
+
+  // -- Nasıl Çalışıyoruz Scroll Animation (Adım 3 JS) --
+  function initProcessScroll() {
+    const processSteps = document.getElementById('processSteps');
+    if (!processSteps) return;
+
+    const updateScroll = () => {
+      const rect = processSteps.getBoundingClientRect();
+      const windowH = window.innerHeight;
+      
+      let progress = (windowH - rect.top) / (windowH + rect.height);
+      // Map to 0.25 -> 0.75 range for a slightly longer animation window
+      let mapped = (progress - 0.25) / 0.5;
+      
+      processSteps.style.setProperty('--scroll-progress', Math.max(0, Math.min(1, mapped)) * 100);
+    };
+
+    window.addEventListener('scroll', updateScroll, {passive: true});
+    window.addEventListener('resize', updateScroll, {passive: true});
+    updateScroll();
+  }
+  
+  // Run scripts
+  document.addEventListener('DOMContentLoaded', () => {
+    initMakineShowcase();
+    initProcessScroll();
+  });
+</script>
