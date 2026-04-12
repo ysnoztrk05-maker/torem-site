@@ -2403,7 +2403,7 @@ export const teknikler: Teknik[] = [
 <p>Tasarım kilitlenmesi yüküne çekilip çift kama sistemiyle veya somunla kilitlenir. Fazla strand uçları taşlama ile kesilir. Plaka ve kafa korozyon koruyucu ile kaplanır, kalıcı ankrajlarda ilave koruyucu kapak monte edilir.</p></div>
 </div>
 </div>
-<div class="saha-notu"><strong>⚠️ Saha Uyarısı — Enjeksiyon Hataları (Yasin Öztürk, 13+ yıl):</strong> Enjeksiyonların düzgün yapılmaması en kritik ve en sık karşılaşılan hatadır. Serbest bölgenin enjeksiyon almaması sağlıklı uzama için zorunludur — bu bölgeye çimento girerse halatlar tutmaz, germe testi gerçeği yansıtmaz. Sulu zeminlerde enjeksiyonla birlikte delgi yapılır, giriş ve çıkışlara dikkat edilmelidir. Normal zeminlerde kılavuz kasa atılması gerekir. Sika katkı maddesi kullanılmazsa enjeksiyon kalitesi ve aderans düşer.</div>
+<div class="saha-notu"><strong>⚠️ Geoteknik Uzman Notu — Enjeksiyon Hataları:</strong> Enjeksiyonların düzgün yapılmaması en kritik ve en sık karşılaşılan hatadır. Serbest bölgenin enjeksiyon almaması sağlıklı uzama için zorunludur — bu bölgeye çimento girerse halatlar tutmaz, germe testi gerçeği yansıtmaz. Sulu zeminlerde enjeksiyonla birlikte delgi yapılır, giriş ve çıkışlara dikkat edilmelidir. Normal zeminlerde kılavuz kasa atılması gerekir. Sika katkı maddesi kullanılmazsa enjeksiyon kalitesi ve aderans düşer.</div>
 
 <h2 id="tasima-kapasitesi">Taşıma Kapasitesi ve Hesaplama</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Ankraj kapasitesi, zemin-grout arayüz aderansı (qs) × kök boyu çevresi × kök uzunluğu formülüyle hesaplanır. Kaya formasyonlarında qs değeri kumlu zeminlere göre 3–10 kat daha yüksektir.</div>
@@ -2463,7 +2463,7 @@ export const teknikler: Teknik[] = [
 <li>Kohezyonlu zeminlerde kıvam indisi ve konsolidasyon parametreleri</li>
 <li>Kaya formasyonu varsa RQD ve süreksizlik yönleri</li>
 </ul>
-<div class="saha-notu"><strong>🔍 Zemin Okuma — Riskli Koşullar (Yasin Öztürk):</strong> Üç zemin tipinde özel dikkat gerekir: <strong>1. Balçık zeminler</strong> — ankraj aderansını ciddi ölçüde düşürür, kök boyu uzatılmalı veya IRS enjeksiyonu uygulanmalıdır. <strong>2. Suya doygun zeminler</strong> — enjeksiyon sertleşmeden önce çimento süt olarak kayabilir, düşük w/c oranı ve katkı maddesi (Sika) şarttır. <strong>3. Yüksek yeraltı suyu</strong> — delgi yöntemi ve enjeksiyon sırası değiştirilmelidir; rotary su basınçlı delgi tercih edilir.</div>
+<div class="saha-notu"><strong>🔍 Geoteknik Uzman Notu — Riskli Zemin Koşulları:</strong> Üç zemin tipinde özel dikkat gerekir: <strong>1. Balçık zeminler</strong> — ankraj aderansını ciddi ölçüde düşürür, kök boyu uzatılmalı veya IRS enjeksiyonu uygulanmalıdır. <strong>2. Suya doygun zeminler</strong> — enjeksiyon sertleşmeden önce çimento süt olarak kayabilir, düşük w/c oranı ve katkı maddesi (Sika) şarttır. <strong>3. Yüksek yeraltı suyu</strong> — delgi yöntemi ve enjeksiyon sırası değiştirilmelidir; rotary su basınçlı delgi tercih edilir.</div>
 
 <h2 id="kalite-kontrol">Kalite Kontrol ve Germe Testi</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> EN 1537'ye göre her ankraj üretim çekme testine, belirli bir yüzdesi uygunluk ve kabul testlerine tabi tutulur. Germe testi 4 aşamadan oluşur; test yükünde 5 dakika beklenmesi zorunludur.</div>
@@ -2522,7 +2522,7 @@ export const teknikler: Teknik[] = [
 </svg>
 <figcaption>Şekil 2 — EN 1537 kabul testi prosedürü. Test yükünde 5 dakika bekleme sürünme değerlendirmesi için zorunludur.</figcaption>
 </figure>
-<div class="saha-notu"><strong>🦺 İSG / Güvenlik — Germe Testi (Yasin Öztürk):</strong> Germe testi sırasında en az iki kritik güvenlik noktası: <strong>1. Kilit yükü ve test yükü değerlerine doğru çıkmak şarttır</strong> — basınç göstergesi hatalıysa ankraj aşırı yüklenir. <strong>2. Germe makinesinin kalibrasyon değeri mutlaka kontrol edilmelidir</strong> — kalibrasyonsuz kriko yanlış okur, test başarılı görünse de ankraj tasarım yükünün altında kalmış olabilir. Test yükünde minimum 5 dakika bekleme zorunludur — bu süre atlanırsa sürünme değerlendirmesi yapılamaz ve ankrajın uzun dönem davranışı bilinmez.</div>
+<div class="saha-notu"><strong>🦺 Geoteknik Uzman Notu — Germe Testi Güvenliği:</strong> Germe testi sırasında en az iki kritik güvenlik noktası: <strong>1. Kilit yükü ve test yükü değerlerine doğru çıkmak şarttır</strong> — basınç göstergesi hatalıysa ankraj aşırı yüklenir. <strong>2. Germe makinesinin kalibrasyon değeri mutlaka kontrol edilmelidir</strong> — kalibrasyonsuz kriko yanlış okur, test başarılı görünse de ankraj tasarım yükünün altında kalmış olabilir. Test yükünde minimum 5 dakika bekleme zorunludur — bu süre atlanırsa sürünme değerlendirmesi yapılamaz ve ankrajın uzun dönem davranışı bilinmez.</div>
 
 <h2 id="hatalar">Sık Yapılan Hatalar</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Saha deneyimine göre en kritik hatalar: serbest boyun enjeksiyon alması, kalibrasyonsuz kriko kullanımı, kök yüzeyinin çamurlu olması ve halatların kontrolsüz kuyuya atılmasıdır.</div>
@@ -2552,14 +2552,14 @@ export const teknikler: Teknik[] = [
 <p>Germe makinesinin kalibrasyon sertifikası süresi dolmuşsa basınç-kuvvet dönüşümü güvenilmez olur. Test yükleri hatalı uygulanır, kabul kriterleri yanıltıcı görünür. Pratikte çoğu sorun germe makinesinin kalibrasyon geçerliliğinin kontrol edilmemesinden kaynaklanır.</p>
 </div>
 </div>
-<div class="saha-notu"><strong>⚠️ Saha Hikayesi — "Kesinlikle Yapmayın" (Yasin Öztürk):</strong> İki uygulama hatası sahada tekrar tekrar karşılaşılan vakalar: <strong>1.</strong> Halatların kuyuya atılması sırasında kontrol sağlanmadan yapılan hızlı indirme — halat dolaşması ile sonuçlanır ve ankraj iptal edilmek zorunda kalınır. <strong>2.</strong> Enjeksiyonda Sika katkı maddesi kullanılmaması — özellikle sulu ve balçıklı zeminlerde çimento kaçar, kök boyu düzgün oluşmaz, ankraj kapasitesi tasarımın çok altında kalır ve bu germe testinde ortaya çıkar.</div>
+<div class="saha-notu"><strong>⚠️ Geoteknik Uzman Notu — Kritik Uygulama Hataları:</strong> İki uygulama hatası sahada tekrar tekrar karşılaşılan vakalar: <strong>1.</strong> Halatların kuyuya atılması sırasında kontrol sağlanmadan yapılan hızlı indirme — halat dolaşması ile sonuçlanır ve ankraj iptal edilmek zorunda kalınır. <strong>2.</strong> Enjeksiyonda Sika katkı maddesi kullanılmaması — özellikle sulu ve balçıklı zeminlerde çimento kaçar, kök boyu düzgün oluşmaz, ankraj kapasitesi tasarımın çok altında kalır ve bu germe testinde ortaya çıkar.</div>
 
 <h2 id="makine">Makine ve Ekipmanlar</h2>
 <p>Öngermeli ankraj uygulamasında kullanılan ekipmanlar zemin tipine ve ankraj boyutuna göre seçilir:</p>
 <div class="card-grid">
 <div class="grid-card">
 <h4>Delgi Makinesi</h4>
-<p><strong>Soilmec SM-400</strong> — Torem'in ankraj ve enjeksiyon uygulamalarında kullandığı ana ekipman. Hem rotary hem DTH modunda çalışabilir. 200 m'ye kadar delgi kapasitesi. Darbe frekansı ve dönme hızı ayarlı — zemine göre optimize edilebilir.</p>
+<p>Ankraj ve enjeksiyon uygulamalarına özel, yüksek kapasiteli hidrolik delgi makinesi kullanılır. Hem rotary hem DTH (aşağı çekiçli) modunda çalışabilen bu ekipman, sert kaya dahil farklı zemin profilleri için uyarlanabilir. Darbe frekansı ve dönme hızı zemin tipine göre operatör tarafından optimize edilir.</p>
 </div>
 <div class="grid-card">
 <h4>Enjeksiyon Sistemi</h4>
@@ -2618,7 +2618,7 @@ export const teknikler: Teknik[] = [
 </svg>
 <figcaption>Şekil 3 — Zemin tipine göre tahmini çimento sarfiyatı (Ø150 mm delgi, 7 m kök boyu). Gevşek/boşluklu zeminlerde sarfiyat bütçeyi önemli ölçüde aşabilir.</figcaption>
 </figure>
-<div class="saha-notu"><strong>💰 Maliyet Gerçekliği — Çimento Sarfiyatı (Yasin Öztürk):</strong> Müşterilerin en büyük sürprizle karşılaştığı kalem çimento sarfiyatıdır. Sıkı kil veya kaya delgilerinde teorik hesaba yakın sarfiyat çıkar. Ancak gevşek, boşluklu veya suya doygun zeminlerde çimento zemin boşluklarına kaçar — teorik değerin 3–6 katı sarfiyat görülebilir. Delgi çapı ve yöntemi bu farkı doğrudan etkiler. Zemin etüdü yapılmadan verilen götürü teklif bu nedenle proje için tehlikelidir.</div>
+<div class="saha-notu"><strong>💰 Geoteknik Uzman Notu — Çimento Sarfiyatı:</strong> Müşterilerin en büyük sürprizle karşılaştığı kalem çimento sarfiyatıdır. Sıkı kil veya kaya delgilerinde teorik hesaba yakın sarfiyat çıkar. Ancak gevşek, boşluklu veya suya doygun zeminlerde çimento zemin boşluklarına kaçar — teorik değerin 3–6 katı sarfiyat görülebilir. Delgi çapı ve yöntemi bu farkı doğrudan etkiler. Zemin etüdü yapılmadan verilen götürü teklif bu nedenle proje için tehlikelidir.</div>
 
 <h2 id="uygulama-suresi">Uygulama Süresi</h2>
 <p>Öngermeli ankraj uygulaması her bir ankraj için kaba tahminle şu süreleri alır (deneyimli ekip, uygun zemin):</p>
@@ -2665,7 +2665,7 @@ export const teknikler: Teknik[] = [
 <ul>
 <li>Komşu binaların yakınında uygulanan ankrajlarda germe testindeki deplasman değerleri izlenmiş; komşu yapıya etkinin minimal olduğu doğrulanmıştır.</li>
 <li>Farklı şantiyelerdeki zemin profilleri aynı bölgede dahi büyük farklılık gösterebilir — etüt verisi olmadan başlanan enjeksiyonlar kötü sürprizlere yol açar.</li>
-<li>Soilmec SM-400 ile 40 metrelik ankrajlarda rotary su basınçlı delgi yöntemi sulu kil/balçık geçişlerinde en güvenli sonucu vermiştir.</li>
+<li>40 metrelik uzun ankrajlarda rotary su basınçlı delgi yöntemi, sulu kil/balçık geçişlerinde hem kuyu stabilitesi hem enjeksiyon kalitesi açısından en güvenli sonucu vermiştir.</li>
 </ul>
 <p>Projenize özel ankraj tasarımı ve şantiye uygulaması için <a href="/iletisim/">teknik danışmanlık talep edebilirsiniz</a>.</p>
 
