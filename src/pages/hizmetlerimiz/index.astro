@@ -181,12 +181,24 @@ import { hizmetler } from '../../data/content';
 .hizmetler-hero__wave { position:absolute; bottom:0; left:0; right:0; height:60px; z-index:3; line-height:0; }
 .hizmetler-hero__wave svg { width:100%; height:100%; }
 .hizmetler-hero h1 { color:var(--color-white); font-size:var(--text-5xl); margin-bottom:var(--s-4); }
-.hizmetler-hero h1 span { color:var(--color-highlight); }
+.hizmetler-hero h1 span {
+  color: var(--color-highlight);
+}
 .hizmetler-hero p { color:rgba(255,255,255,.75); font-size:var(--text-lg); max-width:540px; margin-inline:auto; }
 
 .hizmetler-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-7); margin-bottom:var(--s-16); }
-.hcard { background:var(--color-white); border-radius:var(--r-lg); overflow:hidden; border:1px solid var(--color-border); transition:transform var(--t-base), box-shadow var(--t-base); }
-.hcard:hover { transform:translateY(-5px); box-shadow:var(--shadow-lg); }
+.hcard { 
+  background:var(--color-white); 
+  border-radius:16px; 
+  overflow:hidden; 
+  border: 1px solid rgba(0,0,0,0.06); 
+  transition:all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+  box-shadow: 0 10px 30px rgba(0,21,48,0.04); 
+}
+.hcard:hover { 
+  transform:translateY(-8px); 
+  box-shadow: 0 24px 60px rgba(0, 21, 48, 0.12); 
+}
 .hcard__img-wrap { display:block; aspect-ratio:3/2; overflow:hidden; position:relative; }
 .hcard__img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
 .hcard:hover .hcard__img-wrap img { transform:scale(1.05); }
@@ -218,8 +230,8 @@ import { hizmetler } from '../../data/content';
 .karar__btn:hover { border-color:var(--color-highlight); background:var(--color-white); }
 .karar__btn--active { background:var(--color-highlight); color:#fff; border-color:var(--color-highlight); }
 .karar__result { max-width:680px; margin-inline:auto; margin-top:var(--s-8); }
-.karar__result-card { background:var(--color-white); border:2px solid var(--color-highlight); border-radius:var(--r-xl); padding:var(--s-8); text-align:center; animation:fadeIn .3s ease; }
-@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.karar__result-card { background: linear-gradient(135deg, rgba(200,135,58,0.05), transparent); border:1px solid rgba(200,135,58,0.3); border-radius:24px; padding:var(--s-8); text-align:center; animation:fadeIn .4s ease; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.05); }
+@keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
 .karar__badge { display:inline-block; background:var(--color-highlight); color:#fff; font-size:var(--text-xs); font-weight:700; padding:.2rem .8rem; border-radius:999px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:var(--s-3); }
 .karar__result-card h3 { font-size:var(--text-2xl); color:var(--color-primary); margin-bottom:var(--s-3); }
 .karar__result-card p { color:var(--color-text-muted); line-height:1.7; margin-bottom:var(--s-6); }
