@@ -98,8 +98,8 @@ const faqItems = [
       <p class="hero-sub" id="heroSub"></p>
 
       <div class="hero-cta">
-        <a href="/projelerimiz/" class="btn btn--primary btn--hero-primary">
-          Projelerimizi İncele
+        <a id="heroCta" href="/iletisim/" class="btn btn--primary btn--hero-primary">
+          <span id="heroCtaText">Maliyet Analizi İste</span>
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
         </a>
         <a href="/iletisim/" class="btn btn--ghost btn--hero-ghost">
@@ -612,19 +612,22 @@ const faqItems = [
 
   const SLIDES = [
     {
-      title: 'Zemini Biz Biliriz, Projenizi Biz Taşırız',
-      sub: 'Fore kazık, ankraj, jet grout ve zemin iyileştirme çözümlerinde 13 yıllık deneyim. Türkiye\'nin en zorlu zeminlerinde güvenle inşa ediyoruz.',
-      label: '01'
+      title: 'Güvenli Projeler, Optimize Edilmiş Maliyetler',
+      sub: 'İksa, Fore Kazık ve Zemin İyileştirme projelerinizde maksimum güvenlik sağlarken, optimum mühendislik ile projenizi maliyet yükünden kurtarıyoruz.',
+      label: '01',
+      cta: { text: 'Maliyet Analizi İste', href: '/iletisim/' }
     },
     {
-      title: 'Güçlü Makine Parkuru — Proje Yerine Her Zaman Hazır',
-      sub: 'Soilmec, Casagrande ve Bauer makinelerimiz kendi mülkümüz. İş programı değişse bile ekipman sahada, projeniz programda.',
-      label: '02'
+      title: 'Zorlu Zeminlerin İleri Teknoloji Çözüm Ortağı',
+      sub: 'Gelişmiş makine parkurumuzla Jet Grout ve Deep Soil Mixing uygulamalarında, zayıf zeminleri bile kusursuz ve sarsılmaz temellere dönüştürüyoruz.',
+      label: '02',
+      cta: { text: 'Teknolojilerimizi İnceleyin', href: '/faaliyet-alanlari/' }
     },
     {
-      title: 'ISO 9001 Kalite, TBDY 2018 Uyumu — Belgeli Güvence',
-      sub: 'Her kazık yükleme testinden geçer. Zemin etüdünden anahtar teslime tek elden, şeffaf raporlama ile.',
-      label: '03'
+      title: 'Geleceği Sarsılmaz Temeller Üzerine İnşa Ediyoruz',
+      sub: 'Yılların getirdiği geoteknik mühendislik tecrübesiyle, büyük altyapı ve üstyapı projelerini risk almadan, zamanında ve güvenle teslim ediyoruz.',
+      label: '03',
+      cta: { text: 'Tamamlanan Projelerimiz', href: '/projelerimiz/' }
     }
   ];
 
@@ -638,6 +641,8 @@ const faqItems = [
   const slideNumEl = document.getElementById('heroSlideNum');
   const dotsEl     = document.getElementById('heroDots');
   const svgLayer   = document.querySelector('.hero-svg-layer');
+  const ctaEl      = document.getElementById('heroCta');
+  const ctaTextEl  = document.getElementById('heroCtaText');
 
   if (!slideEls.length || !titleEl || !dotsEl) return;
 
@@ -679,6 +684,10 @@ const faqItems = [
       subEl.textContent = data.sub;
     }
     if (slideNumEl) slideNumEl.textContent = data.label;
+    if (ctaEl && ctaTextEl) {
+      ctaTextEl.textContent = data.cta.text;
+      ctaEl.href = data.cta.href;
+    }
   }
 
   function goTo(next) {
@@ -760,17 +769,17 @@ const faqItems = [
 .hero-slide--1 {
   background-image:
     linear-gradient(135deg, rgba(0,21,48,.52) 0%, rgba(0,21,48,.18) 55%, rgba(0,21,48,.45) 100%),
-    url('/images/hero-main.jpg');
+    url('/images/hero-sunset-1.png');
 }
 .hero-slide--2 {
   background-image:
     linear-gradient(135deg, rgba(0,21,48,.52) 0%, rgba(0,21,48,.18) 55%, rgba(0,21,48,.45) 100%),
-    url('/images/hero-slide2.jpg');
+    url('/images/hero-sunset-2.png');
 }
 .hero-slide--3 {
   background-image:
     linear-gradient(135deg, rgba(0,21,48,.52) 0%, rgba(0,21,48,.18) 55%, rgba(0,21,48,.45) 100%),
-    url('/images/hero-slide3.jpg');
+    url('/images/hero-sunset-3.png');
 }
 
 .hero-slide.is-active {
