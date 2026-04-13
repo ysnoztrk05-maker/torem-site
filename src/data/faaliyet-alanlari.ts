@@ -2278,8 +2278,8 @@ export const teknikler: Teknik[] = [
 <div class="highlight-box"><strong>Özet Cevap:</strong> Öngermeli ankraj, zemin veya kaya kütlesine aktif gergi kuvveti uygulayan çekme elemanıdır. Pasif zemin çivisinden temel farkı: sisteme önceden yük verilerek (pre-stressing) yapı hareketleri minimize edilir.</div>
 <p>Öngermeli ankraj; yüksek mukavemetli çelik strand (halat grubu) veya rijit çubuğun delgi ile zemine/kayaya yerleştirilip çimento şerbetiyle kök bölgesinde sabitlenmesi, ardından hidrolik kriko ile tasarım yüküne gerilerek çift kama veya somun sistemiyle kilitlenmesi ilkesine dayanır. Çekme kuvvetini zemine aktaran bu sistem, iksa perdelerini, şev stabilizasyon yapılarını ve temel güçlendirmelerini destekler.</p>
 <figure>
-<img src="/images/destekleme-ankraj/ongermeli-ankraj-baslik-detay.jpg" alt="Çok halatlı öngermeli ankraj başlığı — konik kama kilitleme sistemi detayı" loading="lazy" width="800" height="600" />
-<figcaption>Şekil — Ankraj başlığı detay: 4 strand konik kamalarda kilitlenmiş</figcaption>
+<img src="/images/destekleme-ankraj/ongermeli-ankraj-ankraj-basliklari.jpg" alt="Fore kazık iksa perdesi üzerinde numaralandırılmış öngermeli ankraj başlıkları — Millet Bahçesi projesi saha fotoğrafı" loading="lazy" width="1518" height="2048" />
+<figcaption>Torem Zemin saha uygulaması — İksa perdesi üzerinde çok sıralı ankraj başlıkları. Her ankraj numaralandırılarak izlenebilirlik sağlanır.</figcaption>
 </figure>
 <p>Sistem iki temel bölümden oluşur:</p>
 <ul>
@@ -2287,10 +2287,6 @@ export const teknikler: Teknik[] = [
 <li><strong>Kök boyu (bond length / ankraj boyu):</strong> Çimento şerbetiyle zemine/kayaya yapışan bölge. Tüm çekme kuvvetini zemin reaksiyonu olarak alır. Zemin cinsine, strand sayısına ve tasarım yüküne göre 4–10 m arasında hesaplanır.</li>
 </ul>
 <p>Ankraj boyu tipik olarak 10–40 m, kapasite ise konfigürasyona bağlı olarak 500–5000 kN arasındadır. Çok halatlı (multi-strand) sistemlerde 3, 4, 6, 9 veya 12 adet 0,6 inç (15,2 mm) çaplı sarmal tel kullanılır. Daha az halatla daha uzun kök boyu ya da daha çok halatla daha kısa kök boyu aynı kapasiteyi verebilir.</p>
-<figure>
-<img src="/images/destekleme-ankraj/ongermeli-ankraj-strand-montaj.jpg" alt="Çelik strand demeti spacer aralayıcılarla ankraj kuyusuna indiriliyor" loading="lazy" width="800" height="600" />
-<figcaption>Şekil — Tendon montajı: HDPE kılıflı serbest boy ve çıplak kök boyu bölgeleri görülüyor</figcaption>
-</figure>
 <figure>
 <svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Öngermeli Ankraj Anatomisi: Serbest boy ve kök boyu kesit diyagramı">
   <rect width="800" height="440" fill="#F5F2ED"/>
@@ -2376,10 +2372,6 @@ export const teknikler: Teknik[] = [
 
 <h2 id="nasil-yapilir">Öngermeli Ankraj Nasıl Uygulanır? — 7 Adım</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Delgi → tendon montajı → enjeksiyon → kürleme → germe testi → kilitlenir. Kritik nokta: serbest boyun enjeksiyon almaması ve germe testinde minimum 5 dakika beklenmesidir.</div>
-<figure>
-<img src="/images/destekleme-ankraj/ongermeli-ankraj-delgi.jpg" alt="Öngermeli ankraj delgi işlemi — açılı rotary delgi makinesi iksa duvarı önünde çalışırken" loading="lazy" width="800" height="600" />
-<figcaption>Şekil — Ankraj kuyusu açılması: Rotary delgi makinesi tasarım açısında zemine giriyor</figcaption>
-</figure>
 <div class="process-steps">
 <div class="step">
 <div><h4>1. Zemin Etüdü ve Tasarım</h4>
@@ -2388,7 +2380,6 @@ export const teknikler: Teknik[] = [
 <div class="step">
 <div><h4>2. Delgi</h4>
 <p>Tasarlanan açı (genellikle yataydan 10°–45° aşağı) ve uzunlukta Ø100–200 mm çaplı delik açılır. Zemin türüne göre yöntem seçilir:</p>
-<img src="/images/destekleme-ankraj/ongermeli-ankraj-delgi.jpg" alt="Öngermeli Ankraj Delgi Operasyonu" class="step-image" loading="lazy" />
 <ul>
 <li><strong>Sulu/gevşek zeminlerde:</strong> Su basınçlı rotary delgi — su hem delgiyi hem de kuyu stabilitesini sağlar</li>
 <li><strong>Normal/sert zeminlerde:</strong> Kuru rotary veya CFA tipi delgi; kılavuz kasa (casing) gerekebilir</li>
@@ -2398,16 +2389,12 @@ export const teknikler: Teknik[] = [
 <div class="step">
 <div><h4>3. Tendon Montajı</h4>
 <p>Strand demeti (3, 4, 6 veya daha fazla halat) enjeksiyon borusuyla birlikte delgiye indirilir. Halatların kuyuya atılışı sırasında kontrol kritik — dolanma veya kırılma riski vardır (bkz. saha uyarısı). Spacer (aralayıcı) ile strandlar eşit aralıklı tutulur. Serbest boy bölgesine plastik kılıf geçirilmiş olmalıdır.</p>
-<img src="/images/destekleme-ankraj/ongermeli-ankraj-strand-montaj.jpg" alt="Öngermeli Ankraj Strand Montajı" class="step-image" loading="lazy" /></div>
+</div>
 </div>
 <div class="step">
 <div><h4>4. Çimento Enjeksiyonu</h4>
 <p>Enjeksiyon borusuyla dipten yüzeye doğru çimento şerbeti (w/c oranı 0.40–0.45) basılır. Zemin türüne göre enjeksiyon yöntemi farklılaşır. <strong>KRİTİK:</strong> Enjeksiyon yalnızca kök boyu bölgesinde gerçekleşmeli; serbest boy plastik kılıfı nedeniyle enjeksiyon almamalıdır. İyi kalite enjeksiyon için Sika veya muadili katkı maddesi kullanımı önerilir.</p></div>
 </div>
-<figure>
-<img src="/images/destekleme-ankraj/ongermeli-ankraj-enjeksiyon.jpg" alt="Çimento enjeksiyon pompası ile ankraj kuyusuna basınçlı grout enjeksiyonu" loading="lazy" width="800" height="600" />
-<figcaption>Şekil — Çimento enjeksiyonu: Basınç göstergesi ve Sika katkılı grout karışımı</figcaption>
-</figure>
 <div class="step">
 <div><h4>5. Kürleme</h4>
 <p>Çimento şerbeti minimum 3–7 gün kürlenmeye bırakılır (hava sıcaklığı ve çimento sınıfına göre değişir). Bu süre tamamlanmadan germe yapılırsa enjeksiyonlu kök bölgesi yetersiz dayanımda çalışır, gerçek kapasite ölçülemez. Soğuk havalarda (0°C altı) özel önlemler alınmalıdır.</p></div>
@@ -2415,12 +2402,12 @@ export const teknikler: Teknik[] = [
 <div class="step">
 <div><h4>6. Germe Testi (Kalite Kontrol)</h4>
 <p>Hidrolik kriko ankraj kafasına monte edilir. Önce kilit yükü (yakl. %10 P_d), ardından uygunluk testi yükü (%150 P_d) veya kabul testi yükü (%125 P_d) uygulanır. Test yükünde minimum 5 dakika beklenerek sürünme (creep) gözlemlenir. Uzama değerleri teorik değerlerle karşılaştırılır. (Detaylar için bkz. Kalite Kontrol bölümü.)</p>
-<img src="/images/destekleme-ankraj/ongermeli-ankraj-germe-testi.jpg" alt="Öngermeli Ankraj Germe Testi" class="step-image" loading="lazy" /></div>
+</div>
 </div>
 <div class="step">
 <div><h4>7. Kilitleme ve Başlık Montajı</h4>
 <p>Tasarım kilitlenmesi yüküne çekilip çift kama sistemiyle veya somunla kilitlenir. Fazla strand uçları taşlama ile kesilir. Plaka ve kafa korozyon koruyucu ile kaplanır, kalıcı ankrajlarda ilave koruyucu kapak monte edilir.</p>
-<img src="/images/destekleme-ankraj/ongermeli-ankraj-baslik-detay.jpg" alt="Öngermeli Ankraj Başlık Detayı" class="step-image" loading="lazy" /></div>
+</div>
 </div>
 </div>
 <div class="saha-notu"><strong>⚠️ Geoteknik Uzman Notu — Enjeksiyon Hataları:</strong> Enjeksiyonların düzgün yapılmaması en kritik ve en sık karşılaşılan hatadır. Serbest bölgenin enjeksiyon almaması sağlıklı uzama için zorunludur — bu bölgeye çimento girerse halatlar tutmaz, germe testi gerçeği yansıtmaz. Sulu zeminlerde enjeksiyonla birlikte delgi yapılır, giriş ve çıkışlara dikkat edilmelidir. Normal zeminlerde kılavuz kasa atılması gerekir. Sika katkı maddesi kullanılmazsa enjeksiyon kalitesi ve aderans düşer.</div>
@@ -2451,6 +2438,10 @@ export const teknikler: Teknik[] = [
 </div>
 
 <h2 id="uygulama-alanlari">Kullanım Alanları</h2>
+<figure>
+<img src="/images/destekleme-ankraj/ongermeli-ankraj-santiye-genel.jpg" alt="Derin kazı şantiyesinde ankrajlı fore kazık iksa perdesi ve delgi makinesi — kuşbakışı saha görünümü" loading="lazy" width="899" height="1599" />
+<figcaption>Büyük ölçekli derin kazı projesinde çok katlı ankraj sistemi — delgi makinesi kazı tabanında çalışırken.</figcaption>
+</figure>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Öngermeli ankraj en çok derin iksa perdelerinin (diyafram duvar, fore kazık perdesi, Berlin duvarı) tutulmasında kullanılır. İkinci yaygın uygulama şev stabilitesidir.</div>
 <ul>
 <li><strong>Derin iksa sistemleri:</strong> Ticari ve konut yapıları için bodrum katı kazılarında iksa perdelerine (diyafram duvar, ankrajlı fore kazık perdesi, Berlin duvarı) aktif gergi kuvveti uygulanır. Özellikle 10 m'yi aşan kazılarda strüt yerine ankraj tercih edilir — çalışma alanı tamamen açık kalır.</li>
@@ -2541,10 +2532,6 @@ export const teknikler: Teknik[] = [
   </defs>
 </svg>
 <figcaption>Şekil 2 — EN 1537 kabul testi prosedürü. Test yükünde 5 dakika bekleme sürünme değerlendirmesi için zorunludur.</figcaption>
-</figure>
-<figure>
-<img src="/images/destekleme-ankraj/ongermeli-ankraj-germe-testi.jpg" alt="EN 1537 kabul testi — kalibrasyonlu hidrolik kriko ile germe ve uzama ölçümü" loading="lazy" width="800" height="600" />
-<figcaption>Şekil — Kabul testi: Dijital basınç göstergesi ve referans kirişe bağlı deplasman ölçer</figcaption>
 </figure>
 <div class="saha-notu"><strong>🦺 Geoteknik Uzman Notu — Germe Testi Güvenliği:</strong> Germe testi sırasında en az iki kritik güvenlik noktası: <strong>1. Kilit yükü ve test yükü değerlerine doğru çıkmak şarttır</strong> — basınç göstergesi hatalıysa ankraj aşırı yüklenir. <strong>2. Germe makinesinin kalibrasyon değeri mutlaka kontrol edilmelidir</strong> — kalibrasyonsuz kriko yanlış okur, test başarılı görünse de ankraj tasarım yükünün altında kalmış olabilir. Test yükünde minimum 5 dakika bekleme zorunludur — bu süre atlanırsa sürünme değerlendirmesi yapılamaz ve ankrajın uzun dönem davranışı bilinmez.</div>
 
