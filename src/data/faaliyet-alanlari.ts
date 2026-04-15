@@ -1419,7 +1419,7 @@ export const teknikler: Teknik[] = [
     slug:'mini-kazik', kategoriSlug:'kazikli-temeller',
     title:'Mini Kazık (Mikro Kazık)', shortTitle:'Mini Kazık',
     excerpt:'150–300 mm çaplı küçük eksenli kazık. Dar alanlarda ve mevcut yapı güçlendirmede ideal.',
-    image:'/images/kazikli-temeller/mini-kazik.jpg', heroImage:'/images/kazikli-temeller/mini-kazik.jpg',
+    image:'/images/kazikli-temeller/mini-kazik-hero.jpg', heroImage:'/images/kazikli-temeller/mini-kazik-hero.jpg',
     badge: 'Dar Alan', badgeType: 'ozel',
     metrics: [{ label: 'Kazık Çapı', value: 'Ø15–30 cm' }, { label: 'Min. Tavan', value: '2,5 m' }],
     comparison: { maxDerinlik: '20 m', derinlikBar: 28, maliyetLabel: 'Orta', maliyetBar: 50, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
@@ -1439,18 +1439,439 @@ export const teknikler: Teknik[] = [
     ],
     zeminTurleri: ['Kil', 'Silt', 'Kum', 'Kumlu çakıl', 'Yumuşak kaya', 'Kireçtaşı'],
     content:`
-      <div class="aeo-box">Mini kazık (mikro kazık); 150–300 mm çaplı, basınçlı enjeksiyonlu küçük eksenli kazık tipidir.</div>
-      <h2 id="nedir">Mini Kazık Nedir?</h2>
-      <p>Mini kazık, küçük çaplı delgi makinesiyle açılan deliğe donatı yerleştirip çimento enjeksiyonu yapılmasıyla oluşturulur. Taşıma kapasitesi 500 kN–3000 kN arasında değişir. Minimum 2,5 m tavan yüksekliğinde dahi uygulanabilir.</p>
-      <h2 id="avantajlar">Avantajları</h2>
-      <ul>
-        <li>Düşük tavanlı mekânlarda uygulanabilir</li>
-        <li>Her yönde (dikey, eğimli) imalat mümkün</li>
-        <li>Mevcut temellere minimum hasarla bağlantı</li>
-      </ul>`,
+<div class="aeo-box"><strong>Mini kazık (mikro kazık);</strong> 150–300 mm çaplı küçük eksenli, yüksek basınçlı çimento enjeksiyonlu derin temel elemanıdır. Minimum 2,5 m tavan yüksekliğinde uygulanabilmesi, eğimli delgi kapasitesi ve mevcut yapı güçlendirmedeki benzersiz rolüyle öne çıkar. Taşıma kapasitesi zemin koşuluna ve enjeksiyon basıncına göre 500–3.000 kN arasında değişir.</div>
+
+<nav class="toc"><strong>İçindekiler</strong><ol>
+<li><a href="#nedir">Mini Kazık Nedir? Anatomisi ve Tarihi</a></li>
+<li><a href="#cesitler">Mini Kazık Türleri</a></li>
+<li><a href="#nasil-yapilir">Uygulama Adımları</a></li>
+<li><a href="#tasima-kapasitesi">Taşıma Kapasitesi ve Hesap Parametreleri</a></li>
+<li><a href="#guclendirme">Mevcut Yapı Güçlendirme ve Temel Takviyesi</a></li>
+<li><a href="#uygulama-alanlari">Uygulama Alanları</a></li>
+<li><a href="#depreme-dayanikli">Depreme Dayanıklılık ve TBDY 2018</a></li>
+<li><a href="#zemin-etudu">Zemin Etüdü İlişkisi</a></li>
+<li><a href="#zemin-turleri">Uygun Zemin Türleri</a></li>
+<li><a href="#kilif">Kılıf Kullanımı — Ne Zaman, Neden?</a></li>
+<li><a href="#kalite-kontrol">Kalite Kontrol ve Yükleme Testleri</a></li>
+<li><a href="#hatalar">Sık Yapılan Uygulama Hataları</a></li>
+<li><a href="#makine">Ekipman ve Delgi Yöntemleri</a></li>
+<li><a href="#maliyet">Maliyet Analizi</a></li>
+<li><a href="#uygulama-suresi">Uygulama Süresi</a></li>
+<li><a href="#karsilastirma">Mini Kazık vs Fore Kazık vs CFA Karşılaştırması</a></li>
+<li><a href="#torem-deneyimi">Torem Zemin Saha Deneyimi</a></li>
+<li><a href="#avantaj-dezavantaj">Avantajlar ve Dezavantajlar</a></li>
+</ol></nav>
+
+<h2 id="nedir">Mini Kazık Nedir? Anatomisi ve Tarihi</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık, Ø150–300 mm çaplı küçük eksenli derin temel elemanıdır. Minimum 2,5 m tavan yüksekliğinde uygulanabilmesi ve mevcut yapı güçlendirmedeki benzersiz rolüyle fore kazık ve CFA kazıktan ayrışır.</div>
+<p>Mini kazık, 1950'lerin İtalya'sında geliştirilen "palo radice" (kök kazık) tekniğinin modern versiyonudur. İlk olarak tarihi yapı restorasyon projelerinde kullanılan bu sistem, zamanla mevcut yapı güçlendirme, iksa perdesi ve dar alan temeli uygulamalarında standart çözüm haline gelmiştir. Küçük çaplı rotary delgi ile açılan Ø150–300 mm'lik deliğe çelik donatı yerleştirilerek yüksek basınçlı (50–100 bar) çimento şerbeti enjekte edilir. Kazık gövdesi, bu enjeksiyonun çevresindeki zemin ile oluşturduğu bağla taşıma kapasitesine kavuşur.</p>
+<p>Yapısal olarak mini kazık eksenel baskı, çekme kuvvetleri ve sınırlı yatay yük taşıyabilir. Eğimli delgi kombinasyonuyla — özellikle her yönde 0°–45° açısında uygulanabilmesi — tarihi yapı restorasyonundan altyapı güçlendirmesine geniş bir uygulama yelpazesi sunar. <a href="/faaliyet-alanlari/kazikli-temeller/fore-kazik/">Fore kazıkla</a> karşılaştırıldığında çap küçük, ancak birim alanda çok daha fazla kazık yerleştirme esnekliği vardır.</p>
+
+<figure>
+<img src="/images/kazikli-temeller/mini-kazik-kapali-alan-delgi.jpg"
+     alt="Kapalı mekânda mini kazık delgi uygulaması — düşük tavanlı alanda burgulu delgi makinesi ve operatör"
+     loading="lazy" width="1080" height="1920" />
+<figcaption>Torem Zemin saha uygulaması — Kapalı mekânda mini kazık delgisi. Minimum 2,5 m tavan yüksekliğinde uygulanabilir.</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mini kazık kesit anatomisi şeması">
+  <rect width="800" height="460" fill="#f8f7f4" rx="12"/>
+  <text x="400" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1B2B3A">Mini Kazık — Kesit Anatomisi</text>
+  <rect x="60" y="60" width="280" height="100" fill="#d4c9b5" opacity="0.5"/>
+  <rect x="60" y="160" width="280" height="120" fill="#c4b89e" opacity="0.5"/>
+  <rect x="60" y="280" width="280" height="140" fill="#b4a888" opacity="0.5"/>
+  <text x="80" y="115" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">Dolgu / Kil</text>
+  <text x="80" y="225" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">Silt / Kum</text>
+  <text x="80" y="355" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">Kaya / Sert Zemin</text>
+  <line x1="50" y1="60" x2="430" y2="60" stroke="#5A6A7A" stroke-width="2" stroke-dasharray="10,5"/>
+  <text x="440" y="65" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Zemin Yüzeyi</text>
+  <rect x="155" y="50" width="90" height="370" fill="#e0dbd2" stroke="#9aa8b3" stroke-width="1.5"/>
+  <rect x="165" y="55" width="70" height="355" fill="#C8873A" opacity="0.75" rx="2"/>
+  <rect x="194" y="48" width="12" height="365" fill="#2E5077" rx="2"/>
+  <line x1="165" y1="150" x2="194" y2="150" stroke="#1B2B3A" stroke-width="2.5"/>
+  <line x1="206" y1="150" x2="235" y2="150" stroke="#1B2B3A" stroke-width="2.5"/>
+  <circle cx="165" cy="150" r="4" fill="#1B2B3A"/>
+  <circle cx="235" cy="150" r="4" fill="#1B2B3A"/>
+  <line x1="165" y1="270" x2="194" y2="270" stroke="#1B2B3A" stroke-width="2.5"/>
+  <line x1="206" y1="270" x2="235" y2="270" stroke="#1B2B3A" stroke-width="2.5"/>
+  <circle cx="165" cy="270" r="4" fill="#1B2B3A"/>
+  <circle cx="235" cy="270" r="4" fill="#1B2B3A"/>
+  <rect x="145" y="35" width="110" height="18" fill="#1B2B3A" rx="3"/>
+  <text x="200" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1B2B3A">Başlık Plakası</text>
+  <line x1="155" y1="310" x2="155" y2="320" stroke="#9aa8b3" stroke-width="1.5"/>
+  <line x1="245" y1="310" x2="245" y2="320" stroke="#9aa8b3" stroke-width="1.5"/>
+  <line x1="155" y1="318" x2="245" y2="318" stroke="#9aa8b3" stroke-width="1.5"/>
+  <text x="200" y="335" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#9aa8b3">Ø150–300 mm</text>
+  <line x1="235" y1="190" x2="430" y2="190" stroke="#C8873A" stroke-width="1.5"/>
+  <circle cx="235" cy="190" r="3" fill="#C8873A"/>
+  <text x="438" y="186" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#C8873A">Çimento Enjeksiyonu</text>
+  <text x="438" y="203" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">50–100 bar | w/c ≤ 0,45</text>
+  <line x1="206" y1="230" x2="430" y2="255" stroke="#2E5077" stroke-width="1.5"/>
+  <circle cx="206" cy="230" r="3" fill="#2E5077"/>
+  <text x="438" y="250" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#2E5077">Çelik Donatı</text>
+  <text x="438" y="267" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Çubuk veya boru profil</text>
+  <line x1="165" y1="150" x2="115" y2="135" stroke="#1B2B3A" stroke-width="1.5"/>
+  <text x="30" y="128" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#1B2B3A">Merkezleme</text>
+  <text x="30" y="143" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Elemanı</text>
+  <line x1="720" y1="60" x2="720" y2="415" stroke="#5A6A7A" stroke-width="1.5"/>
+  <line x1="715" y1="60" x2="725" y2="60" stroke="#5A6A7A" stroke-width="1.5"/>
+  <polygon points="715,415 725,415 720,430" fill="#5A6A7A"/>
+  <text x="735" y="245" font-family="system-ui,sans-serif" font-size="12" fill="#5A6A7A">5–20 m</text>
+</svg>
+<figcaption>Mini kazık kesit anatomisi: çelik donatı, çimento enjeksiyon gövdesi, merkezleme elemanları ve zemin katmanları.</figcaption>
+</figure>
+
+<div class="saha-notu"><strong>📋 Mevzuat Notu (TBDY 2018 §16):</strong> Mini kazıklar, Türkiye Bina Deprem Yönetmeliği kapsamında güçlendirme projelerinde yoğun kullanılan bir çözümdür. Deprem bölgesinde negatif sürtünme, sıvılaşma etkisi ve minimum donatı oranları TBDY 2018 §16 hükümlerine göre hesaplanmalıdır. Mevcut temel–kazık etkileşimi deprem yükleri altında ayrıca kontrol edilmelidir.</div>
+
+<h2 id="cesitler">Mini Kazık Türleri</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazıklar dört ana türe ayrılır: tek aşamalı enjeksiyonlu, iki aşamalı IGU, çelik boru donatılı ve eğimli mini kazık. Doğru tür seçimi zemin koşulu, kapasite gereksinimi ve bütçeye göre belirlenir.</div>
+<p>Mini kazıklar enjeksiyon yöntemi, donatı tipi ve kullanım amacına göre dört ana alt kategoriye ayrılır. Proje tasarımında doğru türün seçilmesi, taşıma kapasitesini ve maliyet verimliliğini doğrudan etkiler.</p>
+
+<div class="card-grid">
+<div class="grid-card"><h3>Tek Aşamalı Enjeksiyonlu</h3><p>Delgi tamamlanır, donatı indirilir ve tek seferlik basınçlı çimento şerbeti enjekte edilir. En yaygın ve ekonomik yöntemdir. Stabil kil ve sert zemin formasyonlarında ideal seçimdir.</p><ul><li>Basit uygulama süreci</li><li>Düşük maliyet</li><li>Kohezyonlu zeminlerde etkili</li></ul></div>
+<div class="grid-card"><h3>İki Aşamalı IGU Enjeksiyonu</h3><p>İlk aşamada düşük basınçta şerbet enjekte edilir; priz sonrası ikinci aşamada yüksek basınçla zemin-enjeksiyon arayüzü güçlendirilir. Gevşek granüler zeminlerde taşıma kapasitesini %30–50 artırır.</p><ul><li>Yüksek kapasite</li><li>Kum-çakıl zeminlerde ideal</li><li>İki seferlik enjeksiyon</li></ul></div>
+<div class="grid-card"><h3>Çelik Boru Donatılı</h3><p>Merkezdeki çelik çubuk yerine içi boş çelik boru donatı kullanılır. Boru içinden kontrollü enjeksiyon yapılır. Su akışına duyarlı projelerde enjeksiyon derinliğini hassas biçimde ayarlar.</p><ul><li>Kontrollü enjeksiyon derinliği</li><li>Yüksek çekme kapasitesi</li><li>Su baskısı olan alanlarda</li></ul></div>
+<div class="grid-card"><h3>Eğimli Mini Kazık</h3><p>Mevcut temel altına erişim için 0°–45° eğimde delgi yapılabilir. Yatay yük veya devrilme momenti bulunan projelerde çok yönlü çözüm sunar. <a href="/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/">Öngermeli ankraj</a> sistemleriyle kombinlenebilir.</p><ul><li>Her açıda uygulama</li><li>Yatay yük taşıma</li><li>Tarihi yapı altına giriş</li></ul></div>
+</div>
+
+<h2 id="nasil-yapilir">Uygulama Adımları</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık 5 adımda uygulanır: saha hazırlama → delgi → donatı montajı → çimento enjeksiyonu → kürleme. Küçük çap (Ø150–300 mm) nedeniyle beton kıvamı ve 50–100 bar enjeksiyon basıncı kritik önem taşır.</div>
+<p>Mini kazık uygulaması fore kazıkla aynı temel mantığı taşır; ancak küçük çapın getirdiği kısıtlamalar nedeniyle beton kıvamı, enjeksiyon basıncı ve agrega boyutu çok daha kritiktir. Aşağıdaki beş adım standart enjeksiyonlu mini kazık sürecini özetler.</p>
+
+<div class="process-steps">
+<div class="step"><span class="step-num">1</span><div class="step-body"><h3>Saha Hazırlama ve Ekipman Konumlandırma</h3><p>Kazık eksenleri topografik plana göre işaretlenir. Kompakt delgi makinesi alana yerleştirilir. Tavan yüksekliği kontrolü yapılır — minimum 2,5 m yeterlidir. Kompresör ve enjeksiyon ekipmanı kurulur. Çimento, katkılar ve su sahaya temin edilir.</p></div></div>
+<div class="step"><span class="step-num">2</span><div class="step-body"><h3>Delgi</h3><p>Rotary veya tabancalı (DTH — Down-The-Hole) delgi ile hedef derinliğe (5–20 m) inilir. Delgi sırasında zemin takibi yapılır. Beklenmeyen tabakalar (sert kaya, yıkıntı dolgusu, büyük blok) karşılaşıldığında delgi yöntemi veya makine değiştirilmesi gerekebilir. Yüksek yeraltı suyu seviyesinde kılıf borusu kullanımı bu aşamada devreye girer.</p></div></div>
+<div class="step"><span class="step-num">3</span><div class="step-body"><h3>Donatı Montajı</h3><p>Çelik çubuk veya boru donatı deliğe indirilir. Donatı boyunca 1,5–2,0 m aralıklarla merkezleme elemanları yerleştirilir; bu elemanlar kazık gövdesinde minimum beton örtüsünü (15–20 mm) güvence altına alır. Donatı delik dibine ulaşmalı, kısmi inme durumunda nedenin araştırılması gerekir.</p></div></div>
+<div class="step"><span class="step-num">4</span><div class="step-body"><h3>Çimento Enjeksiyonu</h3><p>Çimento şerbeti (w/c ≤ 0,45) delgi borusunun tabanından başlayarak yukarı doğru basılır. Enjeksiyon basıncı 50–100 bar, akış hızı zemin tipine göre ayarlanır. Basınç ve hacim sürekli kaydedilir — bu veriler kalite kontrol belgesinin temelini oluşturur.</p></div></div>
+<div class="step"><span class="step-num">5</span><div class="step-body"><h3>Kürleme ve Başlık İmalatı</h3><p>Beton 24–48 saat kürlenir. Kazık başlığı ve bağlantı betonarme imalatı yapılır. Yükleme testi planlanmışsa test kafası montajı hazırlanır. Bitişik kazıklar tamamlanarak temel kirişi veya plakla bağlantı kurulur.</p></div></div>
+</div>
+
+<div class="saha-notu"><strong>⚠️ Geoteknik Uzman Notu — Beton Tapa Problemi:</strong> Mini kazıkta en sık karşılaşılan sorun betonun tapa yapmasıdır. Çap küçük olduğu için (Ø150–300 mm) çimento akışı kolayca tıkanır. Standart beton karışımı mini kazıkta çalışmaz — doğru kıvam, agrega boyutu (max. 8 mm) ve enjeksiyon basıncı ayarı zorunludur. Tapa oluştuğunda delgi yeniden açılmalı; tıkalı kazık kapasite garantisi taşımaz.</div>
+
+<div class="saha-notu"><strong>🦺 Geoteknik Uzman Notu — Kompresör ve Toz Güvenliği:</strong> Kompresörlü (tabancalı) delgi çalışmalarında iki kritik İSG noktası: <strong>1.</strong> Bağlantı aparatları (hortum kelepçeleri, manşonlar) düzenli kontrol edilmeli — yüksek basınçta kopma riski vardır. <strong>2.</strong> Tabancalı delgilerde yoğun toz oluşur; kapalı mekânlarda maske zorunlu, yeterli havalandırma sağlanmadan çalışmaya başlanmamalıdır.</div>
+
+<h2 id="tasima-kapasitesi">Taşıma Kapasitesi ve Hesap Parametreleri</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık taşıma kapasitesi Ø150 mm için 300–1.000 kN, Ø300 mm için 900–3.000 kN arasında değişir. Kesin kapasite EN 1997 / TSISO 22477 standardına göre hesaplanmalı, statik veya dinamik yükleme testiyle doğrulanmalıdır.</div>
+<p>Mini kazığın taşıma kapasitesi; kazık çapı, enjeksiyon basıncı, zemin türü ve kazık boyu parametrelerine bağlı olarak geniş bir aralıkta değişir. Tasarım kapasitesi mutlaka statik yükleme testi veya dinamik test ile doğrulanmalıdır. Taşıma kapasitesi hesabında EN 1997 (Eurocode 7) ile TS EN ISO 22477 standartları referans alınır. İki aşamalı IGU enjeksiyonu, kum ve ince çakıl zeminlerde özgün taşıma kapasitesini %30–50 oranında artırabilir.</p>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>Kazık Çapı</th><th>Tipik Kazık Boyu</th><th>Kapasite — Kil</th><th>Kapasite — Kum/Kaya</th></tr></thead>
+<tbody>
+<tr><td>Ø150 mm</td><td>8–12 m</td><td>300–600 kN</td><td>500–1.000 kN</td></tr>
+<tr><td>Ø200 mm</td><td>10–15 m</td><td>500–900 kN</td><td>800–1.500 kN</td></tr>
+<tr><td>Ø250 mm</td><td>12–18 m</td><td>700–1.200 kN</td><td>1.000–2.000 kN</td></tr>
+<tr><td>Ø300 mm</td><td>15–20 m</td><td>900–1.500 kN</td><td>1.200–3.000 kN</td></tr>
+</tbody>
+</table></div>
+
+<div class="stat-row">
+<div class="stat-card"><span class="stat-val">500–3.000 kN</span><span class="stat-label">Taşıma Kapasitesi</span></div>
+<div class="stat-card"><span class="stat-val">50–100 bar</span><span class="stat-label">Enjeksiyon Basıncı</span></div>
+<div class="stat-card"><span class="stat-val">5–20 m</span><span class="stat-label">Uygulama Derinliği</span></div>
+<div class="stat-card"><span class="stat-val">2,5 m</span><span class="stat-label">Min. Tavan Yüksekliği</span></div>
+</div>
+
+<h2 id="guclendirme">Mevcut Yapı Güçlendirme ve Temel Takviyesi</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mevcut yapı güçlendirme (underpinning), mini kazığın birincil uygulama alanıdır. Bodrum katından minimum 2,5 m tavan yüksekliğinde delgi yapılarak yeni kazıklar mevcut temele entegre edilir. TBDY 2018 §16 kapsamında hesaplanır.</div>
+<p>Mini kazığın en değerli uygulama alanı <strong>mevcut yapıların güçlendirilmesidir</strong>. Depreme dayanıksız binaların taşıyıcı sistemine dokunmadan, bodrum katı veya zemin katından delgi yapılarak yeni kazıklar mevcut temele entegre edilebilir. Bu teknik "underpinning" (temel takviyesi) olarak da bilinir. Kentsel dönüşüm projelerinin hız kazandığı Türkiye'de mini kazıklı güçlendirme, özellikle 1980 öncesi yapı stoğunun büyük bölümünde zorunlu hale gelmiştir.</p>
+<p>Güçlendirme uygulamasının kritik başarı faktörleri şunlardır:</p>
+<ul>
+<li><strong>Mevcut temel geometrisi:</strong> Temel kalınlığı, donatı konumu ve beton sınıfı saptanmalıdır; bu veriler olmadan kazık başlığı detayı bilinemez.</li>
+<li><strong>Yük transferi dizaynı:</strong> Mini kazık başlığının mevcut temele boşluksuz oturma projesi yapısal mühendis tarafından hazırlanmalıdır.</li>
+<li><strong>Sıralı uygulama:</strong> Bitişik kazıklar aynı anda yapılmaz; binanın taşıyıcı sistemi sürekli yük taşırken dönüşümlü çalışılır.</li>
+<li><strong>Yapı izleme:</strong> Uygulama süresince oturma ölçerleri ve inklinometre ile bina hareketleri takip edilir.</li>
+</ul>
+
+<div class="saha-notu"><strong>⚠️ Geoteknik Uzman Notu — Zemin Etüdü ve Makine Seçimi:</strong> Güçlendirme projelerinde en büyük sürpriz, delgi sırasında beklenmedik zemin engeliyle (sert kaya tabakası, eski yıkıntı, büyük boyutlu taş) karşılaşmaktır. Küçük makineyle başlanan çalışmada zemin koşulları kapasiteyi aşarsa büyük makine getirilmesi gerekir — bu ek mobilizasyon maliyeti, zaman kaybı ve mekâna sığma sorununu birlikte getirir. <strong>Kural: Zemin etüdü olmadan makine seçimi yapılmamalıdır.</strong> Bkz. <a href="/faaliyet-alanlari/geoteknik-proje/zemin-etudu/">zemin etüdü hizmeti</a>.</div>
+
+<h2 id="uygulama-alanlari">Uygulama Alanları</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık; mevcut yapı güçlendirme, tarihi yapı restorasyonu, dar alan temeli, tünel/yeraltı yapıları ve iksa sistemi tamamlayıcısı olarak kullanılır. Düşük tavan ve sınırlı alan kısıtlarında fore kazığa tercih edilir.</div>
+<p>Mini kazık, alışılagelen derin temel yöntemlerinin uygulanamadığı pek çok özel durumda çözüm sunar. Özellikle dar alan, düşük tavan, mevcut yapı varlığı ve hassas çevre koşullarında tercih sebebidir.</p>
+<ul>
+<li><strong>Mevcut yapı bodrum güçlendirmesi:</strong> Depreme dayanıksız binalarda temel takviyesi ve underpinning</li>
+<li><strong>İksa perdesi tamamlayıcısı:</strong> <a href="/faaliyet-alanlari/iksa-sistemleri/">İksa sistemleri</a> içinde yük taşıyıcı eleman olarak</li>
+<li><strong>Tarihi yapı restorasyonu:</strong> Titreşim ve tahribatın minimum tutulması gereken koruma projeleri</li>
+<li><strong>Köprü ve viyadük temelleri:</strong> Su altı veya dar alan kısıtı bulunan projelerde</li>
+<li><strong>Tünel ve yeraltı yapıları:</strong> Düşük tavanın kısıtladığı yeraltı ortamlarında</li>
+<li><strong>Sert kaya delgi:</strong> DTH/tabancalı yöntemle kayaya bağlanan kazık sistemleri</li>
+<li><strong>Eğimli zemin stabilizasyonu:</strong> <a href="/faaliyet-alanlari/sev-stabilitesi/">Şev stabilitesi</a> çalışmalarında eğimli yük taşıyıcı eleman olarak</li>
+<li><strong>Sanayi tesisi güçlendirmesi:</strong> Makinenin tam girişinin mümkün olmadığı faal tesislerde</li>
+</ul>
+
+<h2 id="depreme-dayanikli">Depreme Dayanıklılık ve TBDY 2018</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> TBDY 2018 §16 kapsamında mini kazıklar güçlendirme projelerinde yaygın kullanılır. Deprem hesabında negatif sürtünme, sıvılaşma etkisi ve mevcut yapı-kazık etkileşimi ayrıca incelenmesi zorunlu parametrelerdir.</div>
+<p>Mini kazıklar, Türkiye Bina Deprem Yönetmeliği (TBDY 2018) kapsamındaki güçlendirme projelerinde en sık başvurulan derin temel çözümlerinden biridir. Mevcut yapının taşıyıcı sistemi değiştirilmeden yeni kazıkların entegre edilmesi, hem sismik performansı artırır hem de bina kullanımını kesintisiz sürdürmeye olanak tanır.</p>
+<p><strong>TBDY 2018 §16 kapsamında mini kazık tasarımında incelenmesi gereken başlıca konular:</strong></p>
+<ul>
+<li><strong>Negatif sürtünme (downdrag):</strong> Sıvılaşabilir veya konsolide olmamış tabakalarda zemin oturması kazık gövdesine aşağı yönlü ek yük bindirir. Bu etki TBDY §16.7 uyarınca tasarım yüklerine dahil edilmelidir.</li>
+<li><strong>Sıvılaşma riski:</strong> Gevşek kumlu zeminlerde deprem sırasında sıvılaşma meydana gelebilir. Sıvılaşma derinliği boyunca kazıkların yanal kapasitesi hesapta sıfır alınır; kazıklar bu bölgeyi kesip alttaki sağlam tabakaya ulaşmalıdır.</li>
+<li><strong>Mevcut temel–kazık etkileşimi:</strong> Yeni mini kazıkların mevcut yayılı veya radye temelle birlikte çalışması, rijitlik uyumu ve yük dağılımı açısından modellenmeli; TBDY §16.8 kapsamındaki performans düzeyine uygunluğu doğrulanmalıdır.</li>
+<li><strong>Minimum donatı oranı:</strong> Deprem bölgesinde mini kazık donatısı TBDY hesabından gelen boyutsal gereksinimleri karşılamalıdır; statik yük tasarımı minimum oranları yetersiz kalabilir.</li>
+</ul>
+<div class="saha-notu"><strong>📋 Mevzuat Notu — Güçlendirme Onay Süreci:</strong> TBDY 2018 kapsamındaki güçlendirme projelerinde mini kazık çözümü; proje müellifi, uygulayıcı ve yapı denetim kuruluşu tarafından onaylanmalıdır. Ruhsat süreci tamamlanmadan imalata başlanması yasal risk taşır. Torem Zemin, güçlendirme projelerinde lisanslı yapı denetim kuruluşuyla koordineli çalışmaktadır.</div>
+
+<h2 id="zemin-etudu">Zemin Etüdü İlişkisi</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık tasarımında zemin etüdü zorunludur. SPT-N değeri, yeraltı suyu seviyesi ve kaya derinliği olmadan ne doğru kapasite hesabı ne de doğru makine seçimi yapılabilir. Etütsüz keşif teklifi yalnızca tahmin niteliğindedir.</div>
+<p>Mini kazık tasarımında zemin etüdünden elde edilen parametreler, projenin teknik ve ekonomik başarısını doğrudan belirler. Zemin etüdü yapılmadan hazırlanan keşif teklifi yalnızca tahmin niteliğindedir; zemin sürprizleriyle karşılaşıldığında maliyet ve süre garantisi geçerliliğini yitirir.</p>
+<p><strong>Mini kazık tasarımında zemin etüdünden beklenen temel veriler:</strong></p>
+<ul>
+<li><strong>SPT-N değerleri:</strong> Her metrede standart penetrasyon direnci; kapasite hesabı, kılıf gereksinimi ve delgi yöntemi seçiminin temel girdisi</li>
+<li><strong>Yeraltı suyu seviyesi:</strong> Kılıf zorunluluğunu belirler; enjeksiyon basıncı ve w/c oranının ayarlanmasında belirleyici</li>
+<li><strong>Zemin sınıflandırması:</strong> USCS sistemine göre kil, kum, çakıl veya kaya ayrımı — enjeksiyon yöntemi (tek/iki aşamalı) bu sınıfa göre seçilir</li>
+<li><strong>Kaya derinliği ve sertliği:</strong> DTH/tabancalı delgi gereksinimini belirler; kaya bağ uzunluğu hesabında kritik</li>
+<li><strong>Konsolidasyon durumu:</strong> Negatif sürtünme riski değerlendirmesi için gerekli</li>
+</ul>
+<div class="saha-notu"><strong>⚠️ Geoteknik Uzman Notu — Yanlış Makine Seçimi:</strong> Zemin etüdü yapılmadan yalnızca alan ölçüsüne göre küçük makine seçilmesi sahada büyük sürprizlere yol açar. Yıkıntılı dolgu veya beklenmedik sert kaya tabakasıyla karşılaşıldığında küçük makinenin kapasitesi yetersiz kalır — büyük makine getirilmesi gerekir. Bu durum ek mobilizasyon maliyeti, mekâna sığma sorunu ve zaman kaybı demektir. Müşteriye en başından doğru bilgi verebilmek için zemin etüdü her zaman projenin başlangıç adımı olmalıdır. Bkz. <a href="/faaliyet-alanlari/geoteknik-proje/zemin-etudu/">zemin etüdü hizmeti</a>.</div>
+
+<h2 id="zemin-turleri">Uygun Zemin Türleri</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık kil, silt, kum, kaya ve çoğu dolgulu zeminde uygulanabilir. Torf ve organik zeminler uygun değildir. Gevşek kum ve yıkıntılı dolgu kılıf zorunluluğu getirir; yüksek yeraltı suyu özel enjeksiyon parametresi gerektirir.</div>
+<p>Mini kazık, geniş bir zemin yelpazesinde uygulanabilir; ancak her zemin tipinde enjeksiyon parametreleri farklılaşır. Bazı zeminlerde ilave önlemler (kılıf, özel katkı, iki aşamalı enjeksiyon) zorunlu hale gelir.</p>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>Zemin Türü</th><th>Uygunluk</th><th>Özel Not</th></tr></thead>
+<tbody>
+<tr><td>Kil (yumuşak–sert)</td><td>✅ Uygun</td><td>Tek aşamalı enjeksiyon yeterli</td></tr>
+<tr><td>Silt</td><td>✅ Uygun</td><td>Kılıf önerilir, su basıncı izlenmeli</td></tr>
+<tr><td>Kum (gevşek–orta sıkı)</td><td>✅ Uygun (IGU ile)</td><td>İki aşamalı enjeksiyon kapasiteyi artırır</td></tr>
+<tr><td>Kumlu çakıl</td><td>⚠️ Koşullu</td><td>Çimento kaçağı riski; kılıf zorunlu</td></tr>
+<tr><td>Yumuşak kaya</td><td>✅ Uygun</td><td>Rotary delgi; bağ uzunluğu azalır</td></tr>
+<tr><td>Kireçtaşı / Sert kaya</td><td>✅ Uygun</td><td>DTH/tabancalı delgi; kaya bağ bölgesi</td></tr>
+<tr><td>Yıkıntı / Dolgu</td><td>⚠️ Riskli</td><td>Kılıf zorunlu; makine seçimine dikkat</td></tr>
+<tr><td>Torf / Organik zemin</td><td>❌ Uygun değil</td><td>Taşıma kapasitesi yetersiz kalır</td></tr>
+</tbody>
+</table></div>
+
+<div class="saha-notu"><strong>🔍 Geoteknik Uzman Notu — Yüksek Yeraltı Suyu:</strong> Yüksek yeraltı suyu seviyesinde mini kazık uygulaması zorlaşır. Su basıncı enjeksiyonu seyreltir, çimento kaçağı artar ve kazık gövdesi beklenen dayanıma ulaşamayabilir. Su seviyesi yüksekse enjeksiyon basıncı ve w/c oranı özel ayarlanmalı, gerekirse hızlandırıcı katkı maddesi kullanılmalıdır.</div>
+
+<h2 id="kilif">Kılıf Kullanımı — Ne Zaman, Neden?</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Gevşek kum, yıkıntı dolgu ve yüksek yeraltı suyu olan zeminlerde kılıf (muhafaza borusu) zorunludur. Stabil kil ve kaya zeminlerde kılıfsız çalışılabilir. Kılıflı uygulama, kılıfsıza göre ~%55 daha yüksek maliyet getirebilir.</div>
+<p>Mini kazıkta kılıf (muhafaza borusu) kullanımı zemin istikrarını ve enjeksiyon kalitesini doğrudan etkiler. Kılıfsız çalışmak mümkün olduğunda işçilik ve malzeme maliyeti düşer; ancak bazı zemin koşullarında kılıf zorunlu hale gelir.</p>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>Zemin Koşulu</th><th>Kılıf Gereksinimi</th></tr></thead>
+<tbody>
+<tr><td>Stabil kil / yumuşak kaya</td><td>Kılıfsız uygulama mümkün</td></tr>
+<tr><td>Gevşek kum veya dolgu</td><td>Kılıf zorunlu — delik göçme riski</td></tr>
+<tr><td>Yüksek yeraltı suyu</td><td>Kılıf önerilir</td></tr>
+<tr><td>Yıkıntı içeren dolgu</td><td>Kılıf zorunlu</td></tr>
+<tr><td>Bodrum altı uygulaması</td><td>Kılıf ile kontrollü delgi</td></tr>
+</tbody>
+</table></div>
+
+<div class="saha-notu"><strong>💰 Geoteknik Uzman Notu — Kılıf Maliyeti ve Makine Seçimi:</strong> Yıkıntılı veya dolgulu zeminlerde kılıf kullanımı zorunlu hale geldiğinde, küçük makine kılıf süremeyebilir ve büyük makine getirilmesi zorunluluğu doğar. Bu durum ek mobilizasyon maliyeti, zaman kaybı ve mekâna sığma sorununu birlikte getirir. Müşterinin en az beklediği bütçe kalemi genellikle budur. Proje tasarımında zemin-uygulama uyumuna önceden dikkat edilmeli; zemin etüdü kılıf kararını net ortaya koymalıdır.</div>
+
+<h2 id="kalite-kontrol">Kalite Kontrol ve Yükleme Testleri</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazıkta kalite kontrol: (1) uygulama sırasında enjeksiyon basıncı/hacim kaydı, (2) tamamlanan kazıkta statik veya dinamik yükleme testi. Her iki aşamanın belgelenmesi zorunludur; eksik kayıt tasarım kapasitesini garanti edemez.</div>
+<p>Mini kazıkta kalite kontrol iki aşamada yürütülür: <strong>süreç izleme</strong> (enjeksiyon basıncı, hacim ve kıvam kayıtları) ve <strong>tamamlanmış kazık testi</strong> (statik/dinamik yükleme). Her iki aşamanın belgelenmesi proje teslim dosyasının temel parçasıdır.</p>
+
+<figure>
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mini kazık kalite kontrol akış şeması">
+  <rect width="800" height="360" fill="#f8f7f4" rx="12"/>
+  <text x="400" y="32" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1B2B3A">Mini Kazık — Kalite Kontrol Akış Şeması</text>
+  <rect x="60" y="55" width="180" height="55" rx="10" fill="#2E5077"/>
+  <text x="150" y="79" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Enjeksiyon Parametresi</text>
+  <text x="150" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#cce0f0">Basınç | Hacim | w/c</text>
+  <line x1="240" y1="83" x2="285" y2="83" stroke="#5A6A7A" stroke-width="2"/>
+  <polygon points="283,78 295,83 283,88" fill="#5A6A7A"/>
+  <polygon points="295,55 455,55 515,83 455,110 295,110 235,83" fill="#4A7FA5"/>
+  <text x="375" y="79" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Hedef Basınca</text>
+  <text x="375" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Ulaşıldı mı?</text>
+  <line x1="375" y1="110" x2="375" y2="155" stroke="#27ae60" stroke-width="2"/>
+  <polygon points="370,152 380,152 375,165" fill="#27ae60"/>
+  <text x="390" y="138" font-family="system-ui,sans-serif" font-size="11" fill="#27ae60" font-weight="700">Evet</text>
+  <line x1="515" y1="83" x2="570" y2="83" stroke="#e74c3c" stroke-width="2"/>
+  <polygon points="568,78 580,83 568,88" fill="#e74c3c"/>
+  <text x="523" y="75" font-family="system-ui,sans-serif" font-size="11" fill="#e74c3c" font-weight="700">Hayır</text>
+  <rect x="580" y="55" width="155" height="55" rx="10" fill="#c0392b"/>
+  <text x="657" y="79" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Tapa / Sızıntı</text>
+  <text x="657" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#fad7d0">İnceleme + Yeniden</text>
+  <rect x="265" y="165" width="220" height="55" rx="10" fill="#1B2B3A"/>
+  <text x="375" y="189" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Yükleme Testi</text>
+  <text x="375" y="207" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#9ab3c4">Statik veya Dinamik (PDA)</text>
+  <line x1="375" y1="220" x2="375" y2="260" stroke="#5A6A7A" stroke-width="2"/>
+  <polygon points="370,257 380,257 375,270" fill="#5A6A7A"/>
+  <polygon points="275,270 475,270 535,300 475,330 275,330 215,300" fill="#4A7FA5"/>
+  <text x="375" y="296" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Kapasite ≥ Tasarım</text>
+  <text x="375" y="314" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Değeri mi?</text>
+  <line x1="535" y1="300" x2="600" y2="300" stroke="#27ae60" stroke-width="2"/>
+  <polygon points="598,295 610,300 598,305" fill="#27ae60"/>
+  <rect x="610" y="272" width="125" height="55" rx="10" fill="#27ae60"/>
+  <text x="672" y="296" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">✓ Onay</text>
+  <text x="672" y="314" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#d4f5de">Kayıt + İmza</text>
+  <line x1="215" y1="300" x2="155" y2="300" stroke="#e74c3c" stroke-width="2"/>
+  <polygon points="157,295 145,300 157,305" fill="#e74c3c"/>
+  <rect x="40" y="272" width="115" height="55" rx="10" fill="#c0392b"/>
+  <text x="97" y="296" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Ek Kazık</text>
+  <text x="97" y="314" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#fad7d0">veya Yeniden</text>
+</svg>
+<figcaption>Mini kazık kalite kontrol süreci: enjeksiyon basıncından yükleme testine kadar onay akışı.</figcaption>
+</figure>
+
+<div class="saha-notu"><strong>🦺 Geoteknik Uzman Notu — Yükleme Testi Güvenliği:</strong> Statik yükleme testinde kazık kapasitesinin 1,5–2,0 katı yük uygulanır. Test başlığı ve reaksiyon sistemi bu yükleri taşıyacak şekilde boyutlandırılmalıdır. Kalibrasyonsuz kriko veya gevşek bağlantılar yüksek basınçta ani kopma riskine yol açar — tüm test düzeneği kullanımdan önce kontrol edilmelidir.</div>
+
+<h2 id="hatalar">Sık Yapılan Uygulama Hataları</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> En kritik hatalar: standart beton karışımı (tapa riski), zemin etüdsüz makine seçimi, 50 bar altı enjeksiyon basıncı ve kılıf atlanmasıdır. Her biri kazık kapasitesini tehlikeye atar veya proje maliyetini önemli ölçüde artırır.</div>
+<p>Mini kazık küçük çaplı ve yüksek basınçlı bir sistem olduğundan uygulama hataları büyük ölçekli kazık türlerine kıyasla daha kritik sonuçlar doğurabilir. Aşağıdaki hatalar sahadan derlenen deneyimleri yansıtmaktadır.</p>
+
+<div class="card-grid">
+<div class="grid-card"><h3>Standart Beton Karışımı</h3><p>Mini kazıkta standart beton kıvamı (S2–S3) tapa oluşturur. Agrega boyutu 8 mm'yi aşmamalı, w/c oranı ≤ 0,45 olmalıdır. Hazır beton kullanımı özel izin gerektirir.</p></div>
+<div class="grid-card"><h3>Zemin Etüdsüz Makine Seçimi</h3><p>Sadece alan ölçüsüne göre küçük makine seçmek; sert tabaka veya kılıf gereksinimiyle karşılaşıldığında büyük makine maliyetini kaçınılmaz kılar.</p></div>
+<div class="grid-card"><h3>Düşük Enjeksiyon Basıncı</h3><p>50 bar altında enjeksiyon çevre zeminle yeterli bağ oluşturmaz. Tasarım kapasitesi gerçekleşmez. Basınç kayıtları tutulmalı ve hedef değere ulaşıldığı belgelenmelidir.</p></div>
+<div class="grid-card"><h3>Kılıf Atlanması</h3><p>Gevşek kum veya dolgu zeminlerde kılıf kullanılmaması delik göçmesine neden olur. Göçen delikte donatı iniş mümkün olmaz; tüm delgi yenilenmek zorunda kalınır.</p></div>
+<div class="grid-card"><h3>Merkezleme Elemanı Eksikliği</h3><p>Donatı delik duvarına dayanırsa beton örtüsü yetersiz kalır ve kazık gövdesi korozyona açık hale gelir. Her 1,5–2,0 m'de merkezleme elemanı zorunludur.</p></div>
+<div class="grid-card"><h3>Erken Yükleme</h3><p>Çimento şerbeti yeterince priz yapmadan (min. 24–48 saat) yük uygulanması kazık gövdesine zarar verir. Proje takvimi kürleme süresini mutlaka içermelidir.</p></div>
+</div>
+
+<div class="saha-notu"><strong>💡 Geoteknik Uzman Notu — Mıcır Enjeksiyon Tekniği:</strong> Delgi uzunluğu fazla olan ve yeraltı suyu yüksek kazıklarda beton dökümünden önce <strong>mıcır enjeksiyonu</strong> uygulanır. Amaç: kuyu tabanındaki su ve çamur birikintisini mıcır ile stabilize ederek betonun tapa yapmasını engellemek. Mıcır, kuyu dibinde filtrasyon katmanı oluşturur ve betonun homojen akışını sağlar. Bu uygulama yapılmadan dökülen betonda tapa riski artar — kazık gövdesinde boşluk kalır ve taşıma kapasitesi düşer.</div>
+
+<h2 id="makine">Ekipman ve Delgi Yöntemleri</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık için kompakt rotary, tabancalı DTH, çekiç delgi ve mini paletli makine kullanılır. Zemin sertliği, tavan yüksekliği ve alan kısıtı doğru delgi yöntemini belirler. Yanlış yöntem seçimi hem süreyi uzatır hem de maliyeti artırır.</div>
+<p>Mini kazık uygulamasında birden fazla delgi yöntemi mevcuttur. Yöntem seçimi zemin sertliği, tavan yüksekliği, alan genişliği ve maliyet kısıtlarına göre belirlenir.</p>
+
+<div class="card-grid">
+<div class="grid-card"><h3>Kompakt Rotary Delgi</h3><p>En yaygın yöntem. Minimum 2,5 m tavan yüksekliğinde çalışabilir. Kil ve yumuşak zemin formasyonlarında hızlı ve ekonomik. Kılıf sürebilen modeller mevcuttur.</p></div>
+<div class="grid-card"><h3>Tabancalı (DTH) Delgi</h3><p>Down-The-Hole çekiç ile hava basıncı kullanılarak kaya ve sert tabakalarda etkili delgi sağlar. Bostancı Ziraat Bankası projesinde sert kayada 12 m uygulanmıştır. Toz kontrolü zorunludur.</p></div>
+<div class="grid-card"><h3>Çekiç Delgi (Percussion)</h3><p>Yüzey çekici ile darbe enerjisiyle delgi. Kaya ve sert zemin katmanlarında etkili; ancak titreşim üretir. Tarihi yapı komşuluğunda sınırlı kullanılmalıdır.</p></div>
+<div class="grid-card"><h3>Mini Paletli Delgi Makinesi</h3><p>Mevcut yapı bodrumuna girebilen 1,5 m eninde kompakt paletli makineler. Mobilizasyon maliyeti düşük, manevra kabiliyeti yüksektir. Her türde delgi adaptörüyle kullanılabilir.</p></div>
+</div>
+
+<figure>
+<img src="/images/kazikli-temeller/mini-kazik-kompressor.jpg"
+     alt="Yüksek kapasiteli kompresör — tabancalı mini kazık delgisinde hava basıncı kaynağı olarak kullanılır"
+     loading="lazy" width="900" height="678" />
+<figcaption>Tabancalı (DTH) delgi için kullanılan yüksek kapasiteli kompresör. Bağlantı aparatlarının (hortum kelepçeleri, manşonlar) düzenli kontrolü İSG açısından zorunludur.</figcaption>
+</figure>
+
+<h2 id="maliyet">Maliyet Analizi</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık birim maliyeti fore kazığa kıyasla düşüktür. Kılıflı uygulama kılıfsıza göre ~%55 daha pahalıdır. Çimento sarfiyatı teorik hacmin 1,5–2,5 katına çıkabilir; bu bütçede %15–30 sapma yaratır.</div>
+<p>Mini kazık maliyeti; çap, derinlik, kılıf gereksinimi, zemin türü ve proje ölçeğine göre önemli ölçüde değişir. Bireysel kazık başına küçük çaplı olması nedeniyle birim maliyet fore kazığa oranla düşük görünse de çok sayıda kazık gerektiren projelerde toplam maliyet hesaplandığında seçim daima mühendislik değerlendirmesiyle yapılmalıdır.</p>
+
+<figure>
+<svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mini kazık maliyet karşılaştırması bar grafiği">
+  <rect width="800" height="300" fill="#f8f7f4" rx="12"/>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1B2B3A">Göreceli Maliyet Karşılaştırması — m Başına Endeks (Fore Kazık = 100)</text>
+  <line x1="80" y1="45" x2="80" y2="235" stroke="#5A6A7A" stroke-width="2"/>
+  <line x1="80" y1="235" x2="740" y2="235" stroke="#5A6A7A" stroke-width="2"/>
+  <line x1="80" y1="185" x2="740" y2="185" stroke="#e0dbd2" stroke-width="1"/>
+  <text x="68" y="189" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">25</text>
+  <line x1="80" y1="140" x2="740" y2="140" stroke="#e0dbd2" stroke-width="1"/>
+  <text x="68" y="144" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">50</text>
+  <line x1="80" y1="95" x2="740" y2="95" stroke="#e0dbd2" stroke-width="1"/>
+  <text x="68" y="99" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">75</text>
+  <text x="68" y="50" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">100</text>
+  <rect x="110" y="152" width="110" height="83" fill="#2E5077" rx="4"/>
+  <text x="165" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#2E5077">42</text>
+  <text x="165" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Mini Kılıfsız</text>
+  <rect x="270" y="111" width="110" height="124" fill="#4A7FA5" rx="4"/>
+  <text x="325" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#4A7FA5">65</text>
+  <text x="325" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Mini Kılıflı</text>
+  <rect x="430" y="45" width="110" height="190" fill="#1B2B3A" rx="4"/>
+  <text x="485" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#1B2B3A">100</text>
+  <text x="485" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Fore Kazık</text>
+  <rect x="590" y="130" width="110" height="105" fill="#C8873A" rx="4"/>
+  <text x="645" y="123" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#C8873A">55</text>
+  <text x="645" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">CFA Kazık</text>
+  <text x="400" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#9aa8b3">* Endeks değerleri görecelidir; gerçek maliyetler zemin ve proje koşuluna göre değişir.</text>
+</svg>
+<figcaption>Mini kazık göreceli maliyet endeksi — kılıflı uygulama, kılıfsıza göre yaklaşık %55 daha yüksek olabilir.</figcaption>
+</figure>
+
+<div class="saha-notu"><strong>💰 Geoteknik Uzman Notu — Çimento Sarfiyatı:</strong> Standart koşullarda Ø150 mm kazık için teorik hacim yaklaşık 17 L/m iken sahada tüketim 25–45 L/m arasına çıkabilir; zemin geçirgenliği ve basınç altında oluşan enjeksiyon hacmi bunu doğrudan etkiler. Artan sarfiyat toplam proje maliyetini bütçeden %15–30 yukarı taşıyabilir. Keşif aşamasında bölgesel zemin koşullarına göre sarfiyat katsayısı mutlaka belirlenmeli; uygun pozzolan katkı kullanımının maliyete etkisi hesaplanmalıdır.</div>
+
+<h2 id="uygulama-suresi">Uygulama Süresi</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Küçük ölçekli projeler (10–20 kazık) 2–5 günde, orta ölçekli projeler (50–100 kazık) 2–4 haftada tamamlanır. Kılıflı uygulama, sert kaya delgi ve yükleme testi planlandığında bu süreler uzar.</div>
+<p>Mini kazık uygulama süresi; proje büyüklüğü, zemin koşulları, kılıf gereksinimi ve yükleme testi planına bağlı olarak değişir. Aşağıdaki tablo aşama bazlı süre dağılımını göstermektedir.</p>
+<div class="table-wrapper"><table>
+<thead><tr><th>Uygulama Aşaması</th><th>Tipik Süre (Kazık Başına)</th><th>Bağımlı Değişken</th></tr></thead>
+<tbody>
+<tr><td>Ekipman Kurulumu ve Konumlandırma</td><td>1–2 saat</td><td>Alan büyüklüğü, makine sayısı</td></tr>
+<tr><td>Delgi</td><td>1–3 saat / kazık</td><td>Zemin türü, derinlik, kılıf kullanımı</td></tr>
+<tr><td>Donatı Montajı</td><td>30–60 dakika</td><td>Kazık boyu, donatı ağırlığı</td></tr>
+<tr><td>Çimento Enjeksiyonu</td><td>30–90 dakika</td><td>Basınç, hacim, zemin geçirgenliği</td></tr>
+<tr><td>Kürleme Bekleme</td><td>24–48 saat</td><td>Hava sıcaklığı, katkı tipi</td></tr>
+<tr><td>Başlık İmalatı</td><td>2–4 saat / grup</td><td>Bağlantı tipi, betonarme boyutu</td></tr>
+<tr><td>Yükleme Testi (planlanmışsa)</td><td>4–8 saat / test</td><td>Test tipi (statik/dinamik)</td></tr>
+</tbody>
+</table></div>
+<p><strong>Proje ölçeğine göre toplam süre tahmini:</strong></p>
+<ul>
+<li><strong>Küçük proje (10–20 kazık):</strong> 2–5 iş günü</li>
+<li><strong>Orta proje (50–100 kazık):</strong> 2–4 hafta</li>
+<li><strong>Büyük proje (200+ kazık):</strong> 6–12 hafta (çoklu ekip)</li>
+</ul>
+<p>Sert kaya formasyonu, kılıf zorunluluğu veya dar alan kısıtı süreyi önemli ölçüde uzatabilir. Güçlendirme projelerinde sıralı uygulama gerekliliği (dönüşümlü kazık yapımı) da toplam süreyi artırır. Bostancı Ziraat Bankası projesinde sert kayada tabancalı delgi ile kazık başına ortalama 3–4 saat sarf edilmiştir.</p>
+
+<h2 id="karsilastirma">Mini Kazık vs Fore Kazık vs CFA Karşılaştırması</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık, en düşük tavan gereksinimi (2,5 m), eğimli delgi ve mevcut yapı güçlendirme avantajlarıyla öne çıkar. Fore kazık daha yüksek kapasite, CFA kazık daha hızlı üretim sunar. Seçim her zaman mühendislik değerlendirmesiyle yapılmalıdır.</div>
+<p>Hangi kazık türünün seçileceği taşıma kapasitesi gereksinimi, alan kısıtları ve maliyet bütçesine göre belirlenir. Aşağıdaki tablo üç yaygın sistemin temel parametrelerini karşılaştırmaktadır. Karar sürecinde mutlaka geoteknik mühendis görüşü alınmalıdır.</p>
+
+<div class="table-wrapper"><table>
+<thead><tr><th>Parametre</th><th>Mini Kazık</th><th><a href="/faaliyet-alanlari/kazikli-temeller/fore-kazik/">Fore Kazık</a></th><th>CFA Kazık</th></tr></thead>
+<tbody>
+<tr><td>Kazık Çapı</td><td>Ø150–300 mm</td><td>Ø400–1.500 mm</td><td>Ø300–1.000 mm</td></tr>
+<tr><td>Maks. Derinlik</td><td>20 m (std.)</td><td>80 m+</td><td>25 m</td></tr>
+<tr><td>Kapasite (tipik)</td><td>500–3.000 kN</td><td>1.000–30.000 kN</td><td>500–5.000 kN</td></tr>
+<tr><td>Min. Tavan Yüksekliği</td><td><strong>2,5 m</strong></td><td>6–8 m+</td><td>7 m+</td></tr>
+<tr><td>Eğimli Delgi</td><td>✅ Her açı</td><td>⚠️ Sınırlı</td><td>❌ Dikey only</td></tr>
+<tr><td>Mevcut Yapı Güçlendirme</td><td>✅ Birincil seçim</td><td>❌ Uygunsuz</td><td>❌ Uygunsuz</td></tr>
+<tr><td>Birim Maliyet (m)</td><td>Düşük–Orta</td><td>Yüksek</td><td>Düşük–Orta</td></tr>
+<tr><td>Gürültü ve Titreşim</td><td>Düşük</td><td>Orta</td><td>Düşük</td></tr>
+<tr><td>Kaya Delgi</td><td>✅ DTH ile</td><td>✅ Karot ile</td><td>❌ Uygunsuz</td></tr>
+<tr><td>TBDY 2018 Güçlendirme</td><td>✅ Uygun</td><td>✅ Uygun</td><td>⚠️ Sınırlı</td></tr>
+</tbody>
+</table></div>
+
+<h2 id="torem-deneyimi">Torem Zemin Saha Deneyimi</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Torem Zemin, Bostancı Ziraat Bankası iksa çalışmasında sert kayada Ø300 mm tabancalı (DTH) delgi ile 12 m derinliğinde mini kazık uyguladı. Her projede zemin etüdü zorunlu tutulur, tüm enjeksiyonlar dijital olarak kaydedilir.</div>
+<p>Torem Zemin olarak farklı zemin ve yapı koşullarında gerçekleştirdiğimiz mini kazık projelerinden elde ettiğimiz deneyimler, teknik çözümlerimizi sürekli geliştirmektedir. Her projede zemin etüdü zorunlu tutmamız, sahada beklenmeyen sürprizleri minimum düzeye indirmektedir.</p>
+
+<div class="saha-notu"><strong>🏗️ Proje Deneyimi — Bostancı Ziraat Bankası, İksa Çalışmaları:</strong> Sert kaya formasyonunda derin iksa sistemi olarak mini kazık uygulandı. <strong>Ø300 mm tabancalı (DTH) delgi ile yaklaşık 12 metre uzunluğunda</strong> mini kazıklar gerçekleştirildi. Sert kaya koşullarında uzun metrajlı mini kazık uygulaması — tabancalı delgi performansı ve kayada ilerleme hızı açısından önemli teknik veri toplanan bir referans proje oldu. İksa perdesinin tamamlanmasıyla birlikte yapı başarıyla teslim edildi.</div>
+
+<p>Uygulamalarımızda benimsediğimiz temel ilkeler:</p>
+<ul>
+<li>Zemin etüdü olmadan keşif raporu verilmez; her proje için <a href="/faaliyet-alanlari/geoteknik-proje/zemin-etudu/">zemin etüdü</a> zorunludur</li>
+<li>Enjeksiyon basıncı ve hacmi tüm kazıklarda dijital olarak kaydedilir</li>
+<li>Kılıf kararı zemin etüdü raporunun sonucuna göre verilir, sahada anlık kararla değil</li>
+<li>Tamamlanan kazıklar <a href="/faaliyet-alanlari/geoteknik-test-izleme/statik-yukleme/">statik yükleme testi</a> veya dinamik test ile doğrulanır</li>
+<li>TBDY 2018 güçlendirme hesapları lisanslı yapı denetim kuruluşu onayından geçirilir</li>
+</ul>
+
+<h2 id="avantaj-dezavantaj">Avantajlar ve Dezavantajlar</h2>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Mini kazık dar alan, düşük tavan ve mevcut yapı güçlendirmesinde rakipsizdir. Sınırlı taşıma kapasitesi (~3.000 kN maks.), beton tapa riski ve yıkıntılı zeminlerde kılıf zorunluluğu temel dezavantajlarıdır.</div>
+<div class="pros-cons">
+<div class="pros"><h3>Avantajlar</h3><ul>
+<li>Minimum 2,5 m tavan yüksekliğinde uygulama imkânı</li>
+<li>Her yönde (dikey, eğimli, yatay yakın) delgi yapılabilmesi</li>
+<li>Mevcut yapı güçlendirme ve underpinning için ideal</li>
+<li>Düşük titreşim ve gürültü — tarihi yapı ve yerleşim bölgelerinde uygulanabilir</li>
+<li>Sert kaya dahil geniş zemin yelpazesinde uygulama</li>
+<li>Kısa mobilizasyon süresi ve küçük şantiye alanı gereksinimi</li>
+<li>Deprem güçlendirme projelerinde TBDY 2018 uyumlu çözüm</li>
+</ul></div>
+<div class="cons"><h3>Dezavantajlar</h3><ul>
+<li>Fore kazığa kıyasla sınırlı taşıma kapasitesi (maks. ~3.000 kN)</li>
+<li>Küçük çap nedeniyle beton tapa riski — özel karışım gereksinimi</li>
+<li>Yıkıntılı zeminlerde kılıf zorunluluğu maliyeti ciddi artırır</li>
+<li>Her kazık için ayrı enjeksiyon kaydı tutulması zorunludur</li>
+<li>Yüksek yeraltı suyu koşullarında özel önlemler gerektirir</li>
+<li>Tek kazıkla taşınan yük sınırlı olduğundan çok kazıklı düzenek gerekebilir</li>
+</ul></div>
+</div>
+`,
     faq:[
-      {q:'Mini kazık ile fore kazık arasındaki fark nedir?',a:'Mini kazık 150–300 mm çaplı enjeksiyonlu bir sistemdir; fore kazık ise 400–1500 mm çaplı, yerinde döküm betonarmedir.'},
-      {q:'Mevcut yapı bodrum katında uygulanabilir mi?',a:'Evet, kompakt makinelerle minimum 2,5 m tavan yüksekliğinde uygulanabilir.'},
+      {q:'Mini kazık (mikro kazık) nedir?',a:'Mini kazık; 150–300 mm çaplı, yüksek basınçlı çimento enjeksiyonuyla oluşturulan küçük eksenli derin temel elemanıdır. Dar alanlarda, mevcut yapı bodrumunda ve mevcut yapı güçlendirme projelerinde fore kazık veya CFA kazığın uygulanamadığı durumlarda kullanılır.'},
+      {q:'Mini kazık ile fore kazık arasındaki temel fark nedir?',a:'Mini kazık Ø150–300 mm çaplı, enjeksiyonlu küçük eksenli bir sistemdir; fore kazık ise Ø400–1.500 mm çaplı, yerinde döküm betonarme elemandır. Mini kazık minimum 2,5 m tavan yüksekliğinde uygulanabilirken fore kazık en az 6–8 m tavan yüksekliği gerektirir. Mevcut yapı güçlendirme için mini kazık birincil seçimdir.'},
+      {q:'Mevcut yapı bodrum katında mini kazık uygulanabilir mi?',a:'Evet. Mini kazığın en önemli avantajlarından biri budur. Minimum 2,5 m tavan yüksekliğine sahip bodrum katlarında kompakt makinelerle uygulama yapılabilir. Mevcut temele bağlantı detayı ve yük transferi hesabı yapısal mühendis tarafından projelendirilmelidir.'},
+      {q:'Mini kazık kaç metreye kadar yapılır?',a:'Standart uygulamada 5–20 m derinlik aralığında çalışılır. Özel ekipman ve zemin koşullarına bağlı olarak 25 m üzerine de çıkılabilir; ancak bu derinlikte fore kazık çoğu zaman daha ekonomik ve güvenlidir.'},
+      {q:'Mini kazık fiyatı ne kadardır?',a:'Mini kazık fiyatı; kazık çapı, derinliği, zemin türü, kılıf gereksinimi ve proje büyüklüğüne göre değişir. Kesin fiyat ancak zemin etüdü ve proje planı incelendikten sonra verilebilir. Ücretsiz keşif raporu için +90 531 659 46 36 numaralı hattı arayabilirsiniz.'},
+      {q:'Beton tapa nedir, nasıl önlenir?',a:'Beton tapası; küçük çap nedeniyle çimento şerbetinin akışının tıkanmasıdır. Önlemek için agrega boyutu maksimum 8 mm ile sınırlandırılmalı, w/c oranı ≤ 0,45 tutulmalı ve enjeksiyon basıncı sürekli izlenmelidir. Tapa oluştuğunda delgi yenilenmesi gerekir.'},
+      {q:'Kılıf (muhafaza borusu) ne zaman kullanılır?',a:'Gevşek kum, yıkıntı dolgu veya yüksek yeraltı suyunun olduğu zeminlerde delik göçmesini önlemek için kılıf kullanılır. Stabil kil ve kaya zeminlerde kılıf gereksizdir. Kılıf kullanımı maliyeti artırır ancak tapa riskini ve kalite problemlerini önemli ölçüde azaltır.'},
+      {q:'TBDY 2018 kapsamında mini kazık güçlendirme nasıl hesaplanır?',a:'TBDY 2018 §16 kapsamında; deprem yükü kombinasyonları, negatif sürtünme, sıvılaşma etkisi ve minimum donatı oranları hesaplanmalıdır. Mevcut temel ile yeni kazıklar arasındaki yük paylaşımı ve rijitlik uyumu da TBDY hükümlerine göre doğrulanmalıdır.'},
+      {q:'Mini kazık eğimli yapılabilir mi?',a:'Evet. Mini kazık 0°–45° eğimde uygulanabilir. Eğimli mini kazıklar yatay yük veya devrilme momenti bulunan temel tasarımlarında, tarihi yapı restorasyonunda ve mevcut temel altına ulaşılması gereken projelerde tercih edilir.'},
+      {q:'Mini kazık hangi zeminlerde uygulanamaz?',a:'Torf, organik zemin ve çok yumuşak bataklık zeminlerde taşıma kapasitesi açısından mini kazık uygulamak uygun değildir. Bu zeminlerde önce zemin iyileştirme (jet grout, taş kolon) yapıldıktan sonra kazık uygulaması değerlendirilebilir.'},
+      {q:'Mini kazıkta yükleme testi zorunlu mudur?',a:'Tasarım kapasitesinin doğrulanması için statik veya dinamik yükleme testi kesinlikle önerilir. Test sayısı genellikle toplam kazık adedinin %2–5\'i kadar belirlenir. Kritik projelerde ve büyük yük aktarımlarında pilot kazıkların tamamı test edilmelidir.'},
+      {q:'Mini kazık uygulaması ne kadar sürer?',a:'Küçük ölçekli projeler (10–20 kazık) 2–5 gün içinde, orta ölçekli projeler (50–100 kazık) 2–4 hafta içinde tamamlanabilir. Kılıf gerektiren ya da sert kaya delgi içeren projelerde süre uzar. Başlık imalatı ve bağlantı betonu için ayrıca 2–3 gün eklenir.'},
     ],
   },
   {
