@@ -13,6 +13,12 @@ import { heroStats, makineSayisi, sirket } from '../data/sirket';
 const featuredHizmetler = hizmetler.slice(0, 6);
 const featuredProjeler = projeler.slice(0, 3);
 
+// Hero stat kartları için sayı ve suffix ayrıştır: "350+" → [350, "+"], "13 Yıl" → [13, " Yıl"]
+function parseDeger(deger: string): [number, string] {
+  const m = deger.match(/^(\d+)(.*)/);
+  return m ? [parseInt(m[1], 10), m[2]] : [0, deger];
+}
+
 const faqItems = [
   { question: 'Fore kazık nedir ve ne zaman kullanılır?', answer: 'Fore kazık, zemin içine açılan deliklere yerinde beton dökülerek oluşturulan derin temel elemanıdır. 400–1500 mm çaplarında, 5–60 m derinliğe imal edilebilir. Zayıf zemin, yüksek yapı ve kentsel alanlar için idealdir.' },
   { question: 'Jet grout ile zemin iyileştirme kaç günde tamamlanır?', answer: 'Orta ölçekli bir jet grout projesi (500 m² alan) genellikle 5–10 gün sürer. Süre, kolon çapı, derinlik ve zemin cinsine bağlıdır. Torem Zemin iş programını önceden taahhüt eder.' },
@@ -110,12 +116,15 @@ const faqItems = [
 
     <!-- Floating Stats — sirket.ts'den otomatik -->
     <div class="hero-stats" aria-label="Proje İstatistikleri">
-      {heroStats.map((stat) => (
-        <div class="hero-stat-card">
-          <span class="hero-stat-card__num">{stat.deger}</span>
-          <span class="hero-stat-card__lbl">{stat.etiket}</span>
-        </div>
-      ))}
+      {heroStats.map((stat) => {
+        const [numVal, sfx] = parseDeger(stat.deger);
+        return (
+          <div class="hero-stat-card">
+            <span class="hero-stat-card__num hero-counter" data-target={numVal} data-suffix={sfx}>0</span>
+            <span class="hero-stat-card__lbl">{stat.etiket}</span>
+          </div>
+        );
+      })}
     </div>
 
     <!-- Progress Dots -->
@@ -1745,5 +1754,26 @@ const faqItems = [
   document.addEventListener('DOMContentLoaded', () => {
     initMakineShowcase();
     initProcessScroll();
+  });
+
+  // Hero counter animasyonu — heroSlideUp (1.8s delay + 0.8s) bittikten sonra başlat
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelectorAll<HTMLElement>('.hero-counter').forEach(el => {
+        const target = parseInt(el.dataset.target ?? '0', 10);
+        const suffix = el.dataset.suffix ?? '';
+        let current = 0;
+        const stepTime = 30;
+        const increment = target / (1400 / stepTime);
+        const timer = setInterval(() => {
+          current = Math.min(current + increment, target);
+          el.textContent = Math.floor(current) + suffix;
+          if (current >= target) {
+            el.textContent = target + suffix;
+            clearInterval(timer);
+          }
+        }, stepTime);
+      });
+    }, 2000);
   });
 </script>

@@ -47,6 +47,7 @@ const { stats = defaultStats } = Astro.props;
   font-weight: 700;
   color: var(--color-white);
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }
 .stats__suffix { font-size: var(--text-3xl); font-weight: 700; color: var(--color-highlight); margin-left: 2px; line-height: 1; }
 .stats__label  { font-size: var(--text-sm); color: rgba(255,255,255,0.65); text-transform: uppercase; letter-spacing: 0.06em; }
@@ -65,19 +66,20 @@ const { stats = defaultStats } = Astro.props;
         if (!entry.isIntersecting) return;
         const el = entry.target as HTMLElement;
         const target = parseInt(el.dataset.target ?? '0', 10);
-        const duration = 1800;
-        const start = performance.now();
-        const tick = (now: number) => {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          el.textContent = Math.floor(eased * target).toString();
-          if (progress < 1) requestAnimationFrame(tick);
-        };
-        requestAnimationFrame(tick);
+        let current = 0;
+        const stepTime = 30;
+        const increment = target / (1400 / stepTime);
+        const timer = setInterval(() => {
+          current = Math.min(current + increment, target);
+          el.textContent = Math.floor(current).toString();
+          if (current >= target) {
+            el.textContent = target.toString();
+            clearInterval(timer);
+          }
+        }, stepTime);
         observer.unobserve(el);
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.5 });
 
     counters.forEach((el) => observer.observe(el));
   }
