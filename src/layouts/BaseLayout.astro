@@ -309,13 +309,15 @@ const currentPath = Astro.url.pathname;
     const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-scale');
     if (reveals.length > 0 && 'IntersectionObserver' in window) {
       const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+        entries.forEach((entry, i) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, i * 80);
             revealObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+      }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
       reveals.forEach((el) => revealObserver.observe(el));
     }
   </script>

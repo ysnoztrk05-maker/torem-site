@@ -184,14 +184,14 @@ const faqItems = [
   <!-- ░░ NEDEN BİZ? ░░ -->
   <section class="section neden-section">
     <div class="container">
-      <div class="sec-head text-center">
+      <div class="sec-head text-center reveal">
         <p class="eyebrow">Neden Torem?</p>
         <h2>Farkımız Sahada Ortaya Çıkar</h2>
         <p class="sec-head__sub">Rakamlar etkileyici — ama asıl fark sahadaki tutumda, kendi ekipmanımızda ve şeffaf iletişimimizde gizli.</p>
       </div>
       <div class="neden-grid">
 
-        <div class="neden-kart">
+        <div class="neden-kart reveal">
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
@@ -199,7 +199,7 @@ const faqItems = [
           <p class="neden-kart__desc">{makineSayisi} iş makinesi — kiralık değil, mülkümüz. Özel donanımlı filomuzla iş programı değişse bile ekipmanımız sahada daima hazırdır.</p>
         </div>
 
-        <div class="neden-kart">
+        <div class="neden-kart reveal">
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
@@ -207,7 +207,7 @@ const faqItems = [
           <p class="neden-kart__desc">Her kazık sıkı kalite testinden geçer. Projelerimiz ISO 9001 ve TBDY 2018 (Deprem Yönetmeliği) standartlarında güvence altındadır.</p>
         </div>
 
-        <div class="neden-kart">
+        <div class="neden-kart reveal">
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
           </div>
@@ -215,7 +215,7 @@ const faqItems = [
           <p class="neden-kart__desc">Etütten projeye, uygulamadan testlere kadar; gecikme ve sürpriz maliyetler yaşamadan tek elden eksiksiz hizmet.</p>
         </div>
 
-        <div class="neden-kart">
+        <div class="neden-kart reveal">
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
@@ -223,7 +223,7 @@ const faqItems = [
           <p class="neden-kart__desc">Yazılı taahhüt ettiğimiz iş programına uyarız. Haftalık dijital şantiye takibi ve kritik yol analizi ile teslimatlar nettir.</p>
         </div>
 
-        <div class="neden-kart">
+        <div class="neden-kart reveal">
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
@@ -231,7 +231,7 @@ const faqItems = [
           <p class="neden-kart__desc">Ortalama 12 yol saha pratiği olan mühendis ekibi. Her projenin yetkili geoteknik mühendisi denetiminde yönetilmesi sağlanır.</p>
         </div>
 
-        <div class="neden-kart neden-kart--cta">
+        <div class="neden-kart neden-kart--cta reveal">
           <p class="neden-kart__desc" style="color:var(--color-primary); font-weight:600; font-size:1.15rem; margin-bottom:1.5rem;">Doğru geoteknik çözümü birlikte planlayalım.</p>
           <a href="/iletisim/" class="btn btn--primary" style="width:100%; justify-content:center; padding-block:1rem;">Ücretsiz Keşif İste</a>
         </div>
@@ -243,14 +243,14 @@ const faqItems = [
   <!-- ░░ HİZMETLER ░░ -->
   <section class="section">
     <div class="container">
-      <div class="sec-head text-center">
+      <div class="sec-head text-center reveal">
         <p class="eyebrow">Uzmanlık Alanlarımız</p>
         <h2>Öne Çıkan Geoteknik Tekniklerimiz</h2>
         <p class="sec-head__sub">Türkiye'nin en zorlu zeminlerinde uyguladığımız temel mühendislik teknikleri</p>
       </div>
       <div class="services-grid">
         {featuredHizmetler.map((h) => (
-          <article class="svc-card">
+          <article class="svc-card reveal">
             <a href={h.href} class="svc-card__img-wrap">
               <img src={h.image} alt={h.title} loading="lazy" width="480" height="320" />
             </a>
@@ -276,7 +276,7 @@ const faqItems = [
   <!-- ░░ FAALİYET ALANLARI ░░ -->
   <section class="section section--alt">
     <div class="container">
-      <div class="sec-head text-center">
+      <div class="sec-head text-center reveal">
         <p class="eyebrow">Faaliyet Alanları</p>
         <h2>Hizmet Gruplarımız</h2>
         <p class="sec-head__sub">Kazıklı temellerden zemin iyileştirmeye, iksa sistemlerinden geoteknik teste — 8 ana disiplinde 40+ teknik çözüm</p>
@@ -285,7 +285,7 @@ const faqItems = [
         {kategoriler.map((k) => {
           const count = getTekniklerByKategori(k.slug).length;
           return (
-            <a href={`/faaliyet-alanlari/${k.slug}/`} class="fa-card">
+            <a href={`/faaliyet-alanlari/${k.slug}/`} class="fa-card reveal">
               <div class="fa-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d={k.icon}/></svg>
               </div>
@@ -351,14 +351,14 @@ const faqItems = [
   <!-- ░░ REFERANS PROJELERİ ░░ -->
   <section class="section ref-strip">
     <div class="container">
-      <div class="sec-head text-center">
+      <div class="sec-head text-center reveal">
         <p class="eyebrow">Referanslarımızdan</p>
         <h2>Tamamlanan Projelerden Seçkiler</h2>
         <p class="sec-head__sub">Her proje, mühendislik mükemmeliyetine olan bağlılığımızın somut kanıtıdır.</p>
       </div>
       <div class="ref-grid">
         {featuredProjeler.map((p) => (
-          <a href={`/projelerimiz/${p.slug}/`} class="ref-card">
+          <a href={`/projelerimiz/${p.slug}/`} class="ref-card reveal">
             <div class="ref-card__img-wrap">
               <img src={p.image} alt={p.title} loading="lazy" width="560" height="360" />
               <span class="ref-card__cat">{p.category}</span>
@@ -388,7 +388,7 @@ const faqItems = [
   <!-- ░░ NASIL ÇALIŞIYORUZ ░░ -->
   <section class="section section--alt process-section">
     <div class="container">
-      <div class="sec-head text-center">
+      <div class="sec-head text-center reveal">
         <p class="eyebrow">Sürecimiz</p>
         <h2>Nasıl Çalışıyoruz?</h2>
         <p class="sec-head__sub">Projelerinizi 4 adımda teslim ediyoruz — saha keşfinden kalite testine kadar</p>
@@ -458,7 +458,7 @@ const faqItems = [
   <!-- ░░ MAKİNE PARKI SHOWCASE (OTOMOTİV TARZI) ░░ -->
   <section class="section makine-showcase">
     <div class="container">
-      <div class="sec-head text-center">
+      <div class="sec-head text-center reveal">
         <p class="eyebrow">Kendi Ekipmanımız</p>
         <h2>Kiralık Değil — Kendi Filomuza Güveniyoruz</h2>
         <p class="sec-head__sub">Soilmec, Casagrande, Bauer — 15+ modern iş makinesi sahada her an hazır. Model detaylarını inceleyin.</p>
@@ -641,13 +641,13 @@ const faqItems = [
   <!-- ░░ BLOG ░░ -->
   <section class="section section--alt">
     <div class="container">
-      <div class="sec-head text-center">
+      <div class="sec-head text-center reveal">
         <p class="eyebrow">Teknik Blog</p>
         <h2>Zemin Mühendisliği Bilgi Merkezi</h2>
       </div>
       <div class="blog-grid">
         {blogPosts.map((post) => (
-          <article class="blog-card">
+          <article class="blog-card reveal">
             <a href={`/blog/${post.slug}/`} class="blog-card__img">
               <img src={post.image} alt={post.title} loading="lazy" width="480" height="300" />
               <span class="blog-card__cat">{post.category}</span>
