@@ -29,6 +29,30 @@
   --color-cream:        #fafaf7;
   --t-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
+  /* === Premium V2.1 — Karakter Katmanı (Part A: altyapı) === */
+
+  /* Terracotta accent — teknik vurgu, toprak teması */
+  --color-earth:        #b5532b;
+  --color-earth-light:  #d77a52;
+  --color-earth-dark:   #8f3f1d;
+  --color-earth-10:     rgba(181, 83, 43, 0.1);
+
+  /* Nötr gri palet — ara tonlar */
+  --color-gray-50:      #fafaf7;
+  --color-gray-100:     #f0f0eb;
+  --color-gray-200:     #e2e0db;
+  --color-gray-300:     #c8c5be;
+  --color-gray-400:     #9a968d;
+  --color-gray-500:     #6b6860;
+  --color-gray-600:     #4a4842;
+  --color-gray-700:     #333333;
+  --color-gray-800:     #1f1f1d;
+  --color-gray-900:     #0f0f0e;
+
+  /* Serif font — Part B'de H1-H3'e uygulanacak */
+  --font-serif:         'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display:       var(--font-serif);
+
   /* === Spacing (8px) === */
   --s-1: 0.25rem;
   --s-2: 0.5rem;
@@ -42,6 +66,11 @@
   --s-16: 4rem;
   --s-20: 5rem;
   --s-24: 6rem;
+  --s-32: 8rem;
+  --s-40: 10rem;
+  --s-48: 12rem;
+  --section-y:    clamp(5rem, 10vw, 8rem);
+  --section-y-lg: clamp(6rem, 12vw, 10rem);
 
   /* === Tipografi === */
   --font: 'Inter', system-ui, -apple-system, sans-serif;
@@ -67,15 +96,24 @@
   --r-md: 8px;
   --r-lg: 12px;
   --r-xl: 16px;
+  --r-engineering: 2px;
 
   /* === Shadow === */
-  --shadow-sm: 0 1px 3px rgba(0,33,71,0.06);
-  --shadow-md: 0 4px 14px rgba(0,33,71,0.1);
-  --shadow-lg: 0 8px 32px rgba(0,33,71,0.12);
+  --shadow-xs:   0 1px 2px rgba(0, 33, 71, 0.04);
+  --shadow-sm:   0 2px 4px rgba(0, 33, 71, 0.06), 0 1px 2px rgba(0, 33, 71, 0.04);
+  --shadow-md:   0 4px 12px rgba(0, 33, 71, 0.08), 0 2px 4px rgba(0, 33, 71, 0.04);
+  --shadow-lg:   0 12px 32px rgba(0, 33, 71, 0.12), 0 4px 12px rgba(0, 33, 71, 0.06);
+  --shadow-xl:   0 24px 64px rgba(0, 33, 71, 0.15), 0 8px 20px rgba(0, 33, 71, 0.08);
+  --shadow-gold: 0 8px 24px rgba(212, 175, 55, 0.25);
 
   /* === Transition === */
   --t-fast: 150ms ease;
   --t-base: 250ms ease;
+
+  /* Blueprint grid — teknik sayfalar için background-image */
+  --pattern-blueprint:
+    linear-gradient(rgba(29, 110, 165, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 110, 165, 0.04) 1px, transparent 1px);
 }
 
 /* === Reset === */
