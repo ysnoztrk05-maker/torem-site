@@ -152,32 +152,37 @@ const faqItems = [
     <div class="logos-track" style="-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
       <div class="logos-inner" aria-hidden="true">
         {[
-          { name: 'Rönesans',     src: '/images/logos/ronesans.png'     },
-          { name: 'TOKİ',         src: '/images/logos/toki.png'         },
-          { name: 'İBB',          src: '/images/logos/ibb.png'          },
-          { name: 'Kolin',        src: '/images/logos/kolin.png'        },
-          { name: 'Emlak Konut',  src: '/images/logos/emlak-konut.png'  },
-          { name: 'Fernas',       src: '/images/logos/fernas.png'       },
-          { name: 'Smart',        src: '/images/logos/smart.png'        },
-          { name: 'Doğuş',        src: '/images/logos/dogus.png'        },
-          { name: 'Rönesans',     src: '/images/logos/ronesans.png'     },
-          { name: 'TOKİ',         src: '/images/logos/toki.png'         },
-          { name: 'İBB',          src: '/images/logos/ibb.png'          },
-          { name: 'Kolin',        src: '/images/logos/kolin.png'        },
-          { name: 'Emlak Konut',  src: '/images/logos/emlak-konut.png'  },
-          { name: 'Fernas',       src: '/images/logos/fernas.png'       },
-          { name: 'Smart',        src: '/images/logos/smart.png'        },
-          { name: 'Doğuş',        src: '/images/logos/dogus.png'        },
+          { name: 'Rönesans',     slug: 'ronesans'     },
+          { name: 'TOKİ',         slug: 'toki'         },
+          { name: 'İBB',          slug: 'ibb'          },
+          { name: 'Kolin',        slug: 'kolin'        },
+          { name: 'Emlak Konut',  slug: 'emlak-konut'  },
+          { name: 'Fernas',       slug: 'fernas'       },
+          { name: 'Smart',        slug: 'smart'        },
+          { name: 'Doğuş',        slug: 'dogus'        },
+          { name: 'Rönesans',     slug: 'ronesans'     },
+          { name: 'TOKİ',         slug: 'toki'         },
+          { name: 'İBB',          slug: 'ibb'          },
+          { name: 'Kolin',        slug: 'kolin'        },
+          { name: 'Emlak Konut',  slug: 'emlak-konut'  },
+          { name: 'Fernas',       slug: 'fernas'       },
+          { name: 'Smart',        slug: 'smart'        },
+          { name: 'Doğuş',        slug: 'dogus'        },
         ].map((logo) => (
           <div class="logo-item">
-            <img
-              src={logo.src}
-              alt={logo.name + ' — Torem Zemin referans müşteri'}
-              loading="lazy"
-              width="120"
-              height="40"
-              style="object-fit:contain; max-height:40px; width:auto;"
-            />
+            <picture>
+              <source srcset={`/images/logos/${logo.slug}.avif`} type="image/avif" />
+              <source srcset={`/images/logos/${logo.slug}.webp`} type="image/webp" />
+              <img
+                src={`/images/logos/${logo.slug}.png`}
+                alt={`${logo.name} — Torem Zemin referans müşteri`}
+                loading="lazy"
+                decoding="async"
+                width="120"
+                height="40"
+                style="object-fit:contain; max-height:40px; width:auto;"
+              />
+            </picture>
           </div>
         ))}
       </div>
@@ -1752,25 +1757,45 @@ const faqItems = [
     });
   }
 
-  // -- Nasıl Çalışıyoruz Scroll Animation (Adım 3 JS) --
+  // -- Nasıl Çalışıyoruz Scroll Animation (Adım 3 JS, rAF batched) --
   function initProcessScroll() {
     const processSteps = document.getElementById('processSteps');
     if (!processSteps) return;
 
-    const updateScroll = () => {
+    let ticking = false;
+    let isVisible = false;
+
+    const compute = () => {
       const rect = processSteps.getBoundingClientRect();
       const windowH = window.innerHeight;
-      
-      let progress = (windowH - rect.top) / (windowH + rect.height);
-      // Map to 0.25 -> 0.75 range for a slightly longer animation window
-      let mapped = (progress - 0.25) / 0.5;
-      
-      processSteps.style.setProperty('--scroll-progress', Math.max(0, Math.min(1, mapped)) * 100);
+      const progress = (windowH - rect.top) / (windowH + rect.height);
+      const mapped = (progress - 0.25) / 0.5;
+      processSteps.style.setProperty(
+        '--scroll-progress',
+        Math.max(0, Math.min(1, mapped)) * 100
+      );
+      ticking = false;
     };
 
-    window.addEventListener('scroll', updateScroll, {passive: true});
-    window.addEventListener('resize', updateScroll, {passive: true});
-    updateScroll();
+    const onScroll = () => {
+      if (!isVisible) return;
+      if (!ticking) {
+        requestAnimationFrame(compute);
+        ticking = true;
+      }
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        isVisible = entries[0].isIntersecting;
+        if (isVisible) onScroll();
+      },
+      { rootMargin: '100px 0px' }
+    );
+    io.observe(processSteps);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
   }
   
   // Run scripts

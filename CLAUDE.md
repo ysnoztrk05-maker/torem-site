@@ -5,7 +5,7 @@ Bu dosyayı her oturumda oku. Tüm kararlarını buna göre ver.
 ## ⛔ İZOLASYON KURALI — KRİTİK
 Bu proje **Astro statik site** projesidir.
 - SADECE `scratch/torem-site/` klasöründe çalış
-- `scratch/torem-zemin-2026/` klasörüne DOKUNMA (ayrı WordPress projesi)
+- `scratch/torem-ze2026/` min-klasörüne DOKUNMA (ayrı WordPress projesi)
 - `scratch/fore-kazik/`, `scratch/jet-grout/` vb. içerik klasörlerine DOKUNMA
 - Bu kuralı hiçbir koşulda geçersiz sayma
 
@@ -142,7 +142,76 @@ Sprint 5  ⏳ Domain yönlendirme (toremzemin.com)
 
 ---
 
-## 8. Proje Kuralları
+## 8. Görsel Optimizasyon Standardı (Zorunlu)
+
+Bu site Lighthouse skorlarını premium seviyede tutar (masaüstü ≥ 95, mobil ≥ 85). Her yeni görsel ve asset bu standarda uymak zorundadır.
+
+### 8.1 Görsel Format Kuralı
+
+Her raster görsel (png, jpg) için 3 format birlikte sunulur:
+- `.avif` (quality 55, en küçük)
+- `.webp` (quality 82, modern fallback)
+- `.png` veya `.jpg` (legacy fallback)
+
+Üretim komutu: `node scripts/convert-images.mjs`
+
+`TARGETS` array'ine yeni klasör ekleyerek dönüşümü otomatikleştir.
+
+### 8.2 `<img>` Etiketi Kuralları
+
+Her `<img>` şunları içermek zorunda:
+- `width` ve `height` attribute (intrinsic, CLS için)
+- `alt` (açıklayıcı, SEO + erişilebilirlik)
+- `loading="lazy"` (hero/above-fold hariç)
+- `decoding="async"`
+
+Hero / LCP adayı görsellerde ayrıca: `fetchpriority="high"` + `BaseLayout heroPreload` prop ile preload link.
+
+### 8.3 `<picture>` Kuralı
+
+Modern format sunumu için `<picture>` zorunlu:
+
+```astro
+<picture>
+  <source srcset="/images/foo.avif" type="image/avif" />
+  <source srcset="/images/foo.webp" type="image/webp" />
+  <img src="/images/foo.png" alt="..." width="..." height="..." loading="lazy" decoding="async" />
+</picture>
+```
+
+### 8.4 CSS Background Kuralı
+
+`background-image: url()` tek başına YASAK. `image-set()` zorunlu:
+
+```css
+background-image:
+  linear-gradient(...),
+  image-set(
+    url('/images/hero.avif') type('image/avif'),
+    url('/images/hero.webp') type('image/webp'),
+    url('/images/hero.png')  type('image/png')
+  );
+```
+
+### 8.5 CSS Inline Stratejisi
+
+`astro.config.mjs` içinde `build.inlineStylesheets: 'always'` aktif. Bu ayarı değiştirme. Büyük CSS (>15 KB) eklersen ayrı CSS dosyası tercih et ve bu ayarı yeniden değerlendir.
+
+### 8.6 JS Scroll Performansı
+
+DOM okuma + yazma yapan scroll/resize listener'ları `requestAnimationFrame` ile batch'le. Viewport dışı elementler için `IntersectionObserver` gating ekle.
+
+### 8.7 Yeni İçerik Production Checklist
+
+- [ ] Tüm görseller `<picture>` + AVIF/WebP/PNG
+- [ ] `<img>` width + height + alt + loading + decoding tam
+- [ ] CSS background varsa `image-set()` kullanılmış
+- [ ] Lighthouse mobil Performance ≥ 80+
+- [ ] CLS < 0.1
+
+---
+
+## 9. Proje Kuralları
 
 - **Dil:** Türkçe. `lang="tr"`, `charset="UTF-8"`
 - **Layout:** Her sayfa `<BaseLayout>` içinde
@@ -154,7 +223,7 @@ Sprint 5  ⏳ Domain yönlendirme (toremzemin.com)
 
 ---
 
-## 9. İletişim & CTA
+## 10. İletişim & CTA
 
 ```
 Tel 1: +90 531 659 46 36  →  tel:+905316594636
@@ -166,7 +235,7 @@ WhatsApp: wa.me/905316594636
 
 ---
 
-## 10. Makine Parkı
+## 11. Makine Parkı
 
 Gerçek makineler (Torem'in kendi ekipmanları):
 - Soilmec SR-40 (fore kazık)
@@ -180,7 +249,7 @@ Görseller: `public/images/makineler/` klasöründe.
 
 ---
 
-## 11. Görsel Arşivi
+## 12. Görsel Arşivi
 
 ```
 C:\Users\Lenovo\OneDrive\Masaüstü\torem-website-foto\
@@ -197,7 +266,7 @@ C:\Users\Lenovo\OneDrive\Masaüstü\torem-website-foto\
 
 ---
 
-## 12. Deploy
+## 13. Deploy
 
 - **Platform:** Vercel
 - **Repo:** GitHub → ysnoztrk05-maker/torem-site
@@ -206,7 +275,7 @@ C:\Users\Lenovo\OneDrive\Masaüstü\torem-website-foto\
 
 ---
 
-## 13. SEO İçerik Pipeline
+## 14. SEO İçerik Pipeline
 
 Workflow'lar: `../seo-agent/.agent/workflows/`
 
@@ -225,7 +294,7 @@ Workflow'lar: `../seo-agent/.agent/workflows/`
 
 ---
 
-## 14. Sosyal Medya Modülü
+## 15. Sosyal Medya Modülü
 
 Workflow: `../seo-agent/.agent/workflows/sosyal-medya-icerik.md`
 
@@ -251,7 +320,7 @@ Workflow: `../seo-agent/.agent/workflows/sosyal-medya-icerik.md`
 
 ---
 
-## 15. Slash Komutları
+## 16. Slash Komutları
 
 ```
 /seo-icerik [slug]        → Tam SEO pipeline (8 agent)
