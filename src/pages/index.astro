@@ -30,6 +30,7 @@ const faqItems = [
 <BaseLayout
   title="Zemin Mühendisliği ve Geoteknik Çözümler | Torem Zemin"
   description="13+ yıllık deneyimle fore kazık, jet grout, ankraj ve zemin iyileştirme projeleri. İstanbul merkezli, Türkiye geneli geoteknik mühendislik hizmetleri."
+  heroPreload="/images/hero-sunset-1.webp"
 >
 
   <!-- ░░ HERO ░░ -->
@@ -935,17 +936,29 @@ const faqItems = [
 .hero-slide--1 {
   background-image:
     linear-gradient(135deg, rgba(0,21,48,.52) 0%, rgba(0,21,48,.18) 55%, rgba(0,21,48,.45) 100%),
-    url('/images/hero-sunset-1.png');
+    image-set(
+      url('/images/hero-sunset-1.avif') type('image/avif'),
+      url('/images/hero-sunset-1.webp') type('image/webp'),
+      url('/images/hero-sunset-1.png') type('image/png')
+    );
 }
 .hero-slide--2 {
   background-image:
     linear-gradient(135deg, rgba(0,21,48,.52) 0%, rgba(0,21,48,.18) 55%, rgba(0,21,48,.45) 100%),
-    url('/images/hero-sunset-2.png');
+    image-set(
+      url('/images/hero-sunset-2.avif') type('image/avif'),
+      url('/images/hero-sunset-2.webp') type('image/webp'),
+      url('/images/hero-sunset-2.png') type('image/png')
+    );
 }
 .hero-slide--3 {
   background-image:
     linear-gradient(135deg, rgba(0,21,48,.52) 0%, rgba(0,21,48,.18) 55%, rgba(0,21,48,.45) 100%),
-    url('/images/hero-sunset-3.png');
+    image-set(
+      url('/images/hero-sunset-3.avif') type('image/avif'),
+      url('/images/hero-sunset-3.webp') type('image/webp'),
+      url('/images/hero-sunset-3.png') type('image/png')
+    );
 }
 
 .hero-slide.is-active {

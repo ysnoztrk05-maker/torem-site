@@ -10,6 +10,7 @@ export interface Props {
   ogType?: string;
   schema?: object | object[];
   noindex?: boolean;
+  heroPreload?: string;
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   ogType = 'website',
   schema,
   noindex = false,
+  heroPreload,
 } = Astro.props;
 
 const siteUrl = 'https://www.toremzemin.com';
@@ -90,6 +92,15 @@ const currentPath = Astro.url.pathname;
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  {heroPreload && (
+    <link
+      rel="preload"
+      as="image"
+      href={heroPreload}
+      type="image/webp"
+      fetchpriority="high"
+    />
+  )}
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&display=swap" />
   {schemas.map((s) => (
