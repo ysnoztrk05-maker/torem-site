@@ -278,14 +278,16 @@ strong { font-weight: 600; }
 .section--dark .btn--outline,
 .hero .btn--outline,
 .cta-box--footer .btn--outline,
-.cta-band .btn--outline {
+.cta-band .btn--outline,
+.nf-hero .btn--outline {
   color: var(--color-white);
   border-color: rgba(255, 255, 255, 0.6);
 }
 .section--dark .btn--outline:hover,
 .hero .btn--outline:hover,
 .cta-box--footer .btn--outline:hover,
-.cta-band .btn--outline:hover {
+.cta-band .btn--outline:hover,
+.nf-hero .btn--outline:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: var(--color-white);
   color: var(--color-white);
