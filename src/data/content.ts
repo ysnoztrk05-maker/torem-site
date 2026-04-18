@@ -21,7 +21,7 @@ export const stats = [
   { value: new Date().getFullYear() - sirket.kurulus, suffix: '+', label: 'Yıl Deneyim'        },
   { value: 350, suffix: '+', label: 'Tamamlanan Proje'   },
   { value: makineSayisi,                              suffix: '+', label: 'İş Makinesi'         },
-  { value: 100, suffix: '%', label: 'Müşteri Memnuniyeti'},
+  { value: sirket.memnuniyet, suffix: '%', label: 'Müşteri Memnuniyeti'},
 ];
 
 // ─── Hizmetler ────────────────────────────────────────────────────────────────

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
+import { sirket } from '../../data/sirket';
 
 const canonical = 'https://www.toremzemin.com/iletisim/';
 
@@ -185,7 +186,7 @@ const localBusinessSchema = {
   <section class="social-proof-strip">
     <div class="container social-proof-grid">
       <div class="sp-item"><span>350+</span> Tamamlanan Proje</div>
-      <div class="sp-item"><span>100%</span> Müşteri Memnuniyeti</div>
+      <div class="sp-item"><span>{sirket.memnuniyet}%</span> Müşteri Memnuniyeti</div>
       <div class="sp-item"><span>13+</span> Yıllık Deneyim</div>
     </div>
   </section>

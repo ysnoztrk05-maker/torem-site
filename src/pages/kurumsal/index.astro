@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABox from '../../components/CTABox.astro';
+import { sirket } from '../../data/sirket';
 
 const canonical = 'https://www.toremzemin.com/kurumsal/';
 
@@ -16,7 +17,7 @@ const stats = [
   { num: String(new Date().getFullYear() - 2013), suffix: '+', lbl: 'Yıl Deneyim'        },
   { num: '350', suffix: '+', lbl: 'Tamamlanan Proje'   },
   { num: '15',  suffix: '+', lbl: 'İş Makinesi'        },
-  { num: '100', suffix: '%', lbl: 'Müşteri Memnuniyeti'},
+  { num: String(sirket.memnuniyet), suffix: '%', lbl: 'Müşteri Memnuniyeti'},
 ];
 ---
 
