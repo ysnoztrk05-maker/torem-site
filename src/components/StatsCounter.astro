@@ -1,4 +1,6 @@
 ---
+import { sirket, makineSayisi } from '../data/sirket';
+
 export interface Stat {
   value: number;
   suffix?: string;
@@ -10,10 +12,10 @@ export interface Props {
 }
 
 const defaultStats: Stat[] = [
-  { value: new Date().getFullYear() - 2013, suffix: '+', label: 'Yıl Deneyim'        },
-  { value: 350, suffix: '+', label: 'Tamamlanan Proje'   },
-  { value: 15,  suffix: '+', label: 'İş Makinesi'        },
-  { value: 100, suffix: '%', label: 'Müşteri Memnuniyeti'},
+  { value: sirket.tamamlananProje, suffix: '+', label: 'Tamamlanan Proje'   },
+  { value: makineSayisi,           suffix: '',  label: 'İş Makinesi'        },
+  { value: sirket.deneyimYil,      suffix: '+', label: 'Yıl Deneyim'        },
+  { value: sirket.memnuniyet,      suffix: '%', label: 'Müşteri Memnuniyeti'},
 ];
 
 const { stats = defaultStats } = Astro.props;

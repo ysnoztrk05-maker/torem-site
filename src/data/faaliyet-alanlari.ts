@@ -377,7 +377,7 @@ export const teknikler: Teknik[] = [
     <li>Beton kalite kontrolü kritik — kusurlu betonlama riski</li>
   </ul></div>
 </div>
-<p>Torem Zemin Mühendislik olarak 20 yılı aşan tecrübemizle, her projede zemin koşullarına özel fore kazık çözümleri sunuyoruz. Projeniz için en uygun çap, derinlik ve imalat yöntemini belirlemek üzere <strong><a href="#iletisim">ücretsiz keşif randevusu</a></strong> alabilirsiniz.</p>
+<p>Torem Zemin Mühendislik olarak 13 yılı aşan tecrübemizle, her projede zemin koşullarına özel fore kazık çözümleri sunuyoruz. Projeniz için en uygun çap, derinlik ve imalat yöntemini belirlemek üzere <strong><a href="#iletisim">ücretsiz keşif randevusu</a></strong> alabilirsiniz.</p>
 <div class="cta-box">
 <strong>Projeniz İçin Ücretsiz Keşif Raporu Alın</strong>
 <p>Uzman mühendislerimiz sahanızı inceleyerek en uygun fore kazık çözümünü belirlesin.</p>
@@ -1373,11 +1373,11 @@ export const teknikler: Teknik[] = [
 <details class="faq-item"><summary>12. Yük testi zorunlu mu?</summary><p>Evet, TBDY 2018\'e göre her projede en az 1 adet statik veya dinamik yük testi zorunludur. Ayrıca tüm kazıklarda sağlamlık testi (CSL veya PIT) uygulanması yaygın uygulamadır.</p></details>
 
 <h2 id="torem-zemin-ile-fore-kazik-projelerinizde-guvenilir-cozum">Torem Zemin ile Fore Kazık Projelerinizde Güvenilir Çözüm</h2>
-<div class="highlight-box"><strong>Özet Cevap:</strong> Torem Zemin Mühendislik, 20 yılı aşan saha tecrübesiyle fore kazık projelendirme, imalat ve kalite kontrol hizmetleri sunmaktadır. Uzman kadromuz, keşiften teslimatına kadar tüm süreçlerde yanınızdadır.</div>
+<div class="highlight-box"><strong>Özet Cevap:</strong> Torem Zemin Mühendislik, 13 yılı aşan saha tecrübesiyle fore kazık projelendirme, imalat ve kalite kontrol hizmetleri sunmaktadır. Uzman kadromuz, keşiften teslimatına kadar tüm süreçlerde yanınızdadır.</div>
 <p>Torem Zemin Mühendislik olarak, Türkiye genelinde yüzlerce fore kazık projesini başarıyla tamamladık. <a href="/faaliyet-alanlari/zemin-iyilestirme/jet-grout/">Zemin iyileştirme</a>, <a href="/faaliyet-alanlari/iksa-sistemleri/ankrajli-fore-kazik/">iksa sistemleri</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/">öngermeli ankraj</a>, <a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/">zemin çivisi</a> ve <strong>kazıklı temeller</strong> dahil tüm geoteknik mühendislik çözümlerinde uzman kadromuzla hizmetinizdeyiz.</p>
 <p><strong>Neden Torem Zemin?</strong></p>
 <ul>
-<li>20+ yıl saha tecrübesi</li>
+<li>13+ yıl saha tecrübesi</li>
 <li>TBDY 2018 ve Eurocode 7 uyumlu tasarım</li>
 <li>Son teknoloji delgi ekipmanları (Bauer, Soilmec)</li>
 <li>Keşiften teslimata anahtar teslim hizmet</li>
@@ -3618,12 +3618,12 @@ export const teknikler: Teknik[] = [
     excerpt:'Geoteknik sorunlara uzman değerlendirmesi, ikinci görüş ve proje optimizasyonu hizmeti.',
     image:'/images/geoteknik-proje/teknik-danismanlik.jpg', heroImage:'/images/geoteknik-proje/teknik-danismanlik.jpg',
     badge: 'Uzman Hizmeti', badgeType: 'premium',
-    metrics: [{ label: 'Deneyim', value: '20+ yıl' }, { label: 'Hizmet', value: 'Uzaktan/Yerinde' }],
+    metrics: [{ label: 'Deneyim', value: '13+ yıl' }, { label: 'Hizmet', value: 'Uzaktan/Yerinde' }],
     comparison: { maxDerinlik: 'Proje bazlı', derinlikBar: 50, maliyetLabel: 'Düşük-Orta', maliyetBar: 30, suGecirimsizlik: 'Yok', kaliciKullanim: 'Evet' },
     content:`
       <div class="aeo-box">Teknik danışmanlık; mevcut veya planlanan geoteknik projelerde uzman mühendis değerlendirmesi, ikinci görüş, optimizasyon önerisi ve sorun çözme hizmeti sunulmasıdır.</div>
       <h2 id="nedir">Teknik Danışmanlık Nedir?</h2>
-      <p>Proje tasarımı inceleme, alternatif çözüm önerisi, maliyet optimizasyonu, anlaşmazlık çözümü ve uzman görüşü raporları kapsamında hizmet verilir. 20+ yıllık saha deneyimiyle desteklenen pragmatik çözümler sunulur.</p>
+      <p>Proje tasarımı inceleme, alternatif çözüm önerisi, maliyet optimizasyonu, anlaşmazlık çözümü ve uzman görüşü raporları kapsamında hizmet verilir. 13+ yıllık saha deneyimiyle desteklenen pragmatik çözümler sunulur.</p>
       <h2 id="kapsam">Hizmet Kapsamı</h2>
       <ul><li>Mevcut proje inceleme ve ikinci görüş</li><li>Alternatif çözüm ve maliyet optimizasyonu</li><li>Zemin sorunları uzman değerlendirmesi</li><li>Teknik bilirkişi ve hakemlik hizmeti</li></ul>`,
     faq:[

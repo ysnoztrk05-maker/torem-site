@@ -99,9 +99,14 @@ const faqItems = [
     <div class="hero-content container">
       <p class="hero-eyebrow"><span>Türkiye'nin Güvenilir Geoteknik Ortağı</span></p>
 
-      <h1 class="hero-title" id="heroTitle"></h1>
+      <h1 class="hero-title" id="heroTitle">
+        Zorlu Zeminde,<br>
+        <span class="hero-title__accent">sağlam temeller</span>
+      </h1>
 
-      <p class="hero-sub" id="heroSub"></p>
+      <p class="hero-sub" id="heroSub">
+        13 yıl, 350+ proje, kendi makine parkı. Fore kazıktan jet grouta — Türkiye'nin en karmaşık zeminlerinde mühendislik güvencesi.
+      </p>
 
       <div class="hero-cta">
         <a id="heroCta" href="/iletisim/" class="btn btn--primary btn--hero-primary">
@@ -1091,6 +1096,11 @@ const faqItems = [
   margin-bottom: 1.4rem;
   letter-spacing: -.02em;
   max-width: 680px;
+}
+.hero-title__accent {
+  color: var(--color-highlight);
+  font-style: normal;
+  display: inline-block;
 }
 .hero-title .word {
   display: inline-block;

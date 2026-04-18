@@ -6,8 +6,14 @@ export const sirket = {
   kurulus: 2013,
   deneyimYil: new Date().getFullYear() - 2013, // otomatik hesaplanır
   telefon: '+90 531 659 46 36',
+  telefon2: '+90 216 379 33 10',
+  whatsapp: '905316594636',
   email: 'info@toremzemin.com',
+  kvkkEmail: 'kvkk@toremzemin.com',
   adres: 'Pendik, İstanbul',
+  hizmetAgiIl: 81,         // Türkiye genelinde 81 ilde HİZMET AĞI — proje rakamı DEĞİL
+  memnuniyet: 98,          // %98 müşteri memnuniyeti
+  tamamlananProje: 350,    // sayı değer, "350+" görsel kullanımda
   vergiNo: '',
 } as const;
 
@@ -38,19 +44,24 @@ export const makineSayisi = makineler.length; // otomatik — elle yazma
 // Bu değerler hero stat kartlarına, footer'a, "Hakkımızda" sayfasına gider
 export const heroStats = [
   {
-    deger: '350+',
+    deger: `${sirket.tamamlananProje}+`,
     etiket: 'Tamamlanan Proje',
     aciklama: 'Referans sayfasından doğrulandı',
   },
   {
-    deger: `${makineSayisi}`,    // makineler[] dizisinden otomatik — şu an 15
+    deger: `${makineSayisi}`,
     etiket: 'İş Makinesi',
     aciklama: 'Makine parkuru listesinden otomatik sayılır',
   },
   {
-    deger: `${sirket.deneyimYil} Yıl`,
-    etiket: 'Sektör Deneyimi',
+    deger: `${sirket.deneyimYil}+`,
+    etiket: 'Yıl Deneyim',
     aciklama: `${sirket.kurulus} kuruluş, otomatik hesaplanır`,
+  },
+  {
+    deger: `${sirket.memnuniyet}%`,
+    etiket: 'Müşteri Memnuniyeti',
+    aciklama: 'Proje sonu memnuniyet anketi ortalaması',
   },
 ] as const;
 
