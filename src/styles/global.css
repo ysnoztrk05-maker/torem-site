@@ -132,20 +132,55 @@ a { color: inherit; text-decoration: none; }
 button { cursor: pointer; background: none; border: none; font: inherit; }
 ul, ol { list-style: none; }
 
-/* === Tipografi === */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font);
-  color: var(--color-primary);
-  line-height: 1.25;
+/* ============================================
+   Premium V2.1 — Tipografi Sistemi
+   H1-H3 → Fraunces serif (editöriyel otorite)
+   H4-H6 → Inter sans (teknik/kurumsal)
+   ============================================ */
+
+h1, h2, h3, .display, .h-serif {
+  font-family: var(--font-serif);
   font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--color-primary);
   text-wrap: balance;
 }
 h1 { font-size: var(--text-5xl); }
 h2 { font-size: var(--text-4xl); }
-h3 { font-size: var(--text-3xl); }
+h3 { font-size: var(--text-3xl); line-height: 1.2; }
+
+h4, h5, h6 {
+  font-family: var(--font);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--color-primary);
+  text-wrap: balance;
+}
 h4 { font-size: var(--text-2xl); }
-p  { margin-bottom: var(--s-4); }
+h5 { font-size: var(--text-xl); }
+h6 { font-size: var(--text-lg); }
+
+/* Fraunces italik accent — H1 veya H2 içinde <span class="accent"> */
+.accent {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-highlight);
+}
+
+p  { margin-bottom: var(--s-4); font-family: var(--font); line-height: 1.7; }
 strong { font-weight: 600; }
+
+/* Koyu arka plan üzerinde başlık — beyaz override */
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark h4,
+.section--dark h5,
+.section--dark h6 {
+  color: var(--color-white);
+}
 
 /* === Yardımcı sınıflar === */
 .container {
@@ -154,45 +189,123 @@ strong { font-weight: 600; }
   margin-inline: auto;
   padding-inline: var(--s-6);
 }
-.section { padding-block: var(--s-20); }
+/* ============================================
+   Premium V2.1 — Section Sistemi
+   Cömert padding, renk/pattern varyantları
+   ============================================ */
+
+.section { padding-block: var(--section-y); }
+.section--lg { padding-block: var(--section-y-lg); }
+.section--tight { padding-block: var(--s-12); }
 .section--alt { background-color: var(--color-bg-alt); }
+.section--cream { background-color: var(--color-bg); }
+.section--cream-alt { background-color: var(--color-bg-alt); }
 .section--dark { background-color: var(--color-primary); color: var(--color-white); }
-.section--dark h2, .section--dark h3 { color: var(--color-white); }
+.section--navy-dark { background-color: var(--color-navy-dark); color: var(--color-white); }
+.section--blueprint {
+  background-color: var(--color-white);
+  background-image: var(--pattern-blueprint);
+  background-size: 40px 40px;
+}
 
 .text-center { text-align: center; }
 .text-muted   { color: var(--color-text-muted); }
 .text-highlight { color: var(--color-highlight); }
 
-/* === Butonlar === */
+/* ============================================
+   Premium V2.1 — Buton Sistemi
+   Context-aware: .btn--outline koyu/açık zemine göre adapt
+   ============================================ */
+
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: var(--s-2);
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--r-md);
+  padding: 0.875rem 1.75rem;
+  font-family: var(--font);
   font-weight: 600;
   font-size: var(--text-base);
-  transition: opacity var(--t-fast), transform var(--t-fast), background var(--t-base);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  border-radius: var(--r-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--t-smooth);
   white-space: nowrap;
+  position: relative;
 }
-.btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* Primary — gold CTA */
 .btn--primary {
   background: var(--color-highlight);
-  color: #1a1400;
+  color: var(--color-navy-dark);
+  box-shadow: var(--shadow-md);
 }
+.btn--primary:hover {
+  background: var(--color-gold-dark);
+  color: var(--color-navy-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-gold);
+}
+
+/* Secondary — navy solid, beyaz text */
+.btn--secondary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+.btn--secondary:hover {
+  background: var(--color-navy-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Outline — AÇIK ZEMİN için default (navy border + navy text) */
 .btn--outline {
   background: transparent;
-  color: var(--color-white);
-  border: 2px solid rgba(255,255,255,0.6);
-}
-.btn--outline:hover { border-color: var(--color-white); }
-.btn--ghost {
-  background: transparent;
   color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border-color: var(--color-primary);
 }
-.btn--lg { padding: 1rem 2.25rem; font-size: var(--text-lg); }
-.btn--sm { padding: 0.5rem 1.25rem; font-size: var(--text-sm); }
+.btn--outline:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Outline — KOYU ZEMİN override */
+.section--dark .btn--outline,
+.hero .btn--outline,
+.cta-box--footer .btn--outline,
+.cta-band .btn--outline {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+.section--dark .btn--outline:hover,
+.hero .btn--outline:hover,
+.cta-box--footer .btn--outline:hover,
+.cta-band .btn--outline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* Ghost — koyu zemin için (yarı-şeffaf) */
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Boy varyantları */
+.btn--lg { padding: 1.125rem 2.25rem; font-size: var(--text-lg); }
+.btn--sm { padding: 0.625rem 1.25rem; font-size: var(--text-sm); }
 
 /* === Breadcrumb === */
 .breadcrumb { padding-block: var(--s-4); background: var(--color-bg-alt); }
@@ -359,22 +472,115 @@ strong { font-weight: 600; }
   margin-bottom: var(--s-5);
 }
 
-/* Eyebrow (genel) */
+/* ============================================
+   Premium V2.1 — Eyebrow
+   Section üstü küçük vurgu metni
+   ============================================ */
+
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font);
   font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+  margin-bottom: var(--s-4);
+}
+
+.eyebrow--sm {
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  margin-bottom: var(--s-2);
+}
+
+.eyebrow--with-line::before {
+  content: '';
+  width: 36px;
+  height: 2px;
+  background: currentColor;
+}
+
+.eyebrow--gold {
+  background: var(--color-highlight);
+  color: var(--color-white);
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+}
+
+/* Mono font — sayı, kod, microstat */
+.mono,
+code,
+.card-num,
+.microstat {
+  font-family: var(--font-mono);
+  font-feature-settings: "tnum" 1;
+}
+
+/* Microstat — kart içi küçük rakam rozeti */
+.microstat {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  background: var(--color-highlight-10);
+  color: var(--color-gold-dark);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: var(--r-sm);
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   Premium V2.1 — Card Sistemi
+   ============================================ */
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--r-lg);
+  padding: var(--s-6);
+  transition: var(--t-smooth);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(212, 175, 55, 0.25);
+}
+
+/* Teknik kart — keskin köşe, sol gold çizgi */
+.card--technical {
+  border-radius: var(--r-engineering);
+  border-left: 3px solid var(--color-highlight);
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-bg) 100%);
+}
+
+.card__number {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
   font-weight: 700;
   color: var(--color-highlight);
-  text-transform: uppercase;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--s-4);
+}
+
+.card__title {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
   margin-bottom: var(--s-3);
 }
-.eyebrow-sm {
-  font-size: var(--text-xs);
-  font-weight: 700;
-  color: var(--color-highlight);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  margin-bottom: var(--s-2);
+
+.card__body {
+  font-family: var(--font);
+  color: var(--color-text);
+  line-height: 1.7;
+  margin-bottom: var(--s-4);
 }
 
 @media (max-width: 640px) {

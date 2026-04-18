@@ -115,7 +115,7 @@ Sprint 5  ⏳ Domain yönlendirme (toremzemin.com)
 
 ---
 
-## 7. Renk Paleti — Premium V2.0 (Navy & Gold)
+## 7. Renk Paleti — Premium V2.1 (Navy & Gold + Terracotta)
 
 **Tek gerçek kaynak:** `src/styles/global.css` `:root` bloku.
 
@@ -133,12 +133,54 @@ Sprint 5  ⏳ Domain yönlendirme (toremzemin.com)
 --color-white:        #FFFFFF;
 ```
 
+**V2.1 — Terracotta (teknik vurgu)**
+```css
+--color-earth:        #b5532b;   /* toprak — teknik accent, ikon */
+--color-earth-light:  #d77a52;
+--color-earth-dark:   #8f3f1d;
+```
+Earth (terracotta) sadece teknik vurgu: ikon arka plan, kart sol çizgi, technical kart accent. Semantic yeşil/kırmızı yerine kullanma.
+
 **Kullanım kuralı:**
 - `.astro` `<style>` blokları → `var(--color-*)`
 - `.astro` inline SVG fill/stroke → yeni hex değer
 - `.ts` template literal SVG → yeni hex değer
 
 **YASAK:** `#1B2B3A`, `#C8873A`, `#2E5077`, `#4A7FA5`, `#F5F2ED`, `#cfa856`
+
+---
+
+## 7b. Tipografi — Premium V2.1
+
+**Tek gerçek kaynak:** `src/styles/global.css` `:root` bloku + `BaseLayout.astro` Google Fonts linki.
+
+```css
+--font:        'Inter', system-ui, sans-serif;          /* gövde */
+--font-serif:  'Fraunces', Georgia, serif;              /* H1-H2-H3 */
+--font-mono:   'Consolas', 'Monaco', monospace;         /* sayı, kod, microstat */
+```
+
+**Kullanım kuralı:**
+
+| Eleman | Font |
+|---|---|
+| H1, H2, H3, `.display` | Fraunces (serif) |
+| H4, H5, H6 | Inter (sans, weight 700) |
+| Paragraf, liste, buton, form | Inter |
+| Sayı, kod, microstat, `.mono` | Consolas |
+| `.eyebrow` | Inter 600, uppercase, letter-spacing 0.15em |
+| `.accent` (H1/H2 içi italik) | Fraunces italic 500 + gold |
+
+**YASAK:**
+- Başlıklarda sans-serif, paragraflarda serif
+- Gradient text
+- 5+ farklı font
+- Fraunces 400 italic (yüklü değil — swap'te fallback italic'e düşer)
+
+**Font loading:**
+- `display=swap` (FOUT kabul, FOIT yasak)
+- `preconnect` + Inter için `preload as="style"`
+- Fraunces swap'le gelir — hero H1 ilk anda Inter'de görünür, sonra serif'e geçer (kabul edilebilir)
 
 ---
 
@@ -220,6 +262,10 @@ DOM okuma + yazma yapan scroll/resize listener'ları `requestAnimationFrame` ile
 - **Gradient text** YASAK. Glassmorphism YASAK
 - **Görseller:** `alt`, `loading="lazy"`, `width/height` zorunlu
 - **SEO:** `<title>` ≤60ch, `<meta description>` ≤155ch, canonical, OG tags, JSON-LD
+- **Font kullanımı:** H1-H2-H3 Fraunces, diğer tüm metin Inter. Değişiklik YASAK.
+- **Italik accent:** Sadece H1/H2 içinde `<span class="accent">...</span>` ile. Gold renk, Fraunces italik.
+- **Earth (terracotta):** Sadece teknik vurgu — ikon arka plan, kart sol çizgi, technical kart accent. Semantic yeşil/kırmızı yerine kullanma.
+- **Buton sistemi:** `.btn--outline` context-aware — açık zemin için navy default, `.section--dark` / `.hero` / `.cta-box--footer` / `.cta-band` içinde beyaz override. Manuel override yazma.
 
 ---
 
