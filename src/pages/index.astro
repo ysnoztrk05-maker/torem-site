@@ -39,16 +39,16 @@ const faqItems = [
     <!-- Slide Backgrounds -->
     <div class="hero-slides">
       <div class="hero-slide hero-slide--1 is-active">
-        <img src="/images/hero-sunset-1.avif" alt="" width="1920" height="1080"
-             fetchpriority="high" decoding="sync" class="hero-slide__img" />
+        <img src="/images/hero-sunset-1.avif" alt="" width="1024" height="1024"
+             fetchpriority="high" decoding="async" class="hero-slide__img" />
       </div>
       <div class="hero-slide hero-slide--2">
-        <img src="/images/hero-sunset-2.avif" alt="" width="1920" height="1080"
-             loading="lazy" decoding="async" class="hero-slide__img" />
+        <img data-src="/images/hero-sunset-2.avif" alt="" width="1024" height="1024"
+             decoding="async" class="hero-slide__img" />
       </div>
       <div class="hero-slide hero-slide--3">
-        <img src="/images/hero-sunset-3.avif" alt="" width="1920" height="1080"
-             loading="lazy" decoding="async" class="hero-slide__img" />
+        <img data-src="/images/hero-sunset-3.avif" alt="" width="1024" height="1024"
+             decoding="async" class="hero-slide__img" />
       </div>
     </div>
 
@@ -842,6 +842,12 @@ const faqItems = [
     current = next;
     const prevEl = slideEls[prev];
     const nextEl = slideEls[next];
+    // Slayt görselini ilk kez gösterilmeden önce yükle
+    const nextImg = nextEl.querySelector('.hero-slide__img');
+    if (nextImg && nextImg.dataset.src) {
+      nextImg.src = nextImg.dataset.src;
+      delete nextImg.dataset.src;
+    }
     prevEl.classList.remove('is-active', 'wipe-in');
     prevEl.classList.add('wipe-out');
     prevEl.addEventListener('animationend', () => {
