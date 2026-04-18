@@ -416,35 +416,35 @@ export const teknikler: Teknik[] = [
   </defs>
 
   <!-- Arka plan -->
-  <rect width="700" height="900" fill="#F5F2ED"/>
+  <rect width="700" height="900" fill="#fafaf7"/>
 
   <!-- Başlık -->
-  <rect x="0" y="0" width="700" height="70" fill="#1B2B3A"/>
+  <rect x="0" y="0" width="700" height="70" fill="#002147"/>
   <text x="350" y="28" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Fore Kazık Anatomisi</text>
   <text x="350" y="52" text-anchor="middle" fill="#d4af37" font-family="Arial, sans-serif" font-size="14">Dikey Kesit Diyagramı — Ø80cm / 20m Derinlik</text>
 
   <!-- Zemin yüzeyi çizgisi -->
-  <line x1="80" y1="150" x2="620" y2="150" stroke="#1B2B3A" stroke-width="2" stroke-dasharray="8,4"/>
-  <text x="635" y="155" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">± 0.00</text>
+  <line x1="80" y1="150" x2="620" y2="150" stroke="#002147" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="635" y="155" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">± 0.00</text>
 
   <!-- Zemin Katmanları -->
   <!-- Dolgu 2m (150-230) -->
   <rect x="80" y="150" width="220" height="80" fill="url(#dots)"/>
   <rect x="400" y="150" width="220" height="80" fill="url(#dots)"/>
-  <rect x="80" y="150" width="220" height="80" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
-  <rect x="400" y="150" width="220" height="80" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+  <rect x="80" y="150" width="220" height="80" fill="none" stroke="#002147" stroke-width="0.5"/>
+  <rect x="400" y="150" width="220" height="80" fill="none" stroke="#002147" stroke-width="0.5"/>
 
   <!-- Kil 5m (230-430) -->
   <rect x="80" y="230" width="220" height="200" fill="url(#clay)"/>
   <rect x="400" y="230" width="220" height="200" fill="url(#clay)"/>
-  <rect x="80" y="230" width="220" height="200" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
-  <rect x="400" y="230" width="220" height="200" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+  <rect x="80" y="230" width="220" height="200" fill="none" stroke="#002147" stroke-width="0.5"/>
+  <rect x="400" y="230" width="220" height="200" fill="none" stroke="#002147" stroke-width="0.5"/>
 
   <!-- Kum 8m (430-750) -->
   <rect x="80" y="430" width="220" height="320" fill="url(#sand)"/>
   <rect x="400" y="430" width="220" height="320" fill="url(#sand)"/>
-  <rect x="80" y="430" width="220" height="320" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
-  <rect x="400" y="430" width="220" height="320" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+  <rect x="80" y="430" width="220" height="320" fill="none" stroke="#002147" stroke-width="0.5"/>
+  <rect x="400" y="430" width="220" height="320" fill="none" stroke="#002147" stroke-width="0.5"/>
 
   <!-- Çakıl 3m (750-870) -->
   <rect x="80" y="750" width="220" height="50" fill="url(#gravel)"/>
@@ -452,41 +452,41 @@ export const teknikler: Teknik[] = [
 
   <!-- Kaya tabakası (870-900) -->
   <rect x="80" y="800" width="540" height="60" fill="url(#rock)"/>
-  <rect x="80" y="800" width="540" height="60" fill="none" stroke="#1B2B3A" stroke-width="0.5"/>
+  <rect x="80" y="800" width="540" height="60" fill="none" stroke="#002147" stroke-width="0.5"/>
 
   <!-- Derinlik ölçeği (sol) -->
-  <line x1="55" y1="150" x2="55" y2="800" stroke="#1B2B3A" stroke-width="1.5"/>
+  <line x1="55" y1="150" x2="55" y2="800" stroke="#002147" stroke-width="1.5"/>
   <!-- Çentikler -->
-  <line x1="50" y1="150" x2="60" y2="150" stroke="#1B2B3A" stroke-width="1.5"/>
-  <line x1="50" y1="230" x2="60" y2="230" stroke="#1B2B3A" stroke-width="1.5"/>
-  <line x1="50" y1="430" x2="60" y2="430" stroke="#1B2B3A" stroke-width="1.5"/>
-  <line x1="50" y1="750" x2="60" y2="750" stroke="#1B2B3A" stroke-width="1.5"/>
-  <line x1="50" y1="800" x2="60" y2="800" stroke="#1B2B3A" stroke-width="1.5"/>
+  <line x1="50" y1="150" x2="60" y2="150" stroke="#002147" stroke-width="1.5"/>
+  <line x1="50" y1="230" x2="60" y2="230" stroke="#002147" stroke-width="1.5"/>
+  <line x1="50" y1="430" x2="60" y2="430" stroke="#002147" stroke-width="1.5"/>
+  <line x1="50" y1="750" x2="60" y2="750" stroke="#002147" stroke-width="1.5"/>
+  <line x1="50" y1="800" x2="60" y2="800" stroke="#002147" stroke-width="1.5"/>
   <!-- Derinlik yazıları -->
-  <text x="45" y="154" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">0m</text>
-  <text x="45" y="234" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">2m</text>
-  <text x="45" y="434" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">7m</text>
-  <text x="45" y="754" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">15m</text>
-  <text x="45" y="804" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="11">18m</text>
+  <text x="45" y="154" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="11">0m</text>
+  <text x="45" y="234" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="11">2m</text>
+  <text x="45" y="434" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="11">7m</text>
+  <text x="45" y="754" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="11">15m</text>
+  <text x="45" y="804" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="11">18m</text>
 
   <!-- Zemin katman etiketleri (sağ taraf) -->
-  <text x="640" y="195" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Dolgu</text>
-  <text x="640" y="210" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">(2m)</text>
+  <text x="640" y="195" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Dolgu</text>
+  <text x="640" y="210" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">(2m)</text>
 
-  <text x="640" y="335" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kil</text>
-  <text x="640" y="350" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">(5m)</text>
+  <text x="640" y="335" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kil</text>
+  <text x="640" y="350" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">(5m)</text>
 
-  <text x="640" y="595" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kum</text>
-  <text x="640" y="610" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">(8m)</text>
+  <text x="640" y="595" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kum</text>
+  <text x="640" y="610" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">(8m)</text>
 
-  <text x="640" y="778" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Çakıl</text>
-  <text x="640" y="793" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">(3m)</text>
+  <text x="640" y="778" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Çakıl</text>
+  <text x="640" y="793" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">(3m)</text>
 
   <text x="640" y="835" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kaya</text>
 
   <!-- FORE KAZIK — Ana gövde -->
   <!-- Kazık başlığı (üstte, zemin üstü) -->
-  <rect x="310" y="115" width="80" height="35" fill="#1B2B3A" stroke="#d4af37" stroke-width="2" rx="3"/>
+  <rect x="310" y="115" width="80" height="35" fill="#002147" stroke="#d4af37" stroke-width="2" rx="3"/>
   <text x="350" y="137" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="9" font-weight="bold">KAZIK BAŞLIĞI</text>
 
   <!-- Muhafaza borusu (üst kısım, dolgu ve kil içinde) -->
@@ -495,7 +495,7 @@ export const teknikler: Teknik[] = [
   <rect x="318" y="150" width="64" height="200" fill="none" stroke="#d4af37" stroke-width="1" stroke-dasharray="4,3"/>
 
   <!-- Beton gövde -->
-  <rect x="320" y="150" width="60" height="650" fill="#B0B0B0" stroke="#1B2B3A" stroke-width="1.5"/>
+  <rect x="320" y="150" width="60" height="650" fill="#B0B0B0" stroke="#002147" stroke-width="1.5"/>
   <!-- Beton dokusu -->
   <circle cx="335" cy="200" r="1.5" fill="#999"/>
   <circle cx="355" cy="250" r="1" fill="#999"/>
@@ -527,36 +527,36 @@ export const teknikler: Teknik[] = [
   <line x1="325" y1="770" x2="375" y2="770" stroke="#d4af37" stroke-width="1"/>
 
   <!-- Kazık ucu -->
-  <polygon points="320,800 380,800 355,830" fill="#1B2B3A" stroke="#d4af37" stroke-width="1.5"/>
+  <polygon points="320,800 380,800 355,830" fill="#002147" stroke="#d4af37" stroke-width="1.5"/>
 
   <!-- ETİKET OKLARI — Sol taraf -->
   <!-- Kazık başlığı etiketi -->
-  <line x1="220" y1="132" x2="308" y2="132" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
-  <text x="215" y="130" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Kazık Başlığı</text>
+  <line x1="220" y1="132" x2="308" y2="132" stroke="#002147" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="130" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Kazık Başlığı</text>
 
   <!-- Muhafaza borusu etiketi -->
-  <line x1="220" y1="250" x2="313" y2="250" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
-  <text x="215" y="245" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Muhafaza Borusu</text>
-  <text x="215" y="260" text-anchor="end" fill="#2E5077" font-family="Arial, sans-serif" font-size="10">(Çelik kılıf)</text>
+  <line x1="220" y1="250" x2="313" y2="250" stroke="#002147" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="245" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Muhafaza Borusu</text>
+  <text x="215" y="260" text-anchor="end" fill="#0f3460" font-family="Arial, sans-serif" font-size="10">(Çelik kılıf)</text>
 
   <!-- Donatı kafesi etiketi -->
-  <line x1="220" y1="450" x2="325" y2="450" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
-  <text x="215" y="445" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Donatı Kafesi</text>
-  <text x="215" y="460" text-anchor="end" fill="#2E5077" font-family="Arial, sans-serif" font-size="10">(Çelik çubuklar)</text>
+  <line x1="220" y1="450" x2="325" y2="450" stroke="#002147" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="445" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Donatı Kafesi</text>
+  <text x="215" y="460" text-anchor="end" fill="#0f3460" font-family="Arial, sans-serif" font-size="10">(Çelik çubuklar)</text>
 
   <!-- Beton gövde etiketi -->
-  <line x1="220" y1="600" x2="318" y2="600" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
-  <text x="215" y="595" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Beton Gövde</text>
-  <text x="215" y="610" text-anchor="end" fill="#2E5077" font-family="Arial, sans-serif" font-size="10">(C30 beton)</text>
+  <line x1="220" y1="600" x2="318" y2="600" stroke="#002147" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="595" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Beton Gövde</text>
+  <text x="215" y="610" text-anchor="end" fill="#0f3460" font-family="Arial, sans-serif" font-size="10">(C30 beton)</text>
 
   <!-- Kazık ucu etiketi -->
-  <line x1="220" y1="815" x2="318" y2="815" stroke="#1B2B3A" stroke-width="1" marker-end="url(#arrowhead)"/>
-  <text x="215" y="812" text-anchor="end" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Kazık Ucu</text>
+  <line x1="220" y1="815" x2="318" y2="815" stroke="#002147" stroke-width="1" marker-end="url(#arrowhead)"/>
+  <text x="215" y="812" text-anchor="end" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Kazık Ucu</text>
 
   <!-- Ok tanımı -->
   <defs>
     <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
-      <polygon points="0 0, 8 3, 0 6" fill="#1B2B3A"/>
+      <polygon points="0 0, 8 3, 0 6" fill="#002147"/>
     </marker>
     <marker id="arrowC" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
       <polygon points="0 0, 8 3, 0 6" fill="#d4af37"/>
@@ -586,16 +586,16 @@ export const teknikler: Teknik[] = [
   <text x="355" y="894" text-anchor="middle" fill="#d4af37" font-family="Arial, sans-serif" font-size="11">(Taban taşıma)</text>
 
   <!-- Boyut bilgileri — Çap -->
-  <line x1="320" y1="98" x2="380" y2="98" stroke="#2E5077" stroke-width="1"/>
-  <line x1="320" y1="93" x2="320" y2="103" stroke="#2E5077" stroke-width="1"/>
-  <line x1="380" y1="93" x2="380" y2="103" stroke="#2E5077" stroke-width="1"/>
-  <text x="350" y="93" text-anchor="middle" fill="#2E5077" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Ø80 cm</text>
+  <line x1="320" y1="98" x2="380" y2="98" stroke="#0f3460" stroke-width="1"/>
+  <line x1="320" y1="93" x2="320" y2="103" stroke="#0f3460" stroke-width="1"/>
+  <line x1="380" y1="93" x2="380" y2="103" stroke="#0f3460" stroke-width="1"/>
+  <text x="350" y="93" text-anchor="middle" fill="#0f3460" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Ø80 cm</text>
 
   <!-- Boyut bilgileri — Derinlik (sağ) -->
-  <line x1="500" y1="150" x2="500" y2="800" stroke="#2E5077" stroke-width="1"/>
-  <line x1="495" y1="150" x2="505" y2="150" stroke="#2E5077" stroke-width="1"/>
-  <line x1="495" y1="800" x2="505" y2="800" stroke="#2E5077" stroke-width="1"/>
-  <text x="510" y="480" fill="#2E5077" font-family="Arial, sans-serif" font-size="13" font-weight="bold" transform="rotate(90,510,480)">20 m Derinlik</text>
+  <line x1="500" y1="150" x2="500" y2="800" stroke="#0f3460" stroke-width="1"/>
+  <line x1="495" y1="150" x2="505" y2="150" stroke="#0f3460" stroke-width="1"/>
+  <line x1="495" y1="800" x2="505" y2="800" stroke="#0f3460" stroke-width="1"/>
+  <text x="510" y="480" fill="#0f3460" font-family="Arial, sans-serif" font-size="13" font-weight="bold" transform="rotate(90,510,480)">20 m Derinlik</text>
 </svg><figcaption>Fore Kazık Anatomi Diyagramı</figcaption></figure>
 <h2 id="fore-kazik-ne-zaman-kullanilir">Fore Kazık Ne Zaman Kullanılır?</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık; zayıf zeminlerde yüksek yapıların temellendirilmesinde, derin kazılarda iksa perdesi olarak, köprü ve viyadük ayaklarında, metro tünellerinde, endüstriyel tesislerde ve deprem riski yüksek bölgelerde sıvılaşma önlemi amacıyla kullanılır.</div>
@@ -755,10 +755,10 @@ export const teknikler: Teknik[] = [
   </defs>
 
   <!-- Arka plan -->
-  <rect width="900" height="520" fill="#F5F2ED" rx="8"/>
+  <rect width="900" height="520" fill="#fafaf7" rx="8"/>
 
   <!-- Başlık bandı -->
-  <rect x="0" y="0" width="900" height="65" fill="#1B2B3A" rx="0"/>
+  <rect x="0" y="0" width="900" height="65" fill="#002147" rx="0"/>
   <text x="450" y="28" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="22" font-weight="bold">Fore Kazık İmalat Akış Şeması</text>
   <text x="450" y="50" text-anchor="middle" fill="#d4af37" font-family="Arial, sans-serif" font-size="13">6 Aşamalı Üretim Süreci</text>
 
@@ -767,15 +767,15 @@ export const teknikler: Teknik[] = [
   <circle cx="105" cy="130" r="18" fill="#d4af37"/>
   <text x="105" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">1</text>
   <!-- Kutu -->
-  <rect x="45" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <rect x="45" y="160" width="120" height="55" fill="#0f3460" rx="6"/>
   <text x="105" y="184" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Zemin</text>
   <text x="105" y="202" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Etüdü</text>
   <!-- İkon: büyüteç -->
   <circle cx="105" cy="240" r="10" fill="none" stroke="#d4af37" stroke-width="1.5"/>
   <line x1="112" y1="247" x2="118" y2="253" stroke="#d4af37" stroke-width="1.5"/>
   <!-- Açıklama -->
-  <text x="105" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Sondaj ve zemin</text>
-  <text x="105" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">analizi yapılır</text>
+  <text x="105" y="272" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">Sondaj ve zemin</text>
+  <text x="105" y="285" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">analizi yapılır</text>
 
   <!-- Ok 1→2 -->
   <line x1="167" y1="187" x2="193" y2="187" stroke="#d4af37" stroke-width="2.5" marker-end="url(#flowArrow)"/>
@@ -783,14 +783,14 @@ export const teknikler: Teknik[] = [
   <!-- === ADIM 2: Delgi === -->
   <circle cx="255" cy="130" r="18" fill="#d4af37"/>
   <text x="255" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">2</text>
-  <rect x="195" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <rect x="195" y="160" width="120" height="55" fill="#0f3460" rx="6"/>
   <text x="255" y="192" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Delgi</text>
   <!-- İkon: matkap -->
   <line x1="255" y1="230" x2="255" y2="258" stroke="#d4af37" stroke-width="2"/>
   <polygon points="248,230 262,230 255,222" fill="#d4af37"/>
   <!-- Açıklama -->
-  <text x="255" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Döner delici ile</text>
-  <text x="255" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">kuyu açılır</text>
+  <text x="255" y="272" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">Döner delici ile</text>
+  <text x="255" y="285" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">kuyu açılır</text>
 
   <!-- Ok 2→3 -->
   <line x1="317" y1="187" x2="343" y2="187" stroke="#d4af37" stroke-width="2.5" marker-end="url(#flowArrow)"/>
@@ -798,7 +798,7 @@ export const teknikler: Teknik[] = [
   <!-- === ADIM 3: Muhafaza Borusu === -->
   <circle cx="405" cy="130" r="18" fill="#d4af37"/>
   <text x="405" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">3</text>
-  <rect x="345" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <rect x="345" y="160" width="120" height="55" fill="#0f3460" rx="6"/>
   <text x="405" y="184" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Muhafaza</text>
   <text x="405" y="202" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Borusu</text>
   <!-- İkon: boru -->
@@ -806,8 +806,8 @@ export const teknikler: Teknik[] = [
   <line x1="400" y1="238" x2="410" y2="238" stroke="#d4af37" stroke-width="0.8"/>
   <line x1="400" y1="248" x2="410" y2="248" stroke="#d4af37" stroke-width="0.8"/>
   <!-- Açıklama -->
-  <text x="405" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Çelik kılıf zemine</text>
-  <text x="405" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">yerleştirilir</text>
+  <text x="405" y="272" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">Çelik kılıf zemine</text>
+  <text x="405" y="285" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">yerleştirilir</text>
 
   <!-- Ok 3→4 -->
   <line x1="467" y1="187" x2="493" y2="187" stroke="#d4af37" stroke-width="2.5" marker-end="url(#flowArrow)"/>
@@ -815,7 +815,7 @@ export const teknikler: Teknik[] = [
   <!-- === ADIM 4: Donatı Montajı === -->
   <circle cx="555" cy="130" r="18" fill="#d4af37"/>
   <text x="555" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">4</text>
-  <rect x="495" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <rect x="495" y="160" width="120" height="55" fill="#0f3460" rx="6"/>
   <text x="555" y="184" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Donatı</text>
   <text x="555" y="202" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Montajı</text>
   <!-- İkon: kafes -->
@@ -826,8 +826,8 @@ export const teknikler: Teknik[] = [
   <line x1="540" y1="245" x2="570" y2="245" stroke="#d4af37" stroke-width="1"/>
   <line x1="540" y1="255" x2="570" y2="255" stroke="#d4af37" stroke-width="1"/>
   <!-- Açıklama -->
-  <text x="555" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Çelik kafes kuyuya</text>
-  <text x="555" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">indirilir</text>
+  <text x="555" y="272" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">Çelik kafes kuyuya</text>
+  <text x="555" y="285" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">indirilir</text>
 
   <!-- Ok 4→5 -->
   <line x1="617" y1="187" x2="643" y2="187" stroke="#d4af37" stroke-width="2.5" marker-end="url(#flowArrow)"/>
@@ -835,14 +835,14 @@ export const teknikler: Teknik[] = [
   <!-- === ADIM 5: Betonlama === -->
   <circle cx="705" cy="130" r="18" fill="#d4af37"/>
   <text x="705" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">5</text>
-  <rect x="645" y="160" width="120" height="55" fill="#2E5077" rx="6"/>
+  <rect x="645" y="160" width="120" height="55" fill="#0f3460" rx="6"/>
   <text x="705" y="192" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Betonlama</text>
   <!-- İkon: beton dökme -->
   <polygon points="695,228 715,228 710,238 700,238" fill="#d4af37"/>
   <rect x="700" y="238" width="10" height="18" fill="none" stroke="#d4af37" stroke-width="1.5"/>
   <!-- Açıklama -->
-  <text x="705" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Tremi ile beton</text>
-  <text x="705" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">dökülür</text>
+  <text x="705" y="272" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">Tremi ile beton</text>
+  <text x="705" y="285" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">dökülür</text>
 
   <!-- Ok 5→6 -->
   <line x1="767" y1="187" x2="793" y2="187" stroke="#d4af37" stroke-width="2.5" marker-end="url(#flowArrow)"/>
@@ -850,50 +850,50 @@ export const teknikler: Teknik[] = [
   <!-- === ADIM 6: Kılıf Çekme === -->
   <circle cx="855" cy="130" r="18" fill="#d4af37"/>
   <text x="855" y="136" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="16" font-weight="bold">6</text>
-  <rect x="795" y="160" width="95" height="55" fill="#2E5077" rx="6"/>
+  <rect x="795" y="160" width="95" height="55" fill="#0f3460" rx="6"/>
   <text x="842" y="184" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Kılıf</text>
   <text x="842" y="202" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Çekme</text>
   <!-- İkon: yukarı ok -->
   <line x1="842" y1="258" x2="842" y2="232" stroke="#d4af37" stroke-width="2"/>
   <polygon points="835,235 849,235 842,225" fill="#d4af37"/>
   <!-- Açıklama -->
-  <text x="842" y="272" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">Muhafaza borusu</text>
-  <text x="842" y="285" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="10">geri çekilir</text>
+  <text x="842" y="272" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">Muhafaza borusu</text>
+  <text x="842" y="285" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="10">geri çekilir</text>
 
   <!-- Alt bilgi bandı -->
-  <rect x="0" y="320" width="900" height="200" fill="#1B2B3A" rx="0"/>
+  <rect x="0" y="320" width="900" height="200" fill="#002147" rx="0"/>
 
   <!-- Alt bölüm: Önemli notlar -->
   <text x="450" y="350" text-anchor="middle" fill="#d4af37" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Kritik Kontrol Noktaları</text>
 
   <!-- Not kutuları -->
   <!-- Not 1 -->
-  <rect x="40" y="370" width="250" height="60" fill="#2E5077" rx="5" opacity="0.6"/>
+  <rect x="40" y="370" width="250" height="60" fill="#0f3460" rx="5" opacity="0.6"/>
   <circle cx="60" cy="388" r="10" fill="#d4af37"/>
   <text x="60" y="393" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">!</text>
   <text x="80" y="390" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Zemin Etüdü</text>
-  <text x="80" y="408" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">SPT deneyi ve laboratuvar</text>
-  <text x="80" y="421" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">analizleri zorunludur</text>
+  <text x="80" y="408" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">SPT deneyi ve laboratuvar</text>
+  <text x="80" y="421" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">analizleri zorunludur</text>
 
   <!-- Not 2 -->
-  <rect x="325" y="370" width="250" height="60" fill="#2E5077" rx="5" opacity="0.6"/>
+  <rect x="325" y="370" width="250" height="60" fill="#0f3460" rx="5" opacity="0.6"/>
   <circle cx="345" cy="388" r="10" fill="#d4af37"/>
   <text x="345" y="393" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">!</text>
   <text x="365" y="390" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Betonlama Süresi</text>
-  <text x="365" y="408" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Tremi beton kesintisiz</text>
-  <text x="365" y="421" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">dökülmelidir</text>
+  <text x="365" y="408" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">Tremi beton kesintisiz</text>
+  <text x="365" y="421" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">dökülmelidir</text>
 
   <!-- Not 3 -->
-  <rect x="610" y="370" width="250" height="60" fill="#2E5077" rx="5" opacity="0.6"/>
+  <rect x="610" y="370" width="250" height="60" fill="#0f3460" rx="5" opacity="0.6"/>
   <circle cx="630" cy="388" r="10" fill="#d4af37"/>
   <text x="630" y="393" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">!</text>
   <text x="650" y="390" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Kalite Kontrolü</text>
-  <text x="650" y="408" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Ultrasonik test ve yükleme</text>
-  <text x="650" y="421" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">deneyi ile doğrulama</text>
+  <text x="650" y="408" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">Ultrasonik test ve yükleme</text>
+  <text x="650" y="421" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">deneyi ile doğrulama</text>
 
   <!-- Alt süreç özet çizgisi -->
   <line x1="40" y1="455" x2="860" y2="455" stroke="#d4af37" stroke-width="1" opacity="0.4"/>
-  <text x="450" y="478" text-anchor="middle" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="11">Tipik imalat süresi: Ø80cm, 20m derinlik — yaklaşık 4-6 saat / kazık</text>
+  <text x="450" y="478" text-anchor="middle" fill="#fafaf7" font-family="Arial, sans-serif" font-size="11">Tipik imalat süresi: Ø80cm, 20m derinlik — yaklaşık 4-6 saat / kazık</text>
   <text x="450" y="498" text-anchor="middle" fill="#d4af37" font-family="Arial, sans-serif" font-size="10">TS EN 1536 Standardına Uygun Uygulama</text>
 </svg><figcaption>Fore Kazık İmalat Akış Şeması</figcaption></figure>
 <h2 id="fore-kazik-fiyatlari-2026">Fore Kazık Fiyatları 2026</h2>
@@ -1133,15 +1133,15 @@ export const teknikler: Teknik[] = [
   </defs>
 
   <!-- Arka plan -->
-  <rect width="700" height="850" fill="#F5F2ED"/>
+  <rect width="700" height="850" fill="#fafaf7"/>
 
   <!-- Başlık bandı -->
-  <rect x="0" y="0" width="700" height="70" fill="#1B2B3A"/>
+  <rect x="0" y="0" width="700" height="70" fill="#002147"/>
   <text x="350" y="30" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Tipik Sondaj Logu</text>
   <text x="350" y="52" text-anchor="middle" fill="#d4af37" font-family="Arial, sans-serif" font-size="13">Fore Kazık Projesi — Zemin Profili</text>
 
   <!-- Sütun başlıkları -->
-  <rect x="20" y="85" width="660" height="35" fill="#2E5077" rx="4"/>
+  <rect x="20" y="85" width="660" height="35" fill="#0f3460" rx="4"/>
   <text x="70" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Derinlik</text>
   <text x="170" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Grafik Log</text>
   <text x="315" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Zemin Tanımı</text>
@@ -1150,24 +1150,24 @@ export const teknikler: Teknik[] = [
   <text x="645" y="107" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Su</text>
 
   <!-- Ayırıcı çizgiler (dikey) -->
-  <line x1="115" y1="85" x2="115" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
-  <line x1="225" y1="85" x2="225" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
-  <line x1="410" y1="85" x2="410" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
-  <line x1="505" y1="85" x2="505" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
-  <line x1="610" y1="85" x2="610" y2="790" stroke="#1B2B3A" stroke-width="0.5" opacity="0.3"/>
+  <line x1="115" y1="85" x2="115" y2="790" stroke="#002147" stroke-width="0.5" opacity="0.3"/>
+  <line x1="225" y1="85" x2="225" y2="790" stroke="#002147" stroke-width="0.5" opacity="0.3"/>
+  <line x1="410" y1="85" x2="410" y2="790" stroke="#002147" stroke-width="0.5" opacity="0.3"/>
+  <line x1="505" y1="85" x2="505" y2="790" stroke="#002147" stroke-width="0.5" opacity="0.3"/>
+  <line x1="610" y1="85" x2="610" y2="790" stroke="#002147" stroke-width="0.5" opacity="0.3"/>
 
   <!-- ======= KATMAN 1: DOLGU (0-2m) ======= -->
   <!-- Derinlik ölçeği -->
-  <text x="70" y="145" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">0.00 m</text>
-  <line x1="25" y1="130" x2="110" y2="130" stroke="#1B2B3A" stroke-width="1"/>
+  <text x="70" y="145" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">0.00 m</text>
+  <line x1="25" y1="130" x2="110" y2="130" stroke="#002147" stroke-width="1"/>
 
   <!-- Grafik log -->
-  <rect x="120" y="130" width="100" height="130" fill="url(#slDots)" stroke="#1B2B3A" stroke-width="1"/>
+  <rect x="120" y="130" width="100" height="130" fill="url(#slDots)" stroke="#002147" stroke-width="1"/>
 
   <!-- Zemin tanımı -->
-  <text x="230" y="175" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DOLGU</text>
-  <text x="230" y="195" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Karışık dolgu malzemesi,</text>
-  <text x="230" y="211" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">gevşek, organik katkılı</text>
+  <text x="230" y="175" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">DOLGU</text>
+  <text x="230" y="195" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">Karışık dolgu malzemesi,</text>
+  <text x="230" y="211" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">gevşek, organik katkılı</text>
 
   <!-- SPT-N değeri -->
   <rect x="430" y="170" width="50" height="30" fill="#d4af37" rx="4"/>
@@ -1176,19 +1176,19 @@ export const teknikler: Teknik[] = [
   <rect x="430" y="208" width="15" height="8" fill="#d4af37" rx="2" opacity="0.6"/>
 
   <!-- Zemin sınıfı -->
-  <rect x="520" y="175" width="75" height="28" fill="#1B2B3A" rx="4"/>
+  <rect x="520" y="175" width="75" height="28" fill="#002147" rx="4"/>
   <text x="557" y="194" text-anchor="middle" fill="#d4af37" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZD</text>
 
   <!-- Derinlik çizgisi: 2m -->
-  <text x="70" y="275" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">2.00 m</text>
-  <line x1="25" y1="260" x2="610" y2="260" stroke="#1B2B3A" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="70" y="275" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">2.00 m</text>
+  <line x1="25" y1="260" x2="610" y2="260" stroke="#002147" stroke-width="1" stroke-dasharray="4,3"/>
 
   <!-- ======= KATMAN 2: KİL (2-7m) ======= -->
-  <rect x="120" y="260" width="100" height="195" fill="url(#slClay)" stroke="#1B2B3A" stroke-width="1"/>
+  <rect x="120" y="260" width="100" height="195" fill="url(#slClay)" stroke="#002147" stroke-width="1"/>
 
-  <text x="230" y="335" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KİL</text>
-  <text x="230" y="355" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Orta plastisiteli kil (CL),</text>
-  <text x="230" y="371" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">kahverengi-gri, sert</text>
+  <text x="230" y="335" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KİL</text>
+  <text x="230" y="355" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">Orta plastisiteli kil (CL),</text>
+  <text x="230" y="371" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">kahverengi-gri, sert</text>
 
   <!-- SPT-N değeri -->
   <rect x="430" y="335" width="50" height="30" fill="#d4af37" rx="4"/>
@@ -1197,25 +1197,25 @@ export const teknikler: Teknik[] = [
   <rect x="430" y="373" width="24" height="8" fill="#d4af37" rx="2" opacity="0.6"/>
 
   <!-- Zemin sınıfı -->
-  <rect x="520" y="340" width="75" height="28" fill="#1B2B3A" rx="4"/>
+  <rect x="520" y="340" width="75" height="28" fill="#002147" rx="4"/>
   <text x="557" y="359" text-anchor="middle" fill="#d4af37" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZD</text>
 
   <!-- Su seviyesi göstergesi -->
-  <text x="645" y="310" text-anchor="middle" fill="#2E5077" font-family="Arial, sans-serif" font-size="18">&#9660;</text>
-  <text x="645" y="330" text-anchor="middle" fill="#2E5077" font-family="Arial, sans-serif" font-size="9" font-weight="bold">YASS</text>
-  <text x="645" y="343" text-anchor="middle" fill="#2E5077" font-family="Arial, sans-serif" font-size="9">3.5m</text>
+  <text x="645" y="310" text-anchor="middle" fill="#0f3460" font-family="Arial, sans-serif" font-size="18">&#9660;</text>
+  <text x="645" y="330" text-anchor="middle" fill="#0f3460" font-family="Arial, sans-serif" font-size="9" font-weight="bold">YASS</text>
+  <text x="645" y="343" text-anchor="middle" fill="#0f3460" font-family="Arial, sans-serif" font-size="9">3.5m</text>
 
   <!-- Derinlik çizgisi: 7m -->
-  <text x="70" y="470" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">7.00 m</text>
-  <line x1="25" y1="455" x2="610" y2="455" stroke="#1B2B3A" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="70" y="470" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">7.00 m</text>
+  <line x1="25" y1="455" x2="610" y2="455" stroke="#002147" stroke-width="1" stroke-dasharray="4,3"/>
 
   <!-- ======= KATMAN 3: KUM (7-15m) ======= -->
-  <rect x="120" y="455" width="100" height="195" fill="url(#slSand)" stroke="#1B2B3A" stroke-width="1"/>
+  <rect x="120" y="455" width="100" height="195" fill="url(#slSand)" stroke="#002147" stroke-width="1"/>
 
-  <text x="230" y="530" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KUM</text>
-  <text x="230" y="550" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Orta-sıkı kum (SM),</text>
-  <text x="230" y="566" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">sarı-kahve, siltli,</text>
-  <text x="230" y="582" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">yer yer çakıllı</text>
+  <text x="230" y="530" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KUM</text>
+  <text x="230" y="550" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">Orta-sıkı kum (SM),</text>
+  <text x="230" y="566" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">sarı-kahve, siltli,</text>
+  <text x="230" y="582" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">yer yer çakıllı</text>
 
   <!-- SPT-N değeri -->
   <rect x="430" y="530" width="50" height="30" fill="#d4af37" rx="4"/>
@@ -1224,19 +1224,19 @@ export const teknikler: Teknik[] = [
   <rect x="430" y="568" width="45" height="8" fill="#d4af37" rx="2" opacity="0.6"/>
 
   <!-- Zemin sınıfı -->
-  <rect x="520" y="535" width="75" height="28" fill="#2E5077" rx="4"/>
+  <rect x="520" y="535" width="75" height="28" fill="#0f3460" rx="4"/>
   <text x="557" y="554" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZC</text>
 
   <!-- Derinlik çizgisi: 15m -->
-  <text x="70" y="665" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">15.00 m</text>
-  <line x1="25" y1="650" x2="610" y2="650" stroke="#1B2B3A" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="70" y="665" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">15.00 m</text>
+  <line x1="25" y1="650" x2="610" y2="650" stroke="#002147" stroke-width="1" stroke-dasharray="4,3"/>
 
   <!-- ======= KATMAN 4: ÇAKIL (15-18m) ======= -->
-  <rect x="120" y="650" width="100" height="70" fill="url(#slGravel)" stroke="#1B2B3A" stroke-width="1"/>
+  <rect x="120" y="650" width="100" height="70" fill="url(#slGravel)" stroke="#002147" stroke-width="1"/>
 
-  <text x="230" y="680" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ÇAKIL</text>
-  <text x="230" y="700" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Sıkı çakıl (GP),</text>
-  <text x="230" y="716" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">kumlu, köşeli</text>
+  <text x="230" y="680" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">ÇAKIL</text>
+  <text x="230" y="700" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">Sıkı çakıl (GP),</text>
+  <text x="230" y="716" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">kumlu, köşeli</text>
 
   <!-- SPT-N değeri -->
   <rect x="430" y="672" width="50" height="30" fill="#d4af37" rx="4"/>
@@ -1245,19 +1245,19 @@ export const teknikler: Teknik[] = [
   <rect x="430" y="710" width="75" height="8" fill="#d4af37" rx="2" opacity="0.6"/>
 
   <!-- Zemin sınıfı -->
-  <rect x="520" y="677" width="75" height="28" fill="#2E5077" rx="4"/>
+  <rect x="520" y="677" width="75" height="28" fill="#0f3460" rx="4"/>
   <text x="557" y="696" text-anchor="middle" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZC</text>
 
   <!-- Derinlik çizgisi: 18m -->
-  <text x="70" y="735" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">18.00 m</text>
-  <line x1="25" y1="720" x2="610" y2="720" stroke="#1B2B3A" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="70" y="735" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">18.00 m</text>
+  <line x1="25" y1="720" x2="610" y2="720" stroke="#002147" stroke-width="1" stroke-dasharray="4,3"/>
 
   <!-- ======= KATMAN 5: KAYA (18-20m+) ======= -->
-  <rect x="120" y="720" width="100" height="70" fill="url(#slRock)" stroke="#1B2B3A" stroke-width="1"/>
+  <rect x="120" y="720" width="100" height="70" fill="url(#slRock)" stroke="#002147" stroke-width="1"/>
 
-  <text x="230" y="750" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KAYA</text>
-  <text x="230" y="770" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">Ayrışmış kaya tabakası,</text>
-  <text x="230" y="786" fill="#2E5077" font-family="Arial, sans-serif" font-size="11">çok sert, delgi sonu</text>
+  <text x="230" y="750" fill="#002147" font-family="Arial, sans-serif" font-size="12" font-weight="bold">KAYA</text>
+  <text x="230" y="770" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">Ayrışmış kaya tabakası,</text>
+  <text x="230" y="786" fill="#0f3460" font-family="Arial, sans-serif" font-size="11">çok sert, delgi sonu</text>
 
   <!-- SPT-N değeri -->
   <rect x="430" y="742" width="50" height="30" fill="#d4af37" rx="4"/>
@@ -1266,31 +1266,31 @@ export const teknikler: Teknik[] = [
   <rect x="430" y="780" width="100" height="8" fill="#d4af37" rx="2" opacity="0.6"/>
 
   <!-- Zemin sınıfı -->
-  <rect x="520" y="747" width="75" height="28" fill="#1B2B3A" rx="4"/>
+  <rect x="520" y="747" width="75" height="28" fill="#002147" rx="4"/>
   <text x="557" y="766" text-anchor="middle" fill="#d4af37" font-family="Arial, sans-serif" font-size="14" font-weight="bold">ZB</text>
 
   <!-- Derinlik çizgisi: 20m -->
-  <text x="70" y="805" text-anchor="middle" fill="#1B2B3A" font-family="Arial, sans-serif" font-size="13" font-weight="bold">20.00 m</text>
-  <line x1="25" y1="790" x2="610" y2="790" stroke="#1B2B3A" stroke-width="1"/>
+  <text x="70" y="805" text-anchor="middle" fill="#002147" font-family="Arial, sans-serif" font-size="13" font-weight="bold">20.00 m</text>
+  <line x1="25" y1="790" x2="610" y2="790" stroke="#002147" stroke-width="1"/>
 
   <!-- Alt bilgi bandı -->
-  <rect x="0" y="810" width="700" height="40" fill="#1B2B3A"/>
+  <rect x="0" y="810" width="700" height="40" fill="#002147"/>
 
   <!-- Lejant -->
   <text x="30" y="834" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="10" font-weight="bold">SPT-N:</text>
-  <text x="75" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Standart Penetrasyon Deneyi</text>
+  <text x="75" y="834" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">Standart Penetrasyon Deneyi</text>
 
   <text x="260" y="834" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="10" font-weight="bold">YASS:</text>
-  <text x="295" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Yeraltı Su Seviyesi</text>
+  <text x="295" y="834" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">Yeraltı Su Seviyesi</text>
 
   <text x="430" y="834" fill="#d4af37" font-family="Arial, sans-serif" font-size="10" font-weight="bold">ZB:</text>
-  <text x="450" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Sağlam</text>
+  <text x="450" y="834" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">Sağlam</text>
 
   <text x="505" y="834" fill="#d4af37" font-family="Arial, sans-serif" font-size="10" font-weight="bold">ZC:</text>
-  <text x="525" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Orta sıkı</text>
+  <text x="525" y="834" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">Orta sıkı</text>
 
   <text x="595" y="834" fill="#d4af37" font-family="Arial, sans-serif" font-size="10" font-weight="bold">ZD:</text>
-  <text x="615" y="834" fill="#F5F2ED" font-family="Arial, sans-serif" font-size="10">Yumuşak/Gevşek</text>
+  <text x="615" y="834" fill="#fafaf7" font-family="Arial, sans-serif" font-size="10">Yumuşak/Gevşek</text>
 </svg><figcaption>Tipik Sondaj Logu — Zemin Profili</figcaption></figure>
 <h2 id="fore-kazik-vs-alternatifler">Fore Kazık vs Alternatifler</h2>
 <div class="highlight-box"><strong>Özet Cevap:</strong> Fore kazık, çakma kazık, jet grout ve mini kazık ile farklı açılardan karşılaştırılabilir. Fore kazık, yüksek taşıma kapasitesi, düşük titreşim ve geniş çap esnekliği ile öne çıkarken; maliyet ve imalat hızı bakımından her projede en uygun çözüm olmayabilir.</div>
@@ -1477,7 +1477,7 @@ export const teknikler: Teknik[] = [
 <figure>
 <svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mini kazık kesit anatomisi şeması">
   <rect width="800" height="460" fill="#f8f7f4" rx="12"/>
-  <text x="400" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1B2B3A">Mini Kazık — Kesit Anatomisi</text>
+  <text x="400" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#002147">Mini Kazık — Kesit Anatomisi</text>
   <rect x="60" y="60" width="280" height="100" fill="#d4c9b5" opacity="0.5"/>
   <rect x="60" y="160" width="280" height="120" fill="#c4b89e" opacity="0.5"/>
   <rect x="60" y="280" width="280" height="140" fill="#b4a888" opacity="0.5"/>
@@ -1487,32 +1487,32 @@ export const teknikler: Teknik[] = [
   <line x1="50" y1="60" x2="430" y2="60" stroke="#5A6A7A" stroke-width="2" stroke-dasharray="10,5"/>
   <text x="440" y="65" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Zemin Yüzeyi</text>
   <rect x="155" y="50" width="90" height="370" fill="#e0dbd2" stroke="#9aa8b3" stroke-width="1.5"/>
-  <rect x="165" y="55" width="70" height="355" fill="#C8873A" opacity="0.75" rx="2"/>
-  <rect x="194" y="48" width="12" height="365" fill="#2E5077" rx="2"/>
-  <line x1="165" y1="150" x2="194" y2="150" stroke="#1B2B3A" stroke-width="2.5"/>
-  <line x1="206" y1="150" x2="235" y2="150" stroke="#1B2B3A" stroke-width="2.5"/>
-  <circle cx="165" cy="150" r="4" fill="#1B2B3A"/>
-  <circle cx="235" cy="150" r="4" fill="#1B2B3A"/>
-  <line x1="165" y1="270" x2="194" y2="270" stroke="#1B2B3A" stroke-width="2.5"/>
-  <line x1="206" y1="270" x2="235" y2="270" stroke="#1B2B3A" stroke-width="2.5"/>
-  <circle cx="165" cy="270" r="4" fill="#1B2B3A"/>
-  <circle cx="235" cy="270" r="4" fill="#1B2B3A"/>
-  <rect x="145" y="35" width="110" height="18" fill="#1B2B3A" rx="3"/>
-  <text x="200" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#1B2B3A">Başlık Plakası</text>
+  <rect x="165" y="55" width="70" height="355" fill="#d4af37" opacity="0.75" rx="2"/>
+  <rect x="194" y="48" width="12" height="365" fill="#0f3460" rx="2"/>
+  <line x1="165" y1="150" x2="194" y2="150" stroke="#002147" stroke-width="2.5"/>
+  <line x1="206" y1="150" x2="235" y2="150" stroke="#002147" stroke-width="2.5"/>
+  <circle cx="165" cy="150" r="4" fill="#002147"/>
+  <circle cx="235" cy="150" r="4" fill="#002147"/>
+  <line x1="165" y1="270" x2="194" y2="270" stroke="#002147" stroke-width="2.5"/>
+  <line x1="206" y1="270" x2="235" y2="270" stroke="#002147" stroke-width="2.5"/>
+  <circle cx="165" cy="270" r="4" fill="#002147"/>
+  <circle cx="235" cy="270" r="4" fill="#002147"/>
+  <rect x="145" y="35" width="110" height="18" fill="#002147" rx="3"/>
+  <text x="200" y="28" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" font-weight="600" fill="#002147">Başlık Plakası</text>
   <line x1="155" y1="310" x2="155" y2="320" stroke="#9aa8b3" stroke-width="1.5"/>
   <line x1="245" y1="310" x2="245" y2="320" stroke="#9aa8b3" stroke-width="1.5"/>
   <line x1="155" y1="318" x2="245" y2="318" stroke="#9aa8b3" stroke-width="1.5"/>
   <text x="200" y="335" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#9aa8b3">Ø150–300 mm</text>
-  <line x1="235" y1="190" x2="430" y2="190" stroke="#C8873A" stroke-width="1.5"/>
-  <circle cx="235" cy="190" r="3" fill="#C8873A"/>
-  <text x="438" y="186" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#C8873A">Çimento Enjeksiyonu</text>
+  <line x1="235" y1="190" x2="430" y2="190" stroke="#d4af37" stroke-width="1.5"/>
+  <circle cx="235" cy="190" r="3" fill="#d4af37"/>
+  <text x="438" y="186" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#d4af37">Çimento Enjeksiyonu</text>
   <text x="438" y="203" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">50–100 bar | w/c ≤ 0,45</text>
-  <line x1="206" y1="230" x2="430" y2="255" stroke="#2E5077" stroke-width="1.5"/>
-  <circle cx="206" cy="230" r="3" fill="#2E5077"/>
-  <text x="438" y="250" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#2E5077">Çelik Donatı</text>
+  <line x1="206" y1="230" x2="430" y2="255" stroke="#0f3460" stroke-width="1.5"/>
+  <circle cx="206" cy="230" r="3" fill="#0f3460"/>
+  <text x="438" y="250" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#0f3460">Çelik Donatı</text>
   <text x="438" y="267" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Çubuk veya boru profil</text>
-  <line x1="165" y1="150" x2="115" y2="135" stroke="#1B2B3A" stroke-width="1.5"/>
-  <text x="30" y="128" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#1B2B3A">Merkezleme</text>
+  <line x1="165" y1="150" x2="115" y2="135" stroke="#002147" stroke-width="1.5"/>
+  <text x="30" y="128" font-family="system-ui,sans-serif" font-size="11" font-weight="700" fill="#002147">Merkezleme</text>
   <text x="30" y="143" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Elemanı</text>
   <line x1="720" y1="60" x2="720" y2="415" stroke="#5A6A7A" stroke-width="1.5"/>
   <line x1="715" y1="60" x2="725" y2="60" stroke="#5A6A7A" stroke-width="1.5"/>
@@ -1668,13 +1668,13 @@ export const teknikler: Teknik[] = [
 <figure>
 <svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mini kazık kalite kontrol akış şeması">
   <rect width="800" height="360" fill="#f8f7f4" rx="12"/>
-  <text x="400" y="32" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#1B2B3A">Mini Kazık — Kalite Kontrol Akış Şeması</text>
-  <rect x="60" y="55" width="180" height="55" rx="10" fill="#2E5077"/>
+  <text x="400" y="32" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#002147">Mini Kazık — Kalite Kontrol Akış Şeması</text>
+  <rect x="60" y="55" width="180" height="55" rx="10" fill="#0f3460"/>
   <text x="150" y="79" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Enjeksiyon Parametresi</text>
   <text x="150" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#cce0f0">Basınç | Hacim | w/c</text>
   <line x1="240" y1="83" x2="285" y2="83" stroke="#5A6A7A" stroke-width="2"/>
   <polygon points="283,78 295,83 283,88" fill="#5A6A7A"/>
-  <polygon points="295,55 455,55 515,83 455,110 295,110 235,83" fill="#4A7FA5"/>
+  <polygon points="295,55 455,55 515,83 455,110 295,110 235,83" fill="#1d6ea5"/>
   <text x="375" y="79" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Hedef Basınca</text>
   <text x="375" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Ulaşıldı mı?</text>
   <line x1="375" y1="110" x2="375" y2="155" stroke="#27ae60" stroke-width="2"/>
@@ -1686,12 +1686,12 @@ export const teknikler: Teknik[] = [
   <rect x="580" y="55" width="155" height="55" rx="10" fill="#c0392b"/>
   <text x="657" y="79" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Tapa / Sızıntı</text>
   <text x="657" y="97" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#fad7d0">İnceleme + Yeniden</text>
-  <rect x="265" y="165" width="220" height="55" rx="10" fill="#1B2B3A"/>
+  <rect x="265" y="165" width="220" height="55" rx="10" fill="#002147"/>
   <text x="375" y="189" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Yükleme Testi</text>
   <text x="375" y="207" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#9ab3c4">Statik veya Dinamik (PDA)</text>
   <line x1="375" y1="220" x2="375" y2="260" stroke="#5A6A7A" stroke-width="2"/>
   <polygon points="370,257 380,257 375,270" fill="#5A6A7A"/>
-  <polygon points="275,270 475,270 535,300 475,330 275,330 215,300" fill="#4A7FA5"/>
+  <polygon points="275,270 475,270 535,300 475,330 275,330 215,300" fill="#1d6ea5"/>
   <text x="375" y="296" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Kapasite ≥ Tasarım</text>
   <text x="375" y="314" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#fff">Değeri mi?</text>
   <line x1="535" y1="300" x2="600" y2="300" stroke="#27ae60" stroke-width="2"/>
@@ -1750,7 +1750,7 @@ export const teknikler: Teknik[] = [
 <figure>
 <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mini kazık maliyet karşılaştırması bar grafiği">
   <rect width="800" height="300" fill="#f8f7f4" rx="12"/>
-  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#1B2B3A">Göreceli Maliyet Karşılaştırması — m Başına Endeks (Fore Kazık = 100)</text>
+  <text x="400" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="#002147">Göreceli Maliyet Karşılaştırması — m Başına Endeks (Fore Kazık = 100)</text>
   <line x1="80" y1="45" x2="80" y2="235" stroke="#5A6A7A" stroke-width="2"/>
   <line x1="80" y1="235" x2="740" y2="235" stroke="#5A6A7A" stroke-width="2"/>
   <line x1="80" y1="185" x2="740" y2="185" stroke="#e0dbd2" stroke-width="1"/>
@@ -1760,17 +1760,17 @@ export const teknikler: Teknik[] = [
   <line x1="80" y1="95" x2="740" y2="95" stroke="#e0dbd2" stroke-width="1"/>
   <text x="68" y="99" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">75</text>
   <text x="68" y="50" text-anchor="end" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">100</text>
-  <rect x="110" y="152" width="110" height="83" fill="#2E5077" rx="4"/>
-  <text x="165" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#2E5077">42</text>
+  <rect x="110" y="152" width="110" height="83" fill="#0f3460" rx="4"/>
+  <text x="165" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#0f3460">42</text>
   <text x="165" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Mini Kılıfsız</text>
-  <rect x="270" y="111" width="110" height="124" fill="#4A7FA5" rx="4"/>
-  <text x="325" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#4A7FA5">65</text>
+  <rect x="270" y="111" width="110" height="124" fill="#1d6ea5" rx="4"/>
+  <text x="325" y="104" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#1d6ea5">65</text>
   <text x="325" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Mini Kılıflı</text>
-  <rect x="430" y="45" width="110" height="190" fill="#1B2B3A" rx="4"/>
-  <text x="485" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#1B2B3A">100</text>
+  <rect x="430" y="45" width="110" height="190" fill="#002147" rx="4"/>
+  <text x="485" y="38" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#002147">100</text>
   <text x="485" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">Fore Kazık</text>
-  <rect x="590" y="130" width="110" height="105" fill="#C8873A" rx="4"/>
-  <text x="645" y="123" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#C8873A">55</text>
+  <rect x="590" y="130" width="110" height="105" fill="#d4af37" rx="4"/>
+  <text x="645" y="123" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12" font-weight="700" fill="#d4af37">55</text>
   <text x="645" y="255" text-anchor="middle" font-family="system-ui,sans-serif" font-size="11" fill="#5A6A7A">CFA Kazık</text>
   <text x="400" y="285" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="#9aa8b3">* Endeks değerleri görecelidir; gerçek maliyetler zemin ve proje koşuluna göre değişir.</text>
 </svg>
@@ -2710,61 +2710,61 @@ export const teknikler: Teknik[] = [
 <p>Ankraj boyu tipik olarak 10–40 m, kapasite ise konfigürasyona bağlı olarak 500–5000 kN arasındadır. Çok halatlı (multi-strand) sistemlerde 3, 4, 6, 9 veya 12 adet 0,6 inç (15,2 mm) çaplı sarmal tel kullanılır. Daha az halatla daha uzun kök boyu ya da daha çok halatla daha kısa kök boyu aynı kapasiteyi verebilir.</p>
 <figure>
 <svg viewBox="0 0 800 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Öngermeli Ankraj Anatomisi: Serbest boy ve kök boyu kesit diyagramı">
-  <rect width="800" height="440" fill="#F5F2ED"/>
+  <rect width="800" height="440" fill="#fafaf7"/>
   <rect x="0" y="105" width="800" height="335" fill="#C9A96E" opacity="0.12"/>
   <line x1="0" y1="105" x2="800" y2="105" stroke="#8B7355" stroke-width="2"/>
   <text x="600" y="100" font-size="11" fill="#8B7355" font-family="Arial,sans-serif">Zemin Yüzeyi ±0.00</text>
-  <rect x="140" y="28" width="44" height="280" fill="#2E5077" rx="2"/>
-  <text x="100" y="22" font-size="11" fill="#2E5077" font-family="Arial,sans-serif" font-weight="bold">İksa Perdesi</text>
-  <rect x="174" y="62" width="72" height="22" fill="#C8873A" rx="2"/>
-  <rect x="188" y="47" width="44" height="17" fill="#C8873A" rx="2"/>
-  <text x="255" y="62" font-size="11" fill="#C8873A" font-family="Arial,sans-serif" font-weight="bold">← Ankraj Kafası</text>
+  <rect x="140" y="28" width="44" height="280" fill="#0f3460" rx="2"/>
+  <text x="100" y="22" font-size="11" fill="#0f3460" font-family="Arial,sans-serif" font-weight="bold">İksa Perdesi</text>
+  <rect x="174" y="62" width="72" height="22" fill="#d4af37" rx="2"/>
+  <rect x="188" y="47" width="44" height="17" fill="#d4af37" rx="2"/>
+  <text x="255" y="62" font-size="11" fill="#d4af37" font-family="Arial,sans-serif" font-weight="bold">← Ankraj Kafası</text>
   <text x="255" y="76" font-size="10" fill="#8B5A1A" font-family="Arial,sans-serif">(Plaka + Kama + Kriko bağlantısı)</text>
-  <rect x="205" y="84" width="9" height="160" fill="#4A7FA5" opacity="0.35" rx="4"/>
-  <rect x="208" y="87" width="2.5" height="154" fill="#4A7FA5"/>
-  <rect x="211" y="87" width="2" height="154" fill="#2E5077" opacity="0.6"/>
-  <rect x="214" y="87" width="1.5" height="154" fill="#4A7FA5" opacity="0.4"/>
-  <rect x="202" y="242" width="16" height="150" fill="#C8873A" opacity="0.55" rx="4"/>
-  <rect x="208" y="244" width="2.5" height="144" fill="#C8873A"/>
+  <rect x="205" y="84" width="9" height="160" fill="#1d6ea5" opacity="0.35" rx="4"/>
+  <rect x="208" y="87" width="2.5" height="154" fill="#1d6ea5"/>
+  <rect x="211" y="87" width="2" height="154" fill="#0f3460" opacity="0.6"/>
+  <rect x="214" y="87" width="1.5" height="154" fill="#1d6ea5" opacity="0.4"/>
+  <rect x="202" y="242" width="16" height="150" fill="#d4af37" opacity="0.55" rx="4"/>
+  <rect x="208" y="244" width="2.5" height="144" fill="#d4af37"/>
   <rect x="211" y="244" width="2" height="144" fill="#A06820" opacity="0.7"/>
-  <rect x="214" y="244" width="1.5" height="144" fill="#C8873A" opacity="0.5"/>
-  <line x1="230" y1="95" x2="230" y2="245" stroke="#4A7FA5" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <line x1="226" y1="95" x2="234" y2="95" stroke="#4A7FA5" stroke-width="1.5"/>
-  <line x1="226" y1="245" x2="234" y2="245" stroke="#4A7FA5" stroke-width="1.5"/>
-  <text x="238" y="153" font-size="13" fill="#2E5077" font-family="Arial,sans-serif" font-weight="bold">SERBEST BOY</text>
-  <text x="238" y="169" font-size="11" fill="#4A7FA5" font-family="Arial,sans-serif">Enjeksiyonsuz</text>
-  <text x="238" y="183" font-size="11" fill="#4A7FA5" font-family="Arial,sans-serif">Plastik kılıf korumalı</text>
-  <text x="238" y="197" font-size="11" fill="#4A7FA5" font-family="Arial,sans-serif">Uzama bu bölgede olur</text>
-  <line x1="230" y1="248" x2="230" y2="392" stroke="#C8873A" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <line x1="226" y1="248" x2="234" y2="248" stroke="#C8873A" stroke-width="1.5"/>
-  <line x1="226" y1="392" x2="234" y2="392" stroke="#C8873A" stroke-width="1.5"/>
+  <rect x="214" y="244" width="1.5" height="144" fill="#d4af37" opacity="0.5"/>
+  <line x1="230" y1="95" x2="230" y2="245" stroke="#1d6ea5" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="226" y1="95" x2="234" y2="95" stroke="#1d6ea5" stroke-width="1.5"/>
+  <line x1="226" y1="245" x2="234" y2="245" stroke="#1d6ea5" stroke-width="1.5"/>
+  <text x="238" y="153" font-size="13" fill="#0f3460" font-family="Arial,sans-serif" font-weight="bold">SERBEST BOY</text>
+  <text x="238" y="169" font-size="11" fill="#1d6ea5" font-family="Arial,sans-serif">Enjeksiyonsuz</text>
+  <text x="238" y="183" font-size="11" fill="#1d6ea5" font-family="Arial,sans-serif">Plastik kılıf korumalı</text>
+  <text x="238" y="197" font-size="11" fill="#1d6ea5" font-family="Arial,sans-serif">Uzama bu bölgede olur</text>
+  <line x1="230" y1="248" x2="230" y2="392" stroke="#d4af37" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="226" y1="248" x2="234" y2="248" stroke="#d4af37" stroke-width="1.5"/>
+  <line x1="226" y1="392" x2="234" y2="392" stroke="#d4af37" stroke-width="1.5"/>
   <text x="238" y="300" font-size="13" fill="#A06820" font-family="Arial,sans-serif" font-weight="bold">KÖK BOYU</text>
-  <text x="238" y="316" font-size="11" fill="#C8873A" font-family="Arial,sans-serif">Çimento enjeksiyonlu</text>
-  <text x="238" y="330" font-size="11" fill="#C8873A" font-family="Arial,sans-serif">Zemine aderans sağlar</text>
-  <text x="238" y="344" font-size="11" fill="#C8873A" font-family="Arial,sans-serif">Kök yüzeyi çamursuz olmalı</text>
+  <text x="238" y="316" font-size="11" fill="#d4af37" font-family="Arial,sans-serif">Çimento enjeksiyonlu</text>
+  <text x="238" y="330" font-size="11" fill="#d4af37" font-family="Arial,sans-serif">Zemine aderans sağlar</text>
+  <text x="238" y="344" font-size="11" fill="#d4af37" font-family="Arial,sans-serif">Kök yüzeyi çamursuz olmalı</text>
   <rect x="430" y="108" width="350" height="300" fill="white" rx="8" stroke="#e2e8f0" stroke-width="1"/>
-  <rect x="430" y="108" width="350" height="34" fill="#1B2B3A" rx="8"/>
-  <rect x="430" y="128" width="350" height="14" fill="#1B2B3A"/>
+  <rect x="430" y="108" width="350" height="34" fill="#002147" rx="8"/>
+  <rect x="430" y="128" width="350" height="14" fill="#002147"/>
   <text x="445" y="130" font-size="12" fill="white" font-family="Arial,sans-serif" font-weight="bold">Teknik Parametreler</text>
-  <text x="445" y="162" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Toplam Uzunluk</text><text x="640" y="162" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">10 – 40 m</text>
+  <text x="445" y="162" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Toplam Uzunluk</text><text x="640" y="162" font-size="11" fill="#002147" font-family="Arial,sans-serif" font-weight="bold">10 – 40 m</text>
   <line x1="445" y1="170" x2="765" y2="170" stroke="#f0ece6" stroke-width="1"/>
-  <text x="445" y="186" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Kapasite</text><text x="640" y="186" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">500 – 5.000 kN</text>
+  <text x="445" y="186" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Kapasite</text><text x="640" y="186" font-size="11" fill="#002147" font-family="Arial,sans-serif" font-weight="bold">500 – 5.000 kN</text>
   <line x1="445" y1="194" x2="765" y2="194" stroke="#f0ece6" stroke-width="1"/>
-  <text x="445" y="210" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Delgi Çapı</text><text x="640" y="210" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">Ø100 – 200 mm</text>
+  <text x="445" y="210" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Delgi Çapı</text><text x="640" y="210" font-size="11" fill="#002147" font-family="Arial,sans-serif" font-weight="bold">Ø100 – 200 mm</text>
   <line x1="445" y1="218" x2="765" y2="218" stroke="#f0ece6" stroke-width="1"/>
-  <text x="445" y="234" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Kök Boyu</text><text x="640" y="234" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">4 – 10 m</text>
+  <text x="445" y="234" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Kök Boyu</text><text x="640" y="234" font-size="11" fill="#002147" font-family="Arial,sans-serif" font-weight="bold">4 – 10 m</text>
   <line x1="445" y1="242" x2="765" y2="242" stroke="#f0ece6" stroke-width="1"/>
-  <text x="445" y="258" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Strand Çapı</text><text x="640" y="258" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">0,6 inç (15,2 mm)</text>
+  <text x="445" y="258" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Strand Çapı</text><text x="640" y="258" font-size="11" fill="#002147" font-family="Arial,sans-serif" font-weight="bold">0,6 inç (15,2 mm)</text>
   <line x1="445" y1="266" x2="765" y2="266" stroke="#f0ece6" stroke-width="1"/>
-  <text x="445" y="282" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Germe Yükü</text><text x="640" y="282" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">%110–125 × P_d</text>
+  <text x="445" y="282" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Germe Yükü</text><text x="640" y="282" font-size="11" fill="#002147" font-family="Arial,sans-serif" font-weight="bold">%110–125 × P_d</text>
   <line x1="445" y1="290" x2="765" y2="290" stroke="#f0ece6" stroke-width="1"/>
-  <text x="445" y="306" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Standart</text><text x="640" y="306" font-size="11" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold">EN 1537 / BS 8081</text>
+  <text x="445" y="306" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">Standart</text><text x="640" y="306" font-size="11" fill="#002147" font-family="Arial,sans-serif" font-weight="bold">EN 1537 / BS 8081</text>
   <line x1="445" y1="318" x2="765" y2="318" stroke="#f0ece6" stroke-width="1"/>
   <rect x="445" y="330" width="320" height="62" fill="#FFF8E7" rx="4"/>
   <text x="455" y="347" font-size="11" fill="#A06820" font-family="Arial,sans-serif" font-weight="bold">⚠ Kritik Kural (EN 1537 §7.4.2)</text>
   <text x="455" y="362" font-size="10" fill="#5A6A7A" font-family="Arial,sans-serif">Serbest boy enjeksiyon almamalıdır.</text>
   <text x="455" y="376" font-size="10" fill="#5A6A7A" font-family="Arial,sans-serif">Aksi halde sağlıklı uzama ölçümü yapılamaz.</text>
-  <text x="400" y="22" font-size="14" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Öngermeli Ankraj — Anatomik Kesit</text>
+  <text x="400" y="22" font-size="14" fill="#002147" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Öngermeli Ankraj — Anatomik Kesit</text>
 </svg>
 <figcaption>Şekil 1 — Öngermeli ankrajın serbest boy / kök boyu anatomisi. Turuncu bölge: çimento enjeksiyonlu kök; mavi bölge: enjeksiyonsuz serbest boy. EN 1537 uyumlu şematik.</figcaption>
 </figure>
@@ -2907,48 +2907,48 @@ export const teknikler: Teknik[] = [
 </ul>
 <figure>
 <svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Germe testi prosedür akış şeması">
-  <rect width="800" height="380" fill="#F5F2ED"/>
-  <text x="400" y="28" font-size="14" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Kabul Testi Prosedürü (EN 1537)</text>
-  <rect x="60" y="50" width="140" height="50" fill="#2E5077" rx="6"/>
+  <rect width="800" height="380" fill="#fafaf7"/>
+  <text x="400" y="28" font-size="14" fill="#002147" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Kabul Testi Prosedürü (EN 1537)</text>
+  <rect x="60" y="50" width="140" height="50" fill="#0f3460" rx="6"/>
   <text x="130" y="72" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">1. Kriko Montajı</text>
   <text x="130" y="88" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">Hidrolik kriko + ölçüm</text>
-  <line x1="200" y1="75" x2="230" y2="75" stroke="#1B2B3A" stroke-width="2" marker-end="url(#arr)"/>
-  <rect x="230" y="50" width="140" height="50" fill="#2E5077" rx="6"/>
+  <line x1="200" y1="75" x2="230" y2="75" stroke="#002147" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="230" y="50" width="140" height="50" fill="#0f3460" rx="6"/>
   <text x="300" y="72" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">2. Kilit Yükü</text>
   <text x="300" y="88" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">≈ 0,10 × Pd</text>
-  <line x1="370" y1="75" x2="400" y2="75" stroke="#1B2B3A" stroke-width="2" marker-end="url(#arr)"/>
-  <rect x="400" y="50" width="140" height="50" fill="#C8873A" rx="6"/>
+  <line x1="370" y1="75" x2="400" y2="75" stroke="#002147" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="400" y="50" width="140" height="50" fill="#d4af37" rx="6"/>
   <text x="470" y="72" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">3. Test Yükü</text>
   <text x="470" y="88" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">1,25 × Pd</text>
-  <line x1="540" y1="75" x2="570" y2="75" stroke="#1B2B3A" stroke-width="2" marker-end="url(#arr)"/>
-  <rect x="570" y="50" width="160" height="50" fill="#C8873A" rx="6"/>
+  <line x1="540" y1="75" x2="570" y2="75" stroke="#002147" stroke-width="2" marker-end="url(#arr)"/>
+  <rect x="570" y="50" width="160" height="50" fill="#d4af37" rx="6"/>
   <text x="650" y="67" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">4. Bekleme</text>
   <text x="650" y="81" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Min. 5 Dakika</text>
   <text x="650" y="95" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">Sürünme gözlemi</text>
-  <line x1="650" y1="130" x2="650" y2="155" stroke="#1B2B3A" stroke-width="2"/>
-  <rect x="570" y="155" width="160" height="50" fill="#2E5077" rx="6"/>
+  <line x1="650" y1="130" x2="650" y2="155" stroke="#002147" stroke-width="2"/>
+  <rect x="570" y="155" width="160" height="50" fill="#0f3460" rx="6"/>
   <text x="650" y="177" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">5. Uzama Ölçümü</text>
   <text x="650" y="193" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">δ gerçek vs δ teorik</text>
-  <line x1="570" y1="180" x2="480" y2="180" stroke="#1B2B3A" stroke-width="2"/>
-  <polygon points="478,175 470,180 478,185" fill="#1B2B3A"/>
+  <line x1="570" y1="180" x2="480" y2="180" stroke="#002147" stroke-width="2"/>
+  <polygon points="478,175 470,180 478,185" fill="#002147"/>
   <rect x="330" y="155" width="140" height="50" fill="#38A169" rx="6"/>
   <text x="400" y="174" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">KABUL ✓</text>
   <text x="400" y="190" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">Kilitlenme yükü uygulanır</text>
   <rect x="170" y="155" width="140" height="50" fill="#E53E3E" rx="6"/>
   <text x="240" y="174" font-size="11" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">BAŞARISIZ ✗</text>
   <text x="240" y="190" font-size="10" fill="rgba(255,255,255,0.85)" font-family="Arial,sans-serif" text-anchor="middle">Ankraj iptal / yenile</text>
-  <line x1="330" y1="180" x2="310" y2="180" stroke="#1B2B3A" stroke-width="1.5"/>
-  <polygon points="312,175 304,180 312,185" fill="#1B2B3A"/>
+  <line x1="330" y1="180" x2="310" y2="180" stroke="#002147" stroke-width="1.5"/>
+  <polygon points="312,175 304,180 312,185" fill="#002147"/>
   <rect x="60" y="250" width="680" height="100" fill="white" rx="8" stroke="#e2e8f0"/>
-  <rect x="60" y="250" width="680" height="28" fill="#1B2B3A" rx="8"/>
-  <rect x="60" y="265" width="680" height="13" fill="#1B2B3A"/>
+  <rect x="60" y="250" width="680" height="28" fill="#002147" rx="8"/>
+  <rect x="60" y="265" width="680" height="13" fill="#002147"/>
   <text x="400" y="266" font-size="12" fill="white" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Kritik Kontrol Kriterleri</text>
   <text x="80" y="298" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">▸ Uzama = Serbest boy × (Pt - P0) / (Ap × Es) — tolerans ±10%</text>
   <text x="80" y="316" font-size="11" fill="#5A6A7A" font-family="Arial,sans-serif">▸ Sürünme (creep): 5 dk içinde &lt;1 mm uzama artışı kabul edilir</text>
-  <text x="80" y="334" font-size="11" fill="#C8873A" font-family="Arial,sans-serif" font-weight="bold">▸ Kalibrasyon: Kriko kalibre değeri kontrol edilmeden test GEÇERSIZDIR</text>
+  <text x="80" y="334" font-size="11" fill="#d4af37" font-family="Arial,sans-serif" font-weight="bold">▸ Kalibrasyon: Kriko kalibre değeri kontrol edilmeden test GEÇERSIZDIR</text>
   <defs>
     <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L8,3 z" fill="#1B2B3A"/>
+      <path d="M0,0 L0,6 L8,3 z" fill="#002147"/>
     </marker>
   </defs>
 </svg>
@@ -3020,21 +3020,21 @@ export const teknikler: Teknik[] = [
 <p>En az tahmin edilen ve bütçeyi en çok aşan kalem: çimento sarfiyatı.</p>
 <figure>
 <svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Zemin tipine göre çimento sarfiyatı karşılaştırması">
-  <rect width="800" height="320" fill="#F5F2ED"/>
-  <text x="400" y="28" font-size="14" fill="#1B2B3A" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Zemin Tipine Göre Çimento Sarfiyatı (Ø150 mm, 7 m kök boyu)</text>
-  <text x="40" y="60" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Sıkı Kil / Kaya</text>
+  <rect width="800" height="320" fill="#fafaf7"/>
+  <text x="400" y="28" font-size="14" fill="#002147" font-family="Arial,sans-serif" font-weight="bold" text-anchor="middle">Zemin Tipine Göre Çimento Sarfiyatı (Ø150 mm, 7 m kök boyu)</text>
+  <text x="40" y="60" font-size="12" fill="#002147" font-family="Arial,sans-serif">Sıkı Kil / Kaya</text>
   <rect x="200" y="47" width="80" height="22" fill="#38A169" rx="3"/>
   <text x="288" y="62" font-size="11" fill="#38A169" font-family="Arial,sans-serif">~80–120 kg</text>
-  <text x="40" y="100" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Orta Sıkı Kil</text>
-  <rect x="200" y="87" width="160" height="22" fill="#4A7FA5" rx="3"/>
-  <text x="368" y="102" font-size="11" fill="#4A7FA5" font-family="Arial,sans-serif">~180–280 kg</text>
-  <text x="40" y="140" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Gevşek Kum/Silt</text>
-  <rect x="200" y="127" width="260" height="22" fill="#C8873A" rx="3"/>
-  <text x="468" y="142" font-size="11" fill="#C8873A" font-family="Arial,sans-serif">~320–500 kg</text>
-  <text x="40" y="180" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Balçık / Boşluklu</text>
+  <text x="40" y="100" font-size="12" fill="#002147" font-family="Arial,sans-serif">Orta Sıkı Kil</text>
+  <rect x="200" y="87" width="160" height="22" fill="#1d6ea5" rx="3"/>
+  <text x="368" y="102" font-size="11" fill="#1d6ea5" font-family="Arial,sans-serif">~180–280 kg</text>
+  <text x="40" y="140" font-size="12" fill="#002147" font-family="Arial,sans-serif">Gevşek Kum/Silt</text>
+  <rect x="200" y="127" width="260" height="22" fill="#d4af37" rx="3"/>
+  <text x="468" y="142" font-size="11" fill="#d4af37" font-family="Arial,sans-serif">~320–500 kg</text>
+  <text x="40" y="180" font-size="12" fill="#002147" font-family="Arial,sans-serif">Balçık / Boşluklu</text>
   <rect x="200" y="167" width="420" height="22" fill="#E53E3E" rx="3"/>
   <text x="628" y="182" font-size="11" fill="#E53E3E" font-family="Arial,sans-serif">~500–900+ kg</text>
-  <text x="40" y="220" font-size="12" fill="#1B2B3A" font-family="Arial,sans-serif">Yeraltı Suyu Yüksek</text>
+  <text x="40" y="220" font-size="12" fill="#002147" font-family="Arial,sans-serif">Yeraltı Suyu Yüksek</text>
   <rect x="200" y="207" width="340" height="22" fill="#805AD5" rx="3"/>
   <text x="548" y="222" font-size="11" fill="#805AD5" font-family="Arial,sans-serif">~400–700 kg (sızıntıya bağlı)</text>
   <line x1="200" y1="240" x2="200" y2="260" stroke="#5A6A7A" stroke-width="1"/>

@@ -115,18 +115,30 @@ Sprint 5  ⏳ Domain yönlendirme (toremzemin.com)
 
 ---
 
-## 7. Renk Paleti
+## 7. Renk Paleti — Premium V2.0 (Navy & Gold)
+
+**Tek gerçek kaynak:** `src/styles/global.css` `:root` bloku.
 
 ```css
---color-primary:    #1B2B3A;  /* gece çeliği */
---color-secondary:  #2E5077;  /* derin mavi */
---color-accent:     #4A7FA5;  /* çelik mavi */
---color-highlight:  #C8873A;  /* toprak/vurgu */
---color-bg:         #F5F2ED;  /* ılık krem */
---color-text:       #1B2B3A;
---color-text-muted: #5A6A7A;
---color-white:      #FFFFFF;
+--color-primary:      #002147;   /* navy — header, dark sections */
+--color-secondary:    #0f3460;   /* derin navy */
+--color-accent:       #1d6ea5;   /* çelik mavi — links, accent */
+--color-highlight:    #d4af37;   /* altın — CTA, vurgu */
+--color-navy-dark:    #001530;   /* en koyu navy */
+--color-bg:           #fafaf7;   /* krem — sayfa zemini */
+--color-bg-alt:       #f0f0eb;
+--color-text:         #333333;
+--color-text-muted:   #5A6A7A;
+--color-border:       #e2e0db;
+--color-white:        #FFFFFF;
 ```
+
+**Kullanım kuralı:**
+- `.astro` `<style>` blokları → `var(--color-*)`
+- `.astro` inline SVG fill/stroke → yeni hex değer
+- `.ts` template literal SVG → yeni hex değer
+
+**YASAK:** `#1B2B3A`, `#C8873A`, `#2E5077`, `#4A7FA5`, `#F5F2ED`, `#cfa856`
 
 ---
 
