@@ -5,68 +5,88 @@ import CTABox from '../../../components/CTABox.astro';
 
 const canonical = 'https://www.toremzemin.com/kurumsal/ekibimiz/';
 
-const yonetim = [
+const kurucular = [
   {
-    ad: 'Genel Müdür',
-    unvan: 'Genel Müdür & Kurucu',
-    brans: 'İnşaat Mühendisi, 13+ yıl geoteknik deneyim',
-    foto: '/images/saha-muhendis.jpg',
-    linkedin: '#',
-    uzmanlık: ['Fore Kazık', 'Derin Temel Tasarımı', 'Proje Yönetimi'],
+    ad: 'Yasin Öztürk',
+    slug: 'yasin-ozturk',
+    unvan: 'Kurucu Ortak & Genel Müdür',
+    rol: 'Saha Takibi · İş Geliştirme · Teknik Yönetim',
+    brans: 'Jeoloji Yüksek Mühendisi',
+    egitim: 'Lisans — Karadeniz Teknik Üniversitesi (Jeoloji Müh.) · Yüksek Lisans — İstanbul Medeniyet Üniversitesi',
+    deneyim: '15+ yıl',
+    ozet: 'Proje görüşmelerinden şantiye sahibinin son imzasına kadar; işin uygulanabilirliğini saha gözüyle değerlendirir, mühendislik kararlarını birebir izler.',
   },
   {
-    ad: 'Teknik Direktör',
-    unvan: 'Teknik Direktör',
-    brans: 'İnşaat Mühendisi, Geoteknik Uzmanı',
-    foto: '/images/proje-gorusme.jpg',
-    linkedin: '#',
-    uzmanlık: ['Zemin İyileştirme', 'Jet Grout', 'TBDY 2018'],
+    ad: 'Ali Osman Aksu',
+    slug: 'ali-osman-aksu',
+    unvan: 'Kurucu Ortak & Genel Müdür',
+    rol: 'Finans · Satın Alma · Hakediş Takibi',
+    brans: 'İnşaat Mühendisi',
+    egitim: 'Uludağ Üniversitesi (İnşaat Mühendisliği)',
+    deneyim: '15+ yıl',
+    ozet: 'Finansal disiplin, malzeme ve ekipman tedariki, iş programı-hakediş dengesi. Projelerin ekonomik yürüyüşünden sorumlu.',
   },
 ];
 
-const departmanlar = [
+const yonetim = [
   {
-    isim: 'Zemin Mühendisliği',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
-    aciklama: 'Zemin etüdü, temel tasarımı ve geoteknik proje mühendisleri.',
-    kisi: '8 Mühendis',
+    ad: 'Murat Erden',
+    slug: 'murat-erden',
+    unvan: 'Genel Koordinatör',
+    rol: 'Teknik İşler · Hakediş Hazırlama · Koordinasyon',
+    brans: 'İnşaat Yüksek Mühendisi',
+    egitim: 'İstanbul Kültür Üniversitesi (Yüksek Lisans)',
   },
   {
-    isim: 'Saha Operasyonları',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>`,
-    aciklama: 'Fore kazık, jet grout, ankraj ve iksa sahalarında uygulama ekipleri.',
-    kisi: '30+ Teknisyen',
+    ad: 'Hatice Özdoğan',
+    slug: 'hatice-ozdogan',
+    unvan: 'Ofis Yöneticisi',
+    rol: 'Sekreterya · Fatura & Ofis İşleri · Misafir Karşılama',
+    brans: 'İşletme',
+    egitim: 'İşletme mezunu',
+  },
+];
+
+const formenler = [
+  {
+    ad: 'Abdulkadir Aksu',
+    slug: 'abdulkadir-aksu',
+    unvan: 'Ankraj Grubu Formeni',
+    rol: 'Öngermeli ve geçici ankraj imalatları · Saha ekibi liderliği',
   },
   {
-    isim: 'Kalite & Denetim',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
-    aciklama: 'ISO 9001 süreç denetimi, yükleme testleri ve kalite güvence.',
-    kisi: '4 Uzman',
+    ad: 'Ramazan Karahan',
+    slug: 'ramazan-karahan',
+    unvan: 'Fore Kazık Grubu Formeni',
+    rol: 'Fore kazık imalatı · Beton dökümü · Kazık teknisyenleri liderliği',
+  },
+];
+
+const danismanlar = [
+  {
+    ad: 'Emre Gül',
+    unvan: 'Mali Müşavir',
+    rol: 'Finansal denetim, vergi ve mevzuat uyumu',
+    ikon: 'finans',
   },
   {
-    isim: 'Makine & Bakım',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>`,
-    aciklama: '15 iş makinesinin bakım, operasyon ve lojistik yönetimi.',
-    kisi: '12 Operatör',
+    ad: 'Yusuf Akçay',
+    unvan: 'Hukuk Danışmanı',
+    rol: 'Sözleşme yönetimi ve hukuki mütalaa',
+    ikon: 'hukuk',
   },
-  {
-    isim: 'Proje Geliştirme',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>`,
-    aciklama: 'Teknik teklif, müşteri ilişkileri ve yeni proje geliştirme.',
-    kisi: '5 Uzman',
-  },
-  {
-    isim: 'Ar-Ge & İnovasyon',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
-    aciklama: 'Yeni zemin teknolojileri araştırma ve pilot uygulama ekibi.',
-    kisi: '3 Araştırmacı',
-  },
+];
+
+const sahaEkibi = [
+  { sayi: '1', rol: 'Şantiyeler Sorumlu Mühendisi', desc: 'Aynı anda yürüyen projelerin ana sorumlusu' },
+  { sayi: '3', rol: 'Saha Mühendisi', desc: 'Şantiyelerde imalat denetimi ve raporlama' },
+  { sayi: '15', rol: 'İşçi & Yağcı Saha Personeli', desc: 'Kazık, ankraj, iksa imalatlarında kalfa ekipler' },
 ];
 ---
 
 <BaseLayout
   title="Ekibimiz | Torem Zemin Mühendislik"
-  description="Torem Zemin'in deneyimli mühendis kadrosu ve uzman ekipleri. 13+ yıllık geoteknik deneyimle Türkiye genelinde hizmet veren profesyoneller."
+  description="Torem Zemin kadrosu: 2 kurucu ortak, mühendislik ve saha ekibi. Her projede kurucu ortakların bizzat dahil olduğu odaklı yapı."
   canonical={canonical}
 >
   <!-- HERO -->
@@ -74,68 +94,138 @@ const departmanlar = [
     <div class="ekip-hero__bg" aria-hidden="true"></div>
     <div class="container ekip-hero__inner">
       <span class="eyebrow eyebrow--gold">Ekibimiz</span>
-      <h1>İnsanlar,<br/><span>Mühendisliğin Özüdür</span></h1>
-      <p>Deneyimli mühendisler, uzman teknisyenler ve sahada kanıtlanmış operatörlerden oluşan güçlü kadromuzla her projede fark yaratıyoruz.</p>
+      <h1>Projelerinizde <span>Kurucusuyla<br>Konuşabileceğiniz</span> Bir Firma</h1>
+      <p>Torem Zemin, iki kurucu ortağın birebir dahil olduğu odaklı bir saha kadrosudur. Sade yapımız sayesinde müşterilerimiz; danışman, yönetici ve uygulayıcı zincirinde kayıp yaşamaz.</p>
     </div>
     <div class="ekip-hero__wave" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)"/></svg>
     </div>
   </section>
 
-  <Breadcrumb items={[
-    { label: 'Kurumsal', href: '/kurumsal/' },
-    { label: 'Ekibimiz' }
-  ]} />
+  <Breadcrumb items={[{ label: 'Kurumsal', href: '/kurumsal/' }, { label: 'Ekibimiz' }]} />
 
-  <!-- YÖNETİM -->
-  <section class="section">
+  <!-- KURUCU ORTAKLAR -->
+  <section class="section ekip-section">
     <div class="container">
-      <div class="section-head">
-        <span class="eyebrow">Liderlik</span>
-        <h2>Yönetim Kadrosu</h2>
-        <p>Her biri sektörde 15+ yıl deneyime sahip uzman liderler.</p>
+      <div class="ekip-section__head">
+        <span class="ekip-eyebrow">Kurucu Ortaklar</span>
+        <h2>İşi Kuranlar, İşi Takip Ediyor</h2>
+        <p>İki kurucu ortak, şirketin günlük operasyonunda doğrudan görevli. Her projede en az biri bizzat takiptedir.</p>
       </div>
-      <div class="yonetim-grid">
-        {yonetim.map((kisi) => (
-          <div class="yonetim-card">
-            <div class="yonetim-card__foto">
-              <img src={kisi.foto} alt={kisi.ad} loading="lazy" width="400" height="480" />
-              <div class="yonetim-card__overlay">
-                <a href={kisi.linkedin} class="linkedin-btn" aria-label="LinkedIn profili">
-                  <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-                </a>
+
+      <div class="kurucu-grid">
+        {kurucular.map((k) => (
+          <article class="kurucu-card">
+            <div class="kurucu-card__photo" aria-hidden="true">
+              <img src={`/images/ekibimiz/${k.slug}.jpg`}
+                   alt={`${k.ad} — ${k.unvan}`}
+                   onerror="this.style.display='none'; this.parentElement.classList.add('kurucu-card__photo--placeholder')"
+                   loading="lazy" width="340" height="400" />
+              <svg class="kurucu-card__placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="kurucu-card__body">
+              <span class="kurucu-card__unvan">{k.unvan}</span>
+              <h3 class="kurucu-card__ad">{k.ad}</h3>
+              <p class="kurucu-card__rol">{k.rol}</p>
+              <div class="kurucu-card__meta">
+                <div class="kurucu-card__meta-row"><strong>Branş:</strong><span>{k.brans}</span></div>
+                <div class="kurucu-card__meta-row"><strong>Eğitim:</strong><span>{k.egitim}</span></div>
+                <div class="kurucu-card__meta-row"><strong>Deneyim:</strong><span>{k.deneyim}</span></div>
               </div>
+              <p class="kurucu-card__ozet">{k.ozet}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- YÖNETİM & KOORDİNASYON -->
+  <section class="section section--alt ekip-section">
+    <div class="container">
+      <div class="ekip-section__head">
+        <span class="ekip-eyebrow">Yönetim & Koordinasyon</span>
+        <h2>Günlük Operasyonu Yürütenler</h2>
+        <p>Teknik koordinasyon, hakediş takibi ve ofis yönetimi bu iki isme emanet.</p>
+      </div>
+
+      <div class="yonetim-grid">
+        {yonetim.map((k) => (
+          <article class="yonetim-card">
+            <div class="yonetim-card__photo" aria-hidden="true">
+              <img src={`/images/ekibimiz/${k.slug}.jpg`}
+                   alt={`${k.ad} — ${k.unvan}`}
+                   onerror="this.style.display='none'; this.parentElement.classList.add('yonetim-card__photo--placeholder')"
+                   loading="lazy" width="200" height="200" />
+              <svg class="yonetim-card__placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
             </div>
             <div class="yonetim-card__body">
-              <h3>{kisi.ad}</h3>
-              <p class="yonetim-card__unvan">{kisi.unvan}</p>
-              <p class="yonetim-card__brans">{kisi.brans}</p>
-              <div class="yonetim-card__tags">
-                {kisi.uzmanlık.map((u) => <span class="uzm-tag">{u}</span>)}
-              </div>
+              <h3>{k.ad}</h3>
+              <span class="yonetim-card__unvan">{k.unvan}</span>
+              <p class="yonetim-card__rol">{k.rol}</p>
+              <p class="yonetim-card__edu"><strong>{k.brans}</strong> · {k.egitim}</p>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- DEPARTMANLAR -->
-  <section class="section dept-section">
+  <!-- SAHA LİDERLİĞİ / FORMENLER -->
+  <section class="section ekip-section">
     <div class="container">
-      <div class="section-head text-center">
-        <span class="eyebrow">Organizasyon</span>
-        <h2>Departmanlarımız</h2>
-        <p>Her biri kendi alanında uzmanlaşmış, birbirine entegre çalışan ekipler.</p>
+      <div class="ekip-section__head">
+        <span class="ekip-eyebrow">Saha Liderliği</span>
+        <h2>Sahayı Yönetenler</h2>
+        <p>Her uygulama grubunun başında deneyimli bir formen bulunur — kazık ve ankraj sahalarının günlük akışı onların sorumluluğunda.</p>
       </div>
-      <div class="dept-grid">
-        {departmanlar.map((d) => (
-          <div class="dept-card">
-            <div class="dept-card__icon" set:html={d.ikon} />
-            <div class="dept-card__body">
-              <h3>{d.isim}</h3>
-              <p>{d.aciklama}</p>
-              <span class="dept-card__kisi">{d.kisi}</span>
+
+      <div class="formen-grid">
+        {formenler.map((k) => (
+          <article class="formen-card">
+            <div class="formen-card__photo" aria-hidden="true">
+              <img src={`/images/ekibimiz/${k.slug}.jpg`}
+                   alt={`${k.ad} — ${k.unvan}`}
+                   onerror="this.style.display='none'; this.parentElement.classList.add('formen-card__photo--placeholder')"
+                   loading="lazy" width="140" height="140" />
+              <svg class="formen-card__placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+            </div>
+            <div class="formen-card__body">
+              <h3>{k.ad}</h3>
+              <span class="formen-card__unvan">{k.unvan}</span>
+              <p>{k.rol}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SAHA EKİBİ (SAYISAL) -->
+  <section class="section section--alt ekip-section">
+    <div class="container">
+      <div class="ekip-section__head">
+        <span class="ekip-eyebrow">Saha Ekibi</span>
+        <h2>Şantiyelerde Bizzat Çalışan Kadro</h2>
+        <p>Mühendisinden işçisine kadar — Torem Zemin imalatlarını yürüten ekip.</p>
+      </div>
+
+      <div class="saha-grid">
+        {sahaEkibi.map((s) => (
+          <div class="saha-card">
+            <span class="saha-card__num">{s.sayi}</span>
+            <div class="saha-card__body">
+              <strong>{s.rol}</strong>
+              <p>{s.desc}</p>
             </div>
           </div>
         ))}
@@ -143,90 +233,498 @@ const departmanlar = [
     </div>
   </section>
 
-  <!-- KARİYER CTA -->
-  <section class="section kariyer-cta-section">
-    <div class="container kariyer-cta">
-      <div class="kariyer-cta__text">
-        <h2>Ekibimize Katılmak İster misiniz?</h2>
-        <p>Geoteknik mühendislik alanında kariyer yapmak isteyen yetenekli mühendis ve teknisyenleri arıyoruz.</p>
+  <!-- DANIŞMANLAR -->
+  <section class="section ekip-section">
+    <div class="container">
+      <div class="ekip-section__head">
+        <span class="ekip-eyebrow">Dış Uzman Desteği</span>
+        <h2>Mali ve Hukuki Danışmanlarımız</h2>
+        <p>Finansal disiplin ve hukuki uyum; alanında uzman iki bağımsız danışmanla yürütülür.</p>
       </div>
-      <a href="/iletisim/" class="btn btn--primary btn--lg">Özgeçmiş Gönderin</a>
+
+      <div class="danisman-grid">
+        {danismanlar.map((d) => (
+          <div class="danisman-card">
+            <div class="danisman-card__icon" aria-hidden="true">
+              {d.ikon === 'finans' ? (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <line x1="12" y1="1" x2="12" y2="23"/>
+                  <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                </svg>
+              ) : (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                  <path d="M9 11l3 3L22 4"/>
+                  <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+                </svg>
+              )}
+            </div>
+            <div class="danisman-card__body">
+              <strong>{d.ad}</strong>
+              <span>{d.unvan}</span>
+              <p>{d.rol}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
   <div class="section container">
-    <CTABox title="Uzman Ekibimizle Projenizi Konuşalım" />
+    <CTABox title="Kurucu ortağımızla Doğrudan Görüşün" />
   </div>
 </BaseLayout>
 
 <style>
-/* Hero */
+/* ============================ */
+/* HERO                         */
+/* ============================ */
 .ekip-hero {
-  background: linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary, #002147) 100%);
+  position: relative;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-navy-dark) 100%);
+  color: #fff;
+  padding: 10rem 0 8rem;
   margin-top: -110px;
-  padding-block: calc(var(--s-20) + 110px) calc(var(--s-16) + 60px);
-  color: white; position: relative; overflow: hidden; text-align: center;
+  text-align: center;
+  overflow: hidden;
 }
 .ekip-hero__bg {
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle at 70% 30%, rgba(212,175,55,0.1) 0%, transparent 60%),
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 100%, 40px 40px, 40px 40px;
-  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.6;
 }
-.ekip-hero__inner { position: relative; z-index: 2; max-width: 640px; margin-inline: auto; }
-.ekip-hero h1 { color: white; font-size: var(--text-5xl, 3rem); margin-bottom: var(--s-4, 1rem); line-height: 1.1; }
-.ekip-hero h1 span { color: var(--color-highlight, #d4af37); }
-.ekip-hero p { color: rgba(255,255,255,.75); font-size: var(--text-lg, 1.125rem); }
-.ekip-hero__wave { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; z-index: 3; line-height: 0; }
-.ekip-hero__wave svg { width: 100%; height: 100%; }
+.ekip-hero__inner { position: relative; z-index: 2; max-width: 820px; margin: 0 auto; padding: 0 var(--s-6); }
+.ekip-hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+.ekip-hero h1 span {
+  color: var(--color-highlight);
+  font-style: italic;
+  font-weight: 500;
+}
+.ekip-hero p {
+  color: rgba(255,255,255,0.78);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.eyebrow--gold {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+  background: rgba(212,175,55,0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,0.3);
+  margin-bottom: 1.5rem;
+}
+.ekip-hero__wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+}
+.ekip-hero__wave svg { display: block; width: 100%; height: 60px; }
 
-/* Eyebrow */
-.eyebrow { display: inline-block; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 1rem; background: rgba(212,175,55,.1); color: var(--color-highlight, #d4af37); padding: .3rem .8rem; border-radius: 4px; }
-.eyebrow--gold { background: var(--color-highlight, #d4af37); color: white; }
+/* ============================ */
+/* SECTION BAŞLIKLARI           */
+/* ============================ */
+.ekip-section__head {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+.ekip-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-earth);
+  margin-bottom: 0.75rem;
+}
+.ekip-section__head h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+  color: var(--color-primary);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+.ekip-section__head p {
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
 
-/* Section head */
-.section-head { margin-bottom: 3rem; }
-.section-head.text-center { text-align: center; max-width: 560px; margin-inline: auto; margin-bottom: 3rem; }
-.section-head h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); color: var(--color-primary, #002147); margin-bottom: .75rem; }
-.section-head p { color: var(--color-text-muted, #5A6A7A); font-size: 1.05rem; line-height: 1.6; }
+/* ============================ */
+/* KURUCU KARTLARI              */
+/* ============================ */
+.kurucu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.kurucu-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.kurucu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 50px rgba(0, 33, 71, 0.08);
+  border-color: var(--color-highlight);
+}
+.kurucu-card__photo {
+  position: relative;
+  background: var(--color-bg-alt);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kurucu-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.kurucu-card__placeholder-icon {
+  width: 80px;
+  height: 80px;
+  color: var(--color-text-muted);
+  opacity: 0.3;
+  display: none;
+}
+.kurucu-card__photo--placeholder .kurucu-card__placeholder-icon { display: block; }
 
-/* Yönetim grid */
-.yonetim-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; max-width: 900px; margin-inline: auto; }
-.yonetim-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid rgba(0,0,0,.06); box-shadow: 0 4px 20px rgba(0,0,0,.06); transition: transform .3s ease, box-shadow .3s ease; }
-.yonetim-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,.12); }
-.yonetim-card__foto { position: relative; aspect-ratio: 4/5; overflow: hidden; }
-.yonetim-card__foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-.yonetim-card:hover .yonetim-card__foto img { transform: scale(1.05); }
-.yonetim-card__overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,21,48,.7) 0%, transparent 50%); display: flex; align-items: flex-end; justify-content: flex-end; padding: 1.25rem; opacity: 0; transition: opacity .3s ease; }
-.yonetim-card:hover .yonetim-card__overlay { opacity: 1; }
-.linkedin-btn { display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #0077b5; color: white; border-radius: 8px; text-decoration: none; transition: transform .2s ease; }
-.linkedin-btn:hover { transform: scale(1.1); }
-.yonetim-card__body { padding: 1.5rem; }
-.yonetim-card__body h3 { font-size: 1.25rem; font-weight: 700; color: var(--color-primary, #002147); margin-bottom: .25rem; }
-.yonetim-card__unvan { font-size: .875rem; font-weight: 600; color: var(--color-highlight, #d4af37); margin-bottom: .5rem; }
-.yonetim-card__brans { font-size: .85rem; color: var(--color-text-muted, #5A6A7A); margin-bottom: 1rem; line-height: 1.5; }
-.yonetim-card__tags { display: flex; flex-wrap: wrap; gap: .5rem; }
-.uzm-tag { font-size: .75rem; background: rgba(0,33,71,.06); border: 1px solid rgba(0,33,71,.1); color: var(--color-primary, #002147); padding: .2rem .6rem; border-radius: 999px; font-weight: 500; }
+.kurucu-card__body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.kurucu-card__unvan {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+}
+.kurucu-card__ad {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.kurucu-card__rol {
+  font-size: 0.92rem;
+  color: var(--color-text);
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+.kurucu-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.kurucu-card__meta-row {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+.kurucu-card__meta-row strong {
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-top: 2px;
+}
+.kurucu-card__meta-row span { color: var(--color-text); }
+.kurucu-card__ozet {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
 
-/* Departmanlar */
-.dept-section { background: #fafaf7; }
-.dept-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.dept-card { background: white; border: 1px solid rgba(0,0,0,.06); border-radius: 14px; padding: 1.75rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: border-color .2s, box-shadow .2s, transform .2s; }
-.dept-card:hover { border-color: var(--color-highlight, #d4af37); box-shadow: 0 8px 24px rgba(0,0,0,.08); transform: translateY(-3px); }
-.dept-card__icon { flex-shrink: 0; width: 44px; height: 44px; background: rgba(212,175,55,.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--color-highlight, #d4af37); }
-.dept-card__icon svg { width: 22px; height: 22px; }
-.dept-card__body h3 { font-size: 1rem; font-weight: 700; color: var(--color-primary, #002147); margin-bottom: .4rem; }
-.dept-card__body p { font-size: .875rem; color: var(--color-text-muted, #5A6A7A); line-height: 1.6; margin-bottom: .75rem; }
-.dept-card__kisi { font-size: .8rem; font-weight: 700; color: var(--color-highlight, #d4af37); background: rgba(212,175,55,.1); padding: .2rem .6rem; border-radius: 999px; }
+/* ============================ */
+/* YÖNETİM KARTLARI             */
+/* ============================ */
+.yonetim-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.yonetim-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.yonetim-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,33,71,0.06);
+}
+.yonetim-card__photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-border);
+  position: relative;
+}
+.yonetim-card__photo img { width: 100%; height: 100%; object-fit: cover; }
+.yonetim-card__placeholder-icon {
+  width: 40px;
+  height: 40px;
+  color: var(--color-text-muted);
+  opacity: 0.35;
+  display: none;
+}
+.yonetim-card__photo--placeholder .yonetim-card__placeholder-icon { display: block; }
 
-/* Kariyer CTA */
-.kariyer-cta-section { background: var(--color-primary, #002147); }
-.kariyer-cta { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding-block: 3.5rem; }
-.kariyer-cta__text h2 { color: white; font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: .5rem; }
-.kariyer-cta__text p { color: rgba(255,255,255,.7); font-size: 1rem; }
+.yonetim-card__body { flex: 1; }
+.yonetim-card__body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin: 0 0 0.25rem;
+  font-weight: 700;
+}
+.yonetim-card__unvan {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+  margin-bottom: 0.6rem;
+}
+.yonetim-card__rol {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.55;
+  margin: 0 0 0.6rem;
+}
+.yonetim-card__edu {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--color-border);
+}
+.yonetim-card__edu strong { color: var(--color-primary); font-weight: 600; }
 
-@media (max-width: 900px) { .dept-grid { grid-template-columns: repeat(2,1fr); } .yonetim-grid { grid-template-columns: 1fr; max-width: 440px; } }
-@media (max-width: 640px) { .dept-grid { grid-template-columns: 1fr; } .kariyer-cta { flex-direction: column; text-align: center; } }
+/* ============================ */
+/* FORMEN KARTLARI              */
+/* ============================ */
+.formen-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.formen-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-earth);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.formen-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(181,83,43,0.08); }
+.formen-card__photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-earth-light, #d77a52);
+  position: relative;
+}
+.formen-card__photo img { width: 100%; height: 100%; object-fit: cover; }
+.formen-card__placeholder-icon {
+  width: 30px; height: 30px; color: var(--color-text-muted); opacity: 0.35;
+  display: none;
+}
+.formen-card__photo--placeholder .formen-card__placeholder-icon { display: block; }
+
+.formen-card__body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  margin: 0 0 0.2rem;
+  font-weight: 700;
+}
+.formen-card__unvan {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-earth);
+  margin-bottom: 0.35rem;
+}
+.formen-card__body p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ============================ */
+/* SAHA SAYISAL                 */
+/* ============================ */
+.saha-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.saha-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1.5rem 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.saha-card:hover { transform: translateY(-3px); border-color: var(--color-highlight); }
+.saha-card__num {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--color-highlight);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 42px;
+}
+.saha-card__body strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+}
+.saha-card__body p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ============================ */
+/* DANIŞMAN                     */
+/* ============================ */
+.danisman-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.danisman-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.danisman-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(212,175,55,0.08);
+  color: var(--color-highlight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.danisman-card__icon svg { width: 22px; height: 22px; }
+.danisman-card__body strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  margin-bottom: 0.2rem;
+}
+.danisman-card__body span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-earth);
+  margin-bottom: 0.4rem;
+}
+.danisman-card__body p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ============================ */
+/* RESPONSIVE                   */
+/* ============================ */
+@media (max-width: 900px) {
+  .kurucu-grid { grid-template-columns: 1fr; }
+  .kurucu-card { grid-template-columns: 1fr; }
+  .kurucu-card__photo { height: 280px; }
+  .yonetim-grid, .formen-grid, .saha-grid, .danisman-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .ekip-hero { padding: 8rem 0 6rem; }
+  .kurucu-card__body { padding: 1.25rem; }
+  .kurucu-card__meta-row { grid-template-columns: 1fr; gap: 0.1rem; }
+  .kurucu-card__meta-row strong { padding-top: 0; }
+}
 </style>
