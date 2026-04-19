@@ -26,7 +26,7 @@ const { stats = defaultStats } = Astro.props;
     <ul class="stats__grid">
       {stats.map(({ value, suffix = '', label }) => (
         <li class="stats__item">
-          <span class="stats__value" data-target={value}>0</span>
+          <span class="stats__value" data-target={value}>{value}</span>
           <span class="stats__suffix">{suffix}</span>
           <span class="stats__label">{label}</span>
         </li>
@@ -68,9 +68,11 @@ const { stats = defaultStats } = Astro.props;
         if (!entry.isIntersecting) return;
         const el = entry.target as HTMLElement;
         const target = parseInt(el.dataset.target ?? '0', 10);
-        let current = 0;
-        const stepTime = 30;
-        const increment = target / (1400 / stepTime);
+        let current = Math.floor(target * 0.85);
+        const stepTime = 40;
+        const duration = 900;
+        const increment = Math.max(1, (target - current) / (duration / stepTime));
+        el.textContent = current.toString();
         const timer = setInterval(() => {
           current = Math.min(current + increment, target);
           el.textContent = Math.floor(current).toString();

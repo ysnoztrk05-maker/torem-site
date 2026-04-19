@@ -228,6 +228,7 @@ const faqItems = [
       <div class="neden-grid">
 
         <div class="neden-kart reveal">
+          <span class="neden-kart__num" aria-hidden="true">01</span>
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
@@ -236,6 +237,7 @@ const faqItems = [
         </div>
 
         <div class="neden-kart reveal">
+          <span class="neden-kart__num" aria-hidden="true">02</span>
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
           </div>
@@ -244,6 +246,7 @@ const faqItems = [
         </div>
 
         <div class="neden-kart reveal">
+          <span class="neden-kart__num" aria-hidden="true">03</span>
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
           </div>
@@ -252,6 +255,7 @@ const faqItems = [
         </div>
 
         <div class="neden-kart reveal">
+          <span class="neden-kart__num" aria-hidden="true">04</span>
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
@@ -260,6 +264,7 @@ const faqItems = [
         </div>
 
         <div class="neden-kart reveal">
+          <span class="neden-kart__num" aria-hidden="true">05</span>
           <div class="neden-kart__ikon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" width="26" height="26"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
           </div>
@@ -304,7 +309,7 @@ const faqItems = [
         ))}
       </div>
       <div class="text-center" style="margin-top:var(--s-10)">
-        <a href="/faaliyet-alanlari/" class="btn btn--ghost">Tüm Hizmetleri Görüntüle</a>
+        <a href="/faaliyet-alanlari/" class="btn btn--outline">Tüm Hizmetleri Görüntüle</a>
       </div>
     </div>
   </section>
@@ -332,7 +337,7 @@ const faqItems = [
         })}
       </div>
       <div class="text-center" style="margin-top:var(--s-8)">
-        <a href="/faaliyet-alanlari/" class="btn btn--ghost">Tüm Faaliyet Alanlarını Görüntüle</a>
+        <a href="/faaliyet-alanlari/" class="btn btn--outline">Tüm Faaliyet Alanlarını Görüntüle</a>
       </div>
     </div>
   </section>
@@ -448,7 +453,7 @@ const faqItems = [
         ))}
       </div>
       <div class="text-center" style="margin-top:var(--s-8)">
-        <a href="/projelerimiz/" class="btn btn--ghost">Tüm Projeler →</a>
+        <a href="/projelerimiz/" class="btn btn--outline">Tüm Projeler →</a>
       </div>
     </div>
   </section>
@@ -744,7 +749,7 @@ const faqItems = [
         ))}
       </div>
       <div class="text-center" style="margin-top:var(--s-8)">
-        <a href="/blog/" class="btn btn--ghost">Tüm Yazılar</a>
+        <a href="/blog/" class="btn btn--outline">Tüm Yazılar</a>
       </div>
     </div>
   </section>
@@ -1546,21 +1551,47 @@ const faqItems = [
 }
 
 .neden-kart {
-  background: var(--color-white); 
+  background: var(--color-white);
   border: 1px solid rgba(0,21,48,.06);
-  border-radius: 16px; 
-  padding: 2.5rem 2rem; 
-  position: relative; 
-  display: flex; 
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  position: relative;
+  display: flex;
   flex-direction: column;
   box-shadow: 0 4px 20px rgba(0,0,0,.02);
   transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease, border-color .4s ease;
+  overflow: hidden;
 }
-.neden-kart:hover { 
-  transform: translateY(-8px); 
-  box-shadow: 0 20px 40px rgba(0,0,0,.06); 
+.neden-kart::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-earth), var(--color-highlight));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s cubic-bezier(.22,1,.36,1);
+}
+.neden-kart:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.06);
   border-color: rgba(212,175,55,.3);
 }
+.neden-kart:hover::before { transform: scaleX(1); }
+
+.neden-kart__num {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-earth);
+  letter-spacing: 0.05em;
+  opacity: 0.55;
+  transition: opacity .3s ease, color .3s ease;
+}
+.neden-kart:hover .neden-kart__num { opacity: 1; }
 
 .neden-kart__ikon {
   width: 56px; height: 56px; 
