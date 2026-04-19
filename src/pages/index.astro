@@ -127,6 +127,22 @@ const faqItems = [
           Ücretsiz Keşif İste
         </a>
       </div>
+
+      <!-- Mikro Güvence — yanıt süresi + direkt telefon -->
+      <p class="hero-microtrust">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span>24 saat içinde geri dönüş</span>
+        <span class="hero-microtrust__sep" aria-hidden="true">·</span>
+        <a href="tel:+905316594636" class="hero-microtrust__tel">+90 531 659 46 36</a>
+      </p>
+
+      <!-- Trust Rozet Bandı -->
+      <ul class="hero-trust-row" aria-label="Sertifikalar ve yetkinlikler">
+        <li><span class="hero-trust-row__check" aria-hidden="true">✓</span> ISO 9001:2015</li>
+        <li><span class="hero-trust-row__check" aria-hidden="true">✓</span> TBDY 2018 Uyumlu</li>
+        <li><span class="hero-trust-row__check" aria-hidden="true">✓</span> 13+ Yıl Deneyim</li>
+        <li><span class="hero-trust-row__check" aria-hidden="true">✓</span> Türkiye Geneli</li>
+      </ul>
     </div>
 
     <!-- Floating Stats — sirket.ts'den otomatik -->
@@ -135,7 +151,7 @@ const faqItems = [
         const [numVal, sfx] = parseDeger(stat.deger);
         return (
           <div class="hero-stat-card">
-            <span class="hero-stat-card__num hero-counter" data-target={numVal} data-suffix={sfx}>0</span>
+            <span class="hero-stat-card__num hero-counter" data-target={numVal} data-suffix={sfx}>{numVal}{sfx}</span>
             <span class="hero-stat-card__lbl">{stat.etiket}</span>
           </div>
         );
@@ -1198,6 +1214,63 @@ const faqItems = [
   color: var(--color-white);
 }
 
+/* ── Hero Micro-Trust ── */
+.hero-microtrust {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1.1rem;
+  font-size: .88rem;
+  color: rgba(255,255,255,.75);
+  animation: heroSlideUp .7s cubic-bezier(.22,1,.36,1) 1.7s both;
+}
+.hero-microtrust svg { color: var(--color-highlight); flex-shrink: 0; }
+.hero-microtrust__sep { color: rgba(255,255,255,.3); margin: 0 .25rem; }
+.hero-microtrust__tel {
+  color: var(--color-highlight);
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  letter-spacing: .02em;
+  transition: color .2s;
+}
+.hero-microtrust__tel:hover { color: #fff; }
+
+/* ── Hero Trust Badges ── */
+.hero-trust-row {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .75rem;
+  animation: heroSlideUp .7s cubic-bezier(.22,1,.36,1) 1.9s both;
+}
+.hero-trust-row li {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .35rem .8rem;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(212,175,55,.25);
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.9);
+  letter-spacing: .01em;
+}
+.hero-trust-row__check {
+  color: var(--color-highlight);
+  font-weight: 800;
+  font-size: .9rem;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .hero-microtrust { font-size: .8rem; flex-wrap: wrap; }
+  .hero-trust-row li { font-size: .72rem; padding: .3rem .65rem; }
+}
+
 /* ── Floating Stats ── */
 .hero-stats {
   position: absolute;
@@ -1839,15 +1912,17 @@ const faqItems = [
     initProcessScroll();
   });
 
-  // Hero counter animasyonu — heroSlideUp (1.8s delay + 0.8s) bittikten sonra başlat
+  // Hero counter animasyonu — son değerin %85'inden başlayıp son değere çıkar (trust-safe)
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.querySelectorAll<HTMLElement>('.hero-counter').forEach(el => {
         const target = parseInt(el.dataset.target ?? '0', 10);
         const suffix = el.dataset.suffix ?? '';
-        let current = 0;
-        const stepTime = 30;
-        const increment = target / (1400 / stepTime);
+        let current = Math.floor(target * 0.85);
+        const stepTime = 40;
+        const duration = 900;
+        const increment = Math.max(1, (target - current) / (duration / stepTime));
+        el.textContent = current + suffix;
         const timer = setInterval(() => {
           current = Math.min(current + increment, target);
           el.textContent = Math.floor(current) + suffix;
