@@ -5,57 +5,108 @@ import CTABox from '../../../components/CTABox.astro';
 
 const canonical = 'https://www.toremzemin.com/kurumsal/belgelerimiz/';
 
+/* ── 1. BELGELER (fiziksel belge olanlar) ─────────────────────────── */
 const belgeler = [
   {
-    kategori: 'Kalite Yönetim',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
-    renk: '#16a34a',
-    items: [
-      { baslik: 'ISO 9001:2015', aciklama: 'Kalite Yönetim Sistemi Belgesi — Tüm geoteknik uygulamalarda sistematik kalite güvencesi', yil: '2015' },
-      { baslik: 'ISO 14001:2015', aciklama: 'Çevre Yönetim Sistemi — Saha uygulamalarında çevre etkisinin kontrolü', yil: '2018' },
-    ],
+    slug: 'iso-9001',
+    kod: 'ISO 9001:2015',
+    isim: 'Kalite Yönetim Sistemi',
+    aciklama: 'Mühendislik, satın alma ve saha süreçlerinin uluslararası kalite standardında yürütüldüğüne dair belge.',
+    kategori: 'Kalite',
   },
   {
-    kategori: 'Teknik Standartlar',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>`,
-    renk: '#2563eb',
-    items: [
-      { baslik: 'CE Belgesi', aciklama: 'Avrupa Birliği standartlarına uygunluk — İhracat ve uluslararası projelerde geçerlilik', yil: '2019' },
-      { baslik: 'TSEK Onayı', aciklama: 'Türk Standartları Enstitüsü Kalite Belgesi — Ulusal standart uyumu', yil: '2016' },
-      { baslik: 'TS EN 1537', aciklama: 'Zemin ankrajları standardı — Kalıcı ve geçici ankraj uygulamalarında Avrupa normu', yil: '2021' },
-    ],
+    slug: 'iso-14001',
+    kod: 'ISO 14001:2015',
+    isim: 'Çevre Yönetim Sistemi',
+    aciklama: 'Saha uygulamalarının çevresel etkilerinin izlendiği ve standartlara uyulduğunu belgeler.',
+    kategori: 'Çevre',
   },
   {
-    kategori: 'Mevzuat Uyumu',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-    renk: '#d97706',
-    items: [
-      { baslik: 'TBDY 2018 Uyumu', aciklama: 'Türkiye Bina Deprem Yönetmeliği 2018 — Tüm projeler deprem yönetmeliğine tam uyumlu tasarlanır', yil: '2018' },
-      { baslik: 'TS EN 1997 (EC7)', aciklama: 'Eurocode 7 Geoteknik Tasarım — Uluslararası geoteknik mühendislik standardı', yil: '2020' },
-    ],
-  },
-  {
+    slug: 'iso-45001',
+    kod: 'ISO 45001:2018',
+    isim: 'İş Sağlığı & Güvenliği Yönetimi',
+    aciklama: 'Şantiye güvenliği, risk değerlendirmesi ve ISG süreçlerinin uluslararası standartta yönetimi.',
     kategori: 'İş Güvenliği',
-    ikon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>`,
-    renk: '#dc2626',
-    items: [
-      { baslik: 'ISO 45001:2018', aciklama: 'İş Sağlığı ve Güvenliği Yönetim Sistemi — Sıfır kaza politikası ile saha güvenliği', yil: '2020' },
-      { baslik: 'OHSAS 18001', aciklama: 'İş güvenliği yönetim sistemi geçiş belgesi', yil: '2014' },
-    ],
+  },
+  {
+    slug: 'ce',
+    kod: 'CE Belgesi',
+    isim: 'Avrupa Uygunluk Beyanı',
+    aciklama: 'Ürün ve hizmetlerin Avrupa Birliği sağlık, güvenlik ve çevre standartlarına uygunluğu.',
+    kategori: 'Uygunluk',
+  },
+  {
+    slug: 'tsek',
+    kod: 'TSEK Onayı',
+    isim: 'Türk Standartları Enstitüsü Kalite',
+    aciklama: 'TSE tarafından düzenli denetimle doğrulanmış ulusal kalite uygunluk belgesi.',
+    kategori: 'Kalite',
   },
 ];
 
-const rakamlar = [
-  { deger: '8+', etiket: 'Aktif Belge & Sertifika' },
-  { deger: '2015', etiket: 'İlk ISO Belgesi Yılı' },
-  { deger: '4', etiket: 'Belge Kategorisi' },
-  { deger: '100%', etiket: 'Denetim Başarı Oranı' },
+/* ── 2. ÜYELİKLER ────────────────────────────────────────────────── */
+const uyelikler = [
+  {
+    slug: 'tmmob',
+    kisaltma: 'TMMOB',
+    tam: 'Türk Mühendis ve Mimar Odaları Birliği',
+    aciklama: 'Mühendis kadromuz bağlı olduğu meslek odaları üzerinden TMMOB çatısı altındadır.',
+    url: 'https://www.tmmob.org.tr/',
+  },
+  {
+    slug: 'jmo',
+    kisaltma: 'JMO',
+    tam: 'Jeoloji Mühendisleri Odası',
+    aciklama: 'Jeoloji mühendislerimizin bağlı olduğu meslek odası; yetkinlik ve SMM belgelendirmesi için aktif üye.',
+    url: 'https://www.jmo.org.tr/',
+  },
+  {
+    slug: 'zeminciler-dernegi',
+    kisaltma: 'ZD',
+    tam: 'Zeminciler Derneği',
+    aciklama: 'Türkiye\'de geoteknik uygulayıcılarını bir araya getiren sektörel birliğin aktif üyesi.',
+    url: 'https://zemincilerdernegi.com/',
+  },
+];
+
+/* ── 3. UYGULADIĞIMIZ STANDARTLAR ───────────────────────────────── */
+const standartlar = [
+  {
+    kod: 'TBDY 2018',
+    isim: 'Türkiye Bina Deprem Yönetmeliği',
+    aciklama: 'Tüm temel, iksa ve zemin iyileştirme tasarımları deprem yönetmeliğine uyumlu hazırlanır.',
+  },
+  {
+    kod: 'TS EN 1536',
+    isim: 'Yerinde Dökme Betonarme Kazıklar',
+    aciklama: 'Fore kazık uygulamalarında geçerli Avrupa standardı — kazık imalatı ve kalite kontrolü.',
+  },
+  {
+    kod: 'TS EN 1537',
+    isim: 'Zemin Ankrajları',
+    aciklama: 'Kalıcı ve geçici ankraj sistemleri için ekipman, uygulama ve kabul kriterleri standardı.',
+  },
+  {
+    kod: 'TS EN 1538',
+    isim: 'Diyafram Duvarlar',
+    aciklama: 'Derin kazı ve iksa uygulamalarında diyafram duvar imalatı standardı.',
+  },
+  {
+    kod: 'TS EN 1997',
+    isim: 'Eurocode 7 — Geoteknik Tasarım',
+    aciklama: 'Zemin mekaniği ve temel tasarımında Avrupa standartlarının esas referansı.',
+  },
+  {
+    kod: 'TS 500',
+    isim: 'Betonarme Yapıların Tasarım ve Yapım Kuralları',
+    aciklama: 'Betonarme kazık ve iksa elemanlarının imalatında Türk standardı.',
+  },
 ];
 ---
 
 <BaseLayout
-  title="Belgelerimiz & Sertifikalarımız | Torem Zemin"
-  description="Torem Zemin Mühendislik'in ISO 9001, CE, TSEK, TBDY 2018 ve uluslararası standart belgeleri. Kalite ve güvenilirliğin resmi kanıtı."
+  title="Belgelerimiz, Üyeliklerimiz & Standartlar | Torem Zemin"
+  description="Torem Zemin Mühendislik'in ISO, CE, TSEK belgeleri; TMMOB, JMO, Zeminciler Derneği üyelikleri ve uyguladığı TS EN & TBDY standartları."
   canonical={canonical}
 >
   <!-- HERO -->
@@ -63,8 +114,8 @@ const rakamlar = [
     <div class="belge-hero__bg" aria-hidden="true"></div>
     <div class="container belge-hero__inner">
       <span class="eyebrow eyebrow--gold">Belgelerimiz</span>
-      <h1>Kalitemizin<br/><span>Resmi Kanıtı</span></h1>
-      <p>ISO 9001'den TBDY 2018'e, uluslararası standartlardan Türk mevzuatına — her projemizi belgeli güvenceyle teslim ediyoruz.</p>
+      <h1>Belgeli Kalite,<br/><span>Kayıtlı Mühendislik</span></h1>
+      <p>Uluslararası ISO standartları, Türk Standartları Enstitüsü ve Avrupa CE uygunluğu — mühendislik süreçlerimiz bağımsız kurumlarca düzenli olarak denetleniyor.</p>
     </div>
     <div class="belge-hero__wave" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)"/></svg>
@@ -76,63 +127,147 @@ const rakamlar = [
     { label: 'Belgelerimiz' }
   ]} />
 
-  <!-- RAKAMLAR -->
-  <section class="section section--dark">
-    <div class="container">
-      <div class="belge-stats">
-        {rakamlar.map((r) => (
-          <div class="bstat">
-            <span class="bstat__val">{r.deger}</span>
-            <span class="bstat__lbl">{r.etiket}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- BELGE KATEGORİLERİ -->
+  <!-- 1. BELGELERİMİZ -->
   <section class="section">
     <div class="container">
-      <div class="belge-intro">
-        <span class="eyebrow">Akreditasyonlar</span>
-        <h2>Standart & Sertifikalarımız</h2>
-        <p>Her belge, projelerimizde uyguladığımız kalite standardının bağımsız kurumlarca doğrulanmış kanıtıdır.</p>
+      <div class="belge-section__head">
+        <span class="belge-eyebrow">1 / Belgelerimiz</span>
+        <h2>Kurumsal Sertifikalarımız</h2>
+        <p>Bağımsız denetim kurumlarınca düzenlenmiş ve yıllık denetimle yenilenen resmi belgelerimiz.</p>
       </div>
 
-      <div class="belge-kategoriler">
-        {belgeler.map((kat) => (
-          <div class="belge-kat">
-            <div class="belge-kat__baslik">
-              <div class="belge-kat__ikon" style={`color:${kat.renk}; background:${kat.renk}18;`} set:html={kat.ikon} />
-              <h3>{kat.kategori}</h3>
+      <div class="belge-grid">
+        {belgeler.map((b) => (
+          <article class="belge-card">
+            <div class="belge-card__badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
             </div>
-            <div class="belge-kat__items">
-              {kat.items.map((item) => (
-                <div class="belge-item">
-                  <div class="belge-item__header">
-                    <span class="belge-item__baslik">{item.baslik}</span>
-                    <span class="belge-item__yil">{item.yil}</span>
-                  </div>
-                  <p class="belge-item__aciklama">{item.aciklama}</p>
-                  <div class="belge-item__onay">
-                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="14 4 6 12 2 8"/></svg>
-                    Aktif & Geçerli
-                  </div>
-                </div>
-              ))}
+            <div class="belge-card__body">
+              <span class="belge-card__kategori">{b.kategori}</span>
+              <h3 class="belge-card__kod">{b.kod}</h3>
+              <p class="belge-card__isim">{b.isim}</p>
+              <p class="belge-card__aciklama">{b.aciklama}</p>
+              <span class="belge-card__status">
+                <span class="belge-card__dot" aria-hidden="true"></span>
+                Aktif · Yıllık Denetimle Yenilenir
+              </span>
             </div>
+            <!-- Belge görseli opsiyonel: /images/sertifikalar/{slug}.jpg -->
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. ÜYELİKLERİMİZ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="belge-section__head">
+        <span class="belge-eyebrow">2 / Üyeliklerimiz</span>
+        <h2>Meslek Oda &amp; Dernek Üyelikleri</h2>
+        <p>Mühendis kadromuzun bağlı olduğu odalar ve sektörel birlikler — denetlenmiş yetkinliğin kurumsal teyidi.</p>
+      </div>
+
+      <div class="uyelik-grid">
+        {uyelikler.map((u) => (
+          <a href={u.url} target="_blank" rel="noopener noreferrer" class="uyelik-card">
+            <div class="uyelik-card__logo" aria-hidden="true">
+              <img src={`/images/uyelikler/${u.slug}.png`}
+                   alt={u.tam}
+                   onerror="this.style.display='none'; this.parentElement.classList.add('uyelik-card__logo--placeholder')"
+                   loading="lazy" width="120" height="120" />
+              <span class="uyelik-card__initials">{u.kisaltma}</span>
+            </div>
+            <div class="uyelik-card__body">
+              <h3>{u.tam}</h3>
+              <p>{u.aciklama}</p>
+              <span class="uyelik-card__link">
+                Kuruma git
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- GRUP ŞİRKETİ BANDI — May Geoteknik -->
+  <section class="section grup-band">
+    <div class="container grup-band__inner">
+      <div class="grup-band__content">
+        <span class="grup-band__eyebrow">Grup Şirketimiz</span>
+        <h2>Torem Zemin &amp; May Geoteknik</h2>
+        <p>Torem Zemin, geoteknik etüt ve tasarım odaklı <strong>May Geoteknik</strong>'in uygulama ortağıdır. Etütten uygulamaya, aynı grup çatısı altında kesintisiz mühendislik hattı.</p>
+        <div class="grup-band__actions">
+          <a href="https://maygeoteknik.com/" target="_blank" rel="noopener noreferrer" class="btn btn--outline">
+            maygeoteknik.com
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="grup-band__visual" aria-hidden="true">
+        <div class="grup-band__card">
+          <img src="/images/uyelikler/may-geoteknik.png"
+               alt="May Geoteknik"
+               onerror="this.style.display='none'; this.parentElement.classList.add('grup-band__card--placeholder')"
+               loading="lazy" width="180" height="80" />
+          <span class="grup-band__placeholder">MAY GEOTEKNİK</span>
+          <p class="grup-band__role">Etüt · Tasarım</p>
+        </div>
+        <div class="grup-band__connector"></div>
+        <div class="grup-band__card grup-band__card--active">
+          <span class="grup-band__placeholder grup-band__placeholder--active">TOREM ZEMİN</span>
+          <p class="grup-band__role">Uygulama · Saha</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. UYGULADIĞIMIZ STANDARTLAR -->
+  <section class="section">
+    <div class="container">
+      <div class="belge-section__head">
+        <span class="belge-eyebrow">3 / Uyguladığımız Standartlar</span>
+        <h2>Tasarım &amp; Uygulama Standartlarımız</h2>
+        <p>Belge değil, mühendislik referansıdır — her projeyi bu ulusal ve Avrupa standartlarına uygun yürütüyoruz.</p>
+      </div>
+
+      <div class="standart-grid">
+        {standartlar.map((s) => (
+          <div class="standart-card">
+            <span class="standart-card__kod">{s.kod}</span>
+            <strong class="standart-card__isim">{s.isim}</strong>
+            <p class="standart-card__aciklama">{s.aciklama}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- GÜVENCE BANDI -->
+  <!-- BELGE DOĞRULAMA BANDI -->
   <section class="section guvence-section">
     <div class="container guvence-inner">
+      <div class="guvence-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M9 12l2 2 4-4"/>
+        </svg>
+      </div>
       <h2>Belge Doğrulama</h2>
-      <p>Tüm belgelerimiz ilgili akreditasyon kurumlarınca yıllık denetimle güncellenmektedir. Belge geçerliliği hakkında bilgi almak için bizimle iletişime geçebilirsiniz.</p>
-      <a href="/iletisim/" class="btn btn--primary">Belge Bilgisi Alın</a>
+      <p>Tüm belgelerimiz ilgili akreditasyon kurumlarınca düzenli denetimle yenilenmektedir. Belge kopyası veya doğrulama için bizimle iletişime geçebilirsiniz.</p>
+      <a href="/iletisim/" class="btn btn--primary">Belge Kopyası Talep Et</a>
     </div>
   </section>
 
@@ -142,61 +277,490 @@ const rakamlar = [
 </BaseLayout>
 
 <style>
-/* Hero */
+/* ============================ */
+/* HERO                         */
+/* ============================ */
 .belge-hero {
-  background: linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, #1a2f45 100%);
-  margin-top: -110px; padding-block: calc(var(--s-20, 5rem) + 110px) calc(var(--s-16, 4rem) + 60px);
-  color: white; position: relative; overflow: hidden; text-align: center;
+  background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-primary) 100%);
+  margin-top: -110px;
+  padding-block: 10rem 8rem;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
 }
 .belge-hero__bg {
   position: absolute; inset: 0;
-  background-image: radial-gradient(circle at 30% 60%, rgba(212,175,55,0.12) 0%, transparent 55%);
+  background-image: radial-gradient(circle at 30% 60%, rgba(212,175,55,0.12) 0%, transparent 55%),
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: auto, 40px 40px, 40px 40px;
   pointer-events: none;
 }
-.belge-hero__inner { position: relative; z-index: 2; max-width: 640px; margin-inline: auto; }
-.belge-hero h1 { color: white; font-size: clamp(2.5rem, 5vw, 3.75rem); line-height: 1.1; margin-bottom: 1rem; }
-.belge-hero h1 span { color: var(--color-highlight, #d4af37); }
-.belge-hero p { color: rgba(255,255,255,.75); font-size: 1.1rem; }
-.belge-hero__wave { position: absolute; bottom: 0; left: 0; right: 0; height: 60px; z-index: 3; line-height: 0; }
-.belge-hero__wave svg { width: 100%; height: 100%; }
+.belge-hero__inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; padding: 0 var(--s-6); }
+.belge-hero h1 {
+  font-family: var(--font-serif);
+  color: #fff;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  font-weight: 700;
+}
+.belge-hero h1 span {
+  color: var(--color-highlight);
+  font-style: italic;
+  font-weight: 500;
+}
+.belge-hero p { color: rgba(255,255,255,.78); font-size: 1.1rem; line-height: 1.7; }
+.belge-hero__wave { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; }
+.belge-hero__wave svg { width: 100%; height: 60px; display: block; }
 
-.eyebrow { display: inline-block; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; background: rgba(212,175,55,.1); color: var(--color-highlight, #d4af37); padding: .3rem .8rem; border-radius: 4px; margin-bottom: 1rem; }
-.eyebrow--gold { background: var(--color-highlight, #d4af37); color: white; }
+.eyebrow--gold {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+  background: rgba(212,175,55,0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(212,175,55,0.3);
+  margin-bottom: 1.5rem;
+}
 
-/* Stats */
-.section--dark { background: var(--color-primary, #002147); }
-.belge-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
-.bstat { text-align: center; padding: 2rem 1rem; }
-.bstat__val { display: block; font-size: 2.75rem; font-weight: 800; color: var(--color-highlight, #d4af37); line-height: 1; margin-bottom: .5rem; }
-.bstat__lbl { font-size: .8rem; color: rgba(255,255,255,.6); text-transform: uppercase; letter-spacing: .06em; }
+/* ============================ */
+/* SECTION BAŞLIKLARI           */
+/* ============================ */
+.belge-section__head {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+.belge-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-earth);
+  margin-bottom: 0.75rem;
+}
+.belge-section__head h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.7rem, 2.8vw, 2.2rem);
+  color: var(--color-primary);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+.belge-section__head p {
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
 
-/* Belge intro */
-.belge-intro { max-width: 560px; margin-bottom: 3.5rem; }
-.belge-intro h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); color: var(--color-primary, #002147); margin-bottom: .75rem; }
-.belge-intro p { color: var(--color-text-muted, #5A6A7A); font-size: 1.05rem; line-height: 1.6; }
+/* ============================ */
+/* 1 — BELGE KARTLARI           */
+/* ============================ */
+.belge-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.belge-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+}
+.belge-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,33,71,0.08);
+  border-color: var(--color-highlight);
+}
 
-/* Kategoriler */
-.belge-kategoriler { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-.belge-kat { background: white; border: 1px solid rgba(0,0,0,.06); border-radius: 16px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,.04); }
-.belge-kat__baslik { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(0,0,0,.06); }
-.belge-kat__ikon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.belge-kat__ikon svg { width: 22px; height: 22px; }
-.belge-kat__baslik h3 { font-size: 1.1rem; font-weight: 700; color: var(--color-primary, #002147); }
-.belge-kat__items { display: flex; flex-direction: column; gap: 1.25rem; }
-.belge-item { padding: 1.25rem; background: #fafaf7; border-radius: 10px; border: 1px solid rgba(0,0,0,.04); transition: border-color .2s, box-shadow .2s; }
-.belge-item:hover { border-color: var(--color-highlight, #d4af37); box-shadow: 0 4px 16px rgba(0,0,0,.06); }
-.belge-item__header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .5rem; }
-.belge-item__baslik { font-weight: 700; font-size: .95rem; color: var(--color-primary, #002147); }
-.belge-item__yil { font-size: .75rem; font-weight: 700; background: rgba(0,33,71,.08); color: var(--color-primary, #002147); padding: .15rem .5rem; border-radius: 999px; }
-.belge-item__aciklama { font-size: .85rem; color: var(--color-text-muted, #5A6A7A); line-height: 1.6; margin-bottom: .75rem; }
-.belge-item__onay { display: inline-flex; align-items: center; gap: .35rem; font-size: .75rem; font-weight: 600; color: #16a34a; }
-.belge-item__onay svg { stroke: #16a34a; }
+.belge-card__badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-highlight);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0,33,71,.08);
+}
+.belge-card__badge svg { width: 26px; height: 26px; }
+.belge-card__badge::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  border: 1px dashed rgba(212,175,55,0.35);
+}
 
-/* Güvence */
-.guvence-section { background: #fafaf7; }
-.guvence-inner { max-width: 640px; margin-inline: auto; text-align: center; padding-block: 1rem; }
-.guvence-inner h2 { font-size: 1.75rem; color: var(--color-primary, #002147); margin-bottom: .75rem; }
-.guvence-inner p { color: var(--color-text-muted, #5A6A7A); line-height: 1.7; margin-bottom: 1.75rem; }
+.belge-card__body { flex: 1; min-width: 0; }
+.belge-card__kategori {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-earth);
+  margin-bottom: 0.5rem;
+}
+.belge-card__kod {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin: 0 0 0.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.belge-card__isim {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0 0 0.6rem;
+}
+.belge-card__aciklama {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 0.9rem;
+}
+.belge-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+.belge-card__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 3px rgba(22,163,74,0.15);
+}
 
-@media (max-width: 768px) { .belge-kategoriler { grid-template-columns: 1fr; } .belge-stats { grid-template-columns: repeat(2,1fr); } }
+/* ============================ */
+/* 2 — ÜYELİK KARTLARI          */
+/* ============================ */
+.uyelik-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.uyelik-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.uyelik-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(0,33,71,0.08);
+  border-color: var(--color-accent);
+}
+.uyelik-card__logo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-border);
+  position: relative;
+}
+.uyelik-card__logo img { width: 72%; height: 72%; object-fit: contain; }
+.uyelik-card__initials {
+  display: none;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: 0.02em;
+}
+.uyelik-card__logo--placeholder .uyelik-card__initials { display: block; }
+.uyelik-card__body h3 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.uyelik-card__body p {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0 0 0.9rem;
+}
+.uyelik-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.04em;
+}
+.uyelik-card:hover .uyelik-card__link { color: var(--color-highlight); }
+
+/* ============================ */
+/* GRUP ŞİRKETİ BANDI           */
+/* ============================ */
+.grup-band {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-navy-dark) 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.grup-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+.grup-band__inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.grup-band__eyebrow {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+  margin-bottom: 1rem;
+}
+.grup-band__content h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.grup-band__content p {
+  color: rgba(255,255,255,0.78);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.grup-band__content strong { color: var(--color-highlight); font-weight: 600; }
+
+.grup-band__actions .btn--outline {
+  color: #fff;
+  border-color: rgba(255,255,255,0.4);
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.grup-band__actions .btn--outline:hover {
+  background: var(--color-highlight);
+  color: var(--color-primary);
+  border-color: var(--color-highlight);
+}
+
+/* Visual — iki kart + connector */
+.grup-band__visual {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: center;
+}
+.grup-band__card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 1.5rem 1.25rem;
+  min-width: 160px;
+  text-align: center;
+  position: relative;
+}
+.grup-band__card--active {
+  background: var(--color-highlight);
+  border-color: var(--color-highlight);
+  color: var(--color-primary);
+}
+.grup-band__card img {
+  max-width: 140px;
+  height: auto;
+  margin: 0 auto 0.5rem;
+  filter: brightness(2);
+}
+.grup-band__card--placeholder img { display: none; }
+.grup-band__placeholder {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+.grup-band__placeholder--active { color: var(--color-primary); }
+.grup-band__role {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+.grup-band__card--active .grup-band__role {
+  color: rgba(0,33,71,0.7);
+  font-weight: 600;
+}
+.grup-band__connector {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(212,175,55,0.4), var(--color-highlight));
+  position: relative;
+  align-self: center;
+}
+.grup-band__connector::before, .grup-band__connector::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-highlight);
+  transform: translateY(-50%);
+}
+.grup-band__connector::before { left: -2px; }
+.grup-band__connector::after { right: -2px; }
+
+/* ============================ */
+/* 3 — STANDART KARTLARI        */
+/* ============================ */
+.standart-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+.standart-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-earth);
+  border-radius: 10px;
+  padding: 1.5rem 1.25rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.standart-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(181,83,43,0.08);
+}
+.standart-card__kod {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-earth);
+  letter-spacing: 0.04em;
+  background: rgba(181,83,43,0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.6rem;
+}
+.standart-card__isim {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.standart-card__aciklama {
+  font-size: 0.83rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ============================ */
+/* GÜVENCE BANDI                */
+/* ============================ */
+.guvence-section { background: var(--color-bg-alt); padding-block: var(--s-12); }
+.guvence-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.guvence-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--color-highlight);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+}
+.guvence-icon svg { width: 26px; height: 26px; }
+.guvence-inner h2 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+.guvence-inner p {
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* ============================ */
+/* RESPONSIVE                   */
+/* ============================ */
+@media (max-width: 900px) {
+  .belge-grid { grid-template-columns: 1fr; }
+  .uyelik-grid { grid-template-columns: 1fr; }
+  .standart-grid { grid-template-columns: 1fr 1fr; }
+  .grup-band__inner { grid-template-columns: 1fr; gap: 2rem; }
+  .grup-band__visual { order: -1; }
+}
+@media (max-width: 600px) {
+  .belge-hero { padding-block: 8rem 6rem; }
+  .standart-grid { grid-template-columns: 1fr; }
+  .belge-card { flex-direction: column; padding: 1.5rem 1.25rem; }
+  .grup-band__visual { flex-direction: column; }
+  .grup-band__connector { width: 2px; height: 40px; background: linear-gradient(180deg, rgba(212,175,55,0.4), var(--color-highlight)); }
+  .grup-band__connector::before { left: 50%; top: -2px; transform: translateX(-50%); }
+  .grup-band__connector::after { right: auto; left: 50%; bottom: -2px; top: auto; transform: translateX(-50%); }
+}
 </style>
