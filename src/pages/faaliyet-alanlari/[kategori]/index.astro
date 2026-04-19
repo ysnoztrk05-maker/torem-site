@@ -159,6 +159,26 @@ function kaliciIcon(val: string) {
     </div>
   </section>
 
+  <!-- 4b. DANIŞMAN INLINE CTA BAND — kategori specific -->
+  <section class="kat-consult-band">
+    <div class="container kat-consult-band__inner">
+      <div class="kat-consult-band__text">
+        <p class="kat-consult-band__eyebrow">Uzman Görüşü</p>
+        <p class="kat-consult-band__title">
+          <strong>{kategori.title}</strong> projenizde hangi yöntem uygun?
+        </p>
+        <p class="kat-consult-band__sub">Zemin koşullarına ve projenize göre doğru tekniği birlikte belirleyelim.</p>
+      </div>
+      <div class="kat-consult-band__actions">
+        <a href="/iletisim/" class="btn btn--primary">Ücretsiz Teknik Değerlendirme</a>
+        <a href="tel:+905316594636" class="kat-consult-band__tel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +90 531 659 46 36
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- 5. PROGRESS BAR'LI KARŞILAŞTIRMA TABLOSU -->
   {hasComparison && (
     <section class="tz-section-alt">
@@ -456,6 +476,80 @@ header.tz-hero p { font-size: clamp(1.1rem, 2vw, 1.25rem); color: rgba(255,255,2
 @media (max-width: 600px) {
     .tz-decision-grid { grid-template-columns: 1fr; }
     .tz-technical-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Kategori Inline Consult Band ── */
+.kat-consult-band {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding: var(--s-8, 2rem) 0;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.kat-consult-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+}
+.kat-consult-band__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.kat-consult-band__text { flex: 1 1 320px; }
+.kat-consult-band__eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-highlight);
+  margin: 0 0 0.45rem;
+}
+.kat-consult-band__title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.4rem;
+  line-height: 1.35;
+}
+.kat-consult-band__title strong { color: var(--color-highlight); font-weight: 700; }
+.kat-consult-band__sub {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.78);
+  margin: 0;
+  line-height: 1.55;
+}
+.kat-consult-band__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+.kat-consult-band__tel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-highlight);
+  text-decoration: none;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+.kat-consult-band__tel:hover { color: #fff; }
+
+@media (max-width: 640px) {
+  .kat-consult-band__inner { flex-direction: column; align-items: flex-start; }
+  .kat-consult-band__actions { width: 100%; }
+  .kat-consult-band__actions .btn { flex: 1; text-align: center; justify-content: center; }
 }
 
 </style>
