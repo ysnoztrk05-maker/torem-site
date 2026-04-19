@@ -375,6 +375,24 @@ const faqItems = [
       <div class="about__text">
         <p class="eyebrow">Biz Kimiz</p>
         <h2>Sağlam Temellerin<br>Arkasındaki Güç</h2>
+
+        <div class="about__credibility" aria-label="Kurumsal göstergeler">
+          <div class="about__cred-item">
+            <strong class="about__cred-num">350+</strong>
+            <span class="about__cred-lbl">Tamamlanan Proje</span>
+          </div>
+          <div class="about__cred-divider" aria-hidden="true"></div>
+          <div class="about__cred-item">
+            <strong class="about__cred-num">13+</strong>
+            <span class="about__cred-lbl">Yıl Deneyim</span>
+          </div>
+          <div class="about__cred-divider" aria-hidden="true"></div>
+          <div class="about__cred-item">
+            <strong class="about__cred-num">15</strong>
+            <span class="about__cred-lbl">Kendi Makinesi</span>
+          </div>
+        </div>
+
         <div class="aeo-box">
           Torem Zemin Mühendislik, {sirket.kurulus}'ten bu yana İstanbul merkezli olarak Türkiye genelinde
           350'yi aşkın geoteknik projeye imza atmıştır.
@@ -391,7 +409,7 @@ const faqItems = [
           <li>Türkiye geneli, aynı gün saha ziyareti</li>
         </ul>
         <div class="about__actions">
-          <a href="/kurumsal/" class="btn btn--ghost">Hakkımızda Daha Fazla</a>
+          <a href="/kurumsal/" class="btn btn--outline">Hakkımızda Daha Fazla</a>
           <a href="tel:+905316594636" class="btn btn--primary">{company.phone1}</a>
         </div>
       </div>
@@ -454,10 +472,15 @@ const faqItems = [
         <div class="process__step">
           <div class="process__badge" aria-hidden="true">1</div>
           <div class="process__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <circle cx="21" cy="21" r="12"/>
-              <path d="M33 33l9 9" stroke-linecap="round"/>
-              <path d="M17 21h8M21 17v8" stroke-linecap="round"/>
+            <!-- Teodolit / topografik keşif -->
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="24" cy="18" r="6"/>
+              <path d="M24 12v-4M24 24v4"/>
+              <path d="M18 18h-4M30 18h4"/>
+              <path d="M18 32l6-4 6 4"/>
+              <path d="M14 42h20"/>
+              <path d="M20 32v10M28 32v10"/>
+              <path d="M24 18l10-8" stroke-dasharray="1.5 2"/>
             </svg>
           </div>
           <h3>Ücretsiz Keşif</h3>
@@ -466,13 +489,16 @@ const faqItems = [
         <div class="process__step">
           <div class="process__badge" aria-hidden="true">2</div>
           <div class="process__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <rect x="16" y="4" width="6" height="30" rx="2"/>
-              <path d="M10 34h16" stroke-linecap="round"/>
-              <path d="M8 38h24" stroke-linecap="round"/>
-              <path d="M6 42h28" stroke-linecap="round"/>
-              <circle cx="34" cy="10" r="5"/>
-              <path d="M34 6v8M30 10h8" stroke-linecap="round" stroke-width="1.4"/>
+            <!-- Sondaj makinesi + zemin tabakaları -->
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 4v24"/>
+              <path d="M14 4h8"/>
+              <path d="M18 28l-3 4h6z" fill="currentColor" stroke="none"/>
+              <path d="M6 34h36" stroke-width="1.4"/>
+              <path d="M6 38h36" stroke-width="1.2" stroke-dasharray="2 2" opacity=".7"/>
+              <path d="M6 42h36" stroke-width="1.2" stroke-dasharray="1 3" opacity=".5"/>
+              <circle cx="32" cy="14" r="5"/>
+              <path d="M32 11v6M29 14h6"/>
             </svg>
           </div>
           <h3>Zemin Etüdü</h3>
@@ -481,10 +507,13 @@ const faqItems = [
         <div class="process__step">
           <div class="process__badge" aria-hidden="true">3</div>
           <div class="process__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <rect x="8" y="6" width="28" height="36" rx="3"/>
-              <path d="M15 15h18M15 21h18M15 27h12" stroke-linecap="round"/>
-              <path d="M34 36l6-6-3-3-6 6v3h3z" stroke-linejoin="round"/>
+            <!-- Teknik çizim / pergel -->
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="6" y="8" width="30" height="32" rx="2"/>
+              <path d="M12 16h18M12 22h18M12 28h12" opacity=".5"/>
+              <circle cx="32" cy="32" r="8"/>
+              <path d="M32 24v16M24 32h16" stroke-width="1.2" opacity=".7"/>
+              <circle cx="32" cy="32" r="2" fill="currentColor" stroke="none"/>
             </svg>
           </div>
           <h3>Proje Tasarımı</h3>
@@ -493,9 +522,10 @@ const faqItems = [
         <div class="process__step">
           <div class="process__badge" aria-hidden="true">4</div>
           <div class="process__icon" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <circle cx="24" cy="24" r="18"/>
-              <path d="M14 24l7 7 13-14" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/>
+            <!-- Sertifika / kalite mührü -->
+            <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M24 4l5 3 6-1 2 6 5 4-3 5 1 6-6 2-4 5-5-3-5 3-4-5-6-2 1-6-3-5 5-4 2-6 6 1z"/>
+              <path d="M17 24l5 5 10-10" stroke-width="2.2"/>
             </svg>
           </div>
           <h3>Uygulama & Teslim</h3>
@@ -1434,6 +1464,53 @@ const faqItems = [
 .about__text h2 { margin-bottom:var(--s-5); }
 .about__text p  { color:var(--color-text-muted); margin-bottom:var(--s-5); line-height:1.85; }
 .about__actions { display:flex; gap:var(--s-4); flex-wrap:wrap; margin-top:var(--s-6); }
+
+/* ── About Credibility Strip ── */
+.about__credibility {
+  display: flex;
+  align-items: center;
+  gap: var(--s-5);
+  padding: var(--s-5) var(--s-6);
+  margin: var(--s-5) 0 var(--s-6);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  border-radius: var(--r-xl);
+  box-shadow: 0 8px 24px rgba(0,33,71,0.15);
+}
+.about__cred-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+.about__cred-num {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: var(--color-highlight);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.about__cred-lbl {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.about__cred-divider {
+  width: 1px;
+  height: 44px;
+  background: linear-gradient(to bottom, transparent, rgba(212,175,55,0.35), transparent);
+  flex-shrink: 0;
+}
+@media (max-width: 520px) {
+  .about__credibility { gap: var(--s-3); padding: var(--s-4); }
+  .about__cred-num { font-size: 1.5rem; }
+  .about__cred-lbl { font-size: 0.65rem; letter-spacing: 0.05em; }
+  .about__cred-divider { height: 32px; }
+}
 .check-list { list-style:none; display:flex; flex-direction:column; gap:var(--s-3); margin-bottom:var(--s-2); }
 .check-list li { display:flex; align-items:center; gap:var(--s-3); font-weight:500; font-size:var(--text-sm); }
 .check-list li::before { content:'✓'; color:var(--color-highlight); font-weight:700; font-size:1.1em; flex-shrink:0; }
