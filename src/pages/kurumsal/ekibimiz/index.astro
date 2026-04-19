@@ -101,8 +101,8 @@ const sahaEkibi = [
     <div class="ekip-hero__bg" aria-hidden="true"></div>
     <div class="container ekip-hero__inner">
       <span class="eyebrow eyebrow--gold">Ekibimiz</span>
-      <h1>Projelerinizde <span>Kurucusuyla<br>Konuşabileceğiniz</span> Bir Firma</h1>
-      <p>Torem Zemin, iki kurucu ortağın birebir dahil olduğu odaklı bir saha kadrosudur. Sade yapımız sayesinde müşterilerimiz; danışman, yönetici ve uygulayıcı zincirinde kayıp yaşamaz.</p>
+      <h1>Sizi <span>Tanıyan</span><br>Bir Ekip</h1>
+      <p>Torem Zemin'i iki kurucu ortak ve saha kadrosu yürütüyor. Görüştüğünüz kişi, sahada bizzat olan kişi — araya giren katmanlar yok.</p>
     </div>
     <div class="ekip-hero__wave" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)"/></svg>
@@ -188,9 +188,9 @@ const sahaEkibi = [
   <section class="section ekip-section">
     <div class="container">
       <div class="ekip-section__head">
-        <span class="ekip-eyebrow">Saha Liderliği</span>
-        <h2>Sahayı Yönetenler</h2>
-        <p>Tüm şantiyelerin ana sorumlusu olan mühendisimiz ile iki uygulama grubu formenimiz — kazık ve ankraj sahalarının günlük akışı bu üç liderde buluşur.</p>
+        <span class="ekip-eyebrow">Saha Ekibi</span>
+        <h2>Sahadan Sorumlu Olanlar</h2>
+        <p>Şantiyelerin ana sorumlusu ve uygulama grubu formenlerimiz — kazık ve ankraj sahalarının günlük akışı bu kişilerde buluşuyor.</p>
       </div>
 
       <!-- Sorumlu Mühendis — hiyerarşik üst -->
@@ -207,7 +207,6 @@ const sahaEkibi = [
             </svg>
           </div>
           <div class="sorumlu-muh-card__body">
-            <span class="sorumlu-muh-card__level">Saha Liderliği · Kademe 1</span>
             <h3>{sorumluMuhendis.ad}</h3>
             <span class="sorumlu-muh-card__unvan">{sorumluMuhendis.unvan}</span>
             <p class="sorumlu-muh-card__brans"><strong>{sorumluMuhendis.brans}</strong></p>
@@ -216,14 +215,8 @@ const sahaEkibi = [
         </article>
       </div>
 
-      <!-- Hiyerarşi bağlantısı -->
-      <div class="hierarchy-line" aria-hidden="true">
-        <span class="hierarchy-line__dot"></span>
-        <span class="hierarchy-line__connector"></span>
-        <span class="hierarchy-line__label">Grup Formenleri · Kademe 2</span>
-        <span class="hierarchy-line__connector"></span>
-        <span class="hierarchy-line__dot"></span>
-      </div>
+      <!-- Grup formenleri alt başlık -->
+      <p class="alt-baslik">Uygulama grubu formenleri</p>
 
       <div class="formen-grid">
         {formenler.map((k) => (
@@ -598,25 +591,12 @@ const sahaEkibi = [
 .sorumlu-muh-card {
   background: #fff;
   border: 1px solid var(--color-border);
-  border-top: 4px solid var(--color-primary);
   border-radius: 16px;
   padding: 1.75rem;
   display: flex;
   gap: 1.5rem;
   align-items: center;
   transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-}
-.sorumlu-muh-card::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 48px;
-  height: 4px;
-  background: var(--color-highlight);
-  border-radius: 0 0 4px 4px;
 }
 .sorumlu-muh-card:hover {
   transform: translateY(-3px);
@@ -646,18 +626,6 @@ const sahaEkibi = [
 .sorumlu-muh-card__photo--placeholder .sorumlu-muh-card__placeholder-icon { display: block; }
 
 .sorumlu-muh-card__body { flex: 1; min-width: 0; }
-.sorumlu-muh-card__level {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--color-highlight);
-  background: rgba(212,175,55,0.1);
-  padding: 0.25rem 0.7rem;
-  border-radius: 999px;
-  margin-bottom: 0.65rem;
-}
 .sorumlu-muh-card__body h3 {
   font-family: var(--font-serif);
   font-size: 1.3rem;
@@ -691,36 +659,15 @@ const sahaEkibi = [
 }
 
 /* ============================ */
-/* HİYERARŞİ BAĞLANTISI         */
+/* ALT BAŞLIK (sade ayırıcı)    */
 /* ============================ */
-.hierarchy-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  margin: 2.25rem auto;
-  max-width: 480px;
-}
-.hierarchy-line__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--color-earth);
-  flex-shrink: 0;
-}
-.hierarchy-line__connector {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-earth), transparent);
-  opacity: 0.5;
-}
-.hierarchy-line__label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-earth);
-  white-space: nowrap;
+.alt-baslik {
+  text-align: center;
+  margin: 2.25rem auto 1.25rem;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  font-weight: 500;
 }
 
 /* ============================ */
