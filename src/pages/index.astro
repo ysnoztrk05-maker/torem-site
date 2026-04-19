@@ -172,7 +172,9 @@ const faqItems = [
   <!-- ░░ REFERANS LOGO BANDI ░░ -->
   <section class="logos-band" aria-label="Referans müşterilerimiz">
     <div class="container logos-band__head">
-      <p class="logos-band__title">Referans Müşterilerimiz</p>
+      <p class="logos-band__eyebrow">Güvenilirliğimizin Kanıtı</p>
+      <p class="logos-band__title">Türkiye'nin lider müteahhit ve kurumları ile çalıştık</p>
+      <p class="logos-band__sub">Rönesans, Kolin, TOKİ, İBB ve 95+ kurumsal ortakla geoteknik projelerde iş birliği.</p>
     </div>
     <div class="logos-track" style="-webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
       <div class="logos-inner" aria-hidden="true">
@@ -767,10 +769,11 @@ const faqItems = [
   <!-- ░░ SERTİFİKA & ÜYELİK BANDI ░░ -->
   <section class="sertifika-band">
     <div class="container">
+      <p class="sertifika-band__eyebrow">Belgelerimiz & Üyeliklerimiz</p>
       <div class="sertifika-band__inner">
         <div class="sertifika-band__item">
-          <div class="sertifika-band__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28" aria-hidden="true">
+          <div class="sertifika-band__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
               <polyline points="22 4 12 14.01 9 11.01"/>
             </svg>
@@ -778,12 +781,13 @@ const faqItems = [
           <div class="sertifika-band__text">
             <strong>ISO 9001:2015</strong>
             <span>Kalite Yönetim Sistemi</span>
+            <em class="sertifika-band__meta">2018'den beri belgeli</em>
           </div>
         </div>
         <div class="sertifika-band__divider" aria-hidden="true"></div>
         <div class="sertifika-band__item">
-          <div class="sertifika-band__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28" aria-hidden="true">
+          <div class="sertifika-band__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               <path d="M9 12l2 2 4-4"/>
             </svg>
@@ -791,12 +795,13 @@ const faqItems = [
           <div class="sertifika-band__text">
             <strong>TBDY 2018</strong>
             <span>Deprem Yönetmeliği Uyumu</span>
+            <em class="sertifika-band__meta">Tüm projelerde uygulanır</em>
           </div>
         </div>
         <div class="sertifika-band__divider" aria-hidden="true"></div>
         <a href="https://zemincilerdernegi.com/" target="_blank" rel="noopener noreferrer" class="sertifika-band__item sertifika-band__item--link">
-          <div class="sertifika-band__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28" aria-hidden="true">
+          <div class="sertifika-band__badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22" aria-hidden="true">
               <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
               <circle cx="9" cy="7" r="4"/>
               <path d="M23 21v-2a4 4 0 00-3-3.87"/>
@@ -804,8 +809,9 @@ const faqItems = [
             </svg>
           </div>
           <div class="sertifika-band__text">
-            <strong>Zeminciler Derneği Üyesi</strong>
+            <strong>Zeminciler Derneği</strong>
             <span>Geoteknik Sektörel Birlik</span>
+            <em class="sertifika-band__meta">Aktif üye</em>
           </div>
         </a>
       </div>
@@ -1676,9 +1682,11 @@ const faqItems = [
 @media (max-width:560px) { .blog-grid { grid-template-columns:1fr; } }
 
 /* ── Logo Marquee ── */
-.logos-band { background:var(--color-white); padding-block:var(--s-10); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border); overflow:hidden; }
-.logos-band__head { text-align:center; margin-bottom:var(--s-6); }
-.logos-band__title { font-size:var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:var(--color-text-muted); }
+.logos-band { background:var(--color-white); padding-block:var(--s-12) var(--s-10); border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border); overflow:hidden; }
+.logos-band__head { text-align:center; margin-bottom:var(--s-8); max-width: 680px; margin-inline: auto; padding-inline: var(--s-6); }
+.logos-band__eyebrow { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; color:var(--color-earth); margin-bottom:.6rem; }
+.logos-band__title { font-family:var(--font-serif); font-size:clamp(1.25rem, 2.4vw, 1.7rem); font-weight:600; color:var(--color-primary); line-height:1.3; margin-bottom:.5rem; }
+.logos-band__sub { font-size:.92rem; color:var(--color-text-muted); line-height:1.55; }
 .logos-track { overflow:hidden; }
 .logos-inner { display:flex; gap:var(--s-6); width:max-content; animation:marquee 32s linear infinite; }
 .logos-inner:hover { animation-play-state:paused; }
@@ -1946,18 +1954,67 @@ const faqItems = [
   .makine-panel__specs-grid { grid-template-columns: repeat(2, 1fr); gap: var(--s-3); }
 }
 
-/* ── Sertifika & Üyelik Bandı ── */
-.sertifika-band { background:var(--color-bg); border-top:1px solid var(--color-border,rgba(0,0,0,.08)); border-bottom:1px solid var(--color-border,rgba(0,0,0,.08)); padding-block:var(--s-6); }
-.sertifika-band__inner { display:flex; align-items:center; justify-content:center; gap:var(--s-8); flex-wrap:wrap; }
-.sertifika-band__item { display:flex; align-items:center; gap:var(--s-3); text-decoration:none; color:inherit; }
-.sertifika-band__item--link:hover .sertifika-band__icon,
+/* ── Sertifika & Üyelik Bandı — premium rozet stili ── */
+.sertifika-band {
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  border-top:1px solid var(--color-border,rgba(0,0,0,.08));
+  border-bottom:1px solid var(--color-border,rgba(0,0,0,.08));
+  padding-block: var(--s-10);
+  position: relative;
+}
+.sertifika-band__eyebrow {
+  text-align: center;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--color-earth);
+  margin-bottom: var(--s-6);
+}
+.sertifika-band__inner { display:flex; align-items:center; justify-content:center; gap:var(--s-10); flex-wrap:wrap; }
+.sertifika-band__item { display:flex; align-items:center; gap:var(--s-4); text-decoration:none; color:inherit; transition: transform .3s ease; }
+.sertifika-band__item--link:hover { transform: translateY(-2px); }
+.sertifika-band__item--link:hover .sertifika-band__badge { border-color: var(--color-highlight); color: var(--color-highlight); box-shadow: 0 8px 20px rgba(212,175,55,.2); }
 .sertifika-band__item--link:hover strong { color:var(--color-highlight); }
-.sertifika-band__icon { color:var(--color-accent); flex-shrink:0; transition:color .2s; }
-.sertifika-band__text { display:flex; flex-direction:column; }
-.sertifika-band__text strong { font-size:var(--text-sm); font-weight:700; color:var(--color-primary); transition:color .2s; }
-.sertifika-band__text span { font-size:var(--text-xs); color:var(--color-text-muted); }
-.sertifika-band__divider { width:1px; height:32px; background:rgba(0,0,0,.1); }
-@media (max-width:768px) { .sertifika-band__inner { flex-direction:column; gap:var(--s-4); } .sertifika-band__divider { width:60px; height:1px; } }
+
+.sertifika-band__badge {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 2px solid var(--color-highlight);
+  color: var(--color-primary);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0,33,71,.08);
+  transition: border-color .3s, color .3s, box-shadow .3s;
+}
+.sertifika-band__badge::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  border: 1px dashed rgba(212,175,55,.3);
+}
+
+.sertifika-band__text { display:flex; flex-direction:column; gap: 2px; }
+.sertifika-band__text strong { font-size:.95rem; font-weight:700; color:var(--color-primary); transition:color .2s; font-family: var(--font-serif); letter-spacing: .01em; }
+.sertifika-band__text span { font-size:.8rem; color:var(--color-text-muted); }
+.sertifika-band__text .sertifika-band__meta {
+  font-style: normal;
+  font-size: .7rem;
+  color: var(--color-earth);
+  font-weight: 600;
+  letter-spacing: .02em;
+  margin-top: 2px;
+}
+.sertifika-band__divider { width:1px; height:56px; background: linear-gradient(to bottom, transparent, rgba(0,0,0,.12), transparent); }
+
+@media (max-width:768px) {
+  .sertifika-band__inner { flex-direction:column; gap:var(--s-5); align-items: flex-start; padding-inline: var(--s-4); }
+  .sertifika-band__divider { width:80%; height:1px; align-self: center; }
+  .sertifika-band__item { width: 100%; }
+}
 </style>
 
 <script>
