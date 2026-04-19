@@ -469,6 +469,13 @@ header.tz-article-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight
   .tz-sidebar { position: static; }
   .tz-sidebar__cta, .tz-sidebar__related, .tz-sidebar__trust { width: 100%; box-sizing: border-box; }
 }
+@media (max-width: 640px) {
+  .tz-sidebar__cta { padding: 1.5rem 1.25rem; }
+  .tz-sidebar__title { font-size: 1.05rem; }
+  .tz-sidebar__desc { font-size: 0.88rem; line-height: 1.55; }
+  .tz-sidebar__related { padding: 1.1rem 1.25rem; }
+  .tz-sidebar__trust { padding: 1.1rem 1.25rem; }
+}
 
 /* --- TYPOGRAPHY (READABILITY STANDARTLARI) --- */
 .tz-readability-wrapper {
@@ -540,7 +547,7 @@ header.tz-article-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight
 .tz-faq-body p { margin: 0; }
 
 @media (max-width: 768px) {
-    .tz-content-container { padding: 0; }
+    .tz-content-container { padding: 0 var(--s-4); }
     .tz-readability-wrapper { font-size: 1.05rem; }
     .tz-article-hero { padding: 90px 20px 60px; }
 }

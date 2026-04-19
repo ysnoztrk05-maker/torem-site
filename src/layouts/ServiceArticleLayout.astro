@@ -228,6 +228,14 @@ const sidebarTitle = shortTitle ?? title.split('|')[0].trim();
     .srv-main { max-width: 100%; }
     .srv-side__cta, .srv-side__related, .srv-side__trust { width: 100%; box-sizing: border-box; }
   }
+  @media (max-width: 640px) {
+    .srv-side__cta { padding: 1.5rem 1.25rem; }
+    .srv-side__title { font-size: 1.05rem; }
+    .srv-side__desc { font-size: 0.88rem; line-height: 1.55; }
+    .srv-side__related { padding: 1.1rem 1.25rem; }
+    .srv-side__trust { padding: 1.1rem 1.25rem; }
+    .srv-side__related-list a { font-size: 0.9rem; padding: 0.5rem 0; }
+  }
 
   /* === YAZAR === */
   .srv-author {
