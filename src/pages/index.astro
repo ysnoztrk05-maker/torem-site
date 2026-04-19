@@ -321,6 +321,20 @@ const faqItems = [
     </div>
   </section>
 
+  <!-- ░░ INLINE CTA BAND ░░ -->
+  <section class="cta-inline-band">
+    <div class="container cta-inline-band__inner">
+      <div class="cta-inline-band__text">
+        <p class="cta-inline-band__label">Projenizi Konuşalım</p>
+        <p class="cta-inline-band__sub">Ücretsiz saha keşfi ve zemin değerlendirmesi için uzmanlarımıza ulaşın.</p>
+      </div>
+      <div class="cta-inline-band__actions">
+        <a href="/iletisim/" class="btn btn--primary">Teklif İste</a>
+        <a href="tel:+905316594636" class="cta-inline-band__tel">+90 531 659 46 36</a>
+      </div>
+    </div>
+  </section>
+
   <!-- ░░ HAKKIMIZDA ░░ -->
   <section class="section section--alt about">
     <div class="container about__grid">
@@ -1303,6 +1317,16 @@ const faqItems = [
   .hero-cta .btn { text-align: center; justify-content: center; }
   .hero-svg-layer { opacity: 0.6; }
 }
+
+/* ── Inline CTA Band ── */
+.cta-inline-band { background:var(--color-primary); padding:var(--s-8) 0; }
+.cta-inline-band__inner { display:flex; align-items:center; justify-content:space-between; gap:var(--s-8); flex-wrap:wrap; }
+.cta-inline-band__label { font-size:var(--text-lg); font-weight:700; color:var(--color-white); margin-bottom:var(--s-1); }
+.cta-inline-band__sub { font-size:var(--text-sm); color:rgba(255,255,255,0.7); }
+.cta-inline-band__actions { display:flex; align-items:center; gap:var(--s-5); flex-shrink:0; }
+.cta-inline-band__tel { font-size:var(--text-base); font-weight:600; color:var(--color-highlight); text-decoration:none; white-space:nowrap; }
+.cta-inline-band__tel:hover { color:var(--color-white); }
+@media (max-width:768px) { .cta-inline-band__inner { flex-direction:column; text-align:center; } }
 
 /* ── Services grid ── */
 .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s-6); }

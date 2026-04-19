@@ -222,83 +222,140 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
 
     <main class="tz-article-main">
       <div class="container tz-content-container">
-        
-        <!-- YAZI İÇERİĞİ -->
-        <article class="tz-readability-wrapper tz-article-body" set:html={teknik.content} />
+        <div class="tz-content-grid">
 
-        <!-- UYGULAMA ADIMLARI -->
-        {teknik.steps && teknik.steps.length > 0 && (
-          <div class="tz-section">
-            <h2 class="tz-section-title">Uygulama Adımları</h2>
-            <ol class="tz-steps">
-              {teknik.steps.map((s) => (
-                <li class="tz-step">
-                  <span class="tz-step__title">{s.title}</span>
-                  <p class="tz-step__desc">{s.desc}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        )}
+          <!-- ░░ ANA İÇERİK ░░ -->
+          <div class="tz-content-main">
 
-        <!-- TEKNİK PARAMETRELER -->
-        {teknik.params && teknik.params.length > 0 && (
-          <div class="tz-section">
-            <h2 class="tz-section-title">Teknik Parametreler</h2>
-            <div class="tz-params-wrap">
-              <table class="tz-params-table">
-                <thead>
-                  <tr>
-                    <th>Parametre</th>
-                    <th>Tipik Değer</th>
-                    <th>Açıklama</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {teknik.params.map((p) => (
-                    <tr>
-                      <td><strong>{p.name}</strong></td>
-                      <td class="tz-params-table__value">{p.value}</td>
-                      <td>{p.desc}</td>
-                    </tr>
+            <!-- YAZI İÇERİĞİ -->
+            <article class="tz-readability-wrapper tz-article-body" set:html={teknik.content} />
+
+            <!-- UYGULAMA ADIMLARI -->
+            {teknik.steps && teknik.steps.length > 0 && (
+              <div class="tz-section">
+                <h2 class="tz-section-title">Uygulama Adımları</h2>
+                <ol class="tz-steps">
+                  {teknik.steps.map((s) => (
+                    <li class="tz-step">
+                      <span class="tz-step__title">{s.title}</span>
+                      <p class="tz-step__desc">{s.desc}</p>
+                    </li>
                   ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        )}
+                </ol>
+              </div>
+            )}
 
-        <!-- UYGUN ZEMİN TÜRLERİ -->
-        {teknik.zeminTurleri && teknik.zeminTurleri.length > 0 && (
-          <div class="tz-section">
-            <h2 class="tz-section-title">Uygun Zemin Türleri</h2>
-            <div class="tz-zemin-chips">
-              {teknik.zeminTurleri.map((z) => (
-                <span class="tz-zemin-chip">{z}</span>
-              ))}
-            </div>
-          </div>
-        )}
+            <!-- TEKNİK PARAMETRELER -->
+            {teknik.params && teknik.params.length > 0 && (
+              <div class="tz-section">
+                <h2 class="tz-section-title">Teknik Parametreler</h2>
+                <div class="tz-params-wrap">
+                  <table class="tz-params-table">
+                    <thead>
+                      <tr>
+                        <th>Parametre</th>
+                        <th>Tipik Değer</th>
+                        <th>Açıklama</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {teknik.params.map((p) => (
+                        <tr>
+                          <td><strong>{p.name}</strong></td>
+                          <td class="tz-params-table__value">{p.value}</td>
+                          <td>{p.desc}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
 
-        <!-- SIK SORULAN SORULAR -->
-        {teknik.faq.length > 0 && (
-          <div class="tz-article-faq">
-            <h2>{teknik.shortTitle} Hakkında Merak Edilenler</h2>
-            <div class="tz-faq-group">
-              {teknik.faq.map((item) => (
-                <details class="tz-faq-item">
-                  <summary>{item.q}
-                     <svg class="tz-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
-                  </summary>
-                  <div class="tz-faq-body">
-                     <p>{item.a}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        )}
+            <!-- UYGUN ZEMİN TÜRLERİ -->
+            {teknik.zeminTurleri && teknik.zeminTurleri.length > 0 && (
+              <div class="tz-section">
+                <h2 class="tz-section-title">Uygun Zemin Türleri</h2>
+                <div class="tz-zemin-chips">
+                  {teknik.zeminTurleri.map((z) => (
+                    <span class="tz-zemin-chip">{z}</span>
+                  ))}
+                </div>
+              </div>
+            )}
 
+            <!-- SIK SORULAN SORULAR -->
+            {teknik.faq.length > 0 && (
+              <div class="tz-article-faq">
+                <h2>{teknik.shortTitle} Hakkında Merak Edilenler</h2>
+                <div class="tz-faq-group">
+                  {teknik.faq.map((item) => (
+                    <details class="tz-faq-item">
+                      <summary>{item.q}
+                         <svg class="tz-faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                      </summary>
+                      <div class="tz-faq-body">
+                         <p>{item.a}</p>
+                      </div>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+
+          </div><!-- /tz-content-main -->
+
+          <!-- ░░ STICKY SIDEBAR ░░ -->
+          <aside class="tz-sidebar">
+
+            <!-- CTA Kutusu -->
+            <div class="tz-sidebar__cta">
+              <p class="tz-sidebar__eyebrow">Ücretsiz Keşif</p>
+              <h3 class="tz-sidebar__title">{teknik.shortTitle} için teklif alın</h3>
+              <p class="tz-sidebar__desc">Sahadaki uzman mühendisimiz projenizi değerlendirsin.</p>
+              <a href="/iletisim/" class="btn btn--primary" style="width:100%;text-align:center;display:block;">Teklif İste</a>
+              <a href="tel:+905316594636" class="tz-sidebar__tel">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                +90 531 659 46 36
+              </a>
+            </div>
+
+            <!-- İlgili Teknikler -->
+            {ilgiliTeknikler.length > 0 && (
+              <div class="tz-sidebar__related">
+                <h4 class="tz-sidebar__related-title">{kategori.title} Yöntemleri</h4>
+                <ul class="tz-sidebar__related-list">
+                  {ilgiliTeknikler.map((t) => (
+                    <li>
+                      <a href={`/faaliyet-alanlari/${t.kategoriSlug}/${t.slug}/`} class="tz-sidebar__related-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M9 18l6-6-6-6"/></svg>
+                        {t.shortTitle}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <!-- Güven Sinyalleri -->
+            <div class="tz-sidebar__trust">
+              <div class="tz-sidebar__trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>ISO 9001:2015 Kalite</span>
+              </div>
+              <div class="tz-sidebar__trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>TBDY 2018 Uyumlu</span>
+              </div>
+              <div class="tz-sidebar__trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span>350+ Tamamlanan Proje</span>
+              </div>
+            </div>
+
+          </aside><!-- /tz-sidebar -->
+
+        </div><!-- /tz-content-grid -->
       </div>
     </main>
     
@@ -381,7 +438,31 @@ header.tz-article-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight
 .tz-hero-wave .shape-fill { fill: var(--color-bg, #fafaf7); }
 
 .tz-article-main { background-color: var(--color-bg, #fafaf7); padding: 50px 0 60px; }
-.tz-content-container { max-width: 800px; margin: 0 auto; padding: 0 var(--s-6); } /* Optimal okuma genişliği */
+.tz-content-container { max-width: 1220px; margin: 0 auto; padding: 0 var(--s-6); }
+.tz-content-grid { display: grid; grid-template-columns: 1fr 300px; gap: var(--s-12); align-items: start; }
+.tz-content-main { min-width: 0; }
+
+/* Sidebar */
+.tz-sidebar { position: sticky; top: 96px; display: flex; flex-direction: column; gap: var(--s-5); }
+.tz-sidebar__cta { background: var(--color-primary); border-radius: var(--r-xl); padding: var(--s-7) var(--s-6); }
+.tz-sidebar__eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-highlight); margin-bottom: var(--s-2); }
+.tz-sidebar__title { font-family: var(--font-serif); font-size: 1.2rem; color: var(--color-white); margin-bottom: var(--s-3); line-height: 1.3; }
+.tz-sidebar__desc { font-size: var(--text-sm); color: rgba(255,255,255,0.7); margin-bottom: var(--s-5); }
+.tz-sidebar__tel { display: flex; align-items: center; gap: var(--s-2); margin-top: var(--s-4); font-size: var(--text-sm); font-weight: 600; color: var(--color-highlight); text-decoration: none; }
+.tz-sidebar__tel:hover { color: var(--color-white); }
+.tz-sidebar__related { background: var(--color-white); border: 1px solid var(--color-border); border-radius: var(--r-xl); padding: var(--s-5) var(--s-5); }
+.tz-sidebar__related-title { font-size: var(--text-sm); font-weight: 700; color: var(--color-primary); margin-bottom: var(--s-3); text-transform: uppercase; letter-spacing: 0.08em; }
+.tz-sidebar__related-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: var(--s-1); }
+.tz-sidebar__related-link { display: flex; align-items: center; gap: var(--s-2); font-size: var(--text-sm); color: var(--color-text); text-decoration: none; padding: var(--s-2) 0; border-bottom: 1px solid var(--color-border); transition: color var(--t-fast); }
+.tz-sidebar__related-link:last-child { border-bottom: none; }
+.tz-sidebar__related-link:hover { color: var(--color-accent); }
+.tz-sidebar__related-link svg { color: var(--color-highlight); flex-shrink: 0; }
+.tz-sidebar__trust { background: var(--color-bg-alt); border-radius: var(--r-xl); padding: var(--s-5); display: flex; flex-direction: column; gap: var(--s-3); }
+.tz-sidebar__trust-item { display: flex; align-items: center; gap: var(--s-3); font-size: var(--text-sm); color: var(--color-text-muted); }
+.tz-sidebar__trust-item svg { color: var(--color-accent); flex-shrink: 0; }
+
+/* Sidebar responsive */
+@media (max-width: 1024px) { .tz-content-grid { grid-template-columns: 1fr; } .tz-sidebar { position: static; } }
 
 /* --- TYPOGRAPHY (READABILITY STANDARTLARI) --- */
 .tz-readability-wrapper {
