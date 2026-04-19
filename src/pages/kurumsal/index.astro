@@ -44,7 +44,7 @@ const stats = [
         {stats.map(s => (
           <div class="hero-stat-card">
             <div class="hero-stat-card__num-wrapper">
-              <span class="hero-stat-card__num counter" data-target={s.num}>0</span>
+              <span class="hero-stat-card__num counter" data-target={s.num}>{s.num}</span>
               <span class="hero-stat-card__suffix">{s.suffix}</span>
             </div>
             <span class="hero-stat-card__lbl">{s.lbl}</span>
@@ -201,6 +201,76 @@ const stats = [
     </div>
   </section>
 
+  <!-- Grup Şirketi -->
+  <section class="section grup-section">
+    <div class="container">
+      <div class="grup-wrap">
+        <div class="grup-badge">Grup Şirketi</div>
+        <h2 class="grup-title">Torem Zemin &amp; May Geoteknik<br><span>— Ortak teknik kapasite, iki uzmanlık alanı</span></h2>
+        <p class="grup-desc">Torem Zemin, geoteknik mühendislik sektöründe <strong>May Geoteknik</strong> ile aynı grup çatısı altında faaliyet gösterir. Bu birliktelik; paylaşılan makine parkı, ortak Ar-Ge süreçleri ve sektörel derin bilgi birikimi sayesinde müşterilerimize <strong>genişletilmiş teknik kapasite</strong> sunar. Her iki firma da bağımsız olarak faaliyet gösterir; ancak büyük ölçekli veya karmaşık projelerde ortak mühendislik gücüyle çözüm üretir.</p>
+        <div class="grup-cards">
+          <div class="grup-card grup-card--torem">
+            <div class="grup-card__logo-slot"><strong>TOREM</strong> <span>ZEMİN</span></div>
+            <p class="grup-card__tagline">Anahtar Teslim Saha Uygulaması</p>
+            <ul class="grup-card__spec">
+              <li>Fore kazık &middot; Jet grout &middot; Ankraj</li>
+              <li>15+ iş makinesi, 350+ proje</li>
+              <li>İstanbul + Türkiye geneli</li>
+            </ul>
+            <span class="grup-card__current">Bu Site</span>
+          </div>
+          <div class="grup-card grup-card--may">
+            <div class="grup-card__logo-slot"><strong>MAY</strong> <span>GEOTEKNİK</span></div>
+            <p class="grup-card__tagline">Geoteknik Etüt, Tasarım &amp; Denetim</p>
+            <ul class="grup-card__spec">
+              <li>Zemin etüdü &middot; Laboratuvar</li>
+              <li>Projelendirme &middot; Teknik danışmanlık</li>
+              <li>Aletsel gözlem &middot; İzleme</li>
+            </ul>
+            <a href="https://maygeoteknik.com/" target="_blank" rel="noopener noreferrer" class="grup-card__link">maygeoteknik.com →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Üyelikler -->
+  <section class="section uyelik-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Mesleki Üyelikler</span>
+        <h2>Sektörel Otorite &amp; Meslek Oda Üyelikleri</h2>
+        <p>Torem Zemin, geoteknik mühendislik camiasının kurumsal çatıları altında aktif üyedir — her proje bu meslek ilkeleri çerçevesinde yürütülür.</p>
+      </div>
+      <div class="uyelik-grid">
+        <div class="uyelik-card">
+          <div class="uyelik-card__logo" aria-hidden="true">
+            <span class="uyelik-card__initials">TMMOB</span>
+          </div>
+          <strong>TMMOB</strong>
+          <span>Türk Mühendis ve Mimar Odaları Birliği</span>
+          <em>Mesleki yetkinlik çatı kuruluşu</em>
+        </div>
+        <div class="uyelik-card">
+          <div class="uyelik-card__logo" aria-hidden="true">
+            <span class="uyelik-card__initials">JMO</span>
+          </div>
+          <strong>Jeoloji Mühendisleri Odası</strong>
+          <span>TMMOB Bağlı Meslek Odası</span>
+          <em>Zemin ve jeoteknik ilkeler</em>
+        </div>
+        <a href="https://zemincilerdernegi.com/" target="_blank" rel="noopener noreferrer" class="uyelik-card uyelik-card--link">
+          <div class="uyelik-card__logo" aria-hidden="true">
+            <span class="uyelik-card__initials">ZD</span>
+          </div>
+          <strong>Zeminciler Derneği</strong>
+          <span>Geoteknik Sektörel Birlik</span>
+          <em>Aktif üye &mdash; uygulayıcı firmalar ağı</em>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Sertifikalar & Belgeler -->
   <section class="section cert-section">
     <div class="container">
@@ -249,15 +319,14 @@ const stats = [
         if (!targetStr) return;
         const target = +targetStr;
 
+        let current = Math.floor(target * 0.85);
+        counter.innerText = current.toString();
+        const inc = Math.max(1, (target - current) / 30);
         const updateCount = () => {
-          const count = +counter.innerText;
-          const inc = target / speed;
-          if (count < target) {
-            counter.innerText = Math.ceil(count + inc).toString();
-            setTimeout(updateCount, 15);
-          } else {
-            counter.innerText = target.toString();
-          }
+          current = Math.min(current + inc, target);
+          counter.innerText = Math.floor(current).toString();
+          if (current < target) setTimeout(updateCount, 30);
+          else counter.innerText = target.toString();
         };
 
         updateCount();
@@ -766,6 +835,243 @@ const stats = [
 .mv-card p {
   color: #4b5563;
   line-height: 1.7;
+}
+
+/* ========================================= */
+/* GRUP ŞİRKETİ SECTION                      */
+/* ========================================= */
+.grup-section {
+  background: linear-gradient(180deg, #fafaf7 0%, #ffffff 100%);
+  padding-block: 5rem;
+}
+.grup-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+.grup-badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-earth);
+  background: rgba(181, 83, 43, 0.08);
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(181, 83, 43, 0.2);
+  margin-bottom: 1.5rem;
+}
+.grup-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 600;
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+}
+.grup-title span {
+  font-style: italic;
+  font-size: 0.75em;
+  color: var(--color-highlight);
+  font-weight: 500;
+}
+.grup-desc {
+  max-width: 760px;
+  margin: 0 auto 3rem;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+.grup-desc strong {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.grup-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+.grup-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2rem 1.75rem;
+  text-align: left;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.grup-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 33, 71, 0.08);
+  border-color: var(--color-highlight);
+}
+.grup-card--torem { border-top: 3px solid var(--color-primary); }
+.grup-card--may { border-top: 3px solid var(--color-earth); }
+
+.grup-card__logo-slot {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-family: var(--font-serif);
+}
+.grup-card__logo-slot strong {
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  letter-spacing: -0.01em;
+  font-weight: 800;
+}
+.grup-card--may .grup-card__logo-slot strong { color: var(--color-earth); }
+.grup-card__logo-slot span {
+  font-size: 0.9rem;
+  color: var(--color-highlight);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.grup-card__tagline {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+  margin: 0;
+}
+.grup-card__spec {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.grup-card__spec li {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+.grup-card__spec li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-highlight);
+}
+.grup-card__current {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--color-highlight);
+  background: rgba(212, 175, 55, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.grup-card__link {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-earth);
+  text-decoration: none;
+  border-top: 1px solid var(--color-border);
+  display: inline-block;
+}
+.grup-card__link:hover { color: var(--color-primary); }
+
+/* ========================================= */
+/* ÜYELİK SECTION                            */
+/* ========================================= */
+.uyelik-section {
+  background: var(--color-bg-alt);
+  padding-block: 5rem;
+}
+.uyelik-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.uyelik-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.uyelik-card--link:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-highlight);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.12);
+}
+.uyelik-card__logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--color-highlight);
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+.uyelik-card__logo::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+}
+.uyelik-card__initials {
+  font-family: var(--font-serif);
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+}
+.uyelik-card strong {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+.uyelik-card span {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+.uyelik-card em {
+  font-style: normal;
+  font-size: 0.72rem;
+  color: var(--color-earth);
+  font-weight: 600;
+  margin-top: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 860px) {
+  .grup-cards { grid-template-columns: 1fr; }
+  .uyelik-grid { grid-template-columns: 1fr; gap: 1rem; }
 }
 
 /* ========================================= */
