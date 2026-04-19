@@ -101,6 +101,8 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
     ogImage={ogImage}
     ogType="article"
     schema={pageSchemas}
+    shortTitle={teknik.shortTitle}
+    relatedTeknikler={ilgiliTeknikler.map(t => ({ slug: t.slug, kategoriSlug: t.kategoriSlug, shortTitle: t.shortTitle }))}
   >
     <div class="tz-readability-wrapper">
        <Fragment set:html={teknik.content} />

@@ -2,6 +2,8 @@
 import BaseLayout from './BaseLayout.astro';
 import CTABox from '../components/CTABox.astro';
 
+interface RelatedTeknik { slug: string; kategoriSlug: string; shortTitle: string; }
+
 interface Props {
   title: string;
   description: string;
@@ -16,6 +18,8 @@ interface Props {
   updateDate?: string;
   wordCount?: number;
   readTime?: number;
+  shortTitle?: string;
+  relatedTeknikler?: RelatedTeknik[];
 }
 
 const {
@@ -31,8 +35,12 @@ const {
   badges = [],
   updateDate,
   wordCount,
-  readTime
+  readTime,
+  shortTitle,
+  relatedTeknikler = []
 } = Astro.props;
+
+const sidebarTitle = shortTitle ?? title.split('|')[0].trim();
 ---
 
 <BaseLayout title={title} description={description} canonical={canonical} ogImage={ogImage} ogType={ogType} schema={schema}>
@@ -69,24 +77,74 @@ const {
     </div>
   </section>
 
-  <!-- MAKALE -->
+  <!-- MAKALE + SIDEBAR -->
   <div class="srv-container">
-    <div class="srv-author">
-      <div class="srv-author__av">TZ</div>
-      <div>
-        <strong>Torem Zemin Mühendislik</strong>
-        <span>13+ Yıl Geoteknik Deneyimi · ISO 9001 · 350+ Proje</span>
+    <div class="srv-grid">
+
+      <div class="srv-main">
+        <div class="srv-author">
+          <div class="srv-author__av">TZ</div>
+          <div>
+            <strong>Torem Zemin Mühendislik</strong>
+            <span>13+ Yıl Geoteknik Deneyimi · ISO 9001 · 350+ Proje</span>
+          </div>
+        </div>
+
+        <article class="srv-article">
+          <slot />
+        </article>
+
+        <CTABox
+          variant="inline"
+          title="Teknik Danışmanlık ve Ücretsiz Keşif Raporu"
+        />
       </div>
+
+      <aside class="srv-sidebar">
+        <div class="srv-side__cta">
+          <p class="srv-side__eyebrow">Ücretsiz Keşif</p>
+          <h3 class="srv-side__title">{sidebarTitle} için teklif alın</h3>
+          <p class="srv-side__desc">Sahadaki uzman mühendisimiz projenizi değerlendirsin.</p>
+          <a href="/iletisim/" class="btn btn--primary srv-side__btn">Teklif İste</a>
+          <a href="tel:+905316594636" class="srv-side__tel">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .94h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            +90 531 659 46 36
+          </a>
+        </div>
+
+        {relatedTeknikler.length > 0 && (
+          <div class="srv-side__related">
+            <h4 class="srv-side__related-title">{category} Yöntemleri</h4>
+            <ul class="srv-side__related-list">
+              {relatedTeknikler.map((t) => (
+                <li>
+                  <a href={`/faaliyet-alanlari/${t.kategoriSlug}/${t.slug}/`}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                    {t.shortTitle}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div class="srv-side__trust">
+          <div class="srv-side__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>ISO 9001:2015 Kalite</span>
+          </div>
+          <div class="srv-side__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>TBDY 2018 Uyumlu</span>
+          </div>
+          <div class="srv-side__trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>350+ Tamamlanan Proje</span>
+          </div>
+        </div>
+      </aside>
+
     </div>
-
-    <article class="srv-article">
-      <slot />
-    </article>
-
-    <CTABox
-      variant="inline"
-      title="Teknik Danışmanlık ve Ücretsiz Keşif Raporu"
-    />
   </div>
 
 </BaseLayout>
@@ -139,7 +197,36 @@ const {
   }
 
   /* === KONTEYNER === */
-  .srv-container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+  .srv-container { max-width: 1220px; margin: 0 auto; padding: 2rem 1.5rem 3rem; }
+  .srv-grid { display: grid; grid-template-columns: 1fr 300px; gap: 2.5rem; align-items: start; }
+  .srv-main { min-width: 0; max-width: 860px; }
+
+  /* === SIDEBAR === */
+  .srv-sidebar { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 1rem; }
+  .srv-side__cta { background: var(--color-primary); border-radius: 14px; padding: 1.75rem 1.5rem; color: #fff; }
+  .srv-side__eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-highlight); margin: 0 0 0.5rem; }
+  .srv-side__title { font-family: var(--font-serif); font-size: 1.15rem; color: #fff; margin: 0 0 0.6rem; line-height: 1.3; font-weight: 700; }
+  .srv-side__desc { font-size: 0.88rem; color: rgba(255,255,255,0.72); margin: 0 0 1.1rem; line-height: 1.55; }
+  .srv-side__btn { display: block; width: 100%; text-align: center; }
+  .srv-side__tel { display: flex; align-items: center; gap: 0.5rem; margin-top: 1rem; font-size: 0.9rem; font-weight: 600; color: var(--color-highlight); text-decoration: none; font-family: var(--font-mono); }
+  .srv-side__tel:hover { color: #fff; }
+  .srv-side__related { background: #fff; border: 1px solid var(--color-border); border-radius: 14px; padding: 1.25rem 1.25rem; }
+  .srv-side__related-title { font-size: 0.78rem; font-weight: 700; color: var(--color-primary); margin: 0 0 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .srv-side__related-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; }
+  .srv-side__related-list li { border-bottom: 1px solid var(--color-border); }
+  .srv-side__related-list li:last-child { border-bottom: none; }
+  .srv-side__related-list a { display: flex; align-items: center; gap: 0.5rem; padding: 0.55rem 0; font-size: 0.88rem; color: var(--color-text); text-decoration: none; transition: color 0.15s; }
+  .srv-side__related-list a:hover { color: var(--color-accent); }
+  .srv-side__related-list svg { color: var(--color-highlight); flex-shrink: 0; }
+  .srv-side__trust { background: var(--color-bg-alt); border-radius: 14px; padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .srv-side__trust-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: var(--color-text-muted); }
+  .srv-side__trust-item svg { color: var(--color-accent); flex-shrink: 0; }
+
+  @media (max-width: 1024px) {
+    .srv-grid { grid-template-columns: 1fr; }
+    .srv-sidebar { position: static; }
+    .srv-main { max-width: 100%; }
+  }
 
   /* === YAZAR === */
   .srv-author {
