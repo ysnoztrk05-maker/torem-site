@@ -464,7 +464,11 @@ header.tz-article-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight
 .tz-sidebar__trust-item svg { color: var(--color-accent); flex-shrink: 0; }
 
 /* Sidebar responsive */
-@media (max-width: 1024px) { .tz-content-grid { grid-template-columns: 1fr; } .tz-sidebar { position: static; } }
+@media (max-width: 1100px) {
+  .tz-content-grid { grid-template-columns: 1fr; gap: var(--s-8); }
+  .tz-sidebar { position: static; }
+  .tz-sidebar__cta, .tz-sidebar__related, .tz-sidebar__trust { width: 100%; box-sizing: border-box; }
+}
 
 /* --- TYPOGRAPHY (READABILITY STANDARTLARI) --- */
 .tz-readability-wrapper {

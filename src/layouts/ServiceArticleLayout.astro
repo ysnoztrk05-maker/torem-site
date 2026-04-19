@@ -222,10 +222,11 @@ const sidebarTitle = shortTitle ?? title.split('|')[0].trim();
   .srv-side__trust-item { display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: var(--color-text-muted); }
   .srv-side__trust-item svg { color: var(--color-accent); flex-shrink: 0; }
 
-  @media (max-width: 1024px) {
-    .srv-grid { grid-template-columns: 1fr; }
+  @media (max-width: 1100px) {
+    .srv-grid { grid-template-columns: 1fr; gap: 2rem; }
     .srv-sidebar { position: static; }
     .srv-main { max-width: 100%; }
+    .srv-side__cta, .srv-side__related, .srv-side__trust { width: 100%; box-sizing: border-box; }
   }
 
   /* === YAZAR === */
