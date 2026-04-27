@@ -99,4 +99,12 @@ const { title, excerpt, href, icon, featured = false } = Astro.props;
   transition: gap var(--t-fast);
 }
 .service-card__link:hover { gap: var(--s-3); }
+
+@media (max-width: 560px) {
+  .service-card { padding: var(--s-5) var(--s-4); }
+  .service-card__icon { width: 44px; height: 44px; margin-bottom: var(--s-4); }
+  .service-card__icon svg { width: 22px; height: 22px; }
+  .service-card__title { font-size: var(--text-lg); }
+  .service-card__excerpt { font-size: var(--text-sm); margin-bottom: var(--s-4); }
+}
 </style>

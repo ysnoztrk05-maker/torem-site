@@ -13,6 +13,12 @@ const TARGETS = [
     pattern: /\.(png|jpg|jpeg)$/i,
     label: 'logos',
   },
+  {
+    dir: './public/images/makineler',
+    // *-src.jpg geçici kaynak dosyaları hariç — onlar process-makineler.mjs içindir
+    pattern: /^(?!.*-src\.).+\.(png|jpg|jpeg)$/i,
+    label: 'makineler',
+  },
 ];
 
 const WEBP_OPTS = { quality: 82, effort: 6 };

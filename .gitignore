@@ -22,3 +22,13 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Claude Code session dosyaları (kullanıcıya özel)
+.claude/
+
+# Fuse mount geçici dosyaları
+.fuse_hidden*
+
+# Image processing pipeline ham kaynakları (regenerate edilebilir)
+public/images/makineler/*-src.*
+public/images/makineler/*-v2-src.*

@@ -3,16 +3,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABox from '../../components/CTABox.astro';
 import { projeler } from '../../data/projeler';
+import { referansIstatistik } from '../../data/referanslar';
 
 const canonical = 'https://www.toremzemin.com/projelerimiz/';
 
 const projects = projeler;
 
+// İstatistikler gerçek referans arşivinden türetiliyor (src/data/referanslar.ts).
 const stats = [
-  { num: '350+', label: 'Tamamlanan Proje' },
-  { num: '13+',  label: 'Yıl Sektör Deneyimi' },
-  { num: '15+',  label: 'Şehir' },
-  { num: '100%', label: 'Müşteri Memnuniyeti' },
+  { num: `${referansIstatistik.toplamProje}+`, label: 'Referans Proje' },
+  { num: `${referansIstatistik.yilArsivi}`,     label: 'Yıllık Arşiv' },
+  { num: '15+',                                  label: 'Şehir' },
+  { num: '6',                                    label: 'Ana Uzmanlık' },
 ];
 ---
 
@@ -26,8 +28,8 @@ const stats = [
     <div class="projeler-hero__bg" aria-hidden="true"></div>
     <div class="container projeler-hero__inner">
       <p class="eyebrow">Referans Projeler</p>
-      <h1 class="hero-title">Güçlü Zemin,<br><span class="text-gradient">Sağlam Yapılar</span></h1>
-      <p class="hero-desc">350'yi aşkın tamamlanan projeden seçmeler — konut, altyapı, endüstriyel ve kamu projelerinde kanıtlanmış başarı.</p>
+      <h1 class="hero-title">Güçlü Zemin,<br><span class="accent">Sağlam Yapılar</span></h1>
+      <p class="hero-desc">Konut, endüstriyel, enerji ve kamu yatırımlarında yürütülen referans projelerimizden seçmeler — kazıklı temel, iksa sistemleri ve zemin iyileştirme uygulamaları.</p>
     </div>
     <div class="projeler-hero__wave" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,12 +66,9 @@ const stats = [
       <!-- Filtreler -->
       <div class="proj-filters" role="group" aria-label="Proje kategorisi filtrele">
         <button class="filter-btn filter-btn--active" data-filter="all">Tümü</button>
-        <button class="filter-btn" data-filter="fore-kazik">Fore Kazık</button>
-        <button class="filter-btn" data-filter="jet-grout">Jet Grout</button>
-        <button class="filter-btn" data-filter="ankraj">Ankraj</button>
-        <button class="filter-btn" data-filter="iksa">İksa</button>
-        <button class="filter-btn" data-filter="mini-kazik">Mini Kazık</button>
-        <button class="filter-btn" data-filter="zemin-civisi">Zemin Çivisi</button>
+        <button class="filter-btn" data-filter="kazikli-temel">Kazıklı Temel</button>
+        <button class="filter-btn" data-filter="iksa">İksa Sistemleri</button>
+        <button class="filter-btn" data-filter="zemin-iyilestirme">Zemin İyileştirme</button>
       </div>
 
       <div class="proj-grid">
@@ -96,6 +95,16 @@ const stats = [
             </div>
           </a>
         ))}
+      </div>
+
+      <!-- Tam Referans Listesine Yönlendirme -->
+      <div class="all-refs-banner">
+        <div class="all-refs-banner__text">
+          <p class="eyebrow eyebrow--sm">2013'ten Bugüne</p>
+          <h3>{referansIstatistik.toplamProje}+ Proje Arşivi</h3>
+          <p class="all-refs-banner__desc">Torem Zemin'in 2013'ten bu yana yürüttüğü tüm müşteri ve projelerin detaylı listesi — yıl, lokasyon ve uygulanan teknik bazında.</p>
+        </div>
+        <a href="/referanslar/" class="btn btn--outline">Tüm Referansları Görüntüle →</a>
       </div>
     </div>
   </section>
@@ -129,10 +138,7 @@ const stats = [
 .projeler-hero__wave svg { width:100%; height:100%; }
 .hero-title {
   color:var(--color-white); font-size:var(--text-5xl); margin-bottom:var(--s-4);
-  font-family: var(--font-heading); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em;
-}
-.text-gradient {
-  color: var(--color-highlight);
+  font-family: var(--font-heading); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
 }
 .hero-desc { color:rgba(255,255,255,.8); font-size:var(--text-lg); font-weight: 400; max-width: 500px; margin-inline: auto; }
 
@@ -152,7 +158,7 @@ const stats = [
 }
 .pstat { text-align:center; padding:var(--s-4); position:relative; z-index:2; }
 .pstat__num {
-  display:block; font-size:3.5rem; font-weight:800; color:var(--color-highlight);
+  display:block; font-size:3.5rem; font-weight: 700; color:var(--color-highlight);
   font-family: var(--font-heading); margin-bottom:var(--s-2); line-height:1;
   text-shadow: 0 4px 15px rgba(255, 193, 7, 0.2);
 }
@@ -194,6 +200,22 @@ const stats = [
 .pcard__desc { font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.65; margin-bottom:var(--s-4); }
 .pcard__tags { display:flex; flex-wrap:wrap; gap:var(--s-2); }
 .ptag { font-size:var(--text-xs); background:var(--color-bg); border:1px solid var(--color-border); color:var(--color-text-muted); padding:.2rem .55rem; border-radius:var(--r-sm); }
+
+/* Tüm referanslar yönlendirme bandı */
+.all-refs-banner {
+  margin-top: var(--s-12);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--r-xl);
+  padding: var(--s-8) var(--s-10);
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s-8);
+  color: var(--color-white);
+  flex-wrap: wrap;
+}
+.all-refs-banner h3 { font-size: var(--text-3xl); color: var(--color-white); margin-bottom: var(--s-2); font-family: var(--font-serif); font-weight: 700; }
+.all-refs-banner .eyebrow--sm { color: var(--color-highlight); margin-bottom: var(--s-2); }
+.all-refs-banner__desc { color: rgba(255,255,255,.85); font-size: var(--text-sm); line-height: 1.6; max-width: 640px; }
+.all-refs-banner .btn--outline { color: var(--color-white); border-color: var(--color-white); flex-shrink: 0; }
+.all-refs-banner .btn--outline:hover { background: var(--color-highlight); border-color: var(--color-highlight); color: var(--color-primary); }
 
 @media (max-width:900px) {
   .proj-grid { grid-template-columns:repeat(2,1fr); }

@@ -1,0 +1,1291 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import CTABox from '../../components/CTABox.astro';
+import {
+  devamEdenProjeler,
+  tamamlananProjeler,
+  referansIstatistik,
+  teknikKategorileri,
+  teknikSayilari,
+  operasyonMerkezi,
+  sahaKapsamiIller,
+  oneCikanMusteriler,
+  musteriHikayeleri,
+  depremBolgesiIller,
+  depremBolgesiAciklama,
+  teknikParcala,
+  teknikleriCikar,
+  musteriIfadeleri,
+  sektorler,
+  sektorBul,
+} from '../../data/referanslar';
+
+const canonical = 'https://www.toremzemin.com/referanslar/';
+
+// --- Aggregate veriler
+const teknikSayacla  = teknikSayilari();
+const oneCikan       = oneCikanMusteriler();
+const sahaIller      = sahaKapsamiIller();
+
+// --- SSS / AEO FAQ (AI motorları doğrudan alıntılar)
+const faqListesi = [
+  {
+    soru: 'Torem Zemin Mühendislik hangi müşteri gruplarıyla çalışıyor?',
+    cevap: 'Torem Zemin, kamu kurumları (TOKİ, İBB, Pendik Belediyesi, İPKB), holding ve gayrimenkul yatırım ortaklıkları (Emlak Konut, Rönesans Holding, Koray GYO, Ziraat GYO, Şahinler Holding, Kolin, Doğuş Grup), enerji ve endüstri yatırımcıları (Smart Güneş, Girişim Elektrik, Bakioğlu/Freshbak, Gemak, Ülker) ve lojistik-ticari yapı yüklenicileriyle çalışmaktadır.',
+  },
+  {
+    soru: 'Torem Zemin Türkiye\'de hangi illerde saha operasyonu yürütmektedir?',
+    cevap: 'Pendik/İstanbul\'daki operasyon merkezimizden 81 il geneline mühendis ve ekipman sevkiyatı yapmaktayız. Yoğun saha tecrübemiz Marmara, Ege, Akdeniz, Doğu ve Güneydoğu Anadolu bölgelerinde bulunmaktadır; ulusal enerji altyapısı ve yol projelerinde Türkiye genelinde saha hizmeti vermekteyiz.',
+  },
+  {
+    soru: 'Torem Zemin kamu projelerinde nasıl bir deneyime sahiptir?',
+    cevap: 'Rönesans Holding ortaklığında yürütülen şehir hastanesi fore kazık uygulaması, TOKİ bağlantılı Emlak Konut konut projeleri, İstanbul Proje Koordinasyon Birimi (İPKB) okul yapıları ve Derinsu-TOKİ koordinasyonunda yürütülen Uşak Millet Bahçesi öngermeli ankraj uygulaması başlıca kamu projelerimizdendir. Ayrıca Pendik Belediyesi ile sosyal tesis ve katlı otopark çalışmaları yürütülmüştür.',
+  },
+  {
+    soru: 'Torem Zemin hangi geoteknik mühendislik hizmetlerini sunmaktadır?',
+    cevap: 'Dört ana çözüm ailesinde uçtan uca hizmet veriyoruz: derin temel mühendisliği (fore kazık, mini kazık, CFA, baret), derin kazı iksa sistemleri (ankrajlı fore kazık perde, diyafram duvar, Berlin duvar, secant pile, palplans), zemin iyileştirme (jet grout, deep soil mixing, taş kolon, zemin enjeksiyonu) ve destekleme-ankraj (öngermeli, kalıcı, kaya ankrajı, zemin çivisi). TS EN 1536, TS EN 1537, TS EN 12716, TS EN 14199 ve TBDY 2018 standartlarına uygun uygulama yapılmaktadır.',
+  },
+  {
+    soru: 'Torem Zemin enerji sektörü için hangi çözümleri uyguladı?',
+    cevap: 'Smart Güneş Enerjileri için Denizli Erzin ve Çanakkale güneş enerji santrali sahalarında mini kazık temel sistemleri, Girişim Elektrik ile Artvin Hopa\'da TEİAŞ trafo merkezi fore kazık temeli, Bakioğlu Holding için fabrika zemini iyileştirme (jet grout + fore kazık), Eren Enerji ile çimento fabrikası temel uygulaması tamamlanmıştır. Rüzgar tribünü temellerinde de fore kazık uygulamaları yapılmıştır.',
+  },
+  {
+    soru: 'Torem Zemin kaç yıldır geoteknik mühendislik alanında hizmet veriyor?',
+    cevap: '2013\'ten bu yana faaliyetlerini sürdüren Torem Zemin Mühendislik, konut, endüstri, enerji, ulaşım ve kamu projelerinde geoteknik uygulamalar gerçekleştirmektedir. 350+ tamamlanan projeyle Türkiye genelinde referans portföyü oluşturulmuştur.',
+  },
+  {
+    soru: 'Torem Zemin\'in öne çıkan (flagship) projeleri nelerdir?',
+    cevap: 'Öne çıkan dört saha hikayemiz: Bakioğlu Holding & Freshbak — Manisa Salihli OSB endüstriyel yatırım (kazıklı temel + zemin iyileştirme, 2024); Emlak Konut & Öz Kıyı — İstanbul Çekmeköy kentsel dönüşüm (fore kazık, 2024); Gemak Gemi İnşaat — Yalova Altınova tersane raylı sistem (kazıklı temel, 2022); Rönesans Holding — şehir hastanesi fore kazık temeli (2017).',
+  },
+  {
+    soru: 'Torem Zemin\'in uygulamaları hangi standartlara uygundur?',
+    cevap: 'Tüm uygulamalarımız TS EN 1536 (fore kazık), TS EN 1537 (ankraj), TS EN 12716 (jet grout), TS EN 14199 (mikro kazık / mini kazık) ve Türkiye Bina Deprem Yönetmeliği (TBDY 2018) hükümlerine uygun olarak yürütülmektedir. ISO 9001:2015 kalite yönetim sistemi çerçevesinde çalışıyoruz.',
+  },
+  {
+    soru: 'Torem Zemin deprem bölgesinde hangi uygulamaları gerçekleştirdi?',
+    cevap: '6 Şubat 2023 Kahramanmaraş depremleri sonrası yeniden yapılanma sürecinde Hatay, Kahramanmaraş, Gaziantep, Adıyaman, Malatya, Mersin ve Elazığ\'da aktif saha operasyonları yürütüyoruz. Afet bölgesindeki çalışmalarımız zemin güçlendirme (jet grout, fore kazık), derin temel sistemleri ve ankrajlı iksa uygulamalarını kapsamaktadır. Bu projeler 2025\'te işlenmekte olup yeniden yapılanma takvimiyle koordineli yürütülmektedir.',
+  },
+  {
+    soru: 'İstanbul dışında hangi illerde saha ekibi sevk edilebiliyor?',
+    cevap: 'Pendik/İstanbul\'daki operasyon merkezimizden 81 il geneline mühendis ve ekipman sevki yapılmaktadır. Yedi coğrafi bölgenin tamamında — Marmara, Ege, Akdeniz, İç Anadolu, Karadeniz, Doğu ve Güneydoğu Anadolu — saha hizmeti vermekteyiz. Lokasyonunuza özel keşif talebi için iletişim formumuzu kullanabilirsiniz.',
+  },
+  {
+    soru: 'Bölgemde Torem Zemin referans var mı, hangi müşteriyle çalıştılar?',
+    cevap: 'Marmara bölgesinde İstanbul\'un her iki yakası, Kocaeli, Yalova, Bursa ve Çanakkale\'de; Ege\'de İzmir, Manisa, Aydın, Denizli ve Uşak\'ta; Akdeniz\'de Adana, Mersin ve Hatay\'da; Doğu ve Güneydoğu\'da Gaziantep, Kahramanmaraş, Adıyaman, Malatya, Elazığ ve Artvin gibi illerde kurumsal müşterilerle tamamlanmış projelerimiz bulunmaktadır. Bölgenize yakın referanslar için arşiv tablosundaki arama kutusunu kullanabilirsiniz.',
+  },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqListesi.map((f) => ({
+    '@type': 'Question',
+    name: f.soru,
+    acceptedAnswer: { '@type': 'Answer', text: f.cevap },
+  })),
+};
+
+// Yıllara göre gruplama (tamamlanan)
+const yillaraGoreGrup = new Map<number | string, typeof tamamlananProjeler>();
+for (const r of tamamlananProjeler) {
+  const key = r.yil;
+  if (!yillaraGoreGrup.has(key)) yillaraGoreGrup.set(key, []);
+  yillaraGoreGrup.get(key)!.push(r);
+}
+const yilListesi = [...yillaraGoreGrup.entries()].sort((a, b) => Number(b[0]) - Number(a[0]));
+
+// Hero — 2 niteliksel trust signal (ölçülü, rakamı sayfa diğer yerlerinden çekiyor)
+const heroTrust = [
+  { baslik: `${referansIstatistik.baslangicYili}'ten Bu Yana Saha Operasyonu`, alt: 'Kamu kurumları, holdingler ve GYO\'larla sürdürülen iş birlikleri' },
+  { baslik: '81 İl Kapsamında Sevkiyat Ağı',                                   alt: 'Pendik merkezli mühendis ve ekipman sevkiyatı — yedi coğrafi bölge' },
+];
+
+
+// Schema: ItemList (projeler) + Organization.hasOfferCatalog
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Torem Zemin Referans Projeleri',
+  numberOfItems: referansIstatistik.toplamProje,
+  itemListElement: [...devamEdenProjeler, ...tamamlananProjeler].slice(0, 50).map((r, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'Project',
+      name: r.proje,
+      description: `${r.proje} — ${r.teknik} uygulaması`,
+      location: { '@type': 'Place', name: r.lokasyon },
+      startDate: String(r.yil),
+      agent: { '@type': 'Organization', name: r.musteri },
+    },
+  })),
+};
+
+// Schema.org Review listesi — AEO motorları için müşteri ifadelerini doğrudan veri olarak işaretler
+const reviewSchemas = musteriIfadeleri.map((t) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Review',
+  itemReviewed: { '@type': 'Organization', name: 'Torem Zemin Mühendislik' },
+  author: {
+    '@type': 'Person',
+    name: t.ad,
+    jobTitle: t.unvan,
+    worksFor: { '@type': 'Organization', name: t.firma },
+  },
+  reviewBody: t.metin,
+  ...(t.vurgu ? { name: t.vurgu } : {}),
+}));
+
+const offerCatalogSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Torem Zemin Mühendislik',
+  url: 'https://www.toremzemin.com',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Geoteknik Mühendislik Uzmanlık Alanları',
+    itemListElement: teknikKategorileri.map((t) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: t.title,
+        serviceType: 'Geoteknik Mühendislik',
+        url: `https://www.toremzemin.com${t.href}`,
+      },
+      eligibleQuantity: { '@type': 'QuantitativeValue', value: teknikSayacla[t.slug] },
+    })),
+  },
+};
+
+// Matris için yoğunluk yüzdesi
+const yogunluk = (deger: number) => enYukseHucre === 0 ? 0 : Math.round((deger / enYukseHucre) * 100);
+---
+
+<BaseLayout
+  title={`Referanslar — ${referansIstatistik.toplamProje}+ Proje | Torem Zemin`}
+  description={`Torem Zemin Mühendislik'in ${referansIstatistik.baslangicYili}'ten bu yana kamu, holding, GYO ve endüstri müşterileriyle tamamladığı ${referansIstatistik.toplamProje}+ proje — 81 il geneline saha sevki.`}
+  canonical={canonical}
+  schema={[itemListSchema, offerCatalogSchema, faqSchema, ...reviewSchemas]}
+>
+  <!-- HERO -->
+  <section class="refs-hero">
+    <div class="refs-hero__photo" aria-hidden="true"></div>
+    <div class="refs-hero__gradient" aria-hidden="true"></div>
+    <div class="refs-hero__grid-pattern" aria-hidden="true"></div>
+    <div class="container refs-hero__inner">
+      <p class="eyebrow">Müşteri Referansları</p>
+      <h1>Birlikte Çalıştığımız <span class="accent">Kurumlar</span></h1>
+      <p class="refs-hero__desc">
+        Kamu kurumları, holding grupları, gayrimenkul yatırım ortaklıkları, enerji ve endüstri yatırımcılarıyla yürüttüğümüz geoteknik uygulamalardan seçilmiş referanslar.
+      </p>
+
+      <div class="refs-hero__trust">
+        {heroTrust.map((t) => (
+          <div class="htrust">
+            <span class="htrust__title">{t.baslik}</span>
+            <span class="htrust__alt">{t.alt}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="refs-hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,40 1440,35 L1440,60 L0,60 Z" fill="var(--color-bg)" />
+      </svg>
+    </div>
+  </section>
+
+  <Breadcrumb items={[{ label: 'Referanslar' }]} />
+
+  <!-- CASE STUDY SPOTLIGHT — Editorial zebra layout (4 flagship) -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow eyebrow--sm">Öne Çıkan Saha Hikayeleri</p>
+        <h2>Seçilmiş Müşteri Projeleri</h2>
+        <p>Kurumsal müşterilerimizle yürütülen dört farklı sektörden saha hikayesi — kapsam, çözüm ve sonuç.</p>
+      </div>
+
+      <div class="case-studies">
+        {musteriHikayeleri.filter((h) => h.flagship).map((h, idx) => {
+          const cover = h.sahaFoto ?? h.kategoriFallback ?? '/images/hero-main.jpg';
+          const reverse = idx % 2 === 1;
+          return (
+            <article class={`case-study ${reverse ? 'case-study--reverse' : ''}`}>
+              <div class="case-study__visual">
+                <img src={cover} alt={`${h.ad} saha görseli`} loading="lazy" decoding="async" width="800" height="520" />
+                {h.sektorEtiket && <span class="case-study__sektor">{h.sektorEtiket}</span>}
+              </div>
+              <div class="case-study__body">
+                {h.logoBase && (
+                  <picture class="case-study__logo">
+                    <source srcset={`${h.logoBase}.avif`} type="image/avif" />
+                    <source srcset={`${h.logoBase}.webp`} type="image/webp" />
+                    <img src={`${h.logoBase}.${h.logoExt}`} alt={`${h.ad} logosu`} loading="lazy" decoding="async" width="160" height="72" />
+                  </picture>
+                )}
+                <h3 class="case-study__ad">{h.ad}</h3>
+                <p class="case-study__meta">{h.lokasyon} · <span>{h.yil}</span></p>
+                <p class="case-study__hikaye">{h.hikayeUzun ?? h.hikaye}</p>
+                <div class="case-study__footer">
+                  <span class="case-study__etiket">{h.etiket}</span>
+                  {h.projeSlug && (
+                    <a href={`/projelerimiz/${h.projeSlug}/`} class="case-study__cta">
+                      Projeyi Detaylı İncele →
+                    </a>
+                  )}
+                </div>
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGO WALL — Statik grid (22 müşteri bir bakışta) -->
+  <section class="section section--bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow eyebrow--sm">Müşteri Portföyü</p>
+        <h2>Birlikte Çalıştığımız Kurumlar</h2>
+        <p>Kamu kurumları, holding grupları, gayrimenkul yatırım ortaklıkları, enerji ve endüstri yatırımcılarından bir kesit.</p>
+      </div>
+
+      <div class="logo-wall">
+        {oneCikan.map((m) => (
+          <div class="logo-wall__cell" title={`${m.ad} — ${m.aciklama}`}>
+            <picture>
+              <source srcset={`${m.logoBase}.avif`} type="image/avif" />
+              <source srcset={`${m.logoBase}.webp`} type="image/webp" />
+              <img src={`${m.logoBase}.${m.logoExt}`} alt={`${m.ad} logosu`} loading="lazy" decoding="async" width="160" height="64" />
+            </picture>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- MÜŞTERİ İFADELERİ — Testimonials (gerçek yetkili sözleri) -->
+  {musteriIfadeleri.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow eyebrow--sm">Müşteri Sözleri</p>
+          <h2>Birlikte Çalıştığımız Yetkililer Ne Söylüyor</h2>
+          <p>Saha tecrübemize dair kurumsal müşterilerimizin yetkililerinden doğrudan ifadeler.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          {musteriIfadeleri.map((t) => (
+            <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+              <meta itemprop="itemReviewed" content="Torem Zemin Mühendislik" />
+              <span class="testimonial-quote-mark" aria-hidden="true">&ldquo;</span>
+              {t.vurgu && <p class="testimonial-vurgu" itemprop="reviewBody">{t.vurgu}</p>}
+              <p class="testimonial-metin">{t.metin}</p>
+              <footer class="testimonial-footer" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                {t.logoBase && (
+                  <picture class="testimonial-logo">
+                    <source srcset={`${t.logoBase}.avif`} type="image/avif" />
+                    <source srcset={`${t.logoBase}.webp`} type="image/webp" />
+                    <img src={`${t.logoBase}.${t.logoExt ?? 'jpg'}`} alt={`${t.firma} logosu`} loading="lazy" decoding="async" width="80" height="40" />
+                  </picture>
+                )}
+                <div class="testimonial-kim">
+                  <strong itemprop="name">{t.ad}</strong>
+                  <span class="testimonial-unvan">
+                    <span itemprop="jobTitle">{t.unvan}</span>
+                    <span class="testimonial-bullet" aria-hidden="true">·</span>
+                    <span itemprop="worksFor">{t.firma}</span>
+                  </span>
+                  {t.proje && (
+                    <span class="testimonial-proje">{t.proje}{t.yil ? ` · ${t.yil}` : ''}</span>
+                  )}
+                </div>
+              </footer>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- SAHA KAPSAMI — Türkiye Haritası + Sinematik Hero -->
+  <section class="section saha-hero-section">
+    <div class="saha-hero__bg" aria-hidden="true"></div>
+    <div class="saha-hero__overlay" aria-hidden="true"></div>
+
+    <div class="container saha-hero__inner">
+      <div class="section-header section-header--light">
+        <p class="eyebrow eyebrow--sm">Saha Kapsamı</p>
+        <h2>Pendik Merkezli, <span class="accent">81 İl Kapsamında</span></h2>
+        <p>İstanbul Pendik'teki operasyon merkezimizden mühendis ve ekipman sevkiyatı yapıyoruz. Yedi coğrafi bölgenin tamamına — Marmara, Ege, Akdeniz, İç Anadolu, Karadeniz, Doğu ve Güneydoğu Anadolu — saha sevki gerçekleşmektedir. Aşağıdaki harita yoğun saha tecrübemizin coğrafi dağılımını gösterir.</p>
+      </div>
+
+      <div class="saha-grid">
+        <!-- Türkiye haritası -->
+        <div class="saha-map">
+          <svg class="saha-map__svg" viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg" aria-label="Türkiye — coğrafi bölgelere göre saha kapsam haritası">
+            <defs>
+              <linearGradient id="rgGold" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(212,175,55,.10)" />
+                <stop offset="100%" stop-color="rgba(212,175,55,.04)" />
+              </linearGradient>
+              <linearGradient id="rgEarth" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(181,83,43,.18)" />
+                <stop offset="100%" stop-color="rgba(181,83,43,.06)" />
+              </linearGradient>
+              <linearGradient id="rgBase" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(212,175,55,.10)" />
+                <stop offset="100%" stop-color="rgba(212,175,55,.04)" />
+              </linearGradient>
+            </defs>
+
+            <!-- ANA TÜRKİYE SİLUETİ — alt katman (boşlukları doldurur, bütünlük verir) -->
+            <path class="region-base" d="M 40,170 Q 55,130 110,108 L 200,92 L 285,98 L 380,90 L 490,88 L 600,90 L 720,95 L 815,108 L 870,140 L 905,180 L 920,225 L 905,270 L 870,310 L 825,335 L 790,355 L 700,365 L 600,365 L 500,360 L 420,360 L 320,358 L 240,348 L 160,335 L 90,310 L 50,280 L 35,235 L 30,195 Z" />
+
+            <!-- 7 COĞRAFİ BÖLGE — üst katman (hafif ton farkı + sınırlar) -->
+            <!-- MARMARA (sol-üst, HQ bölgesi) -->
+            <path class="region region--marmara" d="M 40,170 Q 55,130 110,108 L 200,92 L 285,98 L 330,135 L 320,180 L 270,215 L 175,218 L 95,210 L 50,205 Z" />
+            <!-- EGE (sol-orta-alt, kıyı şeridi) -->
+            <path class="region region--ege" d="M 50,210 L 175,218 L 250,235 L 270,290 L 240,335 L 165,348 L 90,330 L 45,275 Z" />
+            <!-- AKDENİZ (orta-güney) -->
+            <path class="region region--akdeniz" d="M 240,335 L 320,330 L 430,318 L 530,322 L 580,340 L 540,358 L 420,358 L 320,355 L 250,350 Z" />
+            <!-- İÇ ANADOLU (orta) -->
+            <path class="region region--ic-anadolu" d="M 270,215 L 320,180 L 410,170 L 510,175 L 565,200 L 580,260 L 540,300 L 460,310 L 370,308 L 295,285 L 270,240 Z" />
+            <!-- KARADENİZ (üst-orta-sağ şerit) -->
+            <path class="region region--karadeniz" d="M 285,98 L 380,90 L 490,88 L 600,90 L 720,95 L 815,108 L 850,140 L 780,158 L 670,160 L 560,158 L 460,160 L 380,155 L 330,135 Z" />
+            <!-- DOĞU ANADOLU (sağ-orta) -->
+            <path class="region region--dogu-anadolu" d="M 600,160 L 720,158 L 815,160 L 880,180 L 905,225 L 870,265 L 790,260 L 700,245 L 615,225 L 580,200 Z" />
+            <!-- GÜNEYDOĞU ANADOLU (sağ-alt — deprem bölgesi vurgu) -->
+            <path class="region region--guneydogu" d="M 540,300 L 615,275 L 700,275 L 790,275 L 825,310 L 790,345 L 700,360 L 600,360 L 540,355 L 530,330 Z" />
+
+            <!-- BÖLGE ETİKETLERİ -->
+            <text x="180" y="160" class="region-label">MARMARA</text>
+            <text x="155" y="280" class="region-label">EGE</text>
+            <text x="420" y="345" class="region-label">AKDENİZ</text>
+            <text x="430" y="240" class="region-label">İÇ ANADOLU</text>
+            <text x="565" y="125" class="region-label">KARADENİZ</text>
+            <text x="755" y="218" class="region-label">DOĞU ANADOLU</text>
+            <text x="690" y="320" class="region-label region-label--earth">GÜNEYDOĞU</text>
+
+            <!-- ÖNE ÇIKAN İLLER — etiketli pin'ler (aktif sahalar + büyük potansiyel pazarlar) -->
+            <!-- Marmara -->
+            <g class="pin pin--star" data-il="Tekirdağ"><circle cx="215" cy="110" r="4" /><text x="215" y="100" class="pin__label pin__label--sm">Tekirdağ</text></g>
+            <g class="pin pin--star" data-il="Çanakkale"><circle cx="135" cy="158" r="4" /><text x="135" y="148" class="pin__label pin__label--sm">Çanakkale</text></g>
+            <g class="pin pin--star" data-il="Kocaeli"><circle cx="332" cy="125" r="4" /><text x="342" y="120" text-anchor="start" class="pin__label pin__label--sm">Kocaeli</text></g>
+            <g class="pin pin--star" data-il="Sakarya"><circle cx="378" cy="140" r="4" /><text x="385" y="148" text-anchor="start" class="pin__label pin__label--sm">Sakarya</text></g>
+            <g class="pin pin--star" data-il="Bursa"><circle cx="245" cy="185" r="4" /><text x="245" y="200" class="pin__label pin__label--sm">Bursa</text></g>
+            <!-- Ege -->
+            <g class="pin pin--star" data-il="Manisa"><circle cx="180" cy="240" r="4" /><text x="180" y="232" class="pin__label pin__label--sm">Manisa</text></g>
+            <g class="pin pin--star" data-il="İzmir"><circle cx="115" cy="248" r="4" /><text x="108" y="240" text-anchor="end" class="pin__label pin__label--sm">İzmir</text></g>
+            <g class="pin pin--star" data-il="Aydın"><circle cx="155" cy="305" r="4" /><text x="148" y="298" text-anchor="end" class="pin__label pin__label--sm">Aydın</text></g>
+            <g class="pin pin--star" data-il="Denizli"><circle cx="225" cy="298" r="4" /><text x="232" y="293" text-anchor="start" class="pin__label pin__label--sm">Denizli</text></g>
+            <g class="pin pin--star" data-il="Muğla"><circle cx="200" cy="340" r="4" /><text x="200" y="355" class="pin__label pin__label--sm">Muğla</text></g>
+            <!-- Akdeniz -->
+            <g class="pin pin--star" data-il="Antalya"><circle cx="320" cy="350" r="4" /><text x="320" y="343" class="pin__label pin__label--sm">Antalya</text></g>
+            <g class="pin pin--star" data-il="Mersin"><circle cx="430" cy="345" r="4" /><text x="430" y="338" class="pin__label pin__label--sm">Mersin</text></g>
+            <g class="pin pin--star" data-il="Adana"><circle cx="478" cy="340" r="4" /><text x="478" y="333" class="pin__label pin__label--sm">Adana</text></g>
+            <!-- İç Anadolu -->
+            <g class="pin pin--star" data-il="Ankara"><circle cx="408" cy="215" r="4" /><text x="408" y="207" class="pin__label pin__label--sm">Ankara</text></g>
+            <g class="pin pin--star" data-il="Konya"><circle cx="385" cy="288" r="4" /><text x="385" y="280" class="pin__label pin__label--sm">Konya</text></g>
+            <g class="pin pin--star" data-il="Kayseri"><circle cx="515" cy="245" r="4" /><text x="515" y="237" class="pin__label pin__label--sm">Kayseri</text></g>
+            <!-- Karadeniz -->
+            <g class="pin pin--star" data-il="Samsun"><circle cx="555" cy="115" r="4" /><text x="555" y="107" class="pin__label pin__label--sm">Samsun</text></g>
+            <g class="pin pin--star" data-il="Trabzon"><circle cx="680" cy="118" r="4" /><text x="680" y="110" class="pin__label pin__label--sm">Trabzon</text></g>
+            <g class="pin pin--star" data-il="Artvin"><circle cx="800" cy="125" r="4" /><text x="800" y="117" class="pin__label pin__label--sm">Artvin</text></g>
+            <!-- Doğu Anadolu -->
+            <g class="pin pin--star" data-il="Elazığ"><circle cx="675" cy="220" r="4" /><text x="668" y="212" text-anchor="end" class="pin__label pin__label--sm">Elazığ</text></g>
+            <g class="pin pin--star" data-il="Erzurum"><circle cx="775" cy="195" r="4" /><text x="775" y="187" class="pin__label pin__label--sm">Erzurum</text></g>
+            <g class="pin pin--star" data-il="Van"><circle cx="855" cy="230" r="4" /><text x="855" y="222" class="pin__label pin__label--sm">Van</text></g>
+            <!-- Güneydoğu Anadolu (deprem dışı) -->
+            <g class="pin pin--star" data-il="Şanlıurfa"><circle cx="660" cy="305" r="4" /><text x="660" y="297" class="pin__label pin__label--sm">Şanlıurfa</text></g>
+            <g class="pin pin--star" data-il="Diyarbakır"><circle cx="745" cy="290" r="4" /><text x="745" y="282" class="pin__label pin__label--sm">Diyarbakır</text></g>
+
+            <!-- SAHA SEVKİ AĞI — etiketsiz ghost noktalar (diğer il merkezleri, "81 il" algısı) -->
+            <g class="pin pin--ghost" aria-hidden="true">
+              <!-- Marmara -->
+              <circle cx="160" cy="125" r="2.5" /> <!-- Edirne -->
+              <circle cx="190" cy="190" r="2.5" /> <!-- Balıkesir -->
+              <circle cx="305" cy="155" r="2.5" /> <!-- Yalova -->
+              <!-- Ege/iç Ege -->
+              <circle cx="265" cy="245" r="2.5" /> <!-- Uşak -->
+              <circle cx="295" cy="230" r="2.5" /> <!-- Kütahya -->
+              <circle cx="335" cy="265" r="2.5" /> <!-- Afyon -->
+              <!-- Akdeniz batı -->
+              <circle cx="285" cy="320" r="2.5" /> <!-- Burdur -->
+              <circle cx="305" cy="305" r="2.5" /> <!-- Isparta -->
+              <!-- İç Anadolu -->
+              <circle cx="370" cy="195" r="2.5" /> <!-- Eskişehir -->
+              <circle cx="445" cy="245" r="2.5" /> <!-- Aksaray -->
+              <circle cx="478" cy="208" r="2.5" /> <!-- Yozgat -->
+              <circle cx="555" cy="220" r="2.5" /> <!-- Sivas -->
+              <!-- Karadeniz -->
+              <circle cx="425" cy="135" r="2.5" /> <!-- Zonguldak -->
+              <circle cx="475" cy="148" r="2.5" /> <!-- Kastamonu -->
+              <circle cx="615" cy="120" r="2.5" /> <!-- Ordu -->
+              <circle cx="730" cy="125" r="2.5" /> <!-- Rize -->
+              <!-- Doğu Anadolu -->
+              <circle cx="715" cy="220" r="2.5" /> <!-- Bingöl -->
+              <circle cx="745" cy="235" r="2.5" /> <!-- Muş -->
+              <circle cx="825" cy="190" r="2.5" /> <!-- Ağrı -->
+              <!-- Güneydoğu -->
+              <circle cx="710" cy="320" r="2.5" /> <!-- Mardin -->
+              <circle cx="775" cy="305" r="2.5" /> <!-- Batman -->
+            </g>
+
+            <!-- HQ — Pendik / İstanbul (büyük altın pin) -->
+            <g class="pin pin--hq" data-il="İstanbul">
+              <circle cx="285" cy="115" r="14" fill="var(--color-highlight)" opacity=".25"><animate attributeName="r" values="14;22;14" dur="2.4s" repeatCount="indefinite" /><animate attributeName="opacity" values=".35;0;.35" dur="2.4s" repeatCount="indefinite" /></circle>
+              <circle cx="285" cy="115" r="8" fill="var(--color-highlight)" stroke="var(--color-white)" stroke-width="2" />
+              <text x="285" y="98" text-anchor="middle" class="pin__label pin__label--hq">PENDİK · İSTANBUL</text>
+              <text x="285" y="83" text-anchor="middle" class="pin__sublabel">Operasyon Merkezi</text>
+            </g>
+
+            <!-- DEPREM BÖLGESİ pinleri (terracotta — 2025 aktif sahalar) -->
+            <g class="pin pin--deprem" data-il="Hatay"><circle cx="600" cy="350" r="5" /><text x="600" y="368" text-anchor="middle" class="pin__label pin__label--deprem">Hatay</text></g>
+            <g class="pin pin--deprem" data-il="Gaziantep"><circle cx="650" cy="320" r="5" /><text x="650" y="338" text-anchor="middle" class="pin__label pin__label--deprem">Gaziantep</text></g>
+            <g class="pin pin--deprem" data-il="Kahramanmaraş"><circle cx="585" cy="295" r="5" /><text x="560" y="290" text-anchor="end" class="pin__label pin__label--deprem">K.Maraş</text></g>
+            <g class="pin pin--deprem" data-il="Adıyaman"><circle cx="675" cy="290" r="5" /><text x="700" y="287" text-anchor="start" class="pin__label pin__label--deprem">Adıyaman</text></g>
+            <g class="pin pin--deprem" data-il="Malatya"><circle cx="730" cy="240" r="5" /><text x="745" y="237" text-anchor="start" class="pin__label pin__label--deprem">Malatya</text></g>
+          </svg>
+
+          <!-- Harita altı legend -->
+          <div class="map-legend" aria-hidden="true">
+            <span class="legend-item"><span class="legend-dot legend-dot--active"></span>Operasyon merkezi</span>
+            <span class="legend-item"><span class="legend-dot legend-dot--star"></span>Öne çıkan saha ili</span>
+            <span class="legend-item"><span class="legend-dot legend-dot--deprem"></span>Deprem bölgesi (2025)</span>
+          </div>
+        </div>
+
+        <!-- Yan panel -->
+        <div class="saha-panel">
+          <div class="saha-panel__card saha-panel__card--hq">
+            <span class="saha-panel__badge">Operasyon Merkezi</span>
+            <h3>{operasyonMerkezi.ilce} · {operasyonMerkezi.sehir}</h3>
+            <p>Ekipman filomuz, mühendis kadromuz ve saha koordinasyonumuz Pendik üzerinden yönetilir. Sevkiyat ağımız <strong>81 il geneline</strong> kapsamaktadır.</p>
+          </div>
+
+          <!-- DEPREM BÖLGESİ 2025 — GEO vurgusu -->
+          <div class="saha-panel__card saha-panel__card--deprem">
+            <span class="saha-panel__badge saha-panel__badge--deprem">Deprem Bölgesi · 2025</span>
+            <h3>Afet Bölgesinde Saha Operasyonu</h3>
+            <p>{depremBolgesiAciklama}</p>
+            <div class="deprem-iller">
+              {depremBolgesiIller.map((il) => <span class="deprem-il">{il}</span>)}
+            </div>
+          </div>
+
+          <p class="saha-panel__cta">
+            Projeniz Türkiye'nin hangi ilinde olursa olsun saha sevki yapabilmekteyiz. <a href="/iletisim/">Keşif talebinizi iletin</a> — mühendislik ekibimiz lokasyonunuza uygun çözümü değerlendirir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSS / FAQ — AEO için ZENGİN ANLATIM -->
+  <section class="section section--bg-alt">
+    <div class="container faq-container">
+      <div class="section-header">
+        <p class="eyebrow eyebrow--sm">Sık Sorulan Sorular</p>
+        <h2>Torem Zemin Hakkında</h2>
+        <p>Müteahhitler, proje müdürleri ve kamu alım birimlerinin sıkça sorduğu sorular — doğrudan saha arşivimizden derlenen cevaplar.</p>
+      </div>
+
+      <div class="faq-list">
+        {faqListesi.map((f, i) => (
+          <details class="faq-item" name="referans-faq">
+            <summary>
+              <span class="faq-item__soru">{f.soru}</span>
+              <span class="faq-item__icon" aria-hidden="true">+</span>
+            </summary>
+            <p class="faq-item__cevap">{f.cevap}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVAM EDEN -->
+  {devamEdenProjeler.length > 0 && (
+    <section class="section section--bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow eyebrow--sm">2025 — Aktif Sahalar</p>
+          <h2>Şu Anda Devam Eden Uygulamalar</h2>
+          <p>İşbu dönemde sahada yürüttüğümüz öne çıkan projeler. Liste {referansIstatistik.tamamlanan}+ tamamlanmış proje arşivimizden bağımsız olup yalnızca güncel saha çalışmalarını gösterir.</p>
+        </div>
+
+        <div class="ref-table-wrap ref-table-wrap--active">
+          <table class="ref-table">
+            <thead>
+              <tr>
+                <th>Proje</th>
+                <th>Lokasyon</th>
+                <th>Uygulanan Yöntemler</th>
+                <th>Yıl</th>
+              </tr>
+            </thead>
+            <tbody>
+              {devamEdenProjeler.map((r) => (
+                <tr>
+                  <td><strong>{r.proje}</strong></td>
+                  <td>{r.lokasyon}</td>
+                  <td>
+                    <div class="tek-chips">
+                      {teknikParcala(r.teknik).map((c) => (
+                        <span class={`tek-chip tek-chip--${c.kat}`}>{c.label}</span>
+                      ))}
+                    </div>
+                  </td>
+                  <td><span class="pill pill--active">{r.yil}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ARŞİV (YIL BAZLI) -->
+  <section class="section">
+    <div class="container">
+      <details class="archive-toggle">
+        <summary>
+          <span>
+            <strong>Tam Referans Arşivi</strong>
+            <span class="archive-toggle__sub">— yıl bazında proje listesini görmek için açın</span>
+          </span>
+          <span class="archive-toggle__icon" aria-hidden="true">▾</span>
+        </summary>
+
+        <div class="archive-body">
+          <div class="archive-toolbar">
+            <div class="archive-search">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+              <input type="search" id="arsivSearch" placeholder="Müşteri, proje veya il ara..." aria-label="Arşivde ara" autocomplete="off" />
+            </div>
+
+            <div class="filter-group" role="group" aria-label="Yıla göre filtrele">
+              <span class="filter-label">Yıl:</span>
+              <button class="yf-btn yf-btn--active" data-year="all">Tümü</button>
+              {yilListesi.map(([yil]) => (
+                <button class="yf-btn" data-year={String(yil)}>{yil}</button>
+              ))}
+            </div>
+
+            <div class="filter-group" role="group" aria-label="Sektöre göre filtrele">
+              <span class="filter-label">Sektör:</span>
+              <button class="sf-btn sf-btn--active" data-sektor="all">Tümü</button>
+              {sektorler.map((s) => (
+                <button class="sf-btn" data-sektor={s.slug}>{s.title}</button>
+              ))}
+            </div>
+          </div>
+
+          {yilListesi.map(([yil, liste]) => (
+            <div class="year-block" data-year={String(yil)}>
+              <h3 class="year-title">{yil}</h3>
+              <div class="ref-table-wrap">
+                <table class="ref-table ref-table--zengin">
+                  <thead>
+                    <tr>
+                      <th>Müşteri</th>
+                      <th>Proje</th>
+                      <th>Lokasyon</th>
+                      <th>Uygulanan Yöntemler</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {liste.map((r) => (
+                      <tr data-sektor={sektorBul(r.proje)}>
+                        <td><strong>{r.musteri}</strong></td>
+                        <td>{r.proje}</td>
+                        <td>{r.lokasyon}</td>
+                        <td>
+                          <div class="tek-chips">
+                            {teknikParcala(r.teknik).map((c) => (
+                              <span class={`tek-chip tek-chip--${c.kat}`}>{c.label}</span>
+                            ))}
+                          </div>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <div class="section container">
+    <CTABox title="Referans Listemize Katılın" />
+  </div>
+</BaseLayout>
+
+<style>
+/* -------------------- Eyebrow / accent -------------------- */
+.eyebrow { font-size:var(--text-sm); font-weight:700; color:var(--color-highlight); text-transform:uppercase; letter-spacing:.08em; margin-bottom:var(--s-3); }
+.eyebrow--sm { font-size:var(--text-xs); margin-bottom:var(--s-2); display:inline-block; }
+
+/* -------------------- Hero -------------------- */
+.refs-hero {
+  position:relative;
+  margin-top:-110px;
+  padding-block:calc(var(--s-20) + 110px) calc(var(--s-16) + 60px);
+  background: linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-primary) 55%, var(--color-secondary) 100%);
+  color:var(--color-white);
+  overflow:hidden;
+}
+.refs-hero__photo {
+  position:absolute; inset:0;
+  background-image: image-set(
+    url('/images/hero-sunset-1.avif') type('image/avif'),
+    url('/images/hero-sunset-1.webp') type('image/webp'),
+    url('/images/hero-sunset-1.png') type('image/png')
+  );
+  background-size:cover; background-position:center;
+  opacity:.28; filter:grayscale(.3);
+}
+.refs-hero__gradient {
+  position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(0,21,48,.92) 0%, rgba(0,33,71,.78) 55%, rgba(15,52,96,.85) 100%);
+}
+.refs-hero__grid-pattern {
+  position:absolute; inset:0; opacity:.08;
+  background-image:
+    linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+  background-size:40px 40px;
+}
+.refs-hero__inner { position:relative; z-index:2; max-width:860px; text-align:center; margin-inline:auto; }
+.refs-hero h1 { color:#fff; font-size:var(--text-5xl); margin-bottom:var(--s-4); line-height:1.1; font-family:var(--font-serif); font-weight:700; letter-spacing:-0.02em; }
+.refs-hero .accent { color:var(--color-highlight); font-style:italic; }
+.refs-hero__desc { color:rgba(255,255,255,.85); font-size:var(--text-lg); line-height:1.7; max-width:680px; margin-inline:auto; margin-bottom:var(--s-8); }
+
+.refs-hero__trust { display:grid; grid-template-columns:repeat(2, 1fr); gap:var(--s-3); max-width:780px; margin-inline:auto; }
+.htrust { text-align:left; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:var(--r-lg); padding:var(--s-4) var(--s-5); display:flex; flex-direction:column; gap:4px; }
+.htrust__title { font-family:var(--font-serif); font-size:var(--text-lg); font-weight:700; color:var(--color-highlight); line-height:1.3; }
+.htrust__alt { font-size:var(--text-xs); color:rgba(255,255,255,.75); line-height:1.5; }
+
+.refs-hero__wave { position:absolute; bottom:0; left:0; right:0; height:60px; z-index:3; line-height:0; }
+.refs-hero__wave svg { width:100%; height:100%; }
+
+/* -------------------- Section header -------------------- */
+.section-header { text-align:center; max-width:680px; margin-inline:auto; margin-bottom:var(--s-10); }
+.section-header h2 { font-size:var(--text-4xl); color:var(--color-primary); margin-bottom:var(--s-3); font-family:var(--font-serif); font-weight:700; }
+.section-header p { color:var(--color-text-muted); line-height:1.65; }
+
+.section--bg-alt { background:var(--color-bg-alt); }
+
+/* -------------------- Case Study — Editorial Zebra Layout -------------------- */
+.case-studies { display:flex; flex-direction:column; gap:var(--s-12); }
+
+.case-study {
+  display:grid; grid-template-columns: 1.1fr 1fr;
+  gap:var(--s-10); align-items:center;
+}
+.case-study--reverse { grid-template-columns: 1fr 1.1fr; }
+.case-study--reverse .case-study__visual { order:2; }
+
+.case-study__visual {
+  position:relative; aspect-ratio: 4/3;
+  border-radius:var(--r-xl); overflow:hidden;
+  box-shadow: 0 20px 40px rgba(0,33,71,.15), 0 8px 16px rgba(0,0,0,.06);
+}
+.case-study__visual img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
+.case-study:hover .case-study__visual img { transform:scale(1.03); }
+.case-study__sektor {
+  position:absolute; top:var(--s-4); left:var(--s-4); z-index:2;
+  background:var(--color-white); color:var(--color-primary);
+  font-size:var(--text-xs); font-weight:700;
+  text-transform:uppercase; letter-spacing:.08em;
+  padding:6px 14px; border-radius:999px;
+  box-shadow:var(--shadow-md);
+}
+
+.case-study__body { display:flex; flex-direction:column; gap:var(--s-4); }
+.case-study__logo { height:72px; display:flex; align-items:center; }
+.case-study__logo img {
+  max-width:220px; max-height:72px; width:auto; height:auto; object-fit:contain;
+  filter:grayscale(.15);
+}
+.case-study__ad {
+  font-family:var(--font-serif); font-size:var(--text-4xl); font-weight:700;
+  color:var(--color-primary); line-height:1.15; margin:0;
+  letter-spacing:-0.015em;
+}
+.case-study__meta {
+  font-size:var(--text-sm); color:var(--color-text-muted);
+  text-transform:uppercase; letter-spacing:.08em; font-weight:600; margin:0;
+}
+.case-study__meta span { color:var(--color-accent); }
+.case-study__hikaye {
+  font-size:var(--text-base); color:var(--color-text);
+  line-height:1.75; margin:0;
+}
+.case-study__footer {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:var(--s-4); padding-top:var(--s-4);
+  border-top:1px solid var(--color-border); flex-wrap:wrap;
+}
+.case-study__etiket {
+  font-size:var(--text-xs); font-weight:700; color:var(--color-primary);
+  background:rgba(212,175,55,.14); border:1px solid rgba(212,175,55,.35);
+  padding:6px 14px; border-radius:var(--r-sm);
+  text-transform:uppercase; letter-spacing:.06em;
+}
+.case-study__cta {
+  display:inline-flex; align-items:center; gap:var(--s-2);
+  font-size:var(--text-sm); font-weight:700;
+  color:var(--color-highlight); text-decoration:none;
+  transition:color var(--t-fast);
+}
+.case-study__cta:hover { color:var(--color-primary); }
+
+/* -------------------- Logo Wall (statik grid) -------------------- */
+.logo-wall {
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap:var(--s-3);
+  max-width:1100px; margin-inline:auto;
+  background:var(--color-white); border:1px solid var(--color-border);
+  border-radius:var(--r-xl); padding:var(--s-5);
+  box-shadow:var(--shadow-sm);
+}
+.logo-wall__cell {
+  height:88px; display:flex; align-items:center; justify-content:center;
+  padding:var(--s-3); border-radius:var(--r-sm);
+  transition:background var(--t-fast);
+}
+.logo-wall__cell:hover { background:var(--color-bg-alt); }
+.logo-wall__cell picture { display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+.logo-wall__cell img {
+  max-width:130px; max-height:52px; width:auto; height:auto; object-fit:contain;
+  filter:grayscale(1); opacity:.7; transition:all var(--t-base);
+}
+.logo-wall__cell:hover img { filter:grayscale(0); opacity:1; transform:scale(1.05); }
+/* JPG logoların beyaz/açık-gri zeminini krem sayfa fonu üzerinde gizle —
+   şeffaf PNG'ler hazırlanana kadar geçici çözüm. */
+.logo-wall__cell img { mix-blend-mode:multiply; }
+
+/* -------------------- Arşiv Arama -------------------- */
+.archive-toolbar {
+  display:flex; flex-direction:column; gap:var(--s-3); align-items:stretch;
+  margin-bottom:var(--s-8);
+  background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-lg);
+  padding:var(--s-4) var(--s-5);
+}
+.archive-search {
+  position:relative;
+  display:flex; align-items:center; gap:var(--s-2);
+  background:var(--color-white); border:1px solid var(--color-border);
+  border-radius:999px; padding:0 var(--s-4);
+  flex:1; min-width:280px; max-width:360px;
+  transition:all var(--t-fast);
+}
+.archive-search:focus-within {
+  border-color:var(--color-highlight);
+  box-shadow:0 0 0 4px rgba(212,175,55,.12);
+}
+.archive-search svg { color:var(--color-text-muted); flex-shrink:0; }
+.archive-search input {
+  flex:1; border:none; outline:none; background:transparent;
+  padding:var(--s-3) 0; font-size:var(--text-sm); color:var(--color-text);
+  font-family:var(--font);
+}
+.archive-search input::placeholder { color:var(--color-text-muted); }
+
+/* Satır bazlı hide */
+.ref-table tbody tr[data-hidden="true"] { display:none; }
+
+/* -------------------- Müşteri İfadeleri (Testimonial) -------------------- */
+.testimonial-grid {
+  display:grid; gap:var(--s-5);
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));
+}
+.testimonial-card {
+  position:relative;
+  background:var(--color-white);
+  border:1px solid var(--color-border);
+  border-left:4px solid var(--color-highlight);
+  border-radius:var(--r-lg);
+  padding:var(--s-6) var(--s-6) var(--s-5);
+  display:flex; flex-direction:column; gap:var(--s-3);
+  transition:transform var(--t-base), box-shadow var(--t-base);
+}
+.testimonial-card:hover {
+  transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(0,33,71,.08);
+}
+.testimonial-quote-mark {
+  position:absolute; top:8px; right:18px;
+  font-family:var(--font-serif); font-size:64px; line-height:1;
+  color:var(--color-highlight); opacity:.25;
+  pointer-events:none;
+}
+.testimonial-vurgu {
+  font-family:var(--font-serif); font-size:var(--text-xl);
+  line-height:1.4; color:var(--color-primary); font-weight:500;
+  margin:0 0 var(--s-2) 0;
+}
+.testimonial-metin {
+  font-size:var(--text-base); line-height:1.65; color:var(--color-text);
+  margin:0;
+}
+.testimonial-footer {
+  display:flex; align-items:center; gap:var(--s-4);
+  margin-top:var(--s-3); padding-top:var(--s-4);
+  border-top:1px solid var(--color-border);
+}
+.testimonial-logo {
+  flex-shrink:0; width:56px; height:56px; border-radius:var(--r-sm);
+  background:var(--color-bg); display:flex; align-items:center; justify-content:center;
+  border:1px solid var(--color-border);
+}
+.testimonial-logo img { max-width:48px; max-height:48px; object-fit:contain; }
+.testimonial-kim {
+  display:flex; flex-direction:column; gap:2px;
+  font-size:var(--text-sm); line-height:1.4;
+}
+.testimonial-kim strong { color:var(--color-primary); font-weight:700; font-size:var(--text-base); }
+.testimonial-unvan { color:var(--color-text-muted); font-size:var(--text-sm); }
+.testimonial-bullet { margin-inline:6px; color:var(--color-border); }
+.testimonial-proje {
+  margin-top:4px;
+  font-size:var(--text-xs); color:var(--color-accent); font-weight:600;
+  font-style:italic;
+}
+
+/* -------------------- Saha Kapsamı — Türkiye Haritası Sinematik Hero -------------------- */
+.saha-hero-section {
+  position:relative; overflow:hidden;
+  padding-block:var(--s-16);
+  color:var(--color-white);
+}
+.saha-hero__bg {
+  position:absolute; inset:0; z-index:0;
+  background:
+    linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-primary) 50%, var(--color-secondary) 100%);
+}
+.saha-hero__bg::after {
+  content:""; position:absolute; inset:0;
+  background-image:
+    radial-gradient(circle at 30% 40%, rgba(212,175,55,.08) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(29,110,165,.1) 0%, transparent 50%);
+}
+.saha-hero__overlay {
+  position:absolute; inset:0; z-index:1; opacity:.06;
+  background-image:
+    linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+  background-size:40px 40px;
+}
+.saha-hero__inner { position:relative; z-index:2; }
+
+.section-header--light h2 { color:var(--color-white); }
+.section-header--light h2 .accent { color:var(--color-highlight); font-style:italic; }
+.section-header--light p { color:rgba(255,255,255,.82); }
+.section-header--light .eyebrow { color:var(--color-highlight); }
+
+.saha-grid {
+  display:grid; grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+  gap:var(--s-10); align-items:center; margin-top:var(--s-8);
+}
+
+/* Türkiye Haritası SVG — coğrafi bölge poligonları */
+.saha-map { position:relative; }
+.saha-map__svg { width:100%; height:auto; max-height:560px; filter:drop-shadow(0 6px 20px rgba(0,0,0,.4)); }
+
+/* Ana Türkiye silueti — alt katman, boşlukları kapatır */
+.saha-map__svg .region-base {
+  fill:url(#rgBase);
+  stroke:rgba(212,175,55,.55); stroke-width:1.5; stroke-linejoin:round;
+  pointer-events:none;
+}
+
+/* Bölge poligonları — üst katman, ince ayrım çizgisi + hafif ton */
+.saha-map__svg .region {
+  fill:transparent;
+  stroke:rgba(212,175,55,.28); stroke-width:0.8; stroke-linejoin:round;
+  stroke-dasharray:3 3;
+  transition:fill var(--t-base), stroke var(--t-base);
+}
+.saha-map__svg .region:hover {
+  stroke:rgba(212,175,55,.7);
+  stroke-dasharray:none;
+  fill:rgba(212,175,55,.10);
+}
+.saha-map__svg .region--guneydogu {
+  stroke:rgba(181,83,43,.4);
+}
+.saha-map__svg .region--guneydogu:hover {
+  stroke:rgba(181,83,43,.75);
+  fill:rgba(181,83,43,.10);
+}
+
+/* Bölge etiketleri (büyük, yarı saydam, alt katman) */
+.saha-map__svg .region-label {
+  font-family:var(--font-serif); font-size:13px; font-weight:600;
+  fill:rgba(255,255,255,.42); text-transform:uppercase; letter-spacing:.18em;
+  text-anchor:middle; pointer-events:none;
+}
+.saha-map__svg .region-label--earth { fill:rgba(255,217,194,.55); }
+
+/* Öne çıkan il pin'leri (altın, küçük) */
+.saha-map__svg .pin--star circle {
+  fill:var(--color-highlight); stroke:rgba(255,255,255,.85); stroke-width:1.2;
+  transition:transform var(--t-fast), fill var(--t-fast);
+}
+.saha-map__svg .pin--star:hover circle {
+  transform:scale(1.4); transform-origin:center;
+  fill:var(--color-white);
+}
+.saha-map__svg .pin__label--sm {
+  font-family:var(--font); font-size:10px; font-weight:600;
+  fill:rgba(255,255,255,.85); letter-spacing:.04em;
+  text-anchor:middle; pointer-events:none;
+}
+
+.saha-map__svg .pin circle {
+  fill:var(--color-highlight); stroke:var(--color-white); stroke-width:1.5;
+  transition:fill var(--t-fast), transform var(--t-fast);
+  cursor:pointer;
+}
+.saha-map__svg .pin:hover circle:last-of-type { fill:var(--color-white); transform:scale(1.2); transform-origin:center; }
+.saha-map__svg .pin__label {
+  font-family:var(--font); font-size:11px; font-weight:700;
+  fill:rgba(255,255,255,.88); text-transform:uppercase; letter-spacing:.05em;
+  pointer-events:none;
+}
+.saha-map__svg .pin__label--hq { font-size:13px; fill:var(--color-highlight); }
+.saha-map__svg .pin__sublabel {
+  font-family:var(--font); font-size:9px; font-weight:600;
+  fill:rgba(255,255,255,.7); letter-spacing:.08em; text-transform:uppercase;
+  pointer-events:none;
+}
+.saha-map__svg .pin--hq circle:nth-of-type(2) {
+  fill:var(--color-highlight); stroke:var(--color-white); stroke-width:3;
+}
+
+/* Deprem bölgesi pin (terracotta — toprak) */
+.saha-map__svg .pin--deprem circle {
+  fill:var(--color-earth); stroke:#ffd9c2; stroke-width:1.5;
+}
+.saha-map__svg .pin--deprem:hover circle { fill:var(--color-earth-light); transform:scale(1.2); }
+.saha-map__svg .pin__label--deprem { fill:#ffd9c2; font-weight:700; }
+
+/* Ghost pinleri (ek saha ağı — "daha fazlası var" sinyali) */
+.saha-map__svg .pin--ghost circle {
+  fill:rgba(255,255,255,.4);
+  stroke:rgba(255,255,255,.5);
+  stroke-width:0.5;
+}
+
+/* Harita altı legend */
+.map-legend {
+  display:flex; justify-content:center; gap:var(--s-5);
+  margin-top:var(--s-4); flex-wrap:wrap;
+  font-size:11px; color:rgba(255,255,255,.75);
+  text-transform:uppercase; letter-spacing:.06em; font-weight:600;
+}
+.legend-item { display:inline-flex; align-items:center; gap:var(--s-2); }
+.legend-dot { display:inline-block; width:10px; height:10px; border-radius:50%; }
+.legend-dot--active { background:var(--color-highlight); border:1px solid var(--color-white); width:12px; height:12px; }
+.legend-dot--star   { background:var(--color-highlight); border:1px solid rgba(255,255,255,.85); width:8px; height:8px; }
+.legend-dot--deprem { background:var(--color-earth); border:1px solid #ffd9c2; }
+.legend-dot--ghost  { background:rgba(255,255,255,.5); }
+
+/* Deprem Bölgesi Panel Kartı */
+.saha-panel__card--deprem {
+  background:linear-gradient(135deg, rgba(181,83,43,.22) 0%, rgba(181,83,43,.08) 100%);
+  border-color:rgba(215,122,82,.45);
+}
+.saha-panel__badge--deprem { color:var(--color-earth-light); }
+.deprem-iller { display:flex; flex-wrap:wrap; gap:6px; margin-top:var(--s-3); }
+.deprem-il {
+  font-size:11px; font-weight:600; color:#ffd9c2;
+  background:rgba(181,83,43,.28); border:1px solid rgba(215,122,82,.5);
+  padding:3px 9px; border-radius:var(--r-sm);
+}
+.saha-panel__cta strong { color:var(--color-highlight); font-weight:700; }
+
+/* -------------------- Arşiv: Teknik Chip'leri -------------------- */
+.tek-chips { display:flex; flex-wrap:wrap; gap:4px; }
+.tek-chip {
+  display:inline-block; font-size:11px; font-weight:600;
+  padding:3px 9px; border-radius:999px;
+  white-space:nowrap; line-height:1.5;
+  border:1px solid transparent;
+}
+.tek-chip--kazik        { background:rgba(0,33,71,.08);    color:var(--color-primary);    border-color:rgba(0,33,71,.22); }
+.tek-chip--iksa         { background:rgba(29,110,165,.12); color:var(--color-accent);     border-color:rgba(29,110,165,.32); }
+.tek-chip--ankraj       { background:rgba(181,83,43,.12);  color:var(--color-earth);      border-color:rgba(181,83,43,.32); }
+.tek-chip--iyilestirme  { background:rgba(212,175,55,.16); color:#8a6f17;                 border-color:rgba(212,175,55,.4); }
+.tek-chip--test         { background:rgba(90,106,122,.12); color:var(--color-text-muted); border-color:rgba(90,106,122,.3); }
+.tek-chip--default      { background:var(--color-bg-alt);  color:var(--color-text);       border-color:var(--color-border); }
+
+/* Yan panel */
+.saha-panel { display:flex; flex-direction:column; gap:var(--s-4); }
+.saha-panel__card {
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.15);
+  border-radius:var(--r-xl);
+  padding:var(--s-5) var(--s-6);
+}
+.saha-panel__card--hq {
+  background:linear-gradient(135deg, rgba(212,175,55,.18) 0%, rgba(212,175,55,.06) 100%);
+  border-color:rgba(212,175,55,.35);
+}
+.saha-panel__badge {
+  font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--color-highlight); display:inline-block; margin-bottom:var(--s-2);
+}
+.saha-panel__badge--muted { color:rgba(255,255,255,.6); }
+.saha-panel__card h3 {
+  font-family:var(--font-serif); font-size:var(--text-2xl); color:var(--color-white);
+  margin:0 0 var(--s-2) 0; font-weight:700; line-height:1.2;
+}
+.saha-panel__card p {
+  color:rgba(255,255,255,.78); font-size:var(--text-sm); line-height:1.65; margin:0;
+}
+
+.bolge-list {
+  list-style:none; padding:0; margin:0;
+  display:flex; flex-direction:column; gap:var(--s-3);
+}
+.bolge-list li {
+  font-size:var(--text-sm); color:rgba(255,255,255,.85); line-height:1.55;
+  padding-left:var(--s-4); position:relative;
+}
+.bolge-list li::before {
+  content:""; position:absolute; left:0; top:8px;
+  width:8px; height:8px; border-radius:50%;
+  background:var(--color-highlight);
+}
+.bolge-list strong { color:var(--color-white); font-weight:700; }
+
+.saha-panel__cta {
+  font-size:var(--text-sm); color:rgba(255,255,255,.75); line-height:1.6;
+  margin:0; padding-top:var(--s-2); border-top:1px dashed rgba(255,255,255,.15);
+}
+.saha-panel__cta a { color:var(--color-highlight); font-weight:700; text-decoration:underline; }
+
+/* -------------------- FAQ (SSS) -------------------- */
+.faq-container { max-width:860px; margin-inline:auto; }
+.faq-list { display:flex; flex-direction:column; gap:var(--s-2); }
+.faq-item {
+  background:var(--color-white);
+  border:1px solid var(--color-border);
+  border-radius:var(--r-lg);
+  transition:border-color var(--t-fast), box-shadow var(--t-fast);
+}
+.faq-item[open] {
+  border-color:var(--color-highlight);
+  box-shadow:0 4px 16px rgba(212,175,55,.1);
+}
+.faq-item > summary {
+  list-style:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:space-between; gap:var(--s-4);
+  padding:var(--s-4) var(--s-5);
+  transition:background var(--t-fast);
+}
+.faq-item > summary::-webkit-details-marker { display:none; }
+.faq-item > summary:hover { background:var(--color-bg); }
+.faq-item__soru {
+  font-family:var(--font-serif); font-size:var(--text-base); font-weight:600;
+  color:var(--color-primary); line-height:1.4;
+}
+.faq-item__icon {
+  flex-shrink:0; width:28px; height:28px; border-radius:50%;
+  background:rgba(212,175,55,.12); color:var(--color-highlight);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.1rem; font-weight:700; transition:transform var(--t-fast), background var(--t-fast);
+}
+.faq-item[open] .faq-item__icon {
+  transform:rotate(45deg); background:var(--color-highlight); color:var(--color-primary);
+}
+.faq-item__cevap {
+  padding:0 var(--s-5) var(--s-5) var(--s-5);
+  margin:0; font-size:var(--text-sm); color:var(--color-text);
+  line-height:1.75;
+}
+
+/* -------------------- Logo Marquee (kayan şerit) -------------------- */
+.logo-marquee {
+  overflow:hidden; position:relative;
+  padding:var(--s-6) 0;
+  mask-image: linear-gradient(90deg, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 80px, #000 calc(100% - 80px), transparent 100%);
+}
+.logo-marquee__row {
+  display:flex; gap:var(--s-8); width:max-content;
+  animation: logo-scroll 60s linear infinite;
+}
+.logo-marquee:hover .logo-marquee__row { animation-play-state:paused; }
+@keyframes logo-scroll {
+  from { transform:translateX(0); }
+  to   { transform:translateX(-50%); }
+}
+.logo-chip {
+  flex:0 0 auto; width:180px; height:90px;
+  background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-lg);
+  display:flex; align-items:center; justify-content:center;
+  padding:var(--s-3) var(--s-4);
+  transition:all var(--t-fast);
+}
+.logo-chip:hover { border-color:var(--color-highlight); box-shadow:var(--shadow-md); transform:translateY(-2px); }
+.logo-chip picture { display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+.logo-chip img { max-width:140px; max-height:58px; width:auto; height:auto; object-fit:contain; filter:grayscale(1); opacity:.7; transition:all var(--t-base); }
+.logo-chip:hover img { filter:grayscale(0); opacity:1; }
+
+.logo-caption { margin-top:var(--s-6); text-align:center; font-size:var(--text-sm); color:var(--color-text-muted); line-height:1.65; max-width:720px; margin-inline:auto; font-style:italic; }
+
+
+/* -------------------- Tablolar -------------------- */
+.ref-table-wrap { background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-lg); overflow-x:auto; box-shadow:var(--shadow-sm); }
+.ref-table-wrap--active { border-color:var(--color-highlight); }
+.ref-table { width:100%; border-collapse:collapse; font-size:var(--text-sm); }
+.ref-table thead { background:var(--color-primary); color:var(--color-white); }
+.ref-table th { text-align:left; padding:var(--s-3) var(--s-4); font-weight:700; font-size:var(--text-xs); text-transform:uppercase; letter-spacing:.06em; }
+.ref-table td { padding:var(--s-3) var(--s-4); border-top:1px solid var(--color-border); vertical-align:top; }
+.ref-table tbody tr:hover { background:var(--color-bg); }
+.ref-table strong { color:var(--color-primary); font-weight:700; }
+
+.pill { display:inline-block; padding:.2rem .6rem; border-radius:999px; font-size:var(--text-xs); font-weight:700; background:var(--color-bg); color:var(--color-text); }
+.pill--active { background:var(--color-highlight); color:var(--color-primary); }
+
+/* -------------------- Arşiv toggle -------------------- */
+.archive-toggle {
+  background:var(--color-white); border:1px solid var(--color-border); border-radius:var(--r-xl); overflow:hidden;
+}
+.archive-toggle > summary {
+  list-style:none; cursor:pointer;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:var(--s-5) var(--s-6); font-size:var(--text-base);
+  background:var(--color-bg); border-bottom:1px solid var(--color-border);
+  transition:background var(--t-fast);
+}
+.archive-toggle > summary:hover { background:var(--color-bg-alt); }
+.archive-toggle > summary::-webkit-details-marker { display:none; }
+.archive-toggle > summary strong { color:var(--color-primary); font-family:var(--font-serif); font-size:var(--text-lg); font-weight:700; }
+.archive-toggle__sub { color:var(--color-text-muted); font-size:var(--text-sm); margin-left:var(--s-2); }
+.archive-toggle__icon { font-size:1.5rem; color:var(--color-highlight); transition:transform var(--t-fast); }
+.archive-toggle[open] .archive-toggle__icon { transform:rotate(180deg); }
+.archive-body { padding:var(--s-8) var(--s-6); }
+
+.year-filters { display:flex; flex-wrap:wrap; justify-content:center; gap:var(--s-2); margin-bottom:var(--s-8); }
+.filter-group {
+  display:flex; flex-wrap:wrap; gap:6px; align-items:center;
+  width:100%;
+  padding-block:var(--s-2);
+}
+.filter-group + .filter-group { border-top:1px dashed var(--color-border); padding-top:var(--s-3); margin-top:var(--s-2); }
+.filter-label {
+  font-size:var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+  color:var(--color-text-muted); margin-right:var(--s-2); flex-shrink:0;
+}
+.yf-btn, .sf-btn {
+  background:var(--color-white); border:1px solid var(--color-border); color:var(--color-text);
+  padding:.4rem .85rem; border-radius:999px; font-size:var(--text-sm); font-weight:600;
+  cursor:pointer; transition: all var(--t-fast);
+}
+.yf-btn:hover, .sf-btn:hover { border-color:var(--color-highlight); color:var(--color-primary); }
+.yf-btn--active { background:var(--color-highlight); border-color:var(--color-highlight); color:var(--color-primary); }
+.sf-btn--active { background:var(--color-primary); border-color:var(--color-primary); color:var(--color-white); }
+
+.year-block { margin-bottom:var(--s-8); }
+.year-block[data-hidden="true"] { display:none; }
+.year-title { font-family:var(--font-serif); font-size:var(--text-2xl); font-weight:700; color:var(--color-primary); margin-bottom:var(--s-4); padding-bottom:var(--s-3); border-bottom:2px solid var(--color-highlight); display:inline-block; }
+.year-count { color:var(--color-text-muted); font-weight:500; font-size:var(--text-base); font-family:var(--font); }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width:1024px) {
+  .logo-wall { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width:900px) {
+  .refs-hero__trust { grid-template-columns:1fr; }
+  .saha-grid { grid-template-columns:1fr; gap:var(--s-8); }
+  .case-study, .case-study--reverse { grid-template-columns: 1fr; gap:var(--s-6); }
+  .case-study--reverse .case-study__visual { order:0; }
+  .case-study__ad { font-size:var(--text-3xl); }
+  .logo-wall { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width:560px) {
+  .refs-hero h1 { font-size:var(--text-3xl); }
+  .case-study__ad { font-size:var(--text-2xl); }
+  .logo-wall { grid-template-columns: repeat(2, 1fr); gap:var(--s-2); padding:var(--s-3); }
+  .logo-wall__cell { height:68px; padding:var(--s-2); }
+  .logo-wall__cell img { max-width:100px; max-height:44px; }
+  .ref-table { font-size:var(--text-xs); }
+  .ref-table th, .ref-table td { padding:var(--s-2) var(--s-3); }
+  .ref-table th:nth-child(2), .ref-table td:nth-child(2) { display:none; }
+  .archive-search { max-width:100%; }
+}
+</style>
+
+<script>
+  // Filtreler — Yıl, Sektör, Arama (üçü kombineli)
+  const yilButtons    = document.querySelectorAll<HTMLButtonElement>('.yf-btn');
+  const sektorButtons = document.querySelectorAll<HTMLButtonElement>('.sf-btn');
+  const blocks        = document.querySelectorAll<HTMLElement>('.year-block');
+  let activeYear:   string = 'all';
+  let activeSektor: string = 'all';
+  let activeQuery:  string = '';
+
+  function uygulaFiltre() {
+    const q = activeQuery.toLocaleLowerCase('tr');
+    blocks.forEach((block) => {
+      const yilUygun = activeYear === 'all' || block.dataset.year === activeYear;
+      if (!yilUygun) {
+        block.setAttribute('data-hidden', 'true');
+        return;
+      }
+      let gorunenSatir = 0;
+      const satirlar = block.querySelectorAll<HTMLElement>('tbody tr');
+      satirlar.forEach((tr) => {
+        const sektorUygun = activeSektor === 'all' || tr.dataset.sektor === activeSektor;
+        const aramaUygun  = !q || tr.innerText.toLocaleLowerCase('tr').includes(q);
+        if (sektorUygun && aramaUygun) {
+          tr.removeAttribute('data-hidden');
+          gorunenSatir++;
+        } else {
+          tr.setAttribute('data-hidden', 'true');
+        }
+      });
+      if (gorunenSatir === 0 && (q || activeSektor !== 'all')) block.setAttribute('data-hidden', 'true');
+      else block.removeAttribute('data-hidden');
+    });
+  }
+
+  yilButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeYear = btn.dataset.year ?? 'all';
+      yilButtons.forEach((b) => b.classList.toggle('yf-btn--active', b === btn));
+      uygulaFiltre();
+    });
+  });
+
+  sektorButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      activeSektor = btn.dataset.sektor ?? 'all';
+      sektorButtons.forEach((b) => b.classList.toggle('sf-btn--active', b === btn));
+      uygulaFiltre();
+    });
+  });
+
+  const arama = document.getElementById('arsivSearch') as HTMLInputElement | null;
+  if (arama) {
+    arama.addEventListener('input', () => {
+      activeQuery = arama.value.trim();
+      uygulaFiltre();
+    });
+  }
+</script>

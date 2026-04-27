@@ -257,9 +257,11 @@ DOM okuma + yazma yapan scroll/resize listener'ları `requestAnimationFrame` ile
 
 - **Dil:** Türkçe. `lang="tr"`, `charset="UTF-8"`
 - **Layout:** Her sayfa `<BaseLayout>` içinde
-- **JS:** Vanilla only — jQuery, parçacık animasyonu, backdrop-filter YASAK
+- **JS:** Vanilla only — jQuery, parçacık animasyonu YASAK
+- **`backdrop-filter` (glassmorphism):** Dekoratif/gereksiz kullanım yasak. Anlamlı UI/UX değer katıyorsa (örn. floating stats card, hero overlay) **ölçülü kullanım kabul** — performans testleri yapılarak.
 - **SVG:** `viewBox` zorunlu. `<br>` SVG içinde YASAK. Satır atlama: `<tspan dy="14">`
-- **Gradient text** YASAK. Glassmorphism YASAK
+- **Gradient text:** Dekoratif kullanım yasak (okunabilirlik düşürür). H1/H2 hero accent için italik gold (`.accent` sınıfı) tercih edilir; gerçek gradient text sadece güçlü premium accent gerekliyse kullanılır.
+- **Glassmorphism:** `backdrop-filter` kullanımı dekoratif amaçla yasak; anlamlı UI değeri (floating card, overlay) için ölçülü kullanım kabul.
 - **Görseller:** `alt`, `loading="lazy"`, `width/height` zorunlu
 - **SEO:** `<title>` ≤60ch, `<meta description>` ≤155ch, canonical, OG tags, JSON-LD
 - **Font kullanımı:** H1-H2-H3 Fraunces, diğer tüm metin Inter. Değişiklik YASAK.

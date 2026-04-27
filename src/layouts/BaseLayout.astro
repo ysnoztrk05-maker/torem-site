@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { kategoriler } from '../data/faaliyet-alanlari';
+import { hizmetVerilenBolgeler, hizmetVerilenIller } from '../data/sirket';
 
 export interface Props {
   title: string;
@@ -31,6 +32,24 @@ const phone    = '+90 531 659 46 36';
 const phoneTel = 'tel:+905316594636';
 const email    = 'info@toremzemin.com';
 
+// Lokal SEO/AEO için yapılandırılmış areaServed:
+//  • Country (Türkiye genel kapsam)
+//  • 7 coğrafi bölge (AdministrativeArea — bölge bazlı sorgular için)
+//  • 33 il (City — il bazlı sorgular için, "geoteknik firma X ili" eşleşmesi)
+const areaServed = [
+  { '@type': 'Country', name: 'Türkiye' },
+  ...hizmetVerilenBolgeler.map((b) => ({
+    '@type': 'AdministrativeArea',
+    name: b,
+    containedInPlace: { '@type': 'Country', name: 'Türkiye' },
+  })),
+  ...hizmetVerilenIller.map((il) => ({
+    '@type': 'City',
+    name: il,
+    containedInPlace: { '@type': 'Country', name: 'Türkiye' },
+  })),
+];
+
 const orgSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
@@ -39,8 +58,8 @@ const orgSchema = {
   telephone: '+905316594636',
   email,
   address: { '@type': 'PostalAddress', addressLocality: 'Pendik', addressRegion: 'Istanbul', addressCountry: 'TR' },
-  areaServed: 'Türkiye',
-  knowsAbout: ['Geoteknik Mühendislik','Zemin İyileştirme','Fore Kazık','Jet Grout','Öngermeli Ankraj','Mini Kazık','Zemin Çivisi','Püskürtme Beton','İksa Sistemleri'],
+  areaServed,
+  knowsAbout: ['Geoteknik Mühendislik','Zemin İyileştirme','Fore Kazık','Jet Grout','Öngermeli Ankraj','Mini Kazık','Zemin Çivisi','Püskürtme Beton','İksa Sistemleri','Diyafram Duvar','Ankrajlı İksa Perdesi','Kesişen Kazık','Deep Soil Mixing','Zemin Enjeksiyonu'],
   sameAs: ['https://www.linkedin.com/company/toremzemin','https://www.instagram.com/toremzemin'],
 };
 
@@ -63,7 +82,14 @@ const nav = [
     ],
   },
   { label: 'Faaliyet Alanları', href: '/faaliyet-alanlari/', mega: true },
-  { label: 'Projelerimiz',      href: '/projelerimiz/' },
+  {
+    label: 'Projelerimiz',
+    href: '/projelerimiz/',
+    dropdown: [
+      { label: 'Öne Çıkan Projeler', href: '/projelerimiz/' },
+      { label: 'Tüm Referanslar',    href: '/referanslar/' },
+    ],
+  },
   { label: 'Makine Parkı',      href: '/makine-parki/' },
   { label: 'Blog',              href: '/blog/' },
   { label: 'İletişim',          href: '/iletisim/' },
@@ -250,6 +276,7 @@ const currentPath = Astro.url.pathname;
         <ul class="site-footer__links">
           <li><a href="/kurumsal/">Hakkımızda</a></li>
           <li><a href="/projelerimiz/">Projelerimiz</a></li>
+          <li><a href="/referanslar/">Tüm Referanslar</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/iletisim/">İletişim</a></li>
           <li><a href="/yasal/kvkk-aydinlatma/">KVKK Aydınlatma</a></li>
@@ -337,14 +364,14 @@ const currentPath = Astro.url.pathname;
 </html>
 
 <style>
-.skip-link { position:absolute; top:-100%; left:0; background:var(--color-highlight); color:#fff; padding:var(--s-2) var(--s-4); z-index:9999; font-weight:600; }
+.skip-link { position:absolute; top:-100%; left:0; background:var(--color-highlight); color:var(--color-white); padding:var(--s-2) var(--s-4); z-index:9999; font-weight:600; }
 .skip-link:focus { top:0; }
 
 /* Topbar */
 .topbar { background:var(--color-primary); color:rgba(255,255,255,.75); font-size:var(--text-sm); padding-block:.4rem; }
 .topbar__inner { display:flex; justify-content:space-between; align-items:center; gap:var(--s-4); }
 .topbar__link { display:flex; align-items:center; gap:var(--s-2); transition:color var(--t-fast); }
-.topbar__link:hover { color:#fff; }
+.topbar__link:hover { color:var(--color-white); }
 .topbar__link--email { display:none; }
 @media(min-width:640px){ .topbar__link--email { display:flex; } }
 
@@ -381,17 +408,17 @@ const currentPath = Astro.url.pathname;
   flex-shrink:0;
 }
 .site-logo__torem {
-  font-size:1.875rem;
-  font-weight:800;
-  color:#002147;
+  font-size:var(--text-3xl);
+  font-weight:700;
+  color:var(--color-primary);
   letter-spacing:0.1em;
   line-height:1;
   text-transform:uppercase;
 }
 .site-logo__zemin {
-  font-size:1.875rem;
-  font-weight:800;
-  color:#d4af37;
+  font-size:var(--text-3xl);
+  font-weight:700;
+  color:var(--color-highlight);
   letter-spacing:0.1em;
   line-height:1;
   text-transform:uppercase;
@@ -580,19 +607,19 @@ const currentPath = Astro.url.pathname;
 }
 
 /* CTA Band */
-.cta-band { background:linear-gradient(135deg, var(--color-navy-dark, #001530) 0%, var(--color-primary) 100%); color:#fff; padding-block:var(--s-16); position:relative; overflow:hidden; }
+.cta-band { background:linear-gradient(135deg, var(--color-navy-dark) 0%, var(--color-primary) 100%); color:var(--color-white); padding-block:var(--s-16); position:relative; overflow:hidden; }
 .cta-band__top-line { position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg, transparent, var(--color-highlight), transparent); }
 .cta-band__badge { display:inline-block; background:rgba(212,175,55,0.15); color:var(--color-highlight); border:1px solid rgba(212,175,55,0.3); padding:.25rem .85rem; border-radius:999px; font-size:var(--text-xs); font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-bottom:var(--s-3); }
 .cta-band__inner { display:flex; align-items:center; justify-content:space-between; gap:var(--s-8); flex-wrap:wrap; }
-.cta-band__title { color:#fff; font-size:var(--text-3xl); margin-bottom:var(--s-2); }
+.cta-band__title { color:var(--color-white); font-size:var(--text-3xl); margin-bottom:var(--s-2); }
 .cta-band__sub { color:rgba(255,255,255,.75); margin:0; }
 .cta-band__actions { display:flex; gap:var(--s-4); flex-wrap:wrap; flex-shrink:0; }
 @media(max-width:600px){ .cta-band__inner { flex-direction:column; text-align:center; } }
 
 /* Footer */
-.site-footer { background:#0d1520; color:rgba(255,255,255,.8); padding-top:var(--s-16); }
+.site-footer { background:var(--color-footer-bg); color:rgba(255,255,255,.8); padding-top:var(--s-16); }
 .site-footer__grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:var(--s-10); padding-bottom:var(--s-12); }
-.site-footer h4 { color:#fff; font-size:var(--text-base); margin-bottom:var(--s-5); }
+.site-footer h4 { color:var(--color-white); font-size:var(--text-base); margin-bottom:var(--s-5); }
 .site-footer__logo {
   display:inline-flex;
   align-items:center;
@@ -610,17 +637,17 @@ const currentPath = Astro.url.pathname;
   flex-shrink:0;
 }
 .site-footer__logo-torem {
-  font-size:1.625rem;
-  font-weight:800;
-  color:#fff;
+  font-size:var(--text-2xl);
+  font-weight:700;
+  color:var(--color-white);
   letter-spacing:0.1em;
   text-transform:uppercase;
   line-height:1;
 }
 .site-footer__logo-zemin {
-  font-size:1.625rem;
-  font-weight:800;
-  color:#d4af37;
+  font-size:var(--text-2xl);
+  font-weight:700;
+  color:var(--color-highlight);
   letter-spacing:0.1em;
   text-transform:uppercase;
   line-height:1;
@@ -654,7 +681,7 @@ const currentPath = Astro.url.pathname;
 /* WhatsApp FAB */
 .whatsapp-fab {
   width: 52px; height: 52px;
-  background: #25D366; color: #fff;
+  background: var(--color-whatsapp); color: var(--color-white);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 4px 14px rgba(0,0,0,.28);

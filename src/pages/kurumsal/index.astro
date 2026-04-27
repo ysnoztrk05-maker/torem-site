@@ -33,8 +33,8 @@ const stats = [
     <div class="container kurumsal-hero__inner">
       <div class="kurumsal-hero__content">
         <span class="eyebrow eyebrow--gold">Kurumsal</span>
-        <h1>13 Yıllık Deneyim,<br/><span class="text-gradient">Güvenilir Mühendislik</span></h1>
-        <p>Torem Zemin, İstanbul merkezli geoteknik mühendislik firmasıdır. Fore kazık, jet grout, ankraj ve zemin iyileştirme alanlarında anahtar teslim çözümler sunmaktadır.</p>
+        <h1>13 Yıllık Deneyim, <span class="accent">Geoteknik Mühendisliğinde</span></h1>
+        <p>Torem Zemin Mühendislik, İstanbul Pendik merkezli geoteknik uygulama firmasıdır. Fore kazık, jet grout, ankraj ve zemin iyileştirme alanlarında 81 il geneline saha hizmeti vermektedir.</p>
       </div>
     </div>
     
@@ -72,18 +72,25 @@ const stats = [
       <div class="about-visuals">
         <div class="about-visuals__main">
           <div class="image-gradient-overlay"></div>
-          <img src="/images/fore-kazik-saha.jpg" alt="Saha mühendisliği çalışması" loading="lazy" />
+          <picture>
+            <source srcset="/images/fore-kazik/fore-kazik-hero.webp" type="image/webp" />
+            <img src="/images/fore-kazik/fore-kazik-hero.webp" alt="Fore kazık şantiyesinde geoteknik mühendisleri — alacakaranlık" loading="lazy" decoding="async" width="600" height="700" />
+          </picture>
           <div class="about-visuals__badge premium-badge">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
             </svg>
-            <span>Güvenilir<br/>Zemin<br/>Mühendisliği</span>
+            <span>Geoteknik<br/>Mühendislik<br/>Disiplini</span>
             <div class="premium-badge__glow"></div>
           </div>
         </div>
         <div class="about-visuals__secondary">
           <div class="image-gradient-overlay"></div>
-          <img src="/images/makine-parki.webp" alt="Soilmec fore kazık makinesi" loading="lazy" />
+          <picture>
+            <source srcset="/images/hero-sunset-2.avif" type="image/avif" />
+            <source srcset="/images/hero-sunset-2.webp" type="image/webp" />
+            <img src="/images/hero-sunset-2.png" alt="Derin kazı kesişen kazıklı iksa perdesi — şehir manzarasında" loading="lazy" decoding="async" width="340" height="280" />
+          </picture>
         </div>
       </div>
     </div>
@@ -363,12 +370,6 @@ const stats = [
   background: var(--color-accent);
 }
 
-.text-gradient {
-  background: linear-gradient(135deg, var(--color-accent) 0%, #ffedd5 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 /* ========================================= */
 /* HERO SECTION                              */
 /* ========================================= */
@@ -462,7 +463,7 @@ const stats = [
 
 .hero-stat-card__num {
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -481,7 +482,7 @@ const stats = [
   letter-spacing: 0.05em;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .hero-stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -490,7 +491,7 @@ const stats = [
     border-right: none;
   }
 }
-@media (max-width: 576px) {
+@media (max-width: 560px) {
   .hero-stats-grid {
     grid-template-columns: 1fr;
   }
@@ -701,7 +702,7 @@ const stats = [
 .timeline-item__year {
   display: inline-block;
   font-size: 1.25rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--color-accent);
   margin-bottom: 0.5rem;
   font-family: inherit;
@@ -924,7 +925,7 @@ const stats = [
   font-size: 1.6rem;
   color: var(--color-primary);
   letter-spacing: -0.01em;
-  font-weight: 800;
+  font-weight: 700;
 }
 .grup-card--may .grup-card__logo-slot strong { color: var(--color-earth); }
 .grup-card__logo-slot span {
@@ -1045,7 +1046,7 @@ const stats = [
 }
 .uyelik-card__initials {
   font-family: var(--font-serif);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1rem;
   color: var(--color-primary);
   letter-spacing: 0.05em;
@@ -1070,7 +1071,7 @@ const stats = [
   letter-spacing: 0.02em;
 }
 
-@media (max-width: 860px) {
+@media (max-width: 900px) {
   .grup-cards { grid-template-columns: 1fr; }
   .uyelik-grid { grid-template-columns: 1fr; gap: 1rem; }
 }
@@ -1148,7 +1149,7 @@ const stats = [
 /* ========================================= */
 /* RESPONSIVE DESIGN                         */
 /* ========================================= */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .about-grid, .cert-layout {
     grid-template-columns: 1fr;
   }
@@ -1186,7 +1187,7 @@ const stats = [
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   
 }
 </style>

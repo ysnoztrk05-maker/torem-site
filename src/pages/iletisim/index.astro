@@ -1,29 +1,48 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import { sirket } from '../../data/sirket';
+import { sirket, hizmetVerilenIller } from '../../data/sirket';
+
+// Form için il listesi — alfabetik sırala, kullanıcıya kolay arama deneyimi
+const formIlleri = [...hizmetVerilenIller].sort((a, b) => a.localeCompare(b, 'tr'));
 
 const canonical = 'https://www.toremzemin.com/iletisim/';
 
+// Bu sayfa için zengin LocalBusiness schema — geo, çalışma saatleri ve iletişim
+// detayları burada toplanır. areaServed BaseLayout'taki orgSchema'da zaten yayınlandı,
+// burada tekrar etmiyoruz (duplicate önler).
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
+  '@id': 'https://www.toremzemin.com/#organization',
   name: 'Torem Zemin Mühendislik',
   url: 'https://www.toremzemin.com',
   telephone: ['+90-531-659-46-36', '+90-216-379-33-10'],
   email: 'info@toremzemin.com',
+  priceRange: '₺₺',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Pendik',
     addressLocality: 'Pendik',
     addressRegion: 'İstanbul',
+    postalCode: '34890',
     addressCountry: 'TR',
   },
   geo: { '@type': 'GeoCoordinates', latitude: 40.878, longitude: 29.233 },
+  hasMap: 'https://www.google.com/maps/place/Pendik,+İstanbul',
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'],
     opens: '08:30',
     closes: '18:00',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    telephone: '+90-531-659-46-36',
+    email: 'info@toremzemin.com',
+    areaServed: 'TR',
+    availableLanguage: ['Turkish', 'English'],
   },
 };
 ---
@@ -89,12 +108,10 @@ const localBusinessSchema = {
               <label for="city">Şehir</label>
               <select id="city" name="city">
                 <option value="">İl Seçiniz...</option>
-                <option value="istanbul">İstanbul</option>
-                <option value="ankara">Ankara</option>
-                <option value="izmir">İzmir</option>
-                <option value="bursa">Bursa</option>
-                <option value="kocaeli">Kocaeli</option>
-                <option value="diger">Diğer İller</option>
+                {formIlleri.map((il) => (
+                  <option value={il.toLocaleLowerCase('tr')}>{il}</option>
+                ))}
+                <option value="diger">Listede Yok / Diğer</option>
               </select>
             </div>
           </div>
@@ -213,7 +230,7 @@ const localBusinessSchema = {
 }
 .iletisim-premium-hero__content h1 {
   font-size: clamp(2.5rem, 4vw, 4rem);
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: var(--s-6);
   line-height: 1.1;
   color: #ffffff;
@@ -301,7 +318,7 @@ const localBusinessSchema = {
   font-size: 2.2rem;
   color: var(--color-primary);
   margin-bottom: 8px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .form-panel-desc {
@@ -358,7 +375,7 @@ const localBusinessSchema = {
   width: 100%;
   background: var(--color-highlight);
   color: var(--color-white);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.1rem;
   padding: 16px;
   border: none;
@@ -514,7 +531,7 @@ const localBusinessSchema = {
 .sp-item span {
   color: var(--color-highlight);
   font-size: 1.8rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 @media (max-width: 900px) {

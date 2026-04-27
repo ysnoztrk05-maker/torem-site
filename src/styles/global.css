@@ -24,9 +24,14 @@
 
   /* V2.0 ek token'lar */
   --color-navy-dark:    #001530;
+  --color-footer-bg:    #0d1520;   /* footer arkaplanı — navy-dark'tan biraz daha koyu */
   --color-gold:         #d4af37;
   --color-gold-dark:    #b5952f;
   --color-cream:        #fafaf7;
+
+  /* Brand-specific istisnalar (semantic palette dışı) */
+  --color-whatsapp:     #25D366;   /* WhatsApp brand — sadece FAB için */
+
   --t-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 
   /* === Premium V2.1 — Karakter Katmanı (Part A: altyapı) === */
@@ -109,6 +114,8 @@
   /* === Transition === */
   --t-fast: 150ms ease;
   --t-base: 250ms ease;
+  --t-slow: 450ms ease;
+  --t-marquee: 32s linear infinite;
 
   /* Blueprint grid — teknik sayfalar için background-image */
   --pattern-blueprint:
@@ -324,6 +331,12 @@ strong { font-weight: 600; }
 .breadcrumb ol li:not(:last-child)::after { content: '›'; margin-left: var(--s-2); }
 .breadcrumb ol a { color: var(--color-accent); }
 .breadcrumb ol a:hover { color: var(--color-highlight); }
+
+@media (max-width: 560px) {
+  .breadcrumb { padding-block: var(--s-3); }
+  .breadcrumb ol { font-size: var(--text-xs); gap: var(--s-1); }
+  .breadcrumb ol li:not(:last-child)::after { margin-left: var(--s-1); }
+}
 
 /* === AEO Box === */
 .aeo-box {
