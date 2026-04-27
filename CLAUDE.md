@@ -323,6 +323,46 @@ C:\Users\Lenovo\OneDrive\Masaüstü\torem-website-foto\
 
 ---
 
+## 13b. Commit & Push Akışı (ZORUNLU)
+
+Bu projede çalışma akışı **"local test → onay → commit + push"** üzerine kuruludur.
+Veri kaybı riskini önler ve Vercel deploy'u her büyük adımda canlıya yansır.
+
+### Kural
+1. **Bir sayfa/bölüm/audit aksiyonu tamamlandığında:**
+   - Önce tarayıcıda `npm run dev` üzerinden doğrulama yap
+   - Kullanıcıdan onay al ("iyi oldu", "tamam", "harika" vb. → tetikleyici)
+2. **Onay sonrası ANINDA:**
+   - `git add -A`
+   - `git commit -m "..."` (semantic mesaj — feat / refine / fix / data / chore)
+   - `git push origin main`
+3. **Birden fazla büyük değişiklik biriktirme** — her büyük adım kendi commit'i olsun.
+
+### Commit mesaj formatı
+- **Tek satırlık başlık** (50-72 karakter): `[tip](kapsam): kısa açıklama`
+- **Tipler:** `feat` (yeni özellik), `refine` (ton/içerik iyileştirme), `fix` (bug),
+  `data` (veri katmanı), `audit` (denetim/temizlik), `chore` (yapılandırma)
+- **Body** (opsiyonel): Detay maddeleri madde madde
+- **Sonunda zorunlu:**
+  ```
+  Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>
+  ```
+
+### YASAK
+- **Onay almadan commit/push yapma**
+- **`--force` push** (origin/main'e asla)
+- **`--no-verify`** veya hook bypass
+- **`-i` (interactive)** flag'leri (rebase/add)
+- Hassas dosyaları stage etme (`.env`, kimlik bilgileri)
+
+### .gitignore — Sürekli güncel tutulacak
+- `.fuse_hidden*` (fuse mount geçici)
+- `.claude/` (session dosyaları)
+- `public/images/makineler/*-src.*` ve `*-v2-src.*` (image pipeline ham kaynak)
+- `dist/`, `node_modules/`, `.astro/`, `.env*`
+
+---
+
 ## 14. SEO İçerik Pipeline
 
 Workflow'lar: `../seo-agent/.agent/workflows/`
