@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABox from '../../components/CTABox.astro';
 import { projeler } from '../../data/projeler';
+import { musteriIfadeleri } from '../../data/referanslar';
 
 export function getStaticPaths() {
   return projeler.map((p) => ({
@@ -14,6 +15,11 @@ export function getStaticPaths() {
 const { proje } = Astro.props;
 const related = projeler.filter((p) => proje.relatedSlugs.includes(p.slug));
 const canonical = `https://www.toremzemin.com/projelerimiz/${proje.slug}/`;
+
+// Müşteri görüşü — projenin testimonialSlug'ı eşleşiyorsa otomatik bağla
+const testimonial = proje.testimonialSlug
+  ? musteriIfadeleri.find((t) => t.firmaSlug === proje.testimonialSlug)
+  : undefined;
 
 const schema = {
   '@context': 'https://schema.org',
@@ -78,10 +84,46 @@ const schema = {
           <p>{proje.summary}</p>
         </div>
 
+        <!-- 🆕 ŞANTİYE VERİLERİ — sayısal vurgu -->
+        {proje.santiyeVerileri && proje.santiyeVerileri.length > 0 && (
+          <div class="proje-block">
+            <h2>Şantiye Verileri</h2>
+            <div class="santiye-grid">
+              {proje.santiyeVerileri.map((v) => (
+                <div class="santiye-stat">
+                  <span class="santiye-stat__num">{v.v}</span>
+                  <span class="santiye-stat__lbl">{v.l}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         <div class="proje-block">
           <h2>Uygulama Yaklaşımı</h2>
           <p>{proje.approach}</p>
         </div>
+
+        <!-- 🆕 SAHA FOTOĞRAF GALERİSİ -->
+        {proje.galeri && proje.galeri.length > 0 && (
+          <div class="proje-block">
+            <h2>Saha Fotoğrafları</h2>
+            <div class="proje-galeri">
+              {proje.galeri.map((src, i) => {
+                const base = src.replace(/\.(jpe?g|png)$/i, '');
+                return (
+                  <a href={src} class="galeri-item" target="_blank" rel="noopener">
+                    <picture>
+                      <source srcset={`${base}.avif`} type="image/avif" />
+                      <source srcset={`${base}.webp`} type="image/webp" />
+                      <img src={src} alt={`${proje.title} — saha fotoğrafı ${i + 1}`} loading="lazy" decoding="async" width="400" height="280" />
+                    </picture>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        )}
 
         <div class="proje-block">
           <h2>Uygulanan Teknikler</h2>
@@ -97,6 +139,46 @@ const schema = {
             Uygulamalar ilgili sektör standartlarına (TS EN 1536, TS EN 1537, TS EN 12716, TS EN 14199, TBDY 2018) uygun olarak yürütülür.
           </p>
         </div>
+
+        <!-- 🆕 SONUÇ & ETKİ -->
+        {proje.sonucEtki && (
+          <div class="proje-block proje-block--sonuc">
+            <h2>Sonuç & Etki</h2>
+            <p>{proje.sonucEtki}</p>
+          </div>
+        )}
+
+        <!-- 🆕 MÜŞTERİ GÖRÜŞÜ — referanslar.ts'den otomatik bağlanır -->
+        {testimonial && (
+          <div class="proje-block">
+            <h2>Müşteri Görüşü</h2>
+            <article class="proje-testimonial" itemscope itemtype="https://schema.org/Review">
+              <meta itemprop="itemReviewed" content="Torem Zemin Mühendislik" />
+              <span class="proje-testimonial__mark" aria-hidden="true">&ldquo;</span>
+              {testimonial.vurgu && (
+                <p class="proje-testimonial__vurgu" itemprop="reviewBody">{testimonial.vurgu}</p>
+              )}
+              <p class="proje-testimonial__metin">{testimonial.metin}</p>
+              <footer class="proje-testimonial__footer" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                {testimonial.logoBase && (
+                  <picture class="proje-testimonial__logo">
+                    <source srcset={`${testimonial.logoBase}.avif`} type="image/avif" />
+                    <source srcset={`${testimonial.logoBase}.webp`} type="image/webp" />
+                    <img src={`${testimonial.logoBase}.${testimonial.logoExt ?? 'jpg'}`} alt={`${testimonial.firma} logosu`} loading="lazy" decoding="async" width="64" height="32" />
+                  </picture>
+                )}
+                <div class="proje-testimonial__kim">
+                  <strong itemprop="name">{testimonial.ad}</strong>
+                  <span class="proje-testimonial__unvan">
+                    <span itemprop="jobTitle">{testimonial.unvan}</span>
+                    <span aria-hidden="true">·</span>
+                    <span itemprop="worksFor">{testimonial.firma}</span>
+                  </span>
+                </div>
+              </footer>
+            </article>
+          </div>
+        )}
       </div>
 
       <!-- Sağ: Sidebar -->
@@ -183,6 +265,98 @@ const schema = {
 .proje-main { display:flex; flex-direction:column; gap:var(--s-10); }
 .proje-block h2 { font-size:var(--text-2xl); color:var(--color-primary); margin-bottom:var(--s-4); padding-bottom:var(--s-3); border-bottom:2px solid var(--color-border); display:inline-block; font-family:var(--font-serif); font-weight:700; }
 .proje-block p { color:var(--color-text); line-height:1.8; font-size:var(--text-base); }
+
+/* 🆕 Şantiye Verileri — sayısal stat blokları */
+.santiye-grid {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:var(--s-3);
+}
+.santiye-stat {
+  display:flex; flex-direction:column; gap:4px;
+  padding:var(--s-4) var(--s-3);
+  background:var(--color-bg); border:1px solid var(--color-border);
+  border-left:3px solid var(--color-highlight);
+  border-radius:var(--r-sm);
+  text-align:center;
+}
+.santiye-stat__num {
+  font-family:var(--font-mono); font-size:var(--text-2xl); font-weight:700;
+  color:var(--color-primary); line-height:1.1;
+}
+.santiye-stat__lbl {
+  font-size:var(--text-xs); font-weight:600;
+  color:var(--color-text-muted); text-transform:uppercase; letter-spacing:.06em;
+  line-height:1.4;
+}
+
+/* 🆕 Saha Fotoğraf Galerisi */
+.proje-galeri {
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:var(--s-3);
+}
+.galeri-item {
+  display:block; aspect-ratio:4/3; overflow:hidden;
+  border-radius:var(--r-md); border:1px solid var(--color-border);
+  transition:transform var(--t-base), box-shadow var(--t-base);
+}
+.galeri-item:hover {
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-md);
+}
+.galeri-item picture { display:block; width:100%; height:100%; }
+.galeri-item img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform var(--t-slow);
+}
+.galeri-item:hover img { transform:scale(1.05); }
+
+/* 🆕 Sonuç & Etki bloğu — vurgu */
+.proje-block--sonuc {
+  background:linear-gradient(135deg, rgba(212,175,55,.08) 0%, rgba(212,175,55,.02) 100%);
+  border-left:4px solid var(--color-highlight);
+  padding:var(--s-5) var(--s-6);
+  border-radius:0 var(--r-md) var(--r-md) 0;
+}
+.proje-block--sonuc h2 {
+  border-bottom-color:var(--color-highlight);
+}
+
+/* 🆕 Müşteri Görüşü — kompakt testimonial */
+.proje-testimonial {
+  position:relative;
+  background:var(--color-white);
+  border:1px solid var(--color-border);
+  border-radius:var(--r-lg);
+  padding:var(--s-6);
+}
+.proje-testimonial__mark {
+  position:absolute; top:8px; right:18px;
+  font-family:var(--font-serif); font-size:64px; line-height:1;
+  color:var(--color-highlight); opacity:.22;
+  pointer-events:none;
+}
+.proje-testimonial__vurgu {
+  font-family:var(--font-serif); font-size:var(--text-xl); font-weight:500;
+  color:var(--color-primary); line-height:1.4;
+  margin:0 0 var(--s-3) 0;
+}
+.proje-testimonial__metin {
+  font-size:var(--text-base); color:var(--color-text); line-height:1.7;
+  margin:0;
+}
+.proje-testimonial__footer {
+  display:flex; align-items:center; gap:var(--s-4);
+  margin-top:var(--s-4); padding-top:var(--s-4);
+  border-top:1px solid var(--color-border);
+}
+.proje-testimonial__logo {
+  flex-shrink:0; width:48px; height:48px; border-radius:var(--r-sm);
+  background:var(--color-bg); border:1px solid var(--color-border);
+  display:flex; align-items:center; justify-content:center;
+  mix-blend-mode:multiply;
+}
+.proje-testimonial__logo img { max-width:40px; max-height:40px; object-fit:contain; }
+.proje-testimonial__kim { display:flex; flex-direction:column; gap:2px; }
+.proje-testimonial__kim strong { color:var(--color-primary); font-weight:700; font-size:var(--text-base); }
+.proje-testimonial__unvan { font-size:var(--text-sm); color:var(--color-text-muted); }
 
 /* Teknik kartlar */
 .teknik-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:var(--s-3); margin-bottom:var(--s-4); }

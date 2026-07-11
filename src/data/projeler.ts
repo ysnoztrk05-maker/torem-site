@@ -27,6 +27,13 @@ export interface Proje {
   tags: string[];
   teknikler: Teknik[];
   relatedSlugs: string[];
+
+  // Faz C — derin case study alanları (opsiyonel — eski 8 proje minimal kalabilir)
+  galeri?: string[];                              // 3-5 saha fotoğrafı yolu
+  santiyeVerileri?: { l: string; v: string }[];   // [{l:'Kazık Adedi', v:'420'}, ...]
+  sonucEtki?: string;                             // 1 paragraf — proje tamamlandığında ne sağlandı
+  testimonialSlug?: string;                       // referanslar.ts:musteriIfadeleri firmaSlug eşleşmesi
+  zamanCizelgesi?: { tarih: string; olay: string }[]; // [{tarih:'Mart 2024', olay:'Saha mobilizasyonu'}, ...]
 }
 
 const T = {
@@ -120,22 +127,41 @@ export const projeler: Proje[] = [
   },
   {
     slug: 'smart-gunes-denizli',
-    title: 'Smart Güneş Enerjileri — Denizli GES',
+    title: 'Smart Güneş Enerjileri — Çivril GES',
     category: 'Kazıklı Temel',
     catSlug: 'kazikli-temel',
-    location: 'Denizli / Erzin',
+    location: 'Denizli / Çivril',
     year: '2024',
-    client: 'Smart Güneş Enerjileri',
-    desc: 'Güneş enerji santrali altyapısı için kazıklı temel çözümü.',
+    client: 'Smart Güneş Enerjileri (Fortis Enerji ortaklığı)',
+    desc: '100 MW güneş enerji santrali için 35.000 adet havalı sistem mini kazık temel uygulaması.',
     summary:
-      'GES sahalarında yüksek adette küçük yüklü noktasal temeller söz konusudur; hız, tekrarlanabilirlik ve zemin değişkenliği üç temel parametredir. Saha kesitine göre farklı kazık tipleri birlikte kurgulandı.',
+      'Denizli Çivril\'deki 100 MW kurulu güçteki güneş enerji santrali için panel taşıyıcı sistemin temellerini sağladığımız bir saha. Bloklu kireçtaşı zemin koşulları, doğru ekipman ve uygulama disiplini gerektirdi.',
     approach:
-      'Sert tabakalara uzanan noktalarda fore kazık, erişimin kısıtlı veya saha tabakalaşmasının değişken olduğu bölgelerde mini kazık uygulandı. Uygulama TS EN 1536 ve TS EN 14199 kapsamında yürütüldü.',
-    image: '/images/kazikli-temeller/mini-kazik.jpg',
-    heroImage: '/images/kazikli-temeller/mini-kazik.jpg',
-    tags: ['Fore Kazık', 'Mini Kazık', 'GES', '2024'],
-    teknikler: [T.foreKazik, T.miniKazik],
+      'Saha bloklu kireçtaşı ve dolgu zemin yapısına sahipti; bu koşullarda klasik delgi yöntemleri kazık geometrisini koruyamaz. Tarafımızdan havalı sistem (down-the-hole) mini kazık delgisi tercih edildi: Ø30 cm × 1,5 m geometrisinde, 35.000 adet kazık imalatı 4 ayda tamamlandı. Saha mobilizasyonu ve makine seçimi proje süresini doğrudan etkileyen kritik kararlardı.',
+    image: '/images/projeler/smart-civril/smart-civril-01-saha-mobilizasyon.jpg',
+    heroImage: '/images/projeler/smart-civril/smart-civril-01-saha-mobilizasyon.jpg',
+    tags: ['Mini Kazık', 'Havalı Sistem', 'GES', 'Denizli', '2024'],
+    teknikler: [T.miniKazik],
     relatedSlugs: ['bakioglu-freshbak-salihli', 'koray-gyo-cekmekoy'],
+
+    santiyeVerileri: [
+      { l: 'Kazık Adedi',      v: '35.000' },
+      { l: 'Kazık Çapı',       v: 'Ø30 cm' },
+      { l: 'Kazık Boyu',       v: '1,5 m'  },
+      { l: 'Panel Gücü',       v: '100 MW' },
+      { l: 'Saha Süresi',      v: '4 ay'   },
+      { l: 'Delgi Sistemi',    v: 'Havalı (DTH)' },
+    ],
+    galeri: [
+      '/images/projeler/smart-civril/smart-civril-01-saha-mobilizasyon.jpg',
+      '/images/projeler/smart-civril/smart-civril-02-saha-genel.jpg',
+      '/images/projeler/smart-civril/smart-civril-03-delgi-yakin.jpg',
+      '/images/projeler/smart-civril/smart-civril-04-aksiyon.jpg',
+      '/images/projeler/smart-civril/smart-civril-05-bloklu-zemin.jpg',
+    ],
+    sonucEtki:
+      'Bloklu kireçtaşı ve dolgu zemin yapısının yarattığı delgi zorluğuna rağmen 35.000 adet kazık 4 ayda tamamlandı. Kazıklar panel taşıyıcı sistemini bloklu zemine sabitleyerek santralin uzun ömürlü taşıyıcılığını sağladı. Panel kurulum ekibi öngörülen takvimde sahaya girebildi.',
+    testimonialSlug: 'fortis-enerji',
   },
   {
     slug: 'koray-gyo-cekmekoy',

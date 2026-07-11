@@ -19,6 +19,12 @@ const TARGETS = [
     pattern: /^(?!.*-src\.).+\.(png|jpg|jpeg)$/i,
     label: 'makineler',
   },
+  // Proje case-study fotoğrafları (her proje kendi alt klasöründe)
+  {
+    dir: './public/images/projeler/smart-civril',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'projeler/smart-civril',
+  },
 ];
 
 const WEBP_OPTS = { quality: 82, effort: 6 };
