@@ -20,6 +20,7 @@ import {
   sektorler,
   sektorBul,
 } from '../../data/referanslar';
+import { picSources } from '../../lib/images';
 
 const canonical = 'https://www.toremzemin.com/referanslar/';
 
@@ -214,7 +215,13 @@ const yogunluk = (deger: number) => enYukseHucre === 0 ? 0 : Math.round((deger /
           return (
             <article class={`case-study ${reverse ? 'case-study--reverse' : ''}`}>
               <div class="case-study__visual">
-                <img src={cover} alt={`${h.ad} saha görseli`} loading="lazy" decoding="async" width="800" height="520" />
+                {(() => { const s = picSources(cover); return (
+                  <picture>
+                    {s.avif && <source srcset={s.avif} type="image/avif" />}
+                    {s.webp && <source srcset={s.webp} type="image/webp" />}
+                    <img src={cover} alt={`${h.ad} saha görseli`} loading="lazy" decoding="async" width="800" height="520" />
+                  </picture>
+                ); })()}
                 {h.sektorEtiket && <span class="case-study__sektor">{h.sektorEtiket}</span>}
               </div>
               <div class="case-study__body">
@@ -700,6 +707,7 @@ const yogunluk = (deger: number) => enYukseHucre === 0 ? 0 : Math.round((deger /
   border-radius:var(--r-xl); overflow:hidden;
   box-shadow: 0 20px 40px rgba(0,33,71,.15), 0 8px 16px rgba(0,0,0,.06);
 }
+.case-study__visual picture { display:block; width:100%; height:100%; }
 .case-study__visual img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
 .case-study:hover .case-study__visual img { transform:scale(1.03); }
 .case-study__sektor {

@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import CTABox from '../../components/CTABox.astro';
 import { hizmetler } from '../../data/content';
+import { picSources } from '../../lib/images';
 ---
 
 <BaseLayout
@@ -137,7 +138,13 @@ import { hizmetler } from '../../data/content';
         {hizmetler.map((h) => (
           <article class="hcard">
             <a href={`/hizmetlerimiz/${h.slug}/`} class="hcard__img-wrap">
-              <img src={h.image} alt={h.title} loading="lazy" width="480" height="320" />
+              {(() => { const s = picSources(h.image); return (
+                <picture>
+                  {s.avif && <source srcset={s.avif} type="image/avif" />}
+                  {s.webp && <source srcset={s.webp} type="image/webp" />}
+                  <img src={h.image} alt={h.title} loading="lazy" decoding="async" width="480" height="320" />
+                </picture>
+              ); })()}
               <span class="hcard__cat">{h.category}</span>
             </a>
             <div class="hcard__body">
@@ -200,6 +207,7 @@ import { hizmetler } from '../../data/content';
   box-shadow: 0 24px 60px rgba(0, 21, 48, 0.12); 
 }
 .hcard__img-wrap { display:block; aspect-ratio:3/2; overflow:hidden; position:relative; }
+.hcard__img-wrap picture { display:block; width:100%; height:100%; }
 .hcard__img-wrap img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
 .hcard:hover .hcard__img-wrap img { transform:scale(1.05); }
 .hcard__cat {

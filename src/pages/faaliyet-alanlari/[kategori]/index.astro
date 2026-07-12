@@ -2,6 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CTABox from '../../../components/CTABox.astro';
 import { kategoriler, getTekniklerByKategori } from '../../../data/faaliyet-alanlari';
+import { picSources } from '../../../lib/images';
 
 export function getStaticPaths() {
   return kategoriler.map((k) => ({
@@ -128,7 +129,13 @@ function kaliciIcon(val: string) {
         {teknikler.map((t) => (
           <article class="tz-tech-card">
             <a href={`/faaliyet-alanlari/${kategori.slug}/${t.slug}/`} class="tz-tech-img">
-               <img src={t.image} alt={t.shortTitle} loading="lazy" />
+               {(() => { const s = picSources(t.image); return (
+                 <picture>
+                   {s.avif && <source srcset={s.avif} type="image/avif" />}
+                   {s.webp && <source srcset={s.webp} type="image/webp" />}
+                   <img src={t.image} alt={t.shortTitle} loading="lazy" decoding="async" width="640" height="400" />
+                 </picture>
+               ); })()}
                {t.badge && (
                  <span class="tz-tech-badge">{t.badge}</span>
                )}
@@ -392,6 +399,7 @@ header.tz-hero p { font-size: clamp(1.1rem, 2vw, 1.25rem); color: rgba(255,255,2
 }
 .tz-tech-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,33,71,0.08); }
 .tz-tech-img { display: block; position: relative; aspect-ratio: 16/10; overflow: hidden; }
+.tz-tech-img picture { display: block; width: 100%; height: 100%; }
 .tz-tech-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .tz-tech-card:hover .tz-tech-img img { transform: scale(1.05); }
 .tz-tech-badge {

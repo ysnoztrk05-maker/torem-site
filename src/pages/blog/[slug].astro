@@ -4,6 +4,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import AuthorBox from '../../components/AuthorBox.astro';
 import CTABox from '../../components/CTABox.astro';
 import { blogPosts, getBlogPost } from '../../data/content';
+import { picSources, picturize } from '../../lib/images';
 
 export function getStaticPaths() {
   return blogPosts.map((p) => ({ params: { slug: p.slug } }));
@@ -28,6 +29,8 @@ const articleSchema = {
 };
 
 const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
+const heroSrc = picSources(post.heroImage);
+const contentHtml = picturize(post.content);
 ---
 
 <BaseLayout
@@ -39,7 +42,11 @@ const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 >
   <!-- Hero -->
   <div class="blog-single-hero">
-    <img src={post.heroImage} alt={post.title} width="1200" height="480" fetchpriority="high" />
+    <picture>
+      {heroSrc.avif && <source srcset={heroSrc.avif} type="image/avif" />}
+      {heroSrc.webp && <source srcset={heroSrc.webp} type="image/webp" />}
+      <img src={post.heroImage} alt={post.title} width="1200" height="480" fetchpriority="high" decoding="async" />
+    </picture>
     <div class="blog-single-hero__overlay">
       <div class="container">
         <span class="blog-single-hero__cat">{post.category}</span>
@@ -58,7 +65,7 @@ const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
     <div class="container blog-single-layout">
       <article class="blog-single-main">
         <AuthorBox date={post.date} />
-        <div class="prose" set:html={post.content} />
+        <div class="prose" set:html={contentHtml} />
         <CTABox />
 
         <!-- İlgili Yazılar -->
@@ -66,15 +73,22 @@ const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
           <div class="related">
             <h3>İlgili Yazılar</h3>
             <div class="related__grid">
-              {relatedPosts.map((r) => (
+              {relatedPosts.map((r) => {
+                const rs = picSources(r.image);
+                return (
                 <a href={`/blog/${r.slug}/`} class="related-card">
-                  <img src={r.image} alt={r.title} loading="lazy" width="280" height="160" />
+                  <picture>
+                    {rs.avif && <source srcset={rs.avif} type="image/avif" />}
+                    {rs.webp && <source srcset={rs.webp} type="image/webp" />}
+                    <img src={r.image} alt={r.title} loading="lazy" decoding="async" width="280" height="160" />
+                  </picture>
                   <div class="related-card__body">
                     <p class="related-card__cat">{r.category}</p>
                     <p class="related-card__title">{r.title}</p>
                   </div>
                 </a>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}
@@ -85,6 +99,7 @@ const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 
 <style>
 .blog-single-hero { position:relative; height:480px; overflow:hidden; }
+.blog-single-hero picture { display:block; width:100%; height:100%; }
 .blog-single-hero img { width:100%; height:100%; object-fit:cover; }
 .blog-single-hero__overlay {
   position:absolute; inset:0;
@@ -118,6 +133,7 @@ const relatedPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
 .related__grid { display:grid; grid-template-columns:1fr 1fr; gap:var(--s-5); }
 .related-card { border-radius:var(--r-lg); overflow:hidden; background:var(--color-white); border:1px solid var(--color-border); transition:box-shadow var(--t-base); }
 .related-card:hover { box-shadow:var(--shadow-md); }
+.related-card picture { display:block; width:100%; }
 .related-card img { width:100%; aspect-ratio:16/9; object-fit:cover; }
 .related-card__body { padding:var(--s-4); }
 .related-card__cat { font-size:var(--text-xs); color:var(--color-highlight); font-weight:600; text-transform:uppercase; margin-bottom:var(--s-2); }

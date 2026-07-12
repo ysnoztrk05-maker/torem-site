@@ -4,6 +4,7 @@ import ServiceArticleLayout from '../../../layouts/ServiceArticleLayout.astro';
 import CTABox from '../../../components/CTABox.astro';
 import { kategoriler, teknikler, getKategori, getTeknik, getTekniklerByKategori } from '../../../data/faaliyet-alanlari';
 import { hizmetVerilenIller, hizmetVerilenBolgeler } from '../../../data/sirket';
+import { picSources, picturize } from '../../../lib/images';
 
 export function getStaticPaths() {
   return teknikler.map((t) => ({
@@ -66,6 +67,8 @@ const breadcrumbSchema = {
 };
 
 const hasProcessSteps = teknik.content.includes('class="process-steps"');
+// §8.3 — içerik HTML'indeki çıplak <img>'ler build anında <picture>'a sarılır
+const contentHtml = picturize(teknik.content);
 const howToSchema = hasProcessSteps ? {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
@@ -129,7 +132,7 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
     relatedTeknikler={ilgiliTeknikler.map(t => ({ slug: t.slug, kategoriSlug: t.kategoriSlug, shortTitle: t.shortTitle }))}
   >
     <div class="tz-readability-wrapper">
-       <Fragment set:html={teknik.content} />
+       <Fragment set:html={contentHtml} />
     </div>
 
     {teknik.steps && teknik.steps.length > 0 && (
@@ -185,7 +188,13 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
         <div class="tz-related-grid">
           {ilgiliTeknikler.map((t) => (
             <a href={`/faaliyet-alanlari/${t.kategoriSlug}/${t.slug}/`} class="tz-related-card">
-              <img src={t.image} alt={t.title} loading="lazy" width="320" height="200" />
+              {(() => { const ts = picSources(t.image); return (
+                <picture>
+                  {ts.avif && <source srcset={ts.avif} type="image/avif" />}
+                  {ts.webp && <source srcset={ts.webp} type="image/webp" />}
+                  <img src={t.image} alt={t.title} loading="lazy" decoding="async" width="320" height="200" />
+                </picture>
+              ); })()}
               <div class="tz-related-card__body">
                 {t.badge && <span class="tz-related-card__badge">{t.badge}</span>}
                 <h3>{t.shortTitle}</h3>
@@ -254,7 +263,7 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
           <div class="tz-content-main">
 
             <!-- YAZI İÇERİĞİ -->
-            <article class="tz-readability-wrapper tz-article-body" set:html={teknik.content} />
+            <article class="tz-readability-wrapper tz-article-body" set:html={contentHtml} />
 
             <!-- UYGULAMA ADIMLARI -->
             {teknik.steps && teknik.steps.length > 0 && (
@@ -391,7 +400,13 @@ const ogImage = teknik.image && teknik.image !== '/og-default.jpg' ? teknik.imag
         <div class="tz-related-grid">
           {ilgiliTeknikler.map((t) => (
             <a href={`/faaliyet-alanlari/${t.kategoriSlug}/${t.slug}/`} class="tz-related-card">
-              <img src={t.image} alt={t.title} loading="lazy" width="320" height="200" />
+              {(() => { const ts = picSources(t.image); return (
+                <picture>
+                  {ts.avif && <source srcset={ts.avif} type="image/avif" />}
+                  {ts.webp && <source srcset={ts.webp} type="image/webp" />}
+                  <img src={t.image} alt={t.title} loading="lazy" decoding="async" width="320" height="200" />
+                </picture>
+              ); })()}
               <div class="tz-related-card__body">
                 {t.badge && <span class="tz-related-card__badge">{t.badge}</span>}
                 <h3>{t.shortTitle}</h3>
@@ -739,6 +754,7 @@ header.tz-article-hero h1 { font-size: clamp(2.2rem, 4.5vw, 3.5rem); font-weight
   transform: translateY(-4px);
   box-shadow: 0 10px 28px rgba(0,33,71,0.1);
 }
+.tz-related-card picture { display: block; }
 .tz-related-card img {
   width: 100%;
   height: 140px;

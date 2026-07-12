@@ -5,6 +5,7 @@ import AuthorBox from '../../components/AuthorBox.astro';
 import CTABox from '../../components/CTABox.astro';
 import FAQAccordion from '../../components/FAQAccordion.astro';
 import { hizmetler, getHizmet } from '../../data/content';
+import { picturize } from '../../lib/images';
 
 export function getStaticPaths() {
   return hizmetler.map((h) => ({ params: { slug: h.slug } }));
@@ -63,7 +64,7 @@ const otherServices = hizmetler.filter((h) => h.slug !== slug).slice(0, 5);
       <!-- Ana içerik -->
       <div class="hizmet-main">
         <AuthorBox date="Mart 2026" />
-        <div class="prose" set:html={hizmet.content} />
+        <div class="prose" set:html={picturize(hizmet.content)} />
         <FAQAccordion items={hizmet.faq.map(f => ({ question: f.q, answer: f.a }))} title={`${hizmet.shortTitle} Hakkında Sık Sorulanlar`} />
         <CTABox />
       </div>

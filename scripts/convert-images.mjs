@@ -66,6 +66,17 @@ const TARGETS = [
     pattern: /\.(png|jpg|jpeg)$/i,
     label: 'projeler/smart-civril',
   },
+  // Kaynağı .webp olan içerik görselleri — sadece AVIF kardeşi üretilir
+  {
+    dir: './public/images/fore-kazik',
+    pattern: /\.webp$/i,
+    label: 'fore-kazik (webp→avif)',
+  },
+  {
+    dir: './public/images/jet-grout',
+    pattern: /\.webp$/i,
+    label: 'jet-grout (webp→avif)',
+  },
 ];
 
 const WEBP_OPTS = { quality: 82, effort: 6 };
@@ -82,25 +93,30 @@ async function convertDir({ dir, pattern, label }) {
 
   for (const file of files) {
     const inputPath = path.join(dir, file);
-    const base = path.join(dir, file.replace(/\.(png|jpe?g)$/i, ''));
+    const isWebpSource = /\.webp$/i.test(file);
+    const base = path.join(dir, file.replace(/\.(png|jpe?g|webp)$/i, ''));
 
     const webpPath = `${base}.webp`;
     const avifPath = `${base}.avif`;
+    // .webp kaynaklar için güncellik kontrolü avif çıktısına bakar (webp yeniden üretilmez)
+    const checkPath = isWebpSource ? avifPath : webpPath;
 
     try {
-      const [srcStat, webpStat] = await Promise.all([
+      const [srcStat, outStat] = await Promise.all([
         stat(inputPath),
-        stat(webpPath).catch(() => null),
+        stat(checkPath).catch(() => null),
       ]);
-      if (webpStat && webpStat.mtimeMs >= srcStat.mtimeMs) {
+      if (outStat && outStat.mtimeMs >= srcStat.mtimeMs) {
         console.log(`  skip ${file} (up to date)`);
         continue;
       }
     } catch {}
 
-    await sharp(inputPath).webp(WEBP_OPTS).toFile(webpPath);
+    if (!isWebpSource) {
+      await sharp(inputPath).webp(WEBP_OPTS).toFile(webpPath);
+    }
     await sharp(inputPath).avif(AVIF_OPTS).toFile(avifPath);
-    console.log(`  ${file} → webp + avif`);
+    console.log(`  ${file} → ${isWebpSource ? 'avif' : 'webp + avif'}`);
   }
 }
 
