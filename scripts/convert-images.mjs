@@ -5,8 +5,49 @@ import path from 'node:path';
 const TARGETS = [
   {
     dir: './public/images',
-    pattern: /^hero-sunset-\d\.png$/i,
-    label: 'hero',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'kök (hero + kart görselleri)',
+  },
+  // Faaliyet alanı içerik klasörleri — kategori/teknik sayfa görselleri
+  {
+    dir: './public/images/destekleme-ankraj',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'destekleme-ankraj',
+  },
+  {
+    dir: './public/images/gecirimsizlik-perdeleri',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'gecirimsizlik-perdeleri',
+  },
+  {
+    dir: './public/images/geoteknik-proje',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'geoteknik-proje',
+  },
+  {
+    dir: './public/images/geoteknik-test-izleme',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'geoteknik-test-izleme',
+  },
+  {
+    dir: './public/images/iksa',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'iksa',
+  },
+  {
+    dir: './public/images/kazikli-temeller',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'kazikli-temeller',
+  },
+  {
+    dir: './public/images/sev-stabilitesi',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'sev-stabilitesi',
+  },
+  {
+    dir: './public/images/zemin-iyilestirme',
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: 'zemin-iyilestirme',
   },
   {
     dir: './public/images/logos',
