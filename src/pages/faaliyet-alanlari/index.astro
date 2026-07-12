@@ -143,7 +143,13 @@ import { picSources } from '../../lib/images';
 
 .tz-hero-pattern {
     position: absolute; inset: 0; opacity: 0.15;
-    background-image: url('/images/kurumsal-bg.jpg');
+    /* kurumsal-bg.jpg hiç var olmadı — mevcut hero-main ile §8.4 image-set */
+    background-image: url('/images/hero-main.jpg');
+    background-image: image-set(
+      url('/images/hero-main.avif') type('image/avif'),
+      url('/images/hero-main.webp') type('image/webp'),
+      url('/images/hero-main.jpg')  type('image/jpeg')
+    );
     background-size: cover;
     background-position: center;
     mix-blend-mode: luminosity;

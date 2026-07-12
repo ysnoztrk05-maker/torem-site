@@ -22,6 +22,18 @@ const testimonial = proje.testimonialSlug
   ? musteriIfadeleri.find((t) => t.firmaSlug === proje.testimonialSlug)
   : undefined;
 
+// Hero background — §8.4: image-set ile AVIF/WebP; desteklemeyen tarayıcı ilk url'e düşer
+const heroSrc = picSources(proje.heroImage);
+const heroBgStyle = [
+  `background-image:url('${proje.heroImage}')`,
+  (heroSrc.avif || heroSrc.webp) &&
+    `background-image:image-set(${[
+      heroSrc.avif && `url('${heroSrc.avif}') type('image/avif')`,
+      heroSrc.webp && `url('${heroSrc.webp}') type('image/webp')`,
+      `url('${proje.heroImage}')`,
+    ].filter(Boolean).join(',')})`,
+].filter(Boolean).join(';');
+
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
@@ -48,7 +60,7 @@ const schema = {
 >
   <!-- HERO -->
   <section class="proje-hero">
-    <div class="proje-hero__bg" style={`background-image:url('${proje.heroImage}')`} aria-hidden="true"></div>
+    <div class="proje-hero__bg" style={heroBgStyle} aria-hidden="true"></div>
     <div class="proje-hero__overlay" aria-hidden="true"></div>
     <div class="container proje-hero__inner">
       <span class="proje-hero__cat">{proje.category}</span>
