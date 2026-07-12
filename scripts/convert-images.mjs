@@ -66,6 +66,16 @@ const TARGETS = [
     pattern: /\.(png|jpg|jpeg)$/i,
     label: 'projeler/smart-civril',
   },
+  // Saha hikayesi kapak fotoğrafları (referanslar sayfası görselli kartlar)
+  ...[
+    'abalioglu-aliaga', 'akar-toki-izmir', 'aslanturk-gebze',
+    'peynirci-baba-gebze', 'millet-bahcesi-usak', 'bakioglu-salihli',
+    'adana-tarsus-yol',
+  ].map((slug) => ({
+    dir: `./public/images/projeler/${slug}`,
+    pattern: /\.(png|jpg|jpeg)$/i,
+    label: `projeler/${slug}`,
+  })),
   // Kaynağı .webp olan içerik görselleri — sadece AVIF kardeşi üretilir
   {
     dir: './public/images/fore-kazik',
