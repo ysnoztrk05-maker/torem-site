@@ -17,14 +17,10 @@ export interface Referans {
   durum: ReferansDurum;
 }
 
-export const devamEdenProjeler: Referans[] = [
-  { musteri: 'Özel Yatırım', proje: 'İzmir Konut Projesi', lokasyon: 'İzmir / Bayraklı', yil: 2025, teknik: 'Fore kazık, Jet grout', durum: 'devam-eden' },
-  { musteri: 'Yol Yüklenicisi', proje: 'Adana-Tarsus Yol Projesi', lokasyon: 'Adana / Tarsus', yil: 2025, teknik: 'Fore kazık, Kazıklı temeller', durum: 'devam-eden' },
-  { musteri: 'Konut Yatırımcısı', proje: 'İstanbul Villa Konutları', lokasyon: 'İstanbul / Büyükçekmece', yil: 2025, teknik: 'Fore kazık, Kazıklı temeller', durum: 'devam-eden' },
-  { musteri: 'Endüstriyel Yatırımcı', proje: 'Fabrika Projesi Gebze', lokasyon: 'Kocaeli / Gebze', yil: 2025, teknik: 'Zemin çivisi, Öngermeli ankraj, Püskürtme beton', durum: 'devam-eden' },
-  { musteri: 'Endüstriyel Yatırımcı', proje: 'İzmir Fabrika Projesi', lokasyon: 'İzmir / Aliağa', yil: 2025, teknik: 'Fore kazık, Kazıklı temeller', durum: 'devam-eden' },
-  { musteri: 'Gıda Yatırımcısı', proje: 'Kurutulmuş Gıda Fabrika Projesi', lokasyon: 'Manisa / Salihli', yil: 2025, teknik: 'Donatısız fore kazık, Zemin enjeksiyonu', durum: 'devam-eden' },
-];
+// Devam eden projeler tamamlanan referanslara taşındı (2026-07) — canlı sitedeki
+// "devam eden" liste artık tamamlanmış işlerdi; görselli saha hikayesi kartlarıyla
+// tamamlananProjeler + musteriHikayeleri altında gösteriliyor. Bölüm kaldırıldı.
+export const devamEdenProjeler: Referans[] = [];
 
 export const tamamlananProjeler: Referans[] = [
   // 2024
@@ -42,6 +38,7 @@ export const tamamlananProjeler: Referans[] = [
   { musteri: 'Emlak Konut & Geofond Zemin', proje: 'Konut', lokasyon: 'Türkiye geneli', yil: 2024, teknik: 'Fore kazık, Jet grout', durum: 'tamamlanan' },
   { musteri: 'Bayburt Grup & Çavuşoğulları', proje: 'Yol çalışması', lokasyon: 'Türkiye geneli', yil: 2024, teknik: 'Donatısız fore kazık', durum: 'tamamlanan' },
   { musteri: 'Abalıoğlu & İzmir Zemin', proje: 'Fabrika binası', lokasyon: 'İzmir', yil: 2024, teknik: 'Fore kazık', durum: 'tamamlanan' },
+  { musteri: 'Karayolu Yüklenicisi', proje: 'Adana-Tarsus otoyol kazık uygulaması', lokasyon: 'Adana / Tarsus', yil: 2024, teknik: 'Fore kazık, Kazıklı temeller', durum: 'tamamlanan' },
 
   // 2023
   { musteri: 'Birinci İnşaat & Ziraat GYO', proje: 'Ticari bina', lokasyon: 'İzmir / Alsancak', yil: 2023, teknik: 'Jet grout, Fore kazık', durum: 'tamamlanan' },
@@ -385,7 +382,7 @@ export const musteriHikayeleri: MusteriHikaye[] = [
     hikayeUzun: 'Bakioğlu Holding bünyesindeki Freshbak endüstriyel yatırımının Manisa Salihli Organize Sanayi Bölgesi\'ndeki sahasında kazıklı temel ve zemin iyileştirme uygulamalarını birlikte yürüttük. İki farklı geoteknik çözümün tek koordinasyon altında entegre edilmesi, saha verimliliğini ve inşaat takvimini olumlu etkiledi — proje 2024\'te tamamlandı.',
     sektorEtiket: 'Endüstri & Gıda',
     etiket: 'Kazıklı Temel + Zemin İyileştirme',
-    sahaFoto: '/images/jet-grout/jet-grout-santiye.webp',
+    sahaFoto: '/images/projeler/bakioglu-salihli/bakioglu-salihli-01.jpg',
     projeSlug: 'bakioglu-freshbak-salihli',
     flagship: true,
   },
@@ -452,7 +449,7 @@ export const musteriHikayeleri: MusteriHikaye[] = [
     yil: '2024',
     hikaye: 'Gebze iş merkezi inşaatı için derin kazı iksa sistemi tasarlayıp uyguladık — zemin çivisi, ankraj ve püskürtme beton birlikte çalıştı.',
     etiket: 'İksa Sistemleri',
-    sahaFoto: '/images/iksa/diyafram-duvar.jpg',
+    sahaFoto: '/images/projeler/aslanturk-gebze/aslanturk-gebze-01.jpg',
     projeSlug: 'aslanturk-lojistik-gebze',
   },
   {
@@ -488,9 +485,9 @@ export const musteriHikayeleri: MusteriHikaye[] = [
     logoExt: 'jpg',
     lokasyon: 'Uşak · Millet Bahçesi',
     yil: '2023',
-    hikaye: 'TOKİ koordinasyonunda yürütülen Uşak Millet Bahçesi projesi için öngermeli ankraj uygulamasını tamamladık.',
-    etiket: 'Öngermeli Ankraj',
-    kategoriFallback: '/images/ankraj.jpg',
+    hikaye: 'TOKİ koordinasyonunda yürütülen Uşak Millet Bahçesi projesi için öngermeli ankraj ve iksa uygulamasını tamamladık.',
+    etiket: 'Öngermeli Ankraj + İksa',
+    sahaFoto: '/images/projeler/millet-bahcesi-usak/millet-bahcesi-usak-01.jpg',
   },
   {
     slug: 'girisim-elektrik',
@@ -513,6 +510,44 @@ export const musteriHikayeleri: MusteriHikaye[] = [
     hikaye: 'İstanbul Proje Koordinasyon Birimi ile okul yapıları fore kazık temel uygulamalarını kentsel eğitim altyapısı kapsamında yürüttük.',
     etiket: 'Kazıklı Temel',
     kategoriFallback: '/images/kazikli-temeller.jpg',
+  },
+  {
+    slug: 'abalioglu-aliaga',
+    ad: 'Abalıoğlu',
+    lokasyon: 'İzmir · Aliağa',
+    yil: '2024',
+    hikaye: 'Aliağa\'daki endüstriyel tesis yatırımı için ağır makine yüklerini taşıyacak kazıklı temel sistemini geniş bir saha üzerinde uyguladık.',
+    etiket: 'Kazıklı Temel',
+    sahaFoto: '/images/projeler/abalioglu-aliaga/abalioglu-aliaga-01.jpg',
+  },
+  {
+    slug: 'akar-toki-izmir',
+    ad: 'Akar Yapı & TOKİ',
+    logoBase: '/images/logos/toki',
+    logoExt: 'png',
+    lokasyon: 'İzmir · Bornova',
+    yil: '2024',
+    hikaye: 'TOKİ koordinasyonundaki Bornova okul yatırımında yamaçlı kentsel sahada fore kazık ve iksa uygulamasını birlikte yürüttük.',
+    etiket: 'Fore Kazık + İksa',
+    sahaFoto: '/images/projeler/akar-toki-izmir/akar-toki-izmir-01.jpg',
+  },
+  {
+    slug: 'peynirci-baba',
+    ad: 'Peynirci Baba',
+    lokasyon: 'Kocaeli · Gebze',
+    yil: '2024',
+    hikaye: 'Gebze iş merkezi inşaatında derin kazı güvenliği için zemin çivisi, ankraj ve püskürtme betonu bir arada uyguladık.',
+    etiket: 'Zemin Çivisi + Ankraj',
+    sahaFoto: '/images/projeler/peynirci-baba-gebze/peynirci-baba-gebze-01.jpg',
+  },
+  {
+    slug: 'adana-tarsus-yol',
+    ad: 'Adana-Tarsus Otoyol',
+    lokasyon: 'Adana · Tarsus',
+    yil: '2024',
+    hikaye: 'Otoyol güzergâhındaki yapı yüklerini taşımak üzere fore kazık ve kazıklı temel uygulamasını saha koşullarına göre yürüttük.',
+    etiket: 'Fore Kazık',
+    sahaFoto: '/images/projeler/adana-tarsus-yol/adana-tarsus-yol-01.jpg',
   },
 ];
 

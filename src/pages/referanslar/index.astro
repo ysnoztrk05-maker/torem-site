@@ -251,6 +251,44 @@ const yogunluk = (deger: number) => enYukseHucre === 0 ? 0 : Math.round((deger /
     </div>
   </section>
 
+  <!-- SAHA HİKAYELERİ — Görselli kart grid (flagship dışı tüm hikayeler) -->
+  <section class="section section--bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <p class="eyebrow eyebrow--sm">Saha Arşivinden</p>
+        <h2>Sahadan Proje Kareleri</h2>
+        <p>Konut, endüstri, enerji ve kamu yatırımlarında tamamladığımız uygulamalardan gerçek saha görselleri — her kare bir referans işin karşılığıdır.</p>
+      </div>
+
+      <div class="saha-grid">
+        {musteriHikayeleri.filter((h) => !h.flagship).map((h) => {
+          const cover = h.sahaFoto ?? h.kategoriFallback ?? '/images/hero-main.jpg';
+          const s = picSources(cover);
+          return (
+            <article class="saha-card">
+              <div class="saha-card__visual">
+                <picture>
+                  {s.avif && <source srcset={s.avif} type="image/avif" />}
+                  {s.webp && <source srcset={s.webp} type="image/webp" />}
+                  <img src={cover} alt={`${h.ad} saha görseli`} loading="lazy" decoding="async" width="600" height="400" />
+                </picture>
+                <span class="saha-card__etiket">{h.etiket}</span>
+              </div>
+              <div class="saha-card__body">
+                <h3 class="saha-card__ad">{h.ad}</h3>
+                <p class="saha-card__meta">{h.lokasyon} · <span>{h.yil}</span></p>
+                <p class="saha-card__hikaye">{h.hikaye}</p>
+                {h.projeSlug && (
+                  <a href={`/projelerimiz/${h.projeSlug}/`} class="saha-card__cta">Projeyi Detaylı İncele →</a>
+                )}
+              </div>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
   <!-- LOGO WALL — Statik grid (22 müşteri bir bakışta) -->
   <section class="section section--bg-alt">
     <div class="container">
@@ -515,48 +553,6 @@ const yogunluk = (deger: number) => enYukseHucre === 0 ? 0 : Math.round((deger /
     </div>
   </section>
 
-  <!-- DEVAM EDEN -->
-  {devamEdenProjeler.length > 0 && (
-    <section class="section section--bg-alt">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow eyebrow--sm">2025 — Aktif Sahalar</p>
-          <h2>Şu Anda Devam Eden Uygulamalar</h2>
-          <p>İşbu dönemde sahada yürüttüğümüz öne çıkan projeler. Liste {referansIstatistik.tamamlanan}+ tamamlanmış proje arşivimizden bağımsız olup yalnızca güncel saha çalışmalarını gösterir.</p>
-        </div>
-
-        <div class="ref-table-wrap ref-table-wrap--active">
-          <table class="ref-table">
-            <thead>
-              <tr>
-                <th>Proje</th>
-                <th>Lokasyon</th>
-                <th>Uygulanan Yöntemler</th>
-                <th>Yıl</th>
-              </tr>
-            </thead>
-            <tbody>
-              {devamEdenProjeler.map((r) => (
-                <tr>
-                  <td><strong>{r.proje}</strong></td>
-                  <td>{r.lokasyon}</td>
-                  <td>
-                    <div class="tek-chips">
-                      {teknikParcala(r.teknik).map((c) => (
-                        <span class={`tek-chip tek-chip--${c.kat}`}>{c.label}</span>
-                      ))}
-                    </div>
-                  </td>
-                  <td><span class="pill pill--active">{r.yil}</span></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-  )}
-
   <!-- ARŞİV (YIL BAZLI) -->
   <section class="section">
     <div class="container">
@@ -691,6 +687,44 @@ const yogunluk = (deger: number) => enYukseHucre === 0 ? 0 : Math.round((deger /
 .section-header p { color:var(--color-text-muted); line-height:1.65; }
 
 .section--bg-alt { background:var(--color-bg-alt); }
+
+/* -------------------- Saha Hikayeleri — Görselli kart grid -------------------- */
+.saha-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+  gap:var(--s-6);
+}
+.saha-card {
+  display:flex; flex-direction:column;
+  background:var(--color-white); border:1px solid var(--color-border);
+  border-radius:var(--r-lg); overflow:hidden;
+  transition:transform var(--t-base), box-shadow var(--t-base);
+}
+.saha-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.saha-card__visual { position:relative; aspect-ratio:3/2; overflow:hidden; }
+.saha-card__visual picture { display:block; width:100%; height:100%; }
+.saha-card__visual img { width:100%; height:100%; object-fit:cover; transition:transform var(--t-slow); }
+.saha-card:hover .saha-card__visual img { transform:scale(1.05); }
+.saha-card__etiket {
+  position:absolute; bottom:var(--s-3); left:var(--s-3); z-index:2;
+  background:var(--color-primary); color:var(--color-white);
+  font-size:var(--text-xs); font-weight:600;
+  padding:5px 12px; border-radius:999px;
+  box-shadow:var(--shadow-sm);
+}
+.saha-card__body { display:flex; flex-direction:column; gap:var(--s-2); padding:var(--s-5); flex:1; }
+.saha-card__ad {
+  font-family:var(--font-serif); font-size:var(--text-xl); font-weight:700;
+  color:var(--color-primary); line-height:1.2; margin:0;
+}
+.saha-card__meta { font-size:var(--text-sm); color:var(--color-text-muted); font-weight:500; margin:0; }
+.saha-card__meta span { color:var(--color-earth); font-weight:600; }
+.saha-card__hikaye { font-size:var(--text-sm); color:var(--color-text); line-height:1.6; margin:0; }
+.saha-card__cta {
+  margin-top:auto; padding-top:var(--s-2);
+  font-size:var(--text-sm); font-weight:600; color:var(--color-accent);
+  text-decoration:none; align-self:flex-start;
+}
+.saha-card__cta:hover { color:var(--color-highlight); }
 
 /* -------------------- Case Study — Editorial Zebra Layout -------------------- */
 .case-studies { display:flex; flex-direction:column; gap:var(--s-12); }
