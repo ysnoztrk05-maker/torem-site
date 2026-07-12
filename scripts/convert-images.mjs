@@ -66,11 +66,10 @@ const TARGETS = [
     pattern: /\.(png|jpg|jpeg)$/i,
     label: 'projeler/smart-civril',
   },
-  // Saha hikayesi kapak fotoğrafları (referanslar sayfası görselli kartlar)
+  // Devam eden projeler → WordPress birebir kapak fotoğrafları (referanslar görselli kartlar)
   ...[
-    'abalioglu-aliaga', 'akar-toki-izmir', 'aslanturk-gebze',
-    'peynirci-baba-gebze', 'millet-bahcesi-usak', 'bakioglu-salihli',
-    'adana-tarsus-yol',
+    'izmir-konut-bayrakli', 'adana-tarsus-yol', 'istanbul-villa-buyukcekmece',
+    'fabrika-gebze', 'abalioglu-aliaga', 'bakioglu-salihli',
   ].map((slug) => ({
     dir: `./public/images/projeler/${slug}`,
     pattern: /\.(png|jpg|jpeg)$/i,

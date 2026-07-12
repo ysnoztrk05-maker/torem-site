@@ -449,7 +449,7 @@ export const musteriHikayeleri: MusteriHikaye[] = [
     yil: '2024',
     hikaye: 'Gebze iş merkezi inşaatı için derin kazı iksa sistemi tasarlayıp uyguladık — zemin çivisi, ankraj ve püskürtme beton birlikte çalıştı.',
     etiket: 'İksa Sistemleri',
-    sahaFoto: '/images/projeler/aslanturk-gebze/aslanturk-gebze-01.jpg',
+    sahaFoto: '/images/iksa/diyafram-duvar.jpg',
     projeSlug: 'aslanturk-lojistik-gebze',
   },
   {
@@ -485,9 +485,9 @@ export const musteriHikayeleri: MusteriHikaye[] = [
     logoExt: 'jpg',
     lokasyon: 'Uşak · Millet Bahçesi',
     yil: '2023',
-    hikaye: 'TOKİ koordinasyonunda yürütülen Uşak Millet Bahçesi projesi için öngermeli ankraj ve iksa uygulamasını tamamladık.',
-    etiket: 'Öngermeli Ankraj + İksa',
-    sahaFoto: '/images/projeler/millet-bahcesi-usak/millet-bahcesi-usak-01.jpg',
+    hikaye: 'TOKİ koordinasyonunda yürütülen Uşak Millet Bahçesi projesi için öngermeli ankraj uygulamasını tamamladık.',
+    etiket: 'Öngermeli Ankraj',
+    kategoriFallback: '/images/ankraj.jpg',
   },
   {
     slug: 'girisim-elektrik',
@@ -511,43 +511,64 @@ export const musteriHikayeleri: MusteriHikaye[] = [
     etiket: 'Kazıklı Temel',
     kategoriFallback: '/images/kazikli-temeller.jpg',
   },
+];
+
+// -------------------------------------------------------------------------
+// Saha Projeleri — toremzemin.com "devam eden projeler" sayfasından birebir.
+// Her kart WordPress'teki gerçek proje görseli + başlık + teknikle eşleşir;
+// tamamlanan bağlamında görselli kart olarak gösterilir.
+// Görsel kaynağı: wp-content (birebir) veya aynı fotoğrafın yerel yüksek çözünürlüğü.
+// -------------------------------------------------------------------------
+export interface SahaProjesi {
+  baslik: string;
+  lokasyon: string;      // "İl · İlçe"
+  aciklama: string;
+  teknikler: string[];   // chip listesi
+  foto: string;          // gerçek saha fotoğrafı
+}
+
+export const sahaProjeleri: SahaProjesi[] = [
   {
-    slug: 'abalioglu-aliaga',
-    ad: 'Abalıoğlu',
-    lokasyon: 'İzmir · Aliağa',
-    yil: '2024',
-    hikaye: 'Aliağa\'daki endüstriyel tesis yatırımı için ağır makine yüklerini taşıyacak kazıklı temel sistemini geniş bir saha üzerinde uyguladık.',
-    etiket: 'Kazıklı Temel',
-    sahaFoto: '/images/projeler/abalioglu-aliaga/abalioglu-aliaga-01.jpg',
+    baslik: 'İzmir Konut Projesi',
+    lokasyon: 'İzmir · Bayraklı',
+    aciklama: 'Kentsel konut yapısının temelinde fore kazık ve jet grout uygulamaları birlikte yürütüldü.',
+    teknikler: ['Fore Kazık', 'Jet Grout'],
+    foto: '/images/projeler/izmir-konut-bayrakli/izmir-konut-bayrakli-01.jpg',
   },
   {
-    slug: 'akar-toki-izmir',
-    ad: 'Akar Yapı & TOKİ',
-    logoBase: '/images/logos/toki',
-    logoExt: 'png',
-    lokasyon: 'İzmir · Bornova',
-    yil: '2024',
-    hikaye: 'TOKİ koordinasyonundaki Bornova okul yatırımında yamaçlı kentsel sahada fore kazık ve iksa uygulamasını birlikte yürüttük.',
-    etiket: 'Fore Kazık + İksa',
-    sahaFoto: '/images/projeler/akar-toki-izmir/akar-toki-izmir-01.jpg',
-  },
-  {
-    slug: 'peynirci-baba',
-    ad: 'Peynirci Baba',
-    lokasyon: 'Kocaeli · Gebze',
-    yil: '2024',
-    hikaye: 'Gebze iş merkezi inşaatında derin kazı güvenliği için zemin çivisi, ankraj ve püskürtme betonu bir arada uyguladık.',
-    etiket: 'Zemin Çivisi + Ankraj',
-    sahaFoto: '/images/projeler/peynirci-baba-gebze/peynirci-baba-gebze-01.jpg',
-  },
-  {
-    slug: 'adana-tarsus-yol',
-    ad: 'Adana-Tarsus Otoyol',
+    baslik: 'Adana-Tarsus Yol Projesi',
     lokasyon: 'Adana · Tarsus',
-    yil: '2024',
-    hikaye: 'Otoyol güzergâhındaki yapı yüklerini taşımak üzere fore kazık ve kazıklı temel uygulamasını saha koşullarına göre yürüttük.',
-    etiket: 'Fore Kazık',
-    sahaFoto: '/images/projeler/adana-tarsus-yol/adana-tarsus-yol-01.jpg',
+    aciklama: 'Otoyol güzergâhındaki yapı yüklerini taşımak üzere fore kazık ve kazıklı temel uygulaması gerçekleştirildi.',
+    teknikler: ['Fore Kazık', 'Kazıklı Temeller'],
+    foto: '/images/projeler/adana-tarsus-yol/adana-tarsus-yol-01.jpg',
+  },
+  {
+    baslik: 'İstanbul Villa Konutları',
+    lokasyon: 'İstanbul · Büyükçekmece',
+    aciklama: 'Göl manzaralı yamaç arazideki villa yatırımında fore kazık imalatı ve kazıklı temel uygulaması yürütüldü.',
+    teknikler: ['Fore Kazık', 'Kazıklı Temeller'],
+    foto: '/images/projeler/istanbul-villa-buyukcekmece/istanbul-villa-buyukcekmece-01.jpg',
+  },
+  {
+    baslik: 'Fabrika Projesi — Gebze',
+    lokasyon: 'Kocaeli · Gebze',
+    aciklama: 'Fabrika derin kazısının güvenliği için zemin çivisi, öngermeli ankraj ve püskürtme beton uygulamaları bir arada yürütüldü.',
+    teknikler: ['Zemin Çivisi', 'Öngermeli Ankraj', 'Püskürtme Beton'],
+    foto: '/images/projeler/fabrika-gebze/fabrika-gebze-01.jpg',
+  },
+  {
+    baslik: 'İzmir Fabrika Projesi',
+    lokasyon: 'İzmir · Aliağa',
+    aciklama: 'Endüstriyel tesis temelinde geniş sahaya yayılan fore kazık çalışması ve kazıklı temel uygulaması yürütüldü.',
+    teknikler: ['Fore Kazık', 'Kazıklı Temeller'],
+    foto: '/images/projeler/abalioglu-aliaga/abalioglu-aliaga-01.jpg',
+  },
+  {
+    baslik: 'Kurutulmuş Gıda Fabrikası',
+    lokasyon: 'Manisa · Salihli',
+    aciklama: 'Gıda fabrikası temelinde donatısız fore kazık ve zemin enjeksiyonu çalışmaları gerçekleştirildi.',
+    teknikler: ['Donatısız Fore Kazık', 'Zemin Enjeksiyonu'],
+    foto: '/images/projeler/bakioglu-salihli/bakioglu-salihli-01.jpg',
   },
 ];
 
