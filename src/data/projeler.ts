@@ -46,6 +46,8 @@ const T = {
   jetGrout:    { slug: 'jet-grout',           name: 'Jet Grout',           href: '/faaliyet-alanlari/zemin-iyilestirme/jet-grout/' },
   dsm:         { slug: 'deep-soil-mixing',    name: 'Deep Soil Mixing',    href: '/faaliyet-alanlari/zemin-iyilestirme/deep-soil-mixing/' },
   ankraj:      { slug: 'ongermeli-ankraj',    name: 'Öngermeli Ankraj',    href: '/faaliyet-alanlari/destekleme-ankraj/ongermeli-ankraj/' },
+  zeminCivisi: { slug: 'zemin-civisi',        name: 'Zemin Çivisi',        href: '/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/' },
+  puskurtme:   { slug: 'puskurtme-beton',     name: 'Püskürtme Beton',     href: '/faaliyet-alanlari/iksa-sistemleri/puskurtme-beton/' },
 } satisfies Record<string, Teknik>;
 
 export const projeler: Proje[] = [
@@ -190,16 +192,23 @@ export const projeler: Proje[] = [
     location: 'Kocaeli / Gebze',
     year: '2024',
     client: 'Aslantürk Lojistik',
-    desc: 'Lojistik tesis inşaatı için derin kazı iksa sistemi.',
+    desc: 'Lojistik tesis inşaatı için derin kazı iksa sistemi — zemin çivisi, ankraj ve püskürtme beton.',
     summary:
       'Gebze bölgesinde yoğun sanayi komşuluğunda yürütülen kazının, çevre yapılarda deformasyon sınırlarını aşmayacak şekilde desteklenmesi gerekti. İksa tasarımı, kazı kademesi bazında çözüldü.',
     approach:
-      'Ankrajlı fore kazık iksası tercih edildi; öngermeli ankrajlar TS EN 1537 kapsamında uygulandı. Kazı süresi boyunca yatay deformasyon inklinometre ile izlendi.',
-    image: '/images/iksa/diyafram-duvar.jpg',
-    heroImage: '/images/iksa/diyafram-duvar.jpg',
-    tags: ['İksa', 'Ankraj', 'Kocaeli', '2024'],
-    teknikler: [T.ankrajIksa, T.ankraj, T.berlin],
+      'Kazı yüzeyi zemin çivisi ve öngermeli ankrajla kademeli olarak desteklendi; hasır donatı serildikten sonra püskürtme beton (shotcrete) ile yüzey kaplandı. Ankraj uygulaması TS EN 1537 kapsamında yürütüldü, kazı boyunca yatay deformasyon izlendi.',
+    image: '/images/projeler/aslanturk-lojistik-gebze/aslanturk-lojistik-gebze-01.jpg',
+    heroImage: '/images/projeler/aslanturk-lojistik-gebze/aslanturk-lojistik-gebze-02.jpg',
+    tags: ['İksa', 'Zemin Çivisi', 'Püskürtme Beton', 'Kocaeli', '2024'],
+    teknikler: [T.zeminCivisi, T.ankraj, T.puskurtme],
     relatedSlugs: ['sahinler-holding-buyukcekmece', 'emlak-konut-cekmekoy'],
+    galeri: [
+      '/images/projeler/aslanturk-lojistik-gebze/aslanturk-lojistik-gebze-01.jpg',
+      '/images/projeler/aslanturk-lojistik-gebze/aslanturk-lojistik-gebze-02.jpg',
+      '/images/projeler/aslanturk-lojistik-gebze/aslanturk-lojistik-gebze-03.jpg',
+      '/images/projeler/aslanturk-lojistik-gebze/aslanturk-lojistik-gebze-04.jpg',
+      '/images/projeler/aslanturk-lojistik-gebze/aslanturk-lojistik-gebze-05.jpg',
+    ],
   },
   {
     slug: 'safir-gemicilik-tuzla',
@@ -219,6 +228,58 @@ export const projeler: Proje[] = [
     tags: ['Jet Grout', 'Tersane', 'İstanbul', '2022'],
     teknikler: [T.jetGrout, T.dsm],
     relatedSlugs: ['bakioglu-freshbak-salihli', 'gemak-altinova-tersane'],
+  },
+  {
+    slug: 'akar-toki-izmir-okul',
+    title: 'Akar Yapı & TOKİ — İzmir Okul Projesi',
+    category: 'Kazıklı Temel',
+    catSlug: 'kazikli-temel',
+    location: 'İzmir / Bornova',
+    year: '2024',
+    client: 'Akar Yapı & TOKİ',
+    desc: 'TOKİ koordinasyonundaki okul yapısı için fore kazık temel ve iksa uygulaması.',
+    summary:
+      'İzmir Bornova\'da kamu eğitim yatırımı kapsamındaki okul yapısının temeli, çevre binalarla bitişik ve sıkışık kentsel bir sahada kuruldu. Yapı yükünü güvenle taşıyacak fore kazık temel sistemi ile kazı güvenliği birlikte çözüldü.',
+    approach:
+      'Sınırlı manevra alanına uygun kompakt delgi makinesiyle fore kazıklar imal edildi; imalat TS EN 1536 kapsamında yürütüldü. Bitişik yapı komşuluğunda kazı güvenliği için iksa sistemi birlikte planlandı ve saha koordinasyonu bu kısıt gözetilerek yürütüldü.',
+    image: '/images/projeler/akar-toki-izmir-okul/akar-toki-izmir-okul-01.jpg',
+    heroImage: '/images/projeler/akar-toki-izmir-okul/akar-toki-izmir-okul-01.jpg',
+    tags: ['Fore Kazık', 'İksa', 'Okul', 'İzmir', '2024'],
+    teknikler: [T.foreKazik, T.ankrajIksa],
+    relatedSlugs: ['emlak-konut-cekmekoy', 'sahinler-holding-buyukcekmece'],
+    galeri: [
+      '/images/projeler/akar-toki-izmir-okul/akar-toki-izmir-okul-01.jpg',
+      '/images/projeler/akar-toki-izmir-okul/akar-toki-izmir-okul-02.jpg',
+      '/images/projeler/akar-toki-izmir-okul/akar-toki-izmir-okul-03.jpg',
+      '/images/projeler/akar-toki-izmir-okul/akar-toki-izmir-okul-04.jpg',
+      '/images/projeler/akar-toki-izmir-okul/akar-toki-izmir-okul-05.jpg',
+    ],
+  },
+  {
+    slug: 'millet-bahcesi-usak',
+    title: 'Millet Bahçesi — Uşak',
+    category: 'İksa Sistemleri',
+    catSlug: 'iksa',
+    location: 'Uşak / Merkez',
+    year: '2024',
+    client: 'Derinsu Proje & TOKİ',
+    desc: 'TOKİ Millet Bahçesi projesi için öngermeli ankrajlı iksa uygulaması.',
+    summary:
+      'TOKİ koordinasyonunda yürütülen Uşak Millet Bahçesi düzenlemesinde, derin kazı çevresindeki zeminin yanal olarak desteklenmesi gerekti. İksa sistemi, kazı geometrisi ve çevre kotlarına göre kademeli tasarlandı.',
+    approach:
+      'Kazı yüzeyi öngermeli ankrajlarla desteklendi; ankraj uygulaması TS EN 1537 kapsamında yürütüldü. Donatı ve yüzey kaplaması ile kalıcı yanal güvenlik sağlandı, çevre kullanım alanlarıyla uyumlu bir saha düzeni korundu.',
+    image: '/images/projeler/millet-bahcesi-usak/millet-bahcesi-usak-01.jpg',
+    heroImage: '/images/projeler/millet-bahcesi-usak/millet-bahcesi-usak-01.jpg',
+    tags: ['Öngermeli Ankraj', 'İksa', 'Uşak', '2024'],
+    teknikler: [T.ankraj, T.ankrajIksa],
+    relatedSlugs: ['aslanturk-lojistik-gebze', 'sahinler-holding-buyukcekmece'],
+    galeri: [
+      '/images/projeler/millet-bahcesi-usak/millet-bahcesi-usak-01.jpg',
+      '/images/projeler/millet-bahcesi-usak/millet-bahcesi-usak-02.jpg',
+      '/images/projeler/millet-bahcesi-usak/millet-bahcesi-usak-03.jpg',
+      '/images/projeler/millet-bahcesi-usak/millet-bahcesi-usak-04.jpg',
+      '/images/projeler/millet-bahcesi-usak/millet-bahcesi-usak-05.jpg',
+    ],
   },
 ];
 
