@@ -66,10 +66,11 @@ const TARGETS = [
     pattern: /\.(png|jpg|jpeg)$/i,
     label: 'projeler/smart-civril',
   },
-  // Devam eden projeler → WordPress birebir kapak fotoğrafları (referanslar görselli kartlar)
+  // Devam eden projeler → WordPress birebir kapak fotoğrafları + derin case-study galerileri
   ...[
     'izmir-konut-bayrakli', 'adana-tarsus-yol', 'istanbul-villa-buyukcekmece',
     'fabrika-gebze', 'abalioglu-aliaga', 'bakioglu-salihli',
+    'aslanturk-lojistik-gebze', 'akar-toki-izmir-okul', 'millet-bahcesi-usak',
   ].map((slug) => ({
     dir: `./public/images/projeler/${slug}`,
     pattern: /\.(png|jpg|jpeg)$/i,
