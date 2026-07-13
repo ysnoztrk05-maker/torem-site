@@ -2152,21 +2152,106 @@ export const teknikler: Teknik[] = [
   },
   {
     slug:'puskurtme-beton', kategoriSlug:'iksa-sistemleri',
-    title:'Püskürtme Beton (Shotcrete)', shortTitle:'Püskürtme Beton',
-    excerpt:'Basınçlı beton püskürtme ile şev yüzeyi kaplaması ve iksa destek katmanı.',
+    title:'Püskürtme Beton (Shotcrete) Nedir? Uygulama ve 2026 Fiyatları', shortTitle:'Püskürtme Beton',
+    excerpt:'Püskürtme beton (shotcrete) nedir, nasıl yapılır? Kuru ve yaş sistem farkı, kullanım alanları, m³ fiyatları 2026 ve iksa şev kaplamasında uygulaması — Torem Zemin saha deneyimiyle.',
     image:'/images/iksa/puskurtme-beton.jpg', heroImage:'/images/iksa/puskurtme-beton.jpg',
     badge: 'Yaygın', badgeType: 'popular',
-    metrics: [{ label: 'Kalınlık', value: '8–15 cm' }, { label: 'Dayanım Sınıfı', value: 'C25–C40' }],
+    metrics: [{ label: 'Kalınlık', value: '8–30 cm' }, { label: 'Dayanım Sınıfı', value: 'C25/30–C40/50' }],
     comparison: { maxDerinlik: 'Yüzey', derinlikBar: 18, maliyetLabel: 'Düşük', maliyetBar: 20, suGecirimsizlik: 'Kısmi', kaliciKullanim: 'Evet' },
     content:`
-      <div class="aeo-box">Püskürtme beton (shotcrete); yüksek basınçlı hava veya pompa ile beton karışımının doğrudan yüzeye püskürtülmesiyle uygulanan yapısal kaplama yöntemidir.</div>
+      <div class="aeo-box">Püskürtme beton (shotcrete); beton karışımının yüksek basınçlı hava veya pompa ile bir nozülden doğrudan yüzeye püskürtülerek kalıp kullanmadan uygulanan yapısal betondur. İksa şev yüzeylerinde, tünellerde ve yapı güçlendirmede tipik olarak 8–30 cm kalınlıkta, C25/30–C40/50 dayanımında uygulanır ve çelik hasır veya lif takviyesiyle taşıyıcı bir katman oluşturur.</div>
+
       <h2 id="nedir">Püskürtme Beton Nedir?</h2>
-      <p>Kuru veya yaş karışım yöntemiyle uygulanır. Kalınlık genellikle 8–15 cm arasındadır. Çelik hasır veya lif takviyesi ile birlikte kullanılarak yapısal dayanım sağlar.</p>
-      <h2 id="kullanim">Kullanım Alanları</h2>
-      <ul><li>İksa şev yüzeyi kaplaması</li><li>Tünel iç yüzey desteği</li><li>Mevcut yapı onarımı</li></ul>`,
+      <p>Püskürtme beton (İng. <em>shotcrete</em>, eski adıyla <em>gunit</em>), akışkan veya kuru beton karışımının bir nozül aracılığıyla yüksek hızda yüzeye püskürtülmesiyle oluşturulan, kalıpsız uygulanan bir beton türüdür. <strong>TS EN 14487</strong> (püskürtme beton) kapsamında tanımlanır. Karışım yüzeye çarptığı anda sıkışarak yerine oturur; bu sayede düşey, eğimli ve düzensiz geometrili yüzeylere kalıp gerektirmeden uygulanabilir.</p>
+      <p>İksa sistemlerinde püskürtme beton, kazı yüzeyini örterek <a href="/faaliyet-alanlari/destekleme-ankraj/zemin-civisi/">zemin çivisi</a> ve ankrajlarla birlikte çalışan bir yüzey kaplaması oluşturur. Çelik hasır (Q131–Q257) veya çelik/polipropilen lif takviyesiyle çekme dayanımı kazanır ve yüzeydeki lokal göçmeleri, erozyonu ve ayrışmayı önler.</p>
+      <div class="highlight-box"><strong>Özet:</strong> Kalıp gerektirmemesi, karmaşık geometrilere uyum sağlaması ve hızlı uygulanabilmesi püskürtme betonu iksa şev kaplaması ile tünel ve güçlendirme işlerinde ekonomik ve pratik kılar.</div>
+      <p>Modern uygulamalarda geleneksel çelik hasır yerine giderek daha çok <strong>çelik veya polipropilen lif takviyesi</strong> tercih edilmektedir. Lifler betonun içinde üç boyutlu dağılarak çekme ve eğilme dayanımını artırır, çatlak ilerlemesini sınırlar ve hasır montaj işçiliğini ortadan kaldırarak uygulamayı hızlandırır. TS EN 14487, püskürtme betonu basınç dayanımı, ilk dayanım gelişimi (J1–J3 sınıfları) ve durabilite açısından sınıflandırır; iksa ve tünel işlerinde erken dayanım kritik olduğundan bu sınıflar tasarımda dikkate alınır.</p>
+
+      <h2 id="ne-zaman">Püskürtme Beton Ne Zaman Gereklidir?</h2>
+      <p>Püskürtme beton, kazı veya doğal şev yüzeyinin yüzeysel olarak stabilize edilmesi ve korunması gereken durumlarda tercih edilir. Özellikle düşey ya da dik eğimli, kalıp kurulamayan yüzeylerde tek pratik çözümdür. Başlıca kullanım alanları:</p>
+      <ul>
+        <li><strong>İksa şev yüzeyi kaplaması</strong> — zemin çivili veya ankrajlı iksa sistemlerinde kazı yüzeyini bütünleyen taşıyıcı katman</li>
+        <li><strong>Şev stabilitesi</strong> — kaya ve toprak şevlerde yüzey erozyonu ve taş düşmesine karşı koruma</li>
+        <li><strong>Tünel ve galeri</strong> — kazı sonrası iç yüzey ilk desteği (NATM yöntemi)</li>
+        <li><strong>Yapı güçlendirme</strong> — mevcut betonarme perde ve kolonların mantolanması, onarımı</li>
+        <li><strong>Havuz, kanal, istinat</strong> — su yapıları ve düzensiz yüzeyli imalatlar</li>
+      </ul>
+      <p>Şehir içi bitişik nizam projelerde derin kazı iksasında püskürtme beton, ankrajlı fore kazık veya zemin çivili sistemin ayrılmaz bir parçasıdır: yüzeydeki toprağı yerinde tutarak kazı devam ederken güvenli bir çalışma yüzeyi sağlar. Bu nedenle iksa statik projesi püskürtme beton kalınlığını ve donatısını da kapsar.</p>
+
+      <h2 id="cesitler">Püskürtme Beton Çeşitleri: Kuru ve Yaş Sistem</h2>
+      <p>Püskürtme beton, karışıma suyun hangi aşamada eklendiğine göre iki ana yöntemle uygulanır. Yöntem seçimi; işin ölçeğine, erişilebilirliğe ve istenen kaliteye göre yapılır. <strong>Geri sıçrama (rebound)</strong> — yüzeye yapışmayıp sıçrayan malzeme oranı — verimliliği ve maliyeti doğrudan etkileyen en önemli parametredir.</p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Özellik</th><th>Kuru Sistem (Dry-mix)</th><th>Yaş Sistem (Wet-mix)</th></tr></thead>
+          <tbody>
+            <tr><td>Su ilavesi</td><td>Nozülde (uygulama anında)</td><td>Karışımda (önceden)</td></tr>
+            <tr><td>Uygulama hızı</td><td>Orta</td><td>Yüksek (m³/saat)</td></tr>
+            <tr><td>Geri sıçrama (rebound)</td><td>Daha yüksek (%15–30)</td><td>Daha düşük (%5–15)</td></tr>
+            <tr><td>Toz oluşumu</td><td>Fazla</td><td>Az</td></tr>
+            <tr><td>Uygun iş</td><td>Küçük/onarım, kesintili</td><td>Büyük ölçekli iksa, tünel</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>İksa şev kaplamalarında Torem Zemin, saha koşuluna göre çoğunlukla <strong>yaş sistem</strong> tercih eder; düşük geri sıçrama, tutarlı dayanım ve yüksek uygulama hızı avantajı sağlar. Kuru sistem ise erişimi zor, kesintili ve küçük onarım işlerinde pompa taşımadan çalışabilme esnekliğiyle öne çıkar.</p>
+      <p>Takviye açısından da iki yaklaşım vardır: geleneksel <strong>çelik hasır</strong> düzlemsel donatı sağlarken, <strong>lif takviyesi</strong> (çelik veya polipropilen) betonun tüm hacminde dağılarak süneklik ve çatlak kontrolü sunar. Şev ve tünel gibi yüzeyi düzensiz işlerde lif takviyesi hem montaj işçiliğini azaltır hem de karmaşık geometriye daha iyi uyum sağlar. Doğru sistem ve takviye seçimi, iksa statik projesindeki dayanım ve kalınlık gereksinimine göre belirlenir.</p>
+
+      <h2 id="nasil">Püskürtme Beton Nasıl Yapılır? Uygulama Adımları</h2>
+      <div class="process-steps">
+        <div class="step"><strong>1. Yüzey Hazırlığı</strong><p>Kazı yüzeyi temizlenir, gevşek malzeme ve ayrışmış bloklar alınır; yeraltı suyu varsa gerekli yerlere drenaj boruları (barbakan) yerleştirilerek yüzeyin arkasında su basıncı oluşması önlenir. Temiz ve sağlam bir yüzey, betonun aderansı için şarttır.</p></div>
+        <div class="step"><strong>2. Donatı / Hasır Montajı</strong><p>Çelik hasır yüzeye çelik pimlerle sabitlenir veya lif takviyeli karışım hazırlanır. Zemin çivisi ve ankraj başlıkları püskürtme betonuna gömülecek şekilde entegre edilir; böylece yüzey kaplaması ile derinlik desteği birlikte çalışır.</p></div>
+        <div class="step"><strong>3. Püskürtme</strong><p>Nozül yüzeye dik ve yaklaşık 1–1,5 m mesafede tutularak beton tabaka tabaka püskürtülür. İstenen kalınlığa tek seferde değil kademeli çıkılır; her tabaka bir önceki priz almadan uygulanarak bütünlük sağlanır.</p></div>
+        <div class="step"><strong>4. Yüzey Bitirme ve Kür</strong><p>Yüzey mastarla düzeltilir, gerekiyorsa perdahlanır. Erken kuruma büzülme çatlaklarını önlemek için kür (su/örtü veya kür malzemesi) uygulanır; dayanım gelişimi bu aşamada güvence altına alınır.</p></div>
+      </div>
+      <div class="saha-notu"><strong>⚠️ Saha Notu:</strong> Geri sıçrayan (rebound) malzeme tekrar püskürtme yüzeyinde kullanılmaz; zayıf dayanım ve boşluk yaratır. Nozül mesafesi ve açısı dayanımı doğrudan etkiler — deneyimli nozülcü kritiktir.</div>
+      <p>Uygulama tek seferde tam kalınlığa çıkılarak değil, tabaka tabaka yapılır; taze betonun kendi ağırlığıyla akmaması (sarkma) için her tabaka sınırlı kalınlıkta bırakılır. Köşe ve donatı arkası gibi gölgede kalan bölgelerde boşluk oluşmaması için nozül açısı sürekli ayarlanır. İmalat sonrası alınan karot numuneleriyle basınç dayanımı ve tabaka bütünlüğü doğrulanır.</p>
+
+      <h2 id="fiyat">Püskürtme Beton Fiyatları 2026</h2>
+      <p>Püskürtme beton maliyeti; beton sınıfı, kalınlık, takviye tipi (hasır/lif), saha erişimi ve toplam metraja göre değişir. Küçük ve erişimi zor sahalarda birim maliyet artarken, büyük metrajlı sürekli işlerde pompa ve ekip verimliliği maliyeti düşürür. 2026 yılı için güncel aralıklar:</p>
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Kalem</th><th>2026 Birim Fiyat (yaklaşık)</th></tr></thead>
+          <tbody>
+            <tr><td>C25/30 hazır beton</td><td>3.000 – 3.200 TL/m³</td></tr>
+            <tr><td>C30/37 hazır beton</td><td>3.200 – 3.500 TL/m³</td></tr>
+            <tr><td>Püskürtme bedeli (KGM, çimento hariç)</td><td>~1.300 TL/m³</td></tr>
+            <tr><td>Uygulama dahil toplam (malzeme + pompa + işçilik)</td><td>4.500 – 6.000 TL/m³</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="stat-row">
+        <div class="stat-card"><span class="stat-number">8–30 cm</span><span class="stat-label">Uygulama Kalınlığı</span></div>
+        <div class="stat-card"><span class="stat-number">%5–15</span><span class="stat-label">Yaş Sistem Geri Sıçrama</span></div>
+        <div class="stat-card"><span class="stat-number">C25–C40</span><span class="stat-label">Dayanım Sınıfı</span></div>
+      </div>
+      <p>Maliyeti yalnızca beton ve püskürtme bedeli değil; donatı/lif, yüzey hazırlığı, drenaj detayları ve kür işçiliği de belirler. Ucuz görünen ama nozülcü deneyimi zayıf uygulamalarda geri sıçrama kaybı ve düşük dayanım gerçek maliyeti artırır. Torem Zemin, püskürtme betonu bağımsız bir imalat olarak değil, zemin çivisi ve ankrajla birlikte bütün bir iksa sistemi olarak fiyatlandırır — böylece yüzey kaplaması ile derinlik desteği tutarlı bir statik çözümde birleşir.</p>
+      <p class="fiyat-not">* Fiyatlar tahminidir; kesin teklif için saha koşulları ve metraj değerlendirilmelidir. Torem Zemin ücretsiz keşif ile projeye özel fiyat sunar.</p>
+
+      <div class="expert-tip"><strong>Uzman Görüşü:</strong> İksa şev kaplamasında püskürtme beton tek başına taşıyıcı değildir; zemin çivisi/ankraj ile birlikte bir sistem oluşturur. Kalınlığı ve donatısı, iksa statik hesabına göre belirlenmelidir.</div>
+
+      <div class="pros-cons">
+        <div class="pros"><h4>Avantajları</h4><ul>
+          <li>Kalıp gerektirmez — karmaşık geometriye uyum</li>
+          <li>Hızlı uygulama, erken dayanım</li>
+          <li>Zemin çivisi/ankraj ile entegre çalışır</li>
+          <li>Düşük yüzey maliyeti</li>
+        </ul></div>
+        <div class="cons"><h4>Dikkat Gereken Noktalar</h4><ul>
+          <li>Nitelikli nozülcü ve ekipman şart</li>
+          <li>Geri sıçrama malzeme kaybı yaratır</li>
+          <li>Kür yapılmazsa yüzey çatlar</li>
+        </ul></div>
+      </div>
+
+      <div class="cta-box">
+        <p><strong>Şev veya iksa yüzeyiniz için püskürtme beton mu gerekiyor?</strong> Torem Zemin, zemin çivisi ve ankrajla birlikte entegre iksa çözümü sunar.</p>
+        <a href="/iletisim/" class="cta-btn">Ücretsiz Keşif Raporu Alın</a>
+      </div>`,
     faq:[
-      {q:'Püskürtme beton dayanımı ne kadardır?',a:'28 günlük basınç dayanımı C25/30 – C40/50 arasında tasarlanır; lif takviyeli uygulamalarda çekme dayanımı da artar.'},
-      {q:'Kalınlığı ne olmalıdır?',a:'İksa uygulamalarında tipik olarak 8–15 cm, tünel uygulamalarında 20–30 cm kalınlık uygulanır.'},
+      {q:'Püskürtme beton (shotcrete) nedir?',a:'Beton karışımının yüksek basınçlı hava veya pompa ile bir nozülden yüzeye püskürtülerek kalıpsız uygulanan yapısal betondur. TS EN 14487 kapsamında tanımlanır; iksa şev kaplaması, tünel ve güçlendirmede kullanılır.'},
+      {q:'Shotcrete ile normal beton arasındaki fark nedir?',a:'Normal beton kalıba dökülür; püskürtme beton kalıpsız olarak yüzeye püskürtülür ve çarpma anında sıkışarak yerine oturur. Bu, düşey ve düzensiz yüzeylere uygulamayı mümkün kılar.'},
+      {q:'Kuru ve yaş püskürtme yöntemi arasındaki fark nedir?',a:'Kuru sistemde su nozülde (uygulama anında), yaş sistemde ise karışımda önceden eklenir. Yaş sistem daha düşük geri sıçrama ve daha yüksek uygulama hızı sağlar; büyük ölçekli iksa işlerinde tercih edilir.'},
+      {q:'Püskürtme beton m³ fiyatı 2026 ne kadar?',a:'2026 için uygulama dahil toplam maliyet yaklaşık 4.500–6.000 TL/m³ aralığındadır. Beton sınıfı C25/30 için 3.000–3.200 TL/m³, püskürtme bedeli ise ~1.300 TL/m³ civarındadır. Kesin fiyat metraj ve saha koşuluna bağlıdır.'},
+      {q:'Püskürtme beton kalınlığı ne olmalıdır?',a:'İksa şev uygulamalarında tipik olarak 8–15 cm, tünel uygulamalarında 20–30 cm kalınlık uygulanır. Kalınlık, iksa statik hesabına ve zemin koşuluna göre belirlenir.'},
     ],
   },
 
